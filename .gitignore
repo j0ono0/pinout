@@ -119,7 +119,7 @@ venv.bak/
 
 # Visual studio code project settings
 .vscode/
-.code-workspace
+*.code-workspace
 
 # mkdocs documentation
 /site

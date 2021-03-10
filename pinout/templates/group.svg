@@ -1,0 +1,3 @@
+<g transform="translate({{ x }} {{ y }})">
+    {{ content|safe }}
+</g>

@@ -1,0 +1,1 @@
+<image x="{{ x }}" y="{{ y }}" href="{{ path }}" height="{{ height }}" width="{{ width }}"/>

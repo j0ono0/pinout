@@ -1,0 +1,19 @@
+
+<svg  xmlns="http://www.w3.org/2000/svg" 
+    {% if x %} x="{{ x }}" {% endif %}
+    {% if y %} y="{{ y }}" {% endif %}
+    width="{{ width }}" 
+    height="{{ height }}" 
+    viewBox="{{ viewbox.x }} {{ viewbox.y }} {{ viewbox.w }} {{ viewbox.h }}"
+    class="{{ selectors }}"
+>
+{% if css_path %}
+    <style>{% include css_path %}</style>
+{% endif %}
+
+{% block body %}
+
+    {{ rendered_components|safe }}
+    
+{% endblock %}
+</svg>

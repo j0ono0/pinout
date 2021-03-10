@@ -1,2 +1,2 @@
-# pinout-diagram
+# pinout
 Python package that generates hardware pinout diagrams as SVG images

@@ -11,7 +11,7 @@ TODO: write better instructions and include a sample image.
 
 Using a virtual environment is recommended; Start by installing the *pinout* diagram package. Either clone this repo and pip install it or it can be installed directly from github...
 ```
-pip install git+https://github.com/j0ono0/pinout
+pip install git+https://github.com/j0ono0/pinout@main
 ```
 
 Start by importing the pinout diagram module

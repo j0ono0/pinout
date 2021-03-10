@@ -25,7 +25,7 @@ setuptools.setup(
     python_requires=">=3.6",
     install_requires=["Jinja2>=2.11.3"],
     data_files=[
-        ('templates',['groups.svg','image.svg','pin_label.svg','svg.svg']),
+        ('templates',['group.svg','image.svg','pin_label.svg','svg.svg']),
         ('templates/styles', ['pin_label_styles.css'])
     ]
 )

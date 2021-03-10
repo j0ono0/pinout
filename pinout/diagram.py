@@ -1,4 +1,5 @@
-
+import os
+from pathlib import Path
 from collections import namedtuple
 from .templates import svg_pin_label, svg_group, svg_image, svg
 
@@ -127,7 +128,13 @@ class Diagram:
             pin.add_label(*label_args)
         self.components.append(pin)
 
-    def as_svg(self):
+    def export(self, filename, overwrite=False):
+        filepath = Path(filename)
+        
+        if filepath.is_file() and not overwrite:
+            print('This file already exists! To enable overwrite add \'overwrite=True\' to the Diagram.export arguments.')
+            return
+
         for pin in self.components:
             self._rendered += pin.render()
         
@@ -135,14 +142,19 @@ class Diagram:
         viewbox_y = min([p.bounding_box.y for p in self.components])
         viewbox_w = max([p.bounding_box.x + p.bounding_box.w for p in self.components]) - viewbox_x
         viewbox_h = max([p.bounding_box.y + p.bounding_box.h for p in self.components]) - viewbox_y
-        
-        return svg.render(
-            x = 0,
-            y = 0,
-            width = viewbox_w,
-            height = viewbox_h,
-            viewbox = BoundingBox(viewbox_x, viewbox_y, viewbox_w, viewbox_h),
-            selectors = 'mydiagram',
-            rendered_components = self._rendered,
-            css_path = self.css_path,
-        )
+
+        os.makedirs(os.path.dirname(filename), exist_ok=True)
+        with open(filename, 'w') as f:
+            f.write(
+                svg.render(
+                    x = 0,
+                    y = 0,
+                    width = viewbox_w,
+                    height = viewbox_h,
+                    viewbox = BoundingBox(viewbox_x, viewbox_y, viewbox_w, viewbox_h),
+                    selectors = 'mydiagram',
+                    rendered_components = self._rendered,
+                    css_path = self.css_path,
+                )  
+            )
+            print('Diagram exported successfully.')

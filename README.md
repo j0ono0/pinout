@@ -80,10 +80,7 @@ for i, label_data in enumerate(pin_label_data):
     y = y_offset + pitch * i
     pinout_diagram.add_pin(x_offset, y, 'right', label_data)
 ```
-Render the diagram as an SVG graphic and write to file
+Export the diagram as an SVG graphic to file
 ```python
-with open('output/diagram2.svg','w') as f:
-    f.write(
-        pinout_diagram.as_svg()
-    )
+pinout_diagram.export('output/my_diagram.svg')
 ```

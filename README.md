@@ -41,24 +41,24 @@ pinout_diagram.stylesheet = 'sample_styles.css'
 On export the final diagram dimensions are calculated and all components shifted into view (via the SVG viewBox). Consequently, component 'x' and 'y' positioning is relative to each other and not the parent diagram. It is recommended to position your image to make easier calculations for subsequent pin placements.
 
 ### Add an image to the diagram
-Note: the image is linked in the final diagram (not embedded or copied to the output folder). The path here is relative to where the diagram is saved.
+The image is linked in the final diagram (not embedded or copied to the export destination). If a relative path is used it must be relative to where the diagram is exported to.
 ```python
-pinout_diagram.add_image(0, 0, 212, 475, 'board_huzzah32.png')
+pinout_diagram.add_image(0, 0, 220, 300, 'sample_hardware_board.png')
 ```
 
 ### Create a pin 
 
 This is slow way, included to provide an idea of the steps going on behind the scene.
 ```python
-leftpin = diagram.Pin(0, 110, 'left')
+leftpin = diagram.Pin(16, 80, 'left')
 ```
 Add some labels to the pin
 Note: label width, height, and gap to next label, can be 
-controlled per label.
+controlled per label and override default settings.
 ```python
-leftpin.add_label('LEFT', 'type-o', 60, 20, 60)
-leftpin.add_label('OUT', 'type-o')
-leftpin.add_label('WAY', 'type-i')
+leftpin.add_label('#1', 'gpio', 60, 20, 60)
+leftpin.add_label('A1', 'analog')
+leftpin.add_label('PWM', 'pwm')
 ```
 
 Add this pin to the diagram
@@ -70,30 +70,27 @@ pinout_diagram.components.append(leftpin)
 
 The fast - and recommended - way.
 ```python
-label_data = [('LBL1', 'type-o',60, 20, 60),('LBL2', 'power-mgt'),('LBL3', 'type-io')]  
-pinout_diagram.add_pin(212, 30, 'right', label_data)
+label_data = [('#2', 'gpio',60, 20, 60),('GPI', 'gpi')]  
+pinout_diagram.add_pin(16, 120, 'left', label_data)
 ```
 
 With a little 'python-foo' this process can be streamlined dramatically
 ```python
 custom_specs = (60, 20, 60) 
 pin_label_data = [
-        [('OUT', 'type-o',*custom_specs),('IN', 'power-mgt'),('TEST', 'type-io')], 
-        [('Vss', 'power-mgt',*custom_specs)], 
-        [('SNSK', 'type-io',*custom_specs)], 
-        [('SNS', 'type-o',*custom_specs)], 
-        [('Vdd', 'power-mgt',*custom_specs)], 
-        [], 
-        [('SYNC', 'type-i',*custom_specs),('Vdd', 'power-mgt'),('SYNC', 'type-i')],
+        [('Vss', 'pwr-mgt', 40, 20, 190)], 
+        [('GND', 'pwr-mgt', 40, 20, 190)], 
+        [('#6', 'gpi',*custom_specs),('A3', 'analog'),('CLK', 'gpi')], 
+        [('#5', 'gpio',*custom_specs),('A2', 'analog')], 
     ]
 ```
 
 Hardware headers have evenly spaced pins - which can be taken advantage of in a loop. These variables were determined by 
 measuring pin locations on the image.
 ```python
-y_offset = 158
-x_offset = 212
-pitch = 23.6
+y_offset = 80
+x_offset = 204
+pitch = 40
 
 for i, label_data in enumerate(pin_label_data):
     y = y_offset + pitch * i

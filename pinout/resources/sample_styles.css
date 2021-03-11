@@ -1,0 +1,55 @@
+
+
+/*
+    # Diagram styling 
+*/
+
+.pinout-diagram{
+    background: #f4f4f4;    
+}
+
+/* 
+    # Label styling
+
+    Label 'tags' argument is used as css class(es).
+
+    The following classes are predefined (the last two are svg tags)
+    and automatically applied to the diagram labels:
+    + label
+    + label_box
+    + label_line
+    + rect
+    + text
+
+    Replace the other user defined styles with your own 
+    styles/tagging/taxonomy system.
+
+*/
+
+/* Default label styles - applied to labels with no tags specified */
+.label_box rect{ fill: rgb(63, 63, 63) }
+.label_line{ stroke:   rgb(63, 63, 63) }
+
+/* Labels styled by their tags */
+.gpio .label_box rect{ fill: rgb(194, 100, 0); }
+.gpio .label_line{ stroke:   rgb(194, 100, 0); }
+
+.gpi .label_box rect{ fill: rgb(194, 165, 0); }
+.gpi .label_line{ stroke:   rgb(194, 165, 0); }
+
+.analog .label_box rect{ fill: rgb(115, 85, 130); }
+.analog .label_line{ stroke:   rgb(115, 85, 130); }
+
+.pwm .label_box rect{ fill: rgb(3, 86, 150); }
+.pwm .label_line{ stroke:   rgb(3, 86, 150); }
+
+.pwr-mgt .label_box rect{ fill: rgb(151, 28, 0); }
+.pwr-mgt .label_line{ stroke:   rgb(151, 28, 0); }
+
+
+.label text{
+    fill: #fff;
+    font-family:verdana, san-serif; 
+    font-size: 10px; 
+    font-weight: bold;
+}

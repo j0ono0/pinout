@@ -7,8 +7,9 @@
     viewBox="{{ viewbox.x }} {{ viewbox.y }} {{ viewbox.w }} {{ viewbox.h }}"
     class="{{ selectors }}"
 >
-{% if css_path %}
-    <style>{% include css_path %}</style>
+
+{% if stylesheet %}
+    <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="{{ stylesheet }}" type="text/css"/>
 {% endif %}
 
 {% block body %}

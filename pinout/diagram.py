@@ -91,10 +91,10 @@ class Pin:
 
 
 class Image:
-    def __init__(self, x, y, width, height, path):
+    def __init__(self, x, y, width, height, filename):
         self.x = x
         self.y = y
-        self.path = path
+        self.path = filename
         self.width = width
         self.height = height
 
@@ -113,13 +113,13 @@ class Image:
 
 
 class Diagram:
-    def __init__(self, css_path='styles/pin_label_styles.css'):
+    def __init__(self):
         self.components = []
-        self.css_path = css_path
+        self.stylesheet = None
         self._rendered = ''
 
-    def add_image(self, x, y, width, height, image_path):
-        self.components.append(Image(x, y, width, height, image_path))
+    def add_image(self, x, y, width, height, filename):
+        self.components.append(Image(x, y, width, height, filename))
 
     def add_pin(self, x , y, direction='right', label_data=None):
         label_data = label_data or []
@@ -142,8 +142,11 @@ class Diagram:
         viewbox_y = min([p.bounding_box.y for p in self.components])
         viewbox_w = max([p.bounding_box.x + p.bounding_box.w for p in self.components]) - viewbox_x
         viewbox_h = max([p.bounding_box.y + p.bounding_box.h for p in self.components]) - viewbox_y
+        try:
+            os.makedirs(os.path.dirname(filename), exist_ok=True)
+        except FileNotFoundError:
+            pass # filename provided has no directory included.
 
-        os.makedirs(os.path.dirname(filename), exist_ok=True)
         with open(filename, 'w') as f:
             f.write(
                 svg.render(
@@ -152,9 +155,9 @@ class Diagram:
                     width = viewbox_w,
                     height = viewbox_h,
                     viewbox = BoundingBox(viewbox_x, viewbox_y, viewbox_w, viewbox_h),
-                    selectors = 'mydiagram',
+                    selectors = 'pinout-diagram',
                     rendered_components = self._rendered,
-                    css_path = self.css_path,
+                    stylesheet = self.stylesheet,
                 )  
             )
-            print('Diagram exported successfully.')
+            print(f'\'{filename}\' exported successfully.')

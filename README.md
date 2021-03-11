@@ -12,7 +12,7 @@ Using a virtual environment is recommended; Start by installing the *PinOut* dia
 pip install git+https://github.com/j0ono0/pinout@main
 ```
 
-You will need an image and a stylesheet to complete this guide. Some sample files are included with the package and can be duplicated for your use. Launch Python at the location you intent to work and enter the following:
+You will need an image and a stylesheet to complete this guide. Some sample files are included with the package and can be duplicated for your use. Launch Python at the location you intend to work and enter the following:
 ```python
 from pinout import resources
 resources.duplicate()
@@ -22,7 +22,7 @@ resources.duplicate()
 # >>> sample_hardware_board.png duplicated.
 # >>> sample_styles.css duplicated.
 ```
-*Spoiler Alert*: 'sample_diagram.py' is a completed script that duplicated the code in this guide.
+*Spoiler Alert*: 'sample_diagram.py' is a completed script that duplicates the code in this guide. Running it will create a sample SVG pinout diagram.
 
 ### Starting a pinout diagram
 

@@ -62,17 +62,24 @@ The image is linked in the final diagram (not embedded or copied to the export d
 pinout_diagram.add_image(0, 0, 220, 300, 'sample_hardware_board.png')
 ```
 
-### Create a pin 
+### Set some default label values
+Labels have several settings that control their size and appearance. These values can be suppled per label, however most labels are likely to share common traits. Default values exist to serve this requirement in the form of class variables. Setting them is as simple as assigning a new value:
+```python
+diagram.Label.default_width = 70
+diagram.Label.default_height = 25
+diagram.Label.default_gap = 5
+```
 
+### Create a pin 
 This is slow way, included to provide an idea of the steps going on behind the scene.
 ```python
-leftpin = diagram.Pin(16, 80, 'left')
+leftpin = diagram.Pin(16, 105, 'left')
 ```
 Add some labels to the pin
 Note: label width, height, and gap to next label, can be 
 controlled per label and override default settings.
 ```python
-leftpin.add_label('#1', 'gpio', 60, 20, 60)
+leftpin.add_label('#1', 'gpio', 60, 25, 60)
 leftpin.add_label('A1', 'analog')
 leftpin.add_label('PWM', 'pwm')
 ```
@@ -86,13 +93,13 @@ pinout_diagram.components.append(leftpin)
 
 The fast - and recommended - way.
 ```python
-label_data = [('#2', 'gpio',60, 20, 60),('GPI', 'gpi')]  
-pinout_diagram.add_pin(16, 120, 'left', label_data)
+label_data = [('#2', 'gpio',60, 25, 60),('GPI', 'gpi')]  
+pinout_diagram.add_pin(16, 135, 'left', label_data)
 ```
 
 With a little 'python-foo' this process can be streamlined dramatically
 ```python
-custom_specs = (60, 20, 60) 
+custom_specs = (60, 25, 60) 
 pin_label_data = [
         [('Vss', 'pwr-mgt', 40, 20, 190)], 
         [('GND', 'pwr-mgt', 40, 20, 190)], 
@@ -104,9 +111,9 @@ pin_label_data = [
 Hardware headers have evenly spaced pins - which can be taken advantage of in a loop. These variables were determined by 
 measuring pin locations on the image.
 ```python
-y_offset = 80
+y_offset = 105
 x_offset = 204
-pitch = 40
+pitch = 30
 
 for i, label_data in enumerate(pin_label_data):
     y = y_offset + pitch * i

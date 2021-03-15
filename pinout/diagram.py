@@ -11,15 +11,20 @@ LegendItem = namedtuple('LegendItem',('name tags label'))
 
 class Label:
 
-    PAD = 1
-    CNR = 2
+    default_pad = 1
+    default_cnr = 2
+    default_width = 70
+    default_height = 25
+    default_gap = 5
 
-    def __init__(self, name, tags, width=60, height=20, gap=5):
+    def __init__(self, name, tags, width=None, height=None, gap=None, cnr=None, pad=None):
         self.name = name
+        self.tags = tags.strip()
         self.width = width
         self.height = height
-        self.tags = tags.strip()            # tags used as css classes
-        self.gap = gap                      # Distance to previous box (filled with leader-line)
+        self.gap = gap              # Distance to previous box (filled with leader-line)
+        self.cnr = cnr
+        self.pad = pad
 
 
 class Pin:
@@ -33,7 +38,7 @@ class Pin:
             for label in label_tuples:
                 self.add_label(*label)
     
-    def add_label(self, name, tags=None, width=60, height=20, gap=5):
+    def add_label(self, name, tags=None, width=None, height=None, gap=None):
         self.labels.append(Label(name, tags, width, height, gap))
     
     @property
@@ -64,6 +69,13 @@ class Pin:
         
         for label in self.labels:
 
+            # Update unset properties with defaults
+            label.width = label.width or label.default_width
+            label.height = label.height or label.default_height
+            label.gap = label.gap or label.default_gap       
+            label.cnr = label.cnr or label.default_cnr
+            label.pad = label.pad or label.default_pad
+
             tags = ('label ' + label.tags).strip()
             
             if self.direction == 'right':
@@ -71,8 +83,8 @@ class Pin:
                 output += svg_pin_label.render(
                     x = offset_x,
                     y = -label.height/2,
-                    line = Line(label.PAD, label.gap, label.height/2, label.height/2),
-                    box = Rect(label.gap, 0, label.width, label.height, label.CNR),
+                    line = Line(label.pad, label.gap, label.height/2, label.height/2),
+                    box = Rect(label.gap, 0, label.width, label.height, label.cnr),
                     text = label.name,
                     selectors = tags
                 )
@@ -81,8 +93,8 @@ class Pin:
                 output += svg_pin_label.render(
                     x = (label.width + label.gap + offset_x) * -1,
                     y = label.height / 2 * -1,
-                    line = Line(label.width, label.width + label.gap - label.PAD, label.height/2, label.height/2),
-                    box = Rect(0, 0, label.width, label.height, label.CNR),
+                    line = Line(label.width, label.width + label.gap - label.pad, label.height/2, label.height/2),
+                    box = Rect(0, 0, label.width, label.height, label.cnr),
                     text = label.name,
                     selectors = tags
                 )

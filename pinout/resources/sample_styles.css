@@ -5,8 +5,10 @@
 */
 
 .pinout-diagram{
-    background: #f4f4f4;    
+    background: #f4f4f4; 
+    font-family:verdana, san-serif;    
 }
+
 
 /* 
     # Label styling
@@ -52,4 +54,15 @@
     font-family:verdana, san-serif; 
     font-size: 10px; 
     font-weight: bold;
+}
+
+
+/* Legend */
+.legend{
+    font-size: 13px; 
+}
+
+.legend_box{
+    fill: rgb(232, 232, 232);
+    stroke: #ccc;
 }

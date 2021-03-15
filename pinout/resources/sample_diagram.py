@@ -4,6 +4,18 @@ from pinout import diagram
 pinout_diagram = diagram.Diagram()
 pinout_diagram.stylesheet = 'sample_styles.css'
 
+# Define some label categories/tags and add a legend
+label_categories = [
+    # (name, tag(s), color),
+    ('GPIO', 'gpio'),
+    ('GPI', 'gpi'),
+    ('Analog', 'analog'),
+    ('PWM', 'pwm'),
+    ('Power Management', 'pwr-mgt'),
+]
+pinout_diagram.add_legend(204, -190, 249, 'legend legend-labels', label_categories)
+
+
 # Add an image
 pinout_diagram.add_image(0, 0, 220, 300, 'sample_hardware_board.png')
 

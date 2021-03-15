@@ -118,14 +118,15 @@ class Legend:
 
     ITEM_HEIGHT = 20
     ITEM_PAD = 4
+    TEXT_PAD = 5
     SWATCH_PAD = 5
     INSET = 20
 
-    def __init__(self, x, y, width, items=None, tags=None):
+    def __init__(self, x, y, width, tags='', items=None):
         self.x = x
         self.y = y
         self.width = width
-        self.items = items or {}
+        self.items = items or []
         self.tags = tags
     
     @property
@@ -162,6 +163,7 @@ class Legend:
             y = self.y,
             width = self.width,
             height = self.height,
+            text_pad = self.TEXT_PAD,
             items = items,
             selectors = self.tags
         )
@@ -182,6 +184,9 @@ class Diagram:
         for label_args in label_data:
             pin.add_label(*label_args)
         self.components.append(pin)
+
+    def add_legend(self, x, y, width, tags, items):
+        self.components.append(Legend(x, y, width, tags, items))
 
     def export(self, filename, overwrite=False):
         filepath = Path(filename)

@@ -22,7 +22,7 @@ resources.duplicate()
 # >>> sample_hardware_board.png duplicated.
 # >>> sample_styles.css duplicated.
 ```
-*Spoiler Alert*: 'sample_diagram.py' is a completed script that duplicated the code in this guide.
+*Spoiler Alert*: 'sample_diagram.py' is a completed script that duplicates the code in this guide.
 
 ### Starting a pinout diagram
 
@@ -39,6 +39,21 @@ pinout_diagram.stylesheet = 'sample_styles.css'
 ```
 ### TIP: Component coordinates
 On export the final diagram dimensions are calculated and all components shifted into view (via the SVG viewBox). Consequently, component 'x' and 'y' positioning is relative to each other and not the parent diagram. It is recommended to position your image to make easier calculations for subsequent pin placements.
+
+### Define some label categories/tags and add a legend
+Each tuple in the list becomes an entry on the legend. Use the same tags when defining labels. They become css classes that are used to style the labels.
+
+Arguments - Diagram.add_legend(x, y, width, tags, items). Height is calculated depending on the number of items. 'x', 'y' and 'width' may require some trial-and-error for best alignment. The can be influenced by font choices in your stylesheet and consequently can't be automatically calculated during the render process.  
+```python
+items = [
+    ('GPIO', 'gpio'),
+    ('GPI', 'gpi'),
+    ('Analog', 'analog'),
+    ('PWM', 'pwm'),
+    ('Power Management', 'pwr-mgt'),
+]
+pinout_diagram.add_legend(204, -190, 249, 'legend legend-labels', items)
+```
 
 ### Add an image to the diagram
 The image is linked in the final diagram (not embedded or copied to the export destination). If a relative path is used it must be relative to where the diagram is exported to.

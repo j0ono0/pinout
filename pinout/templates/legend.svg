@@ -6,6 +6,7 @@
         <text 
             dominant-baseline="central" 
             text-anchor="left"
+            x="{{ text_pad }}"
         >{{ item.name }}</text>
     </g>
     {% endfor %}

@@ -1,0 +1,13 @@
+<g class="{{ selectors }}" transform="translate({{ x }} {{ y }})">
+    <rect class="legend_box" x="0" y="0" width="{{ width }}" height="{{ height }}" />
+    {% for item in items %}
+    <g  transform="translate({{ item.x }} {{ item.y }})" class=" legend-item">
+        {{ item.swatch }}
+        <text 
+            dominant-baseline="central" 
+            text-anchor="left"
+        >{{ item.name }}</text>
+    </g>
+    {% endfor %}
+    
+</g>

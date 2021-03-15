@@ -13,3 +13,4 @@ svg_image = env.get_template('image.svg')
 
 # Component SVG templates (made from multiple svg elements)
 svg_pin_label = env.get_template('pin_label.svg')
+svg_legend = env.get_template('legend.svg')

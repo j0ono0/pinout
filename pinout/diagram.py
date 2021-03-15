@@ -1,11 +1,13 @@
 import os
 from pathlib import Path
 from collections import namedtuple
-from .templates import svg_pin_label, svg_group, svg_image, svg
+from itertools import zip_longest
+from .templates import svg_pin_label, svg_group, svg_image, svg_legend, svg
 
 BoundingBox = namedtuple('BoundingBox',('x y w h'))
 Rect = namedtuple('Rect',['x','y','w','h','r'])
 Line = namedtuple('Line',('x1','x2','y1','y2'))
+LegendItem = namedtuple('LegendItem',('name tags label'))
 
 class Label:
 
@@ -101,7 +103,7 @@ class Image:
     @property
     def bounding_box(self):
         return BoundingBox(self.x, self.y, self.width, self.height)
-
+    
     def render(self):
         return svg_image.render(
             x = self.x,
@@ -111,6 +113,59 @@ class Image:
             path = self.path
         )
 
+
+class Legend:
+
+    ITEM_HEIGHT = 20
+    ITEM_PAD = 4
+    SWATCH_PAD = 5
+    INSET = 20
+
+    def __init__(self, x, y, width, items=None, tags=None):
+        self.x = x
+        self.y = y
+        self.width = width
+        self.items = items or {}
+        self.tags = tags
+    
+    @property
+    def height(self):
+        return len(self.items) * (self.ITEM_HEIGHT + self.ITEM_PAD) - self.ITEM_PAD + 2 * self.INSET
+
+    @property
+    def bounding_box(self):
+        return BoundingBox(self.x, self.y - self.ITEM_HEIGHT/2, self.width, self.height)
+
+    def render(self):
+        # Parse user submitted item data
+        items = []
+        keys = ['name','tags','color']
+        for i, values in enumerate(self.items):
+            # Ensure values are a list (ie not a single item in a tuple)
+            if isinstance(values, str):
+                values = [values]
+
+            item = dict(zip_longest(keys, values, fillvalue=''))
+            
+            # Create a pin and blank label as a 'swatch' for each item
+            tags = ('swatch ' + item['tags']).strip()
+            swatch = Pin(0, 0, 'left', [('', tags, 20, 20, 5)])
+            item['swatch'] = swatch.render()
+
+            item['x'] = swatch.width + self.INSET
+            item['y'] = i * (self.ITEM_HEIGHT + self.ITEM_PAD) + (self.ITEM_HEIGHT / 2) + self.INSET
+            items.append(item)
+            
+
+        return svg_legend.render(
+            x = self.x,
+            y = self.y,
+            width = self.width,
+            height = self.height,
+            items = items,
+            selectors = self.tags
+        )
+    
 
 class Diagram:
     def __init__(self):

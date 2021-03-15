@@ -1,4 +1,7 @@
-<g class="{{ selectors }}" transform="translate({{ x }} {{ y }})">
+{% extends 'group.svg' %}
+    
+{% block component %}
+    
     <rect class="legend_box" x="0" y="0" width="{{ width }}" height="{{ height }}" />
     {% for item in items %}
     <g  transform="translate({{ item.x }} {{ item.y }})" class=" legend-item">
@@ -10,5 +13,6 @@
         >{{ item.name }}</text>
     </g>
     {% endfor %}
+
+{% endblock %}
     
-</g>

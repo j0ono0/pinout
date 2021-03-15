@@ -63,6 +63,9 @@ class Pin:
         output = ''
         
         for label in self.labels:
+
+            tags = ('label ' + label.tags).strip()
+            
             if self.direction == 'right':
                 # RHS label
                 output += svg_pin_label.render(
@@ -71,7 +74,7 @@ class Pin:
                     line = Line(label.PAD, label.gap, label.height/2, label.height/2),
                     box = Rect(label.gap, 0, label.width, label.height, label.CNR),
                     text = label.name,
-                    selectors = label.tags
+                    selectors = tags
                 )
             else:
                 # LHS label
@@ -81,7 +84,7 @@ class Pin:
                     line = Line(label.width, label.width + label.gap - label.PAD, label.height/2, label.height/2),
                     box = Rect(0, 0, label.width, label.height, label.CNR),
                     text = label.name,
-                    selectors = label.tags
+                    selectors = tags
                 )
             offset_x += label.width + label.gap
         

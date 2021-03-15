@@ -1,4 +1,6 @@
-<g class="label {{ selectors }}" transform="translate({{ x }} {{ y }})">
+{% extends 'group.svg' %}
+    
+{% block component %}
     
     <line class="label_line" x1="{{ line.x1 }}" x2="{{ line.x2 }}" y1="{{ line.y1 }}" y2="{{ line.y2 }}" shape-rendering="crispEdges" />
     
@@ -13,4 +15,4 @@
         </text>
     </g>
     
-</g>
+{% endblock %}

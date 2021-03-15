@@ -1,3 +1,11 @@
-<g transform="translate({{ x }} {{ y }})">
-    {{ content|safe }}
+<g 
+    {% if selectors %}
+        class="{{ selectors }}" 
+    {% endif %}
+
+    transform="translate({{ x }} {{ y }})">
+
+    {% block component %}
+        {{ content|safe }}
+    {% endblock %}
 </g>

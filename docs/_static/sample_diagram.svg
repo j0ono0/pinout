@@ -1,0 +1,557 @@
+
+<svg  xmlns="http://www.w3.org/2000/svg" 
+    
+    
+    width="728" 
+    height="316" 
+    viewBox="-254 0 728 316"
+    class="pinout-diagram"
+>
+
+
+    <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="../_static/sample_styles.css" type="text/css"/>
+
+
+
+
+    <g 
+    
+        class="legend legend-labels" 
+    
+
+    transform="translate(-230 160)">
+
+    
+    
+    <rect class="legend_box" x="0" y="0" width="200" height="156" />
+    
+    <g  transform="translate(45 30.0)" class=" legend-item">
+        <g 
+    
+
+    transform="translate(0 0)">
+
+    
+        <g 
+    
+        class="label swatch gpio" 
+    
+
+    transform="translate(-25 -10.0)">
+
+    
+    
+    <line class="label_line" x1="20" x2="24" y1="10.0" y2="10.0" shape-rendering="crispEdges" />
+    
+    <g class="label_box"  transform="translate(0 0)">
+        <rect x="0" y="0" width="20" height="20" rx="2" />
+        <text
+            x="10.0" y="10.0" 
+            dominant-baseline="middle" 
+            text-anchor="middle"
+        >
+            
+        </text>
+    </g>
+    
+
+</g>
+    
+</g>
+        <text 
+            dominant-baseline="central" 
+            text-anchor="left"
+            x="5"
+        >GPIO</text>
+    </g>
+    
+    <g  transform="translate(45 54.0)" class=" legend-item">
+        <g 
+    
+
+    transform="translate(0 0)">
+
+    
+        <g 
+    
+        class="label swatch gpi" 
+    
+
+    transform="translate(-25 -10.0)">
+
+    
+    
+    <line class="label_line" x1="20" x2="24" y1="10.0" y2="10.0" shape-rendering="crispEdges" />
+    
+    <g class="label_box"  transform="translate(0 0)">
+        <rect x="0" y="0" width="20" height="20" rx="2" />
+        <text
+            x="10.0" y="10.0" 
+            dominant-baseline="middle" 
+            text-anchor="middle"
+        >
+            
+        </text>
+    </g>
+    
+
+</g>
+    
+</g>
+        <text 
+            dominant-baseline="central" 
+            text-anchor="left"
+            x="5"
+        >GPI</text>
+    </g>
+    
+    <g  transform="translate(45 78.0)" class=" legend-item">
+        <g 
+    
+
+    transform="translate(0 0)">
+
+    
+        <g 
+    
+        class="label swatch analog" 
+    
+
+    transform="translate(-25 -10.0)">
+
+    
+    
+    <line class="label_line" x1="20" x2="24" y1="10.0" y2="10.0" shape-rendering="crispEdges" />
+    
+    <g class="label_box"  transform="translate(0 0)">
+        <rect x="0" y="0" width="20" height="20" rx="2" />
+        <text
+            x="10.0" y="10.0" 
+            dominant-baseline="middle" 
+            text-anchor="middle"
+        >
+            
+        </text>
+    </g>
+    
+
+</g>
+    
+</g>
+        <text 
+            dominant-baseline="central" 
+            text-anchor="left"
+            x="5"
+        >Analog</text>
+    </g>
+    
+    <g  transform="translate(45 102.0)" class=" legend-item">
+        <g 
+    
+
+    transform="translate(0 0)">
+
+    
+        <g 
+    
+        class="label swatch pwm" 
+    
+
+    transform="translate(-25 -10.0)">
+
+    
+    
+    <line class="label_line" x1="20" x2="24" y1="10.0" y2="10.0" shape-rendering="crispEdges" />
+    
+    <g class="label_box"  transform="translate(0 0)">
+        <rect x="0" y="0" width="20" height="20" rx="2" />
+        <text
+            x="10.0" y="10.0" 
+            dominant-baseline="middle" 
+            text-anchor="middle"
+        >
+            
+        </text>
+    </g>
+    
+
+</g>
+    
+</g>
+        <text 
+            dominant-baseline="central" 
+            text-anchor="left"
+            x="5"
+        >PWM</text>
+    </g>
+    
+    <g  transform="translate(45 126.0)" class=" legend-item">
+        <g 
+    
+
+    transform="translate(0 0)">
+
+    
+        <g 
+    
+        class="label swatch pwr-mgt" 
+    
+
+    transform="translate(-25 -10.0)">
+
+    
+    
+    <line class="label_line" x1="20" x2="24" y1="10.0" y2="10.0" shape-rendering="crispEdges" />
+    
+    <g class="label_box"  transform="translate(0 0)">
+        <rect x="0" y="0" width="20" height="20" rx="2" />
+        <text
+            x="10.0" y="10.0" 
+            dominant-baseline="middle" 
+            text-anchor="middle"
+        >
+            
+        </text>
+    </g>
+    
+
+</g>
+    
+</g>
+        <text 
+            dominant-baseline="central" 
+            text-anchor="left"
+            x="5"
+        >Power Management</text>
+    </g>
+    
+
+
+</g><image x="0" y="0" href="_static/sample_hardware_board.png" height="300" width="220"/><g 
+    
+
+    transform="translate(16 105)">
+
+    
+        <g 
+    
+        class="label gpio" 
+    
+
+    transform="translate(-120 -12.5)">
+
+    
+    
+    <line class="label_line" x1="60" x2="119" y1="12.5" y2="12.5" shape-rendering="crispEdges" />
+    
+    <g class="label_box"  transform="translate(0 0)">
+        <rect x="0" y="0" width="60" height="25" rx="2" />
+        <text
+            x="30.0" y="12.5" 
+            dominant-baseline="middle" 
+            text-anchor="middle"
+        >
+            #1
+        </text>
+    </g>
+    
+
+</g><g 
+    
+        class="label analog" 
+    
+
+    transform="translate(-195 -12.5)">
+
+    
+    
+    <line class="label_line" x1="70" x2="74" y1="12.5" y2="12.5" shape-rendering="crispEdges" />
+    
+    <g class="label_box"  transform="translate(0 0)">
+        <rect x="0" y="0" width="70" height="25" rx="2" />
+        <text
+            x="35.0" y="12.5" 
+            dominant-baseline="middle" 
+            text-anchor="middle"
+        >
+            A1
+        </text>
+    </g>
+    
+
+</g><g 
+    
+        class="label pwm" 
+    
+
+    transform="translate(-270 -12.5)">
+
+    
+    
+    <line class="label_line" x1="70" x2="74" y1="12.5" y2="12.5" shape-rendering="crispEdges" />
+    
+    <g class="label_box"  transform="translate(0 0)">
+        <rect x="0" y="0" width="70" height="25" rx="2" />
+        <text
+            x="35.0" y="12.5" 
+            dominant-baseline="middle" 
+            text-anchor="middle"
+        >
+            PWM
+        </text>
+    </g>
+    
+
+</g>
+    
+</g><g 
+    
+
+    transform="translate(16 135)">
+
+    
+        <g 
+    
+        class="label gpio" 
+    
+
+    transform="translate(-120 -12.5)">
+
+    
+    
+    <line class="label_line" x1="60" x2="119" y1="12.5" y2="12.5" shape-rendering="crispEdges" />
+    
+    <g class="label_box"  transform="translate(0 0)">
+        <rect x="0" y="0" width="60" height="25" rx="2" />
+        <text
+            x="30.0" y="12.5" 
+            dominant-baseline="middle" 
+            text-anchor="middle"
+        >
+            #2
+        </text>
+    </g>
+    
+
+</g><g 
+    
+        class="label gpi" 
+    
+
+    transform="translate(-195 -12.5)">
+
+    
+    
+    <line class="label_line" x1="70" x2="74" y1="12.5" y2="12.5" shape-rendering="crispEdges" />
+    
+    <g class="label_box"  transform="translate(0 0)">
+        <rect x="0" y="0" width="70" height="25" rx="2" />
+        <text
+            x="35.0" y="12.5" 
+            dominant-baseline="middle" 
+            text-anchor="middle"
+        >
+            GPI
+        </text>
+    </g>
+    
+
+</g>
+    
+</g><g 
+    
+
+    transform="translate(204 105)">
+
+    
+        <g 
+    
+        class="label pwr-mgt" 
+    
+
+    transform="translate(0 -12.5)">
+
+    
+    
+    <line class="label_line" x1="1" x2="200" y1="12.5" y2="12.5" shape-rendering="crispEdges" />
+    
+    <g class="label_box"  transform="translate(200 0)">
+        <rect x="0" y="0" width="40" height="25" rx="2" />
+        <text
+            x="20.0" y="12.5" 
+            dominant-baseline="middle" 
+            text-anchor="middle"
+        >
+            Vss
+        </text>
+    </g>
+    
+
+</g>
+    
+</g><g 
+    
+
+    transform="translate(204 135)">
+
+    
+        <g 
+    
+        class="label pwr-mgt" 
+    
+
+    transform="translate(0 -12.5)">
+
+    
+    
+    <line class="label_line" x1="1" x2="200" y1="12.5" y2="12.5" shape-rendering="crispEdges" />
+    
+    <g class="label_box"  transform="translate(200 0)">
+        <rect x="0" y="0" width="40" height="25" rx="2" />
+        <text
+            x="20.0" y="12.5" 
+            dominant-baseline="middle" 
+            text-anchor="middle"
+        >
+            GND
+        </text>
+    </g>
+    
+
+</g>
+    
+</g><g 
+    
+
+    transform="translate(204 165)">
+
+    
+        <g 
+    
+        class="label gpi" 
+    
+
+    transform="translate(0 -12.5)">
+
+    
+    
+    <line class="label_line" x1="1" x2="60" y1="12.5" y2="12.5" shape-rendering="crispEdges" />
+    
+    <g class="label_box"  transform="translate(60 0)">
+        <rect x="0" y="0" width="60" height="25" rx="2" />
+        <text
+            x="30.0" y="12.5" 
+            dominant-baseline="middle" 
+            text-anchor="middle"
+        >
+            #6
+        </text>
+    </g>
+    
+
+</g><g 
+    
+        class="label analog" 
+    
+
+    transform="translate(120 -12.5)">
+
+    
+    
+    <line class="label_line" x1="1" x2="5" y1="12.5" y2="12.5" shape-rendering="crispEdges" />
+    
+    <g class="label_box"  transform="translate(5 0)">
+        <rect x="0" y="0" width="70" height="25" rx="2" />
+        <text
+            x="35.0" y="12.5" 
+            dominant-baseline="middle" 
+            text-anchor="middle"
+        >
+            A3
+        </text>
+    </g>
+    
+
+</g><g 
+    
+        class="label gpi" 
+    
+
+    transform="translate(195 -12.5)">
+
+    
+    
+    <line class="label_line" x1="1" x2="5" y1="12.5" y2="12.5" shape-rendering="crispEdges" />
+    
+    <g class="label_box"  transform="translate(5 0)">
+        <rect x="0" y="0" width="70" height="25" rx="2" />
+        <text
+            x="35.0" y="12.5" 
+            dominant-baseline="middle" 
+            text-anchor="middle"
+        >
+            CLK
+        </text>
+    </g>
+    
+
+</g>
+    
+</g><g 
+    
+
+    transform="translate(204 195)">
+
+    
+        <g 
+    
+        class="label gpio" 
+    
+
+    transform="translate(0 -12.5)">
+
+    
+    
+    <line class="label_line" x1="1" x2="60" y1="12.5" y2="12.5" shape-rendering="crispEdges" />
+    
+    <g class="label_box"  transform="translate(60 0)">
+        <rect x="0" y="0" width="60" height="25" rx="2" />
+        <text
+            x="30.0" y="12.5" 
+            dominant-baseline="middle" 
+            text-anchor="middle"
+        >
+            #5
+        </text>
+    </g>
+    
+
+</g><g 
+    
+        class="label analog" 
+    
+
+    transform="translate(120 -12.5)">
+
+    
+    
+    <line class="label_line" x1="1" x2="5" y1="12.5" y2="12.5" shape-rendering="crispEdges" />
+    
+    <g class="label_box"  transform="translate(5 0)">
+        <rect x="0" y="0" width="70" height="25" rx="2" />
+        <text
+            x="35.0" y="12.5" 
+            dominant-baseline="middle" 
+            text-anchor="middle"
+        >
+            A2
+        </text>
+    </g>
+    
+
+</g>
+    
+</g>
+    
+
+</svg>

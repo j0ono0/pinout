@@ -1,6 +1,8 @@
 import pkg_resources
 
 def duplicate():
+    """pinout includes some sample files. These can be duplicated to the working directory and used in conjunction with the official tutorial.
+    """
     files = ['sample_diagram.py','sample_hardware_board.png', 'sample_styles.css']
     resource_package = __name__
     for filename in files:

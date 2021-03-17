@@ -4,31 +4,69 @@ from collections import namedtuple
 from itertools import zip_longest
 from .templates import svg_pin_label, svg_group, svg_image, svg_legend, svg
 
-BoundingBox = namedtuple('BoundingBox',('x y w h'))
-Rect = namedtuple('Rect',['x','y','w','h','r'])
-Line = namedtuple('Line',('x1','x2','y1','y2'))
-LegendItem = namedtuple('LegendItem',('name tags label'))
+_BoundingBox = namedtuple('_BoundingBox',('x y w h'))
+_Rect = namedtuple('_Rect',['x','y','w','h','r'])
+_Line = namedtuple('_Line',('x1','x2','y1','y2'))
 
 class Label:
+    """Create an individual label. Labels must be associated to a Pin to be located and rendered in the final diagram. Pin.add_label() is the recommended method of creating labels.
 
-    default_pad = 1
-    default_cnr = 2
+    :param name: Text that appear on the label.
+    :type name: str
+    :param tags: Applied to the label as css class selector(s). Multiple tags can be included as a space separated list.
+    :type name: str
+    :param width: Width of the label rectangle.
+    :type width: int
+    :param height: Height of the label rectangle.
+    :type height: int
+    :param gap: Space between the label rectangle and proceeding label or pin location. The gap contains a graphical 'leader-line'.
+    :type gap: int
+    :param cnr: Corner radius or teh label rectangle.
+    :type cnr: int
+    :param pad: Blank space between the leader-line and proceeding label or pin location.
+    :type pad: int
+    """
+    
+    #:Default label box width.
     default_width = 70
+
+    #:Default label box height.
     default_height = 25
+
+    #:Default label gap.
     default_gap = 5
 
+    #:Default label box corner-radius.
+    default_cnr = 2
+
+    #:Default label box pad.
+    default_pad = 1
+
     def __init__(self, name, tags, width=None, height=None, gap=None, cnr=None, pad=None):
+        """ Constructor method
+        """
         self.name = name
         self.tags = tags.strip()
         self.width = width
         self.height = height
-        self.gap = gap              # Distance to previous box (filled with leader-line)
+        self.gap = gap
         self.cnr = cnr
         self.pad = pad
 
 
 class Pin:
     def __init__(self, x, y, direction='right', label_tuples=None):
+        """Each Pin documents a location in the diagram and manages position and rendering of labels associated to it.
+
+        :param x: Location of the pin on the x axis 
+        :type x: int
+        :param y: location of the pin on the y axis
+        :type y: int
+        :param direction: Specify which direction labels are to be aligned from the pin location. Valid values are 'left' and 'right'. Defaults to 'right'.
+        :type direction: str, optional
+        :param label_tuples: A list of tuples can be supplied to streamline the pin and label creation process into a single step. Each tuple must represent the required arguments of Pin.add_label(). Defaults to None
+        :type label_tuples: List, optional
+        """
         self.x = x
         self.y = y
         self.labels = []
@@ -39,14 +77,37 @@ class Pin:
                 self.add_label(*label)
     
     def add_label(self, name, tags=None, width=None, height=None, gap=None):
+        """Add a label to the pin. This is the recommended method of creating labels.
+
+        :param name: Text that appear on the label
+        :type name: str
+        :param tags: Applied to the label as css class selector(s). Multiple tags can be included as a space separated list, defaults to None
+        :type tags: str, optional
+        :param width: Width of the label rectangle.
+        :type width: int
+        :param height: Height of the label rectangle.
+        :type height: int
+        :param gap: Space between the label rectangle and proceeding label or pin location. The gap contains a graphical 'leader-line'.
+        :type gap: int
+        """
         self.labels.append(Label(name, tags, width, height, gap))
     
     @property
     def width(self):
+        """The total width of each pin is determined by the collective widths of all labels associated with the pin.
+
+        :return: Sum of all label widths
+        :rtype: int
+        """
         return sum([label.width + label.gap for label in self.labels])
 
     @property
     def height(self):
+        """Each label associated with a pin can have its height independently set. The overall height of the pin is thus dictated by its tallest labels.
+
+        :return: Height of the tallest label.
+        :rtype: int
+        """
         try:
             return max([label.height for label in self.labels])
         except ValueError:
@@ -54,6 +115,11 @@ class Pin:
 
     @property
     def bounding_box(self):
+        """Calculate a rectangular box that documents the bounds and location the rendered object 
+
+        :return: namedTuple documenting x, y, width, and height.
+        :rtype: diagram._BoundingBox
+        """
         if self.direction == 'right':
             # labels sit right of pin
             x = self.x
@@ -61,9 +127,14 @@ class Pin:
             # labels sit left of pin
             x = self.x - self.width
 
-        return BoundingBox(x, self.y - self.height/2, self.width, self.height)
+        return _BoundingBox(x, self.y - self.height/2, self.width, self.height)
 
     def render(self):
+        """Generates SVG tags of all associated labels.
+
+        :return: SVG components
+        :rtype: str
+        """
         offset_x = 0
         output = ''
         
@@ -83,8 +154,8 @@ class Pin:
                 output += svg_pin_label.render(
                     x = offset_x,
                     y = -label.height/2,
-                    line = Line(label.pad, label.gap, label.height/2, label.height/2),
-                    box = Rect(label.gap, 0, label.width, label.height, label.cnr),
+                    line = _Line(label.pad, label.gap, label.height//2, label.height//2),
+                    box = _Rect(label.gap, 0, label.width, label.height, label.cnr),
                     text = label.name,
                     selectors = tags
                 )
@@ -93,8 +164,8 @@ class Pin:
                 output += svg_pin_label.render(
                     x = (label.width + label.gap + offset_x) * -1,
                     y = label.height / 2 * -1,
-                    line = Line(label.width, label.width + label.gap - label.pad, label.height/2, label.height/2),
-                    box = Rect(0, 0, label.width, label.height, label.cnr),
+                    line = _Line(label.width, label.width + label.gap - label.pad, label.height//2, label.height//2),
+                    box = _Rect(0, 0, label.width, label.height, label.cnr),
                     text = label.name,
                     selectors = tags
                 )
@@ -109,6 +180,19 @@ class Pin:
 
 class Image:
     def __init__(self, x, y, width, height, filename):
+        """Include an image in the diagram.
+
+        :param x: Location of the image on the x axis
+        :type x: int
+        :param y: Location of the image on the y axis
+        :type y: int
+        :param width: Width of image in the diagram (may differ from actual image width)
+        :type width: int
+        :param height: Height of the image in the diagram (may differ from actual image height)
+        :type height: int
+        :param filename: Filename, including path, to the image.
+        :type filename: string
+        """
         self.x = x
         self.y = y
         self.path = filename
@@ -117,9 +201,19 @@ class Image:
 
     @property
     def bounding_box(self):
-        return BoundingBox(self.x, self.y, self.width, self.height)
+        """Calculate a rectangular box that documents the bounds and location the rendered object 
+
+        :return: namedTuple documenting x, y, width, and height.
+        :rtype: diagram._BoundingBox
+        """
+        return _BoundingBox(self.x, self.y, self.width, self.height)
     
     def render(self):
+        """Generates and SVG <image> tag linking to the image 'filename'.
+
+        :return: SVG <image> component
+        :rtype: str
+        """
         return svg_image.render(
             x = self.x,
             y = self.y,
@@ -146,13 +240,28 @@ class Legend:
     
     @property
     def height(self):
+        """Legend overall height (calculated dynamically).
+
+        :return: Number of entries * preset item height
+        :rtype: int
+        """
         return len(self.items) * (self.ITEM_HEIGHT + self.ITEM_PAD) - self.ITEM_PAD + 2 * self.INSET
 
     @property
     def bounding_box(self):
-        return BoundingBox(self.x, self.y - self.ITEM_HEIGHT/2, self.width, self.height)
+        """Calculate a rectangular box that documents the bounds and location the rendered object 
+
+        :return: namedTuple documenting x, y, width, and height.
+        :rtype: diagram._BoundingBox
+        """
+        return _BoundingBox(self.x, self.y, self.width, self.height)
 
     def render(self):
+        """Generates SVG code of the legend.
+
+        :return: SVG legend component
+        :rtype: str
+        """
         # Parse user submitted item data
         items = []
         keys = ['name','tags','color']
@@ -185,15 +294,41 @@ class Legend:
     
 
 class Diagram:
+    """Components are collated and the final diagram is exported with this class. A typical diagram will include an image, pins with labels, and a stylesheet.
+    """
     def __init__(self):
         self.components = []
         self.stylesheet = None
         self._rendered = ''
 
     def add_image(self, x, y, width, height, filename):
+        """Create an image component and file it into the diagram in a single action.
+
+        :param x: Location of the image on the x axis
+        :type x: int
+        :param y: Location of the image on the y axis
+        :type y: int
+        :param width: Width of image in the diagram (may differ from actual image width)
+        :type width: int
+        :param height: Height of the image in the diagram (may differ from actual image height)
+        :type height: int
+        :param filename: Filename, including path, to the image.
+        :type filename: string
+        """
         self.components.append(Image(x, y, width, height, filename))
 
     def add_pin(self, x , y, direction='right', label_data=None):
+        """Create a pin component, with associated labels, and file it into the diagram in a single action.
+
+        :param x: Location of the pin on the x axis 
+        :type x: int
+        :param y: location of the pin on the y axis
+        :type y: int
+        :param direction: Specify which direction labels are to be aligned from the pin location. Valid values are 'left' and 'right'. Defaults to 'right'.
+        :type direction: str, optional
+        :param label_data: A tuple with parameters required for Label(), defaults to None
+        :type label_data: [type], optional
+        """
         label_data = label_data or []
         pin = Pin(x, y, direction)
         for label_args in label_data:
@@ -201,9 +336,30 @@ class Diagram:
         self.components.append(pin)
 
     def add_legend(self, x, y, width, tags, items):
+        """Create a legend component and file it into the diagram in a single action.
+
+        :param x: Location of the image on the x axis
+        :type x: int
+        :param y: Location of the image on the y axis
+        :type y: int
+        :param width: Width of the legend component. Set manually as font styling can unexpectedly affect content widths. 
+        :type width: int
+        :param tags: Applied to the legend as css class selector(s). Multiple tags can be included as a space separated list.
+        :type tags: str, optional
+        :param items: List of tuples documenting legend entries and associated tags. eg `[('GPIO', 'gpio'), ('GND', 'pwr-mgt')]`
+        :type items: List
+        """
         self.components.append(Legend(x, y, width, tags, items))
 
     def export(self, filename, overwrite=False):
+        """Output an SVG formatted diagram.
+
+        :param filename: filename and path for exporting.
+        :type filename: str
+        :param overwrite: If set to False, export function aborts if the file already exists avoiding accidental overwriting. Defaults to False.
+        :type overwrite: bool, optional
+        """
+
         filepath = Path(filename)
         
         if filepath.is_file() and not overwrite:
@@ -229,7 +385,7 @@ class Diagram:
                     y = 0,
                     width = viewbox_w,
                     height = viewbox_h,
-                    viewbox = BoundingBox(viewbox_x, viewbox_y, viewbox_w, viewbox_h),
+                    viewbox = _BoundingBox(viewbox_x, viewbox_y, viewbox_w, viewbox_h),
                     selectors = 'pinout-diagram',
                     rendered_components = self._rendered,
                     stylesheet = self.stylesheet,

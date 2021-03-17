@@ -1,13 +1,15 @@
-# PinOut
+# pinout
 
 A Python package that generates hardware pinout diagrams as SVG images. The package is designed to be quite flexible and works well for general 'pinning' labels to an image.
+
+![Example diagram created from pinout: micropython pin-out on Adafruit Huzzah32 ESP32 Feather Board.](/pinout/docs/_static/huzzah32_pinout.png)
 
 ## How to use
 Some demonstration code and notes are a quick way to get started. Browsing the source code is recommended in the absence of more detailed explaination. The guide here walks through creating a diagram, add an image and some labels. Then finally exporting the resulting SVG graphic. 
 
 ### Setup
 
-Using a virtual environment is recommended; Start by installing the *PinOut* diagram package. Either clone this repo and pip install it or it can be installed directly from github...
+Using a virtual environment is recommended; Start by installing the *pinout* diagram package. Either clone this repo and pip install it or it can be installed directly from github...
 ```
 pip install git+https://github.com/j0ono0/pinout@main
 ```
@@ -53,7 +55,7 @@ items = [
     ('PWM', 'pwm'),
     ('Power Management', 'pwr-mgt'),
 ]
-pinout_diagram.add_legend(204, -190, 249, 'legend legend-labels', items)
+pinout_diagram.add_legend(-230, 160, 200, 'legend legend-labels', label_categories)
 ```
 
 ### Add an image to the diagram
@@ -79,7 +81,7 @@ Add some labels to the pin
 Note: label width, height, and gap to next label, can be 
 controlled per label and override default settings.
 ```python
-leftpin.add_label('#1', 'gpio', 60, 25, 60)
+leftpin.add_label('#1', 'gpio', 70, 25, 50)
 leftpin.add_label('A1', 'analog')
 leftpin.add_label('PWM', 'pwm')
 ```
@@ -93,13 +95,13 @@ pinout_diagram.components.append(leftpin)
 
 The fast - and recommended - way.
 ```python
-label_data = [('#2', 'gpio',60, 25, 60),('GPI', 'gpi')]  
+label_data = [('#2', 'gpio',70, 25, 50),('GPI', 'gpi')] 
 pinout_diagram.add_pin(16, 135, 'left', label_data)
 ```
 
 With a little 'python-foo' this process can be streamlined dramatically
 ```python
-custom_specs = (60, 25, 60) 
+custom_specs = (70, 25, 50) 
 pin_label_data = [
         [('Vss', 'pwr-mgt', 40, 20, 190)], 
         [('GND', 'pwr-mgt', 40, 20, 190)], 

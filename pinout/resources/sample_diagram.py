@@ -13,7 +13,7 @@ label_categories = [
     ('PWM', 'pwm'),
     ('Power Management', 'pwr-mgt'),
 ]
-pinout_diagram.add_legend(204, -190, 249, 'legend legend-labels', label_categories)
+pinout_diagram.add_legend(-230, 160, 200, 'legend legend-labels', label_categories)
 
 # Add an image
 pinout_diagram.add_image(0, 0, 220, 300, 'sample_hardware_board.png')
@@ -26,7 +26,7 @@ diagram.Label.default_gap = 5
 # Add a pin and labels (the slow way)
 leftpin = diagram.Pin(16, 105, 'left')
 
-leftpin.add_label('#1', 'gpio', 60, 25, 60)
+leftpin.add_label('#1', 'gpio', 70, 25, 50)
 leftpin.add_label('A1', 'analog')
 leftpin.add_label('PWM', 'pwm')
 
@@ -37,7 +37,7 @@ label_data = [('#2', 'gpio',60, 25, 60),('GPI', 'gpi')]
 pinout_diagram.add_pin(16, 135, 'left', label_data)
 
 # Add multiple pins and labels with some python-foo!
-custom_specs = (60, 25, 60) 
+custom_specs = (70, 25, 50)
 pin_label_data = [
         [('Vss', 'pwr-mgt', 40, 20, 190)], 
         [('GND', 'pwr-mgt', 40, 20, 190)], 

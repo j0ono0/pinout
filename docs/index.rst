@@ -6,7 +6,7 @@
 **pinout**
 ==========
 
-SVG diagram creation from Python code - **pinout** provides an easy method of creating pin-out diagrams for electronic hardware.
+SVG diagrams creation from Python code - **pinout** provides an easy method of creating pin-out diagrams for electronic hardware.
 
 .. figure:: _static/huzzah32_pinout.*
 

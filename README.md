@@ -2,7 +2,7 @@
 
 A Python package that generates hardware pinout diagrams as SVG images. The package is designed to be quite flexible and works well for general 'pinning' labels to an image.
 
-![Example diagram created from pinout: micropython pin-out on Adafruit Huzzah32 ESP32 Feather Board.](/pinout/docs/_static/huzzah32_pinout.png)
+![Example diagram created from pinout: micropython pin-out on Adafruit Huzzah32 ESP32 Feather Board.](docs/_static/huzzah32_pinout.png)
 
 ## How to use
 Some demonstration code and notes are a quick way to get started. Browsing the source code is recommended in the absence of more detailed explaination. The guide here walks through creating a diagram, add an image and some labels. Then finally exporting the resulting SVG graphic. 

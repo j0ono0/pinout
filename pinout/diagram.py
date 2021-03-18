@@ -298,7 +298,7 @@ class Diagram:
     """
     def __init__(self):
         self.components = []
-        self.stylesheet = None
+        self.stylesheets = []
         self._rendered = ''
 
     def add_image(self, x, y, width, height, filename):
@@ -316,6 +316,14 @@ class Diagram:
         :type filename: string
         """
         self.components.append(Image(x, y, width, height, filename))
+
+    def add_stylesheet(self, filename):
+        """Link an external stylesheet to the diagram. Multiple stylesheets can be added. They are referenced in the order added, this may be important where one style overrides another.
+
+        :param filename: filename of stylesheet (include path to file)
+        :type filename: str
+        """
+        self.stylesheets.append(filename)
 
     def add_pin(self, x , y, direction='right', label_data=None):
         """Create a pin component, with associated labels, and file it into the diagram in a single action.
@@ -351,7 +359,17 @@ class Diagram:
         """
         self.components.append(Legend(x, y, width, tags, items))
 
-    def export(self, filename, overwrite=False):
+    def export(self, filename, embed_styles=True, overwrite=False):
+        """Output diagram in SVG format. 
+
+        :param filename: filename and path for exporting.
+        :type filename: str
+        :param embed_styles: Collates and embeds stylesheets as styles in the SVG file, defaults to True
+        :type embed_styles: bool, optional
+        :param overwrite: [description], defaults to False
+        :type overwrite: bool, optional
+        """
+
         """Output an SVG formatted diagram.
 
         :param filename: filename and path for exporting.
@@ -365,6 +383,12 @@ class Diagram:
         if filepath.is_file() and not overwrite:
             print('This file already exists! To enable overwrite add \'overwrite=True\' to the Diagram.export arguments.')
             return
+
+        styles = ''
+        if embed_styles:
+            for stylesheet in self.stylesheets:
+                with open(stylesheet, 'r') as f:
+                    styles += f.read()
 
         for pin in self.components:
             self._rendered += pin.render()
@@ -388,7 +412,8 @@ class Diagram:
                     viewbox = _BoundingBox(viewbox_x, viewbox_y, viewbox_w, viewbox_h),
                     selectors = 'pinout-diagram',
                     rendered_components = self._rendered,
-                    stylesheet = self.stylesheet,
+                    stylesheets = self.stylesheets,
+                    styles = styles or None
                 )  
             )
             print(f'\'{filename}\' exported successfully.')

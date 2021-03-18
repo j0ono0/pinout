@@ -1,5 +1,7 @@
 
-<svg  xmlns="http://www.w3.org/2000/svg" 
+<svg  
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
     {% if x %} x="{{ x }}" {% endif %}
     {% if y %} y="{{ y }}" {% endif %}
     width="{{ width }}" 
@@ -7,9 +9,20 @@
     viewBox="{{ viewbox.x }} {{ viewbox.y }} {{ viewbox.w }} {{ viewbox.h }}"
     class="{{ selectors }}"
 >
-
-{% if stylesheet %}
-    <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="{{ stylesheet }}" type="text/css"/>
+{% if stylesheets and not styles %}
+    {% for filename in stylesheets %}
+    <link 
+        xmlns="http://www.w3.org/1999/xhtml" 
+        rel="stylesheet"
+        href="{{ filename }}" 
+        type="text/css"
+    />
+    {% endfor %}
+{% endif %}
+{% if styles %}
+<style>
+    {{ styles }}
+</style>
 {% endif %}
 
 {% block body %}

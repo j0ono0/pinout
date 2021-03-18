@@ -1,1 +1,1 @@
-<image x="{{ x }}" y="{{ y }}" href="{{ path }}" height="{{ height }}" width="{{ width }}"/>
+<image x="{{ x }}" y="{{ y }}" href="{{ path }}" xlink:href="{{ path }}" height="{{ height }}" width="{{ width }}"/>

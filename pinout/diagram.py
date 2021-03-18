@@ -1,8 +1,11 @@
 import os
+import random
+import math
+import base64
 from pathlib import Path
 from collections import namedtuple
 from itertools import zip_longest
-from .templates import svg_pin_label, svg_group, svg_image, svg_legend, svg
+from .templates import svg_pin_label, svg_group, svg_image, svg_legend, svg, stylesheet
 
 _BoundingBox = namedtuple('_BoundingBox',('x y w h'))
 _Rect = namedtuple('_Rect',['x','y','w','h','r'])
@@ -209,7 +212,7 @@ class Image:
         return _BoundingBox(self.x, self.y, self.width, self.height)
     
     def render(self):
-        """Generates and SVG <image> tag linking to the image 'filename'.
+        """Generates SVG <image> tag **linking** to the image 'filename'.
 
         :return: SVG <image> component
         :rtype: str
@@ -220,6 +223,24 @@ class Image:
             width = self.width,
             height = self.height,
             path = self.path
+        )
+
+    def render_base64(self):
+        """Generates SVG <image> tag **embedding** the image 'filename' as base64 encoded data. This feature assumes images have a predictable suffix indicating the file type.
+
+        :return: SVG <image> component
+        :rtype: str
+        """
+
+        media_type = self.path.split('.')[-1]
+        encoded_img = base64.b64encode(open(self.path, "rb").read())
+        
+        return svg_image.render(
+            x = self.x,
+            y = self.y,
+            width = self.width,
+            height = self.height,
+            path = 'data:image/{};base64,'.format(media_type) + encoded_img.decode('utf-8')
         )
 
 
@@ -299,7 +320,6 @@ class Diagram:
     def __init__(self):
         self.components = []
         self.stylesheets = []
-        self._rendered = ''
 
     def add_image(self, x, y, width, height, filename):
         """Create an image component and file it into the diagram in a single action.
@@ -359,21 +379,52 @@ class Diagram:
         """
         self.components.append(Legend(x, y, width, tags, items))
 
-    def export(self, filename, embed_styles=True, overwrite=False):
+
+    def luminace(self, color_component):
+        i = float(color_component) / 255 
+
+        if i < 0.03928:
+            return i / 12.92
+        else:
+            return (( i + 0.055 ) / 1.055 ) ** 2.4
+        
+    def relative_luminance(self, rgb):
+        return 0.2126 * self.luminace(rgb[0]) + 0.7152 * self.luminace(rgb[1]) + 0.0722 * self.luminace(rgb[2]) 
+
+    def random_contrasting_rgb(self, ref_color):
+        contrast = 0
+        while contrast < 3:
+            rgb = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+            lt = ref_color if sum(ref_color) > sum(rgb) else rgb
+            dk = ref_color if sum(ref_color) < sum(rgb) else rgb
+
+            contrast = ( self.relative_luminance(lt) + 0.05 ) / ( self.relative_luminance(dk) + 0.05 )
+        return rgb
+
+    def build_css(self):
+        labels = [[l.tags for l in c.labels] for c in self.components if isinstance(c, Pin)]
+        labelset = set([tag for lbl in labels for tag in lbl])
+        
+        label_font_size = math.floor(Label.default_height * (3/5))
+        label_text_color = (255,255,255)
+        
+        return stylesheet.render(
+            legend = [(l.capitalize(), l, 'rgb' + str(self.random_contrasting_rgb(label_text_color))) for l in labelset],
+            legend_font_size = max(13, label_font_size),
+            label_font_size = label_font_size,
+            label_text_color = 'rgb' + str(label_text_color),
+        )
+
+
+    def export(self, filename, embed_styles=True, embed_images=False, overwrite=False):
         """Output diagram in SVG format. 
 
         :param filename: filename and path for exporting.
         :type filename: str
         :param embed_styles: Collates and embeds stylesheets as styles in the SVG file, defaults to True
         :type embed_styles: bool, optional
-        :param overwrite: [description], defaults to False
-        :type overwrite: bool, optional
-        """
-
-        """Output an SVG formatted diagram.
-
-        :param filename: filename and path for exporting.
-        :type filename: str
+        :param embed_images: Base64 encodes images and embeds them in the SVG file, defaults to False
+        :type embed_styles: bool, optional
         :param overwrite: If set to False, export function aborts if the file already exists avoiding accidental overwriting. Defaults to False.
         :type overwrite: bool, optional
         """
@@ -383,15 +434,25 @@ class Diagram:
         if filepath.is_file() and not overwrite:
             print('This file already exists! To enable overwrite add \'overwrite=True\' to the Diagram.export arguments.')
             return
-
+        
         styles = ''
+        rendered_components = ''
+        defs = ''
+
+        # Generate styles if none supplied
+        if not self.stylesheets:
+            styles += self.build_css()
+
         if embed_styles:
             for stylesheet in self.stylesheets:
                 with open(stylesheet, 'r') as f:
                     styles += f.read()
 
-        for pin in self.components:
-            self._rendered += pin.render()
+        for component in self.components:
+            if isinstance(component, Image) and embed_images:
+                rendered_components += component.render_base64()
+            else:
+                rendered_components += component.render()
         
         viewbox_x = min([p.bounding_box.x for p in self.components])
         viewbox_y = min([p.bounding_box.y for p in self.components])
@@ -411,7 +472,7 @@ class Diagram:
                     height = viewbox_h,
                     viewbox = _BoundingBox(viewbox_x, viewbox_y, viewbox_w, viewbox_h),
                     selectors = 'pinout-diagram',
-                    rendered_components = self._rendered,
+                    rendered_components = rendered_components,
                     stylesheets = self.stylesheets,
                     styles = styles or None
                 )  

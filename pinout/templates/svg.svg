@@ -9,6 +9,7 @@
     viewBox="{{ viewbox.x }} {{ viewbox.y }} {{ viewbox.w }} {{ viewbox.h }}"
     class="{{ selectors }}"
 >
+
 {% if stylesheets and not styles %}
     {% for filename in stylesheets %}
     <link 
@@ -27,7 +28,7 @@
 
 {% block body %}
 
-    {{ rendered_components|safe }}
+    {{ rendered_components }}
     
 {% endblock %}
 </svg>

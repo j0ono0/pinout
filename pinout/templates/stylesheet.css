@@ -1,0 +1,32 @@
+
+/* Diagram styles */
+.pinout-diagram{
+    font-family:Trebuchet, Tahoma, Verdana, sans-serif;  
+}
+
+{% if legend %}
+/* Label styles */
+{% for entry in legend %}
+.{{ entry[1] }} .label_box rect{ fill: {{ entry[2] }} }
+.{{ entry[1] }} .label_line{ stroke:   {{ entry[2] }} }
+{% endfor %}
+{% endif %}
+
+
+.label text{
+    fill: {{ label_text_color }};
+    font-family:verdana, san-serif; 
+    font-size: {{ label_font_size }}px; 
+    font-weight: bold;
+}
+
+
+/* Legend */
+.legend{
+    font-size: {{ legend_font_size }}px; 
+}
+
+.legend_box{
+    fill: rgb(247, 247, 247);
+    stroke: rgb(204, 204, 204);
+}

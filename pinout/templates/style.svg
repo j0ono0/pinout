@@ -1,0 +1,8 @@
+<style  type="text/css">
+{% if filepath %}
+    @import url("{{ filepath }}");
+{% endif %}
+{% if css_data %}
+    {{ css_data }}
+{% endif %}
+</style>

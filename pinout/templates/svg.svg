@@ -10,22 +10,6 @@
     class="{{ selectors }}"
 >
 
-{% if stylesheets and not styles %}
-    {% for filename in stylesheets %}
-    <link 
-        xmlns="http://www.w3.org/1999/xhtml" 
-        rel="stylesheet"
-        href="{{ filename }}" 
-        type="text/css"
-    />
-    {% endfor %}
-{% endif %}
-{% if styles %}
-<style>
-    {{ styles }}
-</style>
-{% endif %}
-
 {% block body %}
 
     {{ rendered_components }}

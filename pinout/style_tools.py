@@ -4,7 +4,7 @@ import math
 from pathlib import Path
 from .components import Pin, Label
 from .templates import stylesheet
-
+from . import file_manager
     
 def luminace(color_component):
     i = float(color_component) / 255 
@@ -31,11 +31,7 @@ def export_default_css(style_data, svgpath, overwrite=False):
     csspath = Path(svgpath.parent, '{}.css'.format(cssname))
     if not overwrite:
         # Ensure filename is unique
-        count = 0
-        while csspath.is_file():
-            count += 1
-            csspath = Path(svgpath.parent, '{}_{}.css'.format(cssname, count))
-    
+        csspath = file_manager.unique_filepath(csspath)
     csspath.touch(exist_ok=True)
     csspath.write_text(style_data)
     return csspath

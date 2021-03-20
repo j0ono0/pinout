@@ -4,6 +4,7 @@ from collections import namedtuple
 from itertools import zip_longest
 from .templates import svg
 from . import style_tools
+from . import file_manager
 from .components import Pin, Label, Legend, Image, StyleSheet, _BoundingBox
 
 
@@ -89,14 +90,7 @@ class Diagram:
         svgpath = Path(svgname)
         svgpath.parent.mkdir(parents=True, exist_ok=True)
         if not overwrite:
-            name = svgpath.name[:-len(svgpath.suffix)]
-            suffix = svgpath.suffix or '.svg'
-            path = svgpath.parent 
-            count = 0
-            while svgpath.is_file():
-                count += 1
-                svgpath = Path(path, '{}_{}{}'.format(name, count, suffix))
-        
+            svgpath = file_manager.unique_filepath(svgpath)
         svgpath.touch(exist_ok=True)
 
         styles = ''

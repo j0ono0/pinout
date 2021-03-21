@@ -22,6 +22,17 @@ def unique_filepath(filepath):
 
 
 def export_file(content, path, overwrite=False):
+    """Create a file and export content to it. If overwrite is False a new filename is generated.
+
+    :param content: Text data to be written to file
+    :type content: str
+    :param path: Path, including filename, for the file to be created
+    :type path: str
+    :param overwrite: Dictate if an existing file should be overwritten. If False 'path' is amended to be a unique filename, defaults to False
+    :type overwrite: bool, optional
+    :return: Actual path the file was written to. Note: this may differ from supplied 'path' if 'overwrite' is False)
+    :rtype: str
+    """
     if isinstance(path, str):
         path = Path(path)
     if not overwrite:

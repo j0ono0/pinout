@@ -78,11 +78,11 @@ class Diagram:
         self.components.append(Legend(x, y, width, tags, items))
 
     def export(self, svgname, overwrite=False):
-        """Output diagram in SVG format. 
+        """Output the diagram in SVG format. If no stylesheet(s) are included one will be generated automatically and linked to. See style_tools.default_css() for more details.
 
         :param svgname: Name of svg file to be created, including path to export.
         :type svgname: str
-        :param overwrite: If set to False, export function aborts if the file already exists avoiding accidental overwriting. Defaults to False.
+        :param overwrite: When set to False, this function aborts if the file already exists avoiding accidental overwriting. Defaults to False.
         :type overwrite: bool, optional
         """
 

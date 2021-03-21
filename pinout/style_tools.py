@@ -48,6 +48,13 @@ def random_contrasting_rgb(ref_color):
     return rgb
 
 def default_css(diagram):
+    """Generate a stylesheet using metrics from a diagram. Various styles are tailored by making a *best-guess* based on diagram component dimensions or a *lucky-guess* filtered by preset criteria. The output should be considered a boot-strapping step to styling a diagram ...unless you feel lucky!
+
+    :param diagram: The Diagram object requiring styling
+    :type diagram: Diagram
+    :return: content of a css stylesheet with all required styles to display a diagram.
+    :rtype: str
+    """
     labels = [[l.tags for l in c.labels] for c in diagram.components if isinstance(c, Pin)]
     labelset = set([tag for lbl in labels for tag in lbl])
     

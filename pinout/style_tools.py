@@ -7,6 +7,13 @@ from .templates import stylesheet
 from . import file_manager
     
 def luminace(color_component):
+    """Luminance of an individual Red, Green, or Blue, color component.
+
+    :param color_component: Value between 0 and 255 (inclusive)
+    :type color_component: int
+    :return: Luminance value of the color component
+    :rtype: float
+    """
     i = float(color_component) / 255 
 
     if i < 0.03928:
@@ -15,9 +22,23 @@ def luminace(color_component):
         return (( i + 0.055 ) / 1.055 ) ** 2.4
     
 def relative_luminance(rgb):
+    """Normalised luminance value of an RGB color.
+
+    :param rgb: Tuple (or List) representing RGB value.
+    :type rgb: tuple
+    :return: Value between 0 and 1.
+    :rtype: float
+    """
     return 0.2126 * luminace(rgb[0]) + 0.7152 * luminace(rgb[1]) + 0.0722 * luminace(rgb[2]) 
 
 def random_contrasting_rgb(ref_color):
+    """Generate a psudo-random color that, compared to 'ref_color', has a contrast ratio greater than 3. This contrast value is the minimum value to pass WCAG AA contrast recommendation for UI components. 
+
+    :param ref_color: Tuple (or List) representing RGB value.
+    :type ref_color: tuple
+    :return: Tuple representing an RGB color.
+    :rtype: tuple
+    """
     contrast = 0
     while contrast < 3:
         rgb = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
@@ -25,16 +46,6 @@ def random_contrasting_rgb(ref_color):
         dk = ref_color if sum(ref_color) < sum(rgb) else rgb
         contrast = ( relative_luminance(lt) + 0.05 ) / ( relative_luminance(dk) + 0.05 )
     return rgb
-
-def export_default_css(style_data, svgpath, overwrite=False):
-    cssname = svgpath.name[:-len(svgpath.suffix)]
-    csspath = Path(svgpath.parent, '{}.css'.format(cssname))
-    if not overwrite:
-        # Ensure filename is unique
-        csspath = file_manager.unique_filepath(csspath)
-    csspath.touch(exist_ok=True)
-    csspath.write_text(style_data)
-    return csspath
 
 def default_css(diagram):
     labels = [[l.tags for l in c.labels] for c in diagram.components if isinstance(c, Pin)]

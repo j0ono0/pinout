@@ -100,8 +100,12 @@ class Diagram:
         stylesheets = [s for s in self.components if isinstance(s, StyleSheet)]
         if not stylesheets:
             default_css = style_tools.default_css(self)
-            csspath = style_tools.export_default_css(default_css, svgpath, overwrite)
-            self.components.insert(0, StyleSheet(csspath.name))
+            cssname = svgpath.name[:-len(svgpath.suffix)]
+            csspath = Path(svgpath.parent, '{}.css'.format(cssname))
+            # File name may change if overwrite is False
+            actual_csspath = file_manager.export_file(default_css, csspath, overwrite)
+            
+            self.components.insert(0, StyleSheet(actual_csspath.name))
 
         # Render all components
         for component in self.components:

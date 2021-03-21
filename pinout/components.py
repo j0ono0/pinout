@@ -1,4 +1,5 @@
 import base64
+from itertools import zip_longest
 from pathlib import Path
 from collections import namedtuple
 from .templates import svg_pin_label, svg_group, svg_image, svg_legend, svg_style

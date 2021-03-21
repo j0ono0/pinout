@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
 from collections import namedtuple
-from itertools import zip_longest
 from .templates import svg
 from . import style_tools
 from . import file_manager

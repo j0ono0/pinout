@@ -3,9 +3,9 @@
 Tutorial
 ===============
 
-This tutorial walks through the features available in *pinout* and duplicates code from *sample_diagram.py* (see :ref:`quickstart`). For more details - and in the absence of detailed feature documentation (currently in development) - browsing the source code is recommended.
+This tutorial walks through the features available in *pinout* and duplicates code from *sample_diagram.py* (see :ref:`quickstart`).
 
-*Before you start*: Each diagram requires a stylesheet and hardware image to display successfully. If you haven't already, please read the :ref:`install` section that includes access to samples files.
+*Before you start*: Each diagram requires a hardware image and stylesheet to display successfully. If you haven't already, please read the :ref:`install` section that includes access to samples files.
 
 .. figure:: _static/finished_sample_diagram.*
 
@@ -14,20 +14,24 @@ This tutorial walks through the features available in *pinout* and duplicates co
 Start a new diagram
 -------------------
 
-Start by importing the pinout diagram module::
+Start by importing the pinout diagram module and creating a new diagram object::
 
     from pinout import diagram
-
-Create a new diagram and add a stylesheet::
-
+    
     pinout_diagram = diagram.Diagram()
-    pinout_diagram.stylesheet = 'sample_styles.css'
+
+Add a stylesheet
+----------------
+
+Strictly speaking this step is optional as *pinout* will create a stylesheet for you in the absence of one but relies on some guess work so output may vary. To ensure a predictable outcome add `sample_styles.css` to the diagram::
+    
+    pinout_diagram.add_stylesheet('sample_styles.css')
 
 
 Add an image
 ------------
 
-Adding an image is straightforward, note the image is *linked* in the final diagram (not embedded or copied to the destination folder). If a relative path is used it must be relative to where the diagram is exported::
+Adding an image is similar to the stylesheet. The extra arguments are *x*, *y*, *width*, and *height*. All function are documented with more detail in the :ref:`modules` section::
 
     pinout_diagram.add_image(0, 0, 220, 300, 'sample_hardware_board.png')
 
@@ -145,3 +149,16 @@ The final diagram can be exported as a graphic in SVG format and should match th
 
     # expected output:
     # > 'sample_diagram.svg' exported successfully.
+
+The most convenient method of viewing the newly exported SVG file is with your browser.
+
+Next steps
+----------
+
+This guide has glossed over many argument definitions used in functions. Experimenting with changing values and re-exporting the diagram will quickly reveal their purpose. All function are also documented in the :ref:`modules` section.
+
+Rerunning this guide with no css file added to the diagram will create an auto-generated stylesheet. It makes some educated guesses about approriate styles and is a handy method for 'bootstrapping' a stylesheet for your own diagrams.
+
+Depending on you intended usage embedding the stylesheet and/or image (the latter via base64 encoding) can be implemented by adding `embed=True` to as an argument when adding those components.
+
+**TIP:** Embedding the image and styles allows the SVG display correctly in InkScape. This might be an appealing work-flow option for encorporating the diagram into other media.

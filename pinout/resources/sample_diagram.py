@@ -2,7 +2,12 @@ from pinout import diagram
 
 # Create a new diagram
 pinout_diagram = diagram.Diagram()
-pinout_diagram.stylesheet = 'sample_styles.css'
+
+# Add a stylesheet
+pinout_diagram.add_stylesheet('sample_styles.css')
+
+# Add an image
+pinout_diagram.add_image(0, 0, 220, 300, 'sample_hardware_board.png')
 
 # Define some label categories/tags and add a legend
 label_categories = [
@@ -14,9 +19,6 @@ label_categories = [
     ('Power Management', 'pwr-mgt'),
 ]
 pinout_diagram.add_legend(-230, 160, 200, 'legend legend-labels', label_categories)
-
-# Add an image
-pinout_diagram.add_image(0, 0, 220, 300, 'sample_hardware_board.png')
 
 # Set default values for labels
 diagram.Label.default_width = 70
@@ -33,14 +35,14 @@ leftpin.add_label('PWM', 'pwm')
 pinout_diagram.components.append(leftpin)
 
 # Add a Pin and add Labels (the fast way)
-label_data = [('#2', 'gpio',60, 25, 60),('GPI', 'gpi')]  
+label_data = [('#2', 'gpio',70, 25, 50),('GPI', 'gpi')]  
 pinout_diagram.add_pin(16, 135, 'left', label_data)
 
 # Add multiple pins and labels with some python-foo!
 custom_specs = (70, 25, 50)
 pin_label_data = [
-        [('Vss', 'pwr-mgt', 40, 20, 190)], 
-        [('GND', 'pwr-mgt', 40, 20, 190)], 
+        [('Vss', 'pwr-mgt', 40, 20, 200)], 
+        [('GND', 'pwr-mgt', 40, 20, 200)], 
         [('#6', 'gpi',*custom_specs),('A3', 'analog'),('CLK', 'gpi')], 
         [('#5', 'gpio',*custom_specs),('A2', 'analog')], 
     ]

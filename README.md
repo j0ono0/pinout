@@ -2,7 +2,7 @@
 
 ![GitHub](https://img.shields.io/github/license/j0ono0/pinout) ![GitHub last commit](https://img.shields.io/github/last-commit/j0ono0/pinout) ![Read the Docs](https://img.shields.io/readthedocs/pinout)
 
-SVG diagrams creation from Python code - **pinout** provides an easy method of creating pin-out diagrams for electronic hardware.
+SVG diagram creation from Python code - **pinout** provides an easy method of creating pin-out diagrams for electronic hardware.
 
 <p align="center">
     <img alt="Example diagram created from pinout: micropython pin-out on Adafruit Huzzah32 ESP32 Feather Board." src="docs/_static/huzzah32_pinout.png" />

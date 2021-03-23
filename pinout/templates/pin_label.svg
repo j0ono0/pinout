@@ -1,10 +1,8 @@
 {% extends 'group.svg' %}
     
 {% block component %}
-    
-    <line class="label_line" x1="{{ line.x1 }}" x2="{{ line.x2 }}" y1="{{ line.y1 }}" y2="{{ line.y2 }}" shape-rendering="crispEdges" />
-    
-    <g class="label_box"  transform="translate({{ box.x }} {{ box.y }})">
+    <path d="{{ leaderline }}" fill="none" stroke="#f0f"/>
+    <g class="label_box" transform="translate({{ box.x }} {{ box.y }})">
         <rect x="0" y="0" width="{{ box.w }}" height="{{ box.h }}" rx="{{ box.r }}" />
         <text
             x="{{ box.w/2 }}" y="{{ box.h/2 }}" 

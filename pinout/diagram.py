@@ -42,7 +42,7 @@ class Diagram:
         """
         self.components.append(StyleSheet(filepath, embed))
 
-    def add_pin(self, x , y, direction='right', label_data=None):
+    def add_pin(self, x , y, label_x=None, label_y=None, label_data=None):
         """Create a pin component, with associated labels, and file it into the diagram in a single action.
 
         :param x: Location of the pin on the x axis 
@@ -55,9 +55,7 @@ class Diagram:
         :type label_data: [type], optional
         """
         label_data = label_data or []
-        pin = Pin(x, y, direction)
-        for label_args in label_data:
-            pin.add_label(*label_args)
+        pin = Pin(x, y, label_x, label_y, label_data)
         self.components.append(pin)
 
     def add_legend(self, x, y, width, tags, items):

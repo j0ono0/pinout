@@ -8,6 +8,7 @@ from .templates import svg_pin_label, svg_group, svg_image, svg_legend, svg_styl
 _BoundingBox = namedtuple('_BoundingBox',('x y w h'))
 _Rect = namedtuple('_Rect',['x','y','w','h','r'])
 _Line = namedtuple('_Line',('x1','x2','y1','y2'))
+_Coords = namedtuple('_Coords',('x y'))
 
 
 
@@ -50,31 +51,53 @@ class Label:
         """
         self.name = name
         self.tags = tags.strip()
-        self.width = width
-        self.height = height
-        self.gap = gap
-        self.cnr = cnr
-        self.pad = pad
+        self._width = width
+        self._height = height
+        self._gap = gap
+        self._cnr = cnr
+        self._pad = pad
+
+    @property
+    def width(self):
+        return self._width or Label.default_width
+
+    @property
+    def height(self):
+        return self._height or Label.default_height
+
+    @property
+    def gap(self):
+        return self._gap or Label.default_gap
+
+    @property
+    def cnr(self):
+        return self._cnr or Label.default_cnr
+
+    @property
+    def pad(self):
+        return self._pad or Label.default_pad
 
 
 class Pin:
-    def __init__(self, x, y, direction='right', label_tuples=None):
+    def __init__(self, x, y, label_x=None, label_y=None, label_tuples=None):
         """Each Pin documents a location in the diagram and manages position and rendering of labels associated to it.
 
         :param x: Location of the pin on the x axis 
         :type x: int
         :param y: location of the pin on the y axis
         :type y: int
-        :param direction: Specify which direction labels are to be aligned from the pin location. Valid values are 'left' and 'right'. Defaults to 'right'.
-        :type direction: str, optional
+        :param label_x: X coordinate of the labels relative to the diagram's (0,0) coordinate.
+        :type label_x: int
+        :param label_y: Y coordinate of the labels relative to the diagram's (0,0) coordinate
+        :type label_y: int
+        
+
         :param label_tuples: A list of tuples can be supplied to streamline the pin and label creation process into a single step. Each tuple must represent the required arguments of Pin.add_label(). Defaults to None
         :type label_tuples: List, optional
         """
-        self.x = x
-        self.y = y
+        self.pin_coords = _Coords(x, y)
+        self.label_coords = _Coords(label_x - x, label_y - y) # Coords relative to the pin coords
         self.labels = []
-        self.direction = direction
-
         if label_tuples:
             for label in label_tuples:
                 self.add_label(*label)
@@ -101,8 +124,8 @@ class Pin:
 
         :return: Sum of all label widths
         :rtype: int
-        """
-        return sum([label.width + label.gap for label in self.labels])
+        """       
+        return sum([label.width + label.gap for label in self.labels]) + abs(self.label_coords.x)
 
     @property
     def height(self):
@@ -111,10 +134,11 @@ class Pin:
         :return: Height of the tallest label.
         :rtype: int
         """
-        try:
-            return max([label.height for label in self.labels])
-        except ValueError:
-            return 0
+        return abs(self.label_coords.y) + max([label.height or Label.default_height for label in self.labels]) * 1.5
+
+    @property
+    def tallest_label(self):
+        return max([l.height for l in self.labels])
 
     @property
     def bounding_box(self):
@@ -123,14 +147,22 @@ class Pin:
         :return: namedTuple documenting x, y, width, and height.
         :rtype: diagram._BoundingBox
         """
-        if self.direction == 'right':
-            # labels sit right of pin
-            x = self.x
+        if self.label_coords.x > 0:
+            # labels located right of pin
+            x = self.pin_coords.x
         else:
-            # labels sit left of pin
-            x = self.x - self.width
+            # labels located left of pin
+            x = self.pin_coords.x  + self.label_coords.x - self.width
 
-        return _BoundingBox(x, self.y - self.height/2, self.width, self.height)
+        if self.label_coords.y > 0:
+            # labels located below pin
+            y = self.pin_coords.y
+        else:
+            # labels located above pin
+            y = self.pin_coords.y + self.label_coords.y - self.tallest_label / 2
+
+        return _BoundingBox(x, y, self.width, self.height)
+        
 
     def render(self):
         """Generates SVG tags of all associated labels.
@@ -140,44 +172,38 @@ class Pin:
         """
         offset_x = 0
         output = ''
-        
-        for label in self.labels:
-
-            # Update unset properties with defaults
-            label.width = label.width or label.default_width
-            label.height = label.height or label.default_height
-            label.gap = label.gap or label.default_gap       
-            label.cnr = label.cnr or label.default_cnr
-            label.pad = label.pad or label.default_pad
+        for i, label in enumerate(self.labels):
 
             tags = ('label ' + label.tags).strip()
             
-            if self.direction == 'right':
-                # RHS label
+            if self.label_coords.x > 0:
+                # RHS labels
                 output += svg_pin_label.render(
-                    x = offset_x,
-                    y = -label.height/2,
-                    line = _Line(label.pad, label.gap, label.height//2, label.height//2),
-                    box = _Rect(label.gap, 0, label.width, label.height, label.cnr),
+                    x = 0,
+                    y = 0,
+                    leaderline = f'M 0 0 V {self.label_coords.y} H {self.label_coords.x}',
+                    box = _Rect(self.label_coords.x + offset_x, self.label_coords.y - self.tallest_label / 2, label.width, label.height, label.cnr),
                     text = label.name,
                     selectors = tags
                 )
             else:
-                # LHS label
+                # LHS labels
                 output += svg_pin_label.render(
-                    x = (label.width + label.gap + offset_x) * -1,
-                    y = label.height / 2 * -1,
-                    line = _Line(label.width, label.width + label.gap - label.pad, label.height//2, label.height//2),
-                    box = _Rect(0, 0, label.width, label.height, label.cnr),
+                    x = 0,
+                    y = 0,
+                    leaderline = f'M 0 0 V {self.label_coords.y} H {self.label_coords.x}',
+                    box = _Rect(self.label_coords.x - label.width - offset_x, self.label_coords.y - self.tallest_label / 2, label.width, label.height, label.cnr),
                     text = label.name,
                     selectors = tags
                 )
+
             offset_x += label.width + label.gap
         
         return  svg_group.render(
-            x = self.x,
-            y = self.y,
-            content = output
+            x = self.pin_coords.x,
+            y = self.pin_coords.y,
+            content = output,
+            selectors = 'pin_label'
         )
 
 

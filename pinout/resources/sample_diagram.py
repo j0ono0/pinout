@@ -4,7 +4,7 @@ from pinout import diagram
 pinout_diagram = diagram.Diagram()
 
 # Add a stylesheet
-pinout_diagram.add_stylesheet('sample_styles.css')
+pinout_diagram.add_stylesheet('sample_styles.css', embed=True)
 
 # Add an image
 pinout_diagram.add_image(0, 0, 220, 300, 'sample_hardware_board.png')

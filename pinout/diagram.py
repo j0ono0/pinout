@@ -4,7 +4,7 @@ from collections import namedtuple
 from .templates import svg
 from . import style_tools
 from . import file_manager
-from .components import Pin, Label, Legend, Image, StyleSheet, _BoundingBox
+from .components import Pin, Label, Legend, Image, StyleSheet, _BoundingBox, _Coords
 
 
 class Diagram:
@@ -42,21 +42,66 @@ class Diagram:
         """
         self.components.append(StyleSheet(filepath, embed))
 
-    def add_pin(self, x , y, label_x=None, label_y=None, label_data=None):
+    def add_pin(self, pin_x , pin_y, label_x=None, label_y=None, label_data=None):
         """Create a pin component, with associated labels, and file it into the diagram in a single action.
 
-        :param x: Location of the pin on the x axis 
-        :type x: int
-        :param y: location of the pin on the y axis
-        :type y: int
+        :param pin_x: Location of the pin on the x axis 
+        :type pin_x: int
+        :param pin_y: location of the pin on the y axis
+        :type pin_y: int
         :param direction: Specify which direction labels are to be aligned from the pin location. Valid values are 'left' and 'right'. Defaults to 'right'.
         :type direction: str, optional
         :param label_data: A tuple with parameters required for Label(), defaults to None
         :type label_data: [type], optional
         """
         label_data = label_data or []
-        pin = Pin(x, y, label_x, label_y, label_data)
+        pin = Pin(pin_x, pin_y, label_x, label_y, label_data)
         self.components.append(pin)
+
+    def add_pin_header(self, pin_header):
+        pin = _Coords(*pin_header['pin_coords'])
+        lbl = _Coords(*pin_header['label_coords'])
+        try:
+            pitch = pin_header['pitch']
+        except KeyError as e:
+            pitch = 0
+            if len(lbl) == 1:
+                print('No \'pitch\' attribute present but \'label\' includes multiple lists.')
+                print(pin_header)
+                raise
+
+        for i, lbl_data in enumerate(pin_header['labels']):
+            # Calc coords for label locations (left & right)
+            if lbl.y == pin.y:
+                # Left or Right
+                pin_ = _Coords(pin.x, pin.y + pitch * i)
+                lbl_ = _Coords(lbl.x, lbl.y + pitch * i)
+            elif lbl.y < pin.y:
+                # Up
+                if lbl.x < pin.x:
+                    # Up Left 
+                    pin_ = _Coords(pin.x + pitch * i, pin.y)
+                    lbl_ = _Coords(lbl.x, lbl.y - pitch * i)
+                else:
+                    # Up Right
+                    y_offset = lbl.y - (len(pin_header['labels']) - 1) * pitch
+                    pin_ = _Coords(pin.x + pitch * i, pin.y)
+                    lbl_ = _Coords(lbl.x, y_offset + pitch * i)
+            else:
+                # Down
+                    if lbl.x < pin.x:
+                        # Down Left
+                        pin_ = _Coords(pin.x + pitch * i, pin.y)
+                        lbl_ = _Coords(lbl.x, lbl.y + pitch * i)
+
+                    else:
+                        # Down Right
+                        y_offset = lbl.y + (len(pin_header['labels']) - 1) * pitch
+                        pin_ = _Coords(pin.x + pitch * i, pin.y)
+                        lbl_ = _Coords(lbl.x, y_offset - pitch * i)
+
+            self.add_pin(pin_.x, pin_.y, lbl_.x, lbl_.y, pin_header['labels'][i])
+        
 
     def add_legend(self, x, y, width, tags, items):
         """Create a legend component and file it into the diagram in a single action.

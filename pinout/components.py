@@ -27,8 +27,6 @@ class Label:
     :type gap: int
     :param cnr: Corner radius or teh label rectangle.
     :type cnr: int
-    :param pad: Blank space between the leader-line and proceeding label or pin location.
-    :type pad: int
     """
     
     #:Default label box width.
@@ -46,7 +44,7 @@ class Label:
     #:Default label box pad.
     default_pad = 1
 
-    def __init__(self, name, tags, width=None, height=None, gap=None, cnr=None, pad=None):
+    def __init__(self, name, tags, width=None, height=None, gap=None, cnr=None):
         """ Constructor method
         """
         self.name = name
@@ -55,7 +53,6 @@ class Label:
         self._height = height
         self._gap = gap
         self._cnr = cnr
-        self._pad = pad
 
     @property
     def width(self):
@@ -72,10 +69,6 @@ class Label:
     @property
     def cnr(self):
         return self._cnr or Label.default_cnr
-
-    @property
-    def pad(self):
-        return self._pad or Label.default_pad
 
 
 class Pin:
@@ -125,7 +118,7 @@ class Pin:
         :return: Sum of all label widths
         :rtype: int
         """       
-        return sum([label.width + label.gap for label in self.labels]) + abs(self.label_coords.x)
+        return sum([label.width for label in self.labels]) + sum([label.gap for label in self.labels[:-1]]) + abs(self.label_coords.x)
 
     @property
     def height(self):
@@ -134,7 +127,7 @@ class Pin:
         :return: Height of the tallest label.
         :rtype: int
         """
-        return abs(self.label_coords.y) + max([label.height or Label.default_height for label in self.labels]) * 1.5
+        return abs(self.label_coords.y) + max([label.height or Label.default_height for label in self.labels]) - self.tallest_label / 2
 
     @property
     def tallest_label(self):
@@ -152,7 +145,7 @@ class Pin:
             x = self.pin_coords.x
         else:
             # labels located left of pin
-            x = self.pin_coords.x  + self.label_coords.x - self.width
+            x = self.pin_coords.x - self.width
 
         if self.label_coords.y > 0:
             # labels located below pin

@@ -69,8 +69,9 @@ class Diagram:
                 print('No \'pitch\' attribute present but \'label\' includes multiple lists.')
                 print(pin_header)
                 raise
-
+        
         for i, lbl_data in enumerate(pin_header['labels']):
+        
             # Calc coords for label locations (left & right)
             if lbl.y == pin.y:
                 # Left or Right
@@ -99,6 +100,7 @@ class Diagram:
                         y_offset = lbl.y + (len(pin_header['labels']) - 1) * pitch
                         pin_ = _Coords(pin.x + pitch * i, pin.y)
                         lbl_ = _Coords(lbl.x, y_offset - pitch * i)
+            
 
             self.add_pin(pin_.x, pin_.y, lbl_.x, lbl_.y, pin_header['labels'][i])
         

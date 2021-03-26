@@ -1,0 +1,16 @@
+{% extends 'group.svg' %}
+
+{% block component %}
+    <path class="leaderline_{{ leaderline_class }}" d="{{ leaderline }}" fill="none" stroke="#f0f"/>
+    <g 
+        class="pin_labels" 
+        {% if flip %}
+        transform="scale(-1, 1) translate({{ -label_coords.x }} {{ label_coords.y }})"
+        {% else %}
+        transform="translate({{ label_coords.x }} {{ label_coords.y }})"
+        {% endif %}
+    >
+        {{ content }}
+    </g>
+{% endblock %}
+</g>

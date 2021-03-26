@@ -2,7 +2,7 @@ import base64
 from itertools import zip_longest
 from pathlib import Path
 from collections import namedtuple
-from .templates import svg_pin_label, svg_group, svg_image, svg_legend, svg_style
+from .templates import svg_pin_label, svg_group, svg_image, svg_legend, svg_style, svg_label_01, svg_pin
 
 
 _BoundingBox = namedtuple('_BoundingBox',('x y w h'))
@@ -89,7 +89,8 @@ class Pin:
         :type label_tuples: List, optional
         """
         self.pin_coords = _Coords(x, y)
-        self.label_coords = _Coords(label_x - x, label_y - y) # Coords relative to the pin coords
+        # Label_coords relative to pin_coords
+        self.label_coords = _Coords(label_x - x, label_y - y) 
         self.labels = []
         if label_tuples:
             for label in label_tuples:
@@ -163,40 +164,28 @@ class Pin:
         :return: SVG components
         :rtype: str
         """
-        offset_x = 0
         output = ''
         for i, label in enumerate(self.labels):
-
             tags = ('label ' + label.tags).strip()
             
-            if self.label_coords.x > 0:
-                # RHS labels
-                output += svg_pin_label.render(
-                    x = 0,
-                    y = 0,
-                    leaderline = f'M 0 0 V {self.label_coords.y} H {self.label_coords.x}',
-                    box = _Rect(self.label_coords.x + offset_x, self.label_coords.y - self.tallest_label / 2, label.width, label.height, label.cnr),
-                    text = label.name,
-                    selectors = tags
-                )
-            else:
-                # LHS labels
-                output += svg_pin_label.render(
-                    x = 0,
-                    y = 0,
-                    leaderline = f'M 0 0 V {self.label_coords.y} H {self.label_coords.x}',
-                    box = _Rect(self.label_coords.x - label.width - offset_x, self.label_coords.y - self.tallest_label / 2, label.width, label.height, label.cnr),
-                    text = label.name,
-                    selectors = tags
-                )
-
-            offset_x += label.width + label.gap
-        
-        return  svg_group.render(
+            offset = sum(l.width + l.gap for l in self.labels[:i])
+            output += svg_label_01.render(
+                selectors = ' '.join(['label', label.tags]),
+                leaderline_class = label.tags.split(' ')[0],
+                label = label,
+                offset = offset,
+                flip = self.label_coords.x < 0,
+            )
+            
+        return  svg_pin.render(
             x = self.pin_coords.x,
             y = self.pin_coords.y,
+            label_coords = self.label_coords,
+            leaderline = f'M 0 0 V {self.label_coords.y} H {self.label_coords.x}',
+            leaderline_class = self.labels[0].tags.split(' ')[0],
+            flip = self.label_coords.x < 0,
             content = output,
-            selectors = 'pin_label'
+            selectors = 'pin'
         )
 
 

@@ -55,7 +55,7 @@ def default_css(diagram):
     :return: content of a css stylesheet with all required styles to display a diagram.
     :rtype: str
     """
-    labels = [[l.tags for l in c.labels] for c in diagram.components if isinstance(c, Pin)]
+    labels = [[l.tags.split(' ')[0] for l in c.labels] for c in diagram.components if isinstance(c, Pin)]
     labelset = set([tag for lbl in labels for tag in lbl])
     
     label_font_size = math.floor(Label.default_height * (3/5))

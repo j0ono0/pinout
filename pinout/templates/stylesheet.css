@@ -7,8 +7,8 @@
 {% if legend %}
 /* Label styles */
 {% for entry in legend %}
-.{{ entry[1] }} .label_box rect{ fill: {{ entry[2] }} }
-.{{ entry[1] }} .label_line{ stroke:   {{ entry[2] }} }
+.{{ entry[1] }} .label_box{ fill: {{ entry[2] }} }
+.leaderline_{{ entry[1] }} { stroke:   {{ entry[2] }} }
 {% endfor %}
 {% endif %}
 

@@ -2,7 +2,7 @@ import base64
 from itertools import zip_longest
 from pathlib import Path
 from collections import namedtuple
-from .templates import svg_pin_label, svg_group, svg_image, svg_legend, svg_style, svg_label_01, svg_pin
+from .templates import svg_group, svg_image, svg_legend, svg_style, svg_label_01, svg_pin
 
 
 _BoundingBox = namedtuple('_BoundingBox',('x y w h'))
@@ -223,16 +223,26 @@ class Image:
         return _BoundingBox(self.x, self.y, self.width, self.height)
     
     def render(self):
-        """Generates SVG <image> tag using the image 'filename'. If 'embed' is True the image is base64 encoded and assigned to the path as data. Otherwise the path is assigned 'filename'
+        """Generates SVG <image> tag using the image 'filename', Note that JPG and PNG are the only binary images files officially supported by the SVG format. If 'embed' is True the image is assigned to the path as a data URI. JPG and PNG image are base64 encoded, SVG files included verbatim. Otherwise the path 'src' is assigned 'filename'. Note: 'filename' includes the path to the file. Where a relative path is used it must be relative to the **exported file**.   
 
         :return: SVG <image> component
         :rtype: str
         """
+        media_type = Path(self.path).suffix[1:]
 
         if self.embed:
-            media_type = self.path.split('.')[-1]
-            encoded_img = base64.b64encode(open(self.path, "rb").read())
-            path = 'data:image/{};base64,'.format(media_type) + encoded_img.decode('utf-8')
+            if media_type in ['jpg','png']:
+                encoded_img = base64.b64encode(open(self.path, "rb").read())
+                path = 'data:image/;base64,{}'.format(media_type) + encoded_img.decode('utf-8')
+            elif media_type == 'svg':
+                filepath = Path(self.path)
+                with filepath.open() as f:
+                    svg_data = f.read()
+                return svg_group.render(
+                    x = self.x,
+                    y = self.y,
+                    content = svg_data
+                )
         else:
             path = self.path
 

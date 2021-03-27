@@ -20,5 +20,5 @@ stylesheet = env.get_template('stylesheet.css')
 
 # Component SVG templates (made from multiple svg elements)
 svg_legend = env.get_template('legend.svg')
-svg_label_01 = env.get_template('label_01.svg')
+svg_label = env.get_template('label.svg')
 svg_pin = env.get_template('pin.svg')

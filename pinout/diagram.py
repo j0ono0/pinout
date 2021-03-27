@@ -14,8 +14,8 @@ class Diagram:
         self.components = []
         self.stylesheets = []
 
-    def add_image(self, x, y, width, height, filename, embed=False):
-        """Create an image component and file it into the diagram in a single action.
+    def add_image(self, x, y, width, height, filepath, embed=False):
+        """Create an image component and file it into the diagram in a single action. The SVG format officially supports JPG and PNG images. Other raster image formats may display unexpected behaviour. This component also accepts SVG files.
 
         :param x: Location of the image on the x axis
         :type x: int
@@ -25,12 +25,12 @@ class Diagram:
         :type width: int
         :param height: Height of the image in the diagram (may differ from actual image height)
         :type height: int
-        :param filename: Filename, including path, to the image.
-        :type filename: string
+        :param filepath: Filename, including path, to the image. **Note on relative paths**: When *linking*, the path must be relative to the exported SVG file location. When *embedding*, the path must be relative from the current working directory.
+        :type filepath: string
         :param embed: Base64 encodes the image and embeds it in the SVG file, defaults to False
         :type embed: bool, optional
         """
-        self.components.append(Image(x, y, width, height, filename, embed))
+        self.components.append(Image(x, y, width, height, filepath, embed))
 
     def add_stylesheet(self, filepath, embed=False):
         """Link an external stylesheet to the diagram. Multiple stylesheets can be added. They are referenced in the order added, this may be important where one style overrides another.
@@ -42,15 +42,17 @@ class Diagram:
         """
         self.components.append(StyleSheet(filepath, embed))
 
-    def add_pin(self, pin_x , pin_y, label_x=None, label_y=None, label_data=None):
+    def add_pin(self, pin_x , pin_y, label_x, label_y, label_data=None):
         """Create a pin component, with associated labels, and file it into the diagram in a single action.
 
-        :param pin_x: Location of the pin on the x axis 
+        :param pin_x: x-axis location of this pin
         :type pin_x: int
-        :param pin_y: location of the pin on the y axis
+        :param pin_y: y-axis location of this pin
         :type pin_y: int
-        :param direction: Specify which direction labels are to be aligned from the pin location. Valid values are 'left' and 'right'. Defaults to 'right'.
-        :type direction: str, optional
+        :param label_x: x-axis location of the first label associated with this pin.
+        :type label_x: int
+        :param label_y: y-axis location of the first label associated with this pin.
+        :type label_y: int
         :param label_data: A tuple with parameters required for Label(), defaults to None
         :type label_data: [type], optional
         """
@@ -122,9 +124,9 @@ class Diagram:
         self.components.append(Legend(x, y, width, tags, items))
 
     def export(self, svgname, overwrite=False):
-        """Output the diagram in SVG format. If no stylesheet(s) are included one will be generated automatically and linked to. See style_tools.default_css() for more details.
+        """Output the diagram in SVG format. If no stylesheet(s) are included one will be generated and exported automatically. See style_tools.default_css() for more details.
 
-        :param svgname: Name of svg file to be created, including path to export.
+        :param svgname: Name of svg file to be created, including export path.
         :type svgname: str
         :param overwrite: When set to False, this function aborts if the file already exists avoiding accidental overwriting. Defaults to False.
         :type overwrite: bool, optional

@@ -1,0 +1,40 @@
+
+/* Diagram styles */
+.pinout-diagram{
+    font-family:Verdana, Geneva, sans-serif;  
+}
+
+/* Label styles */
+.analog .label_box{ fill: rgb(182, 113, 92) }
+.leaderline_analog { stroke:   rgb(182, 113, 92) }
+.analog-out .label_box{ fill: rgb(21, 162, 51) }
+.leaderline_analog-out { stroke:   rgb(21, 162, 51) }
+.pwm .label_box{ fill: rgb(223, 24, 158) }
+.leaderline_pwm { stroke:   rgb(223, 24, 158) }
+.gpio .label_box{ fill: rgb(231, 103, 5) }
+.leaderline_gpio { stroke:   rgb(231, 103, 5) }
+.led .label_box{ fill: rgb(242, 10, 96) }
+.leaderline_led { stroke:   rgb(242, 10, 96) }
+.comms .label_box{ fill: rgb(27, 46, 120) }
+.leaderline_comms { stroke:   rgb(27, 46, 120) }
+.pwr-mgt .label_box{ fill: rgb(156, 20, 45) }
+.leaderline_pwr-mgt { stroke:   rgb(151, 130, 134) }
+
+
+.label text{
+    fill: rgb(255, 255, 255);
+    font-family:Verdana, Geneva, san-serif; 
+    font-size: 12px; 
+    font-weight: bold;
+}
+
+
+/* Legend */
+.legend{
+    font-size: 13px; 
+}
+
+.legend_box{
+    fill: rgb(247, 247, 247);
+    stroke: rgb(204, 204, 204);
+}

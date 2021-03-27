@@ -2,7 +2,7 @@ import base64
 from itertools import zip_longest
 from pathlib import Path
 from collections import namedtuple
-from .templates import svg_group, svg_image, svg_legend, svg_style, svg_label_01, svg_pin
+from .templates import svg_group, svg_image, svg_legend, svg_style, svg_label, svg_pin
 
 
 _BoundingBox = namedtuple('_BoundingBox',('x y w h'))
@@ -41,9 +41,6 @@ class Label:
     #:Default label box corner-radius.
     default_cnr = 2
 
-    #:Default label box pad.
-    default_pad = 1
-
     def __init__(self, name, tags, width=None, height=None, gap=None, cnr=None):
         """ Constructor method
         """
@@ -72,32 +69,30 @@ class Label:
 
 
 class Pin:
-    def __init__(self, x, y, label_x=None, label_y=None, label_tuples=None):
+    def __init__(self, pin_x, pin_y, label_x=None, label_y=None, label_tuples=None):
         """Each Pin documents a location in the diagram and manages position and rendering of labels associated to it.
 
-        :param x: Location of the pin on the x axis 
-        :type x: int
-        :param y: location of the pin on the y axis
-        :type y: int
+        :param pin_x: Location of the pin on the x axis 
+        :type pin_x: int
+        :param pin_y: location of the pin on the y axis
+        :type pin_y: int
         :param label_x: X coordinate of the labels relative to the diagram's (0,0) coordinate.
         :type label_x: int
         :param label_y: Y coordinate of the labels relative to the diagram's (0,0) coordinate
         :type label_y: int
-        
-
         :param label_tuples: A list of tuples can be supplied to streamline the pin and label creation process into a single step. Each tuple must represent the required arguments of Pin.add_label(). Defaults to None
         :type label_tuples: List, optional
         """
-        self.pin_coords = _Coords(x, y)
+        self.pin_coords = _Coords(pin_x, pin_y)
         # Label_coords relative to pin_coords
-        self.label_coords = _Coords(label_x - x, label_y - y) 
+        self.label_coords = _Coords(label_x - pin_x, label_y - pin_y) 
         self.labels = []
         if label_tuples:
             for label in label_tuples:
                 self.add_label(*label)
     
     def add_label(self, name, tags=None, width=None, height=None, gap=None):
-        """Add a label to the pin. This is the recommended method of creating labels.
+        """Add a label to the pin.
 
         :param name: Text that appear on the label
         :type name: str
@@ -132,6 +127,11 @@ class Pin:
 
     @property
     def tallest_label(self):
+        """Finds and returns the height of the tallest label associated with a pin.
+
+        :return: Height of the tallest label.
+        :rtype: int
+        """
         return max([l.height for l in self.labels])
 
     @property
@@ -169,7 +169,7 @@ class Pin:
             tags = ('label ' + label.tags).strip()
             
             offset = sum(l.width + l.gap for l in self.labels[:i])
-            output += svg_label_01.render(
+            output += svg_label.render(
                 selectors = ' '.join(['label', label.tags]),
                 leaderline_class = label.tags.split(' ')[0],
                 label = label,
@@ -190,7 +190,7 @@ class Pin:
 
 
 class Image:
-    def __init__(self, x, y, width, height, filename, embed=False):
+    def __init__(self, x, y, width, height, filepath, embed=False):
         """Include an image in the diagram.
 
         :param x: Location of the image on the x axis
@@ -201,14 +201,14 @@ class Image:
         :type width: int
         :param height: Height of the image in the diagram (may differ from actual image height)
         :type height: int
-        :param filename: Filename, including path, to the image. Relative paths are relative to the current working directory.
-        :type filename: string
+        :param filepath: Filename, including path, to the image. Relative paths are relative to the current working directory.
+        :type filepath: string
         :param embed: Elect to link or embed an external image. Embedded images are base64 encoded. Default to False.
         :type embed: bool
         """
         self.x = x
         self.y = y
-        self.path = filename
+        self.path = filepath
         self.width = width
         self.height = height
         self.embed = embed
@@ -231,10 +231,7 @@ class Image:
         media_type = Path(self.path).suffix[1:]
 
         if self.embed:
-            if media_type in ['jpg','png']:
-                encoded_img = base64.b64encode(open(self.path, "rb").read())
-                path = 'data:image/;base64,{}'.format(media_type) + encoded_img.decode('utf-8')
-            elif media_type == 'svg':
+            if media_type == 'svg':
                 filepath = Path(self.path)
                 with filepath.open() as f:
                     svg_data = f.read()
@@ -243,6 +240,9 @@ class Image:
                     y = self.y,
                     content = svg_data
                 )
+            else:
+                encoded_img = base64.b64encode(open(self.path, "rb").read())
+                path = 'data:image/{};base64,{}'.format(media_type, encoded_img.decode('utf-8'))
         else:
             path = self.path
 
@@ -254,30 +254,12 @@ class Image:
             path = path
         )
 
-    def render_base64(self):
-        """Generates SVG <image> tag **embedding** the image 'filename' as base64 encoded data. This feature assumes images have a predictable suffix indicating the file type.
-
-        :return: SVG <image> component
-        :rtype: str
-        """
-
-        media_type = self.path.split('.')[-1]
-        encoded_img = base64.b64encode(open(self.path, "rb").read())
-        
-        return svg_image.render(
-            x = self.x,
-            y = self.y,
-            width = self.width,
-            height = self.height,
-            path = 'data:image/{};base64,'.format(media_type) + encoded_img.decode('utf-8')
-        )
-
 
 class StyleSheet:
         def __init__(self, filepath, embed=False):
             """Include a stylesheet in the diagram
 
-            :param filepath: Location of the external stylesheet. *NOTE*: If enbedding, a relative filepath is relative to the current working directory. If linking, a relative filepath is relative to the location of the final SVG diagram. 
+            :param filepath: Filename, including path, of the external stylesheet. *NOTE*: If *embedding*, a relative filepath is relative to the current working directory. If *linking*, a relative filepath is relative to the location of the final SVG diagram. 
             :type filepath: str
             :param embed: Elect to link or embed the stylesheet, defaults to False
             :type embed: bool, optional
@@ -347,7 +329,7 @@ class Legend:
             
             # Create a pin and blank label as a 'swatch' for each item
             tags = ('swatch ' + item['tags']).strip()
-            swatch = Pin(0, 0, 'left', [('', tags, 20, 20, 5)])
+            swatch = Pin(0, 0, -1, 0, [('', tags, 20, 20, 5)])
             item['swatch'] = swatch.render()
 
             item['x'] = swatch.width + self.INSET

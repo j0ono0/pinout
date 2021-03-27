@@ -9,7 +9,7 @@ Install
 
 Using a virtual environment is recommended; Start by installing the *pinout* package. Either clone this repo and pip install it or install directly from github::
  
-    pip install git+https://github.com/j0ono0/pinout@main
+    pip install git+https://github.com/j0ono0/pinout.git@v0.0.6
 
 NOTE for package upgrading: pip upgrade doesn't work from git repos! Please install again if you want to try out the latest version (*warning*: new versions may not be backwards compatible).
 

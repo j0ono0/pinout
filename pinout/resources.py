@@ -14,9 +14,9 @@ def duplicate(resource_name='get started'):
 
     resources = {
         'get started': [
-            'get_started/sample_diagram.py',
-            'get_started/sample_hardware_board.png',
-            'get_started/sample_styles.css'
+            'get_started/get_started_pinout.py',
+            'get_started/get_started_board.png',
+            'get_started/get_started_styles.css'
         ],
         'full sample':[
             'sample_full/sample_full_pinout.py',

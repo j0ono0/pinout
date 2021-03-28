@@ -26,9 +26,9 @@ You will need an image and stylesheet to complete this guide. Some sample files 
     resources.duplicate()
 
     # expected output:
-    # >>> sample_diagram.py duplicated.
-    # >>> sample_hardware_board.png duplicated.
-    # >>> sample_styles.css duplicated.
+    # >>> get_started_pinout.py duplicated.
+    # >>> get_started_board.png duplicated.
+    # >>> get_started_styles.css duplicated.
 
 *Spoiler Alert*: 'sample_diagram.py' is a completed script that duplicates the code in this guide. Running it will create a sample SVG pinout diagram - identical to the one pictured here - that can be viewed in your browser.
 

@@ -1,11 +1,10 @@
-
-
 /*
     # Diagram styling 
 */
 
 .pinout-diagram{
-    font-family:verdana, san-serif;    
+    font-family:verdana, san-serif; 
+    margin: 20px auto;   
 }
 
 
@@ -22,10 +21,6 @@
 .gpio .leaderline{ stroke:   rgb(194, 100, 0); }
 .leaderline_gpio{ stroke:   rgb(194, 100, 0); }
 
-.gpi .label_box{ fill: rgb(194, 165, 0); }
-.gpi .leaderline{ stroke:   rgb(194, 165, 0); }
-.leaderline_gpi{ stroke:   rgb(194, 165, 0); }
-
 .analog .label_box{ fill: rgb(115, 85, 130); }
 .analog .leaderline{ stroke:   rgb(115, 85, 130); }
 .leaderline_analog{ stroke:   rgb(115, 85, 130); }
@@ -34,9 +29,9 @@
 .pwm .leaderline{ stroke:   rgb(3, 86, 150); }
 .leaderline_pwm{ stroke:   rgb(3, 86, 150); }
 
-.pwr-mgt .label_box{ fill: rgb(151, 28, 0); }
-.pwr-mgt .leaderline{ stroke:   rgb(151, 28, 0); }
-.leaderline_pwr-mgt{ stroke:   rgb(151, 28, 0); }
+.pwr .label_box{ fill: rgb(151, 28, 0); }
+.pwr .leaderline{ stroke:   rgb(151, 28, 0); }
+.leaderline_pwr{ stroke:   rgb(151, 28, 0); }
 
 
 .label text{

@@ -114,7 +114,7 @@ class Pin:
         :return: Sum of all label widths
         :rtype: int
         """       
-        return sum([label.width for label in self.labels]) + sum([label.gap for label in self.labels[:-1]]) + abs(self.label_coords.x)
+        return sum([label.width + label.gap for label in self.labels]) + abs(self.label_coords.x)
 
     @property
     def height(self):

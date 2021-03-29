@@ -9,6 +9,17 @@ This tutorial walks through the main features available in *pinout*. If you have
 
    The finished diagram from this tutorial.
 
+
+Diagram measurements
+--------------------
+
+Taking some critical measurements of the hardware image before starting will streamline processes and save adjusting by trial-and-error later. At first glance it may appear there are an overwhelming number of points to record. Many coordinates are inter-related and others based on personal aesthetics. All measurements are made from an arbitrary (0 ,0) location. The final diagram size and boundaries are calculated on export ensuring all components are visible - ie negative coordinates do not risk being outside the final diagram boundaries.
+
+.. figure:: _static/get_started_diagram_measurements.*
+   
+In this tutorial all (x, y) coordinates are relative to the board's top-left corner which is positioned at (0,0). Pins and their labels should be considered in pairs (boxed together here).
+
+
 Start a new diagram
 -------------------
 
@@ -34,17 +45,6 @@ Adding an image is similar to the stylesheet. The extra arguments are *x*, *y*, 
     pinout_diagram.add_image(0, 0, 220, 260, 'get_started_board.png', embed=True)
 
 
-This is also a good moment to do some planning and preparation. Measuring critical dimensions on the board now will streamline accurate placement of pins and labels. 
-
-.. figure:: _static/hardware_measurements.*
-   
-   Hardware measurements before beginning will aid with accurate pin and label placement.
-
-**TIP, Component coordinates:** On export the final diagram dimensions are calculated and all components shifted into view (via the SVG viewBox). Consequently, component 'x' and 'y' positioning is relative to  an arbitary (0, 0) location and not the final diagram. It is recommended to position the board image to make easier calculations for subsequent pin placements.
-
-In this tutorial all (x, y) coordinates are relative to the board's top-left corner which is positioned at (0,0). 
-
-
 Add a legend
 ------------
 
@@ -63,19 +63,12 @@ With items documented adding a legend to the diagram is done with a single line 
     pinout_diagram.add_legend(-160, 310, 225, 'legend legend-labels', label_categories)
 
 
-The legend should not obscure, or be obscured, by other important content. Returning to adjust positioning of components should be considered to ensure the best results.
-
-.. figure:: _static/legend_measurements.*
-   
-Measurements for this component were finalised *after* labels were added by reviewing the exported diagram. 
-
-
 Set default label values
 ------------------------
 
-.. figure:: _static/pin_and_label_detail.*
+.. figure:: _static/label_dimensions.*
 
-   Measurements for pin placement and label sizing 
+   Label dimensions 
 
 Labels have several settings that control their size and appearance. These values can be applied per label, however most labels are likely to share common traits. Default values exist to serve this requirement in the form of class variables. Setting them is as simple as assigning a new value::
 
@@ -94,12 +87,13 @@ This is slow way, included to provide an idea of the steps going on behind the s
 
     pin01 = diagram.Pin(16, 100, -50, 100)
 
-Add some labels to the pin. *Note*: label width, height, and gap, can be 
-controlled per label and override default settings::
+Add associated labels to the pin::
 
     pin01.add_label('1', 'gpio')
     pin01.add_label('A1', 'analog')
     pin01.add_label('PWM', 'pwm')
+
+*Note*: label width, height, and gap, can be controlled per label by including *width*, *height*, and *gap* arguments `pin01.add_label('A1', 'analog', 50, 25, 26)`.
 
 Add this pin to the diagram::
 
@@ -157,14 +151,11 @@ With data neatly documented, adding it to the diagram is straight forward::
     for header in pin_headers:
         pinout_diagram.add_pin_header(header)
 
-Pin locations in each header are calculated top-to-bottom or left-to-right depending on label coordinates in relation to pin coordinates. 
+Pin locations in each header are calculated top-to-bottom or left-to-right depending on label coordinates in relation to pin coordinates.
 
 Export the diagram
 ------------------
 
-.. figure:: _static/finished_sample_diagram.*
-
-   The finished diagram from this tutorial.
 
 The final diagram can be exported as a graphic in SVG format and should match the finished diagram shown here. This format and excellent for high quality printing but still an effecient size for web-based usage::
 
@@ -173,7 +164,13 @@ The final diagram can be exported as a graphic in SVG format and should match th
     # expected output:
     # > 'get_started_pinout.svg' exported successfully.
 
+.. figure:: _static/finished_sample_diagram.*
+
+    The finished diagram from this tutorial.
+
+    
 The most convenient method of viewing the newly exported SVG file is with your browser.
+
 
 Next steps
 ----------

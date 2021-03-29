@@ -38,7 +38,7 @@ class Diagram:
         :param filename: filename of stylesheet (include path to file)
         :type filename: str
         :param embed: Elect to embed the css file contents into the SVG file, defaults to False.
-        "type embed: bool, optional
+        :type embed: bool, optional
         """
         self.components.append(StyleSheet(filepath, embed))
 

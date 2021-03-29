@@ -23,7 +23,7 @@ Quickstart
 You will need an image and stylesheet to complete this guide. Some sample files are included with the package and can be duplicated for your use. Launch Python REPL from a command-line in the folder you intend to work and enter the following::
 
     from pinout import resources
-    resources.duplicate()
+    resources.duplicate('get started')
 
     # expected output:
     # >>> get_started_pinout.py duplicated.

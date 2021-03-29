@@ -14,22 +14,22 @@ def duplicate(resource_name='get started'):
 
     resources = {
         'get started': [
-            'get_started/get_started_pinout.py',
-            'get_started/get_started_board.png',
-            'get_started/get_started_styles.css'
+            ('get_started','get_started_pinout.py'),
+            ('get_started','get_started_board.png'),
+            ('get_started','get_started_styles.css')
         ],
         'full sample':[
-            'sample_full/sample_full_pinout.py',
-            'sample_full/sample_full_pinout_hardware.png',
-            'sample_full/sample_full_pinout_styles.css'
+            ('sample_full','sample_full_pinout.py'),
+            ('sample_full','sample_full_pinout_hardware.png'),
+            ('sample_full','sample_full_pinout_styles.css')
         ]
     }
 
-    files = ['sample_diagram.py','sample_hardware_board.png', 'sample_styles.css']
     resource_package = __name__
-    for filename in resources[resource_name]:
-        resource_path = '/'.join(('resources', filename))
+    for path in resources[resource_name]:
+        resource_path = '/'.join(('resources', *path))
         data = pkg_resources.resource_string(resource_package, resource_path)
+        filename = path[-1]
         with open(filename, 'wb') as f:
             f.write(data)
         print(f'{filename} duplicated.')

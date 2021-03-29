@@ -16,11 +16,13 @@ Please visit [pinout.readthedocs.io](https://pinout.readthedocs.io) for the late
 
 ### Install
 
-Using a virtual environment is recommended; Start by installing the *pinout* package. Either clone this repo and pip install it or install directly from github...
+Using a virtual environment is recommended; Start by installing the *pinout* package. Either clone this repo and pip install it or install from PyPi:
 ```
-pip install git+https://github.com/j0ono0/pinout.git@main
+pip install pinout
+
+# Or upgrade to the latest version
+pip install --upgrade pinout
 ```
-NOTE for package upgrading: pip upgrade doesn't work from git repos! Please install again if you want to try out the latest version (*warning*: development is furious! Newer versions might not be backwards compatible).
 
 ### Duplicate sample files
 

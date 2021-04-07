@@ -223,6 +223,11 @@ class TextBlock(Element):
 class LeaderLine(Element):
     
     def __init__(self, route, *args, **kwargs):
+        """[summary]
+
+        :param route: Type of line to render. options are 'h' - horizontal line, and 'hv' - line a single bend 
+        :type route: str
+        """
         super().__init__(*args, **kwargs)
         self.route = route
 

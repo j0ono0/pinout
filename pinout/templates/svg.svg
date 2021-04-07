@@ -4,8 +4,8 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     {% if x %} x="{{ x }}" {% endif %}
     {% if y %} y="{{ y }}" {% endif %}
-    width="{{ width }}" 
-    height="{{ height }}" 
+    width="{{ viewbox.w }}" 
+    height="{{ viewbox.h }}" 
     viewBox="{{ viewbox.x }} {{ viewbox.y }} {{ viewbox.w }} {{ viewbox.h }}"
     class="{{ selectors }}"
 >

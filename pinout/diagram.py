@@ -4,7 +4,7 @@ from collections import namedtuple
 from .templates import svg
 from . import style_tools
 from . import file_manager
-from .components import Pin, Label, Legend, Image, StyleSheet, _BoundingBox, _Coords
+from .components import LabelPin, Label, Legend, Image, StyleSheet, _BoundingBox, _Coords
 
 
 class Diagram:
@@ -57,7 +57,7 @@ class Diagram:
         :type label_data: [type], optional
         """
         label_data = label_data or []
-        pin = Pin(pin_x, pin_y, label_x, label_y, label_data)
+        pin = LabelPin(pin_x, pin_y, label_x, label_y, label_data)
         self.components.append(pin)
 
     def add_pin_header(self, pin_header):

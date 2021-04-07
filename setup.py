@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pinout",
-    version="0.0.8",
+    version="0.0.9",
     author="John Newall",
     author_email="john@johnnewall.com",
     description="Generate graphical pinout references for electronic hardware.",

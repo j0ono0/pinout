@@ -1,1 +1,1 @@
-<image x="{{ x }}" y="{{ y }}" href="{{ path }}" xlink:href="{{ path }}" height="{{ height }}" width="{{ width }}"/>
+<image {% if tags %}class="{{tags}}"{% endif %} x="{{ x }}" y="{{ y }}" href="{{ href }}" xlink:href="{{ href }}" height="{{ height }}" width="{{ width }}"/>

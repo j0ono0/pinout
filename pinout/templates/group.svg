@@ -1,11 +1,12 @@
 <g 
-    {% if selectors %}
-        class="{{ selectors }}" 
+    {% if tags %}
+        class="{{ tags }}" 
     {% endif %}
-
-    transform="translate({{ x }} {{ y }})">
-
-    {% block component %}
+    transform="
+        translate({{ x * scale.x }} {{  y * scale.y }})
+    "
+>
+    {% block element %}
         {{ content|safe }}
     {% endblock %}
 </g>

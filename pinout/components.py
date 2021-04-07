@@ -2,7 +2,7 @@ import base64
 from itertools import zip_longest
 from pathlib import Path
 from collections import namedtuple
-from .templates import svg_group, svg_image, svg_legend, svg_style, svg_label, svg_pin
+from .templates import svg_group, svg_image, svg_legend, svg_style, svg_label, svg_pin, svg_annotation, svg_leaderline
 
 
 _BoundingBox = namedtuple('_BoundingBox',('x y w h'))

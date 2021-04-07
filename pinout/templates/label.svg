@@ -1,18 +1,20 @@
 
-    <g class="{{ selectors }}" transform="translate({{ offset }} {{ label.height * -0.5 }})">
-        <line class="leaderline" x1="0" y1="{{ label.height/2 }}" x2="{{ label.gap }}" y2="{{ label.height/2 }}" stroke="black" />
-        <rect class="label_box" x="{{ label.gap }}" y="0" width="{{ label.width - 1 }}" height="{{ label.height }}" rx="{{ label.cnr }}" />
-        <text
-            {% if flip %}
-            x="{{ -label.width/2 - label.gap }}" y="{{ label.height/2 }}" 
-            transform="scale(-1, 1)" 
-            {% else %}
-            x="{{ label.width/2 + label.gap }}" y="{{ label.height/2 }}" 
-            {% endif %}
-
-            dominant-baseline="middle" 
-            text-anchor="middle"
-        >
-            {{ label.name }}
-        </text>
-    </g>
+<g 
+    class=" label {{ tags }}" 
+    transform="
+        translate({{ x * scale.x }} {{  y * scale.y }}) 
+        scale({{ scale.x }} {{ scale.y }})
+    "
+>
+    <rect fill="#555" class="label_box" x="0" y="{{ -height/2 }}" width="{{ width }}" height="{{ height }}" rx="2" />
+    <text
+        transform="scale({{ scale.x }} {{ scale.y }})" 
+        x="{{ (width / 2) * scale.x }}"
+        y="0" 
+        fill="#999"
+        dominant-baseline="middle" 
+        text-anchor="middle"
+    >
+        {{ text }}
+    </text>
+</g>

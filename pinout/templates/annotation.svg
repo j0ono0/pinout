@@ -1,0 +1,13 @@
+
+
+
+<path class="leaderline-annotation" d="{{ leaderline }}" fill="none" stroke="#f0f"/>
+
+<g transform="translate({{ label.x }} {{ label.y - label.h }})">
+    <rect class="annotation_box" x="0" y="0" width="{{ label.w }}" height="{{ label.h }}" rx="2" />
+    <text>
+    {% for line in content %}
+        <tspan class="annotation_line" x="3" dy="{{ line_height }}">{{ line }}</tspan>
+    {% endfor %}
+    </text>
+</g>

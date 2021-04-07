@@ -1,6 +1,6 @@
-{% extends 'group.svg' %}
+
     
-{% block component %}
+
     
     <rect class="legend_box" x="0" y="0" width="{{ width }}" height="{{ height }}" />
     {% for item in items %}
@@ -14,5 +14,5 @@
     </g>
     {% endfor %}
 
-{% endblock %}
+
     

@@ -4,10 +4,9 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 env = Environment(
     loader=PackageLoader('pinout','templates'),
     autoescape=select_autoescape(['html', 'xml']),
+    trim_blocks=True,
+    lstrip_blocks=True,
 )
-
-env.trim_blocks = True
-env.lstrip_blocks = True
 
 # Base SVG elements
 svg = env.get_template('svg.svg')
@@ -21,4 +20,7 @@ stylesheet = env.get_template('stylesheet.css')
 # Component SVG templates (made from multiple svg elements)
 svg_legend = env.get_template('legend.svg')
 svg_label = env.get_template('label.svg')
-svg_pin = env.get_template('pin.svg')
+svg_annotation = env.get_template('annotation.svg')
+
+svg_leaderline = env.get_template('leaderline.svg')
+svg_textblock = env.get_template('textblock.svg')

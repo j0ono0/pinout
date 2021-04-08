@@ -2,7 +2,7 @@
 import math
 from pathlib import Path
 from collections import namedtuple
-from .templates import svg, svg_group, svg_image, svg_legend, svg_style, svg_leaderline, svg_label, svg_textblock
+from .templates import svg, svg_group, svg_image, svg_legend, svg_style, svg_leaderline, svg_label, svg_textblock, svg_rect
 
 
 BoundingBox = namedtuple('BoundingBox',('x y w h'))
@@ -182,12 +182,10 @@ class TextBlock(Element):
 
     default_width = 7
     default_line_height = 20
-    default_padding = 10
 
-    def __init__(self, text, line_height=None, padding=None, *args, **kwargs):
+    def __init__(self, text, line_height=None, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._line_height = line_height
-        self._padding = padding
         try:
             iterator = iter(text)
         except TypeError:
@@ -195,12 +193,12 @@ class TextBlock(Element):
         self.text = text
 
     @property
-    def line_height(self):
-        return self._line_height if self._line_height != None else self.default_line_height
+    def height(self):
+        return len(self.text) * self.line_height
 
     @property
-    def padding(self):
-        return self._padding if self._padding != None else self.default_padding
+    def line_height(self):
+        return self._line_height if self._line_height != None else self.default_line_height
 
     @line_height.setter
     def line_height(self, value):
@@ -214,9 +212,8 @@ class TextBlock(Element):
             x = self.x,
             y = self.y,
             width = self.width,
-            height = max(self.height + self.padding * 2, len(self.text) * self.line_height + self.padding * 2),
+            height = self.height,
             scale = self.scale,
-            padding = self.padding,
         )
 
 
@@ -300,4 +297,21 @@ class Image(Element):
             width = self.width,
             height = self.height,
             href = path
+        )
+
+class Rect(Element):
+    
+    def __init__(self, rx=0, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.rx = rx
+
+    def render(self):
+        return svg_rect.render(
+            rx = self.rx,
+            x = self.x,
+            y = self.y,
+            width = self.width,
+            height = self.height,
+            scale = self.scale,
+            tags = self.tags,
         )

@@ -1,239 +1,286 @@
-import base64
-from itertools import zip_longest
+
+import math
 from pathlib import Path
 from collections import namedtuple
-from .templates import svg_group, svg_image, svg_legend, svg_style, svg_label, svg_pin, svg_annotation, svg_leaderline
+from .templates import svg, svg_group, svg_image, svg_legend, svg_style, svg_leaderline, svg_label, svg_textblock, svg_rect
 
 
-_BoundingBox = namedtuple('_BoundingBox',('x y w h'))
-_Rect = namedtuple('_Rect',['x','y','w','h','r'])
-_Line = namedtuple('_Line',('x1','x2','y1','y2'))
-_Coords = namedtuple('_Coords',('x y'))
+BoundingBox = namedtuple('BoundingBox',('x y w h'))
+BoundingCoords = namedtuple('BoundingCoords',('x1 y1 x2 y2'))
+Coords = namedtuple('Coords',('x y'))
 
 
+#####################################################################
+# Base Element and Component classes
 
-class Label:
-    """Create an individual label. Labels must be associated to a Pin to be located and rendered in the final diagram. Pin.add_label() is the recommended method of creating labels.
+class ClassMethodMissing(Exception):
+    """ An element is missing an expected method """
+    pass
 
-    :param name: Text that appear on the label.
-    :type name: str
-    :param tags: Applied to the label as css class selector(s). Multiple tags can be included as a space separated list.
-    :type name: str
-    :param width: Width of the label rectangle.
-    :type width: int
-    :param height: Height of the label rectangle.
-    :type height: int
-    :param gap: Space between the label rectangle and proceeding label or pin location. The gap contains a graphical 'leader-line'.
-    :type gap: int
-    :param cnr: Corner radius or teh label rectangle.
-    :type cnr: int
-    """
-    
-    #:Default label box width.
-    default_width = 70
 
-    #:Default label box height.
-    default_height = 25
+class Element:
 
-    #:Default label gap.
-    default_gap = 5
+    default_width = 10
+    default_height = 10
 
-    #:Default label box corner-radius.
-    default_cnr = 2
-
-    def __init__(self, name, tags, width=None, height=None, gap=None, cnr=None):
-        """ Constructor method
-        """
-        self.name = name
-        self.tags = tags.strip()
+    def __init__(self, x=0, y=0, width=None, height=None, scale=(1,1), rotation=0, tags=''):
+        self.x = x
+        self.y = y
         self._width = width
         self._height = height
-        self._gap = gap
-        self._cnr = cnr
+        self._scale = scale if isinstance(scale, Coords) else Coords(*scale)
+        self.rotation = rotation
+        self.tags = tags
 
     @property
     def width(self):
-        return self._width or Label.default_width
+        return self._width if self._width != None else self.default_width
 
-    @property
-    def height(self):
-        return self._height or Label.default_height
-
-    @property
-    def gap(self):
-        return self._gap or Label.default_gap
-
-    @property
-    def cnr(self):
-        return self._cnr or Label.default_cnr
-
-
-class Pin:
-    def __init__(self, pin_x, pin_y, label_x=None, label_y=None, label_tuples=None):
-        """Each Pin documents a location in the diagram and manages position and rendering of labels associated to it.
-
-        :param pin_x: Location of the pin on the x axis 
-        :type pin_x: int
-        :param pin_y: location of the pin on the y axis
-        :type pin_y: int
-        :param label_x: X coordinate of the labels relative to the diagram's (0,0) coordinate.
-        :type label_x: int
-        :param label_y: Y coordinate of the labels relative to the diagram's (0,0) coordinate
-        :type label_y: int
-        :param label_tuples: A list of tuples can be supplied to streamline the pin and label creation process into a single step. Each tuple must represent the required arguments of Pin.add_label(). Defaults to None
-        :type label_tuples: List, optional
-        """
-        self.pin_coords = _Coords(pin_x, pin_y)
-        # Label_coords relative to pin_coords
-        self.label_coords = _Coords(label_x - pin_x, label_y - pin_y) 
-        self.labels = []
-        if label_tuples:
-            for label in label_tuples:
-                self.add_label(*label)
-    
-    def add_label(self, name, tags=None, width=None, height=None, gap=None):
-        """Add a label to the pin.
-
-        :param name: Text that appear on the label
-        :type name: str
-        :param tags: Applied to the label as css class selector(s). Multiple tags can be included as a space separated list, defaults to None
-        :type tags: str, optional
-        :param width: Width of the label rectangle.
-        :type width: int
-        :param height: Height of the label rectangle.
-        :type height: int
-        :param gap: Space between the label rectangle and proceeding label or pin location. The gap contains a graphical 'leader-line'.
-        :type gap: int
-        """
-        self.labels.append(Label(name, tags, width, height, gap))
+    @width.setter
+    def width(self, value):
+        self._width = value
     
     @property
-    def width(self):
-        """The total width of each pin is determined by the collective widths of all labels associated with the pin.
-
-        :return: Sum of all label widths
-        :rtype: int
-        """       
-        return sum([label.width + label.gap for label in self.labels]) + abs(self.label_coords.x)
-
-    @property
     def height(self):
-        """Each label associated with a pin can have its height independently set. The overall height of the pin is thus dictated by its tallest labels.
+        return self._height if self._height != None else self.default_height
 
-        :return: Height of the tallest label.
-        :rtype: int
-        """
-        return abs(self.label_coords.y) + max([label.height or Label.default_height for label in self.labels]) - self.tallest_label / 2
-
-    @property
-    def tallest_label(self):
-        """Finds and returns the height of the tallest label associated with a pin.
-
-        :return: Height of the tallest label.
-        :rtype: int
-        """
-        return max([l.height for l in self.labels])
+    @height.setter
+    def height(self, value):
+        self._height = value
 
     @property
-    def bounding_box(self):
-        """Calculate a rectangular box that documents the bounds and location the rendered object 
+    def scale(self):
+        return self._scale
 
-        :return: namedTuple documenting x, y, width, and height.
-        :rtype: diagram._BoundingBox
-        """
-        if self.label_coords.x > 0:
-            # labels located right of pin
-            x = self.pin_coords.x
-        else:
-            # labels located left of pin
-            x = self.pin_coords.x - self.width
+    @scale.setter
+    def scale(self, coords):
+        coords = coords if isinstance(coords, Coords) else Coords(*coords)
+        self._scale = coords
+        try:
+            for c in self.children:
+                c.scale = Coords(c.scale.x * coords.x, c.scale.y * coords.y)
+        except AttributeError:
+            """ No children to update """   
 
-        if self.label_coords.y > 0:
-            # labels located below pin
-            y = self.pin_coords.y
-        else:
-            # labels located above pin
-            y = self.pin_coords.y + self.label_coords.y - self.tallest_label / 2
+    @property
+    def bounding_coords(self):
+        x_min, x_max = sorted([self.x * self.scale.x, (self.x + self.width) * self.scale.x])
+        y_min, y_max = sorted([self.y * self.scale.y, (self.y + self.height) * self.scale.y])
+        return BoundingCoords(x_min, y_min, x_max, y_max)
 
-        return _BoundingBox(x, y, self.width, self.height)
-        
+    @property
+    def bounding_rect(self):
+        x1, y1, x2, y2 = self.bounding_coords
+        return BoundingBox(x1, y1, x2-x1, y2-y1)
 
     def render(self):
-        """Generates SVG tags of all associated labels.
+        raise ClassMethodMissing(f"{self} requires a 'render' method.")
+        """ Return a string of valid SVG markup."""
 
-        :return: SVG components
-        :rtype: str
-        """
+
+class Component(Element):
+    """Container object that manages groups of child objects. All children must include a render and bounding_coords functions.
+    """
+    def __init__(self, children=None, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.children = []
+        if children:
+            self.add(children)
+
+    @property
+    def bounding_coords(self):
+        # Untransformed bounding coords
+        x1 = self.x + min([c.bounding_coords.x1 for c in self.children])
+        y1 = self.y + min([c.bounding_coords.y1 for c in self.children])
+        x2 = self.x + max([c.bounding_coords.x2 for c in self.children])
+        y2 = self.y + max([c.bounding_coords.y2 for c in self.children])
+        return BoundingCoords(x1, y1, x2, y2)
+
+    @property
+    def width(self):
+        x1, y1, x2, y2 = self.bounding_coords
+        return x2 - x1
+
+    @property
+    def height(self):
+        x1, y1, x2, y2 = self.bounding_coords
+        return y2 - y1
+
+    @property
+    def bounding_rect(self):
+        x1, y1, x2, y2 = self.bounding_coords
+        return BoundingBox(x1, y1, x2-x1, y2-y1)
+
+    def add(self, children):
+        try:
+            iterator = iter(children)
+        except TypeError:
+            children = [children]
+        for c in children:
+            self.children.append(c)
+            c.scale = Coords(c.scale.x * self.scale.x, c.scale.y * self.scale.y)
+
+    def render(self):
         output = ''
-        for i, label in enumerate(self.labels):
-            tags = ('label ' + label.tags).strip()
-            
-            offset = sum(l.width + l.gap for l in self.labels[:i])
-            output += svg_label.render(
-                selectors = ' '.join(['label', label.tags]),
-                leaderline_class = label.tags.split(' ')[0],
-                label = label,
-                offset = offset,
-                flip = self.label_coords.x < 0,
-            )
-            
-        return  svg_pin.render(
-            x = self.pin_coords.x,
-            y = self.pin_coords.y,
-            label_coords = self.label_coords,
-            leaderline = f'M 0 0 V {self.label_coords.y} H {self.label_coords.x}',
-            leaderline_class = self.labels[0].tags.split(' ')[0],
-            flip = self.label_coords.x < 0,
+        for c in self.children:
+            output += c.render()
+        return svg_group.render(
+            x = self.x,
+            y = self.y,
+            tags = self.tags,
             content = output,
-            selectors = 'pin'
+            scale = self.scale,
         )
 
 
-class Image:
-    def __init__(self, x, y, width, height, filepath, embed=False):
-        """Include an image in the diagram.
+class StyleSheet:
+    def __init__(self, path, embed=False):
+        """Include a stylesheet in the diagram
 
-        :param x: Location of the image on the x axis
-        :type x: int
-        :param y: Location of the image on the y axis
-        :type y: int
-        :param width: Width of image in the diagram (may differ from actual image width)
-        :type width: int
-        :param height: Height of the image in the diagram (may differ from actual image height)
-        :type height: int
-        :param filepath: Filename, including path, to the image. Relative paths are relative to the current working directory.
-        :type filepath: string
-        :param embed: Elect to link or embed an external image. Embedded images are base64 encoded. Default to False.
-        :type embed: bool
+        :param path: Filename, including path, of the external stylesheet. *NOTE*: If *embedding*, a relative path is relative to the current working directory. If *linking*, a relative path is relative to the location of the final SVG diagram. 
+        :type path: str
+        :param embed: Elect to link or embed the stylesheet, defaults to False
+        :type embed: bool, optional
         """
-        self.x = x
-        self.y = y
-        self.path = filepath
-        self.width = width
-        self.height = height
+        self.path = path
+        self.embed = embed
+
+    def render(self):
+        context = {}
+        if self.embed:
+            p = Path(self.path)
+            context['css_data'] = p.read_text()
+        else:
+            context['path'] = self.path
+        
+        return svg_style.render(**context)
+
+#####################################################################
+# User classes
+
+class Label(Element):
+
+    default_width = 70
+    default_height = 30
+
+    def __init__(self, text ,*args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.text = text
+
+    def render(self):
+        return svg_label.render(
+            text = self.text,
+            tags = self.tags,
+            x = self.x,
+            y = self.y,
+            width = self.width,
+            height = self.height,
+            scale = self.scale
+        )
+
+class TextBlock(Element):
+
+    default_width = 7
+    default_line_height = 20
+
+    def __init__(self, text, line_height=None, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._line_height = line_height
+        try:
+            iterator = iter(text)
+        except TypeError:
+            text = [text]
+        self.text = text
+
+    @property
+    def height(self):
+        return len(self.text) * self.line_height
+
+    @property
+    def line_height(self):
+        return self._line_height if self._line_height != None else self.default_line_height
+
+    @line_height.setter
+    def line_height(self, value):
+        self._line_height = value
+
+    def render(self):
+        return svg_textblock.render(
+            text = self.text,
+            line_height = self.line_height,
+            tags = ('textblock ' + self.tags).strip(),
+            x = self.x,
+            y = self.y,
+            width = self.width,
+            height = self.height,
+            scale = self.scale,
+        )
+
+
+class LeaderLine(Element):
+    
+    def __init__(self, route, *args, **kwargs):
+        """[summary]
+
+        :param route: Type of line to render. options are 'h' - horizontal line, and 'hv' - line a single bend 
+        :type route: str
+        """
+        super().__init__(*args, **kwargs)
+        self.route = route
+
+    @property
+    def width(self):
+        return abs(self.x)
+
+    @property
+    def height(self):
+        return abs(self.y)
+
+    @property
+    def bounding_coords(self):
+        x1, x2 = sorted([0, self.x * self.scale.x])
+        y1, y2 = sorted([0, self.y * self.scale.y])
+        return BoundingCoords(x1, y1, x2, y2)
+
+    def render(self):
+        if self.route in ['HV', 'hv']:
+            # Vertical then horizontal leader line
+            d = f'M 0 0 H {self.x * self.scale.x} V {self.y * self.scale.y}'
+        else:
+            # Straight line (default)
+            d = f'M 0 0 L {self.x * self.scale.x} {self.y * self.scale.y}'
+
+        return svg_leaderline.render(
+            d = d,
+            tags = ('leaderline ' + self.tags).strip(),
+        )
+
+
+class Image(Element):
+    
+    def __init__(self, href, embed=False, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+       
+        self.href = href
         self.embed = embed
 
     @property
-    def bounding_box(self):
-        """Calculate a rectangular box that documents the bounds and location the rendered object 
+    def bounding_coords(self):
+        x_min, x_max = sorted([self.x * self.scale.x, (self.x + self.width) * self.scale.x])
+        y_min, y_max = sorted([self.y * self.scale.y, (self.y + self.height) * self.scale.y])
+        return BoundingCoords(x_min, y_min, x_max, y_max)
 
-        :return: namedTuple documenting x, y, width, and height.
-        :rtype: diagram._BoundingBox
-        """
-        return _BoundingBox(self.x, self.y, self.width, self.height)
-    
     def render(self):
         """Generates SVG <image> tag using the image 'filename', Note that JPG and PNG are the only binary images files officially supported by the SVG format. If 'embed' is True the image is assigned to the path as a data URI. JPG and PNG image are base64 encoded, SVG files included verbatim. Otherwise the path 'src' is assigned 'filename'. Note: 'filename' includes the path to the file. Where a relative path is used it must be relative to the **exported file**.   
 
         :return: SVG <image> component
         :rtype: str
         """
-        media_type = Path(self.path).suffix[1:]
-
+        media_type = Path(self.href).suffix[1:]
+        path = Path(self.href)
         if self.embed:
             if media_type == 'svg':
-                filepath = Path(self.path)
-                with filepath.open() as f:
+                with path.open() as f:
                     svg_data = f.read()
                 return svg_group.render(
                     x = self.x,
@@ -241,108 +288,30 @@ class Image:
                     content = svg_data
                 )
             else:
-                encoded_img = base64.b64encode(open(self.path, "rb").read())
+                encoded_img = base64.b64encode(open(self.href, "rb").read())
                 path = 'data:image/{};base64,{}'.format(media_type, encoded_img.decode('utf-8'))
-        else:
-            path = self.path
 
         return svg_image.render(
             x = self.x,
             y = self.y,
             width = self.width,
             height = self.height,
-            path = path
+            href = path
         )
 
-
-class StyleSheet:
-        def __init__(self, filepath, embed=False):
-            """Include a stylesheet in the diagram
-
-            :param filepath: Filename, including path, of the external stylesheet. *NOTE*: If *embedding*, a relative filepath is relative to the current working directory. If *linking*, a relative filepath is relative to the location of the final SVG diagram. 
-            :type filepath: str
-            :param embed: Elect to link or embed the stylesheet, defaults to False
-            :type embed: bool, optional
-            """
-            self.filepath = filepath
-            self.embed = embed
-
-        def render(self):
-            context = {}
-            if self.embed:
-                p = Path(self.filepath)
-                context['css_data'] = p.read_text()
-            else:
-                context['filepath'] = self.filepath
-            
-            return svg_style.render(**context)
-
-
-class Legend:
-
-    ITEM_HEIGHT = 20
-    ITEM_PAD = 4
-    TEXT_PAD = 5
-    SWATCH_PAD = 5
-    INSET = 20
-
-    def __init__(self, x, y, width, tags='', items=None):
-        self.x = x
-        self.y = y
-        self.width = width
-        self.items = items or []
-        self.tags = tags
+class Rect(Element):
     
-    @property
-    def height(self):
-        """Legend overall height (calculated dynamically).
-
-        :return: Number of entries * preset item height
-        :rtype: int
-        """
-        return len(self.items) * (self.ITEM_HEIGHT + self.ITEM_PAD) - self.ITEM_PAD + 2 * self.INSET
-
-    @property
-    def bounding_box(self):
-        """Calculate a rectangular box that documents the bounds and location the rendered object 
-
-        :return: namedTuple documenting x, y, width, and height.
-        :rtype: diagram._BoundingBox
-        """
-        return _BoundingBox(self.x, self.y, self.width, self.height)
+    def __init__(self, rx=0, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.rx = rx
 
     def render(self):
-        """Generates SVG code of the legend.
-
-        :return: SVG legend component
-        :rtype: str
-        """
-        # Parse user submitted item data
-        items = []
-        keys = ['name','tags','color']
-        for i, values in enumerate(self.items):
-            # Ensure values are a list (ie not a single item in a tuple)
-            if isinstance(values, str):
-                values = [values]
-
-            item = dict(zip_longest(keys, values, fillvalue=''))
-            
-            # Create a pin and blank label as a 'swatch' for each item
-            tags = ('swatch ' + item['tags']).strip()
-            swatch = Pin(0, 0, -1, 0, [('', tags, 20, 20, 5)])
-            item['swatch'] = swatch.render()
-
-            item['x'] = swatch.width + self.INSET
-            item['y'] = i * (self.ITEM_HEIGHT + self.ITEM_PAD) + (self.ITEM_HEIGHT / 2) + self.INSET
-            items.append(item)
-            
-
-        return svg_legend.render(
+        return svg_rect.render(
+            rx = self.rx,
             x = self.x,
             y = self.y,
             width = self.width,
             height = self.height,
-            text_pad = self.TEXT_PAD,
-            items = items,
-            selectors = self.tags
+            scale = self.scale,
+            tags = self.tags,
         )

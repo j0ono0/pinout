@@ -19,7 +19,6 @@ svg_rect = env.get_template('rect.svg')
 stylesheet = env.get_template('stylesheet.css')
 
 # Component SVG templates (made from multiple svg elements)
-svg_legend = env.get_template('legend.svg')
 svg_label = env.get_template('label.svg')
 svg_annotation = env.get_template('annotation.svg')
 

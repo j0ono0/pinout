@@ -7,12 +7,12 @@
     width="{{ viewbox.w }}" 
     height="{{ viewbox.h }}" 
     viewBox="{{ viewbox.x }} {{ viewbox.y }} {{ viewbox.w }} {{ viewbox.h }}"
-    class="{{ selectors }}"
+    class="{{ tags }}"
 >
 
 {% block body %}
 
-    {{ rendered_components }}
+    {{ content }}
     
 {% endblock %}
 </svg>

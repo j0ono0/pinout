@@ -11,36 +11,47 @@ from .templates import (
     svg_rect,
 )
 
-BoundingBox = namedtuple('BoundingBox', ('x y w h'))
-BoundingCoords = namedtuple('BoundingCoords', ('x1 y1 x2 y2'))
-Coords = namedtuple('Coords', ('x y'))
+BoundingBox = namedtuple("BoundingBox", ("x y w h"))
+BoundingCoords = namedtuple("BoundingCoords", ("x_min y_min x_max y_max"))
+Coords = namedtuple("Coords", ("x y"))
 
 
 #####################################################################
 # Base Element and Component classes
 
+
 class ClassMethodMissing(Exception):
     """ An element is missing an expected method """
+
     pass
 
 
-class Element:
-
-    default_width = 10
-    default_height = 10
-
-    def __init__(self, x=0, y=0, width=None, height=None, scale=(1, 1), rotation=0, tags=''):
+class SVG:
+    def __init__(self, x=0, y=0, scale=(1, 1), rotation=0, tags=""):
         self.x = x
         self.y = y
-        self._width = width
-        self._height = height
         self._scale = scale if isinstance(scale, Coords) else Coords(*scale)
         self.rotation = rotation
         self.tags = tags
+        
+    @property
+    def scale(self):
+        return self._scale
+
+    @scale.setter
+    def scale(self, value):
+        self._scale = value
+
+
+class Element(SVG):
+    def __init__(self, width=0, height=0, *args, **kwargs):
+        self._width = width
+        self._height = height
+        super().__init__(*args, **kwargs)
 
     @property
     def width(self):
-        return self._width if self._width is not None else self.default_width
+        return self._width
 
     @width.setter
     def width(self, value):
@@ -48,100 +59,142 @@ class Element:
 
     @property
     def height(self):
-        return self._height if self._height is not None else self.default_height
+        return self._height
 
     @height.setter
     def height(self, value):
         self._height = value
 
     @property
-    def scale(self):
-        return self._scale
-
-    @scale.setter
-    def scale(self, coords):
-        coords = coords if isinstance(coords, Coords) else Coords(*coords)
-        self._scale = coords
-        try:
-            for c in self.children:
-                c.scale = Coords(c.scale.x * coords.x, c.scale.y * coords.y)
-        except AttributeError:
-            """ No children to update """
-
-    @property
     def bounding_coords(self):
-        x_min, x_max = sorted([
-            self.x * self.scale.x,
-            (self.x + self.width) * self.scale.x
-        ])
-        y_min, y_max = sorted([
-            self.y * self.scale.y,
-            (self.y + self.height) * self.scale.y
-        ])
+        x_min, x_max = sorted(
+            [self.x * self.scale.x, (self.x + self.width) * self.scale.x]
+        )
+        y_min, y_max = sorted(
+            [self.y * self.scale.y, (self.y + self.height) * self.scale.y]
+        )
         return BoundingCoords(x_min, y_min, x_max, y_max)
 
     @property
     def bounding_rect(self):
-        x1, y1, x2, y2 = self.bounding_coords
-        return BoundingBox(x1, y1, x2-x1, y2-y1)
+        x_min, y_min, x_max, y_max = self.bounding_coords
+        return BoundingBox(x_min, y_min, x_max - x_min, y_max - y_min)
 
     def render(self):
         raise ClassMethodMissing(f"{self} requires a 'render' method.")
-        """ Return a string of valid SVG markup."""
 
 
-class Component(Element):
-    """Container object that manages groups of child objects. All children must include a render and bounding_coords functions.
-    """
+class Component(SVG):
+    """Container object that manages groups of child objects. 
+    All children must include a render and bounding_coords functions."""
+
     def __init__(self, children=None, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        """Container object that manages child Component and/or Elements as a group, it renders as a <group> tag.
+        Child coordinates are all relative to their parent Component.
+        When scale is applied to a Component no direct affect to the <group> tag is applied but the scale setting is passed down to direct child **Elements**.   
+
+        :param children: Component and/or Element objects, defaults to None
+        :type children: Union[Component, Element], optional
+        """
         self.children = []
+        super().__init__(*args, **kwargs)
         if children:
             self.add(children)
 
     @property
     def bounding_coords(self):
         # Untransformed bounding coords
-        x1 = self.x + min([c.bounding_coords.x1 for c in self.children])
-        y1 = self.y + min([c.bounding_coords.y1 for c in self.children])
-        x2 = self.x + max([c.bounding_coords.x2 for c in self.children])
-        y2 = self.y + max([c.bounding_coords.y2 for c in self.children])
-        return BoundingCoords(x1, y1, x2, y2)
+        x_min = self.x + min(
+            [
+                child.bounding_coords.x_min
+                for child in self.children
+                if hasattr(child, "bounding_coords")
+            ]
+        )
+        y_min = self.y + min(
+            [
+                child.bounding_coords.y_min
+                for child in self.children
+                if hasattr(child, "bounding_coords")
+            ]
+        )
+        x_max = self.x + max(
+            [
+                child.bounding_coords.x_max
+                for child in self.children
+                if hasattr(child, "bounding_coords")
+            ]
+        )
+        y_max = self.y + max(
+            [
+                child.bounding_coords.y_max
+                for child in self.children
+                if hasattr(child, "bounding_coords")
+            ]
+        )
+        return BoundingCoords(x_min, y_min, x_max, y_max)
 
     @property
     def width(self):
-        x1, y1, x2, y2 = self.bounding_coords
-        return x2 - x1
+        try:
+            x_min, y_min, x_max, y_max = self.bounding_coords
+            return x_max - x_min
+        except ValueError:
+            #Component has no children with bounding_coords
+            return 0
 
     @property
     def height(self):
-        x1, y1, x2, y2 = self.bounding_coords
-        return y2 - y1
+        try:
+            x_min, y_min, x_max, y_max = self.bounding_coords
+            return y_max - y_min
+        except ValueError:
+            #Component has no children with bounding_coords
+            return 0
+
+    @property
+    def scale(self):
+        return self._scale
+
+    @scale.setter
+    def scale(self, value):
+        self._scale = value
+        for child in self.children:
+            if issubclass(type(child), Element):
+                child.scale = self.scale
 
     @property
     def bounding_rect(self):
-        x1, y1, x2, y2 = self.bounding_coords
-        return BoundingBox(x1, y1, x2-x1, y2-y1)
+        x_min, y_min, x_max, y_max = self.bounding_coords
+        return BoundingBox(x_min, y_min, x_max - x_min, y_max - y_min)
 
     def add(self, children):
         try:
-            _ = iter(children)
+            for child in children:
+                self.children.append(child)
+                if issubclass(type(child), Element):
+                    child.scale = self.scale
+
         except TypeError:
-            children = [children]
-        for c in children:
-            self.children.append(c)
-            c.scale = Coords(c.scale.x * self.scale.x, c.scale.y * self.scale.y)
+            self.add([children])
 
     def render(self):
-        output = ''
-        for c in self.children:
-            output += c.render()
+        """Render Component, and children, as SVG markup. 
+        NOTE: *scale* only affects Elements! It does not affect the grapical appearance of Components.
+
+        :return: SVG markup of component including all children.
+        :rtype: str
+        """
+        output = ""
+        for child in self.children:
+            output += child.render()
         return svg_group.render(
             x=self.x,
             y=self.y,
             tags=self.tags,
             content=output,
-            scale=self.scale,
+            # NOTE: Graphically, components are *not* affected by scale 
+            scale=Coords(1,1),
         )
 
 
@@ -161,34 +214,70 @@ class StyleSheet:
         context = {}
         if self.embed:
             p = Path(self.path)
-            context['css_data'] = p.read_text()
+            context["css_data"] = p.read_text()
         else:
-            context['path'] = self.path
-        
+            context["path"] = self.path
+
         return svg_style.render(**context)
 
+
 #####################################################################
-# User classes
+# SVG tag classes
 
 
-class Label(Element):
-
-    default_width = 70
-    default_height = 30
-
-    def __init__(self, text, *args, **kwargs):
+class Image(Element):
+    def __init__(self, href, embed=False, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.text = text
+
+        self.href = href
+        self.embed = embed
+
+    @property
+    def bounding_coords(self):
+        x_min, x_max = sorted(
+            [self.x * self.scale.x, (self.x + self.width) * self.scale.x]
+        )
+        y_min, y_max = sorted(
+            [self.y * self.scale.y, (self.y + self.height) * self.scale.y]
+        )
+        return BoundingCoords(x_min, y_min, x_max, y_max)
 
     def render(self):
-        return svg_label.render(
-            text=self.text,
-            tags=self.tags,
+        """Generates SVG <image> tag using the image 'filename', Note that JPG and PNG are the only binary images files officially supported by the SVG format. If 'embed' is True the image is assigned to the path as a data URI. JPG and PNG image are base64 encoded, SVG files included verbatim. Otherwise the path 'src' is assigned 'filename'. Note: 'filename' includes the path to the file. Where a relative path is used it must be relative to the **exported file**.
+
+        :return: SVG <image> component
+        :rtype: str
+        """
+        media_type = Path(self.href).suffix[1:]
+        path = Path(self.href)
+        if self.embed:
+            if media_type == "svg":
+                with path.open() as f:
+                    svg_data = f.read()
+                return svg_group.render(x=self.x, y=self.y, content=svg_data)
+            else:
+                encoded_img = base64.b64encode(open(self.href, "rb").read())
+                path = f"data:image/{media_type};base64,{encoded_img.decode('utf-8')}"
+
+        return svg_image.render(
+            x=self.x, y=self.y, width=self.width, height=self.height, href=path
+        )
+
+
+class Rect(Element):
+    def __init__(self, rx=0, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.rx = rx
+
+    def render(self):
+        return svg_rect.render(
+            rx=self.rx,
             x=self.x,
             y=self.y,
             width=self.width,
             height=self.height,
-            scale=self.scale
+            scale=self.scale,
+            tags=self.tags,
         )
 
 
@@ -212,7 +301,11 @@ class TextBlock(Element):
 
     @property
     def line_height(self):
-        return self._line_height if self._line_height is not None else self.default_line_height
+        return (
+            self._line_height
+            if self._line_height is not None
+            else self.default_line_height
+        )
 
     @line_height.setter
     def line_height(self, value):
@@ -222,7 +315,32 @@ class TextBlock(Element):
         return svg_textblock.render(
             text=self.text,
             line_height=self.line_height,
-            tags=('textblock ' + self.tags).strip(),
+            tags=("textblock " + self.tags).strip(),
+            x=self.x,
+            y=self.y,
+            width=self.width,
+            height=self.height,
+            scale=self.scale,
+        )
+
+
+#####################################################################
+# Composite classes
+
+
+class Label(Element):
+
+    default_width = 70
+    default_height = 30
+
+    def __init__(self, text, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.text = text
+
+    def render(self):
+        return svg_label.render(
+            text=self.text,
+            tags=self.tags,
             x=self.x,
             y=self.y,
             width=self.width,
@@ -232,15 +350,14 @@ class TextBlock(Element):
 
 
 class LeaderLine(Element):
-    
-    def __init__(self, route, *args, **kwargs):
-        """[summary]
+    def __init__(self, route="h", *args, **kwargs):
+        """Draws a line from (0,0) to (x,y). Line route is configured by the *route* argument.
 
-        :param route: Type of line to render. options are 'h' - horizontal line, and 'hv' - line a single bend 
+        :param route: Type of line to render. options are 'h' - horizontal line, and 'hv' - line a single bend
         :type route: str
         """
-        super().__init__(*args, **kwargs)
         self.route = route
+        super().__init__(*args, **kwargs)
 
     @property
     def width(self):
@@ -252,80 +369,42 @@ class LeaderLine(Element):
 
     @property
     def bounding_coords(self):
-        x1, x2 = sorted([0, self.x * self.scale.x])
-        y1, y2 = sorted([0, self.y * self.scale.y])
-        return BoundingCoords(x1, y1, x2, y2)
-
-    def render(self):
-        if self.route in ['HV', 'hv']:
-            # Vertical then horizontal leader line
-            d = f'M 0 0 H {self.x * self.scale.x} V {self.y * self.scale.y}'
-        else:
-            # Straight line (default)
-            d = f'M 0 0 L {self.x * self.scale.x} {self.y * self.scale.y}'
-
-        return svg_leaderline.render(
-            d=d,
-            tags=('leaderline ' + self.tags).strip(),
-        )
-
-
-class Image(Element):
-    
-    def __init__(self, href, embed=False, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        self.href = href
-        self.embed = embed
-
-    @property
-    def bounding_coords(self):
-        x_min, x_max = sorted([self.x * self.scale.x, (self.x + self.width) * self.scale.x])
-        y_min, y_max = sorted([self.y * self.scale.y, (self.y + self.height) * self.scale.y])
+        x_min, x_max = sorted([0, self.x * self.scale.x])
+        y_min, y_max = sorted([0, self.y * self.scale.y])
         return BoundingCoords(x_min, y_min, x_max, y_max)
 
     def render(self):
-        """Generates SVG <image> tag using the image 'filename', Note that JPG and PNG are the only binary images files officially supported by the SVG format. If 'embed' is True the image is assigned to the path as a data URI. JPG and PNG image are base64 encoded, SVG files included verbatim. Otherwise the path 'src' is assigned 'filename'. Note: 'filename' includes the path to the file. Where a relative path is used it must be relative to the **exported file**.
+        if self.route in ["VH", "vh"]:
+            # Vertical then horizontal leader line
+            d = f"M 0 0 V {self.y * self.scale.y} H {self.x * self.scale.x}"
+        else:
+            # Straight line (default)
+            d = f"M 0 0 L {self.x * self.scale.x} {self.y * self.scale.y}"
 
-        :return: SVG <image> component
-        :rtype: str
-        """
-        media_type = Path(self.href).suffix[1:]
-        path = Path(self.href)
-        if self.embed:
-            if media_type == 'svg':
-                with path.open() as f:
-                    svg_data = f.read()
-                return svg_group.render(
-                    x=self.x,
-                    y=self.y,
-                    content=svg_data
-                )
-            else:
-                encoded_img = base64.b64encode(open(self.href, "rb").read())
-                path = f"data:image/{media_type};base64,{encoded_img.decode('utf-8')}"
-
-        return svg_image.render(
-            x=self.x,
-            y=self.y,
-            width=self.width,
-            height=self.height,
-            href=path
+        return svg_leaderline.render(
+            d=d,
+            tags=("leaderline " + self.tags).strip(),
         )
 
 
-class Rect(Element):
-    def __init__(self, rx=0, *args, **kwargs):
+class PinLabel(Component):
+    def __init__(self, text, offset=(15, 0), *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.rx = rx
+        self.tags = ("pinlabel " + self.tags).strip()
 
-    def render(self):
-        return svg_rect.render(
-            rx=self.rx,
-            x=self.x,
-            y=self.y,
-            width=self.width,
-            height=self.height,
-            scale=self.scale,
-            tags=self.tags,
-        )
+        # Scale is deduced from offset polarity and documents offset direction. Offset values are positive only.
+        self.scale = Coords(*[i/abs(i) if i != 0 else 1 for i in offset])
+        offset = Coords(*[abs(i) for i in offset])
+        
+        # Deduce route from scale
+        if offset.x == 0:
+            route = 'v'
+        elif offset.y == 0:
+            route = 'h'
+        else:
+            route = 'vh'
+
+        self.children = [
+            LeaderLine(route=route, x=offset.x, y=offset.y, scale=self.scale),
+            Label(text=text, x=offset.x, y=offset.y, width=70, height=28, scale=self.scale),
+        ]

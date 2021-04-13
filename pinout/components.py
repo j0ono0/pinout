@@ -360,25 +360,26 @@ class Label(Element):
 
 
 class LeaderLine(Component):
-    def __init__(self, origin, *args, **kwargs):
-        """Draws a line from *origin* to the component's (x, y) location.
+    def __init__(self, offset=(0, 0), *args, **kwargs):
+        """Draws a line from *offset* to the component's (x, y) location.
 
-        :param origin: The (x, y) coordinates the leaderline is drawn from
-        :type origin: tuple
+        :param offset: The (x, y) coordinates the leaderline is drawn from
+        :type offset: tuple
         """
 
         super().__init__(*args, **kwargs)
 
-        # If a negative value is in 'origin' override scale with deduced values from offset.
-        # then set offset to positive values.
-        if not all(val >= 0 for val in origin):
-            self.scale = Coords(*[i / abs(i) if i != 0 else 1 for i in origin])
-
-        line_x = abs(origin[0])
-        line_y = abs(origin[1])
+        if not all(val >= 0 for val in offset):
+            self.scale = Coords(*[i / abs(i) if i != 0 else 1 for i in offset])
+        offset = Coords(*[abs(i) for i in offset])
 
         # Add Path to children
-        self.add(Line(width=line_x, height=line_y, scale=self.scale))
+        self.add(
+            Line(
+                width=abs(offset[0]),
+                height=abs(offset[1]),
+            ),
+        )
 
 
 class PinLabel(Component):
@@ -392,17 +393,18 @@ class PinLabel(Component):
             self.scale = Coords(*[i / abs(i) if i != 0 else 1 for i in offset])
         offset = Coords(*[abs(i) for i in offset])
 
-        # Deduce route from scale
-        if offset.x == 0:
-            route = "v"
-        elif offset.y == 0:
-            route = "h"
-        else:
-            route = "vh"
+        line_scale = (-self.scale.x, -self.scale.y)
 
-        self.children = [
-            Line(width=offset.x, height=offset.y, scale=self.scale),
-            Label(
-                text=text, x=offset.x, y=offset.y, width=70, height=28, scale=self.scale
-            ),
-        ]
+        self.add(
+            [
+                Line(width=offset.x, height=offset.y),
+                Label(
+                    text=text,
+                    x=offset.x,
+                    y=offset.y,
+                    width=70,
+                    height=28,
+                    scale=self.scale,
+                ),
+            ]
+        )

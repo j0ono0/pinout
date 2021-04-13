@@ -1,14 +1,15 @@
 import base64
-from pathlib import Path
 from collections import namedtuple
+from pathlib import Path
+
 from .templates import (
     svg_group,
     svg_image,
-    svg_style,
-    svg_leaderline,
     svg_label,
-    svg_textblock,
+    svg_line,
     svg_rect,
+    svg_style,
+    svg_textblock,
 )
 
 BoundingBox = namedtuple("BoundingBox", ("x y w h"))
@@ -33,7 +34,7 @@ class SVG:
         self._scale = scale if isinstance(scale, Coords) else Coords(*scale)
         self.rotation = rotation
         self.tags = tags
-        
+
     @property
     def scale(self):
         return self._scale
@@ -85,13 +86,13 @@ class Element(SVG):
 
 
 class Component(SVG):
-    """Container object that manages groups of child objects. 
+    """Container object that manages groups of child objects.
     All children must include a render and bounding_coords functions."""
 
     def __init__(self, children=None, *args, **kwargs):
         """Container object that manages child Component and/or Elements as a group, it renders as a <group> tag.
         Child coordinates are all relative to their parent Component.
-        When scale is applied to a Component no direct affect to the <group> tag is applied but the scale setting is passed down to direct child **Elements**.   
+        When scale is applied to a Component no direct affect to the <group> tag is applied but the scale setting is passed down to direct child **Elements**.
 
         :param children: Component and/or Element objects, defaults to None
         :type children: Union[Component, Element], optional
@@ -140,7 +141,7 @@ class Component(SVG):
             x_min, y_min, x_max, y_max = self.bounding_coords
             return x_max - x_min
         except ValueError:
-            #Component has no children with bounding_coords
+            # Component has no children with bounding_coords
             return 0
 
     @property
@@ -149,7 +150,7 @@ class Component(SVG):
             x_min, y_min, x_max, y_max = self.bounding_coords
             return y_max - y_min
         except ValueError:
-            #Component has no children with bounding_coords
+            # Component has no children with bounding_coords
             return 0
 
     @property
@@ -179,7 +180,7 @@ class Component(SVG):
             self.add([children])
 
     def render(self):
-        """Render Component, and children, as SVG markup. 
+        """Render Component, and children, as SVG markup.
         NOTE: *scale* only affects Elements! It does not affect the grapical appearance of Components.
 
         :return: SVG markup of component including all children.
@@ -193,8 +194,8 @@ class Component(SVG):
             y=self.y,
             tags=self.tags,
             content=output,
-            # NOTE: Graphically, components are *not* affected by scale 
-            scale=Coords(1,1),
+            # NOTE: Graphically, components are *not* affected by scale
+            scale=Coords(1, 1),
         )
 
 
@@ -281,6 +282,15 @@ class Rect(Element):
         )
 
 
+class Line(Element):
+    def render(self):
+        return svg_line.render(
+            d=f"M 0 0 V {self.height} H {self.width}",
+            scale=self.scale,
+            tags=self.tags,
+        )
+
+
 class TextBlock(Element):
 
     default_width = 7
@@ -349,42 +359,26 @@ class Label(Element):
         )
 
 
-class LeaderLine(Element):
-    def __init__(self, route="h", *args, **kwargs):
-        """Draws a line from (0,0) to (x,y). Line route is configured by the *route* argument.
+class LeaderLine(Component):
+    def __init__(self, origin, *args, **kwargs):
+        """Draws a line from *origin* to the component's (x, y) location.
 
-        :param route: Type of line to render. options are 'h' - horizontal line, and 'hv' - line a single bend
-        :type route: str
+        :param origin: The (x, y) coordinates the leaderline is drawn from
+        :type origin: tuple
         """
-        self.route = route
+
         super().__init__(*args, **kwargs)
 
-    @property
-    def width(self):
-        return abs(self.x)
+        # If a negative value is in 'origin' override scale with deduced values from offset.
+        # then set offset to positive values.
+        if not all(val >= 0 for val in origin):
+            self.scale = Coords(*[i / abs(i) if i != 0 else 1 for i in origin])
 
-    @property
-    def height(self):
-        return abs(self.y)
+        line_x = abs(origin[0])
+        line_y = abs(origin[1])
 
-    @property
-    def bounding_coords(self):
-        x_min, x_max = sorted([0, self.x * self.scale.x])
-        y_min, y_max = sorted([0, self.y * self.scale.y])
-        return BoundingCoords(x_min, y_min, x_max, y_max)
-
-    def render(self):
-        if self.route in ["VH", "vh"]:
-            # Vertical then horizontal leader line
-            d = f"M 0 0 V {self.y * self.scale.y} H {self.x * self.scale.x}"
-        else:
-            # Straight line (default)
-            d = f"M 0 0 L {self.x * self.scale.x} {self.y * self.scale.y}"
-
-        return svg_leaderline.render(
-            d=d,
-            tags=("leaderline " + self.tags).strip(),
-        )
+        # Add Path to children
+        self.add(Line(width=line_x, height=line_y, scale=self.scale))
 
 
 class PinLabel(Component):
@@ -392,19 +386,23 @@ class PinLabel(Component):
         super().__init__(*args, **kwargs)
         self.tags = ("pinlabel " + self.tags).strip()
 
-        # Scale is deduced from offset polarity and documents offset direction. Offset values are positive only.
-        self.scale = Coords(*[i/abs(i) if i != 0 else 1 for i in offset])
+        # If a negative value is in 'offset' override scale with deduced values from offset.
+        # then set offset to positive values.
+        if not all(val >= 0 for val in offset):
+            self.scale = Coords(*[i / abs(i) if i != 0 else 1 for i in offset])
         offset = Coords(*[abs(i) for i in offset])
-        
+
         # Deduce route from scale
         if offset.x == 0:
-            route = 'v'
+            route = "v"
         elif offset.y == 0:
-            route = 'h'
+            route = "h"
         else:
-            route = 'vh'
+            route = "vh"
 
         self.children = [
-            LeaderLine(route=route, x=offset.x, y=offset.y, scale=self.scale),
-            Label(text=text, x=offset.x, y=offset.y, width=70, height=28, scale=self.scale),
+            Line(width=offset.x, height=offset.y, scale=self.scale),
+            Label(
+                text=text, x=offset.x, y=offset.y, width=70, height=28, scale=self.scale
+            ),
         ]

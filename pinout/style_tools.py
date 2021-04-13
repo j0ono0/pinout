@@ -1,10 +1,11 @@
 import io
-import random
 import math
+import random
 from pathlib import Path
+
+from . import file_manager
 from .components import Label
 from .templates import stylesheet
-from . import file_manager
 
 
 def luminace(color_component):
@@ -77,7 +78,7 @@ def default_css(diagram):
     :rtype: str
     """
     # Recursive search for Label components. Extract tags into a list
-    labels = [l.tags.split(" ")[0] for l in find_components(diagram, 'lbl')]
+    labels = [l.tags.split(" ")[0] for l in find_components(diagram, "lbl")]
     print(labels)
     # labels = [[l.tags.split(' ')[0] for l in c.labels] for c in diagram.components if isinstance(c, Pin)]
     labelset = set([tag for lbl in labels for tag in lbl])

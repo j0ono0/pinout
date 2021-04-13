@@ -1,14 +1,10 @@
 import os
-from pathlib import Path
 from collections import namedtuple
+from pathlib import Path
+
+from . import file_manager, style_tools
+from .components import Component, Label, StyleSheet
 from .templates import svg
-from . import style_tools
-from . import file_manager
-from .components import (
-    Component,
-    StyleSheet,
-    Label,
-)
 
 
 class Diagram(Component):

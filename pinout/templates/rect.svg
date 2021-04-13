@@ -1,1 +1,1 @@
-<rect{% if tags %} class="{{ tags }}"{% endif %} x="{{ x * scale.x }}" y="{{ y * scale.y }}" width="{{ width }}" height="{{ height }}" rx="{{ rx }}" transform="scale({{ scale.x }} {{ scale.y }})" />
+<rect{% if tags %} class="{{ tags }}"{% endif %} x="{{ x }}" y="{{ y }}" width="{{ width }}" height="{{ height }}" rx="{{ rx }}" transform="scale({{ scale.x }} {{ scale.y }})" />

@@ -1,0 +1,8 @@
+
+diagram:
+  font_size: 12
+
+pinlabel:
+  box_width: 70
+  box_height: 28
+  offset: [15,0]

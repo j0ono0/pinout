@@ -1,6 +1,8 @@
 import base64
 from collections import namedtuple
 from pathlib import Path
+import pkg_resources
+import yaml
 
 from .templates import (
     svg_group,
@@ -15,6 +17,11 @@ from .templates import (
 BoundingBox = namedtuple("BoundingBox", ("x y w h"))
 BoundingCoords = namedtuple("BoundingCoords", ("x_min y_min x_max y_max"))
 Coords = namedtuple("Coords", ("x y"))
+
+
+# Load default settings
+path = "resources/default_config.yaml"
+cfg = yaml.safe_load(pkg_resources.resource_string(__name__, path).decode("utf-8"))
 
 
 #####################################################################
@@ -338,10 +345,6 @@ class TextBlock(Element):
 
 
 class Label(Element):
-
-    default_width = 70
-    default_height = 30
-
     def __init__(self, text, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.text = text
@@ -380,7 +383,15 @@ class LeaderLine(Component):
 
 
 class PinLabel(Component):
-    def __init__(self, text, offset=(15, 0), *args, **kwargs):
+    def __init__(
+        self,
+        text,
+        offset=cfg["pinlabel"]["offset"],
+        box_width=cfg["pinlabel"]["box_width"],
+        box_height=cfg["pinlabel"]["box_height"],
+        *args,
+        **kwargs,
+    ):
         super().__init__(*args, **kwargs)
         self.tags = ("pinlabel " + self.tags).strip()
 
@@ -395,8 +406,8 @@ class PinLabel(Component):
                     text=text,
                     x=offset.x,
                     y=offset.y,
-                    width=70,
-                    height=28,
+                    width=box_width,
+                    height=box_height,
                     scale=self.scale,
                 ),
             ]
@@ -417,7 +428,13 @@ class PinLabelRow(Component):
 
     def add(self, label_list):
         for i, label in enumerate(label_list):
-            context = dict(zip(("text", "tags", "offset"), label))
+            context = dict(zip(("text", "tags", "offset", "box_width"), label))
+            # Remove 'na' entries - they fall-back to default settings
+            context = {
+                key: val
+                for key, val in context.items()
+                if val not in [None, "auto", "defalut", "", "-", "na"]
+            }
 
             # Conditionally set offset if none supplied (first label has no leaderline)
             if i == 0:
@@ -436,12 +453,13 @@ class PinLabelSet(Component):
         for i, label_list in enumerate(labels):
             pin_x = pitch[0] * i
             pin_y = pitch[1] * i
-
             if pitch[1] == 0:
                 # Horizontal pinset
-                offset = (offset[0] - pin_x, offset[1] + abs(pin_x))
+                row_offset = (offset[0] - pin_x, offset[1] + abs(pin_x))
+            else:
+                row_offset = offset
 
-            label_row = PinLabelRow(x=pin_x, y=pin_y, offset=offset, tags="plr")
+            label_row = PinLabelRow(x=pin_x, y=pin_y, offset=row_offset, tags="plr")
             label_row.add(label_list)
 
             self.add(label_row)

@@ -119,35 +119,20 @@ class Component(SVG):
     @property
     def bounding_coords(self):
         # Untransformed bounding coords
-        x_min = self.x + min(
-            [
-                child.bounding_coords.x_min
-                for child in self.children
-                if hasattr(child, "bounding_coords")
-            ]
+        x_min = y_min = x_max = y_max = 0
+        for child in self.children:
+            try:
+                child_coords = child.bounding_coords
+                x_min = min(x_min, child_coords.x_min)
+                y_min = min(y_min, child_coords.y_min)
+                x_max = max(x_max, child_coords.x_max)
+                y_max = max(y_max, child_coords.y_max)
+            except AttributeError:
+                # The child has no bounding_coords.
+                pass
+        return BoundingCoords(
+            self.x + x_min, self.y + y_min, self.x + x_max, self.y + y_max
         )
-        y_min = self.y + min(
-            [
-                child.bounding_coords.y_min
-                for child in self.children
-                if hasattr(child, "bounding_coords")
-            ]
-        )
-        x_max = self.x + max(
-            [
-                child.bounding_coords.x_max
-                for child in self.children
-                if hasattr(child, "bounding_coords")
-            ]
-        )
-        y_max = self.y + max(
-            [
-                child.bounding_coords.y_max
-                for child in self.children
-                if hasattr(child, "bounding_coords")
-            ]
-        )
-        return BoundingCoords(x_min, y_min, x_max, y_max)
 
     @property
     def width(self):

@@ -22,8 +22,8 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    packages=setuptools.find_packages(include=['pinout', 'pinout.*']),
+    packages=setuptools.find_packages(include=["pinout", "pinout.*"]),
     python_requires=">=3.6",
-    install_requires=["Jinja2"],
+    install_requires=["Jinja2", "pyyaml"],
     include_package_data=True,
 )

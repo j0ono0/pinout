@@ -43,6 +43,20 @@ class SVG:
     def scale(self, value):
         self._scale = value
 
+    def extract_scale(self, coords):
+        """Separate scale information from a tuple that represents (x, y) or (width, height) values. Components and elements control orientation via the scale property rather than negative dimension/direction values. **NOTE**: Existing scale property is only overridded if the provided coords include a negative value.
+
+        :param coords: tuple representing  (x, y) or (width, height). values may be positive or negative.
+        :type coords: Union(tuple, Coords)
+        :raises ClassMethodMissing: [description]
+        :return: nametuple with absolute values
+        :rtype: Coords
+        """
+
+        if not all(val >= 0 for val in coords):
+            self.scale = Coords(*[i / abs(i) if i != 0 else 1 for i in coords])
+        return Coords(*[abs(i) for i in coords])
+
 
 class Element(SVG):
     def __init__(self, width=0, height=0, *args, **kwargs):
@@ -369,9 +383,7 @@ class LeaderLine(Component):
 
         super().__init__(*args, **kwargs)
 
-        if not all(val >= 0 for val in offset):
-            self.scale = Coords(*[i / abs(i) if i != 0 else 1 for i in offset])
-        offset = Coords(*[abs(i) for i in offset])
+        offset = self.extract_scale(offset)
 
         # Add Path to children
         self.add(
@@ -387,11 +399,7 @@ class PinLabel(Component):
         super().__init__(*args, **kwargs)
         self.tags = ("pinlabel " + self.tags).strip()
 
-        # If a negative value is in 'offset' override scale with deduced values from offset.
-        # then set offset to positive values.
-        if not all(val >= 0 for val in offset):
-            self.scale = Coords(*[i / abs(i) if i != 0 else 1 for i in offset])
-        offset = Coords(*[abs(i) for i in offset])
+        offset = self.extract_scale(offset)
 
         line_scale = (-self.scale.x, -self.scale.y)
 
@@ -408,3 +416,47 @@ class PinLabel(Component):
                 ),
             ]
         )
+
+
+class PinLabelRow(Component):
+    def __init__(self, offset=(85, 0), *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.offset = self.extract_scale(offset)
+        self.tags = ("pinlabelrow " + self.tags).strip()
+        self.labels = Component(x=offset[0], y=offset[1], scale=self.scale)
+
+        self.children = [
+            LeaderLine(offset=offset, scale=self.scale),
+            self.labels,
+        ]
+
+    def add(self, label_list):
+        for i, label in enumerate(label_list):
+            context = dict(zip(("text", "tags", "offset"), label))
+
+            # Conditionally set offset if none supplied (first label has no leaderline)
+            if i == 0:
+                context["offset"] = context.get("offset", (0, 0))
+
+            # Add PinLabel to label_row
+            label_x = self.labels.width * self.scale.x
+            self.labels.add(PinLabel(**context, x=label_x, scale=self.scale))
+
+
+class PinLabelSet(Component):
+    def __init__(self, pitch, offset, labels, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        # Create a Component for each row in 'labels'
+        for i, label_list in enumerate(labels):
+            pin_x = pitch[0] * i
+            pin_y = pitch[1] * i
+
+            if pitch[1] == 0:
+                # Horizontal pinset
+                offset = (offset[0] - pin_x, offset[1] + abs(pin_x))
+
+            label_row = PinLabelRow(x=pin_x, y=pin_y, offset=offset, tags="plr")
+            label_row.add(label_list)
+
+            self.add(label_row)

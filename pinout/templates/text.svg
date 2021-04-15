@@ -1,0 +1,9 @@
+
+<text
+    transform="
+        translate({{ x * scale.x }} {{  y * scale.y }}) 
+        scale({{ scale.x }} {{ scale.y }})
+    "  
+>
+    {{ text }}
+</text>

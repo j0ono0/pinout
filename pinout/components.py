@@ -11,7 +11,7 @@ from .templates import (
     svg_line,
     svg_rect,
     svg_style,
-    svg_textblock,
+    svg_text,
 )
 
 BoundingBox = namedtuple("BoundingBox", ("x y w h"))
@@ -297,45 +297,17 @@ class Line(Element):
         )
 
 
-class TextBlock(Element):
-
-    default_width = 7
-    default_line_height = 20
-
-    def __init__(self, text, line_height=None, *args, **kwargs):
+class Text(Element):
+    def __init__(self, text, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self._line_height = line_height
-        try:
-            _ = iter(text)
-        except TypeError:
-            text = [text]
         self.text = text
 
-    @property
-    def height(self):
-        return len(self.text) * self.line_height
-
-    @property
-    def line_height(self):
-        return (
-            self._line_height
-            if self._line_height is not None
-            else self.default_line_height
-        )
-
-    @line_height.setter
-    def line_height(self, value):
-        self._line_height = value
-
     def render(self):
-        return svg_textblock.render(
+        return svg_text.render(
             text=self.text,
-            line_height=self.line_height,
             tags=("textblock " + self.tags).strip(),
             x=self.x,
             y=self.y,
-            width=self.width,
-            height=self.height,
             scale=self.scale,
         )
 
@@ -409,13 +381,14 @@ class PinLabel(Component):
                     width=box_width,
                     height=box_height,
                     scale=self.scale,
+                    tags="label",
                 ),
             ]
         )
 
 
 class PinLabelRow(Component):
-    def __init__(self, offset=(85, 0), *args, **kwargs):
+    def __init__(self, offset, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.offset = self.extract_scale(offset)
         self.tags = ("pinlabelrow " + self.tags).strip()
@@ -463,3 +436,61 @@ class PinLabelSet(Component):
             label_row.add(label_list)
 
             self.add(label_row)
+
+
+class Legend(Component):
+    def __init__(
+        self,
+        entries=cfg["legend"]["categories"],
+        row_height=cfg["legend"]["row_height"],
+        padding=None,
+        width=cfg["legend"]["width"],
+        *args,
+        **kwargs,
+    ):
+        super().__init__(*args, **kwargs)
+
+        # Padding fallbacks: arg > config > calculated
+        padding = (
+            padding
+            if padding != None
+            else cfg.get("legend", {}).get(
+                "padding",
+                [
+                    row_height / 2,
+                    row_height * 4 / 5,
+                ],
+            )
+        )
+
+        pad = Coords(*padding)
+        swatch_size = row_height * 2 / 3
+
+        for i, (name, tags) in enumerate(entries):
+            entry = Component(x=pad.x, y=pad.y + row_height * i, tags=tags)
+            entry.add(
+                [
+                    Text(name, x=35, height=row_height),
+                    Rect(
+                        2,
+                        swatch_size,
+                        swatch_size,
+                        0,
+                        -swatch_size / 2,
+                        tags="label_box",
+                    ),
+                ]
+            )
+            self.add(entry)
+
+        # Add a box around component
+        self.children.insert(
+            0,
+            Rect(
+                rx=5,
+                width=width,
+                height=self.height + pad.y - row_height,
+                tags="legend_outline",
+                scale=self.scale,
+            ),
+        )

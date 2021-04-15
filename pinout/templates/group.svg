@@ -3,10 +3,11 @@
         class="{{ tags }}" 
     {% endif %}
     transform="
-        translate({{ x * scale.x }} {{  y * scale.y }})
+        translate({{ x * scale.x }} {{  y * scale.y }}) 
+        scale({{ scale.x }} {{ scale.y }})
     "
 >
-    {% block element %}
+    {% block content %}
         {{ content|safe }}
     {% endblock %}
 </g>

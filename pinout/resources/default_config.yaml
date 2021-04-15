@@ -1,8 +1,29 @@
 
-diagram:
-  font_size: 12
 
 pinlabel:
+  tag: pinlabel
+  font_size: 12
   box_width: 70
   box_height: 28
   offset: [15,0]
+
+text:
+  font_size: 14
+  font_family: Verdana, Geneva, sans-serif
+  font_weight: normal
+  color: rgba(0,0,0,1)
+
+legend:
+  tag: legend
+  font_size: 16
+  # padding: [15, 30]
+  row_height: 30
+  width: 300
+  categories: [
+    # [<Title>, <CSS class 'tag'>]
+    ["GPIO", "gpio"],
+    ["Analog", "analog"],
+    ["Communication", "comms"],
+    ["Power management", "pwr"],
+    ["PWM", "pwm"],
+  ]

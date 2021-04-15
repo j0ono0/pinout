@@ -22,4 +22,4 @@ svg_label = env.get_template("label.svg")
 svg_annotation = env.get_template("annotation.svg")
 
 svg_line = env.get_template("line.svg")
-svg_textblock = env.get_template("textblock.svg")
+svg_text = env.get_template("text.svg")

@@ -1,11 +1,6 @@
+{% extends 'group.svg' %}
 
-<g 
-    class=" label {{ tags }}" 
-    transform="
-        translate({{ x * scale.x }} {{  y * scale.y }}) 
-        scale({{ scale.x }} {{ scale.y }})
-    "
->
+{% block content %}
     <rect fill="#555" class="label_box" x="0" y="{{ -height/2 }}" width="{{ width }}" height="{{ height }}" rx="2" />
     <text
         transform="scale({{ scale.x }} {{ scale.y }})" 
@@ -17,4 +12,4 @@
     >
         {{ text }}
     </text>
-</g>
+{% endblock %}

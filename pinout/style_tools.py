@@ -108,5 +108,6 @@ def default_css(diagram):
             "pinlabelrow": cfg["pinlabelrow"],
             "legend": cfg["legend"],
             "leaderline": cfg["leaderline"],
+            "informationpanel": cfg["informationpanel"],
         }
     )

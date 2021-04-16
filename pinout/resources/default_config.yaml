@@ -15,6 +15,7 @@ legend:
     ["GPIO", "gpio"],
     ["Power management", "pwr"],
     ["PWM", "pwm"],
+    ["LED", "led"],
   ]
   # padding: [15, 30]
   row_height: 30
@@ -43,4 +44,11 @@ pinlabelrow:
 
 leaderline:
   tag: ll
-  stroke_width: 1
+  stroke_width: 2
+
+
+informationpanel:
+  tag: inf
+  fill: [255,255,255]
+  stroke: [225, 225, 225]
+  stroke-width: 1

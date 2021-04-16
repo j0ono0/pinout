@@ -3,12 +3,24 @@ from collections import namedtuple
 from pathlib import Path
 
 from . import file_manager, style_tools
-from .components import Component, Label, StyleSheet
+from .components import Component, StyleSheet, Image, Legend, PinLabelSet
 from .templates import svg
 
 
 class Diagram(Component):
     """Components are collated and the final diagram is exported with this class. A typical diagram will include an image, pins with labels, and a stylesheet."""
+
+    def add_stylesheet(self, path):
+        self.add(StyleSheet(path))
+
+    def add_image(self, path, *args, embed=False, **kwargs):
+        self.add(Image(path, *args, **kwargs))
+
+    def add_legend(self, *args, **kwargs):
+        self.add(Legend(*args, **kwargs))
+
+    def add_pinlabelset(self, pitch, offset, labels, *args, **kwargs):
+        self.add(PinLabelSet(pitch, offset, labels, *args, **kwargs))
 
     def generate_stylesheet(self, path, overwrite):
         default_css = style_tools.default_css(self)

@@ -477,27 +477,27 @@ class Legend(Component):
             entry = Component(x=pad.x, y=pad.y + row_height * i, tags=tags)
             entry.add(
                 [
-                    Text(name, x=35, height=row_height),
-                    Rect(
-                        2,
-                        swatch_size,
-                        swatch_size,
-                        0,
-                        -swatch_size / 2,
-                        tags="label_box",
+                    Text(name, x=swatch_size * 2, height=row_height),
+                    PinLabel(
+                        box_height=swatch_size,
+                        box_width=swatch_size,
+                        offset=(-swatch_size / 2, 0),
+                        tags=tags,
+                        text="",
+                        x=swatch_size * 1.5,
                     ),
                 ]
             )
             self.add(entry)
 
-        # Add a box around component
+        # Add an 'information panel' *behind* component
+        cfg_tag = cfg.get("informationpanel", {}).get("tag")
         self.children.insert(
             0,
             Rect(
-                rx=5,
                 width=width,
                 height=self.height + pad.y - row_height,
-                tags="legend_outline",
+                tags=cfg_tag,
                 scale=self.scale,
             ),
         )

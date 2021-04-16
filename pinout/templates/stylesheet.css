@@ -40,9 +40,20 @@
     font-family: {{ legend.text.family }};
     font-size: {{ legend.text.size }}px;
     font-weight: {{ legend.text.weight }};
+    dominant-baseline: central;
 }
 
 /* LeaderLine common */
 .{{ leaderline.tag }} {
     stroke-width: {{ leaderline.stroke_width }};
+}
+
+
+/* InformationPanel common */
+{% set fr,fg,fb = (informationpanel.fill) %}
+{% set sr,sg,sb = (informationpanel.stroke) %}
+.{{ informationpanel.tag }} {
+    fill: rgb({{ fr }}, {{ fg }}, {{ fb }});
+    stroke: rgb({{ sr }}, {{ sg }}, {{ sb }});
+    stroke-weight: {{ informationpanel.stroke_width }};
 }

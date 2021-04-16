@@ -107,5 +107,6 @@ def default_css(diagram):
             "pinlabel_categories": pinlabel_categories,
             "pinlabelrow": cfg["pinlabelrow"],
             "legend": cfg["legend"],
+            "leaderline": cfg["leaderline"],
         }
     )

@@ -39,6 +39,8 @@ pinlabel:
     weight: normal
 
 pinlabelrow:
-  leaderline:
-    stroke-width: 2
   tag: pl-row
+
+leaderline:
+  tag: ll
+  stroke_width: 1

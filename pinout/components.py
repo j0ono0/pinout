@@ -342,6 +342,8 @@ class LeaderLine(Component):
         """
 
         super().__init__(*args, **kwargs)
+        cfg_tag = cfg.get("leaderline", {}).get("tag", "")
+        self.tags = " ".join([cfg_tag, self.tags]).strip()
 
         offset = self.extract_scale(offset)
 
@@ -416,7 +418,7 @@ class PinLabelRow(Component):
     def render(self):
 
         tags = self.labels.children[0].tags.split(" ")
-        # tags.remove(cfg.get("pinlabel", {}).get("tag", ""))
+        tags.remove(cfg.get("pinlabel", {}).get("tag", ""))
         tag_str = " ".join(tags)
 
         self.add(LeaderLine(offset=self.offset, tags=tag_str, scale=self.scale))

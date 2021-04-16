@@ -9,11 +9,16 @@
 
 /* Pinlabel categories */
 {% for key, val in pinlabel_categories.items() %}
-    .{{ pinlabelrow.tag }} .{{ key }} rect{
+    .{{ pinlabel.tag }}.{{ key }} rect{
         fill: rgb{{ val }};
     } 
-    .{{ pinlabelrow.tag }} .{{ key }} path{
+    .{{ pinlabel.tag }}.{{ key }} path{
         stroke: rgb{{ val }};
+        stroke-width: {{ leaderline.stroke_width }};
+    }
+    .{{ leaderline.tag }}.{{ key }} path{
+        stroke: rgb{{ val }};
+        stroke-width: {{ leaderline.stroke_width }};
     }
 {% endfor %}
 
@@ -35,4 +40,9 @@
     font-family: {{ legend.text.family }};
     font-size: {{ legend.text.size }}px;
     font-weight: {{ legend.text.weight }};
+}
+
+/* LeaderLine common */
+.{{ leaderline.tag }} {
+    stroke-width: {{ leaderline.stroke_width }};
 }

@@ -1,11 +1,7 @@
 
 diagram:
   tag: pinout
-  text: 
-    color: [0,0,0]
-    family: Verdana, Geneva, sans-serif
-    size: 14
-    weight: bold
+
 
 legend:
   categories: [
@@ -27,6 +23,7 @@ legend:
     weight: bold
   width: 300
 
+
 pinlabel:
   box:
     offset: [15,0]
@@ -39,16 +36,18 @@ pinlabel:
     size: 12
     weight: normal
 
+
 pinlabelrow:
   tag: pl-row
 
+
 leaderline:
   tag: ll
-  stroke_width: 2
+  stroke_width: 1
 
 
 informationpanel:
   tag: inf
   fill: [255,255,255]
   stroke: [225, 225, 225]
-  stroke-width: 1
+  stroke_width: 3

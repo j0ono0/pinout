@@ -1,5 +1,8 @@
 # File Manager: common file manipulation functions
 from pathlib import Path
+import pkg_resources
+import yaml
+
 
 def unique_filepath(filepath):
     """Generate a unique filename to ensure existing files are not overwritten.
@@ -11,13 +14,13 @@ def unique_filepath(filepath):
     """
     filepath = Path(filepath)
     suffix = filepath.suffix
-    name = filepath.name[:-len(filepath.suffix)]
+    name = filepath.name[: -len(filepath.suffix)]
     path = filepath.parent
     count = 0
 
     while filepath.is_file():
         count += 1
-        filepath = Path('{}/{}_{}{}'.format(path, name, count, suffix))
+        filepath = Path("{}/{}_{}{}".format(path, name, count, suffix))
     return filepath
 
 
@@ -40,3 +43,22 @@ def export_file(content, path, overwrite=False):
     path.touch(exist_ok=True)
     path.write_text(content)
     return path
+
+
+def update_config(dest, src):
+    for key, val in src.items():
+        if type(val) == dict:
+            update_config(dest[key], src[key])
+        else:
+            dest[key] = val
+
+
+def load_config(path):
+    path = Path(path)
+    with path.open() as f:
+        update_config(cfg, yaml.safe_load(f))
+
+
+# Load default settings
+path = "resources/default_config.yaml"
+cfg = yaml.safe_load(pkg_resources.resource_string(__name__, path).decode("utf-8"))

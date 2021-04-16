@@ -1,8 +1,7 @@
 import base64
 from collections import namedtuple
 from pathlib import Path
-import pkg_resources
-import yaml
+from .file_manager import cfg
 
 from .templates import (
     svg_group,
@@ -17,11 +16,6 @@ from .templates import (
 BoundingBox = namedtuple("BoundingBox", ("x y w h"))
 BoundingCoords = namedtuple("BoundingCoords", ("x_min y_min x_max y_max"))
 Coords = namedtuple("Coords", ("x y"))
-
-
-# Load default settings
-path = "resources/default_config.yaml"
-cfg = yaml.safe_load(pkg_resources.resource_string(__name__, path).decode("utf-8"))
 
 
 #####################################################################
@@ -426,7 +420,7 @@ class PinLabelRow(Component):
 
 
 class PinLabelSet(Component):
-    def __init__(self, pitch, offset, labels, *args, **kwargs):
+    def __init__(self, offset, labels, pitch=(1, 1), *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         # Create a Component for each row in 'labels'

@@ -19,8 +19,8 @@ class Diagram(Component):
     def add_legend(self, *args, **kwargs):
         self.add(Legend(*args, **kwargs))
 
-    def add_pinlabelset(self, pitch, offset, labels, *args, **kwargs):
-        self.add(PinLabelSet(pitch, offset, labels, *args, **kwargs))
+    def add_pinlabelset(self, offset, labels, pitch=(1, 1), *args, **kwargs):
+        self.add(PinLabelSet(offset, labels, pitch, *args, **kwargs))
 
     def generate_stylesheet(self, path, overwrite):
         default_css = style_tools.default_css(self)

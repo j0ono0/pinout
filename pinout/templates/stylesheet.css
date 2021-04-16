@@ -1,11 +1,4 @@
 
-/* Diagram styles */
-.{{ diagram.tag }} {
-    font-color: rgb{{ diagram.text.color }};
-    font-family: {{ diagram.text.family }};
-    font-size: {{ diagram.text.size }}px;
-}
-
 
 /* Pinlabel categories */
 {% for key, val in pinlabel_categories.items() %}
@@ -55,5 +48,5 @@
 .{{ informationpanel.tag }} {
     fill: rgb({{ fr }}, {{ fg }}, {{ fb }});
     stroke: rgb({{ sr }}, {{ sg }}, {{ sb }});
-    stroke-weight: {{ informationpanel.stroke_width }};
+    stroke-width: {{ informationpanel.stroke_width }}px;
 }

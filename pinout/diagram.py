@@ -10,6 +10,15 @@ from .templates import svg
 class Diagram(Component):
     """Components are collated and the final diagram is exported with this class. A typical diagram will include an image, pins with labels, and a stylesheet."""
 
+    def generate_stylesheet(self, path, overwrite):
+        default_css = style_tools.default_css(self)
+        cssname = path.name[: -len(path.suffix)]
+        csspath = Path(path.parent, "{}.css".format(cssname))
+        # File name may change if overwrite is False
+        actual_csspath = file_manager.export_file(default_css, csspath, overwrite)
+
+        self.children.insert(0, StyleSheet(actual_csspath.name))
+
     def export(self, path, overwrite=False):
         """Output the diagram in SVG format. If no stylesheet(s) are included one will be generated and exported automatically. See style_tools.default_css() for more details.
 
@@ -31,13 +40,7 @@ class Diagram(Component):
         # Generate default styles if none supplied
         stylesheets = [s for s in self.children if isinstance(s, StyleSheet)]
         if not stylesheets:
-            default_css = style_tools.default_css(self)
-            cssname = path.name[: -len(path.suffix)]
-            csspath = Path(path.parent, "{}.css".format(cssname))
-            # File name may change if overwrite is False
-            actual_csspath = file_manager.export_file(default_css, csspath, overwrite)
-
-            self.children.insert(0, StyleSheet(actual_csspath.name))
+            self.generate_stylesheet(path, overwrite)
 
         # Render all components
         for c in self.children:

@@ -358,18 +358,18 @@ class PinLabel(Component):
     def __init__(
         self,
         text,
-        offset=cfg["pinlabel"]["offset"],
-        box_width=cfg["pinlabel"]["box_width"],
-        box_height=cfg["pinlabel"]["box_height"],
+        offset=cfg["pinlabel"]["box"]["offset"],
+        box_width=cfg["pinlabel"]["box"]["width"],
+        box_height=cfg["pinlabel"]["box"]["height"],
         *args,
         **kwargs,
     ):
         super().__init__(*args, **kwargs)
-        self.tags = ("pinlabel " + self.tags).strip()
-
+        # Merge additional tags with config tags
+        cfg_tag = cfg.get("pinlabel", {}).get("tag", "")
+        self.tags = " ".join([cfg_tag, self.tags]).strip()
+        # Separate offset and scale data
         offset = self.extract_scale(offset)
-
-        line_scale = (-self.scale.x, -self.scale.y)
 
         self.add(
             [
@@ -381,7 +381,6 @@ class PinLabel(Component):
                     width=box_width,
                     height=box_height,
                     scale=self.scale,
-                    tags="label",
                 ),
             ]
         )
@@ -391,15 +390,12 @@ class PinLabelRow(Component):
     def __init__(self, offset, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.offset = self.extract_scale(offset)
-        self.tags = ("pinlabelrow " + self.tags).strip()
         self.labels = Component(x=offset[0], y=offset[1], scale=self.scale)
+        self.tags = (cfg.get("pinlabelrow", {}).get("tag", "") + self.tags).strip()
 
-        self.children = [
-            LeaderLine(offset=offset, scale=self.scale),
-            self.labels,
-        ]
+        self.add(self.labels)
 
-    def add(self, label_list):
+    def add_labels(self, label_list):
         for i, label in enumerate(label_list):
             context = dict(zip(("text", "tags", "offset", "box_width"), label))
             # Remove 'na' entries - they fall-back to default settings
@@ -417,6 +413,15 @@ class PinLabelRow(Component):
             label_x = self.labels.width * self.scale.x
             self.labels.add(PinLabel(**context, x=label_x, scale=self.scale))
 
+    def render(self):
+
+        tags = self.labels.children[0].tags.split(" ")
+        # tags.remove(cfg.get("pinlabel", {}).get("tag", ""))
+        tag_str = " ".join(tags)
+
+        self.add(LeaderLine(offset=self.offset, tags=tag_str, scale=self.scale))
+        return super().render()
+
 
 class PinLabelSet(Component):
     def __init__(self, pitch, offset, labels, *args, **kwargs):
@@ -432,8 +437,8 @@ class PinLabelSet(Component):
             else:
                 row_offset = offset
 
-            label_row = PinLabelRow(x=pin_x, y=pin_y, offset=row_offset, tags="plr")
-            label_row.add(label_list)
+            label_row = PinLabelRow(x=pin_x, y=pin_y, offset=row_offset)
+            label_row.add_labels(label_list)
 
             self.add(label_row)
 

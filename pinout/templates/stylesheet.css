@@ -1,32 +1,38 @@
 
 /* Diagram styles */
-.pinout-diagram{
-    font-family:Verdana, Geneva, sans-serif;  
+.{{ diagram.tag }} {
+    font-color: rgb{{ diagram.text.color }};
+    font-family: {{ diagram.text.family }};
+    font-size: {{ diagram.text.size }}px;
 }
 
-{% if legend %}
-/* Label styles */
-{% for entry in legend %}
-.{{ entry[1] }} .label_box{ fill: {{ entry[2] }} }
-.leaderline_{{ entry[1] }} { stroke:   {{ entry[2] }} }
+
+/* Pinlabel categories */
+{% for key, val in pinlabel_categories.items() %}
+    .{{ pinlabelrow.tag }} .{{ key }} rect{
+        fill: rgb{{ val }};
+    } 
+    .{{ pinlabelrow.tag }} .{{ key }} path{
+        stroke: rgb{{ val }};
+    }
 {% endfor %}
-{% endif %}
 
 
-.label text{
-    fill: {{ label_text_color }};
-    font-family:Verdana, Geneva, san-serif; 
-    font-size: {{ label_font_size }}px; 
-    font-weight: bold;
+/* PinLabel common */
+{% set r,g,b = (pinlabel.text.color) %}
+.{{ pinlabel.tag }} text{
+    fill: rgb({{ r }}, {{ g }}, {{ b }});
+    font-family: {{ pinlabel.text.family }};
+    font-size: {{ pinlabel.text.size }}px;
+    font-weight: {{ pinlabel.text.weight }};
 }
 
 
 /* Legend */
-.legend{
-    font-size: {{ legend_font_size }}px; 
-}
-
-.legend_box{
-    fill: rgb(247, 247, 247);
-    stroke: rgb(204, 204, 204);
+{% set r,g,b = (legend.text.color) %}
+.{{ legend.tag }} text{
+    fill: rgb({{ r }}, {{ g }}, {{ b }});
+    font-family: {{ legend.text.family }};
+    font-size: {{ legend.text.size }}px;
+    font-weight: {{ legend.text.weight }};
 }

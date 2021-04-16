@@ -1,29 +1,44 @@
 
-
-pinlabel:
-  tag: pinlabel
-  font_size: 12
-  box_width: 70
-  box_height: 28
-  offset: [15,0]
-
-text:
-  font_size: 14
-  font_family: Verdana, Geneva, sans-serif
-  font_weight: normal
-  color: rgba(0,0,0,1)
+diagram:
+  tag: pinout
+  text: 
+    color: [0,0,0]
+    family: Verdana, Geneva, sans-serif
+    size: 14
+    weight: bold
 
 legend:
-  tag: legend
-  font_size: 16
-  # padding: [15, 30]
-  row_height: 30
-  width: 300
   categories: [
     # [<Title>, <CSS class 'tag'>]
-    ["GPIO", "gpio"],
     ["Analog", "analog"],
     ["Communication", "comms"],
+    ["GPIO", "gpio"],
     ["Power management", "pwr"],
     ["PWM", "pwm"],
   ]
+  # padding: [15, 30]
+  row_height: 30
+  tag: legend
+  text:
+    color: [0,0,0]
+    family: Verdana, Geneva, sans-serif
+    size: 12
+    weight: bold
+  width: 300
+
+pinlabel:
+  box:
+    offset: [15,0]
+    height: 28
+    width: 70
+  tag: pl
+  text:
+    color: [255, 255, 255]
+    family: Verdana, Geneva, sans-serif
+    size: 12
+    weight: normal
+
+pinlabelrow:
+  leaderline:
+    stroke-width: 2
+  tag: pl-row

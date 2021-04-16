@@ -4,7 +4,8 @@ import random
 from pathlib import Path
 
 from . import file_manager
-from .components import Label
+from . import components
+from .components import cfg
 from .templates import stylesheet
 
 
@@ -56,13 +57,13 @@ def random_contrasting_rgb(ref_color):
     return rgb
 
 
-def find_components_by_tag(component, tag):
+def find_children_by_type(component, target_type):
     results = []
     try:
         for c in component.children:
             if isinstance(c, target_type):
                 results.append(c)
-            results += find_components_by_tag(c, target_type)
+            results += find_children_by_type(c, target_type)
     except AttributeError:
         """ No children """
 
@@ -77,21 +78,34 @@ def default_css(diagram):
     :return: content of a css stylesheet with all required styles to display a diagram.
     :rtype: str
     """
-    # Recursive search for Label components. Extract tags into a list
-    labels = [l.tags.split(" ")[0] for l in find_components(diagram, "lbl")]
-    print(labels)
-    # labels = [[l.tags.split(' ')[0] for l in c.labels] for c in diagram.components if isinstance(c, Pin)]
-    labelset = set([tag for lbl in labels for tag in lbl])
+    # Extract css class tags from PinLabels
+    pinlabels = find_children_by_type(diagram, components.PinLabel)
+    pinlabel_tags = list(
+        set([tag for label in pinlabels for tag in label.tags.split(" ")])
+    )
+    # Remove config tag (common to all PinLabels)
+    try:
+        pinlabel_tags.remove(cfg.get("pinlabel", {}).get("tag", ""))
+    except ValueError:
+        pass
 
-    label_font_size = math.floor(Label.default_height * (3 / 5))
-    label_text_color = (255, 255, 255)
+    label_font_size = cfg.get("pinlabel", {}).get(
+        "font_size", math.floor(cfg["pinlabel"]["box"]["height"] * (3 / 5))
+    )
+    label_text_color = tuple(
+        cfg.get("pinlabel", {}).get("text", {}).get("color", (255, 255, 255))
+    )
+
+    pinlabel_categories = {
+        label: random_contrasting_rgb(label_text_color) for label in pinlabel_tags
+    }
 
     return stylesheet.render(
-        legend=[
-            (l.capitalize(), l, "rgb" + str(random_contrasting_rgb(label_text_color)))
-            for l in labelset
-        ],
-        legend_font_size=max(13, label_font_size),
-        label_font_size=label_font_size,
-        label_text_color="rgb" + str(label_text_color),
+        {
+            "diagram": cfg["diagram"],
+            "pinlabel": cfg["pinlabel"],
+            "pinlabel_categories": pinlabel_categories,
+            "pinlabelrow": cfg["pinlabelrow"],
+            "legend": cfg["legend"],
+        }
     )

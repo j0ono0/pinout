@@ -60,5 +60,5 @@ def load_config(path):
 
 
 # Load default settings
-path = "resources/default_config.yaml"
+path = "resources/config.yaml"
 cfg = yaml.safe_load(pkg_resources.resource_string(__name__, path).decode("utf-8"))

@@ -7,23 +7,25 @@ def duplicate(resource_name="quick_start"):
     Current projects:
 
         + 'quick_start'
-        + 'full sample'
+        + 'full_sample'
 
     :param resource_name: Name of sample project. Defaults to 'quick_start'.
     :type resource_name: string
     """
 
     resources = {
+        "config": [("config.yaml")],
         "quick_start": [
-            ("quick_start", "quick_start_board.png"),
             ("quick_start", "quick_start_config.yaml"),
+            ("quick_start", "quick_start_hardware.png"),
             ("quick_start", "quick_start_pinout.py"),
             ("quick_start", "quick_start_styles.css"),
         ],
-        "full sample": [
-            ("sample_full", "sample_full_pinout.py"),
-            ("sample_full", "sample_full_pinout_hardware.png"),
-            ("sample_full", "sample_full_pinout_styles.css"),
+        "full_sample": [
+            ("full_sample", "full_sample_config.yaml"),
+            ("full_sample", "full_sample_hardware.png"),
+            ("full_sample", "full_sample_pinout.py"),
+            ("full_sample", "full_sample_styles.css"),
         ],
     }
 

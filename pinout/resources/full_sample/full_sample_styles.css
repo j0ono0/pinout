@@ -1,6 +1,28 @@
 
 
 /* Pinlabel categories */
+    .pl.comms rect{
+        fill: rgb(203, 116, 16);
+    } 
+    .pl.comms path{
+        stroke: rgb(203, 116, 16);
+        stroke-width: 1;
+    }
+    .ll.comms path{
+        stroke: rgb(203, 116, 16);
+        stroke-width: 1;
+    }
+    .pl.analog rect{
+        fill: rgb(215, 107, 173);
+    } 
+    .pl.analog path{
+        stroke: rgb(215, 107, 173);
+        stroke-width: 1;
+    }
+    .ll.analog path{
+        stroke: rgb(215, 107, 173);
+        stroke-width: 1;
+    }
     .pl.gpio rect{
         fill: rgb(44, 91, 123);
     } 
@@ -10,17 +32,6 @@
     }
     .ll.gpio path{
         stroke: rgb(44, 91, 123);
-        stroke-width: 1;
-    }
-    .pl.pwm rect{
-        fill: rgb(54, 157, 158);
-    } 
-    .pl.pwm path{
-        stroke: rgb(54, 157, 158);
-        stroke-width: 1;
-    }
-    .ll.pwm path{
-        stroke: rgb(54, 157, 158);
         stroke-width: 1;
     }
     .pl.pwr rect{
@@ -34,15 +45,26 @@
         stroke: rgb(150, 2, 29);
         stroke-width: 1;
     }
-    .pl.analog rect{
-        fill: rgb(215, 107, 173);
+    .pl.pwm rect{
+        fill: rgb(54, 157, 158);
     } 
-    .pl.analog path{
-        stroke: rgb(215, 107, 173);
+    .pl.pwm path{
+        stroke: rgb(54, 157, 158);
         stroke-width: 1;
     }
-    .ll.analog path{
-        stroke: rgb(215, 107, 173);
+    .ll.pwm path{
+        stroke: rgb(54, 157, 158);
+        stroke-width: 1;
+    }
+    .pl.led rect{
+        fill: rgb(162, 179, 55);
+    } 
+    .pl.led path{
+        stroke: rgb(162, 179, 55);
+        stroke-width: 1;
+    }
+    .ll.led path{
+        stroke: rgb(162, 179, 55);
         stroke-width: 1;
     }
 

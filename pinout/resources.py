@@ -15,8 +15,9 @@ def duplicate(resource_name="quick_start"):
 
     resources = {
         "get started": [
-            ("quick_start", "quick_start_pinout.py"),
             ("quick_start", "quick_start_board.png"),
+            ("quick_start", "quick_start_config.yaml"),
+            ("quick_start", "quick_start_pinout.py"),
             ("quick_start", "quick_start_styles.css"),
         ],
         "full sample": [

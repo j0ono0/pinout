@@ -1,0 +1,25 @@
+#
+# Quick start config settings
+# ===========================================
+#
+# These are a small subset of configuration 
+# settings that demonstrate their function.
+#
+# See docs to access a full config.yaml file.
+#
+
+pinlabel:
+  box:
+    offset: [15,0]
+    width: 70
+  tag: pl
+
+legend:
+  categories: [
+    # [<Title>, <CSS class 'tag'>]
+    ["Analog", "analog"],
+    ["GPIO", "gpio"],
+    ["Power management", "pwr"],
+    ["PWM", "pwm"],
+  ]
+  width: 238

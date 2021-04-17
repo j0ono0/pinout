@@ -1,7 +1,7 @@
 import pkg_resources
 
 
-def duplicate(resource_name="get started"):
+def duplicate(resource_name="quick_start"):
     """pinout includes some sample projects. These can be duplicated to the working directory and used in conjunction with the official tutorial.
 
     Current projects:
@@ -15,9 +15,9 @@ def duplicate(resource_name="get started"):
 
     resources = {
         "get started": [
-            ("get_started", "get_started_pinout.py"),
-            ("get_started", "get_started_board.png"),
-            ("get_started", "get_started_styles.css"),
+            ("quick_start", "quick_start_pinout.py"),
+            ("quick_start", "quick_start_board.png"),
+            ("quick_start", "quick_start_styles.css"),
         ],
         "full sample": [
             ("sample_full", "sample_full_pinout.py"),

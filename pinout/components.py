@@ -284,8 +284,10 @@ class Rect(Element):
 
 class Line(Element):
     def render(self):
+        vertical_move = f"V {self.height}" if self.height != 0 else ""
+        horizontal_move = f"H {self.width}" if self.width != 0 else ""
         return svg_line.render(
-            d=f"M 0 0 V {self.height} H {self.width}",
+            d=f"M 0 0 {vertical_move} {horizontal_move}",
             scale=self.scale,
             tags=self.tags,
         )
@@ -354,13 +356,19 @@ class PinLabel(Component):
     def __init__(
         self,
         text,
-        offset=cfg["pinlabel"]["box"]["offset"],
-        box_width=cfg["pinlabel"]["box"]["width"],
-        box_height=cfg["pinlabel"]["box"]["height"],
+        offset=None,
+        box_width=None,
+        box_height=None,
         *args,
         **kwargs,
     ):
         super().__init__(*args, **kwargs)
+
+        # Assign config values if none supplied
+        offset = offset or cfg["pinlabel"]["box"]["offset"]
+        box_width = box_width or cfg["pinlabel"]["box"]["width"]
+        box_height = box_height or cfg["pinlabel"]["box"]["height"]
+
         # Merge additional tags with config tags
         cfg_tag = cfg.get("pinlabel", {}).get("tag", "")
         self.tags = " ".join([cfg_tag, self.tags]).strip()
@@ -387,7 +395,9 @@ class PinLabelRow(Component):
         super().__init__(*args, **kwargs)
         self.offset = self.extract_scale(offset)
         self.labels = Component(x=offset[0], y=offset[1], scale=self.scale)
-        self.tags = (cfg.get("pinlabelrow", {}).get("tag", "") + self.tags).strip()
+
+        cfg_tag = cfg.get("pinlabelrow", {}).get("tag", "")
+        self.tags = (cfg_tag + self.tags).strip()
 
         self.add(self.labels)
 
@@ -442,14 +452,18 @@ class PinLabelSet(Component):
 class Legend(Component):
     def __init__(
         self,
-        entries=cfg["legend"]["categories"],
-        row_height=cfg["legend"]["row_height"],
+        categories=None,
+        row_height=None,
         padding=None,
-        width=cfg["legend"]["width"],
+        width=None,
         *args,
         **kwargs,
     ):
         super().__init__(*args, **kwargs)
+
+        row_height = row_height or cfg["legend"]["row_height"]
+        categories = categories or cfg["legend"]["categories"]
+        width = width or cfg["legend"]["width"]
 
         # Padding fallbacks: arg > config > calculated
         padding = (
@@ -467,7 +481,7 @@ class Legend(Component):
         pad = Coords(*padding)
         swatch_size = row_height * 2 / 3
 
-        for i, (name, tags) in enumerate(entries):
+        for i, (name, tags) in enumerate(categories):
             entry = Component(x=pad.x, y=pad.y + row_height * i, tags=tags)
             entry.add(
                 [

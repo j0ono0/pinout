@@ -1,0 +1,79 @@
+
+
+/* Pinlabel categories */
+    .pl.gpio rect{
+        fill: rgb(151, 148, 46);
+    } 
+    .pl.gpio path{
+        stroke: rgb(151, 148, 46);
+        stroke-width: 1;
+    }
+    .ll.gpio path{
+        stroke: rgb(151, 148, 46);
+        stroke-width: 1;
+    }
+    .pl.pwm rect{
+        fill: rgb(54, 157, 158);
+    } 
+    .pl.pwm path{
+        stroke: rgb(54, 157, 158);
+        stroke-width: 1;
+    }
+    .ll.pwm path{
+        stroke: rgb(54, 157, 158);
+        stroke-width: 1;
+    }
+    .pl.pwr rect{
+        fill: rgb(150, 2, 29);
+    } 
+    .pl.pwr path{
+        stroke: rgb(150, 2, 29);
+        stroke-width: 1;
+    }
+    .ll.pwr path{
+        stroke: rgb(150, 2, 29);
+        stroke-width: 1;
+    }
+    .pl.analog rect{
+        fill: rgb(215, 107, 173);
+    } 
+    .pl.analog path{
+        stroke: rgb(215, 107, 173);
+        stroke-width: 1;
+    }
+    .ll.analog path{
+        stroke: rgb(215, 107, 173);
+        stroke-width: 1;
+    }
+
+
+/* PinLabel common */
+.pl text{
+    fill: rgb(255, 255, 255);
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+
+/* Legend */
+.legend text{
+    fill: rgb(0, 0, 0);
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    dominant-baseline: central;
+}
+
+/* LeaderLine common */
+.ll {
+    stroke-width: 1;
+}
+
+
+/* InformationPanel common */
+.inf {
+    fill: rgb(255, 255, 255);
+    stroke: rgb(225, 225, 225);
+    stroke-width: 3px;
+}

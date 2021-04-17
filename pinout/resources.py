@@ -6,15 +6,15 @@ def duplicate(resource_name="quick_start"):
 
     Current projects:
 
-        + 'get started'
+        + 'quick_start'
         + 'full sample'
 
-    :param resource_name: Name of sample project. Defaults to 'get started'.
+    :param resource_name: Name of sample project. Defaults to 'quick_start'.
     :type resource_name: string
     """
 
     resources = {
-        "get started": [
+        "quick_start": [
             ("quick_start", "quick_start_board.png"),
             ("quick_start", "quick_start_config.yaml"),
             ("quick_start", "quick_start_pinout.py"),

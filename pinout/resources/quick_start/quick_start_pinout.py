@@ -49,7 +49,7 @@ file_manager.load_config("quick_start_config.yaml")
 diagram = diagram.Diagram()
 
 # Add a stylesheet
-diagram.add_stylesheet("quick_start_diagram.css", embed=True)
+diagram.add_stylesheet("quick_start_styles.css", embed=True)
 
 # Add an image
 diagram.add_image("quick_start_board.png", width=220, height=260, embed=True)

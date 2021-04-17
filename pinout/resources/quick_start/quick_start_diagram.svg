@@ -10,7 +10,7 @@
 
 
     <style  type="text/css">
-    @import url("quick_start_diagram.css");
+    @import url("quick_start_styles.css");
 </style><image  x="0" y="0" href="quick_start_board.png" xlink:href="quick_start_board.png" height="260" width="220"/><g 
         class="legend" 
     transform="

@@ -3,31 +3,63 @@
 Tutorial
 ===============
 
-This tutorial walks through the main features available in *pinout*. If you have not installed *pinout* already please read the :ref:`install` section. This tutorial duplicates code from *get_started_pinout.py*. To access a copy of this file and other resources see :ref:`quickstart`.
+This tutorial walks through the main features available in *pinout*. If you have not installed *pinout* already please read the :ref:`install` section. This tutorial duplicates code from *quick_start_pinout.py*. To access a copy of this file and other resources see :ref:`quickstart`.
 
-.. figure:: _static/finished_sample_diagram.*
+.. figure:: _static/quick_start_diagram.*
 
    The finished diagram from this tutorial.
 
 
-Diagram measurements
---------------------
-
-Taking some critical measurements of the hardware image before starting will streamline processes and save adjusting by trial-and-error later. At first glance it may appear there are an overwhelming number of points to record. Many coordinates are inter-related and others based on personal aesthetics. All measurements are made from an arbitrary (0 ,0) location. The final diagram size and boundaries are calculated on export ensuring all components are visible - ie negative coordinates do not risk being outside the final diagram boundaries.
-
-.. figure:: _static/get_started_diagram_measurements.*
-   
-In this tutorial all (x, y) coordinates are relative to the board's top-left corner which is positioned at (0,0). Pins and their labels should be considered in pairs (boxed together here).
-
-
-Start a new diagram
--------------------
+Import modules
+--------------
 
 Start by importing the pinout diagram module and creating a new diagram object::
 
     from pinout import diagram
-    
-    pinout_diagram = diagram.Diagram()
+    from pinout import file_manager
+
+The 'file_manager' modules has also been imported here - this is optional but will be used to show how to configure some stylistic aspect of the diagram in this tutorial.
+
+Diagram measurements
+--------------------
+
+Taking some critical measurements of the hardware image before starting will streamline processes and save adjusting by trial-and-error later. Where pins are arranged in 'headers' the *PinLabelSet* class can be used place labels once a starting location has been documented.
+
+.. figure:: _static/quick_start_measurements_left_header.*
+
+- **x, y**: Coordinates of the first pin in the header.
+- **pitch**: Distance between each pin of the header. (0, 30) steps 0px right and 30px down for each pin.
+- **offset**: **Relative to the pin's (x, y) coodinates**. Locates the start position for a row of labels.
+- **labels**: Data that documents each label and its relation in the header. Each list within 'labels' represents a pin in the header. Each entry within those lists becomes a label.  
+
+These details are documented in a dict. Multiple headers can be grouped into a list for convenient processing later::
+
+    pin_headers = [
+        {
+            # LHS header
+            "x": 16,
+            "y": 100,
+            "pitch": (0, 30),
+            "offset": (-55, 0),
+            "labels": [
+                [("Vcc", "pwr", (0, 0), 155)],
+                [("1", "gpio"), ("A1", "analog")],
+                [("2", "gpio"), ("PWM", "pwm", (-100, 0))],
+            ],
+        },
+        # x2 more headers are included in 'quick_start_pinout.py'
+    ]
+
+Load a config file
+------------------
+Many of the default stylistic settings can be overridden by supplying new values in a yaml formatted file::
+
+    file_manager.load_config("quick_start_config.yaml") 
+
+**Note on coodinates**: SVG format sets (0, 0) as top-left with increasing x and y values moving to the right and down respectively. Component placement in pinout is made from an arbitrary (0, 0) location. The final diagram size and boundaries are calculated on export ensuring all components are visible - ie negative coordinates do not risk being outside the final diagram boundaries.
+
+In this tutorial all (x, y) coordinates are relative to the hardware images's top-left corner which is positioned at (0, 0).
+
 
 Add a stylesheet
 ----------------
@@ -164,7 +196,7 @@ The final diagram can be exported as a graphic in SVG format and should match th
     # expected output:
     # > 'get_started_pinout.svg' exported successfully.
 
-.. figure:: _static/finished_sample_diagram.*
+.. figure:: _static/quick_start_diagram.*
 
     The finished diagram from this tutorial.
 

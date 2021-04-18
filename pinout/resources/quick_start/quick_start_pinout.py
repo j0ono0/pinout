@@ -11,8 +11,8 @@ pin_headers = [
         "offset": (-55, 0),
         "labels": [
             [("Vcc", "pwr", (0, 0), 155)],
-            [("2", "gpio"), ("A2", "analog")],
-            [("3", "gpio"), ("PWM", "pwm", (-100, 0))],
+            [("1", "gpio"), ("A1", "analog")],
+            [("2", "gpio"), ("PWM", "pwm", (-100, 0))],
         ],
     },
     {
@@ -23,8 +23,8 @@ pin_headers = [
         "offset": (55, 0),
         "labels": [
             [("GND", "pwr", (0, 0), 155)],
-            [("8", "gpio"), ("A3", "analog")],
-            [("7", "gpio"), ("A3", "analog"), ("PWM", "pwm")],
+            [("7", "gpio"), ("A3", "analog")],
+            [("6", "gpio"), ("A2", "analog"), ("PWM", "pwm")],
         ],
     },
     {
@@ -35,9 +35,9 @@ pin_headers = [
         "offset": (-104, 40),
         "labels": [
             [("RESET", "pwr", (0, 0), 155)],
-            [("4", "gpio"), ("ADC", "analog")],
-            [("5", "gpio"), ("ADC", "analog"), ("PWM", "pwm")],
-            [("6", "gpio"), ("PWM", "pwm", (-100, 0))],
+            [("3", "gpio"), ("ADC0", "analog")],
+            [("4", "gpio"), ("ADC1", "analog"), ("PWM", "pwm")],
+            [("5", "gpio"), ("PWM", "pwm", (-100, 0))],
         ],
     },
 ]
@@ -52,7 +52,7 @@ diagram = diagram.Diagram()
 diagram.add_stylesheet("quick_start_styles.css", embed=True)
 
 # Add an image
-diagram.add_image("quick_start_board.png", width=220, height=260, embed=True)
+diagram.add_image("quick_start_hardware.png", width=220, height=260, embed=True)
 
 # Add a legend. Note, categories are documented in config.yaml
 diagram.add_legend(x=260, y=236, tags="legend")

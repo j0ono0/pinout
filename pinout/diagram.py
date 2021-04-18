@@ -11,10 +11,10 @@ class Diagram(Component):
     """Components are collated and the final diagram is exported with this class. A typical diagram will include an image, pins with labels, and a stylesheet."""
 
     def add_stylesheet(self, path, embed=False):
-        self.add(StyleSheet(path))
+        self.add(StyleSheet(path, embed=embed))
 
     def add_image(self, path, *args, embed=False, **kwargs):
-        self.add(Image(path, *args, **kwargs))
+        self.add(Image(path, embed=embed, *args, **kwargs))
 
     def add_legend(self, *args, **kwargs):
         l = Legend(*args, **kwargs)

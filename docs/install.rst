@@ -7,7 +7,7 @@ Install and Quickstart
 Install
 -------
 
-Using a virtual environment is recommended; Start by installing the *pinout* package. Either clone this repo and pip install it or install from PyPi::
+Using a virtual environment is recommended; Start by installing the *pinout* package from PyPi::
  
     pip install pinout
 
@@ -20,18 +20,19 @@ Using a virtual environment is recommended; Start by installing the *pinout* pac
 Quickstart
 ----------
 
-.. image:: _static/finished_sample_diagram.*
+.. image:: _static/quick_start_diagram.*
 
-You will need an image and stylesheet to complete this guide. Some sample files are included with the package and can be duplicated for your use. Launch Python REPL from a command-line in the folder you intend to work and enter the following::
+This guide makes use of a hardware image, stylesheet, and configuration file. The latter two are optional but included to demonstrate features and ensure a consistent result. Sample files are included with the package and can be duplicated for your use. Launch Python REPL from a command-line in the folder you intend to work and enter the following::
 
     from pinout import resources
-    resources.duplicate('get started')
+    resources.duplicate('quick_start')
 
     # expected output:
-    # >>> get_started_pinout.py duplicated.
-    # >>> get_started_board.png duplicated.
-    # >>> get_started_styles.css duplicated.
+    # >>> quick_start_hardware.png duplicated.
+    # >>> quick_start_config.yaml duplicated.
+    # >>> quick_start_pinout.py duplicated.
+    # >>> quick_start_styles.css duplicated.
 
-*Spoiler Alert*: 'sample_diagram.py' is a completed script that duplicates the code in this guide. Running it will create a sample SVG pinout diagram - identical to the one pictured here - that can be viewed in your browser.
+*Spoiler Alert*: 'quick_start_pinout.py' is a completed script that duplicates the code in this guide. Running it will create a sample SVG pinout diagram - identical to the one pictured here - that can be viewed in your browser.
 
 Once you have installed the *pinout* package explore its features in the :ref:`tutorial`.

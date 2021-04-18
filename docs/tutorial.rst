@@ -49,24 +49,34 @@ These details are documented in a dict. Multiple headers can be grouped into a l
         },
         # x2 more headers are included in 'quick_start_pinout.py'
     ]
-
-Load a config file
-------------------
-Many of the default stylistic settings can be overridden by supplying new values in a yaml formatted file::
-
-    file_manager.load_config("quick_start_config.yaml") 
-
+    
 **Note on coodinates**: SVG format sets (0, 0) as top-left with increasing x and y values moving to the right and down respectively. Component placement in pinout is made from an arbitrary (0, 0) location. The final diagram size and boundaries are calculated on export ensuring all components are visible - ie negative coordinates do not risk being outside the final diagram boundaries.
 
 In this tutorial all (x, y) coordinates are relative to the hardware images's top-left corner which is positioned at (0, 0).
 
 
+Load a config file
+------------------
+All default design settings in *pinout* can be overridden by editing properties of a component directly or by supplying the value in a configuration file. The latter is ideal where the change should be aplied to all instances of a component in the diagram.
+
+The configuration file is in YAML format. 'quick_start_config.yaml' demonstrates the format with a few example settings. These settings are controlled by the file_manager module::
+
+    file_manager.load_config("quick_start_config.yaml") 
+
+
+Create a new diagram
+--------------------
+::
+
+    diagram = diagram.Diagram()
+
+
 Add a stylesheet
 ----------------
 
-Strictly speaking this step is optional as *pinout* will create a stylesheet for you in the absence of one but relies on some guess work so output may vary. To ensure a predictable outcome add `get_started_styles.css` to the diagram::
+Strictly speaking this step is optional as *pinout* will create a stylesheet for you in the absence of one but relies on some guess work so output may vary. To ensure a predictable outcome add `quick_start_styles.css` to the diagram::
     
-    pinout_diagram.add_stylesheet('get_started_styles.css', embed=True)
+    diagram.add_stylesheet("quick_start_styles.css", embed=True)
 
 
 Add an image
@@ -74,127 +84,36 @@ Add an image
 
 Adding an image is similar to the stylesheet. The extra arguments are *x*, *y*, *width*, and *height*. All function are documented with more detail in the :ref:`modules` section::
 
-    pinout_diagram.add_image(0, 0, 220, 260, 'get_started_board.png', embed=True)
+    diagram.add_image("quick_start_hardware.png", width=220, height=260, embed=True)
+
 
 
 Add a legend
 ------------
 
-The legend documents label categories. These categories are visually represented by styles documented in the stylesheet. The first step in creating a legend is to create a list that *tags* category *names*. The names appear in the legend, and tags become css classes that associate each label with a style::
+The legend documents label categories. These categories are visually represented by styles documented in the stylesheet. The first step in creating a legend is to create a list that *tags* category *names*. this list is stored in the configuration file and has already been done for this tutorial in 'config.yaml'. All that is left to do is add the graphical representation into the diagram::
 
-    label_categories = [
-        # (name, tag(s), color),
-        ('GPIO', 'gpio'),
-        ('Analog', 'analog'),
-        ('PWM', 'pwm'),
-        ('Power Management', 'pwr'),
-    ]
-
-With items documented adding a legend to the diagram is done with a single line of code::
-
-    pinout_diagram.add_legend(-160, 310, 225, 'legend legend-labels', label_categories)
+    diagram.add_legend(x=260, y=236, tags="legend")
 
 
-Set default label values
-------------------------
-
-.. figure:: _static/label_dimensions.*
-
-   Label dimensions 
-
-Labels have several settings that control their size and appearance. These values can be applied per label, however most labels are likely to share common traits. Default values exist to serve this requirement in the form of class variables. Setting them is as simple as assigning a new value::
-
-    diagram.Label.default_width = 70
-    diagram.Label.default_height = 25
-    diagram.Label.default_gap = 6
-    diagram.Label.default_cnr = 3
-
-*Note:* 'gap' is the distance between labels and graphically contains a leader-line. In the instance of the first label it is still present but joins seamlessly onto the pin leader-line.
-
-
-Create a Pin with Labels
-------------------------
-
-This is slow way, included to provide an idea of the steps going on behind the scene::
-
-    pin01 = diagram.Pin(16, 100, -50, 100)
-
-Add associated labels to the pin::
-
-    pin01.add_label('1', 'gpio')
-    pin01.add_label('A1', 'analog')
-    pin01.add_label('PWM', 'pwm')
-
-*Note*: label width, height, and gap, can be controlled per label by including *width*, *height*, and *gap* arguments `pin01.add_label('A1', 'analog', 50, 25, 26)`.
-
-Add this pin to the diagram::
-
-    pinout_diagram.components.append(pin01)
-
-A Pin *with* its labels can be created with by a single line of code. This method provides the most control over pin and label placements::
-
-    pinout_diagram.add_pin(65, 244, -50, 280, [('AREF', 'pwr')])
-
-
-Create multiple Pins and Labels
--------------------------------
-
-Electronics hardware typically groups pins into 'headers' - groups of evenly spaced pins. *pinout* takes advantage of this and provides a convenient way to add pins and labels to the diagram. 
-
-Pin and label data can be documented in a dict::
-
-    pin_headers = [
-        {
-            # LHS header - lower half
-            'pin_coords': (16, 130),
-            'label_coords': (-50 ,130),
-            'pitch': 30,
-            'labels': [
-                [('Vcc', 'pwr')], 
-                [('2', 'gpio'),('A2', 'analog')],
-            ]
-        },{
-            # RHS header
-            'pin_coords': (204, 100),
-            'label_coords': (270 ,100),
-            'pitch': 30,
-            'labels': [
-                [('8', 'gpio'),('A3', 'analog')], 
-                [('7', 'gpio'),('A3', 'analog'), ('PWM','pwm')],
-                [('GND', 'pwr')],
-            ]
-        },{
-            # Lower header - remaining 3 pins
-            'pin_coords': (95, 244),
-            'label_coords': (270 ,280),
-            'pitch': 30,
-            'labels': [
-                [('4', 'gpio'),('ADC', 'analog')], 
-                [('5', 'gpio'),('ADC', 'analog'), ('PWM','pwm')],
-                [('6', 'gpio'),('PWM', 'pwm', 70, 25, 82)],
-            ]
-        }
-    ]
-
-Single Pins can be included in this data structure. 'pitch' can be excluded in these instances.
-
-With data neatly documented, adding it to the diagram is straight forward::
+Create pin labels
+-----------------
+With pin-labels documented and grouped in to headers they can now be added to the diagram::
 
     for header in pin_headers:
-        pinout_diagram.add_pin_header(header)
+        diagram.add_pinlabelset(**header)
 
-Pin locations in each header are calculated top-to-bottom or left-to-right depending on label coordinates in relation to pin coordinates.
 
 Export the diagram
 ------------------
 
 
-The final diagram can be exported as a graphic in SVG format and should match the finished diagram shown here. This format and excellent for high quality printing but still an effecient size for web-based usage::
+The final diagram can be exported as a graphic in SVG format and should match the finished diagram shown here. This format is excellent for high quality printing but still an effecient size for web-based usage::
 
-    pinout_diagram.export('get_started_diagram.svg', overwrite=True)
+    diagram.export("quick_start_diagram.svg", overwrite=True)
 
     # expected output:
-    # > 'get_started_pinout.svg' exported successfully.
+    # > 'quick_start_diagram.svg' exported successfully.
 
 .. figure:: _static/quick_start_diagram.*
 
@@ -207,7 +126,7 @@ The most convenient method of viewing the newly exported SVG file is with your b
 Next steps
 ----------
 
-This guide has glossed over many argument definitions used in functions. Experimenting with changing values and re-exporting the diagram will quickly reveal their purpose. All function are documented in the :ref:`modules` section.
+This guide has glossed over many argument and configuration definitions. Experimenting with changing values and re-exporting the diagram will quickly reveal their purpose. All function are documented in the :ref:`modules` section.
 
 Rerunning this guide with no css file added to the diagram will create an auto-generated stylesheet. It makes some educated guesses about approriate styles and is a handy method for 'bootstrapping' a stylesheet for your own diagrams.
 

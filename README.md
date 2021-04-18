@@ -26,10 +26,9 @@ pip install --upgrade pinout
 
 ### Duplicate sample files
 
-A normal pinout diagram will ultimately include an SVG file, an image of hardware to be documented, and a stylesheet that provides unique styles to the diagram. Duplicate the sample files from the *pinout* package by launch Python at the location you intend to work and enter the following:
+A normal pinout diagram will ultimately include an SVG file, an image of hardware to be documented, and a stylesheet that provides unique styles to the diagram. Duplicate the sample files from the *pinout* package by launch a command line at the location you intend to work and enter the following:
 ```python
-from pinout import resources
-resources.duplicate('get started')
+py -m pinout.file_manager --duplicate quick_start
 
 # expected output:
 # >>> quick_start_board.png duplicated.

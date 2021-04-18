@@ -22,10 +22,9 @@ Quickstart
 
 .. image:: _static/quick_start_diagram.*
 
-This guide makes use of a hardware image, stylesheet, and configuration file. The latter two are optional but included to demonstrate features and ensure a consistent result. Sample files are included with the package and can be duplicated for your use. Launch Python REPL from a command-line in the folder you intend to work and enter the following::
+This guide makes use of a hardware image, stylesheet, and configuration file. The latter two are optional but included to demonstrate features and ensure a consistent result. Sample files are included with the package and can be duplicated for your use. Open a command line in the location you plan to work and enter the following::
 
-    from pinout import resources
-    resources.duplicate('quick_start')
+    py -m pinout.file_manager --duplicate quick_start
 
     # expected output:
     # >>> quick_start_hardware.png duplicated.

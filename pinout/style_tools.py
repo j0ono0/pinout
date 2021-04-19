@@ -5,7 +5,6 @@ from pathlib import Path
 
 from . import file_manager
 from . import components
-from .components import cfg
 from .templates import stylesheet
 
 
@@ -85,15 +84,15 @@ def default_css(diagram):
     )
     # Remove config tag (common to all PinLabels)
     try:
-        pinlabel_tags.remove(cfg.get("pinlabel", {}).get("tag", ""))
+        pinlabel_tags.remove(diagram.cfg.get("pinlabel", {}).get("tag", ""))
     except ValueError:
         pass
 
-    label_font_size = cfg.get("pinlabel", {}).get(
-        "font_size", math.floor(cfg["pinlabel"]["box"]["height"] * (3 / 5))
+    label_font_size = diagram.cfg.get("pinlabel", {}).get(
+        "font_size", math.floor(diagram.cfg["pinlabel"]["box"]["height"] * (3 / 5))
     )
     label_text_color = tuple(
-        cfg.get("pinlabel", {}).get("text", {}).get("color", (255, 255, 255))
+        diagram.cfg.get("pinlabel", {}).get("text", {}).get("color", (255, 255, 255))
     )
 
     pinlabel_categories = {
@@ -102,12 +101,12 @@ def default_css(diagram):
 
     return stylesheet.render(
         {
-            "diagram": cfg["diagram"],
-            "pinlabel": cfg["pinlabel"],
+            "diagram": diagram.cfg["diagram"],
+            "pinlabel": diagram.cfg["pinlabel"],
             "pinlabel_categories": pinlabel_categories,
-            "pinlabelrow": cfg["pinlabelrow"],
-            "legend": cfg["legend"],
-            "leaderline": cfg["leaderline"],
-            "informationpanel": cfg["informationpanel"],
+            "pinlabelrow": diagram.cfg["pinlabelrow"],
+            "legend": diagram.cfg["legend"],
+            "leaderline": diagram.cfg["leaderline"],
+            "informationpanel": diagram.cfg["informationpanel"],
         }
     )

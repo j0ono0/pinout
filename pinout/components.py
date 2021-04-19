@@ -1,7 +1,6 @@
 import base64
 from collections import namedtuple
 from pathlib import Path
-from .file_manager import cfg
 
 from .templates import (
     svg_group,
@@ -104,7 +103,7 @@ class Component(SVG):
     """Container object that manages groups of child objects.
     All children must include a render and bounding_coords functions."""
 
-    def __init__(self, children=None, *args, **kwargs):
+    def __init__(self, children=None, config=None, *args, **kwargs):
         """Container object that manages child Component and/or Elements as a group, it renders as a <group> tag.
         Child coordinates are all relative to their parent Component.
         When scale is applied to a Component no direct affect to the <group> tag is applied but the scale setting is passed down to direct child **Elements**.
@@ -112,6 +111,7 @@ class Component(SVG):
         :param children: Component and/or Element objects, defaults to None
         :type children: Union[Component, Element], optional
         """
+        self.cfg = config
         self.children = []
         super().__init__(*args, **kwargs)
         if children:
@@ -200,7 +200,7 @@ class Component(SVG):
 
 
 class StyleSheet:
-    def __init__(self, path, embed=False):
+    def __init__(self, path, embed=False, config=None):
         """Include a stylesheet in the diagram
 
         :param path: Filename, including path, of the external stylesheet. *NOTE*: If *embedding*, a relative path is relative to the current working directory. If *linking*, a relative path is relative to the location of the final SVG diagram.
@@ -210,6 +210,7 @@ class StyleSheet:
         """
         self.path = path
         self.embed = embed
+        self.cfg = config
 
     def render(self):
         context = {}
@@ -338,7 +339,7 @@ class LeaderLine(Component):
         """
 
         super().__init__(*args, **kwargs)
-        cfg_tag = cfg.get("leaderline", {}).get("tag", "")
+        cfg_tag = self.cfg.get("leaderline", {}).get("tag", "")
         self.tags = " ".join([cfg_tag, self.tags]).strip()
 
         offset = self.extract_scale(offset)
@@ -365,12 +366,12 @@ class PinLabel(Component):
         super().__init__(*args, **kwargs)
 
         # Assign config values if none supplied
-        offset = offset or cfg["pinlabel"]["box"]["offset"]
-        box_width = box_width or cfg["pinlabel"]["box"]["width"]
-        box_height = box_height or cfg["pinlabel"]["box"]["height"]
+        offset = offset or self.cfg["pinlabel"]["box"]["offset"]
+        box_width = box_width or self.cfg["pinlabel"]["box"]["width"]
+        box_height = box_height or self.cfg["pinlabel"]["box"]["height"]
 
         # Merge additional tags with config tags
-        cfg_tag = cfg.get("pinlabel", {}).get("tag", "")
+        cfg_tag = self.cfg.get("pinlabel", {}).get("tag", "")
         self.tags = " ".join([cfg_tag, self.tags]).strip()
         # Separate offset and scale data
         offset = self.extract_scale(offset)
@@ -394,9 +395,11 @@ class PinLabelRow(Component):
     def __init__(self, offset, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.offset = self.extract_scale(offset)
-        self.labels = Component(x=offset[0], y=offset[1], scale=self.scale)
+        self.labels = Component(
+            x=offset[0], y=offset[1], scale=self.scale, config=self.cfg
+        )
 
-        cfg_tag = cfg.get("pinlabelrow", {}).get("tag", "")
+        cfg_tag = self.cfg.get("pinlabelrow", {}).get("tag", "")
         self.tags = (cfg_tag + self.tags).strip()
 
         self.add(self.labels)
@@ -417,15 +420,21 @@ class PinLabelRow(Component):
 
             # Add PinLabel to label_row
             label_x = self.labels.width * self.scale.x
-            self.labels.add(PinLabel(**context, x=label_x, scale=self.scale))
+            self.labels.add(
+                PinLabel(**context, x=label_x, scale=self.scale, config=self.cfg)
+            )
 
     def render(self):
 
         tags = self.labels.children[0].tags.split(" ")
-        tags.remove(cfg.get("pinlabel", {}).get("tag", ""))
+        tags.remove(self.cfg.get("pinlabel", {}).get("tag", ""))
         tag_str = " ".join(tags)
 
-        self.add(LeaderLine(offset=self.offset, tags=tag_str, scale=self.scale))
+        self.add(
+            LeaderLine(
+                offset=self.offset, tags=tag_str, scale=self.scale, config=self.cfg
+            )
+        )
         return super().render()
 
 
@@ -443,7 +452,9 @@ class PinLabelSet(Component):
             else:
                 row_offset = offset
 
-            label_row = PinLabelRow(x=pin_x, y=pin_y, offset=row_offset)
+            label_row = PinLabelRow(
+                x=pin_x, y=pin_y, offset=row_offset, config=self.cfg
+            )
             label_row.add_labels(label_list)
 
             self.add(label_row)
@@ -461,15 +472,15 @@ class Legend(Component):
     ):
         super().__init__(*args, **kwargs)
 
-        row_height = row_height or cfg["legend"]["row_height"]
-        categories = categories or cfg["legend"]["categories"]
-        width = width or cfg["legend"]["width"]
+        row_height = row_height or self.cfg["legend"]["row_height"]
+        categories = categories or self.cfg["legend"]["categories"]
+        width = width or self.cfg["legend"]["width"]
 
         # Padding fallbacks: arg > config > calculated
         padding = (
             padding
             if padding != None
-            else cfg.get("legend", {}).get(
+            else self.cfg.get("legend", {}).get(
                 "padding",
                 [
                     row_height / 2,
@@ -489,6 +500,7 @@ class Legend(Component):
                     PinLabel(
                         box_height=swatch_size,
                         box_width=swatch_size,
+                        config=self.cfg,
                         offset=(-swatch_size / 2, 0),
                         tags=tags,
                         text="",
@@ -499,7 +511,7 @@ class Legend(Component):
             self.add(entry)
 
         # Add an 'information panel' *behind* component
-        cfg_tag = cfg.get("informationpanel", {}).get("tag")
+        cfg_tag = self.cfg.get("informationpanel", {}).get("tag")
         self.children.insert(
             0,
             Rect(

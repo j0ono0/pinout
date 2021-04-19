@@ -45,18 +45,17 @@ def export_file(content, path, overwrite=False):
     return path
 
 
-def update_config(dest, src):
-    for key, val in src.items():
-        if type(val) == dict:
-            update_config(dest[key], src[key])
-        else:
-            dest[key] = val
-
-
-def load_config(path):
+def load_config(path=None):
+    if path is None:
+        # Load default settings
+        path = "resources/config.yaml"
+        return yaml.safe_load(
+            pkg_resources.resource_string(__name__, path).decode("utf-8")
+        )
+    # Load user supplied settings
     path = Path(path)
     with path.open() as f:
-        update_config(cfg, yaml.safe_load(f))
+        return yaml.safe_load(f)
 
 
 def duplicate(resource_name="quick_start"):
@@ -95,10 +94,6 @@ def duplicate(resource_name="quick_start"):
         with open(filename, "wb") as f:
             f.write(data)
         print(f"{filename} duplicated.")
-
-
-def test(msg):
-    print("testing:", msg)
 
 
 # Load default settings

@@ -10,18 +10,41 @@ from .templates import svg
 class Diagram(Component):
     """Components are collated and the final diagram is exported with this class. A typical diagram will include an image, pins with labels, and a stylesheet."""
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.cfg = file_manager.load_config()
+
     def add_stylesheet(self, path, embed=False):
-        self.add(StyleSheet(path, embed=embed))
+        self.add(StyleSheet(path, embed=embed, config=self.cfg))
 
     def add_image(self, path, *args, embed=False, **kwargs):
         self.add(Image(path, embed=embed, *args, **kwargs))
 
     def add_legend(self, *args, **kwargs):
-        l = Legend(*args, **kwargs)
-        self.add(Legend(*args, **kwargs))
+        self.add(Legend(config=self.cfg, *args, **kwargs))
 
     def add_pinlabelset(self, offset, labels, pitch=(1, 1), *args, **kwargs):
-        self.add(PinLabelSet(offset, labels, pitch, *args, **kwargs))
+        self.add(PinLabelSet(offset, labels, pitch, config=self.cfg, *args, **kwargs))
+
+    def patch_config(self, cfg, patch):
+        """Recursively update configuration dictionary. Accessing this method directly may not be necessary. Use *add_config* in conjunction with a YAML configuration file to modify Diagram.cfg.
+
+        :param patch: path to YAML config file
+        :type patch: dict
+        """
+        for key, val in patch.items():
+            if type(val) == dict:
+                self.patch_config(cfg[key], patch[key])
+            else:
+                cfg[key] = val
+
+    def add_config(self, path):
+        """Add or patch configuration settings to Diagram.cfg. Parameters set in this fashion become 'defaults' that are accessed by all components where parameters are not explicitly assigned.
+
+        :param path: Path to YAML formatted configuration file
+        :type path: str
+        """
+        self.patch_config(self.cfg, file_manager.load_config(path))
 
     def generate_stylesheet(self, path, overwrite):
         default_css = style_tools.default_css(self)

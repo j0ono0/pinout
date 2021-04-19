@@ -1,5 +1,4 @@
 from pinout import diagram
-from pinout import file_manager
 
 # Pin label information grouped into dicts that render sets of labels
 pin_headers = [
@@ -42,11 +41,11 @@ pin_headers = [
     },
 ]
 
-# Override default config with user supplied values
-file_manager.load_config("quick_start_config.yaml")
-
 # Create a new diagram
 diagram = diagram.Diagram()
+
+# Override default config with user supplied values
+diagram.add_config("quick_start_config.yaml")
 
 # Add a stylesheet
 diagram.add_stylesheet("quick_start_styles.css", embed=True)

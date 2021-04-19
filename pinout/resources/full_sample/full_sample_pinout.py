@@ -6,7 +6,6 @@
 ###########################################
 
 from pinout.diagram import Diagram
-from pinout import file_manager
 
 # Pin label information grouped into dicts that render sets of labels
 pindata = [
@@ -80,7 +79,7 @@ pindata = [
 
 
 # Override default config with user supplied values
-file_manager.load_config("full_sample_config.yaml")
+diagram.load_config("full_sample_config.yaml")
 
 # Create a new diagram object
 diagram = Diagram(tags="full_sample")

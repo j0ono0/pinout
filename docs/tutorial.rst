@@ -16,21 +16,19 @@ Import modules
 Start by importing the pinout diagram module and creating a new diagram object::
 
     from pinout import diagram
-    from pinout import file_manager
 
-The 'file_manager' modules has also been imported here - this is optional but will be used to show how to configure some stylistic aspect of the diagram in this tutorial.
 
 Diagram measurements
 --------------------
 
-Taking some critical measurements of the hardware image before starting will streamline processes and save adjusting by trial-and-error later. Where pins are arranged in 'headers' the *PinLabelSet* class can be used place labels once a starting location has been documented.
+Taking some critical measurements of the hardware image before starting will streamline processes and save adjusting by trial-and-error later. Where pins are arranged in 'headers' (a line of evenly spaced pins) the *PinLabelSet* class can be used to automate pin and label placement.
 
 .. figure:: _static/quick_start_measurements_left_header.*
 
 - **x, y**: Coordinates of the first pin in the header.
 - **pitch**: Distance between each pin of the header. (0, 30) steps 0px right and 30px down for each pin.
 - **offset**: **Relative to the pin's (x, y) coodinates**. Locates the start position for a row of labels.
-- **labels**: Data that documents each label and its relation in the header. Each list within 'labels' represents a pin in the header. Each entry within those lists becomes a label.  
+- **labels**: Data that documents each label and its position in the header. Each list within 'labels' represents a pin in the header. Each entry within those lists becomes a label.  
 
 These details are documented in a dict. Multiple headers can be grouped into a list for convenient processing later::
 
@@ -57,11 +55,11 @@ In this tutorial all (x, y) coordinates are relative to the hardware images's to
 
 Load a config file
 ------------------
-All default design settings in *pinout* can be overridden by editing properties of a component directly or by supplying the value in a configuration file. The latter is ideal where the change should be aplied to all instances of a component in the diagram.
+All default design settings in *pinout* can be overridden by editing properties of a component directly or by supplying the value in a configuration file. The latter is ideal for chages across the entire diagram.
 
-The configuration file is in YAML format. 'quick_start_config.yaml' demonstrates the format with a few example settings. These settings are controlled by the file_manager module::
+The configuration file is in YAML format. 'quick_start_config.yaml' demonstrates the format with a few example settings::
 
-    file_manager.load_config("quick_start_config.yaml") 
+    diagram.load_config("quick_start_config.yaml") 
 
 
 Create a new diagram

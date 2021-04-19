@@ -95,18 +95,8 @@ def default_css(diagram):
         diagram.cfg.get("pinlabel", {}).get("text", {}).get("color", (255, 255, 255))
     )
 
-    pinlabel_categories = {
+    diagram.cfg["pinlabel"]["_categories"] = {
         label: random_contrasting_rgb(label_text_color) for label in pinlabel_tags
     }
 
-    return stylesheet.render(
-        {
-            "diagram": diagram.cfg["diagram"],
-            "pinlabel": diagram.cfg["pinlabel"],
-            "pinlabel_categories": pinlabel_categories,
-            "pinlabelrow": diagram.cfg["pinlabelrow"],
-            "legend": diagram.cfg["legend"],
-            "leaderline": diagram.cfg["leaderline"],
-            "informationpanel": diagram.cfg["informationpanel"],
-        }
-    )
+    return stylesheet.render(diagram.cfg)

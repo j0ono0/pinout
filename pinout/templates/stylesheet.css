@@ -1,7 +1,7 @@
 
 
 /* Pinlabel categories */
-{% for key, val in pinlabel_categories.items() %}
+{% for key, val in pinlabel._categories.items() %}
     .{{ pinlabel.tag }}.{{ key }} rect{
         fill: rgb{{ val }};
     } 

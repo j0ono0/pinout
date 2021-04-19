@@ -53,20 +53,22 @@ These details are documented in a dict. Multiple headers can be grouped into a l
 In this tutorial all (x, y) coordinates are relative to the hardware images's top-left corner which is positioned at (0, 0).
 
 
+Create a new diagram
+--------------------
+::
+
+diagram = diagram.Diagram()
+
+
 Load a config file
 ------------------
-All default design settings in *pinout* can be overridden by editing properties of a component directly or by supplying the value in a configuration file. The latter is ideal for chages across the entire diagram.
+Many design settings in *pinout* can be overridden by editing properties of a component directly or by supplying a 'default' value via a configuration file. The latter is ideal for consistency across the entire diagram.
 
 The configuration file is in YAML format. 'quick_start_config.yaml' demonstrates the format with a few example settings::
 
     diagram.load_config("quick_start_config.yaml") 
 
-
-Create a new diagram
---------------------
-::
-
-    diagram = diagram.Diagram()
+Loading the config file should be done before other components are added as values may be referenced during the instantiating process.
 
 
 Add a stylesheet

@@ -1,6 +1,7 @@
 import base64
 from collections import namedtuple
 from pathlib import Path
+from . import file_manager
 
 from .templates import (
     svg_group,
@@ -173,9 +174,9 @@ class Component(SVG):
         try:
             for child in children:
                 self.children.append(child)
+                # Scale is only adopted by Element children
                 if issubclass(type(child), Element):
                     child.scale = self.scale
-
         except TypeError:
             self.add([children])
 
@@ -210,6 +211,9 @@ class StyleSheet:
         """
         self.path = path
         self.embed = embed
+        self.cfg = config
+
+    def update_config(self, config):
         self.cfg = config
 
     def render(self):
@@ -381,7 +385,7 @@ class PinLabel(Component):
                 Line(width=offset.x, height=offset.y),
                 Label(
                     text=text,
-                    x=offset.x,
+                    x=offset.x - 1,
                     y=offset.y,
                     width=box_width,
                     height=box_height,
@@ -401,7 +405,7 @@ class PinLabelRow(Component):
 
         cfg_tag = self.cfg.get("pinlabelrow", {}).get("tag", "")
         self.tags = (cfg_tag + self.tags).strip()
-
+        # Add labels component into children for rendering later
         self.add(self.labels)
 
     def add_labels(self, label_list):
@@ -456,7 +460,6 @@ class PinLabelSet(Component):
                 x=pin_x, y=pin_y, offset=row_offset, config=self.cfg
             )
             label_row.add_labels(label_list)
-
             self.add(label_row)
 
 

@@ -10,8 +10,9 @@
 
 pinlabel:
   box:
-    offset: [15,0]
-    width: 70
+    offset: [8,0]
+    width: 50
+    height: 24
   tag: pl
 
 legend:

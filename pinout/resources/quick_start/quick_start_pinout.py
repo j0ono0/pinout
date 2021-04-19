@@ -7,11 +7,11 @@ pin_headers = [
         "x": 16,
         "y": 100,
         "pitch": (0, 30),
-        "offset": (-55, 0),
+        "offset": (-58, 0),
         "labels": [
-            [("Vcc", "pwr", (0, 0), 155)],
+            [("Vcc", "pwr", (0, 0), 108)],
             [("1", "gpio"), ("A1", "analog")],
-            [("2", "gpio"), ("PWM", "pwm", (-100, 0))],
+            [("2", "gpio"), ("PWM", "pwm", (-66, 0))],
         ],
     },
     {
@@ -19,9 +19,9 @@ pin_headers = [
         "x": 204,
         "y": 100,
         "pitch": (0, 30),
-        "offset": (55, 0),
+        "offset": (58, 0),
         "labels": [
-            [("GND", "pwr", (0, 0), 155)],
+            [("GND", "pwr", (0, 0), 108)],
             [("7", "gpio"), ("A3", "analog")],
             [("6", "gpio"), ("A2", "analog"), ("PWM", "pwm")],
         ],
@@ -31,12 +31,12 @@ pin_headers = [
         "x": 65,
         "y": 244,
         "pitch": (30, 0),
-        "offset": (-104, 40),
+        "offset": (-107, 40),
         "labels": [
-            [("RESET", "pwr", (0, 0), 155)],
+            [("RESET", "pwr", (0, 0), 108)],
             [("3", "gpio"), ("ADC0", "analog")],
             [("4", "gpio"), ("ADC1", "analog"), ("PWM", "pwm")],
-            [("5", "gpio"), ("PWM", "pwm", (-100, 0))],
+            [("5", "gpio"), ("PWM", "pwm", (-66, 0))],
         ],
     },
 ]
@@ -54,7 +54,7 @@ diagram.add_stylesheet("quick_start_styles.css", embed=True)
 diagram.add_image("quick_start_hardware.png", width=220, height=260, embed=True)
 
 # Add a legend. Note, categories are documented in config.yaml
-diagram.add_legend(x=260, y=236, tags="legend")
+diagram.add_legend(x=250, y=236, tags="legend")
 
 # Create pinout labels
 for header in pin_headers:

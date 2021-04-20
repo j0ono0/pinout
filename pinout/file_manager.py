@@ -46,6 +46,13 @@ def export_file(content, path, overwrite=False):
 
 
 def load_config(path=None):
+    """Load a config file either from a user nominated location or, if no path is supplied, load the default config file from the *pinout* package.
+
+    :param path: [description], defaults to None
+    :type path: [type], optional
+    :return: [description]
+    :rtype: [type]
+    """
     if path is None:
         # Load default settings
         path = "resources/config.yaml"
@@ -58,15 +65,20 @@ def load_config(path=None):
         return yaml.safe_load(f)
 
 
-def duplicate(resource_name="quick_start"):
-    """pinout includes some sample projects. These can be duplicated to the working directory and used in conjunction with the official tutorial.
+def duplicate(resource_name):
+    """Duplicate resources from *pinout* package.
 
-    Current projects:
+    A variety of resources can be copied via this function. Access is also available via the command line::
 
-        + 'quick_start'
-        + 'full_sample'
+        py -m pinout.file_manager --duplicate <resource_name>
 
-    :param resource_name: Name of sample project. Defaults to 'quick_start'.
+    Where :code:`<resource_name>` can be any one of the following resources:
+
+        + config
+        + quick_start
+        + full_sample
+
+    :param resource_name: Name of resource to duplicate.
     :type resource_name: string
     """
 
@@ -95,10 +107,6 @@ def duplicate(resource_name="quick_start"):
             f.write(data)
         print(f"{filename} duplicated.")
 
-
-# Load default settings
-path = "resources/config.yaml"
-cfg = yaml.safe_load(pkg_resources.resource_string(__name__, path).decode("utf-8"))
 
 if __name__ == "__main__":
     import argparse

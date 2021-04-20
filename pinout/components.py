@@ -356,7 +356,7 @@ class Rect(Element):
 
 
 class Line(Element):
-    """Create an SVG <path> tag with (at most) a single 90deg bend in it.
+    """Create an SVG <path> tag with (at most) a single 90deg bend in it. The design of this Element is soley for use as a leader line with pin labels.
 
     :return: SVG <path> code
     :rtype: string
@@ -436,12 +436,13 @@ class Label(Element):
 
 
 class LeaderLine(Component):
-    def __init__(self, offset=(0, 0), *args, **kwargs):
-        """Draws a line from *offset* to the component's (x, y) location.
+    """Draws a line from *offset* to the component's (x, y) location.
 
-        :param offset: The (x, y) coordinates the leaderline is drawn from
-        :type offset: tuple
-        """
+    :param offset: The (x, y) coordinates the leaderline is drawn from
+    :type offset: tuple
+    """
+
+    def __init__(self, offset=(0, 0), *args, **kwargs):
 
         super().__init__(*args, **kwargs)
         cfg_tag = self.cfg.get("leaderline", {}).get("tag", "")
@@ -458,6 +459,18 @@ class LeaderLine(Component):
 
 
 class PinLabel(Component):
+    """Comprised of a Line and Label element, this component encapsulates the requirement for a single pin label. All arguments have default settings in the components config.
+
+    :param text: Text displayed in the label
+    :type text: string
+    :param offset: x and y distance that the label is offset from its parent. A leader line graphically bridges from the parent origin to the the offset coords.
+    :type offset: (tuple)
+    :param box_width: Width of the label portion of the PinLabel. Total width is box_width + offset.x
+    :type box_width: int
+    :param box_height: Height of the label portion of the PinLabel.
+    :type box_height: int
+    """
+
     def __init__(
         self,
         text,
@@ -493,6 +506,14 @@ class PinLabel(Component):
 
 
 class PinLabelRow(Component):
+    """Assists with grouping and arranging pinlabels that relate to the same pin into a row.
+
+    :param offset: x and y distance that the row is offset from its parent. A leader line graphically bridges from the parent origin to the the offset coords.
+    :type offset: tuple in the form of (x, y)
+    :param labels: List of tuples documenting label attributes ("text", "tags", "offset", "box_width"). Only 'text' and 'tag' are required. The other optional values fallback to config defaults. :code:`offset=None` can be used to supply a 'box_width' but use the default 'offset' value.
+    :type labels: List of tuples
+    """
+
     def __init__(self, offset, labels, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.offset = self.extract_scale(offset)
@@ -575,6 +596,28 @@ class PinLabelSet(Component):
 
 
 class Legend(Component):
+    """Provide a colour coded legend to describe pin labels. All data to populate a legend must be documented in the diagram's config by adding an YAML formatted file::
+
+        # config.yaml
+
+        legend:
+            categories: [
+                # [<Title>, <CSS class 'tag'>]
+                ["Analog", "analog"],
+                ["GPIO", "gpio"],
+                ["PWM", "pwm"],
+            ]
+
+    *Note*: *pinout* does not calculate text widths. a manually provided with should be included to ensure text remains enclosed within the legend.
+
+    A complete set of *pinout* defaults can be duplicated from the command line for reference::
+
+            >>> py -m pinout.file_manager --duplicate config
+
+    config.yaml includes all legend attributes that can be altered.
+
+    """
+
     def __init__(
         self,
         categories=None,

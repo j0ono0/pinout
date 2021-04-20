@@ -57,6 +57,15 @@ def random_contrasting_rgb(ref_color):
 
 
 def find_children_by_type(component, target_type):
+    """Recursively find all children of the component and it's decendents by type.
+
+    :param component: Component instance to start seach from
+    :type component: class instance
+    :param target_type: class  to match with instances
+    :type target_type: class
+    :return: All instances of type 'target_type' that are descendents of 'component'
+    :rtype: list
+    """
     results = []
     try:
         for c in component.children:
@@ -64,7 +73,8 @@ def find_children_by_type(component, target_type):
                 results.append(c)
             results += find_children_by_type(c, target_type)
     except AttributeError:
-        """ No children """
+        pass
+        # No children
 
     return results
 

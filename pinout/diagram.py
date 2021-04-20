@@ -15,16 +15,16 @@ class Diagram(Component):
         self.cfg = file_manager.load_config()
 
     def add_stylesheet(self, path, embed=False):
-        self.add(StyleSheet(path, embed=embed, config=self.cfg))
+        self.add_and_instantiate(StyleSheet, path, embed=embed)
 
     def add_image(self, path, *args, embed=False, **kwargs):
-        self.add(Image(path, embed=embed, *args, **kwargs))
+        self.add_and_instantiate(Image, path, *args, embed=embed, **kwargs)
 
     def add_legend(self, *args, **kwargs):
-        self.add(Legend(config=self.cfg, *args, **kwargs))
+        self.add_and_instantiate(Legend, *args, **kwargs)
 
-    def add_pinlabelset(self, offset, labels, pitch=(1, 1), *args, **kwargs):
-        self.add(PinLabelSet(offset, labels, pitch, config=self.cfg, *args, **kwargs))
+    def add_pinlabelset(self, *args, **kwargs):
+        self.add_and_instantiate(PinLabelSet, *args, **kwargs)
 
     def patch_config(self, cfg, patch):
         """Recursively update configuration dictionary. Accessing this method directly may not be necessary. Use *add_config* in conjunction with a YAML configuration file to modify Diagram.cfg.

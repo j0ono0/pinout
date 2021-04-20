@@ -170,15 +170,14 @@ class Component(SVG):
         x_min, y_min, x_max, y_max = self.bounding_coords
         return BoundingBox(x_min, y_min, x_max - x_min, y_max - y_min)
 
-    def add(self, children):
-        try:
-            for child in children:
-                self.children.append(child)
-                # Scale is only adopted by Element children
-                if issubclass(type(child), Element):
-                    child.scale = self.scale
-        except TypeError:
-            self.add([children])
+    def add_and_instantiate(self, cls, *args, **kwargs):
+        if issubclass(cls, Component):
+            kwargs["config"] = self.cfg
+        if issubclass(cls, Element):
+            kwargs["scale"] = self.scale
+        instance = cls(*args, **kwargs)
+        self.children.append(instance)
+        return instance
 
     def render(self):
         """Render Component, and children, as SVG markup.
@@ -349,11 +348,10 @@ class LeaderLine(Component):
         offset = self.extract_scale(offset)
 
         # Add Path to children
-        self.add(
-            Line(
-                width=abs(offset[0]),
-                height=abs(offset[1]),
-            ),
+        self.add_and_instantiate(
+            Line,
+            width=abs(offset[0]),
+            height=abs(offset[1]),
         )
 
 
@@ -380,33 +378,30 @@ class PinLabel(Component):
         # Separate offset and scale data
         offset = self.extract_scale(offset)
 
-        self.add(
-            [
-                Line(width=offset.x, height=offset.y),
-                Label(
-                    text=text,
-                    x=offset.x - 1,
-                    y=offset.y,
-                    width=box_width,
-                    height=box_height,
-                    scale=self.scale,
-                ),
-            ]
+        self.add_and_instantiate(Line, width=offset.x, height=offset.y)
+        self.add_and_instantiate(
+            Label,
+            text=text,
+            x=offset.x - 1,
+            y=offset.y,
+            width=box_width,
+            height=box_height,
+            scale=self.scale,
         )
 
 
 class PinLabelRow(Component):
-    def __init__(self, offset, *args, **kwargs):
+    def __init__(self, offset, labels, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.offset = self.extract_scale(offset)
-        self.labels = Component(
-            x=offset[0], y=offset[1], scale=self.scale, config=self.cfg
+        self.labels = self.add_and_instantiate(
+            Component, x=offset[0], y=offset[1], scale=self.scale
         )
 
         cfg_tag = self.cfg.get("pinlabelrow", {}).get("tag", "")
         self.tags = (cfg_tag + self.tags).strip()
-        # Add labels component into children for rendering later
-        self.add(self.labels)
+
+        self.add_labels(labels)
 
     def add_labels(self, label_list):
         for i, label in enumerate(label_list):
@@ -415,7 +410,7 @@ class PinLabelRow(Component):
             context = {
                 key: val
                 for key, val in context.items()
-                if val not in [None, "auto", "defalut", "", "-", "na"]
+                if val not in [None, "auto", "default", "", "-", "na"]
             }
 
             # Conditionally set offset if none supplied (first label has no leaderline)
@@ -424,8 +419,8 @@ class PinLabelRow(Component):
 
             # Add PinLabel to label_row
             label_x = self.labels.width * self.scale.x
-            self.labels.add(
-                PinLabel(**context, x=label_x, scale=self.scale, config=self.cfg)
+            self.labels.add_and_instantiate(
+                PinLabel, **context, x=label_x, scale=self.scale
             )
 
     def render(self):
@@ -434,10 +429,12 @@ class PinLabelRow(Component):
         tags.remove(self.cfg.get("pinlabel", {}).get("tag", ""))
         tag_str = " ".join(tags)
 
-        self.add(
-            LeaderLine(
-                offset=self.offset, tags=tag_str, scale=self.scale, config=self.cfg
-            )
+        self.add_and_instantiate(
+            LeaderLine,
+            offset=self.offset,
+            tags=tag_str,
+            scale=self.scale,
+            config=self.cfg,
         )
         return super().render()
 
@@ -456,11 +453,9 @@ class PinLabelSet(Component):
             else:
                 row_offset = offset
 
-            label_row = PinLabelRow(
-                x=pin_x, y=pin_y, offset=row_offset, config=self.cfg
+            label_row = self.add_and_instantiate(
+                PinLabelRow, offset=row_offset, labels=label_list, x=pin_x, y=pin_y
             )
-            label_row.add_labels(label_list)
-            self.add(label_row)
 
 
 class Legend(Component):
@@ -496,22 +491,22 @@ class Legend(Component):
         swatch_size = row_height * 2 / 3
 
         for i, (name, tags) in enumerate(categories):
-            entry = Component(x=pad.x, y=pad.y + row_height * i, tags=tags)
-            entry.add(
-                [
-                    Text(name, x=swatch_size * 2, height=row_height),
-                    PinLabel(
-                        box_height=swatch_size,
-                        box_width=swatch_size,
-                        config=self.cfg,
-                        offset=(-swatch_size / 2, 0),
-                        tags=tags,
-                        text="",
-                        x=swatch_size * 1.5,
-                    ),
-                ]
+            entry = self.add_and_instantiate(
+                Component, x=pad.x, y=pad.y + row_height * i, tags=tags
             )
-            self.add(entry)
+            entry.add_and_instantiate(
+                Text, text=name, x=swatch_size * 2, height=row_height
+            )
+            entry.add_and_instantiate(
+                PinLabel,
+                box_height=swatch_size,
+                box_width=swatch_size,
+                config=self.cfg,
+                offset=(-swatch_size / 2, 0),
+                tags=tags,
+                text="",
+                x=swatch_size * 1.5,
+            )
 
         # Add an 'information panel' *behind* component
         cfg_tag = self.cfg.get("informationpanel", {}).get("tag")

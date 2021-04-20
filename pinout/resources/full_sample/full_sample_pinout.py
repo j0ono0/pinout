@@ -78,11 +78,11 @@ pindata = [
 ]
 
 
-# Override default config with user supplied values
-diagram.load_config("full_sample_config.yaml")
-
 # Create a new diagram object
 diagram = Diagram(tags="full_sample")
+
+# Override default config with user supplied values
+diagram.add_config("full_sample_config.yaml")
 
 # Link external resources
 diagram.add_stylesheet("full_sample_styles.css", embed=True)

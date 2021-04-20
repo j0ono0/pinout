@@ -10,8 +10,17 @@ diagram
     :members: 
     :undoc-members:
     :show-inheritance:
-    :exclude-members: Label.default_width
 
+
+components
+----------
+
+.. automodule:: pinout.components
+    :members: 
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: ClassMethodMissing
+    
 
 resources
 ---------

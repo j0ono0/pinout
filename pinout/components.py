@@ -38,10 +38,20 @@ class SVG:
 
     @property
     def scale(self):
+        """Scale is abstracted as a property here and overridden by Component
+
+        :return: (x, y) where x and y are either 1 or -1
+        :rtype: tuple
+        """
         return self._scale
 
     @scale.setter
     def scale(self, value):
+        """Scale setter property - overridden by Component
+
+        :param value: (x, y) where x and y are either 1 or -1
+        :type value: tuple
+        """
         self._scale = value
 
     def extract_scale(self, coords):
@@ -49,7 +59,6 @@ class SVG:
 
         :param coords: tuple representing  (x, y) or (width, height). values may be positive or negative.
         :type coords: Union(tuple, Coords)
-        :raises ClassMethodMissing: [description]
         :return: nametuple with absolute values
         :rtype: Coords
         """
@@ -60,29 +69,26 @@ class SVG:
 
 
 class Element(SVG):
+    """Container that exclusively handles graphical SVG code. Elements can be considered the smallest building blocks of *pinout*.
+
+    :param width: Width of the renderable SVG code, defaults to 0
+    :type width: int, optional
+    :param height: Height of the renderable SVG code, defaults to 0
+    :type height: int, optional
+    """
+
     def __init__(self, width=0, height=0, *args, **kwargs):
-        self._width = width
-        self._height = height
+        self.width = width
+        self.height = height
         super().__init__(*args, **kwargs)
 
     @property
-    def width(self):
-        return self._width
-
-    @width.setter
-    def width(self, value):
-        self._width = value
-
-    @property
-    def height(self):
-        return self._height
-
-    @height.setter
-    def height(self, value):
-        self._height = value
-
-    @property
     def bounding_coords(self):
+        """Coordinates, relative to its parent, representing sides of a rectangle that encompass the rendered element.
+
+        :return: (x_min, y_min, x_max, y_max)
+        :rtype: tuple
+        """
         x_min, x_max = sorted(
             [self.x * self.scale.x, (self.x + self.width) * self.scale.x]
         )
@@ -93,6 +99,11 @@ class Element(SVG):
 
     @property
     def bounding_rect(self):
+        """Coordinates representing the location of an elements origin (usually top-left corner) within its parent along with the elements width and height.
+
+        :return: (x, y, width, height)
+        :rtype: tuple
+        """
         x_min, y_min, x_max, y_max = self.bounding_coords
         return BoundingBox(x_min, y_min, x_max - x_min, y_max - y_min)
 
@@ -101,17 +112,20 @@ class Element(SVG):
 
 
 class Component(SVG):
-    """Container object that manages groups of child objects.
-    All children must include a render and bounding_coords functions."""
+    """Container object that manages child Components and/or Elements as a group.
+
+    Child coordinates are all relative to their parent Component.
+
+    When scale is applied to a Component no direct affect to the <group> tag is applied but the scale setting is passed down to direct child **Elements**.
+
+    :param children: Component and/or Element objects, defaults to None
+    :type children: Union[Component, Element, StyleSheet], optional
+    :param config: Default configuration values.
+    :type config: dict, optional
+    """
 
     def __init__(self, children=None, config=None, *args, **kwargs):
-        """Container object that manages child Component and/or Elements as a group, it renders as a <group> tag.
-        Child coordinates are all relative to their parent Component.
-        When scale is applied to a Component no direct affect to the <group> tag is applied but the scale setting is passed down to direct child **Elements**.
 
-        :param children: Component and/or Element objects, defaults to None
-        :type children: Union[Component, Element], optional
-        """
         self.cfg = config
         self.children = []
         super().__init__(*args, **kwargs)
@@ -120,6 +134,11 @@ class Component(SVG):
 
     @property
     def bounding_coords(self):
+        """Coordinates, relative to its parent, representing sides of a rectangle that encompass all child elements of the rendered Component.
+
+        :return: (x_min, y_min, x_max, y_max)
+        :rtype: tuple
+        """
         # Untransformed bounding coords
         x_min = y_min = x_max = y_max = 0
         for child in self.children:
@@ -138,6 +157,11 @@ class Component(SVG):
 
     @property
     def width(self):
+        """Calculated width that encompasses all child elements
+
+        :return: value representing a width in pixels
+        :rtype: int
+        """
         try:
             x_min, y_min, x_max, y_max = self.bounding_coords
             return x_max - x_min
@@ -147,6 +171,11 @@ class Component(SVG):
 
     @property
     def height(self):
+        """Calculated height that encompasses all child elements
+
+        :return: value representing a height in pixels
+        :rtype: int
+        """
         try:
             x_min, y_min, x_max, y_max = self.bounding_coords
             return y_max - y_min
@@ -156,6 +185,11 @@ class Component(SVG):
 
     @property
     def scale(self):
+        """Scale has no direct effect of components however all immediate element children of a component inherit their parents scale value.
+
+        :return: tuple in the form of (x, y) where expected values are either 1 or -1.
+        :rtype: tuple
+        """
         return self._scale
 
     @scale.setter
@@ -167,10 +201,20 @@ class Component(SVG):
 
     @property
     def bounding_rect(self):
+        """Coordinates representing the location of a components origin (usually top-left corner) within its parent along with a width and height that encompass all child elements.
+
+        :return: (x, y, width, height)
+        :rtype: tuple
+        """
         x_min, y_min, x_max, y_max = self.bounding_coords
         return BoundingBox(x_min, y_min, x_max - x_min, y_max - y_min)
 
     def add_and_instantiate(self, cls, *args, **kwargs):
+        """Instantiate an instance of a class and add it to the components children. This is done as a method to allow attributes to be added/amended in the single process.
+
+        :return: Instance of the instantiated class
+        :rtype: object
+        """
         if issubclass(cls, Component):
             kwargs["config"] = self.cfg
         if issubclass(cls, Element):
@@ -212,10 +256,12 @@ class StyleSheet:
         self.embed = embed
         self.cfg = config
 
-    def update_config(self, config):
-        self.cfg = config
-
     def render(self):
+        """Create SVG tag with content to either embed or link styles.
+
+        :return: SVG <link> or <style> code
+        :rtype: string
+        """
         context = {}
         if self.embed:
             p = Path(self.path)
@@ -232,6 +278,13 @@ class StyleSheet:
 
 class Image(Element):
     def __init__(self, href, embed=False, *args, **kwargs):
+        """Associate a PNG, JPG or SVG formatted image to the diagram. *IMPORTANT*: Image width and height parameters must be supplied for the image to display! *pinout* does not auto-detect these attributes.
+
+        :param href: Location of the image. *Note*: Where :code:`embed=False` the path is relative to the exported file. Where :code:`embed=True` the path is relative to the current working directory.
+        :type path: string
+        :param embed: Embed or link the image in the exported file, defaults to False
+        :type embed: bool, optional
+        """
         super().__init__(*args, **kwargs)
 
         self.href = href
@@ -239,6 +292,11 @@ class Image(Element):
 
     @property
     def bounding_coords(self):
+        """Coordinates, relative to its parent, representing sides of a rectangle that encompass the image.
+
+        :return: (x_min, y_min, x_max, y_max)
+        :rtype: tuple
+        """
         x_min, x_max = sorted(
             [self.x * self.scale.x, (self.x + self.width) * self.scale.x]
         )
@@ -270,11 +328,22 @@ class Image(Element):
 
 
 class Rect(Element):
+    """SVG <rect> (rectangle) element.
+
+    :param rx: corner radius, defaults to 0
+    :type rx: int, optional
+    """
+
     def __init__(self, rx=0, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.rx = rx
 
     def render(self):
+        """create an SVG <rect> tag.
+
+        :return: SVG <rect> code
+        :rtype: string
+        """
         return svg_rect.render(
             rx=self.rx,
             x=self.x,
@@ -287,7 +356,18 @@ class Rect(Element):
 
 
 class Line(Element):
+    """Create an SVG <path> tag with (at most) a single 90deg bend in it.
+
+    :return: SVG <path> code
+    :rtype: string
+    """
+
     def render(self):
+        """create an SVG <path> tag.
+
+        :return: SVG <path> code
+        :rtype: string
+        """
         vertical_move = f"V {self.height}" if self.height != 0 else ""
         horizontal_move = f"H {self.width}" if self.width != 0 else ""
         return svg_line.render(
@@ -298,11 +378,22 @@ class Line(Element):
 
 
 class Text(Element):
+    """Create an SVG <text> tag with a single line of text.
+
+    :return: SVG <text> code
+    :rtype: string
+    """
+
     def __init__(self, text, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.text = text
 
     def render(self):
+        """create an SVG <text> tag.
+
+        :return: SVG <text> code
+        :rtype: string
+        """
         return svg_text.render(
             text=self.text,
             tags=("textblock " + self.tags).strip(),
@@ -317,11 +408,22 @@ class Text(Element):
 
 
 class Label(Element):
+    """A single line of text infront of a rectangle. *Note*: Text length is not auto-detected and the element's width should be set to ensure text will not overflow the rectangle in the final diagram export.
+
+    :param text: Text to appear on the label
+    :type text: string
+    """
+
     def __init__(self, text, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.text = text
 
     def render(self):
+        """create an SVG <group> tag that includes text and an rectangle.
+
+        :return: SVG <group> code
+        :rtype: string
+        """
         return svg_label.render(
             text=self.text,
             tags=self.tags,
@@ -424,6 +526,11 @@ class PinLabelRow(Component):
             )
 
     def render(self):
+        """Prior to rendering, a leaderline is automatically added, joining the first label to the components origin.
+
+        :return: SVG <group> containing a row of pin labels
+        :rtype: string
+        """
 
         tags = self.labels.children[0].tags.split(" ")
         tags.remove(self.cfg.get("pinlabel", {}).get("tag", ""))
@@ -440,6 +547,15 @@ class PinLabelRow(Component):
 
 
 class PinLabelSet(Component):
+    """This is the recommended method of adding pin labels to a diagram.
+    :param offset: Relative x and y offset from the pin location for the first label in a row
+    :type offset: tuple
+    :param labels: tuples nested within a 2 dimensional array. Each list within the 'labels' list represents a pin in the header. Each entry within those lists becomes a label.
+    :type labels: Tuples nested within a 2 dimensional array. Each list within 'labels' represents a pin in the header. Each entry within those lists becomes a label. The label is a tuple in the format :code:`(<text>, <css tag>, <offset>, <box_width>)` the second two arguments are optional.
+    :param pitch: 'x' and 'y' distance in pixels between each pin of the header. (0, 30) steps 0px right and 30px down for each pin. (30, 0) creates a horizontal header. (-30, 0) creates a horizontal header in the reverse direction. This can be useful for 'stacking' rows in reversed order to avoid leader-lines overlapping.
+    :type pitch: tuple, optional
+    """
+
     def __init__(self, offset, labels, pitch=(1, 1), *args, **kwargs):
         super().__init__(*args, **kwargs)
 

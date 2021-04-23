@@ -86,12 +86,12 @@ def duplicate(resource_name):
         "config": [(".", "config.yaml")],
         "quick_start": [
             ("quick_start", "quick_start_config.yaml"),
-            ("quick_start", "quick_start_config_tags.yaml"),
             ("quick_start", "quick_start_hardware.png"),
             ("quick_start", "quick_start_pinout.py"),
         ],
         "full_sample": [
             ("full_sample", "full_sample_config.yaml"),
+            ("full_sample", "full_sample_config_tags.yaml"),
             ("full_sample", "full_sample_hardware.png"),
             ("full_sample", "full_sample_pinout.py"),
         ],

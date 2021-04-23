@@ -1,6 +1,6 @@
 <g 
-    {% if tags %}
-        class="{{ tags }}" 
+    {% if tag %}
+        class="{{ tag }}" 
     {% endif %}
     transform="
         translate({{ x * scale.x }} {{  y * scale.y }}) 

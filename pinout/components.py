@@ -1,4 +1,5 @@
 import base64
+import copy
 from collections import namedtuple
 from pathlib import Path
 from . import file_manager
@@ -7,7 +8,7 @@ from .templates import (
     svg_group,
     svg_image,
     svg_label,
-    svg_line,
+    svg_path,
     svg_rect,
     svg_style,
     svg_text,
@@ -29,20 +30,20 @@ class ClassMethodMissing(Exception):
 
 
 class SVG:
-    def __init__(self, x=0, y=0, scale=(1, 1), rotation=0, tags=""):
+    """Common base for all SVG entities that ultimately have a graphical representation."""
+
+    def __init__(self, x=0, y=0, scale=(1, 1), rotation=0, tag="", config=None):
+        self.cfg = config
+        self.rotation = rotation
+        self._scale = Coords(*scale)
+        self.tag = tag
         self.x = x
         self.y = y
-        self._scale = scale if isinstance(scale, Coords) else Coords(*scale)
-        self.rotation = rotation
-        self.tags = tags
 
     @property
     def scale(self):
-        """Scale is abstracted as a property here and overridden by Component
-
-        :return: (x, y) where x and y are either 1 or -1
-        :rtype: tuple
-        """
+        """Tuple used to represent orientation of entity"""
+        # NOTE: set here for override by Component
         return self._scale
 
     @scale.setter
@@ -52,16 +53,11 @@ class SVG:
         :param value: (x, y) where x and y are either 1 or -1
         :type value: tuple
         """
+        # NOTE: set here for override by Component
         self._scale = value
 
     def extract_scale(self, coords):
-        """Separate scale information from a tuple that represents (x, y) or (width, height) values. Components and elements control orientation via the scale property rather than negative dimension/direction values. **NOTE**: Existing scale property is only overridded if the provided coords include a negative value.
-
-        :param coords: tuple representing  (x, y) or (width, height). values may be positive or negative.
-        :type coords: Union(tuple, Coords)
-        :return: nametuple with absolute values
-        :rtype: Coords
-        """
+        """Separate scale information from a tuple that represents (x, y) or (width, height) values."""
 
         if not all(val >= 0 for val in coords):
             self.scale = Coords(*[i / abs(i) if i != 0 else 1 for i in coords])
@@ -69,13 +65,7 @@ class SVG:
 
 
 class Element(SVG):
-    """Container that exclusively handles graphical SVG code. Elements can be considered the smallest building blocks of *pinout*.
-
-    :param width: Width of the renderable SVG code, defaults to 0
-    :type width: int, optional
-    :param height: Height of the renderable SVG code, defaults to 0
-    :type height: int, optional
-    """
+    """Container that exclusively handles graphical SVG code. """
 
     def __init__(self, width=0, height=0, *args, **kwargs):
         self.width = width
@@ -84,11 +74,7 @@ class Element(SVG):
 
     @property
     def bounding_coords(self):
-        """Coordinates, relative to its parent, representing sides of a rectangle that encompass the rendered element.
-
-        :return: (x_min, y_min, x_max, y_max)
-        :rtype: tuple
-        """
+        """Coordinates, relative to its parent, representing sides of a rectangle that encompass the rendered element."""
         x_min, x_max = sorted(
             [self.x * self.scale.x, (self.x + self.width) * self.scale.x]
         )
@@ -99,11 +85,7 @@ class Element(SVG):
 
     @property
     def bounding_rect(self):
-        """Coordinates representing the location of an elements origin (usually top-left corner) within its parent along with the elements width and height.
-
-        :return: (x, y, width, height)
-        :rtype: tuple
-        """
+        """Coordinates and size representing the location of an elements origin (usually top-left corner)"""
         x_min, y_min, x_max, y_max = self.bounding_coords
         return BoundingBox(x_min, y_min, x_max - x_min, y_max - y_min)
 
@@ -112,33 +94,17 @@ class Element(SVG):
 
 
 class Component(SVG):
-    """Container object that manages child Components and/or Elements as a group.
+    """Container object that manages child Components and/or Elements as a group."""
 
-    Child coordinates are all relative to their parent Component.
+    conf = {}
 
-    When scale is applied to a Component no direct affect to the <group> tag is applied but the scale setting is passed down to direct child **Elements**.
-
-    :param children: Component and/or Element objects, defaults to None
-    :type children: Union[Component, Element, StyleSheet], optional
-    :param config: Default configuration values.
-    :type config: dict, optional
-    """
-
-    def __init__(self, children=None, config=None, *args, **kwargs):
-
-        self.cfg = config
+    def __init__(self, children=None, *args, **kwargs):
         self.children = []
         super().__init__(*args, **kwargs)
-        if children:
-            self.add(children)
 
     @property
     def bounding_coords(self):
-        """Coordinates, relative to its parent, representing sides of a rectangle that encompass all child elements of the rendered Component.
-
-        :return: (x_min, y_min, x_max, y_max)
-        :rtype: tuple
-        """
+        """Coordinates, relative to its parent, representing sides of a rectangle that encompass all child elements of the rendered Component."""
         # Untransformed bounding coords
         x_min = y_min = x_max = y_max = 0
         for child in self.children:
@@ -157,11 +123,7 @@ class Component(SVG):
 
     @property
     def width(self):
-        """Calculated width that encompasses all child elements
-
-        :return: value representing a width in pixels
-        :rtype: int
-        """
+        """Calculated width that encompasses all child elements"""
         try:
             x_min, y_min, x_max, y_max = self.bounding_coords
             return x_max - x_min
@@ -171,11 +133,7 @@ class Component(SVG):
 
     @property
     def height(self):
-        """Calculated height that encompasses all child elements
-
-        :return: value representing a height in pixels
-        :rtype: int
-        """
+        """Calculated height that encompasses all child elements"""
         try:
             x_min, y_min, x_max, y_max = self.bounding_coords
             return y_max - y_min
@@ -185,11 +143,7 @@ class Component(SVG):
 
     @property
     def scale(self):
-        """Scale has no direct effect of components however all immediate element children of a component inherit their parents scale value.
 
-        :return: tuple in the form of (x, y) where expected values are either 1 or -1.
-        :rtype: tuple
-        """
         return self._scale
 
     @scale.setter
@@ -201,42 +155,42 @@ class Component(SVG):
 
     @property
     def bounding_rect(self):
-        """Coordinates representing the location of a components origin (usually top-left corner) within its parent along with a width and height that encompass all child elements.
-
-        :return: (x, y, width, height)
-        :rtype: tuple
-        """
+        """Coordinates representing location and size"""
         x_min, y_min, x_max, y_max = self.bounding_coords
         return BoundingBox(x_min, y_min, x_max - x_min, y_max - y_min)
 
     def add_and_instantiate(self, cls, *args, **kwargs):
-        """Instantiate an instance of a class and add it to the components children. This is done as a method to allow attributes to be added/amended in the single process.
+        """Instantiate a class and add it to the components children."""
 
-        :return: Instance of the instantiated class
-        :rtype: object
-        """
-        if issubclass(cls, Component):
-            kwargs["config"] = self.cfg
         if issubclass(cls, Element):
             kwargs["scale"] = self.scale
+
         instance = cls(*args, **kwargs)
         self.children.append(instance)
         return instance
 
-    def render(self):
-        """Render Component, and children, as SVG markup.
-        NOTE: *scale* only affects Elements! It does not affect the grapical appearance of Components.
+    def patch_config(self, source, patch):
+        """Recursively update source with patch dict items."""
+        try:
+            for key, val in patch.items():
+                if type(val) == dict:
+                    self.patch_config(source[key], patch[key])
+                else:
+                    source[key] = val
+        except KeyError:
+            # patch has no items
+            pass
+        return source
 
-        :return: SVG markup of component including all children.
-        :rtype: str
-        """
+    def render(self):
+        """Render Component, and children, as SVG markup."""
         output = ""
         for child in self.children:
             output += child.render()
         return svg_group.render(
             x=self.x,
             y=self.y,
-            tags=self.tags,
+            tag=self.tag,
             content=output,
             # NOTE: Graphically, components are *not* affected by scale
             scale=Coords(1, 1),
@@ -245,13 +199,7 @@ class Component(SVG):
 
 class StyleSheet:
     def __init__(self, path, embed=False, config=None):
-        """Include a stylesheet in the diagram
-
-        :param path: Filename, including path, of the external stylesheet. *NOTE*: If *embedding*, a relative path is relative to the current working directory. If *linking*, a relative path is relative to the location of the final SVG diagram.
-        :type path: str
-        :param embed: Elect to link or embed the stylesheet, defaults to False
-        :type embed: bool, optional
-        """
+        """stylesheet handler"""
         self.path = path
         self.embed = embed
         self.cfg = config
@@ -278,13 +226,7 @@ class StyleSheet:
 
 class Image(Element):
     def __init__(self, href, embed=False, *args, **kwargs):
-        """Associate a PNG, JPG or SVG formatted image to the diagram. *IMPORTANT*: Image width and height parameters must be supplied for the image to display! *pinout* does not auto-detect these attributes.
-
-        :param href: Location of the image. *Note*: Where :code:`embed=False` the path is relative to the exported file. Where :code:`embed=True` the path is relative to the current working directory.
-        :type path: string
-        :param embed: Embed or link the image in the exported file, defaults to False
-        :type embed: bool, optional
-        """
+        """Associate a PNG, JPG or SVG formatted image to the diagram."""
         super().__init__(*args, **kwargs)
 
         self.href = href
@@ -292,11 +234,7 @@ class Image(Element):
 
     @property
     def bounding_coords(self):
-        """Coordinates, relative to its parent, representing sides of a rectangle that encompass the image.
-
-        :return: (x_min, y_min, x_max, y_max)
-        :rtype: tuple
-        """
+        """Coordinates of element boundaries"""
         x_min, x_max = sorted(
             [self.x * self.scale.x, (self.x + self.width) * self.scale.x]
         )
@@ -306,11 +244,7 @@ class Image(Element):
         return BoundingCoords(x_min, y_min, x_max, y_max)
 
     def render(self):
-        """Generates SVG <image> tag using the image 'filename', Note that JPG and PNG are the only binary images files officially supported by the SVG format. If 'embed' is True the image is assigned to the path as a data URI. JPG and PNG image are base64 encoded, SVG files included verbatim. Otherwise the path 'src' is assigned 'filename'. Note: 'filename' includes the path to the file. Where a relative path is used it must be relative to the **exported file**.
-
-        :return: SVG <image> component
-        :rtype: str
-        """
+        """Render SVG markup either linking or embedding an image."""
         media_type = Path(self.href).suffix[1:]
         path = Path(self.href)
         if self.embed:
@@ -328,78 +262,42 @@ class Image(Element):
 
 
 class Rect(Element):
-    """SVG <rect> (rectangle) element.
+    """SVG <rect> (rectangle) element."""
 
-    :param rx: corner radius, defaults to 0
-    :type rx: int, optional
-    """
-
-    def __init__(self, rx=0, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.rx = rx
 
     def render(self):
-        """create an SVG <rect> tag.
-
-        :return: SVG <rect> code
-        :rtype: string
-        """
         return svg_rect.render(
-            rx=self.rx,
             x=self.x,
             y=self.y,
-            width=self.width,
-            height=self.height,
             scale=self.scale,
-            tags=self.tags,
+            **self.cfg,
         )
 
 
-class Line(Element):
-    """Create an SVG <path> tag with (at most) a single 90deg bend in it. The design of this Element is soley for use as a leader line with pin labels.
+class SVGPath(Element):
+    """SVG <path> element"""
 
-    :return: SVG <path> code
-    :rtype: string
-    """
+    def __init__(self, definition, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.definition = definition
 
     def render(self):
-        """create an SVG <path> tag.
-
-        :return: SVG <path> code
-        :rtype: string
-        """
-        vertical_move = f"V {self.height}" if self.height != 0 else ""
-        horizontal_move = f"H {self.width}" if self.width != 0 else ""
-        return svg_line.render(
-            d=f"M 0 0 {vertical_move} {horizontal_move}",
-            scale=self.scale,
-            tags=self.tags,
-        )
+        return svg_path.render(d=self.definition, scale=self.scale, **self.cfg)
 
 
 class Text(Element):
-    """Create an SVG <text> tag with a single line of text.
+    """SVG <text> element."""
 
-    :return: SVG <text> code
-    :rtype: string
-    """
-
-    def __init__(self, text, *args, **kwargs):
+    def __init__(self, text_msg, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.text = text
+        self.text_msg = text_msg
 
     def render(self):
-        """create an SVG <text> tag.
-
-        :return: SVG <text> code
-        :rtype: string
-        """
+        """create an SVG <text> tag."""
         return svg_text.render(
-            text=self.text,
-            tags=("textblock " + self.tags).strip(),
-            x=self.x,
-            y=self.y,
-            scale=self.scale,
+            text_msg=self.text_msg, x=self.x, y=self.y, scale=self.scale, **self.cfg
         )
 
 
@@ -408,111 +306,66 @@ class Text(Element):
 
 
 class Label(Element):
-    """A single line of text infront of a rectangle. *Note*: Text length is not auto-detected and the element's width should be set to ensure text will not overflow the rectangle in the final diagram export.
+    """SVG <text> and <rect> markup in a single element."""
 
-    :param text: Text to appear on the label
-    :type text: string
-    """
-
-    def __init__(self, text, *args, **kwargs):
+    def __init__(self, text_msg, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.text = text
+        self.text_msg = text_msg
+        self.width = self.cfg["rect"]["width"]
+        self.height = self.cfg["rect"]["height"]
 
     def render(self):
-        """create an SVG <group> tag that includes text and an rectangle.
-
-        :return: SVG <group> code
-        :rtype: string
-        """
+        """Render SVG component."""
         return svg_label.render(
-            text=self.text,
-            tags=self.tags,
+            text_msg=self.text_msg,
             x=self.x,
             y=self.y,
-            width=self.width,
-            height=self.height,
             scale=self.scale,
-        )
-
-
-class LeaderLine(Component):
-    """Draws a line from *offset* to the component's (x, y) location.
-
-    :param offset: The (x, y) coordinates the leaderline is drawn from
-    :type offset: tuple
-    """
-
-    def __init__(self, offset=(0, 0), *args, **kwargs):
-
-        super().__init__(*args, **kwargs)
-        cfg_tag = self.cfg.get("leaderline", {}).get("tag", "")
-        self.tags = " ".join([cfg_tag, self.tags]).strip()
-
-        offset = self.extract_scale(offset)
-
-        # Add Path to children
-        self.add_and_instantiate(
-            Line,
-            width=abs(offset[0]),
-            height=abs(offset[1]),
+            **self.cfg,
         )
 
 
 class PinLabel(Component):
-    """Comprised of a Line and Label element, this component encapsulates the requirement for a single pin label. All arguments have default settings in the components config.
-
-    :param text: Text displayed in the label
-    :type text: string
-    :param offset: x and y distance that the label is offset from its parent. A leader line graphically bridges from the parent origin to the the offset coords.
-    :type offset: (tuple)
-    :param box_width: Width of the label portion of the PinLabel. Total width is box_width + offset.x
-    :type box_width: int
-    :param box_height: Height of the label portion of the PinLabel.
-    :type box_height: int
-    """
+    """Create a single Pinlabel"""
 
     def __init__(
         self,
-        text,
-        offset=None,
-        box_width=None,
-        box_height=None,
+        text_msg,
         *args,
         **kwargs,
     ):
         super().__init__(*args, **kwargs)
 
         # Assign config values if none supplied
-        offset = offset or self.cfg["pinlabel"]["box"]["offset"]
-        box_width = box_width or self.cfg["pinlabel"]["box"]["width"]
-        box_height = box_height or self.cfg["pinlabel"]["box"]["height"]
+        offset = self.cfg["offset"]
 
-        # Merge additional tags with config tags
-        cfg_tag = self.cfg.get("pinlabel", {}).get("tag", "")
-        self.tags = " ".join([cfg_tag, self.tags]).strip()
         # Separate offset and scale data
         offset = self.extract_scale(offset)
 
-        self.add_and_instantiate(Line, width=offset.x, height=offset.y)
+        vertical_move = f"V {offset.y}" if offset.y != 0 else ""
+        horizontal_move = f"H {offset.x}" if offset.x != 0 else ""
+
+        definition = f"M 0 0 {vertical_move} {horizontal_move}"
+
+        self.add_and_instantiate(
+            SVGPath,
+            definition=definition,
+            config=self.cfg["leaderline"],
+        )
+
         self.add_and_instantiate(
             Label,
-            text=text,
+            text_msg,
             x=offset.x - 1,
-            y=offset.y,
-            width=box_width,
-            height=box_height,
+            y=offset.y - self.cfg["label"]["rect"]["height"] / 2,
             scale=self.scale,
+            tag=self.tag,
+            config=self.cfg["label"],
         )
 
 
 class PinLabelRow(Component):
-    """Assists with grouping and arranging pinlabels that relate to the same pin into a row.
-
-    :param offset: x and y distance that the row is offset from its parent. A leader line graphically bridges from the parent origin to the the offset coords.
-    :type offset: tuple in the form of (x, y)
-    :param labels: List of tuples documenting label attributes ("text", "tags", "offset", "box_width"). Only 'text' and 'tag' are required. The other optional values fallback to config defaults. :code:`offset=None` can be used to supply a 'box_width' but use the default 'offset' value.
-    :type labels: List of tuples
-    """
+    """Create a row of PinLabels and leaderline connecting the row to an origin coordinate."""
 
     def __init__(self, offset, labels, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -522,60 +375,61 @@ class PinLabelRow(Component):
         )
 
         cfg_tag = self.cfg.get("pinlabelrow", {}).get("tag", "")
-        self.tags = (cfg_tag + self.tags).strip()
+        self.tag = (cfg_tag + self.tag).strip()
 
         self.add_labels(labels)
 
     def add_labels(self, label_list):
         for i, label in enumerate(label_list):
-            context = dict(zip(("text", "tags", "offset", "box_width"), label))
-            # Remove 'na' entries - they fall-back to default settings
-            context = {
-                key: val
-                for key, val in context.items()
-                if val not in [None, "auto", "default", "", "-", "na"]
-            }
+            ctx = dict(zip(("text_msg", "tag", "config"), label))
 
-            # Conditionally set offset if none supplied (first label has no leaderline)
+            # Create a duplicate config for each pinlabel
+            config = self.patch_config(copy.deepcopy(self.cfg), ctx.get("config", {}))
+
+            # update tag in pinlabel and leaderline
+            config["tag"] = " ".join([config["tag"], ctx.get("tag", "")])
+            config["leaderline"]["tag"] = " ".join(
+                [config["leaderline"]["tag"], ctx.get("tag", "")]
+            )
+
+            # update pinlabel config with tag styles
+            tag_color = self.conf["tags"][ctx["tag"]]["color"]
+            patch = {
+                "label": {
+                    "rect": {"fill": tag_color},
+                },
+                "leaderline": {"stroke": tag_color},
+            }
+            self.patch_config(config, patch)
+
             if i == 0:
-                context["offset"] = context.get("offset", (0, 0))
+                # Create a leaderline joining the labelrow to the offset origin
+                v_move = f"V {self.offset.y}" if self.offset.y != 0 else ""
+                h_move = f"H {self.offset.x}" if self.offset.x != 0 else ""
+                definition = f"M 0 0 {v_move} {h_move}"
+
+                self.add_and_instantiate(
+                    SVGPath,
+                    definition=definition,
+                    scale=self.scale,
+                    config=config["leaderline"],
+                )
 
             # Add PinLabel to label_row
             label_x = self.labels.width * self.scale.x
             self.labels.add_and_instantiate(
-                PinLabel, **context, x=label_x, scale=self.scale
+                PinLabel,
+                ctx["text_msg"],
+                x=label_x,
+                y=0,
+                tag=config["tag"],
+                scale=self.scale,
+                config=config,
             )
-
-    def render(self):
-        """Prior to rendering, a leaderline is automatically added, joining the first label to the components origin.
-
-        :return: SVG <group> containing a row of pin labels
-        :rtype: string
-        """
-
-        tags = self.labels.children[0].tags.split(" ")
-        tags.remove(self.cfg.get("pinlabel", {}).get("tag", ""))
-        tag_str = " ".join(tags)
-
-        self.add_and_instantiate(
-            LeaderLine,
-            offset=self.offset,
-            tags=tag_str,
-            scale=self.scale,
-            config=self.cfg,
-        )
-        return super().render()
 
 
 class PinLabelSet(Component):
-    """This is the recommended method of adding pin labels to a diagram.
-    :param offset: Relative x and y offset from the pin location for the first label in a row
-    :type offset: tuple
-    :param labels: tuples nested within a 2 dimensional array. Each list within the 'labels' list represents a pin in the header. Each entry within those lists becomes a label.
-    :type labels: Tuples nested within a 2 dimensional array. Each list within 'labels' represents a pin in the header. Each entry within those lists becomes a label. The label is a tuple in the format :code:`(<text>, <css tag>, <offset>, <box_width>)` the second two arguments are optional.
-    :param pitch: 'x' and 'y' distance in pixels between each pin of the header. (0, 30) steps 0px right and 30px down for each pin. (30, 0) creates a horizontal header. (-30, 0) creates a horizontal header in the reverse direction. This can be useful for 'stacking' rows in reversed order to avoid leader-lines overlapping.
-    :type pitch: tuple, optional
-    """
+    """Add rows of PinLabels to a 'header' of pins"""
 
     def __init__(self, offset, labels, pitch=(1, 1), *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -591,90 +445,82 @@ class PinLabelSet(Component):
                 row_offset = offset
 
             label_row = self.add_and_instantiate(
-                PinLabelRow, offset=row_offset, labels=label_list, x=pin_x, y=pin_y
+                PinLabelRow,
+                offset=row_offset,
+                labels=label_list,
+                x=pin_x,
+                y=pin_y,
+                config=self.cfg,
             )
 
 
 class Legend(Component):
-    """Provide a colour coded legend to describe pin labels. All data to populate a legend must be documented in the diagram's config by adding an YAML formatted file::
+    """Provide a colour coded legend to describe pin labels. """
 
-        # config.yaml
-
-        legend:
-            categories: [
-                # [<Title>, <CSS class 'tag'>]
-                ["Analog", "analog"],
-                ["GPIO", "gpio"],
-                ["PWM", "pwm"],
-            ]
-
-    *Note*: *pinout* does not calculate text widths. a manually provided with should be included to ensure text remains enclosed within the legend.
-
-    A complete set of *pinout* defaults can be duplicated from the command line for reference::
-
-            >>> py -m pinout.file_manager --duplicate config
-
-    config.yaml includes all legend attributes that can be altered.
-
-    """
-
-    def __init__(
-        self,
-        categories=None,
-        row_height=None,
-        padding=None,
-        width=None,
-        *args,
-        **kwargs,
-    ):
+    def __init__(self, categories, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        row_height = row_height or self.cfg["legend"]["row_height"]
-        categories = categories or self.cfg["legend"]["categories"]
-        width = width or self.cfg["legend"]["width"]
-
-        # Padding fallbacks: arg > config > calculated
-        padding = (
-            padding
-            if padding != None
-            else self.cfg.get("legend", {}).get(
-                "padding",
-                [
-                    row_height / 2,
-                    row_height * 4 / 5,
-                ],
-            )
-        )
-
-        pad = Coords(*padding)
+        pad = Coords(*self.cfg["padding"])
+        row_height = self.cfg["row_height"]
         swatch_size = row_height * 2 / 3
 
-        for i, (name, tags) in enumerate(categories):
+        for i, (name, tag) in enumerate(categories):
             entry = self.add_and_instantiate(
-                Component, x=pad.x, y=pad.y + row_height * i, tags=tags
+                Component, x=pad.x, y=pad.y + row_height * i, tag=self.cfg["tag"]
             )
             entry.add_and_instantiate(
-                Text, text=name, x=swatch_size * 2, height=row_height
-            )
-            entry.add_and_instantiate(
-                PinLabel,
-                box_height=swatch_size,
-                box_width=swatch_size,
-                config=self.cfg,
-                offset=(-swatch_size / 2, 0),
-                tags=tags,
-                text="",
-                x=swatch_size * 1.5,
+                Text,
+                name,
+                x=swatch_size * 2,
+                y=0,
+                width=self.cfg["rect"]["width"],
+                height=row_height,
+                config=self.cfg["text"],
             )
 
-        # Add an 'information panel' *behind* component
-        cfg_tag = self.cfg.get("informationpanel", {}).get("tag")
+            pinlabel_config = copy.deepcopy(self.conf["pinlabel"])
+            pinlabel_config["offset"] = (-swatch_size / 2, 0)
+            pinlabel_config["label"]["rect"]["height"] = swatch_size
+            pinlabel_config["label"]["rect"]["width"] = swatch_size
+            pinlabel_config["label"]["rx"] = 2
+
+            entry.add_and_instantiate(
+                PinLabel,
+                text_msg="",
+                x=swatch_size * 1.5,
+                tag="pl " + tag,
+                config=pinlabel_config,
+            )
+
+        # Add an panel *behind* component
+        self.cfg["rect"]["height"] = row_height * len(categories) + pad.y
         self.children.insert(
             0,
             Rect(
-                width=width,
-                height=self.height + pad.y - row_height,
-                tags=cfg_tag,
+                x=0,
+                y=0,
+                width=self.cfg["rect"]["width"],
+                height=self.cfg["rect"]["height"],
                 scale=self.scale,
+                config=self.cfg["rect"],
             ),
+        )
+
+
+class Annotation(Component):
+    def __init__(self, text_msg, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        offset = Coords(*self.cfg["offset"])
+        path_definition = f"M 0 0 l {offset.x} {offset.y}"
+        # Shift label rect to move 'origin' to half height on left hand edge
+
+        self.add_and_instantiate(
+            Label,
+            text_msg,
+            x=offset.x,
+            y=offset.y - self.cfg["label"]["rect"]["height"] / 2,
+            config=self.cfg["label"],
+        )
+        self.add_and_instantiate(
+            SVGPath, path_definition, config=self.cfg["leaderline"]
         )

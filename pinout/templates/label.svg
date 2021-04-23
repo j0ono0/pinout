@@ -1,15 +1,27 @@
 {% extends 'group.svg' %}
 
 {% block content %}
-    <rect fill="#555" class="label_box" x="0" y="{{ -height/2 }}" width="{{ width }}" height="{{ height }}" rx="2" />
+    <rect 
+    stroke="{{ rect.stroke|rgb }}" 
+    stroke-width="{{ rect.stroke_width }}" 
+    fill="{{ rect.fill|rgb }}" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="{{ rect.width }}" 
+    height="{{ rect.height }}" 
+    rx="{{ rect.rx }}" />
     <text
         transform="scale({{ scale.x }} {{ scale.y }})" 
-        x="{{ (width / 2) * scale.x }}"
-        y="0" 
-        fill="#999"
-        dominant-baseline="middle" 
+        x="{{ (rect.width / 2) * scale.x }}"
+        y="{{ rect.height/2 * scale.y }}" 
+        fill="{{ text.fill|rgb }}"
+        dominant-baseline="middle"
         text-anchor="middle"
+        font-family="{{ text.family }}"
+        font-size="{{ text.size }}"
+        font-weight="{{ text.weight }}"
     >
-        {{ text }}
+        {{ text_msg }}
     </text>
 {% endblock %}

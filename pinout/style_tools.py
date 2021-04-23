@@ -99,7 +99,7 @@ def default_css(diagram):
         pass
 
     label_font_size = diagram.cfg.get("pinlabel", {}).get(
-        "font_size", math.floor(diagram.cfg["pinlabel"]["box"]["height"] * (3 / 5))
+        "font_size", math.floor(diagram.cfg["pinlabel"]["label"]["height"] * (3 / 5))
     )
     label_text_color = tuple(
         diagram.cfg.get("pinlabel", {}).get("text", {}).get("color", (255, 255, 255))

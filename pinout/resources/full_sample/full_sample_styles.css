@@ -8,7 +8,7 @@
         stroke: rgb(203, 116, 16);
         stroke-width: 1;
     }
-    .ll.comms path{
+    path.comms{
         stroke: rgb(203, 116, 16);
         stroke-width: 1;
     }
@@ -19,7 +19,7 @@
         stroke: rgb(215, 107, 173);
         stroke-width: 1;
     }
-    .ll.analog path{
+    path.analog{
         stroke: rgb(215, 107, 173);
         stroke-width: 1;
     }
@@ -30,20 +30,20 @@
         stroke: rgb(44, 91, 123);
         stroke-width: 1;
     }
-    .ll.gpio path{
+    path.gpio{
         stroke: rgb(44, 91, 123);
         stroke-width: 1;
     }
     .pl.pwr rect{
-        fill: rgb(150, 2, 29);
+        fill: rgb(2, 150, 7);
     } 
     .pl.pwr path{
         stroke: rgb(150, 2, 29);
         stroke-width: 1;
     }
-    .ll.pwr path{
-        stroke: rgb(150, 2, 29);
-        stroke-width: 1;
+    path.pwr{
+        stroke: rgb(121, 105, 108);
+        stroke-width: 10;
     }
     .pl.pwm rect{
         fill: rgb(54, 157, 158);
@@ -52,7 +52,7 @@
         stroke: rgb(54, 157, 158);
         stroke-width: 1;
     }
-    .ll.pwm path{
+    path.pwm{
         stroke: rgb(54, 157, 158);
         stroke-width: 1;
     }
@@ -63,7 +63,7 @@
         stroke: rgb(162, 179, 55);
         stroke-width: 1;
     }
-    .ll.led path{
+    path.led {
         stroke: rgb(162, 179, 55);
         stroke-width: 1;
     }
@@ -88,7 +88,7 @@
 }
 
 /* LeaderLine common */
-.ll {
+path {
     stroke-width: 1;
 }
 

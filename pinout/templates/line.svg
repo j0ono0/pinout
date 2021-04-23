@@ -1,5 +1,0 @@
-<path 
-class="{{ tags }}" 
-d="{{ d }}" 
-transform="scale({{ scale.x }} {{ scale.y }})" 
-fill="none" stroke="#0f0"/>

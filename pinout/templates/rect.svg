@@ -1,1 +1,12 @@
-<rect{% if tags %} class="{{ tags }}"{% endif %} x="{{ x }}" y="{{ y }}" width="{{ width }}" height="{{ height }}" rx="{{ rx }}" transform="scale({{ scale.x }} {{ scale.y }})" />
+<rect
+    {% if tag %} class="{{ tag }}"{% endif %} 
+    x="{{ x }}" 
+    y="{{ y }}" 
+    width="{{ width }}" 
+    height="{{ height }}" 
+    rx="{{ rx }}" 
+    transform="scale({{ scale.x }} {{ scale.y }})" 
+    fill="{{ fill|rgb }}" 
+    stroke="{{ stroke|rgb }}" 
+    stroke-width="{{ stroke_width }}"
+/>

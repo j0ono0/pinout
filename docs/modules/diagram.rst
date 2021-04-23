@@ -1,5 +1,5 @@
-diagram
-=======
+Class: diagram.Diagram
+======================
 
 add_stylesheet
 --------------
@@ -26,10 +26,7 @@ Associate a PNG, JPG or SVG formatted image to the diagram. *IMPORTANT*: Image w
 add_legend
 ----------
 
-Add a legend to the diagram. Content for the legend is provided via a config file
-config = copy.deepcopy(self.cfg["legend"])
-kwargs["config"] = self.patch_config(config, kwargs.get("legend", {}))
-self.add_and_instantiate(Legend, categories, *args, **kwargs)
+Add a legend to the diagram.
 
 
 add_config
@@ -43,22 +40,6 @@ A complete set of *pinout* defaults can be duplicated from the command line for 
 
 :param path: Path to YAML formatted configuration file
 :type path: str
-    
-
-
-add_annotation
---------------
-
-    
-generate_stylesheet
--------------------
-
-Generate a stylesheet based on config settings and randomised (within set limits) values. Directly using this function is probably unnecessary. Diagrams with no associated stylesheet automatically call this function on export.
-
-:param path: export path for stylesheet file
-:type path: string
-:param overwrite: Allow an existing file of the same name to be overwritten
-:type overwrite: bool
     
 
 export

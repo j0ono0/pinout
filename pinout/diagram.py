@@ -2,8 +2,7 @@ import copy
 import os
 from collections import namedtuple
 from pathlib import Path
-
-from . import file_manager, style_tools
+from . import file_manager
 from .elements import Image
 from .components import Component, Legend, PinLabelSet, Annotation
 from .templates import svg
@@ -29,10 +28,6 @@ class Diagram(Component):
         """Add a configuration file to the diagram."""
         self.patch_config(self.conf, file_manager.load_config(path))
 
-    def add_stylesheet(self, path, embed=False):
-        """Associate a stylesheet to the diagram."""
-        self.add_and_instantiate(StyleSheet, path, embed=embed)
-
     def add_image(self, path, *args, embed=False, **kwargs):
         """Associate a PNG, JPG or SVG formatted image to the diagram."""
         self.add_and_instantiate(Image, path, *args, embed=embed, **kwargs)
@@ -54,16 +49,6 @@ class Diagram(Component):
         kwargs["config"] = self.patch_config(config, kwargs.get("config", {}))
         self.add_and_instantiate(Annotation, *args, **kwargs)
 
-    def generate_stylesheet(self, path, overwrite):
-        """Generate a stylesheet based on config settings and randomised (within set limits) values."""
-        default_css = style_tools.default_css(self)
-        cssname = path.name[: -len(path.suffix)]
-        csspath = Path(path.parent, "{}.css".format(cssname))
-        # File name may change if overwrite is False
-        actual_csspath = file_manager.export_file(default_css, csspath, overwrite)
-
-        self.children.insert(0, StyleSheet(actual_csspath.name))
-
     def export(self, path, overwrite=False):
         """Output the diagram in SVG format."""
         # Create export location and unique filename if required
@@ -74,12 +59,7 @@ class Diagram(Component):
         path.touch(exist_ok=True)
 
         output = ""
-        """
-        # Generate default styles if none supplied
-        stylesheets = [s for s in self.children if isinstance(s, StyleSheet)]
-        if not stylesheets:
-            self.generate_stylesheet(path, overwrite)
-        """
+
         # Render all components
         for c in self.children:
             output += c.render()

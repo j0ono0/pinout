@@ -1,41 +1,6 @@
 Components
 ==========
 
-class SVG
-=========
-"""Common base for all SVG entities that ultimately have a graphical representation."""
-
-scale
------
-
-Scale is abstracted as a property here and overridden by Component
-:return: (x, y) where x and y are either 1 or -1
-:rtype: tuple
-
-
-
-extract_scale
--------------
-
-Separate scale information from a tuple that represents (x, y) or (width, height) values. Components and elements control orientation via the scale property rather than negative dimension/direction values. **NOTE**: Existing scale property is only overridded if the provided coords include a negative value.
-
-:param coords: tuple representing  (x, y) or (width, height). values may be positive or negative.
-:type coords: Union(tuple, Coords)
-:return: nametuple with absolute values
-:rtype: Coords
-
-patch_config
--------------
-   
-Recursively update source with patch dict items.
-
-:param source: Dict to apply updates to
-:type source: dict
-:param patch: Dict of new item values
-:type patch: dict
-:return: Source dict updated with patch dict.
-:rtype: dict
-
 
 Component(SVG)
 ==============

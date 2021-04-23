@@ -10,15 +10,15 @@ SVG diagram creation from Python code - **pinout** provides an easy method to cr
 
 .. figure:: _static/huzzah32_pinout.*
 
-   Sample diagram: micropython pin-out on Adafruit Huzzah32 ESP32 Feather Board.
+    Sample diagram: micropython pin-out on Adafruit Huzzah32 ESP32 Feather Board.
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :maxdepth: 2
+    :caption: Contents:
 
-   install
-   tutorial
-   modules
+    install
+    tutorial
+    modules
 
 
 

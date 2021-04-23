@@ -4,7 +4,8 @@ from collections import namedtuple
 from pathlib import Path
 
 from . import file_manager, style_tools
-from .components import Component, StyleSheet, Image, Legend, PinLabelSet, Annotation
+from .elements import Image
+from .components import Component, Legend, PinLabelSet, Annotation
 from .templates import svg
 
 

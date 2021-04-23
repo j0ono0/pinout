@@ -5,7 +5,6 @@ from pathlib import Path
 
 from . import file_manager
 from . import components
-from .templates import stylesheet
 
 
 def luminace(color_component):

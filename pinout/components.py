@@ -1,96 +1,8 @@
-import base64
 import copy
-from collections import namedtuple
-from pathlib import Path
 from . import file_manager
-
-from .templates import (
-    svg_group,
-    svg_image,
-    svg_label,
-    svg_path,
-    svg_rect,
-    svg_style,
-    svg_text,
-)
-
-BoundingBox = namedtuple("BoundingBox", ("x y w h"))
-BoundingCoords = namedtuple("BoundingCoords", ("x_min y_min x_max y_max"))
-Coords = namedtuple("Coords", ("x y"))
-
-
-#####################################################################
-# Base Element and Component classes
-
-
-class ClassMethodMissing(Exception):
-    """ An element is missing an expected method """
-
-    pass
-
-
-class SVG:
-    """Common base for all SVG entities that ultimately have a graphical representation."""
-
-    def __init__(self, x=0, y=0, scale=(1, 1), rotation=0, tag="", config=None):
-        self.cfg = config
-        self.rotation = rotation
-        self._scale = Coords(*scale)
-        self.tag = tag
-        self.x = x
-        self.y = y
-
-    @property
-    def scale(self):
-        """Tuple used to represent orientation of entity"""
-        # NOTE: set here for override by Component
-        return self._scale
-
-    @scale.setter
-    def scale(self, value):
-        """Scale setter property - overridden by Component
-
-        :param value: (x, y) where x and y are either 1 or -1
-        :type value: tuple
-        """
-        # NOTE: set here for override by Component
-        self._scale = value
-
-    def extract_scale(self, coords):
-        """Separate scale information from a tuple that represents (x, y) or (width, height) values."""
-
-        if not all(val >= 0 for val in coords):
-            self.scale = Coords(*[i / abs(i) if i != 0 else 1 for i in coords])
-        return Coords(*[abs(i) for i in coords])
-
-
-class Element(SVG):
-    """Container that exclusively handles graphical SVG code. """
-
-    def __init__(self, width=0, height=0, *args, **kwargs):
-        self.width = width
-        self.height = height
-        super().__init__(*args, **kwargs)
-
-    @property
-    def bounding_coords(self):
-        """Coordinates, relative to its parent, representing sides of a rectangle that encompass the rendered element."""
-        x_min, x_max = sorted(
-            [self.x * self.scale.x, (self.x + self.width) * self.scale.x]
-        )
-        y_min, y_max = sorted(
-            [self.y * self.scale.y, (self.y + self.height) * self.scale.y]
-        )
-        return BoundingCoords(x_min, y_min, x_max, y_max)
-
-    @property
-    def bounding_rect(self):
-        """Coordinates and size representing the location of an elements origin (usually top-left corner)"""
-        x_min, y_min, x_max, y_max = self.bounding_coords
-        return BoundingBox(x_min, y_min, x_max - x_min, y_max - y_min)
-
-    def render(self):
-        raise ClassMethodMissing(f"{self} requires a 'render' method.")
+from .templates import svg_group
+from .elements import Element, SVG, Coords, BoundingBox, BoundingCoords
+from . import elements as elem
 
 
 class Component(SVG):
@@ -198,134 +110,6 @@ class Component(SVG):
         )
 
 
-class StyleSheet:
-    def __init__(self, path, embed=False, config=None):
-        """stylesheet handler"""
-        self.path = path
-        self.embed = embed
-        self.cfg = config
-
-    def render(self):
-        """Create SVG tag with content to either embed or link styles.
-
-        :return: SVG <link> or <style> code
-        :rtype: string
-        """
-        context = {}
-        if self.embed:
-            p = Path(self.path)
-            context["css_data"] = p.read_text()
-        else:
-            context["path"] = self.path
-
-        return svg_style.render(**context)
-
-
-#####################################################################
-# SVG tag classes
-
-
-class Image(Element):
-    def __init__(self, href, embed=False, *args, **kwargs):
-        """Associate a PNG, JPG or SVG formatted image to the diagram."""
-        super().__init__(*args, **kwargs)
-
-        self.href = href
-        self.embed = embed
-
-    @property
-    def bounding_coords(self):
-        """Coordinates of element boundaries"""
-        x_min, x_max = sorted(
-            [self.x * self.scale.x, (self.x + self.width) * self.scale.x]
-        )
-        y_min, y_max = sorted(
-            [self.y * self.scale.y, (self.y + self.height) * self.scale.y]
-        )
-        return BoundingCoords(x_min, y_min, x_max, y_max)
-
-    def render(self):
-        """Render SVG markup either linking or embedding an image."""
-        media_type = Path(self.href).suffix[1:]
-        path = Path(self.href)
-        if self.embed:
-            if media_type == "svg":
-                with path.open() as f:
-                    svg_data = f.read()
-                return svg_group.render(x=self.x, y=self.y, content=svg_data)
-            else:
-                encoded_img = base64.b64encode(open(self.href, "rb").read())
-                path = f"data:image/{media_type};base64,{encoded_img.decode('utf-8')}"
-
-        return svg_image.render(
-            x=self.x, y=self.y, width=self.width, height=self.height, href=path
-        )
-
-
-class Rect(Element):
-    """SVG <rect> (rectangle) element."""
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-    def render(self):
-        return svg_rect.render(
-            x=self.x,
-            y=self.y,
-            scale=self.scale,
-            **self.cfg,
-        )
-
-
-class SVGPath(Element):
-    """SVG <path> element"""
-
-    def __init__(self, definition, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.definition = definition
-
-    def render(self):
-        return svg_path.render(d=self.definition, scale=self.scale, **self.cfg)
-
-
-class Text(Element):
-    """SVG <text> element."""
-
-    def __init__(self, text_msg, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.text_msg = text_msg
-
-    def render(self):
-        """create an SVG <text> tag."""
-        return svg_text.render(
-            text_msg=self.text_msg, x=self.x, y=self.y, scale=self.scale, **self.cfg
-        )
-
-
-#####################################################################
-# Composite classes
-
-
-class Label(Element):
-    """SVG <text> and <rect> markup in a single element."""
-
-    def __init__(self, text_msg, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.text_msg = text_msg
-        self.width = self.cfg["rect"]["width"]
-        self.height = self.cfg["rect"]["height"]
-
-    def render(self):
-        """Render SVG component."""
-        return svg_label.render(
-            text_msg=self.text_msg,
-            x=self.x,
-            y=self.y,
-            scale=self.scale,
-            **self.cfg,
-        )
-
-
 class PinLabel(Component):
     """Create a single Pinlabel"""
 
@@ -349,13 +133,13 @@ class PinLabel(Component):
         definition = f"M 0 0 {vertical_move} {horizontal_move}"
 
         self.add_and_instantiate(
-            SVGPath,
+            elem.Path,
             definition=definition,
             config=self.cfg["leaderline"],
         )
 
         self.add_and_instantiate(
-            Label,
+            elem.Label,
             text_msg,
             x=offset.x - 1,
             y=offset.y - self.cfg["label"]["rect"]["height"] / 2,
@@ -410,7 +194,7 @@ class PinLabelRow(Component):
                 definition = f"M 0 0 {v_move} {h_move}"
 
                 self.add_and_instantiate(
-                    SVGPath,
+                    elem.Path,
                     definition=definition,
                     scale=self.scale,
                     config=config["leaderline"],
@@ -445,7 +229,7 @@ class PinLabelSet(Component):
             else:
                 row_offset = offset
 
-            label_row = self.add_and_instantiate(
+            self.add_and_instantiate(
                 PinLabelRow,
                 offset=row_offset,
                 labels=label_list,
@@ -470,7 +254,7 @@ class Legend(Component):
                 Component, x=pad.x, y=pad.y + row_height * i, tag=self.cfg["tag"]
             )
             entry.add_and_instantiate(
-                Text,
+                elem.Text,
                 self.conf["tags"][tag]["title"],
                 x=swatch_size * 2,
                 y=0,
@@ -509,7 +293,7 @@ class Legend(Component):
         self.cfg["rect"]["height"] = row_height * len(categories) + pad.y
         self.children.insert(
             0,
-            Rect(
+            elem.Rect(
                 x=0,
                 y=0,
                 width=self.cfg["rect"]["width"],
@@ -528,12 +312,12 @@ class Annotation(Component):
         # Shift label rect to move 'origin' to half height on left hand edge
 
         self.add_and_instantiate(
-            Label,
+            elem.Label,
             text_msg,
             x=offset.x,
             y=offset.y - self.cfg["label"]["rect"]["height"] / 2,
             config=self.cfg["label"],
         )
         self.add_and_instantiate(
-            SVGPath, path_definition, config=self.cfg["leaderline"]
+            elem.Path, path_definition, config=self.cfg["leaderline"]
         )

@@ -3,6 +3,15 @@
 Modules
 =======
 
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Contents:
+
+    module_diagram
+    module_elements
+    module_components
+
 diagram
 -------
 

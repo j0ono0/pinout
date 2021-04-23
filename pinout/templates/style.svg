@@ -1,8 +1,0 @@
-<style  type="text/css">
-{% if path %}
-    @import url("{{ path }}");
-{% endif %}
-{% if css_data %}
-    {{ css_data }}
-{% endif %}
-</style>

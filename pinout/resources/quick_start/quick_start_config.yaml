@@ -16,11 +16,18 @@ pinlabel:
   tag: pl
 
 legend:
-  categories: [
-    # [<Title>, <CSS class 'tag'>]
-    ["Analog", "analog"],
-    ["GPIO", "gpio"],
-    ["Power management", "pwr"],
-    ["PWM", "pwm"],
-  ]
   width: 238
+
+tags:
+  analog:
+    title: Analog
+    color: [215, 107, 173]
+  gpio:
+    title: GPIO
+    color: [44, 91, 123]
+  pwr:
+    title: Power management
+    color: [150, 2, 29]
+  pwm:
+    title: PWM
+    color: [54, 157, 158]

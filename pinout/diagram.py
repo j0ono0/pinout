@@ -36,7 +36,7 @@ class Diagram(Component):
         """Associate a PNG, JPG or SVG formatted image to the diagram."""
         self.add_and_instantiate(Image, path, *args, embed=embed, **kwargs)
 
-    def add_legend(self, categories, *args, **kwargs):
+    def add_legend(self, *args, categories=None, **kwargs):
         """Add a pinlabel legend to the diagram."""
         config = copy.deepcopy(self.conf["legend"])
         kwargs["config"] = self.patch_config(config, kwargs.get("legend", {}))
@@ -73,12 +73,12 @@ class Diagram(Component):
         path.touch(exist_ok=True)
 
         output = ""
-
+        """
         # Generate default styles if none supplied
         stylesheets = [s for s in self.children if isinstance(s, StyleSheet)]
         if not stylesheets:
             self.generate_stylesheet(path, overwrite)
-
+        """
         # Render all components
         for c in self.children:
             output += c.render()

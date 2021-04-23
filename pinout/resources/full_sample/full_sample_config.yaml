@@ -1,53 +1,11 @@
-
 diagram:
-  tag: pinout
-
+  tag: full-sample-pinout 
 
 legend:
-  categories: [
-    # [<Title>, <CSS class 'tag'>]
-    ["Analog", "analog"],
-    ["Communication", "comms"],
-    ["GPIO", "gpio"],
-    ["Power management", "pwr"],
-    ["PWM", "pwm"],
-    ["LED", "led"],
-  ]
-  # padding: [15, 30]
-  row_height: 30
-  tag: legend
+  rect:
+    fill: [255, 254, 241]
+    stroke: [144, 166, 200]
+    rx: 2
+    width: 350
   text:
-    color: [0,0,0]
-    family: Verdana, Geneva, sans-serif
-    size: 12
-    weight: bold
-  width: 300
-
-
-pinlabel:
-  box:
-    offset: [12,0]
-    height: 28
-    width: 60
-  tag: pl
-  text:
-    color: [255, 255, 255]
-    family: Verdana, Geneva, sans-serif
-    size: 12
-    weight: normal
-
-
-pinlabelrow:
-  tag: pl-row
-
-
-leaderline:
-  tag: ll
-  stroke_width: 1
-
-
-informationpanel:
-  tag: inf
-  fill: [255,255,255]
-  stroke: [225, 225, 225]
-  stroke_width: 3
+    fill: [10, 35, 74]

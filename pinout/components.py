@@ -174,6 +174,7 @@ class Component(SVG):
         try:
             for key, val in patch.items():
                 if type(val) == dict:
+                    source.setdefault(key, {})
                     self.patch_config(source[key], patch[key])
                 else:
                     source[key] = val
@@ -463,14 +464,14 @@ class Legend(Component):
         pad = Coords(*self.cfg["padding"])
         row_height = self.cfg["row_height"]
         swatch_size = row_height * 2 / 3
-
-        for i, (name, tag) in enumerate(categories):
+        categories = categories or self.conf["tags"].keys()
+        for i, tag in enumerate(categories):
             entry = self.add_and_instantiate(
                 Component, x=pad.x, y=pad.y + row_height * i, tag=self.cfg["tag"]
             )
             entry.add_and_instantiate(
                 Text,
-                name,
+                self.conf["tags"][tag]["title"],
                 x=swatch_size * 2,
                 y=0,
                 width=self.cfg["rect"]["width"],
@@ -479,10 +480,22 @@ class Legend(Component):
             )
 
             pinlabel_config = copy.deepcopy(self.conf["pinlabel"])
-            pinlabel_config["offset"] = (-swatch_size / 2, 0)
-            pinlabel_config["label"]["rect"]["height"] = swatch_size
-            pinlabel_config["label"]["rect"]["width"] = swatch_size
-            pinlabel_config["label"]["rx"] = 2
+            tag_color = self.conf["tags"][tag]["color"]
+            pinlabel_patch = {
+                "offset": (-swatch_size / 2, 0),
+                "label": {
+                    "rect": {
+                        "fill": tag_color,
+                        "height": swatch_size,
+                        "width": swatch_size,
+                        "rx": 2,
+                    },
+                },
+                "leaderline": {
+                    "stroke": tag_color,
+                },
+            }
+            self.patch_config(pinlabel_config, pinlabel_patch)
 
             entry.add_and_instantiate(
                 PinLabel,

@@ -16,7 +16,7 @@
         x="{{ (rect.width / 2) * scale.x }}"
         y="{{ rect.height/2 * scale.y }}" 
         fill="{{ text.fill|rgb }}"
-        dominant-baseline="middle"
+        dominant-baseline="central"
         text-anchor="middle"
         font-family="{{ text.family }}"
         font-size="{{ text.size }}"

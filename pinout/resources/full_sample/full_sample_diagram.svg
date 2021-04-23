@@ -1,0 +1,2172 @@
+
+<svg  
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="706.0" 
+    height="673.0" 
+    viewBox="-243.0 -63.0 706.0 673.0"
+    class=""
+>
+
+
+    <image  x="0" y="0" href="data:image/png;base64,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" xlink:href="data:image/png;base64,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" height="300" width="220"/><g 
+    transform="
+        translate(-242 400) 
+        scale(1 1)
+    "
+>
+        <rect
+ 
+    x="0" 
+    y="0" 
+    width="350" 
+    height="210" 
+    rx="2" 
+    transform="scale(1 1)" 
+    fill="rgb(255, 254, 241)" 
+    stroke="rgb(144, 166, 200)" 
+    stroke-width="1"
+/><g 
+        class="legend" 
+    transform="
+        translate(15 30) 
+        scale(1 1)
+    "
+>
+        
+<text
+    transform="
+        translate(40.0 0) 
+        scale(1 1)
+    "  
+    fill="rgb(10, 35, 74)"
+    dominant-baseline="central"
+    text-anchor="left"
+    font-family="Verdana, Geneva, sans-serif"
+    font-size="12"
+    font-weight="bold"
+>
+    Analog
+</text><g 
+        class="pl analog" 
+    transform="
+        translate(30.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll" 
+d="M 0 0  H 10.0" 
+transform="scale(-1.0 1)" 
+fill="none" 
+stroke="rgb(215, 107, 173)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-9.0 -10.0) 
+        scale(-1.0 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(215, 107, 173)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="20.0" 
+    height="20.0" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1)" 
+        x="-10.0"
+        y="10.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        
+    </text>
+</g>
+</g>
+</g><g 
+        class="legend" 
+    transform="
+        translate(15 60) 
+        scale(1 1)
+    "
+>
+        
+<text
+    transform="
+        translate(40.0 0) 
+        scale(1 1)
+    "  
+    fill="rgb(10, 35, 74)"
+    dominant-baseline="central"
+    text-anchor="left"
+    font-family="Verdana, Geneva, sans-serif"
+    font-size="12"
+    font-weight="bold"
+>
+    Communication
+</text><g 
+        class="pl comms" 
+    transform="
+        translate(30.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll" 
+d="M 0 0  H 10.0" 
+transform="scale(-1.0 1)" 
+fill="none" 
+stroke="rgb(203, 116, 16)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-9.0 -10.0) 
+        scale(-1.0 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(203, 116, 16)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="20.0" 
+    height="20.0" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1)" 
+        x="-10.0"
+        y="10.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        
+    </text>
+</g>
+</g>
+</g><g 
+        class="legend" 
+    transform="
+        translate(15 90) 
+        scale(1 1)
+    "
+>
+        
+<text
+    transform="
+        translate(40.0 0) 
+        scale(1 1)
+    "  
+    fill="rgb(10, 35, 74)"
+    dominant-baseline="central"
+    text-anchor="left"
+    font-family="Verdana, Geneva, sans-serif"
+    font-size="12"
+    font-weight="bold"
+>
+    GPIO
+</text><g 
+        class="pl gpio" 
+    transform="
+        translate(30.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll" 
+d="M 0 0  H 10.0" 
+transform="scale(-1.0 1)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-9.0 -10.0) 
+        scale(-1.0 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(44, 91, 123)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="20.0" 
+    height="20.0" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1)" 
+        x="-10.0"
+        y="10.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        
+    </text>
+</g>
+</g>
+</g><g 
+        class="legend" 
+    transform="
+        translate(15 120) 
+        scale(1 1)
+    "
+>
+        
+<text
+    transform="
+        translate(40.0 0) 
+        scale(1 1)
+    "  
+    fill="rgb(10, 35, 74)"
+    dominant-baseline="central"
+    text-anchor="left"
+    font-family="Verdana, Geneva, sans-serif"
+    font-size="12"
+    font-weight="bold"
+>
+    LED
+</text><g 
+        class="pl led" 
+    transform="
+        translate(30.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll" 
+d="M 0 0  H 10.0" 
+transform="scale(-1.0 1)" 
+fill="none" 
+stroke="rgb(162, 179, 55)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-9.0 -10.0) 
+        scale(-1.0 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(162, 179, 55)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="20.0" 
+    height="20.0" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1)" 
+        x="-10.0"
+        y="10.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        
+    </text>
+</g>
+</g>
+</g><g 
+        class="legend" 
+    transform="
+        translate(15 150) 
+        scale(1 1)
+    "
+>
+        
+<text
+    transform="
+        translate(40.0 0) 
+        scale(1 1)
+    "  
+    fill="rgb(10, 35, 74)"
+    dominant-baseline="central"
+    text-anchor="left"
+    font-family="Verdana, Geneva, sans-serif"
+    font-size="12"
+    font-weight="bold"
+>
+    PWM
+</text><g 
+        class="pl pwm" 
+    transform="
+        translate(30.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll" 
+d="M 0 0  H 10.0" 
+transform="scale(-1.0 1)" 
+fill="none" 
+stroke="rgb(54, 157, 158)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-9.0 -10.0) 
+        scale(-1.0 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(54, 157, 158)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="20.0" 
+    height="20.0" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1)" 
+        x="-10.0"
+        y="10.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        
+    </text>
+</g>
+</g>
+</g><g 
+        class="legend" 
+    transform="
+        translate(15 180) 
+        scale(1 1)
+    "
+>
+        
+<text
+    transform="
+        translate(40.0 0) 
+        scale(1 1)
+    "  
+    fill="rgb(10, 35, 74)"
+    dominant-baseline="central"
+    text-anchor="left"
+    font-family="Verdana, Geneva, sans-serif"
+    font-size="12"
+    font-weight="bold"
+>
+    Power management
+</text><g 
+        class="pl pwr" 
+    transform="
+        translate(30.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll" 
+d="M 0 0  H 10.0" 
+transform="scale(-1.0 1)" 
+fill="none" 
+stroke="rgb(150, 2, 29)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-9.0 -10.0) 
+        scale(-1.0 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(150, 2, 29)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="20.0" 
+    height="20.0" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1)" 
+        x="-10.0"
+        y="10.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        
+    </text>
+</g>
+</g>
+</g>
+</g><g 
+    transform="
+        translate(16 105) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(-76 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="pl gpio" 
+    transform="
+        translate(-0.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll gpio" 
+d="M 0 0  H 12" 
+transform="scale(-1.0 1)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-11.0 -13.0) 
+        scale(-1.0 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(44, 91, 123)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1)" 
+        x="-25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        0
+    </text>
+</g>
+</g><g 
+        class="pl gpio" 
+    transform="
+        translate(-61.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll gpio" 
+d="M 0 0  H 12" 
+transform="scale(-1.0 1)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-11.0 -13.0) 
+        scale(-1.0 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(44, 91, 123)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1)" 
+        x="-25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        Lb0a
+    </text>
+</g>
+</g><g 
+        class="pl comms" 
+    transform="
+        translate(-122.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll comms" 
+d="M 0 0  H 12" 
+transform="scale(-1.0 1)" 
+fill="none" 
+stroke="rgb(203, 116, 16)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-11.0 -13.0) 
+        scale(-1.0 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(203, 116, 16)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1)" 
+        x="-25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        Lb03
+    </text>
+</g>
+</g>
+</g><path 
+class="ll gpio" 
+d="M 0 0  H 76" 
+transform="scale(-1.0 1)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/>
+</g><g 
+    transform="
+        translate(0 30) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(-76 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="pl gpio" 
+    transform="
+        translate(-0.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll gpio" 
+d="M 0 0  H 12" 
+transform="scale(-1.0 1)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-11.0 -13.0) 
+        scale(-1.0 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(44, 91, 123)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1)" 
+        x="-25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        1
+    </text>
+</g>
+</g><g 
+        class="pl comms" 
+    transform="
+        translate(-61.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll comms" 
+d="M 0 0  H 12" 
+transform="scale(-1.0 1)" 
+fill="none" 
+stroke="rgb(203, 116, 16)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-11.0 -13.0) 
+        scale(-1.0 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(203, 116, 16)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1)" 
+        x="-25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        Lc1a
+    </text>
+</g>
+</g>
+</g><path 
+class="ll gpio" 
+d="M 0 0  H 76" 
+transform="scale(-1.0 1)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/>
+</g><g 
+    transform="
+        translate(0 60) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(-76 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="pl gpio" 
+    transform="
+        translate(-0.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll gpio" 
+d="M 0 0  H 12" 
+transform="scale(-1.0 1)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-11.0 -13.0) 
+        scale(-1.0 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(44, 91, 123)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1)" 
+        x="-25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        2
+    </text>
+</g>
+</g><g 
+        class="pl analog" 
+    transform="
+        translate(-61.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll analog" 
+d="M 0 0  H 12" 
+transform="scale(-1.0 1)" 
+fill="none" 
+stroke="rgb(215, 107, 173)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-11.0 -13.0) 
+        scale(-1.0 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(215, 107, 173)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1)" 
+        x="-25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        Lc2a
+    </text>
+</g>
+</g><g 
+        class="pl led" 
+    transform="
+        translate(-122.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll led" 
+d="M 0 0  H 12" 
+transform="scale(-1.0 1)" 
+fill="none" 
+stroke="rgb(162, 179, 55)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-11.0 -13.0) 
+        scale(-1.0 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(162, 179, 55)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1)" 
+        x="-25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        Lc2b
+    </text>
+</g>
+</g>
+</g><path 
+class="ll gpio" 
+d="M 0 0  H 76" 
+transform="scale(-1.0 1)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/>
+</g><g 
+    transform="
+        translate(0 90) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(-76 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="pl pwr" 
+    transform="
+        translate(-0.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll pwr" 
+d="M 0 0  H 74" 
+transform="scale(-1.0 1)" 
+fill="none" 
+stroke="rgb(150, 2, 29)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-73.0 -13.0) 
+        scale(-1.0 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(150, 2, 29)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="110" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1)" 
+        x="-55.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        RESET
+    </text>
+</g>
+</g>
+</g><path 
+class="ll pwr" 
+d="M 0 0  H 76" 
+transform="scale(-1.0 1)" 
+fill="none" 
+stroke="rgb(150, 2, 29)"
+stroke-width="1"
+/>
+</g>
+</g><g 
+    transform="
+        translate(204 105) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(76 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="pl pwr" 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll pwr" 
+d="M 0 0  H 74" 
+transform="scale(1 1)" 
+fill="none" 
+stroke="rgb(150, 2, 29)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(73 -13.0) 
+        scale(1 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(150, 2, 29)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="110" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(1 1)" 
+        x="55.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        Vcc
+    </text>
+</g>
+</g>
+</g><path 
+class="ll pwr" 
+d="M 0 0  H 76" 
+transform="scale(1 1)" 
+fill="none" 
+stroke="rgb(150, 2, 29)"
+stroke-width="1"
+/>
+</g><g 
+    transform="
+        translate(0 30) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(76 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="pl pwr" 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll pwr" 
+d="M 0 0  H 74" 
+transform="scale(1 1)" 
+fill="none" 
+stroke="rgb(150, 2, 29)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(73 -13.0) 
+        scale(1 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(150, 2, 29)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="110" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(1 1)" 
+        x="55.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        GND
+    </text>
+</g>
+</g>
+</g><path 
+class="ll pwr" 
+d="M 0 0  H 76" 
+transform="scale(1 1)" 
+fill="none" 
+stroke="rgb(150, 2, 29)"
+stroke-width="1"
+/>
+</g><g 
+    transform="
+        translate(0 60) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(76 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="pl gpio" 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll gpio" 
+d="M 0 0  H 12" 
+transform="scale(1 1)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(11 -13.0) 
+        scale(1 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(44, 91, 123)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(1 1)" 
+        x="25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        3
+    </text>
+</g>
+</g><g 
+        class="pl analog" 
+    transform="
+        translate(61 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll analog" 
+d="M 0 0  H 12" 
+transform="scale(1 1)" 
+fill="none" 
+stroke="rgb(215, 107, 173)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(11 -13.0) 
+        scale(1 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(215, 107, 173)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(1 1)" 
+        x="25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        Lc2a
+    </text>
+</g>
+</g><g 
+        class="pl led" 
+    transform="
+        translate(122 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll led" 
+d="M 0 0  H 12" 
+transform="scale(1 1)" 
+fill="none" 
+stroke="rgb(162, 179, 55)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(11 -13.0) 
+        scale(1 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(162, 179, 55)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(1 1)" 
+        x="25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        Lc2b
+    </text>
+</g>
+</g>
+</g><path 
+class="ll gpio" 
+d="M 0 0  H 76" 
+transform="scale(1 1)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/>
+</g><g 
+    transform="
+        translate(0 90) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(76 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="pl gpio" 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll gpio" 
+d="M 0 0  H 12" 
+transform="scale(1 1)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(11 -13.0) 
+        scale(1 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(44, 91, 123)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(1 1)" 
+        x="25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        4
+    </text>
+</g>
+</g><g 
+        class="pl analog" 
+    transform="
+        translate(61 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll analog" 
+d="M 0 0  H 12" 
+transform="scale(1 1)" 
+fill="none" 
+stroke="rgb(215, 107, 173)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(11 -13.0) 
+        scale(1 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(215, 107, 173)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(1 1)" 
+        x="25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        Lc3a
+    </text>
+</g>
+</g>
+</g><path 
+class="ll gpio" 
+d="M 0 0  H 76" 
+transform="scale(1 1)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/>
+</g>
+</g><g 
+    transform="
+        translate(65 284) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(-125 40) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="pl gpio" 
+    transform="
+        translate(-0.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll gpio" 
+d="M 0 0  H 12" 
+transform="scale(-1.0 1.0)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-11.0 -13.0) 
+        scale(-1.0 1.0)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(44, 91, 123)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1.0)" 
+        x="-25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        3
+    </text>
+</g>
+</g><g 
+        class="pl analog" 
+    transform="
+        translate(-61.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll analog" 
+d="M 0 0  H 12" 
+transform="scale(-1.0 1.0)" 
+fill="none" 
+stroke="rgb(215, 107, 173)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-11.0 -13.0) 
+        scale(-1.0 1.0)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(215, 107, 173)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1.0)" 
+        x="-25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        Lc2a
+    </text>
+</g>
+</g><g 
+        class="pl led" 
+    transform="
+        translate(-122.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll led" 
+d="M 0 0  H 12" 
+transform="scale(-1.0 1.0)" 
+fill="none" 
+stroke="rgb(162, 179, 55)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-11.0 -13.0) 
+        scale(-1.0 1.0)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(162, 179, 55)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1.0)" 
+        x="-25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        Lc2b
+    </text>
+</g>
+</g>
+</g><path 
+class="ll gpio" 
+d="M 0 0 V 40 H 125" 
+transform="scale(-1.0 1.0)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/>
+</g><g 
+    transform="
+        translate(30 0) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(-155 70) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="pl gpio" 
+    transform="
+        translate(-0.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll gpio" 
+d="M 0 0  H 12" 
+transform="scale(-1.0 1.0)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-11.0 -13.0) 
+        scale(-1.0 1.0)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(44, 91, 123)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1.0)" 
+        x="-25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        4
+    </text>
+</g>
+</g><g 
+        class="pl pwm" 
+    transform="
+        translate(-61.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll pwm" 
+d="M 0 0  H 12" 
+transform="scale(-1.0 1.0)" 
+fill="none" 
+stroke="rgb(54, 157, 158)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-11.0 -13.0) 
+        scale(-1.0 1.0)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(54, 157, 158)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1.0)" 
+        x="-25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        Lc2a
+    </text>
+</g>
+</g><g 
+        class="pl led" 
+    transform="
+        translate(-122.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll led" 
+d="M 0 0  H 12" 
+transform="scale(-1.0 1.0)" 
+fill="none" 
+stroke="rgb(162, 179, 55)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-11.0 -13.0) 
+        scale(-1.0 1.0)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(162, 179, 55)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 1.0)" 
+        x="-25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        Lc2b
+    </text>
+</g>
+</g>
+</g><path 
+class="ll gpio" 
+d="M 0 0 V 70 H 155" 
+transform="scale(-1.0 1.0)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/>
+</g>
+</g><g 
+    transform="
+        translate(155 284) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(125 40) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="pl gpio" 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll gpio" 
+d="M 0 0  H 12" 
+transform="scale(1 1)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(11 -13.0) 
+        scale(1 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(44, 91, 123)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(1 1)" 
+        x="25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        6
+    </text>
+</g>
+</g><g 
+        class="pl analog" 
+    transform="
+        translate(61 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll analog" 
+d="M 0 0  H 12" 
+transform="scale(1 1)" 
+fill="none" 
+stroke="rgb(215, 107, 173)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(11 -13.0) 
+        scale(1 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(215, 107, 173)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(1 1)" 
+        x="25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        Lc3a
+    </text>
+</g>
+</g>
+</g><path 
+class="ll gpio" 
+d="M 0 0 V 40 H 125" 
+transform="scale(1 1)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/>
+</g><g 
+    transform="
+        translate(-30 0) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(155 70) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="pl gpio" 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll gpio" 
+d="M 0 0  H 12" 
+transform="scale(1 1)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(11 -13.0) 
+        scale(1 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(44, 91, 123)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(1 1)" 
+        x="25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        5
+    </text>
+</g>
+</g><g 
+        class="pl pwm" 
+    transform="
+        translate(61 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll pwm" 
+d="M 0 0  H 12" 
+transform="scale(1 1)" 
+fill="none" 
+stroke="rgb(54, 157, 158)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(11 -13.0) 
+        scale(1 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(54, 157, 158)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(1 1)" 
+        x="25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        Lc2a
+    </text>
+</g>
+</g><g 
+        class="pl led" 
+    transform="
+        translate(122 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll led" 
+d="M 0 0  H 12" 
+transform="scale(1 1)" 
+fill="none" 
+stroke="rgb(162, 179, 55)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(11 -13.0) 
+        scale(1 1)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(162, 179, 55)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(1 1)" 
+        x="25.0"
+        y="13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        Lc2b
+    </text>
+</g>
+</g>
+</g><path 
+class="ll gpio" 
+d="M 0 0 V 70 H 155" 
+transform="scale(1 1)" 
+fill="none" 
+stroke="rgb(44, 91, 123)"
+stroke-width="1"
+/>
+</g>
+</g><g 
+    transform="
+        translate(47 80) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(-107 -100) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="pl led" 
+    transform="
+        translate(-0.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll led" 
+d="M 0 0  H 12" 
+transform="scale(-1.0 -1.0)" 
+fill="none" 
+stroke="rgb(162, 179, 55)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-11.0 13.0) 
+        scale(-1.0 -1.0)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(162, 179, 55)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 -1.0)" 
+        x="-25.0"
+        y="-13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        a
+    </text>
+</g>
+</g><g 
+        class="pl analog" 
+    transform="
+        translate(-61.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll analog" 
+d="M 0 0  H 12" 
+transform="scale(-1.0 -1.0)" 
+fill="none" 
+stroke="rgb(215, 107, 173)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-11.0 13.0) 
+        scale(-1.0 -1.0)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(215, 107, 173)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 -1.0)" 
+        x="-25.0"
+        y="-13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        AUX_a
+    </text>
+</g>
+</g>
+</g><path 
+class="ll led" 
+d="M 0 0 V 100 H 107" 
+transform="scale(-1.0 -1.0)" 
+fill="none" 
+stroke="rgb(162, 179, 55)"
+stroke-width="1"
+/>
+</g>
+</g><g 
+    transform="
+        translate(62 95) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+    transform="
+        translate(-122 -145) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="pl led" 
+    transform="
+        translate(-0.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll led" 
+d="M 0 0  H 12" 
+transform="scale(-1.0 -1.0)" 
+fill="none" 
+stroke="rgb(162, 179, 55)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-11.0 13.0) 
+        scale(-1.0 -1.0)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(162, 179, 55)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 -1.0)" 
+        x="-25.0"
+        y="-13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        b
+    </text>
+</g>
+</g><g 
+        class="pl pwm" 
+    transform="
+        translate(-61.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll pwm" 
+d="M 0 0  H 12" 
+transform="scale(-1.0 -1.0)" 
+fill="none" 
+stroke="rgb(54, 157, 158)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-11.0 13.0) 
+        scale(-1.0 -1.0)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(54, 157, 158)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 -1.0)" 
+        x="-25.0"
+        y="-13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        AUX_b
+    </text>
+</g>
+</g><g 
+        class="pl pwm" 
+    transform="
+        translate(-122.0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+class="ll pwm" 
+d="M 0 0  H 12" 
+transform="scale(-1.0 -1.0)" 
+fill="none" 
+stroke="rgb(54, 157, 158)"
+stroke-width="1"
+/><g 
+    transform="
+        translate(-11.0 13.0) 
+        scale(-1.0 -1.0)
+    "
+>
+    <rect 
+    stroke="rgb(204, 204, 204)" 
+    stroke-width="0" 
+    fill="rgb(54, 157, 158)" 
+    class="label_box" 
+    x="0" 
+    y="0" 
+    width="50" 
+    height="26" 
+    rx="2" />
+    <text
+        transform="scale(-1.0 -1.0)" 
+        x="-25.0"
+        y="-13.0" 
+        fill="rgb(255, 255, 255)"
+        dominant-baseline="central"
+        text-anchor="middle"
+        font-family="Verdana, Geneva, sans-serif"
+        font-size="12"
+        font-weight="normal"
+    >
+        PWM
+    </text>
+</g>
+</g>
+</g><path 
+class="ll led" 
+d="M 0 0 V 145 H 122" 
+transform="scale(-1.0 -1.0)" 
+fill="none" 
+stroke="rgb(162, 179, 55)"
+stroke-width="1"
+/>
+</g>
+</g>
+    
+</svg>

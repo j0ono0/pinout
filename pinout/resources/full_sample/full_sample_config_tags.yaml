@@ -1,0 +1,29 @@
+
+# Tag styleguide
+# ================================
+
+tags:
+    # <tag>
+    #   title: <title>
+    #   color: [<0-255>, <0-255>, <0-255>]
+    analog:
+      title: Analog
+      color: [215, 107, 173]
+    dac:
+      title: DAC
+      color: [225, 117, 183]
+    comms:
+      title: Communication
+      color: [203, 116, 16]
+    gpio:
+      title: GPIO
+      color: [44, 91, 123]
+    led:
+      title: LED
+      color: [162, 179, 55]
+    pwm:
+      title: PWM
+      color: [54, 157, 158]
+    pwr:
+      title: Power management
+      color: [150, 2, 29]

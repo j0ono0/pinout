@@ -1,7 +1,6 @@
-
-
-# Elements and component attributes
-# =================================
+#
+# pinout element and component attributes
+# =======================================
 
 diagram:
   tag: pinout
@@ -115,29 +114,16 @@ annotation:
 
 # Tag styleguide
 # ================================
+#
 # <tag> tag identifier (must be CSS compliant name)
 # <title> text representation in legend
 # <color> RGB color representation
+#
+# tags:
+#   <tag1>
+#     title: <title>
+#     color: [<0-255>, <0-255>, <0-255>]
+#   <tag2>
+#     title: <title>
+#     color: [<0-255>, <0-255>, <0-255>]
 
-tags:
-    # <tag>
-      # title: <title>
-      # color: [<0-255>, <0-255>, <0-255>]
-    analog:
-      title: Analog
-      color: [215, 107, 173]
-    comms:
-      title: Communication
-      color: [203, 116, 16]
-    gpio:
-      title: GPIO
-      color: [44, 91, 123]
-    pwr:
-      title: Power management
-      color: [150, 2, 29]
-    pwm:
-      title: PWM
-      color: [54, 157, 158]
-    led:
-      title: LED
-      color: [162, 179, 55]

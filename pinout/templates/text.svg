@@ -5,7 +5,7 @@
         scale({{ scale.x }} {{ scale.y }})
     "  
     fill="{{ fill|rgb }}"
-    dominant-baseline="middle"
+    dominant-baseline="central"
     text-anchor="left"
     font-family="{{ family }}"
     font-size="{{ size }}"

@@ -1,175 +1,80 @@
 Elements
 ========
 
+.. currentmodule:: pinout.elements
+
+.. SVG class #########################
 
 SVG
-===
+---
 
-Common base for all classes that become a graphical representation in the SVG graphic.
+.. autoclass:: SVG
 
-scale
------
+    .. autoproperty:: scale
 
-Scale is abstracted as a property here and overridden by Component
-:return: (x, y) where x and y are either 1 or -1
-:rtype: tuple
+        Scale is used in pinout to mirror horizontally (-1, 1), vertically (1, -1) or both (-1, -1)
 
 
+    .. automethod:: extract_scale
 
-extract_scale
--------------
-
-Separate scale information from a tuple that represents (x, y) or (width, height) values. Components and elements control orientation via the scale property rather than negative dimension/direction values. **NOTE**: Existing scale property is only overridded if the provided coords include a negative value.
-
-:param coords: tuple representing  (x, y) or (width, height). values may be positive or negative.
-:type coords: Union(tuple, Coords)
-:return: nametuple with absolute values
-:rtype: Coords
-
-patch_config
--------------
-   
-Recursively update source with patch dict items.
-
-:param source: Dict to apply updates to
-:type source: dict
-:param patch: Dict of new item values
-:type patch: dict
-:return: Source dict updated with patch dict.
-:rtype: dict
+        Scale and coordinates (or dimensions) can be defined by users as a combined attribute - such as *offset* in PinLabel - but are stored and processed as two separate values when rendering the SVG. *extract_scale* stores the scale as a attribute and returns the *coords* with as values. **NOTE**: Existing scale property is only overridded if the provided coords include a negative value.
 
 
+.. Element class ######################
 
-Element(SVG)
-============
+Element
+-------
 
-Container that exclusively handles graphical SVG code. Elements can be considered the smallest building blocks of *pinout*.
-
-:param width: Width of the renderable SVG code, defaults to 0
-:type width: int, optional
-:param height: Height of the renderable SVG code, defaults to 0
-:type height: int, optional
-
-
-bounding_coords
----------------
-
-Coordinates, relative to its parent, representing sides of a rectangle that encompass the rendered element.
-
-:return: (x_min, y_min, x_max, y_max)
-:rtype: tuple
-
-
-bounding_rect
--------------
-
-Coordinates representing the location of an elements origin (usually top-left corner) within its parent along with the elements width and height.
-
-:return: (x, y, width, height)
-:rtype: tuple
-
-Image(Element)
-==============
-
-Associate a PNG, JPG or SVG formatted image to the diagram. *IMPORTANT*: Image width and height parameters must be supplied for the image to display! *pinout* does not auto-detect these attributes.
-
-:param href: Location of the image. *Note*: Where :code:`embed=False` the path is relative to the exported file. Where :code:`embed=True` the path is relative to the current working directory.
-:type path: string
-:param embed: Embed or link the image in the exported file, defaults to False
-:type embed: bool, optional
-
-        
-def bounding_coords
--------------------
-
-Coordinates, relative to its parent, representing sides of a rectangle that encompass the image.
-
-:return: (x_min, y_min, x_max, y_max)
-:rtype: tuple
-
-
-def render(self)
-----------------
-
-Generates SVG <image> tag using the image 'filename', Note that JPG and PNG are the only binary images files officially supported by the SVG format. If 'embed' is True the image is assigned to the path as a data URI. JPG and PNG image are base64 encoded, SVG files included verbatim. Otherwise the path 'src' is assigned 'filename'. Note: 'filename' includes the path to the file. Where a relative path is used it must be relative to the **exported file**.
-
-:return: SVG <image> component
-:rtype: str
-
-
-:module: elements.Rect
-
-Hello Rect class title line?
-
-Rect(Element)
-=============
-
-SVG <rect> (rectangle) element.
-
-
-def render(self)
-----------------
-
-create an SVG <rect> tag.
-
-:return: SVG <rect> code
-:rtype: string
-
-
-Line(Element)
-=============
-
-Create an SVG <path> tag with (at most) a single 90deg bend in it. The design of this Element is soley for use as a leader line with pin labels.
-
-:return: SVG <path> code
-:rtype: string
-
-
-def render(self)
-----------------
-
-create an SVG <path> tag.
-
-:return: SVG <path> code
-:rtype: string
-
-
-Path(Element)
-=============
-
-Create as SVG path tag.
-*NOTE*: If the path forms part of the diagram bounding box a width and height must be **explicitly** passed to it for final dimensions to be calculated correctly.
+.. autoclass:: Element
+    :show-inheritance:
+    
+    All elements **must** have a width and height for accurate calculation of the final graphic's dimenions and viewbox settings.
+    
+    
+    .. autoproperty:: bounding_coords
+    
+    Values are relative to its parent.
+    
+    .. autoproperty:: bounding_rect
+    
+    .. automethod:: render
     
 
-class Text(Element):
-Create an SVG <text> tag with a single line of text.
+.. Renderable element classes ######################
 
-:return: SVG <text> code
-:rtype: string
+Image
+-----
 
+.. autoclass:: Image
+    :show-inheritance:
 
-def render(self)
-----------------
+    *IMPORTANT*: Image width and height parameters must be supplied for the image to display! *pinout* does not auto-detect these attributes.
+    
+    Where :code:`embed=False` the path is relative to the exported file. Where :code:`embed=True` the path is relative to the current working directory.
 
-create an SVG <text> tag.
-
-    :return: SVG <text> code
-    :rtype: string
-
-
-Label(Element)
-==============
-
-A single line of text infront of a rectangle. *Note*: Text length is not auto-detected and the element's width should be set to ensure text will not overflow the rectangle in the final diagram export.
-
-:param text: Text to appear on the label
-:type text: string
+    .. automethod:: render
 
 
-def render(self)
-----------------
+Rect
+----
 
-create an SVG <group> tag that includes text and an rectangle.
+.. autoclass:: Rect
+    :show-inheritance:
 
-:return: SVG <group> code
-:rtype: string
+
+Path
+----
+
+.. autoclass:: Path
+    :show-inheritance:
+
+    *NOTE*: If the path forms part of the diagram bounding box a width and height must be **explicitly** passed to it for final dimensions to be calculated correctly.
+
+    
+Label
+-----
+
+.. autoclass:: Label
+    :show-inheritance:
+
+    *Note*: Text length is not auto-detected and the element's width should be set to ensure text will not overflow the rectangle in the final diagram export.

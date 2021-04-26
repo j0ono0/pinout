@@ -1,3 +1,6 @@
+""" Elements: Basic building blocks for pinout diagrams
+"""
+
 # Elements
 # Base building blocks to create SVG components
 import base64
@@ -25,9 +28,24 @@ class ClassMethodMissing(Exception):
 
 
 class SVG:
-    """Common base for all SVG entities that ultimately have a graphical representation."""
+    """Common base for all SVG entities that ultimately have a graphical representation.
+
+    :param x: Coordinate position in the 'x' direction, defaults to 0
+    :type x: int, optional
+    :param y: Coordinate position in the 'y' direction, defaults to 0
+    :type y: int, optional
+    :param scale: Primarily used to define direction of width, height, and coordinates, from an origin. Defaults to (1, 1)
+    :type scale: tuple, optional
+    :param rotation:  (***Currently implemented***) Rotation around an origin, defaults to 0
+    :type rotation: int, optional
+    :param tag: Associate an entity for application of predefined attributes/styles, defaults to ""
+    :type tag: str, optional
+    :param config: Directly supply attributes to an entity. Alternative to assigning via 'tag' or in the default config. Defaults to None
+    :type config: dict, optional
+    """
 
     def __init__(self, x=0, y=0, scale=(1, 1), rotation=0, tag="", config=None):
+        """Create a new SVG object."""
         self.cfg = config
         self.rotation = rotation
         self._scale = Coords(*scale)
@@ -37,8 +55,8 @@ class SVG:
 
     @property
     def scale(self):
-        """Tuple used to represent orientation of entity"""
-        # NOTE: set here for override by Component
+        """Tuple representing orientation of entity."""
+        # NOTE: set here as a property for override by Component
         return self._scale
 
     @scale.setter
@@ -52,7 +70,13 @@ class SVG:
         self._scale = value
 
     def extract_scale(self, coords):
-        """Separate scale information from a tuple that represents (x, y) or (width, height) values."""
+        """Separate and store scale information from *coords*.
+
+        :param coords: (x, y) coordinates or (width, height) dimensions.
+        :type coords: tuple
+        :return: 'coords' parameter with absolute values.
+        :rtype: Coords (namedtuple)
+        """
 
         if not all(val >= 0 for val in coords):
             self.scale = Coords(*[i / abs(i) if i != 0 else 1 for i in coords])
@@ -60,16 +84,28 @@ class SVG:
 
 
 class Element(SVG):
-    """Container that exclusively handles graphical SVG code. """
+    """Fundamental building blocks that render SVG markup.
+
+    :param width: Width of the rendered element, defaults to 0
+    :type width: int, optional
+    :param height: Height of the rendered element, defaults to 0
+    :type height: int, optional
+
+    """
 
     def __init__(self, width=0, height=0, *args, **kwargs):
+        """Create a new Element"""
         self.width = width
         self.height = height
         super().__init__(*args, **kwargs)
 
     @property
     def bounding_coords(self):
-        """Coordinates, relative to its parent, representing sides of a rectangle that encompass the rendered element."""
+        """Coordinates of the element's bounding rectangle.
+
+        :return: (x_min, y_min, x_max, y_max)
+        :rtype: BoundingCoords (namedtuple)
+        """
         x_min, x_max = sorted(
             [self.x * self.scale.x, (self.x + self.width) * self.scale.x]
         )
@@ -80,17 +116,29 @@ class Element(SVG):
 
     @property
     def bounding_rect(self):
-        """Coordinates and size representing the location of an elements origin (usually top-left corner)"""
+        """Element's coordinates and size.
+
+        :return: (x, y, width, height)
+        :rtype: BoundingBox (namedtuple)
+        """
         x_min, y_min, x_max, y_max = self.bounding_coords
         return BoundingBox(x_min, y_min, x_max - x_min, y_max - y_min)
 
     def render(self):
+        """Create SVG markup of the element"""
         raise ClassMethodMissing(f"{self} requires a 'render' method.")
 
 
 class Image(Element):
+    """Associate a PNG, JPG or SVG formatted image to the diagram.
+
+    :param href: path to image
+    :type href: string
+    :param embed: Embed image in rendered SVG file, defaults to False
+    :type embed: bool, optional
+    """
+
     def __init__(self, href, embed=False, *args, **kwargs):
-        """Associate a PNG, JPG or SVG formatted image to the diagram."""
         super().__init__(*args, **kwargs)
 
         self.href = href
@@ -108,7 +156,11 @@ class Image(Element):
         return BoundingCoords(x_min, y_min, x_max, y_max)
 
     def render(self):
-        """Render SVG markup either linking or embedding an image."""
+        """Render SVG markup either linking or embedding an image.
+
+        :return: SVG markup
+        :rtype: string
+        """
         media_type = pathlib.Path(self.href).suffix[1:]
         path = pathlib.Path(self.href)
         if self.embed:
@@ -132,6 +184,11 @@ class Rect(Element):
         super().__init__(*args, **kwargs)
 
     def render(self):
+        """Return SVG markup
+
+        :return: SVG markup
+        :rtype: string
+        """
         return svg_rect.render(
             x=self.x,
             y=self.y,

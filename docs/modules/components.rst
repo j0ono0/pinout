@@ -1,139 +1,109 @@
 Components
 ==========
 
+.. currentmodule:: pinout.components
 
-Component(SVG)
-==============
+Component
+---------
 
-Container object that manages child Components and/or Elements as a group.
+.. autoclass:: Component
+    :show-inheritance:
+    
+    Scale has no direct affect on Components but is applied to its direct child **Elements**.
 
-Child coordinates are all relative to their parent Component.
+    Children should be added via :code:`Component.add_and_instantiate`
 
-When scale is applied to a Component no direct affect to the <group> tag is applied but the scale setting is passed down to direct child **Elements**.
+    Default diagram config settings are accessible via the class variable :code:`Component.conf`.
 
-:param children: Component and/or Element objects, defaults to None
-:type children: Union[Component, Element, StyleSheet], optional
-:param config: Default configuration values.
-:type config: dict, optional
+    .. autoproperty:: bounding_coords
+
+    .. autoproperty:: bounding_rect
+
+    .. autoproperty:: width
+
+    .. autoproperty:: height
+    
+    .. autoproperty:: scale
+
+    .. autoproperty:: add_and_instantiate
+
+        If the added child is type :code:`element` the components scale passed to it automatically.
+
+    .. automethod:: patch_config
+    
+    Used to modify existing config values as they are passed to children
+    
+    .. automethod:: render
 
 
-bounding_coords
----------------
 
-Coordinates, relative to its parent, representing sides of a rectangle that encompass all child elements of the rendered Component.
+Diagram
+--------
 
-:return: (x_min, y_min, x_max, y_max)
-:rtype: tuple
+.. autoclass:: pinout.diagram.Diagram
+    :show-inheritance:
+    
+    .. automethod:: add_config
+        
+        Add configuration settings to the diagram. Parameters set in this fashion override the existing 'defaults' and referenced by components when parameters are not explicitly assigned.
 
-width
------
-Calculated width that encompasses all child elements
+        A complete set of *pinout* defaults can be duplicated from the command line for reference::
 
-:return: value representing a width in pixels
-:rtype: int
+            >>> py -m pinout.file_manager --duplicate config
+
+    .. automethod:: add_image
+        
+        Associate a PNG, JPG or SVG formatted image to the diagram. *IMPORTANT*: Image width and height parameters must be supplied for the image to display! *pinout* does not auto-detect these attributes.
+
+        :param path: Path to the image file. *Note*: Where :code:`embed=False` the path is relative to the exported file. Where :code:`embed=True` the path is relative to the current working directory.
+        :type path: string
+        :param embed: Embed or link the image in the exported file, defaults to False
+        :type embed: bool, optional
+
+    .. automethod:: add_legend
 
 
-height
+    .. automethod:: add_pinlabelset
+
+    .. automethod:: add_annotation
+
+    .. automethod:: export
+
+
+
+
+PinLabel
+--------
+
+.. autoclass:: PinLabel
+    :show-inheritance:
+
+    Comprised of a Line and Label element, this component encapsulates the requirement for a single pin label. It's visual appearance is controlled via config.
+
+PinLabelRow
+-----------
+
+.. autoclass:: PinLabelRow
+    :show-inheritance:
+
+    Assists with grouping and arranging pinlabels that relate to the same pin into a row.
+
+
+
+PinLabelSet
+-----------
+
+.. autoclass:: PinLabelSet
+    :show-inheritance:
+
+    This is the recommended method of adding pin labels to a diagram. Locate the PinLabelSet by setting *x* and *y* attributes. 
+    
+    Pitch is the distance, in pixels, between each pin of the header. (0, 30) steps 0px right and 30px down for each pin. (30, 0) creates a horizontal header. (-30, 0) creates a horizontal header in the reverse direction. This can be useful for 'stacking' rows in reversed order to avoid leader-lines overlapping.
+
+Legend
 ------
 
-Calculated height that encompasses all child elements
+.. autoclass:: Legend
+    :show-inheritance:
 
-:return: value representing a height in pixels
-:rtype: int
-
-scale
------
-
-Scale has no direct effect of components however all immediate element children of a component inherit their parents scale value.
-
-:return: tuple in the form of (x, y) where expected values are either 1 or -1.
-:rtype: tuple
-
-bounding_rect
--------------
-
-Coordinates representing the location of a components origin (usually top-left corner) within its parent along with a width and height that encompass all child elements.
-
-:return: (x, y, width, height)
-:rtype: tuple
-
-add_and_instantiate
--------------------
-
-Instantiate an instance of a class and add it to the components children. This is done as a method to allow attributes to be added/amended in the single process.
-
-:return: Instance of the instantiated class
-:rtype: object
-
-
-render
-------
-
-Render Component, and children, as SVG markup.
-NOTE: *scale* only affects Elements! It does not affect the grapical appearance of Components.
-
-:return: SVG markup of component including all children.
-:rtype: str
-
-
-
-class PinLabel(Component):
-Comprised of a Line and Label element, this component encapsulates the requirement for a single pin label. All arguments have default settings in the components config.
-
-:param text: Text displayed in the label
-:type text: string
-:param offset: x and y distance that the label is offset from its parent. A leader line graphically bridges from the parent origin to the the offset coords.
-:type offset: (tuple)
-:param box_width: Width of the label portion of the PinLabel. Total width is box_width + offset.x
-:type box_width: int
-:param box_height: Height of the label portion of the PinLabel.
-:type box_height: int
-
-
-
-class PinLabelRow(Component)
-----------------------------
-
-Assists with grouping and arranging pinlabels that relate to the same pin into a row.
-
-:param offset: x and y distance that the row is offset from its parent. A leader line graphically bridges from the parent origin to the the offset coords.
-:type offset: tuple in the form of (x, y)
-:param labels: List of tuples documenting label attributes ("text", "tag", "offset", "box_width"). Only 'text' and 'tag' are required. The other optional values fallback to config defaults. :code:`offset=None` can be used to supply a 'box_width' but use the default 'offset' value.
-:type labels: List of tuples
-
-
-class PinLabelSet(Component)
-----------------------------
-This is the recommended method of adding pin labels to a diagram.
-:param offset: Relative x and y offset from the pin location for the first label in a row
-:type offset: tuple
-:param labels: tuples nested within a 2 dimensional array. Each list within the 'labels' list represents a pin in the header. Each entry within those lists becomes a label.
-:type labels: Tuples nested within a 2 dimensional array. Each list within 'labels' represents a pin in the header. Each entry within those lists becomes a label. The label is a tuple in the format :code:`(<text>, <css tag>, <offset>, <box_width>)` the second two arguments are optional.
-:param pitch: 'x' and 'y' distance in pixels between each pin of the header. (0, 30) steps 0px right and 30px down for each pin. (30, 0) creates a horizontal header. (-30, 0) creates a horizontal header in the reverse direction. This can be useful for 'stacking' rows in reversed order to avoid leader-lines overlapping.
-:type pitch: tuple, optional
-    
-
-
-Legend(Component)
------------------
-Provide a colour coded legend to describe pin labels. All data to populate a legend must be documented in the diagram's config by adding an YAML formatted file::
-
-    # config.yaml
-
-    legend:
-        categories: [
-            # [<Title>, <CSS class 'tag'>]
-            ["Analog", "analog"],
-            ["GPIO", "gpio"],
-            ["PWM", "pwm"],
-        ]
-
-*Note*: *pinout* does not calculate text widths. a manually provided with should be included to ensure text remains enclosed within the legend.
-
-A complete set of *pinout* defaults can be duplicated from the command line for reference::
-
-        >>> py -m pinout.file_manager --duplicate config
-
-config.yaml includes all legend attributes that can be altered.
-
-    
+*Note*: *pinout* does not calculate text widths. a manually provided with should be included to ensure text remains enclosed within the legend.    

@@ -3,12 +3,13 @@ Elements
 
 .. currentmodule:: pinout.elements
 
-.. SVG class #########################
 
 SVG
 ---
 
 .. autoclass:: SVG
+
+    *NOTE*: :code:`self.cfg` is a local config used for customising appearance on a per-instance level. this config may, in part, be passed onto children. 
 
     .. autoproperty:: scale
 
@@ -19,8 +20,6 @@ SVG
 
         Scale and coordinates (or dimensions) can be defined by users as a combined attribute - such as *offset* in PinLabel - but are stored and processed as two separate values when rendering the SVG. *extract_scale* stores the scale as a attribute and returns the *coords* with as values. **NOTE**: Existing scale property is only overridded if the provided coords include a negative value.
 
-
-.. Element class ######################
 
 Element
 -------
@@ -33,14 +32,12 @@ Element
     
     .. autoproperty:: bounding_coords
     
-    Values are relative to its parent.
+        Values are relative to its parent.
     
     .. autoproperty:: bounding_rect
     
     .. automethod:: render
     
-
-.. Renderable element classes ######################
 
 Image
 -----

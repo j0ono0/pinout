@@ -45,12 +45,19 @@ class Diagram(Component):
         self.add_and_instantiate(PinLabelSet, *args, **kwargs)
 
     def add_annotation(self, *args, **kwargs):
+        """Add an annotation to the diagram."""
         config = copy.deepcopy(self.conf["annotation"])
         kwargs["config"] = self.patch_config(config, kwargs.get("config", {}))
         self.add_and_instantiate(Annotation, *args, **kwargs)
 
     def export(self, path, overwrite=False):
-        """Output the diagram in SVG format."""
+        """Output the diagram in SVG format.
+
+        :param path: File location and name
+        :type path: string
+        :param overwrite: Overwrite existing file of same path, defaults to False
+        :type overwrite: bool, optional
+        """
         # Create export location and unique filename if required
         path = Path(path)
         path.parent.mkdir(parents=True, exist_ok=True)

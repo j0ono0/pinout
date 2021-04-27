@@ -6,17 +6,26 @@ from . import elements as elem
 
 
 class Component(SVG):
-    """Container object that manages child Components and/or Elements as a group."""
+    """Container object that manages child Components and/or Elements as a group.
+
+    :param children: Components and/or elements, defaults to None
+    :type children: SVG subtypes, optional
+    """
 
     conf = {}
 
     def __init__(self, children=None, *args, **kwargs):
+        """[summary]"""
         self.children = []
         super().__init__(*args, **kwargs)
 
     @property
     def bounding_coords(self):
-        """Coordinates, relative to its parent, representing sides of a rectangle that encompass all child elements of the rendered Component."""
+        """Coordinates of the components's bounding rectangle.
+
+        :return: (x_min, y_min, x_max, y_max)
+        :rtype: BoundingCoords (namedtuple)
+        """
         # Untransformed bounding coords
         x_min = y_min = x_max = y_max = 0
         for child in self.children:
@@ -34,8 +43,22 @@ class Component(SVG):
         )
 
     @property
+    def bounding_rect(self):
+        """Components's coordinates and size.
+
+        :return: (x, y, width, height)
+        :rtype: BoundingBox (namedtuple)
+        """
+        x_min, y_min, x_max, y_max = self.bounding_coords
+        return BoundingBox(x_min, y_min, x_max - x_min, y_max - y_min)
+
+    @property
     def width(self):
-        """Calculated width that encompasses all child elements"""
+        """Calculated width that encompasses all child elements
+
+        :return: value representing width in pixels
+        :rtype: int
+        """
         try:
             x_min, y_min, x_max, y_max = self.bounding_coords
             return x_max - x_min
@@ -45,7 +68,11 @@ class Component(SVG):
 
     @property
     def height(self):
-        """Calculated height that encompasses all child elements"""
+        """Calculated height that encompasses all child elements
+
+        :return: value representing height in pixels
+        :rtype: int
+        """
         try:
             x_min, y_min, x_max, y_max = self.bounding_coords
             return y_max - y_min
@@ -55,7 +82,7 @@ class Component(SVG):
 
     @property
     def scale(self):
-
+        """See :func:`~pinout.elements.SVG.scale`"""
         return self._scale
 
     @scale.setter
@@ -65,15 +92,8 @@ class Component(SVG):
             if issubclass(type(child), Element):
                 child.scale = self.scale
 
-    @property
-    def bounding_rect(self):
-        """Coordinates representing location and size"""
-        x_min, y_min, x_max, y_max = self.bounding_coords
-        return BoundingBox(x_min, y_min, x_max - x_min, y_max - y_min)
-
     def add_and_instantiate(self, cls, *args, **kwargs):
         """Instantiate a class and add it to the components children."""
-
         if issubclass(cls, Element):
             kwargs["scale"] = self.scale
 
@@ -96,7 +116,11 @@ class Component(SVG):
         return source
 
     def render(self):
-        """Render Component, and children, as SVG markup."""
+        """Render Component, and children, as SVG markup.
+
+        :return: SVG markup of component including all children.
+        :rtype: str
+        """
         output = ""
         for child in self.children:
             output += child.render()
@@ -111,7 +135,11 @@ class Component(SVG):
 
 
 class PinLabel(Component):
-    """Create a single Pinlabel"""
+    """Create a Pinlabel
+
+    :param text_msg: Text to appear in label
+    :type text_msg: string
+    """
 
     def __init__(
         self,
@@ -150,7 +178,13 @@ class PinLabel(Component):
 
 
 class PinLabelRow(Component):
-    """Create a row of PinLabels and leaderline connecting the row to an origin coordinate."""
+    """Create a row of PinLabels and leaderline connecting the row to an origin coordinate.
+
+    :param offset: (x, y) offset of the row from an origin
+    :type offset: (x, y) tuple
+    :param labels: List of label data
+    :type labels: [(<text>, <tag>, [<config>]),(<text>, <tag>, [<config>]), ...]
+    """
 
     def __init__(self, offset, labels, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -214,7 +248,15 @@ class PinLabelRow(Component):
 
 
 class PinLabelSet(Component):
-    """Add rows of PinLabels to a 'header' of pins"""
+    """Add rows of PinLabels to a 'header' of pins
+
+    :param offset: Offset of the first PinLabelRow from the origin
+    :type offset: (x, y) tuple
+    :param labels: List of PinLabelRows
+    :type labels: List
+    :param pitch: Offset between each PinLabelRow, defaults to (1, 1)
+    :type pitch: (x, y) tuple, optional
+    """
 
     def __init__(self, offset, labels, pitch=(1, 1), *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -240,9 +282,14 @@ class PinLabelSet(Component):
 
 
 class Legend(Component):
-    """Provide a colour coded legend to describe pin labels. """
+    """Provide a colour coded legend to describe pin labels.
+
+    :param categories: List of tags to include in legend
+    :type categories: [<tag1>, <tag2>, ...] List
+    """
 
     def __init__(self, categories, *args, **kwargs):
+        """[summary]"""
         super().__init__(*args, **kwargs)
 
         pad = Coords(*self.cfg["padding"])

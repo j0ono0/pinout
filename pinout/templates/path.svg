@@ -3,6 +3,6 @@ class="{{ tag }}"
 d="{{ d }}" 
 transform="scale({{ scale.x }} {{ scale.y }})" 
 fill="none" 
-stroke="{{ stroke|rgb }}"
+stroke="{{ stroke|rgba }}"
 stroke-width="{{ stroke_width }}"
 />

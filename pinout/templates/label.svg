@@ -2,9 +2,9 @@
 
 {% block content %}
     <rect 
-    stroke="{{ rect.stroke|rgb }}" 
+    stroke="{{ rect.stroke|rgba }}" 
     stroke-width="{{ rect.stroke_width }}" 
-    fill="{{ rect.fill|rgb }}" 
+    fill="{{ rect.fill|rgba }}" 
     class="label_box" 
     x="0" 
     y="0" 
@@ -15,13 +15,13 @@
         transform="scale({{ scale.x }} {{ scale.y }})" 
         x="{{ (rect.width / 2) * scale.x }}"
         y="{{ rect.height/2 * scale.y }}" 
-        fill="{{ text.fill|rgb }}"
+        fill="{{ text.fill|rgba }}"
         dominant-baseline="central"
         text-anchor="middle"
         font-family="{{ text.family }}"
         font-size="{{ text.size }}"
         font-weight="{{ text.weight }}"
     >
-        {{ text_msg }}
+        {{ text_content }}
     </text>
 {% endblock %}

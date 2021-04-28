@@ -16,9 +16,10 @@ SVG diagram creation from Python code - **pinout** provides an easy method to cr
     :maxdepth: 2
     :caption: Contents:
 
-    install
-    tutorial
-    modules
+    pages/install
+    pages/tutorial
+    pages/modules
+    pages/resources
 
 
 

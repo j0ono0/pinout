@@ -211,30 +211,34 @@ class Path(Element):
 class Text(Element):
     """SVG <text> element."""
 
-    def __init__(self, text_msg, *args, **kwargs):
+    def __init__(self, text_content, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.text_msg = text_msg
+        self.text_content = text_content
 
     def render(self):
         """create an SVG <text> tag."""
         return svg_text.render(
-            text_msg=self.text_msg, x=self.x, y=self.y, scale=self.scale, **self.cfg
+            text_content=self.text_content,
+            x=self.x,
+            y=self.y,
+            scale=self.scale,
+            **self.cfg,
         )
 
 
 class Label(Element):
     """SVG <text> and <rect> markup in a single element."""
 
-    def __init__(self, text_msg, *args, **kwargs):
+    def __init__(self, text_content, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.text_msg = text_msg
+        self.text_content = text_content
         self.width = self.cfg["rect"]["width"]
         self.height = self.cfg["rect"]["height"]
 
     def render(self):
         """Render SVG component."""
         return svg_label.render(
-            text_msg=self.text_msg,
+            text_content=self.text_content,
             x=self.x,
             y=self.y,
             scale=self.scale,

@@ -5,7 +5,7 @@ Tutorial
 
 This tutorial walks through the main features available in *pinout*. If you have not installed *pinout* already please read the :ref:`install` section. This tutorial duplicates code from *quick_start_pinout.py*. To access a copy of this file and other resources see :ref:`quickstart`.
 
-.. figure:: _static/quick_start_diagram.*
+.. figure:: /_static/quick_start_diagram.*
 
    The finished diagram from this tutorial.
 
@@ -23,7 +23,7 @@ Document measurments
 
 Taking some critical measurements of the hardware image before starting will streamline processes and save adjusting by trial-and-error later. Where pins are arranged in 'headers' (a line of evenly spaced pins) the *PinLabelSet* class can be used to automate pin and label placement.
 
-.. figure:: _static/quick_start_measurements_left_header.*
+.. figure:: /_static/quick_start_measurements_left_header.*
 
 - **x, y**: Coordinates of the first pin in the header.
 - **pitch**: Distance between each pin of the header. (0, 30) steps 0px right and 30px down for each pin. *TIP*: (30, 0) creates a horizontal header.
@@ -114,7 +114,7 @@ The final diagram can be exported as a graphic in SVG format and should match th
     # expected output:
     # > 'quick_start_diagram.svg' exported successfully.
 
-.. figure:: _static/quick_start_diagram.*
+.. figure:: /_static/quick_start_diagram.*
 
     The finished diagram from this tutorial.
 

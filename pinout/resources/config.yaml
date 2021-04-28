@@ -8,8 +8,10 @@ diagram:
 text: &text
     fill: [0, 0, 0]
     family: Verdana, Geneva, sans-serif
+    line_height: 16
     size: 12
     weight: normal
+
 
 # information-panel
 infpanel_rect: &infpanel
@@ -100,16 +102,27 @@ annotation:
     text: 
       << : *text
       size: 14
+      fill: [255, 255, 255]
     rect:
-      fill: [244, 244, 244]
-      height: 30
-      rx: 4
-      stroke: [204, 204, 204]
-      stroke_width: 3
+      fill: [63, 169, 245]
+      # height treated as min-height 
+      # if multiple lines provided
+      height: 32
+      rx: 0
+      stroke: [63, 169, 245]
+      stroke_width: 5
       width: 100
   leaderline:
-    stroke: [204, 204, 204]
+    stroke: [63, 169, 245]
     stroke_width: 5
+    rect:
+      fill: [255,255,255,0]
+      stroke: [63, 169, 245]
+      stroke_width: 5
+      rx: 0
+      width: 13
+      height: 13
+
 
 
 # Tag styleguide

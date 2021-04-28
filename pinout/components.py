@@ -137,13 +137,13 @@ class Component(SVG):
 class PinLabel(Component):
     """Create a Pinlabel
 
-    :param text_msg: Text to appear in label
-    :type text_msg: string
+    :param text_content: Text to appear in label
+    :type text_content: string
     """
 
     def __init__(
         self,
-        text_msg,
+        text_content,
         *args,
         **kwargs,
     ):
@@ -168,7 +168,7 @@ class PinLabel(Component):
 
         self.add_and_instantiate(
             elem.Label,
-            text_msg,
+            text_content,
             x=offset.x - 1,
             y=offset.y - self.cfg["label"]["rect"]["height"] / 2,
             scale=self.scale,
@@ -200,7 +200,7 @@ class PinLabelRow(Component):
 
     def add_labels(self, label_list):
         for i, label in enumerate(label_list):
-            ctx = dict(zip(("text_msg", "tag", "config"), label))
+            ctx = dict(zip(("text_content", "tag", "config"), label))
 
             # Create a duplicate config for each pinlabel
             config = self.patch_config(copy.deepcopy(self.cfg), ctx.get("config", {}))
@@ -238,7 +238,7 @@ class PinLabelRow(Component):
             label_x = self.labels.width * self.scale.x
             self.labels.add_and_instantiate(
                 PinLabel,
-                ctx["text_msg"],
+                ctx["text_content"],
                 x=label_x,
                 y=0,
                 tag=config["tag"],
@@ -330,7 +330,7 @@ class Legend(Component):
 
             entry.add_and_instantiate(
                 PinLabel,
-                text_msg="",
+                text_content="",
                 x=swatch_size * 1.5,
                 tag="pl " + tag,
                 config=pinlabel_config,
@@ -351,20 +351,85 @@ class Legend(Component):
         )
 
 
+class TextBlock(Component):
+    """TextBlock can either be a list or string. The latter is converted to a list splitting on new line characters ('\n'). Each list item where each item becomes text a row. Line height is controlled via config 'line_height' attribute
+
+    :param text_content: Text to be rendered.
+    :type text_content: List or String
+    """
+
+    def __init__(self, text_content, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        if type(text_content) == str:
+            # attempt to split on '\n' to make a list
+            text_content = text_content.split("\n")
+
+        for num, line in enumerate(text_content):
+            # make a line of text for each list entry
+            self.add_and_instantiate(
+                elem.Text,
+                line,
+                x=0,
+                y=self.cfg["line_height"] * (num + 1),
+                config=Component.conf["text"],
+            )
+
+
 class Annotation(Component):
-    def __init__(self, text_msg, *args, **kwargs):
+    def __init__(self, text_content, *args, **kwargs):
         super().__init__(*args, **kwargs)
         offset = Coords(*self.cfg["offset"])
-        path_definition = f"M 0 0 l {offset.x} {offset.y}"
-        # Shift label rect to move 'origin' to half height on left hand edge
 
-        self.add_and_instantiate(
-            elem.Label,
-            text_msg,
-            x=offset.x,
-            y=offset.y - self.cfg["label"]["rect"]["height"] / 2,
-            config=self.cfg["label"],
+        vertical_move = f"V {offset.y}" if offset.y != 0 else ""
+        horizontal_move = f"H {offset.x}" if offset.x != 0 else ""
+
+        path_definition = f"M 0 0 {vertical_move} {horizontal_move}"
+
+        if type(text_content) == str:
+            # attempt to split on '\n' and convert to list
+            text_content = text_content.split("\n")
+
+        # Calculate label dimensions
+        label_height = max(
+            self.cfg["label"]["rect"]["height"],
+            len(text_content) * self.cfg["label"]["text"]["line_height"],
         )
+        self.cfg["label"]["rect"]["height"] = (
+            label_height + 10
+        )  # hardcoded padding!!! TODO: change this
+
+        # Annotation label
+        label = Component(
+            x=offset.x,
+            y=offset.y
+            - self.cfg["label"]["rect"]["height"]
+            + self.cfg["label"]["text"]["line_height"] / 2,
+        )
+        self.children.append(label)
+
+        # Add background to label
+
+        label.add_and_instantiate(
+            elem.Rect,
+            config=self.cfg["label"]["rect"],
+        )
+        # Add textblock to label
+        label.add_and_instantiate(
+            TextBlock,
+            text_content,
+            x=5,
+            y=5,
+            config=Component.conf["text"],
+        )
+        # Leaderline
         self.add_and_instantiate(
             elem.Path, path_definition, config=self.cfg["leaderline"]
+        )
+        # leaderline box
+        self.add_and_instantiate(
+            elem.Rect,
+            x=-self.cfg["leaderline"]["rect"]["width"] / 2,
+            y=0,
+            config=self.cfg["leaderline"]["rect"],
         )

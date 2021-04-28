@@ -8,5 +8,5 @@ Modules
     :maxdepth: 2
     :caption: Contents:
 
-    modules/elements
-    modules/components
+    elements
+    components

@@ -107,3 +107,8 @@ Legend
     :show-inheritance:
 
 *Note*: *pinout* does not calculate text widths. a manually provided with should be included to ensure text remains enclosed within the legend.    
+
+Annotation
+----------
+
+.. autoclass:: Annotation

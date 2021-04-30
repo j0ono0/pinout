@@ -32,3 +32,4 @@ svg_annotation = env.get_template("annotation.svg")
 
 svg_path = env.get_template("path.svg")
 svg_text = env.get_template("text.svg")
+svg_textblock = env.get_template("textblock.svg")

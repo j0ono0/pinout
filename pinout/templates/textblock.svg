@@ -1,0 +1,22 @@
+{% extends 'group.svg' %}
+
+{% block content %}
+    {% for content in text_content %}
+        <text
+            x="0" 
+            y="{{ text.line_height * loop.index }}"
+            fill="{{ text.fill|rgba }}"
+            dominant-baseline="auto"
+            text-anchor="left"
+            font-family="{{ text.family }}"
+            font-size="{{ text.size }}"
+            font-weight="{{ text.weight }}"
+        >
+            {{ content }}
+        </text>
+    {% endfor %}    
+
+{% endblock %}
+
+
+

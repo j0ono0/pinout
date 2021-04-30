@@ -38,8 +38,15 @@ class Component(SVG):
             except AttributeError:
                 # The child has no bounding_coords.
                 pass
+        # return BoundingCoords(
+        #    self.x + x_min, self.y + y_min, self.x + x_max, self.y + y_max
+        # )
+
         return BoundingCoords(
-            self.x + x_min, self.y + y_min, self.x + x_max, self.y + y_max
+            min((self.x + x_min) * self.scale.x, (self.x + x_max) * self.scale.x),
+            min((self.y + y_min) * self.scale.y, (self.y + y_max) * self.scale.y),
+            max((self.x + x_min) * self.scale.x, (self.x + x_max) * self.scale.x),
+            max((self.y + y_min) * self.scale.y, (self.y + y_max) * self.scale.y),
         )
 
     @property
@@ -94,8 +101,9 @@ class Component(SVG):
 
     def add_and_instantiate(self, cls, *args, **kwargs):
         """Instantiate a class and add it to the components children."""
-        if issubclass(cls, Element):
-            kwargs["scale"] = self.scale
+
+        # if issubclass(cls, Element):
+        #     kwargs["scale"] = self.scale
 
         instance = cls(*args, **kwargs)
         self.children.append(instance)
@@ -129,8 +137,7 @@ class Component(SVG):
             y=self.y,
             tag=self.tag,
             content=output,
-            # NOTE: Graphically, components are *not* affected by scale
-            scale=Coords(1, 1),
+            scale=self.scale,
         )
 
 
@@ -153,7 +160,7 @@ class PinLabel(Component):
         offset = self.cfg["offset"]
 
         # Separate offset and scale data
-        offset = self.extract_scale(offset)
+        offset, scale = self.extract_scale(offset)
 
         vertical_move = f"V {offset.y}" if offset.y != 0 else ""
         horizontal_move = f"H {offset.x}" if offset.x != 0 else ""
@@ -163,6 +170,7 @@ class PinLabel(Component):
         self.add_and_instantiate(
             elem.Path,
             definition=definition,
+            # scale=self.scale,
             config=self.cfg["leaderline"],
         )
 
@@ -171,7 +179,7 @@ class PinLabel(Component):
             text_content,
             x=offset.x - 1,
             y=offset.y - self.cfg["label"]["rect"]["height"] / 2,
-            scale=self.scale,
+            # scale=self.scale,
             tag=self.tag,
             config=self.cfg["label"],
         )
@@ -188,9 +196,17 @@ class PinLabelRow(Component):
 
     def __init__(self, offset, labels, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.offset = self.extract_scale(offset)
+        # self.scale = self.extract_scale(offset)[1]
+        # self.offset, self.scale = self.extract_scale(offset)
+        # self.scale = Coords(-1, 1)
+        # self.offset = Coords(*offset)
+        self.offset = self.extract_scale(offset)[0]
+
         self.labels = self.add_and_instantiate(
-            Component, x=offset[0], y=offset[1], scale=self.scale
+            Component,
+            x=self.offset.x,
+            y=self.offset.y,
+            # scale=self.scale,
         )
 
         cfg_tag = self.cfg.get("pinlabelrow", {}).get("tag", "")
@@ -230,19 +246,19 @@ class PinLabelRow(Component):
                 self.add_and_instantiate(
                     elem.Path,
                     definition=definition,
-                    scale=self.scale,
+                    # scale=self.scale,
                     config=config["leaderline"],
                 )
 
             # Add PinLabel to label_row
-            label_x = self.labels.width * self.scale.x
+            label_x = self.labels.width
             self.labels.add_and_instantiate(
                 PinLabel,
                 ctx["text_content"],
                 x=label_x,
                 y=0,
                 tag=config["tag"],
-                scale=self.scale,
+                # scale=self.scale,
                 config=config,
             )
 
@@ -261,19 +277,23 @@ class PinLabelSet(Component):
     def __init__(self, offset, labels, pitch=(1, 1), *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+        # offset = Coords(*offset)
+        offset, self.scale = self.extract_scale(offset)
+
+        self.x = self.x * self.scale.x
+        self.y = self.y * self.scale.y
+
         # Create a Component for each row in 'labels'
         for i, label_list in enumerate(labels):
-            pin_x = pitch[0] * i
-            pin_y = pitch[1] * i
+            pin_x = pitch[0] * i * self.scale.x
+            pin_y = pitch[1] * i * self.scale.y
             if pitch[1] == 0:
-                # Horizontal pinset
-                row_offset = (offset[0] - pin_x, offset[1] + abs(pin_x))
-            else:
-                row_offset = offset
+                # Horizontal pinset require label_rows to offset vertically
+                offset = Coords(offset.x - pin_x, offset.y + abs(pin_x))
 
             self.add_and_instantiate(
                 PinLabelRow,
-                offset=row_offset,
+                offset=offset,
                 labels=label_list,
                 x=pin_x,
                 y=pin_y,
@@ -331,9 +351,10 @@ class Legend(Component):
             entry.add_and_instantiate(
                 PinLabel,
                 text_content="",
-                x=swatch_size * 1.5,
+                x=-swatch_size * 1.5,
                 tag="pl " + tag,
                 config=pinlabel_config,
+                scale=(-1, 1),
             )
 
         # Add an panel *behind* component
@@ -351,85 +372,82 @@ class Legend(Component):
         )
 
 
-class TextBlock(Component):
-    """TextBlock can either be a list or string. The latter is converted to a list splitting on new line characters ('\n'). Each list item where each item becomes text a row. Line height is controlled via config 'line_height' attribute
-
-    :param text_content: Text to be rendered.
-    :type text_content: List or String
-    """
-
-    def __init__(self, text_content, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        if type(text_content) == str:
-            # attempt to split on '\n' to make a list
-            text_content = text_content.split("\n")
-
-        for num, line in enumerate(text_content):
-            # make a line of text for each list entry
-            self.add_and_instantiate(
-                elem.Text,
-                line,
-                x=0,
-                y=self.cfg["line_height"] * (num + 1),
-                config=Component.conf["text"],
-            )
-
-
 class Annotation(Component):
     def __init__(self, text_content, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        offset = Coords(*self.cfg["offset"])
 
+        # Extract scale from offset and update x and y
+        offset, self.scale = self.extract_scale(self.cfg["offset"])
+        self.x = self.x * self.scale.x
+        self.y = self.y * self.scale.y
+
+        label_padding = Coords(*self.cfg["label"]["padding"])
+
+        # Attempt to split on '\n' and convert to list
+        if type(text_content) == str:
+            text_content = text_content.split("\n")
+
+        # Calculate label dimensions
+        label_height = (
+            len(text_content) * self.cfg["label"]["text"]["line_height"]
+            + label_padding.y
+        )
+        self.cfg["label"]["rect"]["height"] = label_height
+
+        # Annotation label
+        label = Component(
+            tag="anno_label",
+            x=offset.x,
+            y=offset.y,
+        )
+        self.children.append(label)
+
+        # Add background rect to label
+        rect_y = 0 if self.scale.y == -1 else -self.cfg["label"]["rect"]["height"]
+        label.add_and_instantiate(
+            elem.Rect,
+            y=rect_y,
+            width=self.cfg["label"]["rect"]["width"],
+            height=self.cfg["label"]["rect"]["height"],
+            config=self.cfg["label"]["rect"],
+        )
+
+        # Add textblock to label
+        tb_x = label_padding.x
+        if self.scale.x == -1:
+            tb_x -= self.cfg["label"]["rect"]["width"]
+
+        tb_y = -self.cfg["label"]["rect"]["height"]
+
+        label.add_and_instantiate(
+            elem.TextBlock,
+            text_content,
+            x=tb_x,
+            y=tb_y,
+            width=self.cfg["label"]["rect"]["width"],
+            height=self.cfg["label"]["rect"]["height"],
+            config=self.cfg["label"],
+            scale=self.scale,
+        )
+        ########################
+        # Leaderline
+
+        # leaderline rect
+        leader_rect = self.add_and_instantiate(
+            elem.Rect,
+            x=-self.cfg["leaderline"]["rect"]["width"] / 2,
+            y=-self.cfg["leaderline"]["rect"]["height"] / 2,
+            width=self.cfg["leaderline"]["rect"]["width"],
+            height=self.cfg["leaderline"]["rect"]["height"],
+            config=self.cfg["leaderline"]["rect"],
+        )
+
+        # path definition
         vertical_move = f"V {offset.y}" if offset.y != 0 else ""
         horizontal_move = f"H {offset.x}" if offset.x != 0 else ""
 
         path_definition = f"M 0 0 {vertical_move} {horizontal_move}"
 
-        if type(text_content) == str:
-            # attempt to split on '\n' and convert to list
-            text_content = text_content.split("\n")
-
-        # Calculate label dimensions
-        label_height = max(
-            self.cfg["label"]["rect"]["height"],
-            len(text_content) * self.cfg["label"]["text"]["line_height"],
-        )
-        self.cfg["label"]["rect"]["height"] = (
-            label_height + 10
-        )  # hardcoded padding!!! TODO: change this
-
-        # Annotation label
-        label = Component(
-            x=offset.x,
-            y=offset.y
-            - self.cfg["label"]["rect"]["height"]
-            + self.cfg["label"]["text"]["line_height"] / 2,
-        )
-        self.children.append(label)
-
-        # Add background to label
-
-        label.add_and_instantiate(
-            elem.Rect,
-            config=self.cfg["label"]["rect"],
-        )
-        # Add textblock to label
-        label.add_and_instantiate(
-            TextBlock,
-            text_content,
-            x=5,
-            y=5,
-            config=Component.conf["text"],
-        )
-        # Leaderline
         self.add_and_instantiate(
             elem.Path, path_definition, config=self.cfg["leaderline"]
-        )
-        # leaderline box
-        self.add_and_instantiate(
-            elem.Rect,
-            x=-self.cfg["leaderline"]["rect"]["width"] / 2,
-            y=0,
-            config=self.cfg["leaderline"]["rect"],
         )

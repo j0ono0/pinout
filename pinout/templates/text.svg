@@ -1,4 +1,3 @@
-
 <text
     transform="
         translate({{ x * scale.x }} {{  y * scale.y }}) 

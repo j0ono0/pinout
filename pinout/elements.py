@@ -13,6 +13,7 @@ from .templates import (
     svg_path,
     svg_rect,
     svg_text,
+    svg_textblock,
 )
 
 
@@ -70,17 +71,17 @@ class SVG:
         self._scale = value
 
     def extract_scale(self, coords):
-        """Separate and store scale information from *coords*.
+        """Separate and scale information from *coords*.
 
         :param coords: (x, y) coordinates or (width, height) dimensions.
         :type coords: tuple
-        :return: 'coords' parameter with absolute values.
-        :rtype: Coords (namedtuple)
+        :return: 'coords' parameter with absolute values and scale Coords.
+        :rtype: (Coords, Coords), namedtuples
         """
 
-        if not all(val >= 0 for val in coords):
-            self.scale = Coords(*[i / abs(i) if i != 0 else 1 for i in coords])
-        return Coords(*[abs(i) for i in coords])
+        scale = Coords(*[i / abs(i) if i != 0 else 1 for i in coords])
+        abs_coords = Coords(*[abs(i) for i in coords])
+        return (abs_coords, scale)
 
 
 class Element(SVG):
@@ -218,6 +219,29 @@ class Text(Element):
     def render(self):
         """create an SVG <text> tag."""
         return svg_text.render(
+            text_content=self.text_content,
+            x=self.x,
+            y=self.y,
+            scale=self.scale,
+            **self.cfg,
+        )
+
+
+class TextBlock(Element):
+    """SVG <text> element."""
+
+    def __init__(self, text_content, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        if type(text_content) == str:
+            # attempt to split on '\n' to make a list
+            text_content = text_content.split("\n")
+
+        self.text_content = text_content
+
+    def render(self):
+        """create an SVG <text> tag."""
+        return svg_textblock.render(
             text_content=self.text_content,
             x=self.x,
             y=self.y,

@@ -138,50 +138,6 @@ class Component(SVG):
         )
 
 
-class PinLabel(Component):
-    """Create a Pinlabel
-
-    :param text_content: Text to appear in label
-    :type text_content: string
-    """
-
-    def __init__(
-        self,
-        text_content,
-        *args,
-        **kwargs,
-    ):
-        super().__init__(*args, **kwargs)
-
-        # Assign config values if none supplied
-        offset = self.cfg["offset"]
-
-        # Separate offset and scale data
-        offset, scale = self.extract_scale(offset)
-
-        vertical_move = f"V {offset.y}" if offset.y != 0 else ""
-        horizontal_move = f"H {offset.x}" if offset.x != 0 else ""
-
-        definition = f"M 0 0 {vertical_move} {horizontal_move}"
-
-        self.add_and_instantiate(
-            elem.Path,
-            definition=definition,
-            # scale=self.scale,
-            config=self.cfg["leaderline"],
-        )
-
-        self.add_and_instantiate(
-            elem.Label,
-            text_content,
-            x=offset.x - 1,
-            y=offset.y - self.cfg["label"]["rect"]["height"] / 2,
-            # scale=self.scale,
-            tag=self.tag,
-            config=self.cfg["label"],
-        )
-
-
 class PinLabelSet(Component):
     """Add rows of PinLabels to a 'header' of pins
 
@@ -219,7 +175,6 @@ class PinLabelSet(Component):
             )
 
             # Create a leaderline
-            # TODO: make a leaderline component for reuse
             leaderline_config = copy.deepcopy(self.cfg["leaderline"])
             vertical_move = f"V {offset.y}" if offset.y != 0 else ""
             horizontal_move = (
@@ -235,24 +190,53 @@ class PinLabelSet(Component):
             )
 
             # Add labels to row
-            for label in label_list:
+            for j, label in enumerate(label_list):
                 label = dict(zip(("text_content", "tag", "config"), label))
 
-                # Patch default config with supplied config then tag data
-                label_config = copy.deepcopy(self.cfg["label"])
-                tag_color = Component.conf["tags"][label["tag"]]["color"]
+                # Copy config and patch with supplied config
+                label_config = copy.deepcopy(self.cfg)
                 self.patch_config(label_config, label.get("config", {}))
-                self.patch_config(label_config, {"rect": {"fill": tag_color}})
+                # Patch config with tag styles
+                tag_color = Component.conf["tags"][label["tag"]]["color"]
+                self.patch_config(
+                    label_config,
+                    {
+                        "label": {"rect": {"fill": tag_color}},
+                        "leaderline": {"stroke": tag_color},
+                    },
+                )
+
+                # Match leaderline to first label tag color
+                if j == 0:
+                    leaderline.cfg["stroke"] = tag_color
+
+                # add label's leaderline
+                label_offset = Coords(*label_config["offset"])
+                self.patch_config(
+                    label_config,
+                    {"leaderline": {"stroke": tag_color}},
+                )
+                definition = f"M {row.width} 0 h {label_offset.x}"
+                row.add_and_instantiate(
+                    elem.Path,
+                    x=row.width,
+                    y=0,
+                    width=label_offset.x,
+                    height=self.cfg["leaderline"]["stroke_width"],
+                    scale=self.scale,
+                    definition=definition,
+                    config=label_config["leaderline"],
+                )
 
                 row.add_and_instantiate(
                     elem.Label,
                     text_content=label["text_content"],
                     x=row.width,
-                    y=-label_config["rect"]["height"] / 2,
-                    width=label_config["rect"]["width"],
-                    height=label_config["rect"]["height"],
+                    y=-label_config["label"]["rect"]["height"] / 2,
+                    width=label_config["label"]["rect"]["width"],
+                    height=label_config["label"]["rect"]["height"],
                     scale=self.scale,
-                    config=label_config,
+                    config=label_config["label"],
                 )
 
 
@@ -285,6 +269,7 @@ class Legend(Component):
                 config=self.cfg["text"],
             )
 
+            # Create pinlabel icon
             pinlabel_config = copy.deepcopy(self.conf["pinlabel"])
             tag_color = self.conf["tags"][tag]["color"]
             pinlabel_patch = {
@@ -294,7 +279,7 @@ class Legend(Component):
                         "fill": tag_color,
                         "height": swatch_size,
                         "width": swatch_size,
-                        "rx": 2,
+                        "rx": pinlabel_config["label"]["rect"]["rx"],
                     },
                 },
                 "leaderline": {
@@ -304,12 +289,23 @@ class Legend(Component):
             self.patch_config(pinlabel_config, pinlabel_patch)
 
             entry.add_and_instantiate(
-                PinLabel,
-                text_content="",
-                x=-swatch_size * 1.5,
-                tag="pl " + tag,
-                config=pinlabel_config,
-                scale=(-1, 1),
+                elem.Rect,
+                x=0,
+                y=-swatch_size / 2,
+                width=swatch_size,
+                height=swatch_size,
+                config=pinlabel_config["label"]["rect"],
+            )
+
+            definition = f"M {swatch_size} 0 h {swatch_size/2}"
+            entry.add_and_instantiate(
+                elem.Path,
+                definition=definition,
+                x=swatch_size,
+                y=0,
+                width=swatch_size / 2,
+                height=pinlabel_config["leaderline"]["stroke_width"],
+                config=pinlabel_config["leaderline"],
             )
 
         # Add an panel *behind* component

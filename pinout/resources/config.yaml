@@ -58,7 +58,7 @@ legend:
 
 
 pinlabel:
-  offset: [12,0]
+  offset: [8,0]
   tag: pl
   label:
     text:

@@ -6,7 +6,7 @@
     height="{{ height }}" 
     rx="{{ rx }}" 
     transform="scale({{ scale.x }} {{ scale.y }})" 
-    fill="{{ fill|rgb }}" 
-    stroke="{{ stroke|rgb }}" 
+    fill="{{ fill|rgba }}" 
+    stroke="{{ stroke|rgba }}" 
     stroke-width="{{ stroke_width }}"
 />

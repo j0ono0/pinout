@@ -1,7 +1,7 @@
 <path 
 class="{{ tag }}" 
 d="{{ d }}" 
-transform="scale({{ scale.x }} {{ scale.y }})" 
+transform="scale({{ scale.x }} {{ scale.y }}) translate({{ x }} {{  y }}) " 
 fill="none" 
 stroke="{{ stroke|rgba }}"
 stroke-width="{{ stroke_width }}"

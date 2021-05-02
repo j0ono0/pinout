@@ -38,9 +38,6 @@ class Component(SVG):
             except AttributeError:
                 # The child has no bounding_coords.
                 pass
-        # return BoundingCoords(
-        #    self.x + x_min, self.y + y_min, self.x + x_max, self.y + y_max
-        # )
 
         return BoundingCoords(
             min((self.x + x_min) * self.scale.x, (self.x + x_max) * self.scale.x),
@@ -185,84 +182,6 @@ class PinLabel(Component):
         )
 
 
-class PinLabelRow(Component):
-    """Create a row of PinLabels and leaderline connecting the row to an origin coordinate.
-
-    :param offset: (x, y) offset of the row from an origin
-    :type offset: (x, y) tuple
-    :param labels: List of label data
-    :type labels: [(<text>, <tag>, [<config>]),(<text>, <tag>, [<config>]), ...]
-    """
-
-    def __init__(self, offset, labels, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        # self.scale = self.extract_scale(offset)[1]
-        # self.offset, self.scale = self.extract_scale(offset)
-        # self.scale = Coords(-1, 1)
-        # self.offset = Coords(*offset)
-        self.offset = self.extract_scale(offset)[0]
-
-        self.labels = self.add_and_instantiate(
-            Component,
-            x=self.offset.x,
-            y=self.offset.y,
-            # scale=self.scale,
-        )
-
-        cfg_tag = self.cfg.get("pinlabelrow", {}).get("tag", "")
-        self.tag = (cfg_tag + self.tag).strip()
-
-        self.add_labels(labels)
-
-    def add_labels(self, label_list):
-        for i, label in enumerate(label_list):
-            ctx = dict(zip(("text_content", "tag", "config"), label))
-
-            # Create a duplicate config for each pinlabel
-            config = self.patch_config(copy.deepcopy(self.cfg), ctx.get("config", {}))
-
-            # update tag in pinlabel and leaderline
-            config["tag"] = " ".join([config["tag"], ctx.get("tag", "")])
-            config["leaderline"]["tag"] = " ".join(
-                [config["leaderline"]["tag"], ctx.get("tag", "")]
-            )
-
-            # update pinlabel config with tag styles
-            tag_color = self.conf["tags"][ctx["tag"]]["color"]
-            patch = {
-                "label": {
-                    "rect": {"fill": tag_color},
-                },
-                "leaderline": {"stroke": tag_color},
-            }
-            self.patch_config(config, patch)
-
-            if i == 0:
-                # Create a leaderline joining the labelrow to the offset origin
-                v_move = f"V {self.offset.y}" if self.offset.y != 0 else ""
-                h_move = f"H {self.offset.x}" if self.offset.x != 0 else ""
-                definition = f"M 0 0 {v_move} {h_move}"
-
-                self.add_and_instantiate(
-                    elem.Path,
-                    definition=definition,
-                    # scale=self.scale,
-                    config=config["leaderline"],
-                )
-
-            # Add PinLabel to label_row
-            label_x = self.labels.width
-            self.labels.add_and_instantiate(
-                PinLabel,
-                ctx["text_content"],
-                x=label_x,
-                y=0,
-                tag=config["tag"],
-                # scale=self.scale,
-                config=config,
-            )
-
-
 class PinLabelSet(Component):
     """Add rows of PinLabels to a 'header' of pins
 
@@ -277,28 +196,64 @@ class PinLabelSet(Component):
     def __init__(self, offset, labels, pitch=(1, 1), *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        # offset = Coords(*offset)
+        # Extract scale and update x and y of pinlabelset instance
         offset, self.scale = self.extract_scale(offset)
-
         self.x = self.x * self.scale.x
         self.y = self.y * self.scale.y
 
+        pitch = Coords(*pitch)
+
         # Create a Component for each row in 'labels'
         for i, label_list in enumerate(labels):
-            pin_x = pitch[0] * i * self.scale.x
-            pin_y = pitch[1] * i * self.scale.y
+            pin_x = pitch.x * i * self.scale.x
+            pin_y = pitch.y * i * self.scale.y
+
             if pitch[1] == 0:
                 # Horizontal pinset require label_rows to offset vertically
                 offset = Coords(offset.x - pin_x, offset.y + abs(pin_x))
 
-            self.add_and_instantiate(
-                PinLabelRow,
-                offset=offset,
-                labels=label_list,
-                x=pin_x,
-                y=pin_y,
-                config=self.cfg,
+            row = self.add_and_instantiate(
+                Component,
+                x=pin_x + offset.x,
+                y=pin_y + offset.y,
             )
+
+            # Create a leaderline
+            # TODO: make a leaderline component for reuse
+            leaderline_config = copy.deepcopy(self.cfg["leaderline"])
+            vertical_move = f"V {offset.y}" if offset.y != 0 else ""
+            horizontal_move = (
+                f"H {offset.x + pitch.x * i * self.scale.x}" if offset.x != 0 else ""
+            )
+
+            definition = f"M {pin_x} {pin_y} {vertical_move} {horizontal_move}"
+
+            leaderline = self.add_and_instantiate(
+                elem.Path,
+                definition=definition,
+                config=leaderline_config,
+            )
+
+            # Add labels to row
+            for label in label_list:
+                label = dict(zip(("text_content", "tag", "config"), label))
+
+                # Patch default config with supplied config then tag data
+                label_config = copy.deepcopy(self.cfg["label"])
+                tag_color = Component.conf["tags"][label["tag"]]["color"]
+                self.patch_config(label_config, label.get("config", {}))
+                self.patch_config(label_config, {"rect": {"fill": tag_color}})
+
+                row.add_and_instantiate(
+                    elem.Label,
+                    text_content=label["text_content"],
+                    x=row.width,
+                    y=-label_config["rect"]["height"] / 2,
+                    width=label_config["rect"]["width"],
+                    height=label_config["rect"]["height"],
+                    scale=self.scale,
+                    config=label_config,
+                )
 
 
 class Legend(Component):

@@ -1,6 +1,11 @@
-{% extends 'group.svg' %}
-
-{% block content %}
+<g 
+   transform="
+        translate({{ x }} {{  y }}) 
+    "
+    {% if tag %}
+        class="{{ tag }}" 
+    {% endif %}
+>
     <rect 
     stroke="{{ rect.stroke|rgba }}" 
     stroke-width="{{ rect.stroke_width }}" 
@@ -12,9 +17,11 @@
     height="{{ rect.height }}" 
     rx="{{ rect.rx }}" />
     <text
-        transform="scale({{ scale.x }} {{ scale.y }})" 
-        x="{{ (rect.width / 2) * scale.x }}"
-        y="{{ rect.height/2 * scale.y }}" 
+        x="{{ rect.width/2 * scale.x }}"
+        y="{{ rect.height/2 * scale.y }}"
+        transform="
+        scale({{ scale.x }} {{ scale.y }})
+    "
         fill="{{ text.fill|rgba }}"
         dominant-baseline="central"
         text-anchor="middle"
@@ -24,4 +31,5 @@
     >
         {{ text_content }}
     </text>
-{% endblock %}
+
+</g>

@@ -115,7 +115,7 @@ annotation:
       rx: 0
       stroke: [63, 169, 245]
       stroke_width: 0
-      width: 250
+      width: 260
   leaderline:
     stroke: [63, 169, 245]
     stroke_width: 5

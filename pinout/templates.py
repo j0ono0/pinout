@@ -6,7 +6,17 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 def rgba(rgba_list):
     # cater for rgb attribute with no alpha value
     color = dict(zip(("r", "g", "b", "a"), rgba_list))
-    return f"rgba({color['r']}, {color['g']}, {color['b']}, {color.get('a', 1)})"
+
+    #
+    # Inkscape does not suppled rgb or rgba color!!!
+    # return f"rgba({color['r']}, {color['g']}, {color['b']}, {color.get('a', 1)})"
+    #
+
+    # Convert to hex
+    hex_color = "#"
+    for val in rgba_list[:3]:
+        hex_color += ("0" + hex(val).split("x")[-1])[-2:]
+    return hex_color
 
 
 env = Environment(

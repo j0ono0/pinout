@@ -7,9 +7,9 @@
     {% endif %}
 >
     <rect 
-    stroke="{{ rect.stroke|rgba }}" 
+    stroke="{{ rect.stroke|rgb }}" 
     stroke-width="{{ rect.stroke_width }}" 
-    fill="{{ rect.fill|rgba }}" 
+    fill="{{ rect.fill|rgb }}" 
     class="label_box" 
     x="0" 
     y="0" 
@@ -22,7 +22,7 @@
         transform="
         scale({{ scale.x }} {{ scale.y }})
     "
-        fill="{{ text.fill|rgba }}"
+        fill="{{ text.fill|rgb }}"
         dominant-baseline="central"
         text-anchor="middle"
         font-family="{{ text.family }}"

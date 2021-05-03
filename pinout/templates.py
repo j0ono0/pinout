@@ -3,18 +3,14 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 # Filters
 
 
-def rgba(rgba_list):
-    # cater for rgb attribute with no alpha value
-    color = dict(zip(("r", "g", "b", "a"), rgba_list))
-
+def rgb(rgb_color):
     #
-    # Inkscape does not suppled rgb or rgba color!!!
-    # return f"rgba({color['r']}, {color['g']}, {color['b']}, {color.get('a', 1)})"
+    # NOTE: Inkscape does not support rgb color!!!
     #
+    # Convert RGB to hex
 
-    # Convert to hex
     hex_color = "#"
-    for val in rgba_list[:3]:
+    for val in rgb_color[:3]:
         hex_color += ("0" + hex(val).split("x")[-1])[-2:]
     return hex_color
 
@@ -27,8 +23,7 @@ env = Environment(
 )
 
 # Add filters to Jinja env
-env.filters["rgb"] = rgba
-env.filters["rgba"] = rgba
+env.filters["rgb"] = rgb
 
 # Base SVG elements
 svg = env.get_template("svg.svg")

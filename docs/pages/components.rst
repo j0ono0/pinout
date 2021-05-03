@@ -70,26 +70,6 @@ Diagram
     .. automethod:: export
 
 
-
-
-PinLabel
---------
-
-.. autoclass:: PinLabel
-    :show-inheritance:
-
-    Comprised of a Line and Label element, this component encapsulates the requirement for a single pin label. It's visual appearance is controlled via config.
-
-PinLabelRow
------------
-
-.. autoclass:: PinLabelRow
-    :show-inheritance:
-
-    Assists with grouping and arranging pinlabels that relate to the same pin into a row.
-
-
-
 PinLabelSet
 -----------
 

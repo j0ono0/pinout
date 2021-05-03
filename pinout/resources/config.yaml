@@ -109,6 +109,7 @@ annotation:
       weight: normal
     rect:
       fill: [63, 169, 245, 0]
+      fill_opacity: 0
       # height treated as min-height 
       # if multiple lines provided
       height: 32
@@ -121,6 +122,7 @@ annotation:
     stroke_width: 5
     rect:
       fill: [255,255,255,0]
+      fill_opacity: 0
       stroke: [63, 169, 245]
       stroke_width: 5
       rx: 0

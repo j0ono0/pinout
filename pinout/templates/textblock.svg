@@ -5,7 +5,7 @@
         <text
             x="0" 
             y="{{ text.line_height * loop.index }}"
-            fill="{{ text.fill|rgba }}"
+            fill="{{ text.fill|rgb }}"
             dominant-baseline="auto"
             text-anchor="left"
             font-family="{{ text.family }}"

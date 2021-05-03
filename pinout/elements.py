@@ -47,7 +47,7 @@ class SVG:
 
     def __init__(self, x=0, y=0, scale=(1, 1), rotation=0, tag="", config=None):
         """Create a new SVG object."""
-        self.cfg = config
+        self.config = config
         self.rotation = rotation
         self._scale = Coords(*scale)
         self.tag = tag
@@ -194,7 +194,7 @@ class Rect(Element):
             x=self.x,
             y=self.y,
             scale=self.scale,
-            **self.cfg,
+            **self.config,
         )
 
 
@@ -206,7 +206,7 @@ class Path(Element):
         self.definition = definition
 
     def render(self):
-        return svg_path.render(d=self.definition, scale=self.scale, **self.cfg)
+        return svg_path.render(d=self.definition, scale=self.scale, **self.config)
 
 
 class Text(Element):
@@ -223,7 +223,7 @@ class Text(Element):
             x=self.x,
             y=self.y,
             scale=self.scale,
-            **self.cfg,
+            **self.config,
         )
 
 
@@ -246,7 +246,7 @@ class TextBlock(Element):
             x=self.x,
             y=self.y,
             scale=self.scale,
-            **self.cfg,
+            **self.config,
         )
 
 
@@ -256,8 +256,8 @@ class Label(Element):
     def __init__(self, text_content, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.text_content = text_content
-        self.width = self.cfg["rect"]["width"]
-        self.height = self.cfg["rect"]["height"]
+        self.width = self.config["rect"]["width"]
+        self.height = self.config["rect"]["height"]
 
     def render(self):
         """Render SVG component."""
@@ -266,5 +266,5 @@ class Label(Element):
             x=self.x,
             y=self.y,
             scale=self.scale,
-            **self.cfg,
+            **self.config,
         )

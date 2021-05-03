@@ -15,18 +15,19 @@ class Diagram(Component):
         super().__init__(*args, **kwargs)
 
         # Load default config and patch with any supplied patch
-        Component.conf = file_manager.load_config()
+        Component.config = file_manager.load_config()
 
-        # Patch conf with user suppled config.
-        config = config or {}
+        # Patch config with user suppled config.
+        self.config = Component.config
         try:
-            self.patch_config(self.conf, config)
-        except KeyError:
+            self.patch_config(self.config, config)
+        except AttributeError:
+            # No config supplied by user
             pass
 
     def add_config(self, path=None):
         """Add a configuration file to the diagram."""
-        self.patch_config(self.conf, file_manager.load_config(path))
+        self.patch_config(self.config, file_manager.load_config(path))
 
     def add_image(self, path, *args, embed=False, **kwargs):
         """Associate a PNG, JPG or SVG formatted image to the diagram."""
@@ -34,19 +35,19 @@ class Diagram(Component):
 
     def add_legend(self, *args, categories=None, **kwargs):
         """Add a pinlabel legend to the diagram."""
-        config = copy.deepcopy(self.conf["legend"])
+        config = copy.deepcopy(self.config["legend"])
         kwargs["config"] = self.patch_config(config, kwargs.get("legend", {}))
         self.add(Legend, categories, *args, **kwargs)
 
     def add_pinlabelset(self, *args, **kwargs):
         """Add a pinlabels to a 'header' of pins in the diagram."""
-        config = copy.deepcopy(self.conf["pinlabel"])
+        config = copy.deepcopy(self.config["pinlabel"])
         kwargs["config"] = self.patch_config(config, kwargs.get("config", {}))
         self.add(PinLabelSet, *args, **kwargs)
 
     def add_annotation(self, *args, **kwargs):
         """Add an annotation to the diagram."""
-        config = copy.deepcopy(self.conf["annotation"])
+        config = copy.deepcopy(self.config["annotation"])
         kwargs["config"] = self.patch_config(config, kwargs.get("config", {}))
         self.add(Annotation, *args, **kwargs)
 

@@ -12,7 +12,7 @@ class Component(SVG):
     :type children: SVG subtypes, optional
     """
 
-    conf = {}
+    config = {}
 
     def __init__(self, children=None, *args, **kwargs):
         """[summary]"""
@@ -174,7 +174,7 @@ class PinLabelSet(Component):
             )
 
             # Create a leaderline
-            leaderline_config = copy.deepcopy(self.cfg["leaderline"])
+            leaderline_config = copy.deepcopy(self.config["leaderline"])
             vertical_move = f"V {offset.y}" if offset.y != 0 else ""
             horizontal_move = (
                 f"H {offset.x + pitch.x * i * self.scale.x}" if offset.x != 0 else ""
@@ -193,10 +193,10 @@ class PinLabelSet(Component):
                 label = dict(zip(("text_content", "tag", "config"), label))
 
                 # Copy config and patch with supplied config
-                label_config = copy.deepcopy(self.cfg)
+                label_config = copy.deepcopy(self.config)
                 self.patch_config(label_config, label.get("config", {}))
                 # Patch config with tag styles
-                tag_color = Component.conf["tags"][label["tag"]]["color"]
+                tag_color = Component.config["tags"][label["tag"]]["color"]
                 self.patch_config(
                     label_config,
                     {
@@ -207,7 +207,7 @@ class PinLabelSet(Component):
 
                 # Match leaderline to first label tag color
                 if j == 0:
-                    leaderline.cfg["stroke"] = tag_color
+                    leaderline.config["stroke"] = tag_color
 
                 # add label's leaderline
                 label_offset = Coords(*label_config["offset"])
@@ -221,7 +221,7 @@ class PinLabelSet(Component):
                     x=row.width,
                     y=0,
                     width=label_offset.x,
-                    height=self.cfg["leaderline"]["stroke_width"],
+                    height=self.config["leaderline"]["stroke_width"],
                     scale=self.scale,
                     definition=definition,
                     config=label_config["leaderline"],
@@ -247,30 +247,29 @@ class Legend(Component):
     """
 
     def __init__(self, categories, *args, **kwargs):
-        """[summary]"""
         super().__init__(*args, **kwargs)
 
-        pad = Coords(*self.cfg["padding"])
-        row_height = self.cfg["row_height"]
+        pad = Coords(*self.config["padding"])
+        row_height = self.config["row_height"]
         swatch_size = row_height * 2 / 3
-        categories = categories or self.conf["tags"].keys()
+        categories = categories or Component.config["tags"].keys()
         for i, tag in enumerate(categories):
             entry = self.add(
-                Component, x=pad.x, y=pad.y + row_height * i, tag=self.cfg["tag"]
+                Component, x=pad.x, y=pad.y + row_height * i, tag=self.config["tag"]
             )
             entry.add(
                 elem.Text,
-                self.conf["tags"][tag]["title"],
+                Component.config["tags"][tag]["title"],
                 x=swatch_size * 2,
                 y=0,
-                width=self.cfg["rect"]["width"],
+                width=self.config["rect"]["width"],
                 height=row_height,
-                config=self.cfg["text"],
+                config=self.config["text"],
             )
 
             # Create icon based on pinlabel config
-            pinlabel_config = copy.deepcopy(self.conf["pinlabel"])
-            tag_color = self.conf["tags"][tag]["color"]
+            pinlabel_config = copy.deepcopy(Component.config["pinlabel"])
+            tag_color = Component.config["tags"][tag]["color"]
             pinlabel_patch = {
                 "offset": (-swatch_size / 2, 0),
                 "label": {
@@ -291,7 +290,7 @@ class Legend(Component):
                 elem.Rect,
                 x=0,
                 y=-pinlabel_config["label"]["rect"]["height"] / 2
-                - self.cfg["text"]["size"] / 2,
+                - self.config["text"]["size"] / 2,
                 width=swatch_size,
                 height=swatch_size,
                 config=pinlabel_config["label"]["rect"],
@@ -309,16 +308,16 @@ class Legend(Component):
             )
 
         # Add an panel *behind* component
-        self.cfg["rect"]["height"] = row_height * len(categories) + pad.y
+        self.config["rect"]["height"] = row_height * len(categories) + pad.y
         self.children.insert(
             0,
             elem.Rect(
                 x=0,
                 y=0,
-                width=self.cfg["rect"]["width"],
-                height=self.cfg["rect"]["height"],
+                width=self.config["rect"]["width"],
+                height=self.config["rect"]["height"],
                 scale=self.scale,
-                config=self.cfg["rect"],
+                config=self.config["rect"],
             ),
         )
 
@@ -328,26 +327,26 @@ class Annotation(Component):
         super().__init__(*args, **kwargs)
 
         # Extract scale from offset and update x and y
-        offset, self.scale = self.extract_scale(self.cfg["offset"])
+        offset, self.scale = self.extract_scale(self.config["offset"])
         self.x = self.x * self.scale.x
         self.y = self.y * self.scale.y
 
-        label_padding = Coords(*self.cfg["label"]["padding"])
+        label_padding = Coords(*self.config["label"]["padding"])
 
         # Attempt to split on '\n' and convert to list
         if type(text_content) == str:
             text_content = text_content.split("\n")
 
         # Calculate label dimensions
-        line_height = self.cfg["label"]["text"]["line_height"]
-        font_height = self.cfg["label"]["text"]["size"]
+        line_height = self.config["label"]["text"]["line_height"]
+        font_height = self.config["label"]["text"]["size"]
         top_padding = label_padding.y - (line_height - font_height)
         label_height = (
-            len(text_content) * self.cfg["label"]["text"]["line_height"]
+            len(text_content) * self.config["label"]["text"]["line_height"]
             + label_padding.y
             + top_padding
         )
-        self.cfg["label"]["rect"]["height"] = label_height
+        self.config["label"]["rect"]["height"] = label_height
 
         # Annotation label
         label = Component(
@@ -362,26 +361,26 @@ class Annotation(Component):
         label.add(
             elem.Rect,
             y=rect_y,
-            width=self.cfg["label"]["rect"]["width"],
-            height=self.cfg["label"]["rect"]["height"],
-            config=self.cfg["label"]["rect"],
+            width=self.config["label"]["rect"]["width"],
+            height=self.config["label"]["rect"]["height"],
+            config=self.config["label"]["rect"],
         )
 
         # Add textblock to label
         tb_x = label_padding.x
         if self.scale.x == -1:
-            tb_x -= self.cfg["label"]["rect"]["width"]
+            tb_x -= self.config["label"]["rect"]["width"]
 
-        tb_y = -self.cfg["label"]["rect"]["height"] + top_padding
+        tb_y = -self.config["label"]["rect"]["height"] + top_padding
 
         label.add(
             elem.TextBlock,
             text_content,
             x=tb_x,
             y=tb_y,
-            width=self.cfg["label"]["rect"]["width"] - label_padding.x * 2,
-            height=self.cfg["label"]["rect"]["height"],
-            config=self.cfg["label"],
+            width=self.config["label"]["rect"]["width"] - label_padding.x * 2,
+            height=self.config["label"]["rect"]["height"],
+            config=self.config["label"],
             scale=self.scale,
         )
 
@@ -389,11 +388,11 @@ class Annotation(Component):
         # leaderline rect
         leaderline_rect = self.add(
             elem.Rect,
-            x=-self.cfg["leaderline"]["rect"]["width"] / 2,
-            y=-self.cfg["leaderline"]["rect"]["height"] / 2,
-            width=self.cfg["leaderline"]["rect"]["width"],
-            height=self.cfg["leaderline"]["rect"]["height"],
-            config=self.cfg["leaderline"]["rect"],
+            x=-self.config["leaderline"]["rect"]["width"] / 2,
+            y=-self.config["leaderline"]["rect"]["height"] / 2,
+            width=self.config["leaderline"]["rect"]["width"],
+            height=self.config["leaderline"]["rect"]["height"],
+            config=self.config["leaderline"]["rect"],
         )
 
         # leaderline start location at edge of leaderline_rect
@@ -410,4 +409,4 @@ class Annotation(Component):
 
         path_definition = f"M {start_x} {start_y} {vertical_move} {horizontal_move}"
 
-        self.add(elem.Path, path_definition, config=self.cfg["leaderline"])
+        self.add(elem.Path, path_definition, config=self.config["leaderline"])

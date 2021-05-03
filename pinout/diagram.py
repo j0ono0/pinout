@@ -30,25 +30,25 @@ class Diagram(Component):
 
     def add_image(self, path, *args, embed=False, **kwargs):
         """Associate a PNG, JPG or SVG formatted image to the diagram."""
-        self.add_and_instantiate(Image, path, *args, embed=embed, **kwargs)
+        self.add(Image, path, *args, embed=embed, **kwargs)
 
     def add_legend(self, *args, categories=None, **kwargs):
         """Add a pinlabel legend to the diagram."""
         config = copy.deepcopy(self.conf["legend"])
         kwargs["config"] = self.patch_config(config, kwargs.get("legend", {}))
-        self.add_and_instantiate(Legend, categories, *args, **kwargs)
+        self.add(Legend, categories, *args, **kwargs)
 
     def add_pinlabelset(self, *args, **kwargs):
         """Add a pinlabels to a 'header' of pins in the diagram."""
         config = copy.deepcopy(self.conf["pinlabel"])
         kwargs["config"] = self.patch_config(config, kwargs.get("config", {}))
-        self.add_and_instantiate(PinLabelSet, *args, **kwargs)
+        self.add(PinLabelSet, *args, **kwargs)
 
     def add_annotation(self, *args, **kwargs):
         """Add an annotation to the diagram."""
         config = copy.deepcopy(self.conf["annotation"])
         kwargs["config"] = self.patch_config(config, kwargs.get("config", {}))
-        self.add_and_instantiate(Annotation, *args, **kwargs)
+        self.add(Annotation, *args, **kwargs)
 
     def export(self, path, overwrite=False):
         """Output the diagram in SVG format.

@@ -96,11 +96,10 @@ class Component(SVG):
             if issubclass(type(child), Element):
                 child.scale = self.scale
 
-    def add_and_instantiate(self, cls, *args, **kwargs):
+    def add(self, cls, *args, **kwargs):
         """Instantiate a class and add it to the components children."""
 
-        # if issubclass(cls, Element):
-        #     kwargs["scale"] = self.scale
+        # Do any pre-process on args before instantiation.
 
         instance = cls(*args, **kwargs)
         self.children.append(instance)
@@ -168,7 +167,7 @@ class PinLabelSet(Component):
                 # Horizontal pinset require label_rows to offset vertically
                 offset = Coords(offset.x - pin_x, offset.y + abs(pin_x))
 
-            row = self.add_and_instantiate(
+            row = self.add(
                 Component,
                 x=pin_x + offset.x,
                 y=pin_y + offset.y,
@@ -183,7 +182,7 @@ class PinLabelSet(Component):
 
             definition = f"M {pin_x} {pin_y} {vertical_move} {horizontal_move}"
 
-            leaderline = self.add_and_instantiate(
+            leaderline = self.add(
                 elem.Path,
                 definition=definition,
                 config=leaderline_config,
@@ -217,7 +216,7 @@ class PinLabelSet(Component):
                     {"leaderline": {"stroke": tag_color}},
                 )
                 definition = f"M {row.width} 0 h {label_offset.x}"
-                row.add_and_instantiate(
+                row.add(
                     elem.Path,
                     x=row.width,
                     y=0,
@@ -228,7 +227,7 @@ class PinLabelSet(Component):
                     config=label_config["leaderline"],
                 )
 
-                row.add_and_instantiate(
+                row.add(
                     elem.Label,
                     text_content=label["text_content"],
                     x=row.width,
@@ -256,10 +255,10 @@ class Legend(Component):
         swatch_size = row_height * 2 / 3
         categories = categories or self.conf["tags"].keys()
         for i, tag in enumerate(categories):
-            entry = self.add_and_instantiate(
+            entry = self.add(
                 Component, x=pad.x, y=pad.y + row_height * i, tag=self.cfg["tag"]
             )
-            entry.add_and_instantiate(
+            entry.add(
                 elem.Text,
                 self.conf["tags"][tag]["title"],
                 x=swatch_size * 2,
@@ -269,7 +268,7 @@ class Legend(Component):
                 config=self.cfg["text"],
             )
 
-            # Create pinlabel icon
+            # Create icon based on pinlabel config
             pinlabel_config = copy.deepcopy(self.conf["pinlabel"])
             tag_color = self.conf["tags"][tag]["color"]
             pinlabel_patch = {
@@ -288,21 +287,22 @@ class Legend(Component):
             }
             self.patch_config(pinlabel_config, pinlabel_patch)
 
-            entry.add_and_instantiate(
+            entry.add(
                 elem.Rect,
                 x=0,
-                y=-swatch_size / 2,
+                y=-pinlabel_config["label"]["rect"]["height"] / 2
+                - self.cfg["text"]["size"] / 2,
                 width=swatch_size,
                 height=swatch_size,
                 config=pinlabel_config["label"]["rect"],
             )
 
-            definition = f"M {swatch_size} 0 h {swatch_size/2}"
-            entry.add_and_instantiate(
+            definition = f"M {swatch_size} {-pinlabel_config['label']['text']['size'] / 2} h {swatch_size/2}"
+            entry.add(
                 elem.Path,
                 definition=definition,
                 x=swatch_size,
-                y=0,
+                y=-pinlabel_config["label"]["text"]["size"] / 2,
                 width=swatch_size / 2,
                 height=pinlabel_config["leaderline"]["stroke_width"],
                 config=pinlabel_config["leaderline"],
@@ -355,7 +355,7 @@ class Annotation(Component):
 
         # Add background rect to label
         rect_y = 0 if self.scale.y == -1 else -self.cfg["label"]["rect"]["height"]
-        label.add_and_instantiate(
+        label.add(
             elem.Rect,
             y=rect_y,
             width=self.cfg["label"]["rect"]["width"],
@@ -370,7 +370,7 @@ class Annotation(Component):
 
         tb_y = -self.cfg["label"]["rect"]["height"]
 
-        label.add_and_instantiate(
+        label.add(
             elem.TextBlock,
             text_content,
             x=tb_x,
@@ -384,7 +384,7 @@ class Annotation(Component):
         # Leaderline
 
         # leaderline rect
-        leader_rect = self.add_and_instantiate(
+        leader_rect = self.add(
             elem.Rect,
             x=-self.cfg["leaderline"]["rect"]["width"] / 2,
             y=-self.cfg["leaderline"]["rect"]["height"] / 2,
@@ -399,6 +399,4 @@ class Annotation(Component):
 
         path_definition = f"M 0 0 {vertical_move} {horizontal_move}"
 
-        self.add_and_instantiate(
-            elem.Path, path_definition, config=self.cfg["leaderline"]
-        )
+        self.add(elem.Path, path_definition, config=self.cfg["leaderline"])

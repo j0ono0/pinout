@@ -11,7 +11,7 @@ Component
     
     Scale has no direct affect on Components but is applied to its direct child **Elements**.
 
-    Children should be added via :code:`Component.add_and_instantiate`
+    Children should be added via :code:`Component.add`
 
     Default diagram config settings are accessible via the class variable :code:`Component.conf`.
 
@@ -25,7 +25,7 @@ Component
     
     .. autoproperty:: scale
 
-    .. autoproperty:: add_and_instantiate
+    .. autoproperty:: add
 
         If the added child is type :code:`element` the components scale passed to it automatically.
 

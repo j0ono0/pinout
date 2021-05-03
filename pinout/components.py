@@ -339,9 +339,13 @@ class Annotation(Component):
             text_content = text_content.split("\n")
 
         # Calculate label dimensions
+        line_height = self.cfg["label"]["text"]["line_height"]
+        font_height = self.cfg["label"]["text"]["size"]
+        top_padding = label_padding.y - (line_height - font_height)
         label_height = (
             len(text_content) * self.cfg["label"]["text"]["line_height"]
             + label_padding.y
+            + top_padding
         )
         self.cfg["label"]["rect"]["height"] = label_height
 
@@ -354,7 +358,7 @@ class Annotation(Component):
         self.children.append(label)
 
         # Add background rect to label
-        rect_y = 0 if self.scale.y == -1 else -self.cfg["label"]["rect"]["height"]
+        rect_y = 0 if self.scale.y == -1 else -label_height
         label.add(
             elem.Rect,
             y=rect_y,
@@ -368,23 +372,22 @@ class Annotation(Component):
         if self.scale.x == -1:
             tb_x -= self.cfg["label"]["rect"]["width"]
 
-        tb_y = -self.cfg["label"]["rect"]["height"]
+        tb_y = -self.cfg["label"]["rect"]["height"] + top_padding
 
         label.add(
             elem.TextBlock,
             text_content,
             x=tb_x,
             y=tb_y,
-            width=self.cfg["label"]["rect"]["width"],
+            width=self.cfg["label"]["rect"]["width"] - label_padding.x * 2,
             height=self.cfg["label"]["rect"]["height"],
             config=self.cfg["label"],
             scale=self.scale,
         )
-        ########################
-        # Leaderline
 
+        # Leaderline
         # leaderline rect
-        leader_rect = self.add(
+        leaderline_rect = self.add(
             elem.Rect,
             x=-self.cfg["leaderline"]["rect"]["width"] / 2,
             y=-self.cfg["leaderline"]["rect"]["height"] / 2,
@@ -393,10 +396,18 @@ class Annotation(Component):
             config=self.cfg["leaderline"]["rect"],
         )
 
-        # path definition
-        vertical_move = f"V {offset.y}" if offset.y != 0 else ""
-        horizontal_move = f"H {offset.x}" if offset.x != 0 else ""
+        # leaderline start location at edge of leaderline_rect
+        start_y = 0
+        start_x = 0
+        if offset.y > leaderline_rect.height / 2:
+            start_y = leaderline_rect.height / 2
+        elif -leaderline_rect.height / 2 < offset.y < leaderline_rect.height / 2:
+            start_x = leaderline_rect.width / 2
 
-        path_definition = f"M 0 0 {vertical_move} {horizontal_move}"
+        # leaderline path
+        vertical_move = f"V {offset.y}" if offset.y != 0 else ""
+        horizontal_move = f"H {offset.x + label.width}" if offset.x != 0 else ""
+
+        path_definition = f"M {start_x} {start_y} {vertical_move} {horizontal_move}"
 
         self.add(elem.Path, path_definition, config=self.cfg["leaderline"])

@@ -48,7 +48,7 @@ legend:
   tag: legend
   rect:
     << : *infpanel
-    # height dynamically calculated
+    # height: dynamically calculated
     width: 300
   text:
     fill: [0,0,0]
@@ -99,23 +99,23 @@ informationpanel:
 annotation:
   offset: [50,-50]
   label:
-    padding: [8, 8]
+    padding: [0, 8]
     text: 
       fill: [0, 0, 0]
       family: Verdana, Geneva, sans-serif
-      line_height: 20
+      line_height: 18
       size: 14
       fill: [0, 0, 0]
       weight: normal
     rect:
-      fill: [63, 169, 245]
+      fill: [63, 169, 245, 0]
       # height treated as min-height 
       # if multiple lines provided
       height: 32
       rx: 0
       stroke: [63, 169, 245]
       stroke_width: 0
-      width: 100
+      width: 250
   leaderline:
     stroke: [63, 169, 245]
     stroke_width: 5

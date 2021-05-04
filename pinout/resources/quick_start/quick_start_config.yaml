@@ -21,7 +21,7 @@ legend:
 tags:
   analog:
     title: Analog
-    color: [215, 107, 173]
+    color: [255, 142, 116]
   gpio:
     title: GPIO
     color: [44, 91, 123]

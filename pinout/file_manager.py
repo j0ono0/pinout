@@ -91,7 +91,6 @@ def duplicate(resource_name):
         ],
         "full_sample": [
             ("full_sample", "full_sample_config.yaml"),
-            ("full_sample", "full_sample_config_tags.yaml"),
             ("full_sample", "full_sample_hardware.png"),
             ("full_sample", "full_sample_pinout.py"),
         ],

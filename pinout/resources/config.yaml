@@ -105,14 +105,11 @@ annotation:
       family: Verdana, Geneva, sans-serif
       line_height: 18
       size: 14
-      fill: [0, 0, 0]
       weight: normal
     rect:
-      fill: [63, 169, 245, 0]
+      fill: [63, 169, 245]
       fill_opacity: 0
-      # height treated as min-height 
-      # if multiple lines provided
-      height: 32
+      # height:  Calculated automatically
       rx: 0
       stroke: [63, 169, 245]
       stroke_width: 0
@@ -121,7 +118,7 @@ annotation:
     stroke: [63, 169, 245]
     stroke_width: 5
     rect:
-      fill: [255,255,255,0]
+      fill: [255,255,255]
       fill_opacity: 0
       stroke: [63, 169, 245]
       stroke_width: 5

@@ -45,11 +45,11 @@ class Diagram(Component):
         kwargs["config"] = self.patch_config(config, kwargs.get("config", {}))
         self.add(PinLabelSet, *args, **kwargs)
 
-    def add_annotation(self, *args, **kwargs):
+    def add_annotation(self, text_content, *args, **kwargs):
         """Add an annotation to the diagram."""
         config = copy.deepcopy(self.config["annotation"])
         kwargs["config"] = self.patch_config(config, kwargs.get("config", {}))
-        self.add(Annotation, *args, **kwargs)
+        self.add(Annotation, text_content, *args, **kwargs)
 
     def export(self, path, overwrite=False):
         """Output the diagram in SVG format.

@@ -39,12 +39,13 @@ class Component(SVG):
                 # The child has no bounding_coords.
                 pass
 
-        return BoundingCoords(
-            min((self.x + x_min) * self.scale.x, (self.x + x_max) * self.scale.x),
-            min((self.y + y_min) * self.scale.y, (self.y + y_max) * self.scale.y),
-            max((self.x + x_min) * self.scale.x, (self.x + x_max) * self.scale.x),
-            max((self.y + y_min) * self.scale.y, (self.y + y_max) * self.scale.y),
+        x_min, x_max = sorted(
+            [(self.x + x_min) * self.scale.x, (self.x + x_max) * self.scale.x]
         )
+        y_min, y_max = sorted(
+            [(self.y + y_min) * self.scale.y, (self.y + y_max) * self.scale.y]
+        )
+        return BoundingCoords(x_min, y_min, x_max, y_max)
 
     @property
     def bounding_rect(self):
@@ -162,22 +163,24 @@ class PinLabelSet(Component):
         for i, label_list in enumerate(labels):
             pin_x = pitch.x * i * self.scale.x
             pin_y = pitch.y * i * self.scale.y
-
+            row_offset = offset
             if pitch[1] == 0:
                 # Horizontal pinset require label_rows to offset vertically
-                offset = Coords(offset.x - pin_x, offset.y + abs(pin_x))
+                row_offset = Coords(offset.x - pin_x, offset.y + abs(pin_x))
 
             row = self.add(
                 Component,
-                x=pin_x + offset.x,
-                y=pin_y + offset.y,
+                x=pin_x + row_offset.x,
+                y=pin_y + row_offset.y,
             )
 
             # Create a leaderline
             leaderline_config = copy.deepcopy(self.config["leaderline"])
-            vertical_move = f"V {offset.y}" if offset.y != 0 else ""
+            vertical_move = f"V {row_offset.y}" if row_offset.y != 0 else ""
             horizontal_move = (
-                f"H {offset.x + pitch.x * i * self.scale.x}" if offset.x != 0 else ""
+                f"H {row_offset.x + pitch.x * i * self.scale.x}"
+                if row_offset.x != 0
+                else ""
             )
 
             definition = f"M {pin_x} {pin_y} {vertical_move} {horizontal_move}"
@@ -248,7 +251,7 @@ class Legend(Component):
 
     def __init__(self, categories, *args, **kwargs):
         super().__init__(*args, **kwargs)
-
+        # NOTE: pad.y sets the text **baseline**
         pad = Coords(*self.config["padding"])
         row_height = self.config["row_height"]
         swatch_size = row_height * 2 / 3
@@ -308,7 +311,9 @@ class Legend(Component):
             )
 
         # Add an panel *behind* component
-        self.config["rect"]["height"] = row_height * len(categories) + pad.y
+        self.config["rect"]["height"] = (
+            row_height * len(categories) + pad.y - self.config["text"]["size"]
+        )
         self.children.insert(
             0,
             elem.Rect(

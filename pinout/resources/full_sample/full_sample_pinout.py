@@ -8,7 +8,7 @@
 from pinout.diagram import Diagram
 
 # Custom pinlabel config
-long_label_cfg = {"offset": (74, 0), "label": {"rect": {"width": 110}}}
+long_label_cfg = {"offset": (66, 0), "label": {"rect": {"width": 108}}}
 
 # Pin label information grouped into dicts that render sets of labels
 pindata = [
@@ -73,6 +73,7 @@ pindata = [
     {
         "x": 62,
         "y": 95,
+        "pitch": (30, 0),
         "offset": (-122, -145),
         "labels": [
             [("b", "led"), ("AUX_b", "pwm"), ("PWM", "pwm")],
@@ -85,22 +86,29 @@ pindata = [
 diagram = Diagram(tag="full_sample")
 
 # Override default config with user supplied values
+# This file includes 'tag' information to style pinlabels
 diagram.add_config("full_sample_config.yaml")
 
-# Patch config with style tags
-diagram.add_config("full_sample_config_tags.yaml")
-
-# Link external resources
+# Add and embed external image
 diagram.add_image("full_sample_hardware.png", width=220, height=300, embed=True)
 
 # Add pinlabel legend
+
 diagram.add_legend(
-    x=-242, y=400, categories=["analog", "comms", "gpio", "led", "pwm", "pwr"]
+    x=-234, y=380, categories=["analog", "comms", "gpio", "led", "pwm", "pwr"]
 )
 
 # Add pinlabels
 for data in pindata:
     diagram.add_pinlabelset(**data)
+
+# Add an annotation label
+diagram.add_annotation(
+    "USB-C connector  \nHost/Device functionality",
+    x=110,
+    y=20,
+    config={"offset": (114, -69)},
+)
 
 # Export final SVG diagram
 diagram.export("full_sample_diagram.svg", True)

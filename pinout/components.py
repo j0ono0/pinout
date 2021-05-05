@@ -106,13 +106,14 @@ class Component(SVG):
         self.children.append(instance)
         return instance
 
-    def patch_config(self, source, patch):
+    @staticmethod
+    def patch_config(source, patch):
         """Recursively update source with patch dict items."""
         try:
             for key, val in patch.items():
                 if type(val) == dict:
                     source.setdefault(key, {})
-                    self.patch_config(source[key], patch[key])
+                    Component.patch_config(source[key], patch[key])
                 else:
                     source[key] = val
         except KeyError:
@@ -328,6 +329,12 @@ class Legend(Component):
 
 
 class Annotation(Component):
+    """Add text with a leaderline styled as an annotation.
+
+    :param text_content: Annotation text
+    :type text_content: String or List
+    """
+
     def __init__(self, text_content, *args, **kwargs):
         super().__init__(*args, **kwargs)
 

@@ -3,7 +3,7 @@
 # ===========================================
 #
 # These are a small subset of configuration 
-# settings that demonstrate their function.
+# settings.
 #
 # See docs to access a full config.yaml file.
 #
@@ -16,7 +16,13 @@ pinlabel:
   tag: pl
 
 legend:
-  width: 238
+  rect:
+    width: 220
+
+#
+# Tags are used to provide color to pinlabels
+# and as a data source to generate a legend
+#
 
 tags:
   analog:

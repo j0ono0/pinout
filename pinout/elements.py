@@ -37,7 +37,7 @@ class SVG:
     :type y: int, optional
     :param scale: Primarily used to define direction of width, height, and coordinates, from an origin. Defaults to (1, 1)
     :type scale: tuple, optional
-    :param rotation:  (***Currently implemented***) Rotation around an origin, defaults to 0
+    :param rotation:  (***Currently NOT implemented***) Rotation around an origin, defaults to 0
     :type rotation: int, optional
     :param tag: Associate an entity for application of predefined attributes/styles, defaults to ""
     :type tag: str, optional
@@ -70,7 +70,8 @@ class SVG:
         # NOTE: set here for override by Component
         self._scale = value
 
-    def extract_scale(self, coords):
+    @staticmethod
+    def extract_scale(coords):
         """Separate and scale information from *coords*.
 
         :param coords: (x, y) coordinates or (width, height) dimensions.

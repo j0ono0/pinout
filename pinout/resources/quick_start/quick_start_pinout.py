@@ -1,5 +1,8 @@
 from pinout import diagram
 
+# Custom pinlabel configuration
+long_label_config = {"label": {"rect": {"width": 108}}}
+
 # Pin label information grouped into dicts that render sets of labels
 pin_headers = [
     {
@@ -9,9 +12,9 @@ pin_headers = [
         "pitch": (0, 30),
         "offset": (-58, 0),
         "labels": [
-            [("Vcc", "pwr")],
+            [("Vcc", "pwr", long_label_config)],
             [("1", "gpio"), ("A1", "analog")],
-            [("2", "gpio"), ("PWM", "pwm")],
+            [("2", "gpio"), ("PWM", "pwm", {"offset": (66, 0)})],
         ],
     },
     {
@@ -21,7 +24,7 @@ pin_headers = [
         "pitch": (0, 30),
         "offset": (58, 0),
         "labels": [
-            [("GND", "pwr")],
+            [("GND", "pwr", long_label_config)],
             [("7", "gpio"), ("A3", "analog")],
             [("6", "gpio"), ("A2", "analog"), ("PWM", "pwm")],
         ],
@@ -33,10 +36,10 @@ pin_headers = [
         "pitch": (30, 0),
         "offset": (-107, 40),
         "labels": [
-            [("RST", "pwr")],
+            [("RST", "pwr", long_label_config)],
             [("3", "gpio"), ("ADC0", "analog")],
             [("4", "gpio"), ("ADC1", "analog"), ("PWM", "pwm")],
-            [("5", "gpio"), ("PWM", "pwm")],
+            [("5", "gpio"), ("PWM", "pwm", {"offset": (66, 0)})],
         ],
     },
 ]

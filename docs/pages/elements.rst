@@ -9,7 +9,7 @@ SVG
 
 .. autoclass:: SVG
 
-    *NOTE*: :code:`self.cfg` is a local config used for customising appearance on a per-instance level. this config may, in part, be passed onto children. 
+    *NOTE*: :code:`self.config` is a local config used for customising appearance on a per-instance level. this config may, in part, be passed onto children. 
 
     .. autoproperty:: scale
 
@@ -18,7 +18,11 @@ SVG
 
     .. automethod:: extract_scale
 
-        Scale and coordinates (or dimensions) can be defined by users as a combined attribute - such as *offset* in PinLabel - but are stored and processed as two separate values when rendering the SVG. *extract_scale* stores the scale as a attribute and returns the *coords* with as values. **NOTE**: Existing scale property is only overridded if the provided coords include a negative value.
+        Scale and coordinates (or dimensions) can be defined by users as a combined attribute - such as *offset* in PinLabel - but are stored and processed as two separate values when rendering the SVG. *extract_scale* extracts the scale - a tuple of +/-1 representing direction - and converts the coordinates to absolute values. For example::
+        
+            >>> value, scale = extract_scale((-5, 30))
+            >>> value == (5, 30)
+            >>> scale == (-1, 1) 
 
 
 Element
@@ -45,7 +49,7 @@ Image
 .. autoclass:: Image
     :show-inheritance:
 
-    *IMPORTANT*: Image width and height parameters must be supplied for the image to display! *pinout* does not auto-detect these attributes.
+    *IMPORTANT*: Image width and height parameters must be supplied for the image to display! *pinout* does not auto-detect these attributes. Using images at a **1:1 ratio** is strongly recommended.
     
     Where :code:`embed=False` the path is relative to the exported file. Where :code:`embed=True` the path is relative to the current working directory.
 

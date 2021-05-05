@@ -9,11 +9,9 @@ Component
 .. autoclass:: Component
     :show-inheritance:
     
-    Scale has no direct affect on Components but is applied to its direct child **Elements**.
-
     Children should be added via :code:`Component.add`
 
-    Default diagram config settings are accessible via the class variable :code:`Component.conf`.
+    Default diagram config settings are accessible via the class variable :code:`Component.config`.
 
     .. autoproperty:: bounding_coords
 
@@ -27,11 +25,9 @@ Component
 
     .. autoproperty:: add
 
-        If the added child is type :code:`element` the components scale passed to it automatically.
-
     .. automethod:: patch_config
     
-    Used to modify existing config values as they are passed to children
+        Used to modify existing config values as they are passed to children
     
     .. automethod:: render
 
@@ -52,8 +48,12 @@ Diagram
             >>> py -m pinout.file_manager --duplicate config
 
     .. automethod:: add_image
-        
-        Associate a PNG, JPG or SVG formatted image to the diagram. *IMPORTANT*: Image width and height parameters must be supplied for the image to display! *pinout* does not auto-detect these attributes.
+                
+        .. important ::
+            
+            Image width and height parameters must be supplied for the image to display! *pinout* does not auto-detect these attributes. 
+            
+            Using images at a **1:1 ratio** is strongly recommended.
 
         :param path: Path to the image file. *Note*: Where :code:`embed=False` the path is relative to the exported file. Where :code:`embed=True` the path is relative to the current working directory.
         :type path: string
@@ -86,9 +86,11 @@ Legend
 .. autoclass:: Legend
     :show-inheritance:
 
-*Note*: *pinout* does not calculate text widths. a manually provided with should be included to ensure text remains enclosed within the legend.    
+*Note*: *pinout* does not calculate text widths. A manually provided width may be required to ensure text remains enclosed within the legend.
 
 Annotation
 ----------
 
 .. autoclass:: Annotation
+
+    An alternative method to 'label' a diagram, suitable for highlighting hardware details.  

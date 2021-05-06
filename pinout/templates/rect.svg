@@ -1,3 +1,14 @@
+<clipPath id="clipid-{{uid}}">
+    <rect
+    x="{{ x }}" 
+    y="{{ y }}" 
+    width="{{ width }}" 
+    height="{{ height }}" 
+    rx="{{ rx }}" 
+    transform="scale({{ scale.x }} {{ scale.y }})" 
+/>
+  </clipPath>
+
 <rect
     {% if tag %} class="{{ tag }}"{% endif %} 
     x="{{ x }}" 
@@ -9,5 +20,6 @@
     fill="{{ fill|rgb }}" 
     fill-opacity="{{ fill_opacity }}" 
     stroke="{{ stroke|rgb }}" 
-    stroke-width="{{ stroke_width }}"
+    stroke-width="{{ stroke_width * 2 }}"
+    clip-path="url(#clipid-{{uid}})" 
 />

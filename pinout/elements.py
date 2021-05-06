@@ -5,6 +5,7 @@
 # Base building blocks to create SVG components
 import base64
 import pathlib
+import uuid
 from collections import namedtuple
 from .templates import (
     svg_group,
@@ -165,13 +166,24 @@ class Image(Element):
             if media_type == "svg":
                 with path.open() as f:
                     svg_data = f.read()
-                return svg_group.render(x=self.x, y=self.y, content=svg_data)
+                # Extract JUST the <svg> markup with no <XML> tag
+                import xml.etree.ElementTree as ET
+
+                tree = ET.fromstring(svg_data)
+                just_svg_tag = ET.tostring(tree)
+                return svg_group.render(
+                    x=self.x, y=self.y, scale=self.scale, content=just_svg_tag
+                )
             else:
                 encoded_img = base64.b64encode(open(self.href, "rb").read())
                 path = f"data:image/{media_type};base64,{encoded_img.decode('utf-8')}"
 
         return svg_image.render(
-            x=self.x, y=self.y, width=self.width, height=self.height, href=path
+            x=self.x,
+            y=self.y,
+            width=self.width,
+            height=self.height,
+            href=path,
         )
 
 
@@ -191,6 +203,7 @@ class Rect(Element):
             x=self.x,
             y=self.y,
             scale=self.scale,
+            uid=uuid.uuid1(),
             **self.config,
         )
 

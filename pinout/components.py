@@ -340,6 +340,11 @@ class Annotation(Component):
 
         # Extract scale from offset and update x and y
         offset, self.scale = self.extract_scale(self.config["offset"])
+
+        # override scale if explicitly provided
+        if "scale" in kwargs.keys():
+            self.scale = Coords(*kwargs["scale"])
+
         self.x = self.x * self.scale.x
         self.y = self.y * self.scale.y
 
@@ -360,11 +365,14 @@ class Annotation(Component):
         )
         self.config["label"]["rect"]["height"] = label_height
 
+        # label required nudging to align with leaderline
+        stroke_shim = self.config["leaderline"]["stroke_width"] / 2
+
         # Annotation label
         label = Component(
             tag="anno_label",
-            x=offset.x,
-            y=offset.y,
+            x=offset.x - stroke_shim,
+            y=offset.y + stroke_shim,
         )
         self.children.append(label)
 
@@ -377,7 +385,6 @@ class Annotation(Component):
             height=self.config["label"]["rect"]["height"],
             config=self.config["label"]["rect"],
         )
-
         # Add textblock to label
         tb_x = label_padding.x
         if self.scale.x == -1:
@@ -417,7 +424,7 @@ class Annotation(Component):
 
         # leaderline path
         vertical_move = f"V {offset.y}" if offset.y != 0 else ""
-        horizontal_move = f"H {offset.x + label.width}" if offset.x != 0 else ""
+        horizontal_move = f"H {offset.x + label.width - stroke_shim}"
 
         path_definition = f"M {start_x} {start_y} {vertical_move} {horizontal_move}"
 

@@ -109,7 +109,7 @@ annotation:
     rect:
       fill: [63, 169, 245]
       fill_opacity: 0
-      # height:  Calculated automatically
+      # height:  #Calculated automatically#
       rx: 0
       stroke: [63, 169, 245]
       stroke_width: 0
@@ -123,8 +123,8 @@ annotation:
       stroke: [63, 169, 245]
       stroke_width: 5
       rx: 0
-      width: 13
-      height: 13
+      width: 16
+      height: 16
 
 
 

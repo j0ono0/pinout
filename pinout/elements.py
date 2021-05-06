@@ -109,8 +109,12 @@ class Element(SVG):
         :return: (x_min, y_min, x_max, y_max)
         :rtype: BoundingCoords (namedtuple)
         """
-        x_min, x_max = sorted([self.x, (self.x + self.width)])
-        y_min, y_max = sorted([self.y, (self.y + self.height)])
+        x_min, x_max = sorted(
+            [self.x * self.scale.x, (self.x + self.width) * self.scale.x]
+        )
+        y_min, y_max = sorted(
+            [self.y * self.scale.y, (self.y + self.height) * self.scale.y]
+        )
         return BoundingCoords(x_min, y_min, x_max, y_max)
 
     @property

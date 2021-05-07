@@ -5,4 +5,5 @@ transform="scale({{ scale.x }} {{ scale.y }}) translate({{ x }} {{  y }}) "
 fill="none" 
 stroke="{{ stroke|rgb }}"
 stroke-width="{{ stroke_width }}"
+ shape-rendering="geometricPrecision"
 />

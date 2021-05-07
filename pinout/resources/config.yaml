@@ -107,24 +107,24 @@ annotation:
       size: 14
       weight: normal
     rect:
-      fill: [63, 169, 245]
+      fill: [246, 148, 30]
       fill_opacity: 0
       # height:  #Calculated automatically#
       rx: 0
-      stroke: [63, 169, 245]
+      stroke: [246, 148, 30]
       stroke_width: 0
       width: 260
   leaderline:
-    stroke: [63, 169, 245]
-    stroke_width: 5
+    stroke: [246, 148, 30]
+    stroke_width: 2
     rect:
-      fill: [255,255,255]
-      fill_opacity: 0
-      stroke: [63, 169, 245]
-      stroke_width: 5
+      fill: [246, 148, 30]
+      fill_opacity: 1
+      stroke: [246, 148, 30]
+      stroke_width: 2
       rx: 0
-      width: 16
-      height: 16
+      width: 12
+      height: 12
 
 
 

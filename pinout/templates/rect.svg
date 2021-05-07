@@ -22,4 +22,5 @@
     stroke="{{ stroke|rgb }}" 
     stroke-width="{{ stroke_width * 2 }}"
     clip-path="url(#clipid-{{uid}})" 
+    shape-rendering="geometricPrecision"
 />

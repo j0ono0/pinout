@@ -77,6 +77,7 @@ def duplicate(resource_name):
         + config
         + quick_start
         + full_sample
+        + annotations
 
     :param resource_name: Name of resource to duplicate.
     :type resource_name: string
@@ -93,6 +94,11 @@ def duplicate(resource_name):
             ("full_sample", "full_sample_config.yaml"),
             ("full_sample", "full_sample_hardware.png"),
             ("full_sample", "full_sample_pinout.py"),
+        ],
+        "annotations": [
+            ("annotations", "annotations.py"),
+            ("annotations", "annotations_config.yaml"),
+            ("shared", "hardware_board.svg"),
         ],
     }
 
@@ -114,7 +120,7 @@ if __name__ == "__main__":
         "-d",
         "--duplicate",
         action="store",
-        choices=["quick_start", "full_sample", "config"],
+        choices=["quick_start", "full_sample", "config", "annotations"],
         help="duplicate pinout resources",
     )
     args = parser.parse_args()

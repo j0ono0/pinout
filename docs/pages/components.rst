@@ -25,6 +25,8 @@ Component
 
     .. autoproperty:: add
 
+        This is a convenience function that appends an object to instance.children. It also returns the instance allowing instance creation and adding a single line of code. 
+
     .. automethod:: patch_config
     
         Used to modify existing config values as they are passed to children

@@ -1,0 +1,90 @@
+# Config values can be documented here and override 
+# the default config when applied to a diagram.  
+# Values set here are applied to all Annotation component instances. Setting common style values here is recommended.
+annotation:
+  offset: [200, 0]
+  label:
+    rect:
+      width: 180
+
+
+# Component styling can be extended beyond the default offerings. Additional entries can be included in the YAML file and accessed via the diagram's config attribute.
+anno_2_usb:
+  offset: [0, -40]
+  label:
+    padding: [16, 4]
+    text:
+      size: 14
+      line_height: 15
+      weight: bold
+      fill: [255, 255, 255]
+    rect:
+      width: 110
+      fill_opacity: 1
+  leaderline:
+    stroke_width: 12
+    rect:
+      fill_opacity: 0
+
+##################################################################
+# Ordinarily anno_3_defaults would be named 'annotation' and replace the one above. To Demonstrate three samples but keep a single config file we will patch 'annotation' with 'anno_3_defaults' in the Python script 
+
+# Some variables to make consistence easier
+orange: &orange [246, 148, 30] 
+blue: &blue [63, 169, 245] 
+
+anno_3_defaults:
+  label:
+    padding: [8, 8]
+    rect:
+      fill: *blue
+      fill_opacity: 0.8
+      width: 180
+    text:
+      fill: [255, 255, 255]
+  leaderline:
+    stroke_width: 2
+    stroke: *blue
+    rect:
+      fill: *blue
+      fill_opacity: 0.5
+      stroke: *blue
+      stroke_width: 2
+      width: 18
+      height: 18
+      rx: 9
+
+# The following entries use anno_3_defaults as a base then overwrite with their own unique attributes.
+
+anno_3_usb:
+  offset: [150, 29]
+    
+anno_3_led:
+  offset: [173, 0]
+  leaderline:
+    rect:
+      fill_opacity: 0
+      height: 50
+      rx: 25
+      width: 50
+
+anno_3_mc:
+  offset: [150, 0]
+  label:
+    rect:
+      fill: *orange
+  leaderline:
+    stroke: *orange
+    rect:
+      fill: *orange
+      stroke: *orange
+
+anno_3_header: 
+  offset: [150, -79]
+  leaderline:
+    rect:
+      fill_opacity: 0
+      width: 134
+      height: 46
+      rx: 20
+

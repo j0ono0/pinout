@@ -97,12 +97,14 @@ class Component(SVG):
             if issubclass(type(child), Element):
                 child.scale = self.scale
 
-    def add(self, cls, *args, **kwargs):
-        """Instantiate a class and add it to the components children."""
+    def add(self, instance):
+        """Add an instance to the component's children.
 
-        # Do any pre-process on args before instantiation.
-
-        instance = cls(*args, **kwargs)
+        :param instance: Component or Element
+        :type instance: Component or Element
+        :return: instance attribute
+        :rtype: Component or Element
+        """
         self.children.append(instance)
         return instance
 
@@ -170,9 +172,10 @@ class PinLabelSet(Component):
                 row_offset = Coords(offset.x - pin_x, offset.y + abs(pin_x))
 
             row = self.add(
-                Component,
-                x=pin_x + row_offset.x,
-                y=pin_y + row_offset.y,
+                Component(
+                    x=pin_x + row_offset.x,
+                    y=pin_y + row_offset.y,
+                )
             )
 
             # Create a leaderline
@@ -187,9 +190,10 @@ class PinLabelSet(Component):
             definition = f"M {pin_x} {pin_y} {vertical_move} {horizontal_move}"
 
             leaderline = self.add(
-                elem.Path,
-                definition=definition,
-                config=leaderline_config,
+                elem.Path(
+                    definition=definition,
+                    config=leaderline_config,
+                )
             )
 
             # Add labels to row
@@ -221,25 +225,27 @@ class PinLabelSet(Component):
                 )
                 definition = f"M {row.width} 0 h {label_offset.x}"
                 row.add(
-                    elem.Path,
-                    x=row.width,
-                    y=0,
-                    width=label_offset.x,
-                    height=self.config["leaderline"]["stroke_width"],
-                    scale=self.scale,
-                    definition=definition,
-                    config=label_config["leaderline"],
+                    elem.Path(
+                        x=row.width,
+                        y=0,
+                        width=label_offset.x,
+                        height=self.config["leaderline"]["stroke_width"],
+                        scale=self.scale,
+                        definition=definition,
+                        config=label_config["leaderline"],
+                    )
                 )
 
                 row.add(
-                    elem.Label,
-                    text_content=label["text_content"],
-                    x=row.width,
-                    y=-label_config["label"]["rect"]["height"] / 2,
-                    width=label_config["label"]["rect"]["width"],
-                    height=label_config["label"]["rect"]["height"],
-                    scale=self.scale,
-                    config=label_config["label"],
+                    elem.Label(
+                        text_content=label["text_content"],
+                        x=row.width,
+                        y=-label_config["label"]["rect"]["height"] / 2,
+                        width=label_config["label"]["rect"]["width"],
+                        height=label_config["label"]["rect"]["height"],
+                        scale=self.scale,
+                        config=label_config["label"],
+                    )
                 )
 
 
@@ -259,16 +265,17 @@ class Legend(Component):
         categories = categories or Component.config["tags"].keys()
         for i, tag in enumerate(categories):
             entry = self.add(
-                Component, x=pad.x, y=pad.y + row_height * i, tag=self.config["tag"]
+                Component(x=pad.x, y=pad.y + row_height * i, tag=self.config["tag"])
             )
             entry.add(
-                elem.Text,
-                Component.config["tags"][tag]["title"],
-                x=swatch_size * 2,
-                y=0,
-                width=self.config["rect"]["width"],
-                height=row_height,
-                config=self.config["text"],
+                elem.Text(
+                    Component.config["tags"][tag]["title"],
+                    x=swatch_size * 2,
+                    y=0,
+                    width=self.config["rect"]["width"],
+                    height=row_height,
+                    config=self.config["text"],
+                )
             )
 
             # Create icon based on pinlabel config
@@ -291,24 +298,26 @@ class Legend(Component):
             self.patch_config(pinlabel_config, pinlabel_patch)
 
             entry.add(
-                elem.Rect,
-                x=0,
-                y=-pinlabel_config["label"]["rect"]["height"] / 2
-                - self.config["text"]["size"] / 2,
-                width=swatch_size,
-                height=swatch_size,
-                config=pinlabel_config["label"]["rect"],
+                elem.Rect(
+                    x=0,
+                    y=-pinlabel_config["label"]["rect"]["height"] / 2
+                    - self.config["text"]["size"] / 2,
+                    width=swatch_size,
+                    height=swatch_size,
+                    config=pinlabel_config["label"]["rect"],
+                )
             )
 
             definition = f"M {swatch_size} {-pinlabel_config['label']['text']['size'] / 2} h {swatch_size/2}"
             entry.add(
-                elem.Path,
-                definition=definition,
-                x=swatch_size,
-                y=-pinlabel_config["label"]["text"]["size"] / 2,
-                width=swatch_size / 2,
-                height=pinlabel_config["leaderline"]["stroke_width"],
-                config=pinlabel_config["leaderline"],
+                elem.Path(
+                    definition=definition,
+                    x=swatch_size,
+                    y=-pinlabel_config["label"]["text"]["size"] / 2,
+                    width=swatch_size / 2,
+                    height=pinlabel_config["leaderline"]["stroke_width"],
+                    config=pinlabel_config["leaderline"],
+                )
             )
 
         # Add an panel *behind* component
@@ -379,11 +388,12 @@ class Annotation(Component):
         # Add background rect to label
         rect_y = 0 if self.scale.y == -1 else -label_height
         label.add(
-            elem.Rect,
-            y=rect_y,
-            width=self.config["label"]["rect"]["width"],
-            height=self.config["label"]["rect"]["height"],
-            config=self.config["label"]["rect"],
+            elem.Rect(
+                y=rect_y,
+                width=self.config["label"]["rect"]["width"],
+                height=self.config["label"]["rect"]["height"],
+                config=self.config["label"]["rect"],
+            )
         )
         # Add textblock to label
         tb_x = label_padding.x
@@ -393,25 +403,27 @@ class Annotation(Component):
         tb_y = -self.config["label"]["rect"]["height"] + top_padding
 
         label.add(
-            elem.TextBlock,
-            text_content,
-            x=tb_x,
-            y=tb_y,
-            width=self.config["label"]["rect"]["width"] - label_padding.x * 2,
-            height=self.config["label"]["rect"]["height"],
-            config=self.config["label"],
-            scale=self.scale,
+            elem.TextBlock(
+                text_content,
+                x=tb_x,
+                y=tb_y,
+                width=self.config["label"]["rect"]["width"] - label_padding.x * 2,
+                height=self.config["label"]["rect"]["height"],
+                config=self.config["label"],
+                scale=self.scale,
+            )
         )
 
         # Leaderline
         # leaderline rect
         leaderline_rect = self.add(
-            elem.Rect,
-            x=-self.config["leaderline"]["rect"]["width"] / 2,
-            y=-self.config["leaderline"]["rect"]["height"] / 2,
-            width=self.config["leaderline"]["rect"]["width"],
-            height=self.config["leaderline"]["rect"]["height"],
-            config=self.config["leaderline"]["rect"],
+            elem.Rect(
+                x=-self.config["leaderline"]["rect"]["width"] / 2,
+                y=-self.config["leaderline"]["rect"]["height"] / 2,
+                width=self.config["leaderline"]["rect"]["width"],
+                height=self.config["leaderline"]["rect"]["height"],
+                config=self.config["leaderline"]["rect"]
+            )
         )
 
         # leaderline start location at edge of leaderline_rect
@@ -428,4 +440,4 @@ class Annotation(Component):
 
         path_definition = f"M {start_x} {start_y} {vertical_move} {horizontal_move}"
 
-        self.add(elem.Path, path_definition, config=self.config["leaderline"])
+        self.add(elem.Path(path_definition, config=self.config["leaderline"]))

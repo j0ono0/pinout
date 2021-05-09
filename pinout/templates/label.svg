@@ -7,15 +7,27 @@
     {% endif %}
 >
     <rect 
-    stroke="{{ rect.stroke|rgb }}" 
-    stroke-width="{{ rect.stroke_width }}" 
-    fill="{{ rect.fill|rgb }}" 
-    class="label_box" 
-    x="0" 
-    y="0" 
-    width="{{ rect.width }}" 
-    height="{{ rect.height }}" 
-    rx="{{ rect.rx }}" />
+        stroke="{{ rect.stroke|rgb }}" 
+        stroke-width="{{ rect.stroke_width }}" 
+        fill="{{ rect.fill|rgb }}" 
+        class="label_box" 
+        x="0" 
+        y="0" 
+        width="{{ rect.width }}" 
+        height="{{ rect.height }}" 
+        rx="{{ rect.rx }}" 
+        
+        {% if scale.y == -1 %}
+        transform="
+            scale(1 {{scale.y}}) 
+            translate(0 {{rect.height * scale.y}}) 
+            skewX({{ rect.skew_x}})
+        " 
+        {% else %}
+        transform="skewX({{ rect.skew_x}})" 
+        {% endif %}
+        
+    />
     <text
         x="{{ rect.width/2 * scale.x }}"
         y="{{ rect.height/2 * scale.y }}"

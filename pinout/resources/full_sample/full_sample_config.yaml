@@ -1,6 +1,15 @@
 diagram:
   tag: full-sample-pinout 
 
+pinlabel:
+  offset: [3,0]
+  label:
+    rect:
+      skew_x: -15
+      height: 24
+  leaderline:
+    stroke_width: 1
+
 legend:
   rect:
     rx: 2

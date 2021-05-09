@@ -224,6 +224,7 @@ class PinLabelSet(Component):
                     {"leaderline": {"stroke": tag_color}},
                 )
                 definition = f"M {row.width} 0 h {label_offset.x}"
+                """
                 row.add(
                     elem.Path(
                         x=row.width,
@@ -235,11 +236,11 @@ class PinLabelSet(Component):
                         config=label_config["leaderline"],
                     )
                 )
-
+                """
                 row.add(
                     elem.Label(
                         text_content=label["text_content"],
-                        x=row.width,
+                        x=row.width + self.config["offset"][0],
                         y=-label_config["label"]["rect"]["height"] / 2,
                         width=label_config["label"]["rect"]["width"],
                         height=label_config["label"]["rect"]["height"],
@@ -422,7 +423,7 @@ class Annotation(Component):
                 y=-self.config["leaderline"]["rect"]["height"] / 2,
                 width=self.config["leaderline"]["rect"]["width"],
                 height=self.config["leaderline"]["rect"]["height"],
-                config=self.config["leaderline"]["rect"]
+                config=self.config["leaderline"]["rect"],
             )
         )
 

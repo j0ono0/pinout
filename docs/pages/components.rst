@@ -95,4 +95,5 @@ Annotation
 
 .. autoclass:: Annotation
 
-    An alternative method to 'label' a diagram, suitable for highlighting hardware details.  
+    An alternative method to 'label' a diagram, suitable for highlighting hardware details.
+    See Annotation section for usage setup and examples :ref:`Annotation samples`

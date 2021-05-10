@@ -4,6 +4,7 @@
 
 diagram:
   tag: pinout
+  padding: [20, 20]
 
 text: &text
     fill: [0, 0, 0]

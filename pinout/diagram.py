@@ -3,7 +3,7 @@ import os
 from collections import namedtuple
 from pathlib import Path
 from . import file_manager
-from .elements import Image
+from .elements import Image, Coords, BoundingBox
 from .components import Component, Legend, PinLabelSet, Annotation
 from .templates import svg
 
@@ -72,6 +72,13 @@ class Diagram(Component):
         for c in self.children:
             output += c.render()
 
+        # Add padding to viewbox
+        padding = Coords(*self.config["diagram"]["padding"])
+        x, y, w, h = self.bounding_rect
+        viewbox = BoundingBox(
+            x - padding.x, y - padding.y, w + padding.x * 2, h + padding.y * 2
+        )
+
         # Render final SVG file
         path.write_text(
             svg.render(
@@ -79,7 +86,7 @@ class Diagram(Component):
                 y=0,
                 width=self.width,
                 height=self.height,
-                viewbox=self.bounding_rect,
+                viewbox=viewbox,
                 tag=self.tag,
                 content=output,
             )

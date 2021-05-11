@@ -1,19 +1,43 @@
+import pytest
 from pinout.diagram import Diagram
 from pinout.components import Component
 from pinout import elements as elem
 
 
-def component_coords():
+@pytest.mark.parametrize(
+    "component, element, answer",
+    [
+        [
+            Component(x=20, y=10, scale=(1, 1)),
+            elem.Rect(x=20, y=10, width=10, height=10),
+            (40, 20, 50, 30),
+        ],
+        [
+            Component(x=20, y=10, scale=(-1, -1)),
+            elem.Rect(x=20, y=10, width=10, height=10),
+            (-50, -30, -40, -20),
+        ],
+        [
+            Component(x=20, y=10, scale=(1, 1)),
+            elem.Rect(x=-30, y=-20, width=10, height=10),
+            (-10, -10, 0, 0),
+        ],
+        [
+            Component(x=20, y=10, scale=(-1, -1)),
+            elem.Rect(x=-30, y=-20, width=10, height=10),
+            (0, 0, 10, 10),
+        ],
+        # scaled element (Rect should not alter bounding_coords)
+        [
+            Component(x=20, y=10, scale=(1, 1)),
+            elem.Rect(x=20, y=10, width=10, height=10, scale=(-1, -1)),
+            (40, 20, 50, 30),
+        ],
+    ],
+)
+def test_component_and_rect_element(component, element, answer):
     diagram = Diagram()
-    c1 = diagram.add(Component())
+    c01 = diagram.add(component)
+    r01 = c01.add(element)
 
-    r1 = c1.add(elem.Rect(x=-50, y=-50, width=10, height=10))
-    r2 = c1.add(elem.Rect(x=40, y=-50, width=10, height=10))
-    r3 = c1.add(elem.Rect(x=-50, y=40, width=10, height=10))
-    r4 = c1.add(elem.Rect(x=40, y=40, width=10, height=10))
-
-    return c1.bounding_coords
-
-
-def test_component_coords():
-    assert component_coords() == (-50, -50, 50, 50)
+    assert diagram.bounding_coords == answer

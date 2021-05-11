@@ -1,5 +1,4 @@
 import copy
-from . import file_manager
 from .templates import svg_group
 from .elements import Element, SVG, Coords, BoundingBox, BoundingCoords
 from . import elements as elem
@@ -39,19 +38,10 @@ class Component(SVG):
             x_max.append(coords.x_max)
             y_max.append(coords.y_max)
 
-        return BoundingCoords(min(x_min), min(y_min), max(x_max), max(y_max))
-        """
-        x_min = y_min = x_max = y_max = 0
-        for child in self.children:
-            try:
-                child_coords = child.bounding_coords
-                x_min = min(x_min, child_coords.x_min)
-                y_min = min(y_min, child_coords.y_min)
-                x_max = max(x_max, child_coords.x_max)
-                y_max = max(y_max, child_coords.y_max)
-            except AttributeError:
-                # The child has no bounding_coords.
-                pass
+        x_min = min(x_min)
+        x_max = max(x_max)
+        y_min = min(y_min)
+        y_max = max(y_max)
 
         x_min, x_max = sorted(
             [(self.x + x_min) * self.scale.x, (self.x + x_max) * self.scale.x]
@@ -59,7 +49,6 @@ class Component(SVG):
         y_min, y_max = sorted(
             [(self.y + y_min) * self.scale.y, (self.y + y_max) * self.scale.y]
         )
-        """
         return BoundingCoords(x_min, y_min, x_max, y_max)
 
     @property

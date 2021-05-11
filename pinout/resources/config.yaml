@@ -100,7 +100,7 @@ informationpanel:
 annotation:
   offset: [50,-50]
   label:
-    padding: [0, 8]
+    padding: [8, 8]
     text: 
       fill: [0, 0, 0]
       family: Verdana, Geneva, sans-serif

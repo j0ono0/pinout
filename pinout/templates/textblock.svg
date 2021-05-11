@@ -1,6 +1,13 @@
-{% extends 'group.svg' %}
+<g 
+    transform=" 
+        translate({{ translate }}) 
+        scale({{ scale.x }} {{ scale.y }})
+    "
+    {% if tag %}
+        class="{{ tag }}"
+    {% endif %}
+>
 
-{% block content %}
     {% for content in text_content %}
         <text
             x="0" 
@@ -16,7 +23,7 @@
         </text>
     {% endfor %}    
 
-{% endblock %}
+</g>
 
 
 

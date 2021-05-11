@@ -109,12 +109,30 @@ class Element(SVG):
         :return: (x_min, y_min, x_max, y_max)
         :rtype: BoundingCoords (namedtuple)
         """
+        #########################################################
+        #
+        #        !!! IMPORTANT !!!
+        #
+        # ----- * Scale: Expected default behaviour * -----
+        # Effects of 'scale' on Elements may vary.
+        # Default behaviour expects an elements bounding coords
+        # is unchanged when scale is applied to an element.
+        #
+        # *IF* an element's bounding coords changes this method must
+        # be written specifically.
+        #
+        #########################################################
+
         x_min, x_max = sorted(
             [self.x * self.scale.x, (self.x + self.width) * self.scale.x]
         )
         y_min, y_max = sorted(
             [self.y * self.scale.y, (self.y + self.height) * self.scale.y]
         )
+
+        x_min, x_max = sorted([self.x, self.x + self.width])
+        y_min, y_max = sorted([self.y, self.y + self.height])
+
         return BoundingCoords(x_min, y_min, x_max, y_max)
 
     @property
@@ -150,12 +168,17 @@ class Image(Element):
     @property
     def bounding_coords(self):
         """Coordinates of element boundaries"""
+
         x_min, x_max = sorted(
             [self.x * self.scale.x, (self.x + self.width) * self.scale.x]
         )
         y_min, y_max = sorted(
             [self.y * self.scale.y, (self.y + self.height) * self.scale.y]
         )
+
+        # x_min, x_max = sorted([self.x, self.x + self.width])
+        # y_min, y_max = sorted([self.y, self.y + self.height])
+
         return BoundingCoords(x_min, y_min, x_max, y_max)
 
     def render(self):
@@ -250,16 +273,23 @@ class TextBlock(Element):
         if type(text_content) == str:
             # attempt to split on '\n' to make a list
             text_content = text_content.split("\n")
-
         self.text_content = text_content
 
     def render(self):
+        translate = [self.x, self.y]
+        if self.scale.x == -1:
+            translate[0] = self.x + self.width
+        if self.scale.y == -1:
+            translate[1] = self.y + self.height
         """create an SVG <text> tag."""
         return svg_textblock.render(
             text_content=self.text_content,
             x=self.x,
             y=self.y,
+            width=self.width,
+            height=self.height,
             scale=self.scale,
+            translate=" ".join(str(coord) for coord in translate),
             **self.config,
         )
 

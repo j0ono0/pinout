@@ -1,12 +1,11 @@
 <clipPath id="clipid-{{uid}}">
     <rect
-    x="{{ x }}" 
-    y="{{ y }}" 
-    width="{{ width }}" 
-    height="{{ height }}" 
-    rx="{{ rx }}" 
-    transform="scale({{ scale.x }} {{ scale.y }})" 
-/>
+        x="{{ x }}" 
+        y="{{ y }}" 
+        width="{{ width }}" 
+        height="{{ height }}" 
+        rx="{{ rx }}" 
+    />
   </clipPath>
 
 <rect
@@ -16,7 +15,6 @@
     width="{{ width }}" 
     height="{{ height }}" 
     rx="{{ rx }}" 
-    transform="scale({{ scale.x }} {{ scale.y }})" 
     fill="{{ fill|rgb }}" 
     fill-opacity="{{ fill_opacity }}" 
     stroke="{{ stroke|rgb }}" 

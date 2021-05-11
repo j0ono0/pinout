@@ -45,6 +45,7 @@ class Component(SVG):
         y_min, y_max = sorted(
             [(self.y + y_min) * self.scale.y, (self.y + y_max) * self.scale.y]
         )
+
         return BoundingCoords(x_min, y_min, x_max, y_max)
 
     @property
@@ -378,37 +379,32 @@ class Annotation(Component):
         stroke_shim = self.config["leaderline"]["stroke_width"] / 2
 
         # Annotation label
-        label = Component(
-            tag="anno_label",
-            x=offset.x - stroke_shim,
-            y=offset.y + stroke_shim,
+        # shift label if flipped
+        label_translate_y = label_height if self.scale.y == 1 else 0
+        label = self.add(
+            Component(
+                tag="anno_label",
+                x=offset.x - stroke_shim,
+                y=offset.y - label_translate_y + stroke_shim,
+            )
         )
-        self.children.append(label)
-
         # Add background rect to label
-        rect_y = 0 if self.scale.y == -1 else -label_height
         label.add(
             elem.Rect(
-                y=rect_y,
+                y=0,
                 width=self.config["label"]["rect"]["width"],
                 height=self.config["label"]["rect"]["height"],
                 config=self.config["label"]["rect"],
             )
         )
         # Add textblock to label
-        tb_x = label_padding.x
-        if self.scale.x == -1:
-            tb_x -= self.config["label"]["rect"]["width"]
-
-        tb_y = -self.config["label"]["rect"]["height"] + top_padding
-
         label.add(
             elem.TextBlock(
                 text_content,
-                x=tb_x,
-                y=tb_y,
+                x=label_padding.x,
+                y=top_padding,
                 width=self.config["label"]["rect"]["width"] - label_padding.x * 2,
-                height=self.config["label"]["rect"]["height"],
+                height=self.config["label"]["rect"]["height"] - label_padding.y,
                 config=self.config["label"],
                 scale=self.scale,
             )
@@ -422,7 +418,7 @@ class Annotation(Component):
                 y=-self.config["leaderline"]["rect"]["height"] / 2,
                 width=self.config["leaderline"]["rect"]["width"],
                 height=self.config["leaderline"]["rect"]["height"],
-                config=self.config["leaderline"]["rect"]
+                config=self.config["leaderline"]["rect"],
             )
         )
 
@@ -436,6 +432,8 @@ class Annotation(Component):
 
         # leaderline path
         vertical_move = f"V {offset.y}" if offset.y != 0 else ""
+        horizontal_move = f"H {offset.x + label.width - stroke_shim}"
+        label_width = self.config["label"]["rect"]["width"]
         horizontal_move = f"H {offset.x + label.width - stroke_shim}"
 
         path_definition = f"M {start_x} {start_y} {vertical_move} {horizontal_move}"

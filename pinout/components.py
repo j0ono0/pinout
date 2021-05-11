@@ -26,7 +26,21 @@ class Component(SVG):
         :return: (x_min, y_min, x_max, y_max)
         :rtype: BoundingCoords (namedtuple)
         """
-        # Untransformed bounding coords
+        # Collect untransformed bounding coords
+        x_min = []
+        y_min = []
+        x_max = []
+        y_max = []
+        for child in self.children:
+            coords = child.bounding_coords
+
+            x_min.append(coords.x_min)
+            y_min.append(coords.y_min)
+            x_max.append(coords.x_max)
+            y_max.append(coords.y_max)
+
+        return BoundingCoords(min(x_min), min(y_min), max(x_max), max(y_max))
+        """
         x_min = y_min = x_max = y_max = 0
         for child in self.children:
             try:
@@ -45,7 +59,7 @@ class Component(SVG):
         y_min, y_max = sorted(
             [(self.y + y_min) * self.scale.y, (self.y + y_max) * self.scale.y]
         )
-
+        """
         return BoundingCoords(x_min, y_min, x_max, y_max)
 
     @property

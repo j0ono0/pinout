@@ -79,6 +79,10 @@ class Diagram(Component):
             x - padding.x, y - padding.y, w + padding.x * 2, h + padding.y * 2
         )
 
+        # Update diagram config
+        self.config["diagram"]["rect"]["height"] = self.height
+        self.config["diagram"]["rect"]["width"] = self.width
+
         # Render final SVG file
         path.write_text(
             svg.render(
@@ -87,8 +91,8 @@ class Diagram(Component):
                 width=self.width,
                 height=self.height,
                 viewbox=viewbox,
-                tag=self.tag,
                 content=output,
+                **self.config["diagram"],
             )
         )
         print(f"'{path}' exported successfully.")

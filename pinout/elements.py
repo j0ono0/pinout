@@ -116,19 +116,12 @@ class Element(SVG):
         # ----- * Scale: Expected default behaviour * -----
         # Effects of 'scale' on Elements may vary.
         # Default behaviour expects an elements bounding coords
-        # is unchanged when scale is applied to an element.
+        # remain unchanged when scale is applied.
         #
         # *IF* an element's bounding coords changes this method must
         # be written specifically.
         #
         #########################################################
-
-        x_min, x_max = sorted(
-            [self.x * self.scale.x, (self.x + self.width) * self.scale.x]
-        )
-        y_min, y_max = sorted(
-            [self.y * self.scale.y, (self.y + self.height) * self.scale.y]
-        )
 
         x_min, x_max = sorted([self.x, self.x + self.width])
         y_min, y_max = sorted([self.y, self.y + self.height])

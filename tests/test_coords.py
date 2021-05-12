@@ -41,3 +41,23 @@ def test_component_and_rect_element(component, element, answer):
     r01 = c01.add(element)
 
     assert diagram.bounding_coords == answer
+
+
+@pytest.mark.parametrize(
+    "scale, bounding_box",
+    [
+        [(1, 1), (0, 0, 20, 10)],
+        [(-1, 1), (-20, 0, 0, 10)],
+        [(-1, -1), (-20, -10, 0, 0)],
+        [(1, -1), (0, -10, 20, 0)],
+    ],
+)
+def test_nested_components(scale, bounding_box):
+    diagram = Diagram()
+    c01 = diagram.add(Component(x=-10, y=-20, scale=scale))
+    c02 = c01.add(Component(x=10, y=20))
+    c02.add(
+        elem.Rect(x=0, y=0, width=20, height=10),
+    )
+
+    assert diagram.bounding_coords == bounding_box

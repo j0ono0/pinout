@@ -5,6 +5,13 @@
 diagram:
   tag: pinout
   padding: [20, 20]
+  rect:
+    fill: [244, 244, 244]
+    fill_opacity: 0
+    rx: 3
+    stroke: [220, 220 ,220]
+    stroke_width: 2
+    # width and height automatically calculated
 
 text: &text
     fill: [0, 0, 0]

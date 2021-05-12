@@ -36,7 +36,7 @@ Element
     
     .. autoproperty:: bounding_coords
     
-        Values are relative to its parent.
+        **Values are relative to its parent.**. Effects of 'scale' on Elements may vary. Default behaviour expects an elements bounding coords remain unchanged when scale is applied. Typical use of scale on elements is to re-orientation text within an element.
     
     .. autoproperty:: bounding_rect
     

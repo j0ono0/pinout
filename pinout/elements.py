@@ -21,6 +21,7 @@ from .templates import (
 BoundingBox = namedtuple("BoundingBox", ("x y w h"))
 BoundingCoords = namedtuple("BoundingCoords", ("x_min y_min x_max y_max"))
 Coords = namedtuple("Coords", ("x y"))
+Padding = namedtuple("Padding", ("top right bottom left"))
 
 
 class ClassMethodMissing(Exception):
@@ -96,10 +97,16 @@ class Element(SVG):
 
     """
 
-    def __init__(self, width=0, height=0, *args, **kwargs):
+    def __init__(self, *args, width=None, height=None, **kwargs):
         """Create a new Element"""
-        self.width = width
-        self.height = height
+        # Ensure dimesions removed from config
+        config_width = kwargs.get("config", {}).pop("width", 0)
+        config_height = kwargs.get("config", {}).pop("height", 0)
+        # Set width and height dimensions
+        # Preference explicit arg over config
+        self.width = width or config_width
+        self.height = height or config_height
+
         super().__init__(*args, **kwargs)
 
     @property
@@ -222,6 +229,8 @@ class Rect(Element):
         return svg_rect.render(
             x=self.x,
             y=self.y,
+            width=self.width,
+            height=self.height,
             scale=self.scale,
             uid=uuid.uuid1(),
             **self.config,
@@ -302,6 +311,8 @@ class Label(Element):
             text_content=self.text_content,
             x=self.x,
             y=self.y,
+            width=self.width,
+            height=self.height,
             scale=self.scale,
             **self.config,
         )

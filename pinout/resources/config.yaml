@@ -4,7 +4,7 @@
 
 diagram:
   tag: pinout
-  padding: [20, 20]
+  padding: [0, 0, 0, 0] 
   rect:
     fill: [244, 244, 244]
     fill_opacity: 0
@@ -13,12 +13,25 @@ diagram:
     stroke_width: 2
     # width and height automatically calculated
 
+
+panel:
+  padding: [20, 20, 20, 20] 
+  rect:
+    fill: [144, 244, 244]
+    fill_opacity: 1
+    rx: 3
+    stroke: [220, 220 ,220]
+    stroke_width: 2
+    tag: panel__bg
+
+
 text: &text
     fill: [0, 0, 0]
     family: Verdana, Geneva, sans-serif
     line_height: 20
     size: 14
     weight: normal
+
 
 
 # information-panel
@@ -51,7 +64,6 @@ label:
 
 
 legend:
-  padding: [15, 30]
   row_height: 30
   tag: legend
   rect:

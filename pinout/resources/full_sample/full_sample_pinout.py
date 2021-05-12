@@ -89,20 +89,20 @@ diagram = Diagram(tag="full_sample")
 # This file includes 'tag' information to style pinlabels
 diagram.add_config("full_sample_config.yaml")
 
+
 # Add and embed external image
 diagram.add_image("full_sample_hardware.png", width=220, height=300, embed=True)
 
+panel01 = diagram.add_panel([0, 10, 0, 10], x=-234, y=380)
 # Add pinlabel legend
-
-diagram.add_legend(
-    x=-234, y=380, categories=["analog", "comms", "gpio", "led", "pwm", "pwr"]
-)
+panel01.add_legend(categories=["analog", "comms", "gpio", "led", "pwm", "pwr"])
 
 # Add pinlabels
 for data in pindata:
     diagram.add_pinlabelset(**data)
 
 # Add an annotation label
+
 diagram.add_annotation(
     "USB-C connector  \nHost/Device functionality",
     x=110,

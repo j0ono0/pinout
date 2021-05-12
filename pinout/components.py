@@ -7,6 +7,8 @@ from . import elements as elem
 class Component(SVG):
     """Container object that manages child Components and/or Elements as a group.
 
+    :param padding: Add whitespace to boundingbox that contains children.
+    :type padding: List: [<top>, <right>, <bottom>, <left>]
     :param children: Components and/or elements, defaults to None
     :type children: SVG subtypes, optional
     """
@@ -262,21 +264,19 @@ class Legend(Component):
 
     def __init__(self, categories, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # NOTE: pad.y sets the text **baseline**
-        pad = Coords(*self.config["padding"])
         row_height = self.config["row_height"]
         swatch_size = row_height * 2 / 3
         categories = categories or Component.config["tags"].keys()
         for i, tag in enumerate(categories):
             entry = self.add(
-                Component(x=pad.x, y=pad.y + row_height * i, tag=self.config["tag"])
+                Component(x=0, y=row_height * (i + 1), tag=self.config["tag"])
             )
             entry.add(
                 elem.Text(
                     Component.config["tags"][tag]["title"],
                     x=swatch_size * 2,
                     y=0,
-                    width=self.config["rect"]["width"],
+                    width=self.config["rect"]["width"] - swatch_size * 2,
                     height=row_height,
                     config=self.config["text"],
                 )
@@ -324,22 +324,6 @@ class Legend(Component):
                 )
             )
 
-        # Add an panel *behind* component
-        self.config["rect"]["height"] = (
-            row_height * len(categories) + pad.y - self.config["text"]["size"]
-        )
-        self.children.insert(
-            0,
-            elem.Rect(
-                x=0,
-                y=0,
-                width=self.config["rect"]["width"],
-                height=self.config["rect"]["height"],
-                scale=self.scale,
-                config=self.config["rect"],
-            ),
-        )
-
 
 class Annotation(Component):
     """Add text with a leaderline styled as an annotation.
@@ -377,7 +361,6 @@ class Annotation(Component):
             + top_padding
         )
         self.config["label"]["rect"]["height"] = label_height
-
         # label required nudging to align with leaderline
         stroke_shim = self.config["leaderline"]["stroke_width"] / 2
 
@@ -406,8 +389,8 @@ class Annotation(Component):
                 text_content,
                 x=label_padding.x,
                 y=top_padding,
-                width=self.config["label"]["rect"]["width"] - label_padding.x * 2,
-                height=self.config["label"]["rect"]["height"] - label_padding.y,
+                width=label.width - label_padding.x * 2,
+                height=label.height - label_padding.y,
                 config=self.config["label"],
                 scale=self.scale,
             )
@@ -436,7 +419,6 @@ class Annotation(Component):
         # leaderline path
         vertical_move = f"V {offset.y}" if offset.y != 0 else ""
         horizontal_move = f"H {offset.x + label.width - stroke_shim}"
-        label_width = self.config["label"]["rect"]["width"]
         horizontal_move = f"H {offset.x + label.width - stroke_shim}"
 
         path_definition = f"M {start_x} {start_y} {vertical_move} {horizontal_move}"

@@ -4,7 +4,7 @@ diagram:
 legend:
   rect:
     rx: 2
-    width: 330
+    width: 250
   text:
     fill: [10, 35, 74]
 

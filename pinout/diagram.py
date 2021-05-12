@@ -1,55 +1,98 @@
 import copy
 import os
-from collections import namedtuple
 from pathlib import Path
 from . import file_manager
-from .elements import Image, Coords, BoundingBox
+from . import elements as elem
 from .components import Component, Legend, PinLabelSet, Annotation
 from .templates import svg
 
 
-class Diagram(Component):
-    """The base class that makes up a *pinout* diagram."""
-
-    def __init__(self, config=None, *args, **kwargs):
+class Panel(Component):
+    def __init__(self, padding=None, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        if padding is None:
+            padding = self.config.get("padding", [0, 0, 0, 0])
+        self.padding = elem.Padding(*padding)
 
-        # Load default config and patch with any supplied patch
-        Component.config = file_manager.load_config()
+    @property
+    def bounding_coords(self):
+        coords = super().bounding_coords
+        # Add padding to dimensions
+        return elem.BoundingCoords(
+            coords.x_min,
+            coords.y_min,
+            coords.x_max + self.padding.right + self.padding.left,
+            coords.y_max + self.padding.bottom + self.padding.top,
+        )
 
-        # Patch config with user suppled config.
-        self.config = Component.config
-        try:
-            self.patch_config(self.config, config)
-        except AttributeError:
-            # No config supplied by user
-            pass
+    def render(self):
+        rect_config = self.config["rect"]
+        rect_config["width"] = self.width
+        rect_config["height"] = self.height
+        rect = self.children.insert(
+            0,
+            elem.Rect(
+                x=-self.padding.left,
+                y=-self.padding.top,
+                width=self.width,
+                height=self.height,
+                config=self.config["rect"],
+            ),
+        )
+        # Offset children to top-left padding coords
+        self.x += self.padding.left
+        self.y += self.padding.top
+        return super().render()
 
-    def add_config(self, path=None):
-        """Add a configuration file to the diagram."""
-        self.patch_config(self.config, file_manager.load_config(path))
+    def add_panel(self, padding=None, *args, **kwargs):
+        """ Add a panel component to the diagram. Returns Panel instance."""
+        config = copy.deepcopy(Component.config["panel"])
+        kwargs["config"] = self.patch_config(config, kwargs.get("config", {}))
+        return self.add(Panel(padding, *args, **kwargs))
 
     def add_image(self, path, *args, embed=False, **kwargs):
         """Associate a PNG, JPG or SVG formatted image to the diagram."""
-        self.add(Image(path, *args, embed=embed, **kwargs))
+        self.add(elem.Image(path, *args, embed=embed, **kwargs))
 
     def add_legend(self, *args, categories=None, **kwargs):
         """Add a pinlabel legend to the diagram."""
-        config = copy.deepcopy(self.config["legend"])
-        kwargs["config"] = self.patch_config(config, kwargs.get("legend", {}))
+        config = copy.deepcopy(Component.config["legend"])
+        kwargs["config"] = self.patch_config(config, kwargs.get("config", {}))
         self.add(Legend(categories, *args, **kwargs))
 
     def add_pinlabelset(self, *args, **kwargs):
         """Add a pinlabels to a 'header' of pins in the diagram."""
-        config = copy.deepcopy(self.config["pinlabel"])
+        config = copy.deepcopy(Component.config["pinlabel"])
         kwargs["config"] = self.patch_config(config, kwargs.get("config", {}))
         self.add(PinLabelSet(*args, **kwargs))
 
     def add_annotation(self, text_content, *args, **kwargs):
         """Add an annotation to the diagram."""
-        config = copy.deepcopy(self.config["annotation"])
+        config = copy.deepcopy(Component.config["annotation"])
         kwargs["config"] = self.patch_config(config, kwargs.get("config", {}))
         self.add(Annotation(text_content, *args, **kwargs))
+
+
+class Diagram(Panel):
+    """The base class that makes up a *pinout* diagram."""
+
+    def __init__(self, *args, **kwargs):
+
+        # Load default config
+        Component.config = file_manager.load_config()
+        self.config = copy.deepcopy(Component.config["diagram"])
+
+        # Patch config with user suppled config.
+        config = kwargs.get("config", {})
+        self.patch_config(self.config, config)
+
+        kwargs["config"] = self.config
+
+        super().__init__(*args, **kwargs)
+
+    def add_config(self, path=None):
+        """Add a configuration file to the diagram."""
+        self.patch_config(Component.config, file_manager.load_config(path))
 
     def export(self, path, overwrite=False):
         """Output the diagram in SVG format.
@@ -72,16 +115,9 @@ class Diagram(Component):
         for c in self.children:
             output += c.render()
 
-        # Add padding to viewbox
-        padding = Coords(*self.config["diagram"]["padding"])
-        x, y, w, h = self.bounding_rect
-        viewbox = BoundingBox(
-            x - padding.x, y - padding.y, w + padding.x * 2, h + padding.y * 2
-        )
-
         # Update diagram config
-        self.config["diagram"]["rect"]["height"] = self.height
-        self.config["diagram"]["rect"]["width"] = self.width
+        self.config["rect"]["height"] = self.height
+        self.config["rect"]["width"] = self.width
 
         # Render final SVG file
         path.write_text(
@@ -90,9 +126,9 @@ class Diagram(Component):
                 y=0,
                 width=self.width,
                 height=self.height,
-                viewbox=viewbox,
+                viewbox=self.bounding_rect,
                 content=output,
-                **self.config["diagram"],
+                **self.config,
             )
         )
         print(f"'{path}' exported successfully.")

@@ -40,10 +40,17 @@ class Component(SVG):
             x_max.append(coords.x_max)
             y_max.append(coords.y_max)
 
-        x_min = min(x_min)
-        x_max = max(x_max)
-        y_min = min(y_min)
-        y_max = max(y_max)
+        try:
+            x_min = min(x_min)
+            x_max = max(x_max)
+            y_min = min(y_min)
+            y_max = max(y_max)
+        except ValueError:
+            # There are no children
+            x_min = 0
+            x_max = 0
+            y_min = 0
+            y_max = 0
 
         x_min, x_max = sorted(
             [(self.x + x_min) * self.scale.x, (self.x + x_max) * self.scale.x]

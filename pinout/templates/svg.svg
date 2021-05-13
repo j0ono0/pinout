@@ -9,21 +9,6 @@
     viewBox="{{ viewbox.x }} {{ viewbox.y }} {{ viewbox.w }} {{ viewbox.h }}"
     class="{{ tags }}"
 >
-
-{% with 
-    x=viewbox.x,
-    y=viewbox.y,
-    width=viewbox.w, 
-    height=viewbox.h, 
-    fill=rect.fill, 
-    fill_opacity=rect.fill_opacity,
-    rx=rect.rx,
-    stroke=rect.stroke,
-    stroke_width=rect.stroke_width
-%}
-    {% include 'rect.svg' %}
-{% endwith %}
-
 {% block body %}
 
     {{ content }}

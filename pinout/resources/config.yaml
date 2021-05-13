@@ -7,7 +7,7 @@ diagram:
   padding: [0, 0, 0, 0] 
   rect:
     fill: [244, 244, 244]
-    fill_opacity: 0
+    fill_opacity: 1
     rx: 3
     stroke: [220, 220 ,220]
     stroke_width: 2

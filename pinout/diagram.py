@@ -1,9 +1,9 @@
 import copy
-import os
+import types
 from pathlib import Path
 from . import file_manager
 from . import elements as elem
-from .components import Component, Legend, PinLabelSet, Annotation
+from .components import Component, Legend, PinLabelSet, Annotation, BoundingCoords
 from .templates import svg
 
 
@@ -17,19 +17,16 @@ class Panel(Component):
     @property
     def bounding_coords(self):
         coords = super().bounding_coords
-        # Add padding to dimensions
-        return elem.BoundingCoords(
+        return BoundingCoords(
             coords.x_min,
             coords.y_min,
-            coords.x_max + self.padding.right + self.padding.left,
-            coords.y_max + self.padding.bottom + self.padding.top,
+            coords.x_max + self.padding.left + self.padding.right,
+            coords.y_max + self.padding.top + self.padding.bottom,
         )
 
     def render(self):
-        rect_config = self.config["rect"]
-        rect_config["width"] = self.width
-        rect_config["height"] = self.height
-        rect = self.children.insert(
+        # Insert background rect
+        self.children.insert(
             0,
             elem.Rect(
                 x=-self.padding.left,
@@ -39,9 +36,11 @@ class Panel(Component):
                 config=self.config["rect"],
             ),
         )
-        # Offset children to top-left padding coords
+        # Shift (x,y) of all children
         self.x += self.padding.left
         self.y += self.padding.top
+        # Set padding to none - it is now accounted for by inserted rect
+        self.padding = elem.Padding(0, 0, 0, 0)
         return super().render()
 
     def add_panel(self, padding=None, *args, **kwargs):
@@ -110,14 +109,12 @@ class Diagram(Panel):
         path.touch(exist_ok=True)
 
         output = ""
-
+        """
         # Render all components
         for c in self.children:
             output += c.render()
-
-        # Update diagram config
-        self.config["rect"]["height"] = self.height
-        self.config["rect"]["width"] = self.width
+        """
+        output = super().render()
 
         # Render final SVG file
         path.write_text(

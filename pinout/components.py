@@ -1,5 +1,5 @@
 import copy
-from .templates import svg_group
+from .templates import svg_group, svg
 from .elements import Element, SVG, Coords, BoundingBox, BoundingCoords
 from . import elements as elem
 
@@ -431,3 +431,86 @@ class Annotation(Component):
         path_definition = f"M {start_x} {start_y} {vertical_move} {horizontal_move}"
 
         self.add(elem.Path(path_definition, config=self.config["leaderline"]))
+
+
+################################################################
+
+
+class Diagramlette(Component):
+    def __init__(self, parent_width=None, parent_height=None, *args, **kwargs):
+        self.parent_width = parent_width
+        self.parent_height = parent_height
+        super().__init__(*args, **kwargs)
+
+    @property
+    def bounding_coords(self):
+        return elem.BoundingCoords(
+            self.x, self.y, self.parent_width, self.parent_height
+        )
+
+    def render(self):
+
+        x_min, y_min, x_max, y_max = super().bounding_coords
+
+        output = ""
+        for child in self.children:
+            output += child.render()
+
+        return svg.render(
+            x=self.x,
+            y=self.y,
+            width=self.parent_width,
+            height=self.parent_height,
+            viewbox=elem.BoundingBox(
+                x_min - self.x, y_min - self.y, x_max - x_min, y_max - y_min
+            ),
+            content=output,
+            **self.config,
+        )
+
+
+################################################################
+
+
+class Panel(Component):
+    def __init__(self, width=None, height=None, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fixed_width = width
+        self.fixed_height = height
+        self.config = copy.deepcopy(Component.config["panel"])
+        self.patch_config(self.config, kwargs.get("config", {}))
+
+    def render(self):
+
+        # Align content to panel top-left
+        padding = elem.Padding(*self.config["padding"])
+        box = self.bounding_rect
+
+        # Define panel dimensions
+        width = self.fixed_width or box.w + padding.left + padding.right
+        height = self.fixed_height or box.h + padding.top + padding.bottom
+
+        # Define inner dimensions
+        inner_width = width - (padding.left + padding.right)
+        inner_height = height - (padding.top + padding.bottom)
+
+        # nest children into a Diagram
+        dgm = Diagramlette(
+            inner_width, inner_height, x=padding.left, y=padding.top, config={}
+        )
+        dgm.children = self.children
+        self.children = [dgm]
+
+        # Insert background rect at back
+        self.children.insert(
+            0,
+            elem.Rect(
+                x=0,
+                y=0,
+                width=width,
+                height=height,
+                config=self.config,
+            ),
+        )
+
+        return super().render()

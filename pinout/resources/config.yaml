@@ -4,25 +4,15 @@
 
 diagram:
   tag: pinout
-  padding: [0, 0, 0, 0] 
-  rect:
-    fill: [244, 244, 244]
-    fill_opacity: 1
-    rx: 3
-    stroke: [220, 220 ,220]
-    stroke_width: 2
-    # width and height automatically calculated
 
-
-panel:
-  padding: [20, 20, 20, 20] 
-  rect:
-    fill: [144, 244, 244]
-    fill_opacity: 1
-    rx: 3
-    stroke: [220, 220 ,220]
-    stroke_width: 2
-    tag: panel__bg
+panel: 
+  padding: [10, 10, 10, 10]
+  fill: [244, 244, 244]
+  fill_opacity: 1
+  rx: 0
+  stroke: [255, 255, 255]
+  stroke_width: 1
+  tag: panel__bg
 
 
 text: &text
@@ -36,9 +26,9 @@ text: &text
 
 # information-panel
 infpanel_rect: &infpanel
-  fill: [255, 250, 245]
+  fill: [244, 244, 244]
   stroke: [204, 204, 204]
-  stroke_width: 1
+  stroke_width: 0
   rx: 0
 
 rect: &rect

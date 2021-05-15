@@ -1,4 +1,4 @@
-from pinout import diagram
+from pinout import layout
 
 # Custom pinlabel configuration
 long_label_config = {"label": {"rect": {"width": 108}}}
@@ -45,7 +45,7 @@ pin_headers = [
 ]
 
 # Create a new diagram
-diagram = diagram.Diagram()
+diagram = layout.Diagram()
 
 # Override default config with user supplied values
 diagram.add_config("quick_start_config.yaml")

@@ -15,7 +15,7 @@ Import modules
 
 Start by importing the pinout diagram module and creating a new diagram object::
 
-    from pinout import diagram
+    from pinout import layout
 
 
 Document measurments
@@ -60,7 +60,7 @@ Create a new diagram
 --------------------
 ::
 
-    diagram = diagram.Diagram()
+    diagram = layout.Diagram()
 
 
 Add a config file

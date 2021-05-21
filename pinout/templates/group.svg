@@ -1,13 +1,13 @@
 <g 
-    {% if tag %}
-        class="{{ tag }}"
+    {% if group.tag %}
+        class="{{ group.tag }}"
     {% endif %}
     transform="
-        translate({{ x * scale.x }} {{  y * scale.y }}) 
-        scale({{ scale.x }} {{ scale.y }})
+        translate({{ group.x }} {{  group.y }}) 
+        scale({{ group.scale.x }} {{ group.scale.y }})
     "
 >
     {% block content %}
-        {{ content|safe }}
+        {{ group.render_children()|safe }}
     {% endblock %}
 </g>

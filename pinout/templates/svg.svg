@@ -2,16 +2,18 @@
 <svg  
     xmlns="http://www.w3.org/2000/svg" 
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    x="{{ x }}"
-    y="{{ y }}"
-    width="{{ width }}" 
-    height="{{ height }}" 
-    viewBox="{{ viewbox.x }} {{ viewbox.y }} {{ viewbox.w }} {{ viewbox.h }}"
-    class="{{ tags }}"
+    x="{{ svg.x }}"
+    y="{{ svg.y }}"
+    width="{{ svg.width }}" 
+    height="{{ svg.height }}" 
+    viewBox="{{ svg.bounding_rect().x }} {{ svg.bounding_rect().y }} {{ svg.bounding_rect().w }} {{ svg.bounding_rect().h }}"
+    {% if svg.tag %}
+    class="{{ svg.tag }}"
+    {% endif %}
 >
 {% block body %}
 
-    {{ content }}
+    {{ svg.render_children() }}
     
 {% endblock %}
 </svg>

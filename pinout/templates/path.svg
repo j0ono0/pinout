@@ -1,9 +1,9 @@
 <path 
-class="{{ tag }}" 
-d="{{ d }}" 
-transform="scale({{ scale.x }} {{ scale.y }}) translate({{ x }} {{  y }}) " 
-fill="none" 
-stroke="{{ stroke|rgb }}"
-stroke-width="{{ stroke_width }}"
+{% if path.tag %}
+class="{{ path.tag }}" 
+{% endif %}
+d="{{ path.d }}" 
+transform="scale({{ path.scale.x }} {{ path.scale.y }}) translate({{ path.x }} {{  path.y }}) " 
+
  shape-rendering="geometricPrecision"
 />

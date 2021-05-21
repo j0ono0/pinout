@@ -22,6 +22,11 @@ env = Environment(
     lstrip_blocks=True,
 )
 
+
+def get(template_name):
+    return env.get_template(template_name)
+
+
 # Add filters to Jinja env
 env.filters["rgb"] = rgb
 

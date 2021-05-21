@@ -1,0 +1,9 @@
+{% if stylesheet %}
+<link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="{{ stylesheet.path }}" type="text/css"/>
+{% else %}
+<style type="text/css" media="screen">  
+    <![CDATA[  
+    {{ data }}
+    ]]>  
+</style>
+{% endif %}

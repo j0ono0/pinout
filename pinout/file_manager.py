@@ -45,6 +45,12 @@ def export_file(content, path, overwrite=False):
     return path
 
 
+def load_data(path):
+    path = Path(path)
+    with path.open() as f:
+        return f.read()
+
+
 def load_config(path=None):
     """Load a config file either from a user nominated location or, if no path is supplied, load the default config file from the *pinout* package.
 

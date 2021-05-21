@@ -40,10 +40,10 @@ class Layout(TransformMixin):
             if hasattr(type(instance), "bounding_coords")
         ]:
             coords = child.bounding_coords()
-            x.append((self.x + coords.x1) * self.scale.x)
-            y.append((self.y + coords.y1) * self.scale.x)
-            x.append((self.x + coords.x2) * self.scale.x)
-            y.append((self.y + coords.y2) * self.scale.x)
+            x.append(self.x + coords.x1 * self.scale.x)
+            y.append(self.y + coords.y1 * self.scale.y)
+            x.append(self.x + coords.x2 * self.scale.x)
+            y.append(self.y + coords.y2 * self.scale.y)
         x.sort()
         y.sort()
         try:
@@ -79,7 +79,7 @@ class Diagram(Layout):
         self.width = width
         self.height = height
 
-    def add_stylesheet(self, path, embed=False):
+    def add_stylesheet(self, path, embed=True):
         self.children.insert(0, StyleSheet(path, embed))
 
     def render(self):

@@ -77,13 +77,27 @@ class Label(core.Group):
 
 
 class LabelRow(core.Group):
-    def __init__(self, x, y, labellist, **kwargs):
-        super().__init__(x, y, **kwargs)
-        x = 0
-        for content, config in labellist:
-            leader_len = config["leader"]["length"]
-            width = config["rect"]["width"] + leader_len
-            height = config["rect"]["height"]
-            r = config["rect"]["r"]
-            self.add(Label(content, x, 0, width, height, r, leader_len, **config))
-            x += width
+    def __init__(self, labels, **kwargs):
+        scale = kwargs.pop("scale", (1, 1))
+        super().__init__(**kwargs)
+        for content, tag, config in labels:
+            self.add(Label(content, tag=tag, scale=scale, **config))
+
+    def add(self, label):
+        if type(label) is Label:
+            label.x = self.width * label.scale.x
+            self.children.append(label)
+            return label
+        # Only allow Labels to be added to a LabelRow
+        raise TypeError(label)
+
+
+class LabelSet(core.Group):
+    def __init__(self, pitch, rows, **kwargs):
+        scale = kwargs.pop("scale", (1, 1))
+        super().__init__(**kwargs)
+        pitch = core.Coords(*pitch)
+        for ind, row in enumerate(rows):
+            row_x = self.x + pitch.x * ind
+            row_y = self.y + pitch.y * ind
+            self.add(LabelRow(labels=row, x=row_x, y=row_y, scale=scale))

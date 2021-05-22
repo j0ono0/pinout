@@ -37,9 +37,10 @@ class Label(core.Group):
         height=24,
         tag="",
         r=0,
-        leader_len=0,
+        offset=(0, 0),
         **kwargs,
     ):
+        self.offset = core.Coords(*offset)
         taglist = tag.split(" ")
         taglist.append("label")
         tag = " ".join(taglist)
@@ -49,43 +50,59 @@ class Label(core.Group):
         label_body = self.add(
             core.Rect(
                 r=r,
-                x=leader_len,
-                y=-height / 2,
-                width=width - leader_len,
+                x=self.offset.x,
+                y=self.offset.y - (height / 2),
+                width=width,
                 height=height,
                 tag="label__body",
                 **kwargs,
             )
         )
-        if leader_len > 0:
-            path_def = f"M 0 0 l {leader_len} 0"
+        if self.offset.x != 0 or self.offset.y != 0:
+            # Straight line
+            path_def = f"M 0 0 l {self.offset.x} {self.offset.y}"
+
+            # S curve
+            len = self.offset.x / 5
+            ctl_x = self.offset.x / 2
+            path_def = f"M 0 0 L {len} 0 C {ctl_x} 0 {ctl_x} {self.offset.y} {self.offset.x - len} {self.offset.y} L {self.offset.x} {self.offset.y}"
+
             self.add(
                 core.Path(
                     path_definition=path_def,
                     x=0,
                     y=0,
-                    width=leader_len,
-                    height=0,
+                    width=self.offset.x,
+                    height=self.offset.y,
                     tag="label__leaderline",
                     **kwargs,
                 )
             )
 
         kwargs["scale"] = self.scale
-        x = label_body.width / 2 + leader_len
-        self.add(core.Text(content, x=x, tag="label__text", **kwargs))
+        x = label_body.width / 2 + self.offset.x
+        y = self.offset.y
+        self.add(core.Text(content, x=x, y=y, tag="label__text", **kwargs))
 
 
 class LabelRow(core.Group):
     def __init__(self, labels, **kwargs):
-        scale = kwargs.pop("scale", (1, 1))
+        scale = core.Coords(*kwargs.pop("scale", (1, 1)))
         super().__init__(**kwargs)
         for content, tag, config in labels:
-            self.add(Label(content, tag=tag, scale=scale, **config))
+            # Align each label to the end of the previous label.
+            x = self.width * scale.x
+            y = 0
+            try:
+                prev_label = self.children[-1]
+                y = prev_label.y + prev_label.offset.y
+            except IndexError:
+                pass  # no children yet
+
+            self.add(Label(content, x=x, y=y, tag=tag, scale=scale, **config))
 
     def add(self, label):
         if type(label) is Label:
-            label.x = self.width * label.scale.x
             self.children.append(label)
             return label
         # Only allow Labels to be added to a LabelRow
@@ -98,6 +115,21 @@ class LabelSet(core.Group):
         super().__init__(**kwargs)
         pitch = core.Coords(*pitch)
         for ind, row in enumerate(rows):
-            row_x = self.x + pitch.x * ind
-            row_y = self.y + pitch.y * ind
+            row_x = pitch.x * ind
+            row_y = pitch.y * ind
             self.add(LabelRow(labels=row, x=row_x, y=row_y, scale=scale))
+
+
+class TextBlock(core.Group):
+    def __init__(self, content, line_height, **kwargs):
+        scale = kwargs.pop("scale", (1, 1))
+        tag = kwargs.pop("tag", "")
+        taglist = tag.split(" ")
+        taglist.insert(0, "textblock")
+        kwargs["tag"] = " ".join(taglist)
+        super().__init__(**kwargs)
+        self.line_height = line_height
+        y = 0
+        for text in content:
+            self.add(core.Text(content=text, y=y, scale=scale))
+            y += self.line_height

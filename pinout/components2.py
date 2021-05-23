@@ -36,6 +36,7 @@ class Label(core.Group):
         width=60,
         height=24,
         tag="",
+        style="curve",
         r=0,
         offset=(0, 0),
         **kwargs,
@@ -59,13 +60,23 @@ class Label(core.Group):
             )
         )
         if self.offset.x != 0 or self.offset.y != 0:
-            # Straight line
-            path_def = f"M 0 0 l {self.offset.x} {self.offset.y}"
-
-            # S curve
-            len = self.offset.x / 5
-            ctl_x = self.offset.x / 2
-            path_def = f"M 0 0 L {len} 0 C {ctl_x} 0 {ctl_x} {self.offset.y} {self.offset.x - len} {self.offset.y} L {self.offset.x} {self.offset.y}"
+            if style == "straight":
+                # Straight line
+                path_def = f"M 0 0 l {self.offset.x} {self.offset.y}"
+            elif style == "angle_bend":
+                # Single bend
+                path_def = f"M 0 0 l 0 {self.offset.y} l {self.offset.x} 0"
+            elif style == "smooth_bend":
+                # Single bend
+                r = min(*self.offset)
+                # TODO: determine 'r' in a non-arbitary way
+                r = r / 3
+                path_def = f"M 0 0 L 0 {self.offset.y - r} A {r} {r} 0 0 0 {r} {self.offset.y} L {self.offset.x} {self.offset.y}"
+            else:
+                # Beizer curve (default)
+                len = self.offset.x / 5
+                ctl_x = self.offset.x / 2
+                path_def = f"M 0 0 L {len} 0 C {ctl_x} 0 {ctl_x} {self.offset.y} {self.offset.x - len} {self.offset.y} L {self.offset.x} {self.offset.y}"
 
             self.add(
                 core.Path(
@@ -95,7 +106,7 @@ class LabelRow(core.Group):
             y = 0
             try:
                 prev_label = self.children[-1]
-                y = prev_label.y + prev_label.offset.y
+                y = prev_label.y + prev_label.offset.y * scale.y
             except IndexError:
                 pass  # no children yet
 

@@ -78,9 +78,13 @@ class Diagram(Layout):
         super().__init__(tag=tag, **kwargs)
         self.width = width
         self.height = height
+        self.defs = []
 
     def add_stylesheet(self, path, embed=True):
         self.children.insert(0, StyleSheet(path, embed))
+
+    def add_defs(self, path):
+        self.defs.append(file_manager.load_data(path))
 
     def render(self):
         tplt = templates.get("svg.svg")

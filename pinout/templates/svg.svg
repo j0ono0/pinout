@@ -11,6 +11,13 @@
     class="{{ svg.tag }}"
     {% endif %}
 >
+{% if svg.defs %}
+<defs>
+    {% for def in svg.defs %}
+        {{ def }}
+    {% endfor %}
+</defs>
+{% endif %}
 {% block body %}
 
     {{ svg.render_children() }}

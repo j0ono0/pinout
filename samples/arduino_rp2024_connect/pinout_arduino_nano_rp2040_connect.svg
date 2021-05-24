@@ -6,81 +6,25 @@
     y="0"
     width="1200" 
     height="675" 
-    viewBox="0 0 1200 675"
+    viewBox="0 0 1200 670"
     class="arduino-rp2040-connect"
 >
+<defs>
+        <!-- scale  applied so pattern aligns with vertically adjacenct labels -->
+<pattern id="stripe-a" patternTransform="scale(1.3 1.3)" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+    <rect x="0" y="0" width="20" height="20" />
+    <path x="0" y="0" d="M 10 0 L 20 0 L 0 20 L 0 10  Z"/>
+    <path x="0" y="0" d="M 20 10 L 20 20 L 10 20  Z"/>
+</pattern>
 
-    <style type="text/css" media="screen">  
-    <![CDATA[  
-    /*  
- *
- * Default SVG presentation attributes (styles)
- *
- */
- svg {
-    fill-opacity: 1;
-    font-family: Helvetica, Verdana;
-    font-size: 16px;
-    font-weight: normal;
-    opacity: 1;
-    
-}
-path, rect {
-    stroke: rgb(0, 0, 0);
-    stroke-dasharray: 0;
-    stroke-dashoffset: 0;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 0;
-    stroke-opacity: 1;
-    stroke-width: 0;
-}
-path{
-    fill: none;
-}
-rect {
-    fill: #000;
-}
+<pattern  id="stripe-b" patternTransform="scale(1.3 1.3)" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+    <rect x="0" y="0" width="20" height="20" />
+    <path x="0" y="0" d="M 10 0 L 20 0 L 0 20 L 0 10  Z"/>
+    <path x="0" y="0" d="M 20 10 L 20 20 L 10 20  Z"/>
+</pattern>
+</defs>
 
-text {
-    dominant-baseline: auto;
-}
-/*  
- *
- * Default component styles
- *
- */
-
- .label__body{
-    fill: rgb(36, 36, 36);
-    stroke: rgb(24, 24, 24);
-    stroke-width: 4;
-}
-.label__leaderline{
-    stroke: rgb(24, 24, 24);
-    stroke-width: 2;
-}
-.label__text{
-    fill: #fff;
-    dominant-baseline: central;
-    text-anchor: middle;
-}
-
-
-
-
-.panel{
-    stroke: #ccc;
-    stroke-width: 2;
-}
-.panel--main{
-    fill: #fff;
-}
-.panel--notes{
-    fill: rgb(228, 228, 226);
-}
-    ]]>  
-</style>
+    <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="styles.css" type="text/css"/>
 <g 
         class="panel panel--main"
     transform="
@@ -90,7 +34,7 @@ text {
 >
         <path 
 class="panel__bg" 
-d="M 0 0 L 1200 0 A 0 0 0 0 1 1200 0 L 1200 600 A 0 0 0 0 1 1200 600 L 0 600 A 0 0 0 0 1 0 600 L 0 0 A 0 0 0 0 1 0 0 z" 
+d="M 0 0 L 1200 0 A 0 0 0 0 1 1200 0 L 1200 555 A 0 0 0 0 1 1200 555 L 0 555 A 0 0 0 0 1 0 555 L 0 0 A 0 0 0 0 1 0 0 z" 
 transform="scale(1 1) translate(0 0) " 
 
  shape-rendering="geometricPrecision"
@@ -105,8 +49,8 @@ transform="scale(1 1) translate(0 0) "
  
     x="-88.0" 
     y="0" 
-    href="hardware_arduino_nano_rp2040_connect.png" 
-    xlink:href="hardware_arduino_nano_rp2040_connect.png" 
+    href="hardware.png" 
+    xlink:href="hardware.png" 
     height="449" 
     width="176"
 />
@@ -117,47 +61,1120 @@ transform="scale(1 1) translate(0 0) "
     "
 >
         <g 
+        class=" labelrow"
     transform="
         translate(0 0.0) 
         scale(1 1)
     "
 >
         <g 
-        class="pwr--gnd label"
+        class="digital label"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
-        <clipPath id="clipid-bbfd5a81-f4d9-4585-a4df-d50432f92ea2">
+        <clipPath id="clipid-4640151e-9815-4ecd-bf81-b2e8c19856e8">
     <rect
-        x="80" 
-        y="-13.0" 
-        width="74" 
-        height="26" 
-        rx="13" 
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
     />
   </clipPath>
 
 <rect
  class="label__body" 
-    x="80" 
-    y="-13.0" 
-    width="74" 
-    height="26" 
-    rx="13" 
-    clip-path="url(#clipid-bbfd5a81-f4d9-4585-a4df-d50432f92ea2)" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-4640151e-9815-4ecd-bf81-b2e8c19856e8)" 
     shape-rendering="geometricPrecision"
 /><path 
 class="label__leaderline" 
-d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
 transform="scale(1 1) translate(0 0) " 
 
  shape-rendering="geometricPrecision"
 /><text
     class="label__text"
     transform="
-        translate(117.0 0) 
+        translate(100.0 0) 
+        scale(1 1)
+    "  
+>
+    D12
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(140 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-d67ccad0-ef51-4136-85c2-33db3bca09b3">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-d67ccad0-ef51-4136-85c2-33db3bca09b3)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    GPIO4
+</text>
+</g><g 
+        class="default label"
+    transform="
+        translate(222 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-59bb50eb-1fc4-46bb-b75f-76e7986526ec">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-59bb50eb-1fc4-46bb-b75f-76e7986526ec)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    CIPO
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 24.6) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="digital label"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-299671a2-17ea-480f-b9b5-0e854a4fa488">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-299671a2-17ea-480f-b9b5-0e854a4fa488)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(100.0 0) 
+        scale(1 1)
+    "  
+>
+    D11
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(140 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-c548d695-e437-4108-9e5d-5a846d624cd9">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-c548d695-e437-4108-9e5d-5a846d624cd9)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    GPIO7
+</text>
+</g><g 
+        class="default label"
+    transform="
+        translate(222 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-db632aba-1712-47f5-a7a9-60d9774f7f1c">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-db632aba-1712-47f5-a7a9-60d9774f7f1c)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    CIPI
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 49.2) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="digital label"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-f3f8d17d-eadf-4fed-9247-0f09e65e682a">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-f3f8d17d-eadf-4fed-9247-0f09e65e682a)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(100.0 0) 
+        scale(1 1)
+    "  
+>
+    D10
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(140 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-85170621-be0c-45fd-aa18-4a96cc72222a">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-85170621-be0c-45fd-aa18-4a96cc72222a)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    GPIO5
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 73.80000000000001) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="digital label"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-c1560da8-2c70-43c8-9570-ad5c7d689876">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-c1560da8-2c70-43c8-9570-ad5c7d689876)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(100.0 0) 
+        scale(1 1)
+    "  
+>
+    D9
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(140 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-ee3d60ce-b9eb-4738-93ce-384d7749e748">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-ee3d60ce-b9eb-4738-93ce-384d7749e748)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    GPIO21
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 98.4) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="digital label"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-06b84bfb-0815-4eae-957e-8a2d5825fefa">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-06b84bfb-0815-4eae-957e-8a2d5825fefa)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(100.0 0) 
+        scale(1 1)
+    "  
+>
+    D8
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(140 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-98f6c88e-6c36-43fe-b5a4-00cf0775745d">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-98f6c88e-6c36-43fe-b5a4-00cf0775745d)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    GPIO20
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 123.0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="digital label"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-301cf2b4-69f0-442d-a67b-a8f46f26d610">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-301cf2b4-69f0-442d-a67b-a8f46f26d610)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(100.0 0) 
+        scale(1 1)
+    "  
+>
+    D7
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(140 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-08847aa0-618c-480b-bdd0-b052fa786782">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-08847aa0-618c-480b-bdd0-b052fa786782)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    GPIO19
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 147.60000000000002) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="digital label"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-74d7456c-1d20-499f-9939-b7b47ae668bf">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-74d7456c-1d20-499f-9939-b7b47ae668bf)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(100.0 0) 
+        scale(1 1)
+    "  
+>
+    D6
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(140 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-2d085db5-33b9-4e78-9b4a-0582b3aea3e2">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-2d085db5-33b9-4e78-9b4a-0582b3aea3e2)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    GPIO18
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 172.20000000000002) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="digital label"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-193061fa-b44c-446d-9c4e-05c2e596c340">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-193061fa-b44c-446d-9c4e-05c2e596c340)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(100.0 0) 
+        scale(1 1)
+    "  
+>
+    D5
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(140 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-e1c27830-f649-4cf7-9db4-1a1c8b374840">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-e1c27830-f649-4cf7-9db4-1a1c8b374840)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    GPIO17
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 196.8) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="digital label"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-27f8e77f-cf01-42f4-b452-187fa50852fc">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-27f8e77f-cf01-42f4-b452-187fa50852fc)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(100.0 0) 
+        scale(1 1)
+    "  
+>
+    D4
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(140 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-226b1e86-1f05-4508-b5c2-c52fa1888415">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-226b1e86-1f05-4508-b5c2-c52fa1888415)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    GPIO16
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 221.4) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="digital label"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-91581c3c-32f0-4819-b25c-4533e27afa29">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-91581c3c-32f0-4819-b25c-4533e27afa29)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(100.0 0) 
+        scale(1 1)
+    "  
+>
+    D3
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(140 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-d81cfe49-9212-4711-9ced-3a214b03a8d2">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-d81cfe49-9212-4711-9ced-3a214b03a8d2)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    GPIO15
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 246.0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="digital label"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-e0c5da3a-b1a2-4be0-9a4e-b8495ada0ee1">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-e0c5da3a-b1a2-4be0-9a4e-b8495ada0ee1)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(100.0 0) 
+        scale(1 1)
+    "  
+>
+    D2
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(140 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-c77686a0-f071-4b91-850d-9d82617e025b">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-c77686a0-f071-4b91-850d-9d82617e025b)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    GPIO25
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 270.6) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="gnd label"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-4b1a3edd-708c-4cc6-9c2b-7a8fc3982afb">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="12" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="12" 
+    clip-path="url(#clipid-4b1a3edd-708c-4cc6-9c2b-7a8fc3982afb)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(100.0 0) 
         scale(1 1)
     "  
 >
@@ -165,311 +1182,2138 @@ transform="scale(1 1) translate(0 0) "
 </text>
 </g>
 </g><g 
+        class=" labelrow"
     transform="
-        translate(0 24.5) 
+        translate(0 295.20000000000005) 
         scale(1 1)
     "
 >
         <g 
-        class="pwr--3v3 ptn__diag--red label"
+        class="other label"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
-        <clipPath id="clipid-adfbb642-d65f-40f8-9448-14696f780597">
+        <clipPath id="clipid-1252ee1a-745c-4d61-b1c9-fb80dc9a9453">
     <rect
-        x="80" 
-        y="-10.0" 
-        width="74" 
-        height="26" 
-        rx="13" 
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
     />
   </clipPath>
 
 <rect
  class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="74" 
-    height="26" 
-    rx="13" 
-    clip-path="url(#clipid-adfbb642-d65f-40f8-9448-14696f780597)" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-1252ee1a-745c-4d61-b1c9-fb80dc9a9453)" 
     shape-rendering="geometricPrecision"
 /><path 
 class="label__leaderline" 
-d="M 0 0 L 16.0 0 C 40.0 0 40.0 3 64.0 3 L 80 3" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
 transform="scale(1 1) translate(0 0) " 
 
  shape-rendering="geometricPrecision"
 /><text
     class="label__text"
     transform="
-        translate(117.0 3) 
+        translate(100.0 0) 
         scale(1 1)
     "  
 >
-    PWR
+    RESET
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(140 0) 
+        scale(1 1)
+    "
+>
+        <clipPath id="clipid-3e6de517-16fc-42f3-81a9-c45b6a129be1">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-3e6de517-16fc-42f3-81a9-c45b6a129be1)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    RESET
 </text>
 </g>
 </g><g 
+        class=" labelrow"
     transform="
-        translate(0 49.0) 
+        translate(0 319.8) 
         scale(1 1)
     "
 >
         <g 
-        class="adc label"
+        class="digital label"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
-        <clipPath id="clipid-c5bd808b-af97-4436-b4f5-446fad518f9b">
+        <clipPath id="clipid-8cee0ae7-fecd-4780-9a05-5900ce6b2ed6">
     <rect
-        x="80" 
-        y="-7.0" 
-        width="74" 
-        height="26" 
-        rx="13" 
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
     />
   </clipPath>
 
 <rect
  class="label__body" 
-    x="80" 
-    y="-7.0" 
-    width="74" 
-    height="26" 
-    rx="13" 
-    clip-path="url(#clipid-c5bd808b-af97-4436-b4f5-446fad518f9b)" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-8cee0ae7-fecd-4780-9a05-5900ce6b2ed6)" 
     shape-rendering="geometricPrecision"
 /><path 
 class="label__leaderline" 
-d="M 0 0 L 16.0 0 C 40.0 0 40.0 6 64.0 6 L 80 6" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
 transform="scale(1 1) translate(0 0) " 
 
  shape-rendering="geometricPrecision"
 /><text
     class="label__text"
     transform="
-        translate(117.0 6) 
+        translate(100.0 0) 
         scale(1 1)
     "  
 >
-    01
+    RX
 </text>
 </g><g 
-        class="dac label"
+        class="mu-port label"
     transform="
-        translate(154 6) 
+        translate(140 0) 
         scale(1 1)
     "
 >
-        <clipPath id="clipid-89bb0922-ab2f-47f0-bb15-9a51183e38d5">
+        <clipPath id="clipid-2175144c-8a0f-412a-9b1c-b0558c1fa312">
     <rect
-        x="6" 
-        y="-13.0" 
-        width="74" 
-        height="26" 
-        rx="13" 
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
     />
   </clipPath>
 
 <rect
  class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="74" 
-    height="26" 
-    rx="13" 
-    clip-path="url(#clipid-89bb0922-ab2f-47f0-bb15-9a51183e38d5)" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-2175144c-8a0f-412a-9b1c-b0558c1fa312)" 
     shape-rendering="geometricPrecision"
 /><path 
 class="label__leaderline" 
-d="M 0 0 L 0 0.0 A 0.0 0.0 0 0 0 0.0 0 L 6 0" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
 transform="scale(1 1) translate(0 0) " 
 
  shape-rendering="geometricPrecision"
 /><text
     class="label__text"
     transform="
-        translate(43.0 0) 
+        translate(42.0 0) 
         scale(1 1)
     "  
 >
-    02
-</text>
-</g><g 
-        class="gpio label"
-    transform="
-        translate(234 6) 
-        scale(1 1)
-    "
->
-        <clipPath id="clipid-aeaadccf-8df4-4191-b2c3-330e0e731ff4">
-    <rect
-        x="6" 
-        y="-13.0" 
-        width="74" 
-        height="26" 
-        rx="13" 
-    />
-  </clipPath>
-
-<rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="74" 
-    height="26" 
-    rx="13" 
-    clip-path="url(#clipid-aeaadccf-8df4-4191-b2c3-330e0e731ff4)" 
-    shape-rendering="geometricPrecision"
-/><path 
-class="label__leaderline" 
-d="M 0 0 L 0 0.0 A 0.0 0.0 0 0 0 0.0 0 L 6 0" 
-transform="scale(1 1) translate(0 0) " 
-
- shape-rendering="geometricPrecision"
-/><text
-    class="label__text"
-    transform="
-        translate(43.0 0) 
-        scale(1 1)
-    "  
->
-    03
+    GPIO1
 </text>
 </g>
 </g><g 
+        class=" labelrow"
     transform="
-        translate(0 73.5) 
+        translate(0 344.40000000000003) 
         scale(1 1)
     "
 >
         <g 
-        class="dac label"
+        class="digital label"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
-        <clipPath id="clipid-a8998d59-c45b-48e0-83ed-26aec4022652">
+        <clipPath id="clipid-4f3ec669-ccb4-4df6-aa50-5403ea850a3a">
     <rect
-        x="80" 
-        y="-4.0" 
-        width="74" 
-        height="26" 
-        rx="13" 
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
     />
   </clipPath>
 
 <rect
  class="label__body" 
-    x="80" 
-    y="-4.0" 
-    width="74" 
-    height="26" 
-    rx="13" 
-    clip-path="url(#clipid-a8998d59-c45b-48e0-83ed-26aec4022652)" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-4f3ec669-ccb4-4df6-aa50-5403ea850a3a)" 
     shape-rendering="geometricPrecision"
 /><path 
 class="label__leaderline" 
-d="M 0 0 L 16.0 0 C 40.0 0 40.0 9 64.0 9 L 80 9" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
 transform="scale(1 1) translate(0 0) " 
 
  shape-rendering="geometricPrecision"
 /><text
     class="label__text"
     transform="
-        translate(117.0 9) 
+        translate(100.0 0) 
         scale(1 1)
     "  
 >
-    04
+    TX
 </text>
 </g><g 
-        class="adc label"
+        class="mu-port label"
     transform="
-        translate(154 9) 
+        translate(140 0) 
         scale(1 1)
     "
 >
-        <clipPath id="clipid-34d94b8e-8488-4b28-b867-bc782f2b2b99">
+        <clipPath id="clipid-818c24fc-2828-4bef-986c-1c72b59cf6bb">
     <rect
-        x="6" 
-        y="-13.0" 
-        width="74" 
-        height="26" 
-        rx="13" 
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
     />
   </clipPath>
 
 <rect
  class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="74" 
-    height="26" 
-    rx="13" 
-    clip-path="url(#clipid-34d94b8e-8488-4b28-b867-bc782f2b2b99)" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-818c24fc-2828-4bef-986c-1c72b59cf6bb)" 
     shape-rendering="geometricPrecision"
 /><path 
 class="label__leaderline" 
-d="M 0 0 L 0 0.0 A 0.0 0.0 0 0 0 0.0 0 L 6 0" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
 transform="scale(1 1) translate(0 0) " 
 
  shape-rendering="geometricPrecision"
 /><text
     class="label__text"
     transform="
-        translate(43.0 0) 
+        translate(42.0 0) 
         scale(1 1)
     "  
 >
-    05
+    GPIO0
 </text>
+</g>
+</g>
 </g><g 
-        class="gpio label"
     transform="
-        translate(234 9) 
+        translate(-86 58) 
         scale(1 1)
     "
 >
-        <clipPath id="clipid-cd5acb68-6163-448c-9060-6db1b16c699c">
+        <g 
+        class=" labelrow"
+    transform="
+        translate(0 0.0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="digital label"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-f0253865-b30f-4a2e-95cf-eec5074ae25e">
     <rect
-        x="6" 
-        y="-13.0" 
-        width="74" 
-        height="26" 
-        rx="13" 
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
     />
   </clipPath>
 
 <rect
  class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="74" 
-    height="26" 
-    rx="13" 
-    clip-path="url(#clipid-cd5acb68-6163-448c-9060-6db1b16c699c)" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-f0253865-b30f-4a2e-95cf-eec5074ae25e)" 
     shape-rendering="geometricPrecision"
 /><path 
 class="label__leaderline" 
-d="M 0 0 L 0 0.0 A 0.0 0.0 0 0 0 0.0 0 L 6 0" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
 transform="scale(1 1) translate(0 0) " 
 
  shape-rendering="geometricPrecision"
 /><text
     class="label__text"
     transform="
-        translate(43.0 0) 
-        scale(1 1)
+        translate(100.0 0) 
+        scale(-1 1)
     "  
 >
-    06
+    D13
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(-140 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-2bc7a89c-bf50-4d80-bddc-1517eb15d826">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-2bc7a89c-bf50-4d80-bddc-1517eb15d826)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    GPIO6
+</text>
+</g><g 
+        class="default label"
+    transform="
+        translate(-222 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-c069b2fc-5591-4d0e-a3df-46fe580ef6c1">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-c069b2fc-5591-4d0e-a3df-46fe580ef6c1)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    SCK
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 24.6) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="pwr label"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-c55b483c-d804-4e61-a1fe-bbf8de5889ac">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="12" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="12" 
+    clip-path="url(#clipid-c55b483c-d804-4e61-a1fe-bbf8de5889ac)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(100.0 0) 
+        scale(-1 1)
+    "  
+>
+    +3V3
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 49.2) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="other label"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-81d7eded-7a6b-4006-89ed-4e7f620cbc09">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-81d7eded-7a6b-4006-89ed-4e7f620cbc09)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(100.0 0) 
+        scale(-1 1)
+    "  
+>
+    +AREF
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(-140 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-fb2d5d51-06b9-40a3-a5e3-1a2fbd2b6649">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-fb2d5d51-06b9-40a3-a5e3-1a2fbd2b6649)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    PA03
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 73.80000000000001) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="digital label"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-fa39c7d8-cca6-440f-9f3c-7ba20f08c28f">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="50" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="50" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-fa39c7d8-cca6-440f-9f3c-7ba20f08c28f)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(85.0 0) 
+        scale(-1 1)
+    "  
+>
+    D14
+</text>
+</g><g 
+        class="analog label"
+    transform="
+        translate(-110 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-9684d3fb-e2eb-42a8-b0e3-67100d252c1e">
+    <rect
+        x="0" 
+        y="-11.5" 
+        width="30" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="0" 
+    y="-11.5" 
+    width="30" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-9684d3fb-e2eb-42a8-b0e3-67100d252c1e)" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(15.0 0) 
+        scale(-1 1)
+    "  
+>
+    A0
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(-140 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-861cd994-eca3-4c24-853d-690446cee8cd">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-861cd994-eca3-4c24-853d-690446cee8cd)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    GPIO26
+</text>
+</g><g 
+        class="default label"
+    transform="
+        translate(-222 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-b5e992d9-7ba5-4c8e-85ae-b8d184d5c396">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-b5e992d9-7ba5-4c8e-85ae-b8d184d5c396)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    A0/DAC0
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 98.4) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="digital label"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-2e1428cb-06c5-4d51-baec-32b080dbad95">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="50" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="50" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-2e1428cb-06c5-4d51-baec-32b080dbad95)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(85.0 0) 
+        scale(-1 1)
+    "  
+>
+    D15
+</text>
+</g><g 
+        class="analog label"
+    transform="
+        translate(-110 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-54422513-3749-472e-8a47-ad1803b915ea">
+    <rect
+        x="0" 
+        y="-11.5" 
+        width="30" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="0" 
+    y="-11.5" 
+    width="30" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-54422513-3749-472e-8a47-ad1803b915ea)" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(15.0 0) 
+        scale(-1 1)
+    "  
+>
+    A1
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(-140 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-da40b590-7ee2-4ea7-8c69-82a318eaff83">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-da40b590-7ee2-4ea7-8c69-82a318eaff83)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    GPIO27
+</text>
+</g><g 
+        class="default label"
+    transform="
+        translate(-222 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-2de7f887-2870-4fc4-ae4d-ba497b30327b">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-2de7f887-2870-4fc4-ae4d-ba497b30327b)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    A1
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 123.0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="digital label"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-f5b623fd-2d97-4192-858c-f04e1f006c7a">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="50" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="50" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-f5b623fd-2d97-4192-858c-f04e1f006c7a)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(85.0 0) 
+        scale(-1 1)
+    "  
+>
+    D16
+</text>
+</g><g 
+        class="analog label"
+    transform="
+        translate(-110 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-a1d1caba-47a9-4d48-80d7-10745b3de3dd">
+    <rect
+        x="0" 
+        y="-11.5" 
+        width="30" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="0" 
+    y="-11.5" 
+    width="30" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-a1d1caba-47a9-4d48-80d7-10745b3de3dd)" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(15.0 0) 
+        scale(-1 1)
+    "  
+>
+    A2
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(-140 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-a3800530-2966-45a7-a9d4-7471411c35bc">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-a3800530-2966-45a7-a9d4-7471411c35bc)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    GPIO28
+</text>
+</g><g 
+        class="default label"
+    transform="
+        translate(-222 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-a2ec23a6-3a59-4607-b66f-46cc72b30100">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-a2ec23a6-3a59-4607-b66f-46cc72b30100)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    A2
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 147.60000000000002) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="digital label"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-4c5ec4ad-2b93-4146-b78d-1f989f691d05">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="50" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="50" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-4c5ec4ad-2b93-4146-b78d-1f989f691d05)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(85.0 0) 
+        scale(-1 1)
+    "  
+>
+    D17
+</text>
+</g><g 
+        class="analog label"
+    transform="
+        translate(-110 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-834c3b38-0e4d-4574-9d46-dc1013354be2">
+    <rect
+        x="0" 
+        y="-11.5" 
+        width="30" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="0" 
+    y="-11.5" 
+    width="30" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-834c3b38-0e4d-4574-9d46-dc1013354be2)" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(15.0 0) 
+        scale(-1 1)
+    "  
+>
+    A3
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(-140 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-c749195f-6fa8-4ddb-bdab-c1b0aeb29716">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-c749195f-6fa8-4ddb-bdab-c1b0aeb29716)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    GPIO29
+</text>
+</g><g 
+        class="default label"
+    transform="
+        translate(-222 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-d1b9e16c-e48c-4165-8685-2f918b6106c6">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-d1b9e16c-e48c-4165-8685-2f918b6106c6)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    A3
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 172.20000000000002) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="digital label"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-42311470-eaa0-4d13-9163-317a749a29de">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="50" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="50" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-42311470-eaa0-4d13-9163-317a749a29de)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(85.0 0) 
+        scale(-1 1)
+    "  
+>
+    D18
+</text>
+</g><g 
+        class="analog label"
+    transform="
+        translate(-110 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-ff6e25cf-7015-45c4-b5e4-8847f1088de0">
+    <rect
+        x="0" 
+        y="-11.5" 
+        width="30" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="0" 
+    y="-11.5" 
+    width="30" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-ff6e25cf-7015-45c4-b5e4-8847f1088de0)" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(15.0 0) 
+        scale(-1 1)
+    "  
+>
+    A4
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(-140 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-2c3898a0-ae4c-4c53-a8ff-b292a01d5ce8">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-2c3898a0-ae4c-4c53-a8ff-b292a01d5ce8)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    GPIO12
+</text>
+</g><g 
+        class="default label"
+    transform="
+        translate(-222 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-ce574fb4-9d41-46b2-bff7-9bfac473ea73">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-ce574fb4-9d41-46b2-bff7-9bfac473ea73)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    A4
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 196.8) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="digital label"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-f6965fca-d230-4318-b98f-bd8a55bc3d4a">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="50" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="50" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-f6965fca-d230-4318-b98f-bd8a55bc3d4a)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(85.0 0) 
+        scale(-1 1)
+    "  
+>
+    D19
+</text>
+</g><g 
+        class="analog label"
+    transform="
+        translate(-110 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-36f2bf6b-a244-4cc0-bde3-8e429707fd35">
+    <rect
+        x="0" 
+        y="-11.5" 
+        width="30" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="0" 
+    y="-11.5" 
+    width="30" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-36f2bf6b-a244-4cc0-bde3-8e429707fd35)" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(15.0 0) 
+        scale(-1 1)
+    "  
+>
+    A5
+</text>
+</g><g 
+        class="mu-port label"
+    transform="
+        translate(-140 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-4af452c0-c753-494d-a56a-bd9ac0fd0678">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-4af452c0-c753-494d-a56a-bd9ac0fd0678)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    GPIO13
+</text>
+</g><g 
+        class="default label"
+    transform="
+        translate(-222 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-abf22419-9c89-435d-83a7-15407eb26ad2">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-abf22419-9c89-435d-83a7-15407eb26ad2)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    A5
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 221.4) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="digital label"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-0efd0c08-a9a4-4d47-a04d-3fc76f3f26c4">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="50" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="50" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-0efd0c08-a9a4-4d47-a04d-3fc76f3f26c4)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(85.0 0) 
+        scale(-1 1)
+    "  
+>
+    D20
+</text>
+</g><g 
+        class="analog label"
+    transform="
+        translate(-110 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-732a7da3-650d-4f22-ad1d-62c9d92ea0b5">
+    <rect
+        x="0" 
+        y="-11.5" 
+        width="30" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="0" 
+    y="-11.5" 
+    width="30" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-732a7da3-650d-4f22-ad1d-62c9d92ea0b5)" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(15.0 0) 
+        scale(-1 1)
+    "  
+>
+    A6
+</text>
+</g><g 
+        class="default show-leader label"
+    transform="
+        translate(-140 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-80d527e8-3710-42a9-bf04-b25660c9cc27">
+    <rect
+        x="84" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="84" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-80d527e8-3710-42a9-bf04-b25660c9cc27)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 16.8 0 C 42.0 0 42.0 0 67.2 0 L 84 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(124.0 0) 
+        scale(-1 1)
+    "  
+>
+    A6
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 246.0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="digital label"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-84cd7c44-61b3-4253-bcaa-1eebcce1fc40">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="50" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="50" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-84cd7c44-61b3-4253-bcaa-1eebcce1fc40)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(85.0 0) 
+        scale(-1 1)
+    "  
+>
+    D21
+</text>
+</g><g 
+        class="analog label"
+    transform="
+        translate(-110 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-3a8dd148-eaa2-4684-b077-1688babb5b81">
+    <rect
+        x="0" 
+        y="-11.5" 
+        width="30" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="0" 
+    y="-11.5" 
+    width="30" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-3a8dd148-eaa2-4684-b077-1688babb5b81)" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(15.0 0) 
+        scale(-1 1)
+    "  
+>
+    A7
+</text>
+</g><g 
+        class="default show-leader label"
+    transform="
+        translate(-140 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-de9c973b-493d-4416-ad73-acdc15749051">
+    <rect
+        x="84" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="84" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-de9c973b-493d-4416-ad73-acdc15749051)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 16.8 0 C 42.0 0 42.0 0 67.2 0 L 84 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(124.0 0) 
+        scale(-1 1)
+    "  
+>
+    A7
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 270.6) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="pwr label"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-2b32cc01-ca85-4a45-ba2f-b61adfa8280e">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="12" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="12" 
+    clip-path="url(#clipid-2b32cc01-ca85-4a45-ba2f-b61adfa8280e)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(100.0 0) 
+        scale(-1 1)
+    "  
+>
+    +5V
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 295.20000000000005) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="other label"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-d3ac724a-9049-4c95-a435-800889e89539">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-d3ac724a-9049-4c95-a435-800889e89539)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(100.0 0) 
+        scale(-1 1)
+    "  
+>
+    RESET
+</text>
+</g><g 
+        class="default label"
+    transform="
+        translate(-140 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-a5345681-767c-4f7a-b068-2b54025410f8">
+    <rect
+        x="2" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="0" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="2" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="0" 
+    clip-path="url(#clipid-a5345681-767c-4f7a-b068-2b54025410f8)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    QSPI_CSn
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 319.8) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="gnd label"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-915cb11d-02dc-4852-8bb8-2530e0345e23">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="12" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="12" 
+    clip-path="url(#clipid-915cb11d-02dc-4852-8bb8-2530e0345e23)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(100.0 0) 
+        scale(-1 1)
+    "  
+>
+    GND
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(0 344.40000000000003) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="pwr label"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <clipPath id="clipid-42af2e93-48f4-47aa-929f-6c90430f7136">
+    <rect
+        x="60" 
+        y="-11.5" 
+        width="80" 
+        height="23" 
+        rx="12" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="60" 
+    y="-11.5" 
+    width="80" 
+    height="23" 
+    rx="12" 
+    clip-path="url(#clipid-42af2e93-48f4-47aa-929f-6c90430f7136)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 12.0 0 C 30.0 0 30.0 0 48.0 0 L 60 0" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(100.0 0) 
+        scale(-1 1)
+    "  
+>
+    VIN
+</text>
+</g>
+</g>
+</g><g 
+    transform="
+        translate(-56 28) 
+        scale(1 1)
+    "
+>
+        <g 
+        class=" labelrow"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="led label"
+    transform="
+        translate(0 0) 
+        scale(1 -1)
+    "
+>
+        <clipPath id="clipid-2e635b8b-b261-4325-be30-b443e78f724c">
+    <rect
+        x="200" 
+        y="68.5" 
+        width="120" 
+        height="23" 
+        rx="13" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="200" 
+    y="68.5" 
+    width="120" 
+    height="23" 
+    rx="13" 
+    clip-path="url(#clipid-2e635b8b-b261-4325-be30-b443e78f724c)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0 53.33333333333333 A 26.666666666666668 26.666666666666668 0 0 0 26.666666666666668 80 L 200 80" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(260.0 80) 
+        scale(1 -1)
+    "  
+>
+    Power
+</text>
+</g>
+</g><g 
+        class=" labelrow"
+    transform="
+        translate(112 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="led label"
+    transform="
+        translate(0 0) 
+        scale(1 -1)
+    "
+>
+        <clipPath id="clipid-01c2f543-1409-46d7-a816-dee269d53fa1">
+    <rect
+        x="88" 
+        y="40.5" 
+        width="120" 
+        height="23" 
+        rx="13" 
+    />
+  </clipPath>
+
+<rect
+ class="label__body" 
+    x="88" 
+    y="40.5" 
+    width="120" 
+    height="23" 
+    rx="13" 
+    clip-path="url(#clipid-01c2f543-1409-46d7-a816-dee269d53fa1)" 
+    shape-rendering="geometricPrecision"
+/><path 
+class="label__leaderline" 
+d="M 0 0 L 0 34.66666666666667 A 17.333333333333332 17.333333333333332 0 0 0 17.333333333333332 52 L 88 52" 
+transform="scale(1 1) translate(0 0) " 
+
+ shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(148.0 52) 
+        scale(1 -1)
+    "  
+>
+    LED_BUILTIN
 </text>
 </g>
 </g>
@@ -478,17 +3322,97 @@ transform="scale(1 1) translate(0 0) "
 </g><g 
         class="panel panel--notes"
     transform="
-        translate(0 600) 
+        translate(0 550) 
         scale(1 1)
     "
 >
         <path 
 class="panel__bg" 
-d="M 0 0 L 1200 0 A 0 0 0 0 1 1200 0 L 1200 75 A 0 0 0 0 1 1200 75 L 0 75 A 0 0 0 0 1 0 75 L 0 0 A 0 0 0 0 1 0 0 z" 
+d="M 0 0 L 1200 0 A 0 0 0 0 1 1200 0 L 1200 120 A 0 0 0 0 1 1200 120 L 0 120 A 0 0 0 0 1 0 120 L 0 0 A 0 0 0 0 1 0 0 z" 
 transform="scale(1 1) translate(0 0) " 
 
  shape-rendering="geometricPrecision"
-/>
+/><g 
+        class="textblock "
+    transform="
+        translate(50 30) 
+        scale(1 1)
+    "
+>
+        <text
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "  
+>
+    <tspan class="h1">Arduino</tspan>
+</text><text
+    transform="
+        translate(0 22) 
+        scale(1 1)
+    "  
+>
+    <tspan class="h1">Nano RP2024 Connect</tspan>
+</text>
+</g><g 
+        class="textblock "
+    transform="
+        translate(50 74) 
+        scale(1 1)
+    "
+>
+        <text
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "  
+>
+    <tspan class="p">Pinout diagram create with <tspan class="strong italic">pinout</tspan></tspan>
+</text><text
+    transform="
+        translate(0 17) 
+        scale(1 1)
+    "  
+>
+    <tspan class="p">A Python package for creating pinout diagrams.</tspan>
+</text><text
+    transform="
+        translate(0 34) 
+        scale(1 1)
+    "  
+>
+    <tspan class="p"><a href="https://pinout.readthedocs.io">pinout.readthedocs.io</a></tspan>
+</text>
+</g><g 
+        class="textblock "
+    transform="
+        translate(380 74) 
+        scale(1 1)
+    "
+>
+        <text
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "  
+>
+    <tspan class="p">NOTE: This is not official documentation.</tspan>
+</text><text
+    transform="
+        translate(0 17) 
+        scale(1 1)
+    "  
+>
+    <tspan class="p">Diagram aesthetics from Arduino docs.</tspan>
+</text><text
+    transform="
+        translate(0 34) 
+        scale(1 1)
+    "  
+>
+    <tspan class="p">Visit <tspan class="strong"><a href="https://www.arduino.cc/">https://www.arduino.cc/</a></tspan> for official docs.</tspan>
+</text>
+</g>
 </g>
     
 </svg>

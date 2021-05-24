@@ -1,0 +1,12 @@
+<!-- scale  applied so pattern aligns with vertically adjacenct labels -->
+<pattern id="stripe-a" patternTransform="scale(1.3 1.3)" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+    <rect x="0" y="0" width="20" height="20" />
+    <path x="0" y="0" d="M 10 0 L 20 0 L 0 20 L 0 10  Z"/>
+    <path x="0" y="0" d="M 20 10 L 20 20 L 10 20  Z"/>
+</pattern>
+
+<pattern  id="stripe-b" patternTransform="scale(1.3 1.3)" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+    <rect x="0" y="0" width="20" height="20" />
+    <path x="0" y="0" d="M 10 0 L 20 0 L 0 20 L 0 10  Z"/>
+    <path x="0" y="0" d="M 20 10 L 20 20 L 10 20  Z"/>
+</pattern>

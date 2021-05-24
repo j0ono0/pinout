@@ -1,4 +1,8 @@
+from collections import namedtuple
 from . import core
+
+LabelAttrs = namedtuple("LabelAttrs", ("content tag config"))
+LabelAttrs.__new__.__defaults__ = (None, None, {})
 
 
 class Rect(core.Path):
@@ -98,9 +102,17 @@ class Label(core.Group):
 
 class LabelRow(core.Group):
     def __init__(self, labels, **kwargs):
+
+        tag = kwargs.pop("tag", "")
+        taglist = tag.split(" ")
+        taglist.append("labelrow")
+        kwargs["tag"] = " ".join(taglist)
         scale = core.Coords(*kwargs.pop("scale", (1, 1)))
         super().__init__(**kwargs)
-        for content, tag, config in labels:
+
+        for label in labels:
+            label = LabelAttrs(*label)
+
             # Align each label to the end of the previous label.
             x = self.width * scale.x
             y = 0
@@ -110,7 +122,11 @@ class LabelRow(core.Group):
             except IndexError:
                 pass  # no children yet
 
-            self.add(Label(content, x=x, y=y, tag=tag, scale=scale, **config))
+            self.add(
+                Label(
+                    label.content, x=x, y=y, tag=label.tag, scale=scale, **label.config
+                )
+            )
 
     def add(self, label):
         if type(label) is Label:

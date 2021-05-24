@@ -1,1 +1,23 @@
-<image {% if tags %}class="{{tags}}"{% endif %} x="{{ x }}" y="{{ y }}" href="{{ href }}" xlink:href="{{ href }}" height="{{ height }}" width="{{ width }}"/>
+{% if image.path %}
+<image 
+    {% if tags %}class="{{image.tag}}"{% endif %} 
+    x="{{ image.x }}" 
+    y="{{ image.y }}" 
+    href="{{ image.path }}" 
+    xlink:href="{{ image.path }}" 
+    height="{{ image.height }}" 
+    width="{{ image.width }}"
+/>
+{% else %}
+<g 
+    {% if image.tag %}
+        class="{{ image.tag }}"
+    {% endif %}
+    transform="
+        translate({{ image.x }} {{  image.y }}) 
+        scale({{ image.scale.x }} {{ image.scale.y }})
+    "
+>
+    {{ data }}
+</g>
+{% endif %}

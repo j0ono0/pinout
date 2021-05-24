@@ -1,4 +1,5 @@
 import uuid
+import base64
 from . import file_manager, templates
 from .mixins import (
     TransformMixin,
@@ -175,3 +176,35 @@ class Text(SvgShape):
     def render(self):
         tplt = templates.get("text.svg")
         return tplt.render(text=self)
+
+
+class Image(SvgShape):
+    def __init__(self, path, embed=False, **kwargs):
+        super().__init__(**kwargs)
+        self.path = path
+        self.embed = embed
+
+    def render(self):
+        """Render SVG markup either linking or embedding an image.
+
+        :return: SVG markup
+        :rtype: string
+        """
+        media_type = pathlib.Path(self.path).suffix[1:]
+        path = pathlib.Path(self.path)
+        tplt = templates.get("image.svg")
+        if self.embed:
+            if media_type == "svg":
+                with path.open() as f:
+                    svg_data = f.read()
+                # Extract JUST the <svg> markup with no <XML> tag
+                import xml.etree.ElementTree as ET
+
+                tree = ET.fromstring(svg_data)
+                just_svg_tag = ET.tostring(tree)
+                return tplt.render(data=just_svg_tag)
+            else:
+                encoded_img = base64.b64encode(open(self.path, "rb").read())
+                path = f"data:image/{media_type};base64,{encoded_img.decode('utf-8')}"
+
+        return tplt.render(image=self)

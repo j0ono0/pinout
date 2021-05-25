@@ -9,11 +9,25 @@ def pitch_generator(start, pitch):
 
 
 # Common label configuration settings
-cfg0 = {"r": 0, "width": 80, "height": 23, "offset": (60, 0)}
-cfg1 = {"r": 0, "width": 80, "height": 23, "offset": (2, 0)}
-cfg2 = {"r": 12, "width": 80, "height": 23, "offset": (60, 0)}
-cfg_digital_short = {"r": 0, "width": 50, "height": 23, "offset": (60, 0)}
-cfg_analog_short = {"r": 0, "width": 30, "height": 23, "offset": (0, 0)}
+cfg0 = {"r": 0, "width": 80, "height": 23, "offset": (60, 0), "label_style": "start"}
+cfg1 = {"r": 0, "width": 80, "height": 23, "offset": (2, 0), "label_style": "box"}
+cfg2 = {"r": 13, "width": 80, "height": 23, "offset": (60, 0)}
+cfg_end = {"r": 0, "width": 80, "height": 23, "offset": (2, 0), "label_style": "end"}
+
+cfg_digital_short = {
+    "r": 0,
+    "width": 50,
+    "height": 23,
+    "offset": (60, 0),
+    "label_style": "start",
+}
+cfg_analog_short = {
+    "r": 0,
+    "width": 30,
+    "height": 23,
+    "offset": (0, 0),
+    "label_style": "block",
+}
 
 
 # setup some automation for pinrow positioning
@@ -30,26 +44,26 @@ header_rhs = [
     [
         ("D12", "digital", cfg0),
         ("GPIO4", "mu-port", cfg1),
-        ("CIPO", "default", cfg1),
+        ("CIPO", "default", cfg_end),
     ],
     [
         ("D11", "digital", cfg0),
         ("GPIO7", "mu-port", cfg1),
-        ("CIPI", "default", cfg1),
+        ("CIPI", "default", cfg_end),
     ],
-    [("D10", "digital", cfg0), ("GPIO5", "mu-port", cfg1)],
-    [("D9", "digital", cfg0), ("GPIO21", "mu-port", cfg1)],
-    [("D8", "digital", cfg0), ("GPIO20", "mu-port", cfg1)],
-    [("D7", "digital", cfg0), ("GPIO19", "mu-port", cfg1)],
-    [("D6", "digital", cfg0), ("GPIO18", "mu-port", cfg1)],
-    [("D5", "digital", cfg0), ("GPIO17", "mu-port", cfg1)],
-    [("D4", "digital", cfg0), ("GPIO16", "mu-port", cfg1)],
-    [("D3", "digital", cfg0), ("GPIO15", "mu-port", cfg1)],
-    [("D2", "digital", cfg0), ("GPIO25", "mu-port", cfg1)],
+    [("D10", "digital", cfg0), ("GPIO5", "mu-port", cfg_end)],
+    [("D9", "digital", cfg0), ("GPIO21", "mu-port", cfg_end)],
+    [("D8", "digital", cfg0), ("GPIO20", "mu-port", cfg_end)],
+    [("D7", "digital", cfg0), ("GPIO19", "mu-port", cfg_end)],
+    [("D6", "digital", cfg0), ("GPIO18", "mu-port", cfg_end)],
+    [("D5", "digital", cfg0), ("GPIO17", "mu-port", cfg_end)],
+    [("D4", "digital", cfg0), ("GPIO16", "mu-port", cfg_end)],
+    [("D3", "digital", cfg0), ("GPIO15", "mu-port", cfg_end)],
+    [("D2", "digital", cfg0), ("GPIO25", "mu-port", cfg_end)],
     [("GND", "gnd", cfg2)],
-    [("RESET", "other", cfg0), ("RESET", "mu-port", cfg1)],
-    [("RX", "digital", cfg0), ("GPIO1", "mu-port", cfg1)],
-    [("TX", "digital", cfg0), ("GPIO0", "mu-port", cfg1)],
+    [("RESET", "other", cfg0), ("RESET", "mu-port", cfg_end)],
+    [("RX", "digital", cfg0), ("GPIO1", "mu-port", cfg_end)],
+    [("TX", "digital", cfg0), ("GPIO0", "mu-port", cfg_end)],
 ]
 
 
@@ -60,44 +74,54 @@ header_rhs = [
 #########################################################
 
 header_lhs = [
-    [("D13", "digital", cfg0), ("GPIO6", "mu-port", cfg1), ("SCK", "default", cfg1)],
+    [("D13", "digital", cfg0), ("GPIO6", "mu-port", cfg1), ("SCK", "default", cfg_end)],
     [("+3V3", "pwr", cfg2)],
-    [("+AREF", "other", cfg0), ("PA03", "mu-port", cfg1)],
+    [("+AREF", "other", cfg0), ("PA03", "mu-port", cfg_end)],
     [
         ("D14", "digital", cfg_digital_short),
-        ("A0", "analog", cfg_analog_short),
+        (
+            "A0",
+            "analog",
+            {
+                "r": 0,
+                "width": 30,
+                "height": 23,
+                "offset": (0, 0),
+                "label_style": "block",
+            },
+        ),
         ("GPIO26", "mu-port", cfg1),
-        ("A0/DAC0", "default", cfg1),
+        ("A0/DAC0", "default", cfg_end),
     ],
     [
         ("D15", "digital", cfg_digital_short),
         ("A1", "analog", cfg_analog_short),
         ("GPIO27", "mu-port", cfg1),
-        ("A1", "default", cfg1),
+        ("A1", "default", cfg_end),
     ],
     [
         ("D16", "digital", cfg_digital_short),
         ("A2", "analog", cfg_analog_short),
         ("GPIO28", "mu-port", cfg1),
-        ("A2", "default", cfg1),
+        ("A2", "default", cfg_end),
     ],
     [
         ("D17", "digital", cfg_digital_short),
         ("A3", "analog", cfg_analog_short),
         ("GPIO29", "mu-port", cfg1),
-        ("A3", "default", cfg1),
+        ("A3", "default", cfg_end),
     ],
     [
         ("D18", "digital", cfg_digital_short),
         ("A4", "analog", cfg_analog_short),
         ("GPIO12", "mu-port", cfg1),
-        ("A4", "default", cfg1),
+        ("A4", "default", cfg_end),
     ],
     [
         ("D19", "digital", cfg_digital_short),
         ("A5", "analog", cfg_analog_short),
         ("GPIO13", "mu-port", cfg1),
-        ("A5", "default", cfg1),
+        ("A5", "default", cfg_end),
     ],
     [
         ("D20", "digital", cfg_digital_short),
@@ -105,7 +129,13 @@ header_lhs = [
         (
             "A6",
             "default show-leader",
-            {"r": 0, "width": 80, "height": 23, "offset": (84, 0)},
+            {
+                "r": 0,
+                "width": 80,
+                "height": 23,
+                "offset": (84, 0),
+                "label_style": "end",
+            },
         ),
     ],
     [
@@ -114,11 +144,17 @@ header_lhs = [
         (
             "A7",
             "default show-leader",
-            {"r": 0, "width": 80, "height": 23, "offset": (84, 0)},
+            {
+                "r": 0,
+                "width": 80,
+                "height": 23,
+                "offset": (84, 0),
+                "label_style": "end",
+            },
         ),
     ],
     [("+5V", "pwr", cfg2)],
-    [("RESET", "other", cfg0), ("QSPI_CSn", "default", cfg1)],
+    [("RESET", "other", cfg0), ("QSPI_CSn", "default", cfg_end)],
     [("GND", "gnd", cfg2)],
     [("VIN", "pwr", cfg2)],
 ]

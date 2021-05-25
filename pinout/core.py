@@ -157,6 +157,17 @@ class Path(SvgShape):
         return tplt.render(path=self)
 
 
+class ClipPath(Path):
+    def __init__(self, path_definition="", **kwargs):
+        super().__init__(**kwargs)
+        self.uuid = uuid.uuid4()
+        self.d = path_definition
+
+    def render(self):
+        tplt = templates.get("clippath.svg")
+        tplt.render(path=self)
+
+
 class Rect(SvgShape):
     def __init__(self, r, **kwargs):
         super().__init__(**kwargs)

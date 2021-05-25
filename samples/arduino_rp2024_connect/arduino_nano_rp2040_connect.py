@@ -1,7 +1,11 @@
 from pinout.core import Diagram, Group, Image
+from pinout import components as cmp
 from pinout.components import Rect, LabelSet, TextBlock
 import data
+import component_overrides
 
+# Override label component with a custom one!
+cmp.Label = component_overrides.Label
 
 # Create a new digram
 diagram = Diagram(1200, 675, tag="arduino-rp2040-connect")
@@ -37,22 +41,11 @@ pinout_graphic.add(
     )
 )
 
-# Common label configuration arguments can be documented together
-label_one = {"r": 13, "width": 74, "height": 26}
-label_config = {
-    "r": 13,
-    "style": "smooth_bend",
-    "width": 74,
-    "height": 26,
-    "offset": (6, 0),
-}
-
 pinout_graphic.add(
     LabelSet(
         x=86,
         y=58,
         pitch=(0, 24.6),
-        # scale=(-1, 1),
         rows=data.header_rhs,
     )
 )

@@ -6,7 +6,7 @@
         height="{{ rect.height }}" 
         rx="{{ rect.r }}" 
     />
-  </clipPath>
+</clipPath>
 
 <rect
     {% if rect.tag %} class="{{ rect.tag }}"{% endif %} 

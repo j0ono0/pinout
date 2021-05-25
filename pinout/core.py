@@ -129,13 +129,14 @@ class Group(Layout):
 
 
 class SvgShape(TransformMixin):
-    def __init__(self, x=0, y=0, width=0, height=0, tag=None, **kwargs):
+    def __init__(self, x=0, y=0, width=0, height=0, tag=None, clip_id=None, **kwargs):
         super().__init__(**kwargs)
         self.tag = tag
         self.x = x
         self.y = y
         self.width = width
         self.height = height
+        self.clip_id = clip_id
 
     def bounding_rect(self):
         x1, y1, x2, y2 = self.bounding_coords()
@@ -165,7 +166,7 @@ class ClipPath(Path):
 
     def render(self):
         tplt = templates.get("clippath.svg")
-        tplt.render(path=self)
+        return tplt.render(path=self)
 
 
 class Rect(SvgShape):

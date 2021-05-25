@@ -27,61 +27,6 @@ class Label(core.Group):
         kwargs["scale"] = (1, 1)
         rx = height / 2
 
-        if label_style == "start":
-            path_def = " ".join(
-                [
-                    f"M {rx} 0",
-                    f"L {width} 0",
-                    f"L {width} {height}",
-                    f"L {rx} {height}",
-                    f"A {rx} {rx} 0 0 1 {rx} 0",
-                    "Z",
-                ]
-            )
-            label_body = self.add(
-                core.Path(
-                    path_definition=path_def,
-                    x=self.offset.x,
-                    y=self.offset.y - (height / 2),
-                    width=width,
-                    height=height,
-                    tag="label__body",
-                    **kwargs,
-                )
-            )
-        elif label_style == "end":
-            path_def = " ".join(
-                [
-                    f"M 0 0",
-                    f"L {width - rx} 0",
-                    f"a {rx} {rx} 0 0 1 0 {height}",
-                    f"L 0 {height}",
-                    "Z",
-                ]
-            )
-            label_body = self.add(
-                core.Path(
-                    path_definition=path_def,
-                    x=self.offset.x,
-                    y=self.offset.y - (height / 2),
-                    width=width,
-                    height=height,
-                    tag="label__body",
-                    **kwargs,
-                )
-            )
-        else:
-            label_body = self.add(
-                core.Rect(
-                    r=r,
-                    x=self.offset.x,
-                    y=self.offset.y - (height / 2),
-                    width=width,
-                    height=height,
-                    tag="block label__body",
-                    **kwargs,
-                )
-            )
         if self.offset.x != 0 or self.offset.y != 0:
             if style == "straight":
                 # Straight line
@@ -91,10 +36,10 @@ class Label(core.Group):
                 path_def = f"M 0 0 l 0 {self.offset.y} l {self.offset.x} 0"
             elif style == "smooth_bend":
                 # Single bend
-                r = min(*self.offset)
+                rx = min(*self.offset)
                 # TODO: determine 'r' in a non-arbitary way
-                r = r / 3
-                path_def = f"M 0 0 L 0 {self.offset.y - r} A {r} {r} 0 0 0 {r} {self.offset.y} L {self.offset.x} {self.offset.y}"
+                rx = rx / 3
+                path_def = f"M 0 0 L 0 {self.offset.y - rx} A {rx} {rx} 0 0 0 {rx} {self.offset.y} L {self.offset.x} {self.offset.y}"
             else:
                 # Beizer curve (default)
                 len = self.offset.x / 5
@@ -109,6 +54,68 @@ class Label(core.Group):
                     width=self.offset.x,
                     height=self.offset.y,
                     tag="label__leaderline",
+                    **kwargs,
+                )
+            )
+
+        if label_style == "start":
+            path_def = " ".join(
+                [
+                    f"M {rx} 0",
+                    f"L {width} 0",
+                    f"L {width} {height}",
+                    f"L {rx} {height}",
+                    f"A {rx} {rx} 0 0 1 {rx} 0",
+                    "Z",
+                ]
+            )
+
+            clip = self.add(core.ClipPath(path_definition=path_def))
+
+            label_body = self.add(
+                core.Path(
+                    path_definition=path_def,
+                    x=self.offset.x,
+                    y=self.offset.y - (height / 2),
+                    width=width,
+                    height=height,
+                    tag="label__body",
+                    clip_id=clip.uuid,
+                    **kwargs,
+                )
+            )
+        elif label_style == "end":
+            path_def = " ".join(
+                [
+                    f"M 0 0",
+                    f"L {width - rx} 0",
+                    f"a {rx} {rx} 0 0 1 0 {height}",
+                    f"L 0 {height}",
+                    "Z",
+                ]
+            )
+            clip = self.add(core.ClipPath(path_definition=path_def))
+            label_body = self.add(
+                core.Path(
+                    path_definition=path_def,
+                    x=self.offset.x,
+                    y=self.offset.y - (height / 2),
+                    width=width,
+                    height=height,
+                    tag="label__body",
+                    clip_id=clip.uuid,
+                    **kwargs,
+                )
+            )
+        else:
+            label_body = self.add(
+                core.Rect(
+                    r=r,
+                    x=self.offset.x,
+                    y=self.offset.y - (height / 2),
+                    width=width,
+                    height=height,
+                    tag="block label__body",
                     **kwargs,
                 )
             )

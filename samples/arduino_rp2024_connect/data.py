@@ -1,4 +1,5 @@
-# Helper function to calculate locations of label rows
+# Experimental helper function to calculate locations of label rows
+# This only gets used for the LED labels
 def pitch_generator(start, pitch):
     x = start[0]
     y = start[1]
@@ -8,30 +9,50 @@ def pitch_generator(start, pitch):
         y += pitch[1]
 
 
+# Define common dimensions
+lbl_h = 20
+lbl_w_xl = 120
+lbl_w_lg = 80
+lbl_w_md = 50
+lbl_w_sm = 30
+
+offset_x_lg = (60, 0)
+offset_x_sm = (2, 0)
+
 # Common label configuration settings
-cfg0 = {"r": 0, "width": 80, "height": 23, "offset": (60, 0), "label_style": "start"}
-cfg1 = {"r": 0, "width": 80, "height": 23, "offset": (2, 0), "label_style": "box"}
-cfg2 = {"r": 13, "width": 80, "height": 23, "offset": (60, 0)}
-cfg_end = {"r": 0, "width": 80, "height": 23, "offset": (2, 0), "label_style": "end"}
+cfg0 = {
+    "r": 0,
+    "width": lbl_w_lg,
+    "height": lbl_h,
+    "offset": offset_x_lg,
+    "label_style": "start",
+}
+cfg1 = {
+    "width": lbl_w_lg,
+    "height": lbl_h,
+    "offset": offset_x_sm,
+    "label_style": "box",
+}
+cfg2 = {"r": lbl_h / 2, "width": lbl_w_lg, "height": lbl_h, "offset": offset_x_lg}
+
+cfg_end = {
+    "width": lbl_w_lg,
+    "height": lbl_h,
+    "offset": offset_x_sm,
+    "label_style": "end",
+}
 
 cfg_digital_short = {
-    "r": 0,
-    "width": 50,
-    "height": 23,
-    "offset": (60, 0),
+    "width": lbl_w_md,
+    "height": lbl_h,
+    "offset": offset_x_lg,
     "label_style": "start",
 }
 cfg_analog_short = {
-    "r": 0,
-    "width": 30,
-    "height": 23,
-    "offset": (0, 0),
+    "width": lbl_w_sm,
+    "height": lbl_h,
     "label_style": "block",
 }
-
-
-# setup some automation for pinrow positioning
-pitch = pitch_generator((80, 0), (0, 3))
 
 
 #########################################################
@@ -76,16 +97,15 @@ header_rhs = [
 header_lhs = [
     [("D13", "digital", cfg0), ("GPIO6", "mu-port", cfg1), ("SCK", "default", cfg_end)],
     [("+3V3", "pwr", cfg2)],
-    [("+AREF", "other", cfg0), ("PA03", "mu-port", cfg_end)],
+    [("AREF", "other", cfg0), ("PA03", "mu-port", cfg_end)],
     [
         ("D14", "digital", cfg_digital_short),
         (
             "A0",
             "analog",
             {
-                "r": 0,
-                "width": 30,
-                "height": 23,
+                "width": lbl_w_sm,
+                "height": lbl_h,
                 "offset": (0, 0),
                 "label_style": "block",
             },
@@ -130,9 +150,8 @@ header_lhs = [
             "A6",
             "default show-leader",
             {
-                "r": 0,
-                "width": 80,
-                "height": 23,
+                "width": lbl_w_lg,
+                "height": lbl_h,
                 "offset": (84, 0),
                 "label_style": "end",
             },
@@ -145,9 +164,8 @@ header_lhs = [
             "A7",
             "default show-leader",
             {
-                "r": 0,
-                "width": 80,
-                "height": 23,
+                "width": lbl_w_lg,
+                "height": lbl_h,
                 "offset": (84, 0),
                 "label_style": "end",
             },
@@ -173,10 +191,10 @@ leds = [
             "Power",
             "led",
             {
-                "r": 13,
+                "r": lbl_h / 2,
                 "style": "smooth_bend",
-                "width": 120,
-                "height": 23,
+                "width": lbl_w_xl,
+                "height": lbl_h,
                 "offset": next(led_pitch),
             },
         )
@@ -186,10 +204,10 @@ leds = [
             "LED_BUILTIN",
             "led",
             {
-                "r": 13,
+                "r": lbl_h / 2,
                 "style": "smooth_bend",
-                "width": 120,
-                "height": 23,
+                "width": lbl_w_xl,
+                "height": lbl_h,
                 "offset": next(led_pitch),
             },
         )
@@ -208,12 +226,12 @@ title_1 = [
     '<tspan class="h1">Nano RP2024 Connect</tspan>',
 ]
 para_1 = [
-    '<tspan class="p">Pinout diagram create with <tspan class="strong italic">pinout</tspan></tspan>',
+    '<tspan class="p">Pinout diagram create with <tspan class="italic">pinout (v0.0.10)</tspan></tspan>',
     '<tspan class="p">A Python package for creating pinout diagrams.</tspan>',
-    '<tspan class="p"><a href="https://pinout.readthedocs.io">pinout.readthedocs.io</a></tspan>',
+    '<tspan class="p"><tspan class="strong"><a href="https://pinout.readthedocs.io">pinout.readthedocs.io</a></tspan></tspan>',
 ]
 para_2 = [
     '<tspan class="p">NOTE: This is not official documentation.</tspan>',
     '<tspan class="p">Diagram aesthetics from Arduino docs.</tspan>',
-    '<tspan class="p">Visit <tspan class="strong"><a href="https://www.arduino.cc/">https://www.arduino.cc/</a></tspan> for official docs.</tspan>',
+    '<tspan class="p"><tspan class="strong"><a href="https://www.arduino.cc/">https://www.arduino.cc/</a></tspan></tspan>',
 ]

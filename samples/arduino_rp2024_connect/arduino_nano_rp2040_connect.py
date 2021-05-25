@@ -26,7 +26,7 @@ group_notes = diagram.add(Group(0, 550, tag="panel panel--notes"))
 group_notes.add(Rect(0, 0, 1200, 120, tag="panel__bg"))
 group_notes.add(TextBlock(data.title_1, 22, x=50, y=30))
 group_notes.add(TextBlock(data.para_1, 17, x=50, y=74))
-group_notes.add(TextBlock(data.para_2, 17, x=380, y=74))
+group_notes.add(TextBlock(data.para_2, 17, x=800, y=74))
 
 
 # Add a hardware image

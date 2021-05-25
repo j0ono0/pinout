@@ -6,9 +6,12 @@
 #
 #########################################################
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;600;700&display=swap');
+
  svg {
     fill-opacity: 1;
-    font-family: Helvetica, Verdana;
+    font-family: 'Roboto Mono', Helvetica, Verdana, monospace;
     font-size: 13px;
     font-weight: normal;
     opacity: 1;
@@ -58,6 +61,7 @@ text {
     text-anchor: middle;
     stroke-width: 0;
     font-size: 12px;
+    font-weight: 600;
 }
 
 
@@ -99,7 +103,6 @@ text {
 }
 .default text{
     fill: #000;
-    font-weight: bold;
 }
 .digital .label__body{
     fill: url("#stripe-a");
@@ -118,7 +121,6 @@ text {
 }
 .analog text{
     fill: #d35400;
-    font-weight: bold;
 }
     /* Custom svg pattern styling */
     #stripe-b rect{
@@ -140,7 +142,6 @@ text {
 }
 .other text{
     fill: #d86e29;
-    font-weight: bold;
 }
 
 
@@ -153,7 +154,7 @@ text {
 */
 .h1{
     font-size: 28px;
-    font-weight: bold;
+    font-weight: 700;
 }
 .p{
     fill: #333;

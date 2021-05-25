@@ -19,12 +19,15 @@ class Label(core.Group):
         **kwargs,
     ):
         self.offset = core.Coords(*offset)
+
         taglist = tag.split(" ")
         taglist.append("label")
         tag = " ".join(taglist)
         super().__init__(x=x, y=y, tag=tag, **kwargs)
 
-        kwargs["scale"] = (1, 1)
+        scale = kwargs.pop("scale", core.Coords(1, 1))
+        # kwargs["scale"] = (1, 1)
+
         rx = height / 2
 
         if self.offset.x != 0 or self.offset.y != 0:
@@ -57,7 +60,7 @@ class Label(core.Group):
                     **kwargs,
                 )
             )
-
+        # Label body
         if label_style == "start":
             path_def = " ".join(
                 [
@@ -70,7 +73,16 @@ class Label(core.Group):
                 ]
             )
 
-            clip = self.add(core.ClipPath(path_definition=path_def))
+            clip = self.add(
+                core.ClipPath(
+                    path_definition=path_def,
+                    x=0,
+                    y=0,
+                    width=width,
+                    height=height,
+                    **kwargs,
+                )
+            )
 
             label_body = self.add(
                 core.Path(
@@ -84,6 +96,7 @@ class Label(core.Group):
                     **kwargs,
                 )
             )
+
         elif label_style == "end":
             path_def = " ".join(
                 [
@@ -120,7 +133,8 @@ class Label(core.Group):
                 )
             )
 
-        kwargs["scale"] = self.scale
         x = label_body.width / 2 + self.offset.x
         y = self.offset.y
-        self.add(core.Text(content, x=x, y=y, tag="label__text", **kwargs))
+        self.add(
+            core.Text(content, x=x, y=y, tag="label__text", scale=self.scale, **kwargs)
+        )

@@ -11,12 +11,13 @@ import pathlib
 
 
 class Layout(TransformMixin):
-    def __init__(self, x=0, y=0, tag=None, **kwargs):
+    def __init__(self, x=0, y=0, tag=None, clip_id=None, **kwargs):
         super().__init__(**kwargs)
         self.tag = tag
         self.x = x
         self.y = y
         self.children = []
+        self.clip_id = clip_id
 
     def add(self, instance):
         self.children.append(instance)

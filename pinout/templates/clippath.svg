@@ -3,5 +3,6 @@
     d="{{ path.d }}" 
     transform="scale({{ path.scale.x }} {{ path.scale.y }}) translate({{ path.x }} {{  path.y }})" 
     shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
     />
 </clipPath>

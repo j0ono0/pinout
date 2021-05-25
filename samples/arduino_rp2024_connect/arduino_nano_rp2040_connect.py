@@ -1,8 +1,11 @@
 from pinout.core import Diagram, Group, Image
 from pinout import components as cmp
 from pinout.components import Rect, LabelSet, TextBlock
-import data
 import component_overrides
+
+
+# Import data from another script
+import data
 
 # Override label component with a custom one!
 cmp.Label = component_overrides.Label
@@ -10,8 +13,11 @@ cmp.Label = component_overrides.Label
 # Create a new digram
 diagram = Diagram(1200, 675, tag="arduino-rp2040-connect")
 
+
 # Add a stylesheet and some custom patterns
-diagram.add_stylesheet("styles.css", False)
+diagram.add_stylesheet("styles.css", True)
+
+
 diagram.add_defs("patterns.xml")
 
 # Construct a layout and add some backgrounds
@@ -38,6 +44,7 @@ pinout_graphic.add(
         y=0,
         width=176,
         height=449,
+        embed=True,
     )
 )
 
@@ -68,6 +75,5 @@ pinout_graphic.add(
         rows=data.leds,
     )
 )
-
 
 diagram.export("pinout_arduino_nano_rp2040_connect.svg", True)

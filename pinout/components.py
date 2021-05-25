@@ -51,7 +51,8 @@ class Label(core.Group):
         tag = " ".join(taglist)
         super().__init__(x=x, y=y, tag=tag, **kwargs)
 
-        kwargs["scale"] = (1, 1)
+        scale = kwargs.pop("scale", core.Coords(1, 1))
+
         label_body = self.add(
             core.Rect(
                 r=r,
@@ -94,10 +95,11 @@ class Label(core.Group):
                 )
             )
 
-        kwargs["scale"] = self.scale
         x = label_body.width / 2 + self.offset.x
         y = self.offset.y
-        self.add(core.Text(content, x=x, y=y, tag="label__text", **kwargs))
+        self.add(
+            core.Text(content, x=x, y=y, tag="label__text", scale=self.scale, **kwargs)
+        )
 
 
 class LabelRow(core.Group):

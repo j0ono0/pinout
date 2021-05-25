@@ -9,6 +9,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&family=Roboto:wght@300;900&display=swap');
 
+
  svg {
     fill-opacity: 1;
     font-family: 'Roboto', Helvetica, Verdana, monospace;
@@ -59,7 +60,7 @@ text {
     dominant-baseline: central;
     fill: #fff;
     font-family: 'Roboto Mono', monospace;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
     stroke-width: 0;
     text-anchor: middle;

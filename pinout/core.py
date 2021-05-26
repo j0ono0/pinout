@@ -221,3 +221,13 @@ class Image(SvgShape):
                 path = f"data:image/{media_type};base64,{encoded_img.decode('utf-8')}"
 
         return tplt.render(image=self)
+
+
+########
+# misc helper functions
+
+
+def separate_sign(coords):
+    sign = [coord // abs(coord) if coord != 0 else 1 for coord in coords]
+    coords = [abs(coord) for coord in coords]
+    return (tuple(coords), tuple(sign))

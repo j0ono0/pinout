@@ -1,4 +1,5 @@
 from collections import namedtuple
+import warnings
 from . import core
 
 LabelAttrs = namedtuple("LabelAttrs", ("content tag config"))
@@ -46,12 +47,22 @@ class Label(core.Group):
         **kwargs,
     ):
         self.offset = core.Coords(*offset)
+        scale = core.Coords(*kwargs.pop("scale", (1, 1)))
+
+        if self.offset.x < 0:
+            self.offset = core.Coords(abs(self.offset.x), self.offset.y)
+            msg = f"""
+                {self}:
+                Negative value in Label.offset.x has no effect.
+                Use Label.scale=(-1, 1) to 'flip' a label horizontally
+                and supply an absolute value for Label.offset.x.
+                """
+            warnings.warn(msg)
+
         taglist = tag.split(" ")
         taglist.append("label")
         tag = " ".join(taglist)
-        super().__init__(x=x, y=y, tag=tag, **kwargs)
-
-        scale = kwargs.pop("scale", core.Coords(1, 1))
+        super().__init__(x=x, y=y, tag=tag, scale=scale, **kwargs)
 
         label_body = self.add(
             core.Rect(

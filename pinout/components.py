@@ -50,10 +50,10 @@ class Label(core.Group):
         scale = core.Coords(*kwargs.pop("scale", (1, 1)))
 
         if self.offset.x < 0:
-            self.offset = core.Coords(abs(self.offset.x), self.offset.y)
+            # self.offset = core.Coords(abs(self.offset.x), self.offset.y)
             msg = f"""
                 {self}:
-                Negative value in Label.offset.x has no effect.
+                Negative value in Label.offset.x has unexpected results!
                 Use Label.scale=(-1, 1) to 'flip' a label horizontally
                 and supply an absolute value for Label.offset.x.
                 """

@@ -48,6 +48,7 @@ pinout_graphic.add(
     )
 )
 
+# Right hand side pin header
 pinout_graphic.add(
     LabelSet(
         x=86,
@@ -57,6 +58,7 @@ pinout_graphic.add(
     )
 )
 
+# Left hand side pin header
 pinout_graphic.add(
     LabelSet(
         x=-86,
@@ -66,6 +68,8 @@ pinout_graphic.add(
         rows=data.header_lhs,
     )
 )
+
+# LED labels
 pinout_graphic.add(
     LabelSet(
         x=-56,

@@ -54,8 +54,7 @@ class Label(core.Group):
             msg = f"""
                 {self}:
                 Negative value in Label.offset.x has unexpected results!
-                Use Label.scale=(-1, 1) to 'flip' a label horizontally
-                and supply an absolute value for Label.offset.x.
+                Use Label.scale=(-1, 1) to 'flip' a label horizontally instead.
                 """
             warnings.warn(msg)
 

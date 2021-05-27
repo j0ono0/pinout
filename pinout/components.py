@@ -2,8 +2,8 @@ from collections import namedtuple
 import warnings
 from . import core
 
-LabelAttrs = namedtuple("LabelAttrs", ("content tag config"))
-LabelAttrs.__new__.__defaults__ = (None, None, {})
+LabelAttrs = namedtuple("LabelAttrs", ("cls content tag config"))
+LabelAttrs.__new__.__defaults__ = (None, None, None, {})
 
 
 class Rect(core.Path):
@@ -32,7 +32,15 @@ class Rect(core.Path):
         )
 
 
-class Label(core.Group):
+class LabelBase(core.Group):
+    def __init__(self, **kwargs):
+        tag = kwargs.pop("tag", "")
+        taglist = tag.split(" ")
+        taglist.append("label")
+        super().__init__(tag=tag, **kwargs)
+
+
+class Label(LabelBase):
     def __init__(
         self,
         content,
@@ -50,7 +58,6 @@ class Label(core.Group):
         scale = core.Coords(*kwargs.pop("scale", (1, 1)))
 
         if self.offset.x < 0:
-            # self.offset = core.Coords(abs(self.offset.x), self.offset.y)
             msg = f"""
                 {self}:
                 Negative value in Label.offset.x has unexpected results!
@@ -58,9 +65,6 @@ class Label(core.Group):
                 """
             warnings.warn(msg)
 
-        taglist = tag.split(" ")
-        taglist.append("label")
-        tag = " ".join(taglist)
         super().__init__(x=x, y=y, tag=tag, scale=scale, **kwargs)
 
         label_body = self.add(
@@ -122,8 +126,7 @@ class LabelRow(core.Group):
         scale = core.Coords(*kwargs.pop("scale", (1, 1)))
         super().__init__(**kwargs)
 
-        for label in labels:
-            label = LabelAttrs(*label)
+        for cls, content, tag, config in labels:
 
             # Align each label to the end of the previous label.
             x = self.width * scale.x
@@ -134,14 +137,10 @@ class LabelRow(core.Group):
             except IndexError:
                 pass  # no children yet
 
-            self.add(
-                Label(
-                    label.content, x=x, y=y, tag=label.tag, scale=scale, **label.config
-                )
-            )
+            self.add(cls(content, x=x, y=y, tag=tag, scale=scale, **config))
 
     def add(self, label):
-        if type(label) is Label:
+        if issubclass(type(label), LabelBase):
             self.children.append(label)
             return label
         # Only allow Labels to be added to a LabelRow

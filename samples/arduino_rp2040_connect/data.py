@@ -1,4 +1,5 @@
 from pinout import config
+from arduino_components import Label, FirstLabel, LabelLast
 
 
 cfg = config.PinConfig(
@@ -7,31 +8,25 @@ cfg = config.PinConfig(
             "width": 80,
             "height": 20,
             "offset": (2, 0),
-            "label_style": "block",
         },
         "block_sm": {
             "width": 30,
             "height": 20,
             "offset": (0, 0),
-            "label_style": "block",
         },
         "start": {
             "width": 80,
             "height": 20,
-            "label_style": "start",
         },
         "end": {
             "width": 80,
             "height": 20,
             "offset": (2, 0),
-            "label_style": "end",
         },
         "single": {
             "r": 10,
             "width": 80,
             "height": 20,
-            "style": "smooth_bend",
-            "label_style": "block",
         },
     }
 )
@@ -44,28 +39,64 @@ cfg = config.PinConfig(
 cfg.set_pitch((80, 0), (0, 0))
 header_rhs = [
     [
-        ("D12", "digital", cfg("start")),
-        ("GPIO4", "mu-port", cfg("block")),
-        ("CIPO", "default", cfg("end")),
+        (FirstLabel, "D12", "digital", cfg("start")),
+        (Label, "GPIO4", "mu-port", cfg("block")),
+        (LabelLast, "CIPO", "default", cfg("end")),
     ],
     [
-        ("D11", "digital", cfg("start")),
-        ("GPIO7", "mu-port", cfg("block")),
-        ("CIPI", "default", cfg("end")),
+        (FirstLabel, "D11", "digital", cfg("start")),
+        (Label, "GPIO7", "mu-port", cfg("block")),
+        (LabelLast, "CIPI", "default", cfg("end")),
     ],
-    [("D10", "digital", cfg("start")), ("GPIO5", "mu-port", cfg("end"))],
-    [("D9", "digital", cfg("start")), ("GPIO21", "mu-port", cfg("end"))],
-    [("D8", "digital", cfg("start")), ("GPIO20", "mu-port", cfg("end"))],
-    [("D7", "digital", cfg("start")), ("GPIO19", "mu-port", cfg("end"))],
-    [("D6", "digital", cfg("start")), ("GPIO18", "mu-port", cfg("end"))],
-    [("D5", "digital", cfg("start")), ("GPIO17", "mu-port", cfg("end"))],
-    [("D4", "digital", cfg("start")), ("GPIO16", "mu-port", cfg("end"))],
-    [("D3", "digital", cfg("start")), ("GPIO15", "mu-port", cfg("end"))],
-    [("D2", "digital", cfg("start")), ("GPIO25", "mu-port", cfg("end"))],
-    [("GND", "gnd", cfg("single"))],
-    [("RESET", "other", cfg("start")), ("RESET", "mu-port", cfg("end"))],
-    [("RX", "digital", cfg("start")), ("GPIO1", "mu-port", cfg("end"))],
-    [("TX", "digital", cfg("start")), ("GPIO0", "mu-port", cfg("end"))],
+    [
+        (FirstLabel, "D10", "digital", cfg("start")),
+        (LabelLast, "GPIO5", "mu-port", cfg("end")),
+    ],
+    [
+        (FirstLabel, "D9", "digital", cfg("start")),
+        (LabelLast, "GPIO21", "mu-port", cfg("end")),
+    ],
+    [
+        (FirstLabel, "D8", "digital", cfg("start")),
+        (LabelLast, "GPIO20", "mu-port", cfg("end")),
+    ],
+    [
+        (FirstLabel, "D7", "digital", cfg("start")),
+        (LabelLast, "GPIO19", "mu-port", cfg("end")),
+    ],
+    [
+        (FirstLabel, "D6", "digital", cfg("start")),
+        (LabelLast, "GPIO18", "mu-port", cfg("end")),
+    ],
+    [
+        (FirstLabel, "D5", "digital", cfg("start")),
+        (LabelLast, "GPIO17", "mu-port", cfg("end")),
+    ],
+    [
+        (FirstLabel, "D4", "digital", cfg("start")),
+        (LabelLast, "GPIO16", "mu-port", cfg("end")),
+    ],
+    [
+        (FirstLabel, "D3", "digital", cfg("start")),
+        (LabelLast, "GPIO15", "mu-port", cfg("end")),
+    ],
+    [
+        (FirstLabel, "D2", "digital", cfg("start")),
+        (LabelLast, "GPIO25", "mu-port", cfg("end")),
+    ],
+    [(Label, "GND", "gnd", cfg("single"))],
+    [
+        (FirstLabel, "RESET", "other", cfg("start")),
+        (LabelLast, "RESET", "mu-port", cfg("end")),
+    ],
+    [
+        (FirstLabel, "RX", "digital", cfg("start")),
+        (LabelLast, "GPIO1", "mu-port", cfg("end")),
+    ],
+    [
+        (FirstLabel, "TX", "digital", cfg("start")),
+        (LabelLast, "GPIO0", "mu-port", cfg("end")),
+    ],
 ]
 
 
@@ -77,62 +108,68 @@ header_rhs = [
 
 header_lhs = [
     [
-        ("D13", "digital", cfg("start")),
-        ("GPIO6", "mu-port", cfg("block")),
-        ("SCK", "default", cfg("end")),
+        (FirstLabel, "D13", "digital", cfg("start")),
+        (Label, "GPIO6", "mu-port", cfg("block")),
+        (LabelLast, "SCK", "default", cfg("end")),
     ],
-    [("+3V3", "pwr", cfg("single"))],
-    [("AREF", "other", cfg("start")), ("PA03", "mu-port", cfg("end"))],
+    [(FirstLabel, "+3V3", "pwr", cfg("single"))],
     [
-        ("D14", "digital", cfg("start", width=50)),
-        ("A0", "analog", cfg("block_sm")),
-        ("GPIO26", "mu-port", cfg("block")),
-        ("A0/DAC0", "default", cfg("end")),
+        (FirstLabel, "AREF", "other", cfg("start")),
+        (LabelLast, "PA03", "mu-port", cfg("end")),
     ],
     [
-        ("D15", "digital", cfg("start", width=50)),
-        ("A1", "analog", cfg("block_sm")),
-        ("GPIO27", "mu-port", cfg("block")),
-        ("A1", "default", cfg("end")),
+        (FirstLabel, "D14", "digital", cfg("start", width=50)),
+        (Label, "A0", "analog", cfg("block_sm")),
+        (Label, "GPIO26", "mu-port", cfg("block")),
+        (LabelLast, "A0/DAC0", "default", cfg("end")),
     ],
     [
-        ("D16", "digital", cfg("start", width=50)),
-        ("A2", "analog", cfg("block_sm")),
-        ("GPIO28", "mu-port", cfg("block")),
-        ("A2", "default", cfg("end")),
+        (FirstLabel, "D15", "digital", cfg("start", width=50)),
+        (Label, "A1", "analog", cfg("block_sm")),
+        (Label, "GPIO27", "mu-port", cfg("block")),
+        (LabelLast, "A1", "default", cfg("end")),
     ],
     [
-        ("D17", "digital", cfg("start", width=50)),
-        ("A3", "analog", cfg("block_sm")),
-        ("GPIO29", "mu-port", cfg("block")),
-        ("A3", "default", cfg("end")),
+        (FirstLabel, "D16", "digital", cfg("start", width=50)),
+        (Label, "A2", "analog", cfg("block_sm")),
+        (Label, "GPIO28", "mu-port", cfg("block")),
+        (LabelLast, "A2", "default", cfg("end")),
     ],
     [
-        ("D18", "digital", cfg("start", width=50)),
-        ("A4", "analog", cfg("block_sm")),
-        ("GPIO12", "mu-port", cfg("block")),
-        ("A4", "default", cfg("end")),
+        (FirstLabel, "D17", "digital", cfg("start", width=50)),
+        (Label, "A3", "analog", cfg("block_sm")),
+        (Label, "GPIO29", "mu-port", cfg("block")),
+        (LabelLast, "A3", "default", cfg("end")),
     ],
     [
-        ("D19", "digital", cfg("start", width=50)),
-        ("A5", "analog", cfg("block_sm")),
-        ("GPIO13", "mu-port", cfg("block")),
-        ("A5", "default", cfg("end")),
+        (FirstLabel, "D18", "digital", cfg("start", width=50)),
+        (Label, "A4", "analog", cfg("block_sm")),
+        (Label, "GPIO12", "mu-port", cfg("block")),
+        (LabelLast, "A4", "default", cfg("end")),
     ],
     [
-        ("D20", "digital", cfg("start", width=50)),
-        ("A6", "analog", cfg("block_sm")),
-        ("A6", "default show-leader", cfg("end", offset=(84, 0))),
+        (FirstLabel, "D19", "digital", cfg("start", width=50)),
+        (Label, "A5", "analog", cfg("block_sm")),
+        (Label, "GPIO13", "mu-port", cfg("block")),
+        (LabelLast, "A5", "default", cfg("end")),
     ],
     [
-        ("D21", "digital", cfg("start", width=50)),
-        ("A7", "analog", cfg("block_sm")),
-        ("A7", "default show-leader", cfg("end", offset=(84, 0))),
+        (FirstLabel, "D20", "digital", cfg("start", width=50)),
+        (Label, "A6", "analog", cfg("block_sm")),
+        (LabelLast, "A6", "default show-leader", cfg("end", offset=(84, 0))),
     ],
-    [("+5V", "pwr", cfg("single"))],
-    [("RESET", "other", cfg("start")), ("QSPI_CSn", "default", cfg("end"))],
-    [("GND", "gnd", cfg("single"))],
-    [("VIN", "pwr", cfg("single"))],
+    [
+        (FirstLabel, "D21", "digital", cfg("start", width=50)),
+        (Label, "A7", "analog", cfg("block_sm")),
+        (LabelLast, "A7", "default show-leader", cfg("end", offset=(84, 0))),
+    ],
+    [(Label, "+5V", "pwr", cfg("single"))],
+    [
+        (FirstLabel, "RESET", "other", cfg("start")),
+        (LabelLast, "QSPI_CSn", "default", cfg("end")),
+    ],
+    [(Label, "GND", "gnd", cfg("single"))],
+    [(Label, "VIN", "pwr", cfg("single"))],
 ]
 
 
@@ -143,8 +180,8 @@ header_lhs = [
 #########################################################
 cfg.set_pitch((230, 70), (-112, -22))
 leds = [
-    [("Power", "led", cfg("single", width=120))],
-    [("LED_BUILTIN", "led", cfg("single", width=120))],
+    [(Label, "Power", "led", cfg("single", width=120, style="smooth_bend"))],
+    [(Label, "LED_BUILTIN", "led", cfg("single", width=120, style="smooth_bend"))],
 ]
 
 

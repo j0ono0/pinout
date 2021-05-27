@@ -64,7 +64,6 @@ class Label(LabelBase):
                 Use Label.scale=(-1, 1) to 'flip' a label horizontally instead.
                 """
             warnings.warn(msg)
-
         super().__init__(x=x, y=y, tag=tag, scale=scale, **kwargs)
 
         label_body = self.add(

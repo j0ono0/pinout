@@ -39,35 +39,24 @@ class LabelBase(core.Group):
         tag = kwargs.pop("tag", "")
         taglist = tag.split(" ")
         taglist.append("label")
-
         super().__init__(tag=tag, **kwargs)
-
-        self.add(self.body())
-
-    def leaderline(self):
-        pass
-
-    def body(self):
-        pass
-
-    def text_content(self):
-        pass
 
 
 class TestLabel(LabelBase):
-    def __init__(self, content, tag="", **kwargs):
-        self.body_width = kwargs.pop("width", 0)
-        self.body_height = kwargs.pop("height", 0)
+    def __init__(self, *args, **kwargs):
+        height = kwargs.pop("height")
+        width = kwargs.pop("width")
         super().__init__(**kwargs)
 
-    def body(self):
-        return core.Rect(
-            r=5,
-            x=self.offset.x,
-            y=self.offset.y - (self.body_height / 2),
-            width=self.body_width,
-            height=self.body_height,
-            tag="label__body",
+        self.add(
+            core.Rect(
+                r=5,
+                x=self.offset.x,
+                y=self.offset.y - (height / 2),
+                width=width,
+                height=height,
+                tag="label__body",
+            )
         )
 
 

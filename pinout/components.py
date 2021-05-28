@@ -39,7 +39,8 @@ class LabelBase(core.Group):
         tag = kwargs.pop("tag", "")
         taglist = tag.split(" ")
         taglist.append("label")
-        super().__init__(tag=tag, **kwargs)
+        kwargs["tag"] = " ".join(taglist)
+        super().__init__(**kwargs)
 
 
 class TestLabel(LabelBase):

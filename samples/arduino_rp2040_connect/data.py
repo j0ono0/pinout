@@ -180,8 +180,8 @@ header_lhs = [
 #########################################################
 cfg.set_pitch((230, 70), (-112, -22))
 leds = [
-    [(Label, "Power", "led", cfg("single", width=120, style="smooth_bend"))],
-    [(Label, "LED_BUILTIN", "led", cfg("single", width=120, style="smooth_bend"))],
+    [(Label, "Power", "led", cfg("single", width=120, style="cnr"))],
+    [(Label, "LED_BUILTIN", "led", cfg("single", width=120, style="cnr"))],
 ]
 
 

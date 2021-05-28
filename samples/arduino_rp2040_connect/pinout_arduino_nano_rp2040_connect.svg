@@ -252,7 +252,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-556cf955-ea7e-4910-a40d-9106e19a0384">
+/><clipPath id="clipid-c8cf601f-8023-4464-b7e5-1dae26b7a78d">
     <path 
     d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -264,7 +264,7 @@ class="label__body"
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-556cf955-ea7e-4910-a40d-9106e19a0384)"
+clip-path="url(#clipid-c8cf601f-8023-4464-b7e5-1dae26b7a78d)"
 /><text
     class="label__text"
     transform="
@@ -288,7 +288,7 @@ d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-5c8b47a0-1cda-424b-a14a-370c5ad25eb4">
+/><clipPath id="clipid-cbe08c09-614b-443b-ba59-ba2f7839d21e">
     <rect
         x="2" 
         y="-10.0" 
@@ -305,7 +305,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-5c8b47a0-1cda-424b-a14a-370c5ad25eb4)" 
+    clip-path="url(#clipid-cbe08c09-614b-443b-ba59-ba2f7839d21e)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -326,11 +326,11 @@ clip-path="url(#clipid-None)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-8a332cec-0810-42af-964f-e54a9c0861a2">
+/><clipPath id="clipid-4f316c13-09f6-430e-b637-cf11b274e3de">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -342,7 +342,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-8a332cec-0810-42af-964f-e54a9c0861a2)"
+clip-path="url(#clipid-4f316c13-09f6-430e-b637-cf11b274e3de)"
 /><text
     class="label__text"
     transform="
@@ -375,7 +375,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-26810d10-d2dc-4a63-9885-224b9712e5f1">
+/><clipPath id="clipid-92b18935-511e-4f64-b242-a0107fed800b">
     <path 
     d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -387,7 +387,7 @@ class="label__body"
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-26810d10-d2dc-4a63-9885-224b9712e5f1)"
+clip-path="url(#clipid-92b18935-511e-4f64-b242-a0107fed800b)"
 /><text
     class="label__text"
     transform="
@@ -411,7 +411,7 @@ d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-860bbc3c-c4e7-4bdb-978a-ba4e0b28b669">
+/><clipPath id="clipid-6013817a-da49-41e4-9db4-286fa8c1e5f9">
     <rect
         x="2" 
         y="-10.0" 
@@ -428,7 +428,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-860bbc3c-c4e7-4bdb-978a-ba4e0b28b669)" 
+    clip-path="url(#clipid-6013817a-da49-41e4-9db4-286fa8c1e5f9)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -449,11 +449,11 @@ clip-path="url(#clipid-None)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-36d9be33-df5a-4be3-b5c7-c5f494344d19">
+/><clipPath id="clipid-ae39cfb3-b82e-48d8-83e5-20b05fa7febc">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -465,7 +465,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-36d9be33-df5a-4be3-b5c7-c5f494344d19)"
+clip-path="url(#clipid-ae39cfb3-b82e-48d8-83e5-20b05fa7febc)"
 /><text
     class="label__text"
     transform="
@@ -498,7 +498,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-2479640a-06a8-41f2-8ff0-a4ba87fa42bc">
+/><clipPath id="clipid-dfa62e6f-9b85-4a46-aa37-a69b5c46b1d9">
     <path 
     d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -510,7 +510,7 @@ class="label__body"
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-2479640a-06a8-41f2-8ff0-a4ba87fa42bc)"
+clip-path="url(#clipid-dfa62e6f-9b85-4a46-aa37-a69b5c46b1d9)"
 /><text
     class="label__text"
     transform="
@@ -530,11 +530,11 @@ clip-path="url(#clipid-2479640a-06a8-41f2-8ff0-a4ba87fa42bc)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-7c8286b9-23fc-49a9-b5a2-d09e98c0d115">
+/><clipPath id="clipid-dd29b944-e543-4ede-9d39-dd58ee8c3f9a">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -546,7 +546,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-7c8286b9-23fc-49a9-b5a2-d09e98c0d115)"
+clip-path="url(#clipid-dd29b944-e543-4ede-9d39-dd58ee8c3f9a)"
 /><text
     class="label__text"
     transform="
@@ -579,7 +579,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-0582caae-13ad-47ca-9870-74b183e0d7ac">
+/><clipPath id="clipid-09b6cc00-f1b0-4c40-a017-7255671e7442">
     <path 
     d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -591,7 +591,7 @@ class="label__body"
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-0582caae-13ad-47ca-9870-74b183e0d7ac)"
+clip-path="url(#clipid-09b6cc00-f1b0-4c40-a017-7255671e7442)"
 /><text
     class="label__text"
     transform="
@@ -611,11 +611,11 @@ clip-path="url(#clipid-0582caae-13ad-47ca-9870-74b183e0d7ac)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-2e556d2a-72ac-489e-9094-7f40fc68169a">
+/><clipPath id="clipid-02d8e7d8-c8e5-4278-9bcd-4023b11fe15c">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -627,7 +627,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-2e556d2a-72ac-489e-9094-7f40fc68169a)"
+clip-path="url(#clipid-02d8e7d8-c8e5-4278-9bcd-4023b11fe15c)"
 /><text
     class="label__text"
     transform="
@@ -660,7 +660,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-0d1ddf60-77b1-4dcd-b692-fb3b37d6a5b4">
+/><clipPath id="clipid-4b4d8a7f-f9a0-4aab-8572-39f34b202d2c">
     <path 
     d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -672,7 +672,7 @@ class="label__body"
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-0d1ddf60-77b1-4dcd-b692-fb3b37d6a5b4)"
+clip-path="url(#clipid-4b4d8a7f-f9a0-4aab-8572-39f34b202d2c)"
 /><text
     class="label__text"
     transform="
@@ -692,11 +692,11 @@ clip-path="url(#clipid-0d1ddf60-77b1-4dcd-b692-fb3b37d6a5b4)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-f88e9072-209f-4b27-8d0c-91b9cae7878c">
+/><clipPath id="clipid-341b611a-e445-4041-a35f-0a7bc72918cd">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -708,7 +708,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-f88e9072-209f-4b27-8d0c-91b9cae7878c)"
+clip-path="url(#clipid-341b611a-e445-4041-a35f-0a7bc72918cd)"
 /><text
     class="label__text"
     transform="
@@ -741,7 +741,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-6c409f4f-e604-4c1f-83a3-88c1b9713e2a">
+/><clipPath id="clipid-9fa6c597-5d50-472b-822d-a3d677e9d9bd">
     <path 
     d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -753,7 +753,7 @@ class="label__body"
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-6c409f4f-e604-4c1f-83a3-88c1b9713e2a)"
+clip-path="url(#clipid-9fa6c597-5d50-472b-822d-a3d677e9d9bd)"
 /><text
     class="label__text"
     transform="
@@ -773,11 +773,11 @@ clip-path="url(#clipid-6c409f4f-e604-4c1f-83a3-88c1b9713e2a)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-8487a177-ac41-46a3-8530-65d00b24d7f4">
+/><clipPath id="clipid-2ba702db-860d-4f52-b24b-522e5a5bc367">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -789,7 +789,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-8487a177-ac41-46a3-8530-65d00b24d7f4)"
+clip-path="url(#clipid-2ba702db-860d-4f52-b24b-522e5a5bc367)"
 /><text
     class="label__text"
     transform="
@@ -822,7 +822,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-fd03f724-ef87-46a2-b448-5e270ce60ecb">
+/><clipPath id="clipid-6aa661bc-154e-46db-963b-099cf16435fb">
     <path 
     d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -834,7 +834,7 @@ class="label__body"
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-fd03f724-ef87-46a2-b448-5e270ce60ecb)"
+clip-path="url(#clipid-6aa661bc-154e-46db-963b-099cf16435fb)"
 /><text
     class="label__text"
     transform="
@@ -854,11 +854,11 @@ clip-path="url(#clipid-fd03f724-ef87-46a2-b448-5e270ce60ecb)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-206a9906-56ad-47c3-ae24-0011475a7141">
+/><clipPath id="clipid-54b84276-39fa-4052-b638-486fa61739ad">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -870,7 +870,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-206a9906-56ad-47c3-ae24-0011475a7141)"
+clip-path="url(#clipid-54b84276-39fa-4052-b638-486fa61739ad)"
 /><text
     class="label__text"
     transform="
@@ -903,7 +903,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-8fcf330d-d362-4b57-bfcb-f1bea6d74384">
+/><clipPath id="clipid-ac50ac42-26ed-47e5-af7b-e56af5d508c1">
     <path 
     d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -915,7 +915,7 @@ class="label__body"
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-8fcf330d-d362-4b57-bfcb-f1bea6d74384)"
+clip-path="url(#clipid-ac50ac42-26ed-47e5-af7b-e56af5d508c1)"
 /><text
     class="label__text"
     transform="
@@ -935,11 +935,11 @@ clip-path="url(#clipid-8fcf330d-d362-4b57-bfcb-f1bea6d74384)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-190509de-38fd-4c44-b65f-33fd37db0526">
+/><clipPath id="clipid-381a9cd5-afe3-4e78-b338-a92974c076ea">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -951,7 +951,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-190509de-38fd-4c44-b65f-33fd37db0526)"
+clip-path="url(#clipid-381a9cd5-afe3-4e78-b338-a92974c076ea)"
 /><text
     class="label__text"
     transform="
@@ -984,7 +984,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-83816a97-426f-458a-8b63-bcc13657d534">
+/><clipPath id="clipid-2253fe67-0a48-4b7a-a64a-7650c4511ec7">
     <path 
     d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -996,7 +996,7 @@ class="label__body"
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-83816a97-426f-458a-8b63-bcc13657d534)"
+clip-path="url(#clipid-2253fe67-0a48-4b7a-a64a-7650c4511ec7)"
 /><text
     class="label__text"
     transform="
@@ -1016,11 +1016,11 @@ clip-path="url(#clipid-83816a97-426f-458a-8b63-bcc13657d534)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-290ee2e5-e965-40ea-a0c5-47bf8d559c10">
+/><clipPath id="clipid-e2349d6f-c336-4251-a84d-17eb6ac75296">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1032,7 +1032,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-290ee2e5-e965-40ea-a0c5-47bf8d559c10)"
+clip-path="url(#clipid-e2349d6f-c336-4251-a84d-17eb6ac75296)"
 /><text
     class="label__text"
     transform="
@@ -1065,7 +1065,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-655e8ad8-0546-4a80-9018-bf532e86cf36">
+/><clipPath id="clipid-5d1fb139-6c70-45db-b4e6-120ba2704684">
     <path 
     d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1077,7 +1077,7 @@ class="label__body"
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-655e8ad8-0546-4a80-9018-bf532e86cf36)"
+clip-path="url(#clipid-5d1fb139-6c70-45db-b4e6-120ba2704684)"
 /><text
     class="label__text"
     transform="
@@ -1097,11 +1097,11 @@ clip-path="url(#clipid-655e8ad8-0546-4a80-9018-bf532e86cf36)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-9f9d3624-9ac7-4919-90ee-5f8e630d282a">
+/><clipPath id="clipid-9752863b-a2ca-472f-9bae-244db84fd16a">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1113,7 +1113,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-9f9d3624-9ac7-4919-90ee-5f8e630d282a)"
+clip-path="url(#clipid-9752863b-a2ca-472f-9bae-244db84fd16a)"
 /><text
     class="label__text"
     transform="
@@ -1146,7 +1146,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-83a91892-03c5-43b8-8b66-700dcc9913e2">
+/><clipPath id="clipid-20f40eae-34c8-413e-9a0a-2bf2a56caaf5">
     <path 
     d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1158,7 +1158,7 @@ class="label__body"
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-83a91892-03c5-43b8-8b66-700dcc9913e2)"
+clip-path="url(#clipid-20f40eae-34c8-413e-9a0a-2bf2a56caaf5)"
 /><text
     class="label__text"
     transform="
@@ -1178,11 +1178,11 @@ clip-path="url(#clipid-83a91892-03c5-43b8-8b66-700dcc9913e2)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-302efeb5-5c52-45d1-baf2-e9951e70d15a">
+/><clipPath id="clipid-a0cc26bb-399a-4c62-8eb5-6fcc38cde650">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1194,7 +1194,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-302efeb5-5c52-45d1-baf2-e9951e70d15a)"
+clip-path="url(#clipid-a0cc26bb-399a-4c62-8eb5-6fcc38cde650)"
 /><text
     class="label__text"
     transform="
@@ -1227,7 +1227,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-e4a1d7b0-fe7f-4581-b5ff-bff47c5368ac">
+/><clipPath id="clipid-fbea20b9-bd81-403c-85ca-197f754047f8">
     <rect
         x="80" 
         y="-10.0" 
@@ -1244,7 +1244,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="10" 
-    clip-path="url(#clipid-e4a1d7b0-fe7f-4581-b5ff-bff47c5368ac)" 
+    clip-path="url(#clipid-fbea20b9-bd81-403c-85ca-197f754047f8)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1278,7 +1278,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-fe8e3240-2f31-4516-b4bd-1af356fe9dea">
+/><clipPath id="clipid-700e85f6-a837-4b3c-979b-d77f3a3eb12d">
     <path 
     d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1290,7 +1290,7 @@ class="label__body"
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-fe8e3240-2f31-4516-b4bd-1af356fe9dea)"
+clip-path="url(#clipid-700e85f6-a837-4b3c-979b-d77f3a3eb12d)"
 /><text
     class="label__text"
     transform="
@@ -1310,11 +1310,11 @@ clip-path="url(#clipid-fe8e3240-2f31-4516-b4bd-1af356fe9dea)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-e4bace27-9b11-4253-8edb-4d0840259b2a">
+/><clipPath id="clipid-44a19bf6-6cf8-4208-bebd-28485dc61994">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1326,7 +1326,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-e4bace27-9b11-4253-8edb-4d0840259b2a)"
+clip-path="url(#clipid-44a19bf6-6cf8-4208-bebd-28485dc61994)"
 /><text
     class="label__text"
     transform="
@@ -1359,7 +1359,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-9b164153-1d60-47ea-8828-10110b348e9a">
+/><clipPath id="clipid-1350f0fa-8e01-4d3c-9aaf-c0ebbc850978">
     <path 
     d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1371,7 +1371,7 @@ class="label__body"
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-9b164153-1d60-47ea-8828-10110b348e9a)"
+clip-path="url(#clipid-1350f0fa-8e01-4d3c-9aaf-c0ebbc850978)"
 /><text
     class="label__text"
     transform="
@@ -1391,11 +1391,11 @@ clip-path="url(#clipid-9b164153-1d60-47ea-8828-10110b348e9a)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-65e079d7-e655-44b1-8cca-d54743acff5d">
+/><clipPath id="clipid-e918a5b2-8129-4a59-ac96-e8354a74f5da">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1407,7 +1407,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-65e079d7-e655-44b1-8cca-d54743acff5d)"
+clip-path="url(#clipid-e918a5b2-8129-4a59-ac96-e8354a74f5da)"
 /><text
     class="label__text"
     transform="
@@ -1440,7 +1440,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-3c7fda11-ce5b-498e-ac01-f07ee811407f">
+/><clipPath id="clipid-e14807cf-205d-42b7-8ad4-a6392db1c42e">
     <path 
     d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1452,7 +1452,7 @@ class="label__body"
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-3c7fda11-ce5b-498e-ac01-f07ee811407f)"
+clip-path="url(#clipid-e14807cf-205d-42b7-8ad4-a6392db1c42e)"
 /><text
     class="label__text"
     transform="
@@ -1472,11 +1472,11 @@ clip-path="url(#clipid-3c7fda11-ce5b-498e-ac01-f07ee811407f)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-3e1989cd-907b-46cc-a45c-2b9211863b49">
+/><clipPath id="clipid-74e8d2ea-7fa2-42d1-8a1b-4fc228d2f83b">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1488,7 +1488,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-3e1989cd-907b-46cc-a45c-2b9211863b49)"
+clip-path="url(#clipid-74e8d2ea-7fa2-42d1-8a1b-4fc228d2f83b)"
 /><text
     class="label__text"
     transform="
@@ -1529,7 +1529,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-8aa25293-0ca9-435a-b3d9-a78858c6eb87">
+/><clipPath id="clipid-42fd00c0-b469-460c-920a-2214bce5bf19">
     <path 
     d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1541,7 +1541,7 @@ class="label__body"
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-8aa25293-0ca9-435a-b3d9-a78858c6eb87)"
+clip-path="url(#clipid-42fd00c0-b469-460c-920a-2214bce5bf19)"
 /><text
     class="label__text"
     transform="
@@ -1565,7 +1565,7 @@ d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-3fb6774c-33d0-4482-a6b0-b32121d2e099">
+/><clipPath id="clipid-7b375342-dfaf-4544-a2f1-f62040841010">
     <rect
         x="2" 
         y="-10.0" 
@@ -1582,7 +1582,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-3fb6774c-33d0-4482-a6b0-b32121d2e099)" 
+    clip-path="url(#clipid-7b375342-dfaf-4544-a2f1-f62040841010)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1603,11 +1603,11 @@ clip-path="url(#clipid-None)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-cbacc0be-d977-40e5-a327-3b661b7137bb">
+/><clipPath id="clipid-bb1e54e3-9e39-41eb-a00b-7d93951fec7b">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1619,7 +1619,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-cbacc0be-d977-40e5-a327-3b661b7137bb)"
+clip-path="url(#clipid-bb1e54e3-9e39-41eb-a00b-7d93951fec7b)"
 /><text
     class="label__text"
     transform="
@@ -1652,7 +1652,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-83f70aa8-5947-4808-9add-fc1131f6f981">
+/><clipPath id="clipid-481fd78d-7194-4519-8e23-3cd3d936d689">
     <path 
     d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1664,7 +1664,7 @@ class="label__body"
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-83f70aa8-5947-4808-9add-fc1131f6f981)"
+clip-path="url(#clipid-481fd78d-7194-4519-8e23-3cd3d936d689)"
 /><text
     class="label__text"
     transform="
@@ -1697,7 +1697,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-53eef5f8-38be-4adc-ab78-a1bfc7f1b22e">
+/><clipPath id="clipid-7f70fca7-e728-4dc6-a91b-fb57a4b842e7">
     <path 
     d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1709,7 +1709,7 @@ class="label__body"
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-53eef5f8-38be-4adc-ab78-a1bfc7f1b22e)"
+clip-path="url(#clipid-7f70fca7-e728-4dc6-a91b-fb57a4b842e7)"
 /><text
     class="label__text"
     transform="
@@ -1729,11 +1729,11 @@ clip-path="url(#clipid-53eef5f8-38be-4adc-ab78-a1bfc7f1b22e)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-140e1466-62d0-467f-befd-0ca4f2ede9e9">
+/><clipPath id="clipid-0a42f8ce-880d-4cd5-8462-80ee142e572e">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1745,7 +1745,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-140e1466-62d0-467f-befd-0ca4f2ede9e9)"
+clip-path="url(#clipid-0a42f8ce-880d-4cd5-8462-80ee142e572e)"
 /><text
     class="label__text"
     transform="
@@ -1778,7 +1778,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-4f7b385d-8967-4a75-99f0-8f90d6574225">
+/><clipPath id="clipid-e97569dd-ab0c-486d-a96d-c7f880230eb9">
     <path 
     d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1790,7 +1790,7 @@ class="label__body"
 d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-4f7b385d-8967-4a75-99f0-8f90d6574225)"
+clip-path="url(#clipid-e97569dd-ab0c-486d-a96d-c7f880230eb9)"
 /><text
     class="label__text"
     transform="
@@ -1808,7 +1808,7 @@ clip-path="url(#clipid-4f7b385d-8967-4a75-99f0-8f90d6574225)"
         scale(-1 1)
     "
 >
-        <clipPath id="clipid-7d6ddacb-4a8c-4ee5-a474-5e9e4eaa50bf">
+        <clipPath id="clipid-8e3a817d-a75d-488c-a47b-b2af374de57b">
     <rect
         x="0" 
         y="-10.0" 
@@ -1825,7 +1825,7 @@ clip-path="url(#clipid-4f7b385d-8967-4a75-99f0-8f90d6574225)"
     width="30" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-7d6ddacb-4a8c-4ee5-a474-5e9e4eaa50bf)" 
+    clip-path="url(#clipid-8e3a817d-a75d-488c-a47b-b2af374de57b)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1850,7 +1850,7 @@ d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-cf8ebe2d-afac-49ec-ad09-51f9d44ac99f">
+/><clipPath id="clipid-f9da4e04-97b0-49e4-9e20-0612cf945056">
     <rect
         x="2" 
         y="-10.0" 
@@ -1867,7 +1867,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-cf8ebe2d-afac-49ec-ad09-51f9d44ac99f)" 
+    clip-path="url(#clipid-f9da4e04-97b0-49e4-9e20-0612cf945056)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1888,11 +1888,11 @@ clip-path="url(#clipid-None)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-d74a49c5-e89d-4972-8ef9-650eea52bd70">
+/><clipPath id="clipid-f2a32fef-e9a4-4058-b043-1c7c64098ac7">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1904,7 +1904,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-d74a49c5-e89d-4972-8ef9-650eea52bd70)"
+clip-path="url(#clipid-f2a32fef-e9a4-4058-b043-1c7c64098ac7)"
 /><text
     class="label__text"
     transform="
@@ -1937,7 +1937,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-641fc391-6f09-4100-aecb-ca4308fddf10">
+/><clipPath id="clipid-5c909dfe-ee43-4c17-bc57-bee885815020">
     <path 
     d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1949,7 +1949,7 @@ class="label__body"
 d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-641fc391-6f09-4100-aecb-ca4308fddf10)"
+clip-path="url(#clipid-5c909dfe-ee43-4c17-bc57-bee885815020)"
 /><text
     class="label__text"
     transform="
@@ -1967,7 +1967,7 @@ clip-path="url(#clipid-641fc391-6f09-4100-aecb-ca4308fddf10)"
         scale(-1 1)
     "
 >
-        <clipPath id="clipid-3d4496be-aad9-4dad-ba5b-4eed062c3d9a">
+        <clipPath id="clipid-85162f4a-f690-4244-be8e-a25f4758c313">
     <rect
         x="0" 
         y="-10.0" 
@@ -1984,7 +1984,7 @@ clip-path="url(#clipid-641fc391-6f09-4100-aecb-ca4308fddf10)"
     width="30" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-3d4496be-aad9-4dad-ba5b-4eed062c3d9a)" 
+    clip-path="url(#clipid-85162f4a-f690-4244-be8e-a25f4758c313)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2009,7 +2009,7 @@ d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-cd60d035-fc8a-4490-86b8-0de5805f1621">
+/><clipPath id="clipid-5c3d1006-447a-471f-b1a9-b2c09a0cdea8">
     <rect
         x="2" 
         y="-10.0" 
@@ -2026,7 +2026,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-cd60d035-fc8a-4490-86b8-0de5805f1621)" 
+    clip-path="url(#clipid-5c3d1006-447a-471f-b1a9-b2c09a0cdea8)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2047,11 +2047,11 @@ clip-path="url(#clipid-None)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-41874177-3bf0-44cc-a0d8-470461f55526">
+/><clipPath id="clipid-fed54d9a-6b2d-48fa-b4e3-327fb74edfd4">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2063,7 +2063,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-41874177-3bf0-44cc-a0d8-470461f55526)"
+clip-path="url(#clipid-fed54d9a-6b2d-48fa-b4e3-327fb74edfd4)"
 /><text
     class="label__text"
     transform="
@@ -2096,7 +2096,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-cd3a76f2-5483-4203-babb-64374740e0a0">
+/><clipPath id="clipid-f31ce88b-bff8-4cad-a10a-a7c918befdf9">
     <path 
     d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2108,7 +2108,7 @@ class="label__body"
 d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-cd3a76f2-5483-4203-babb-64374740e0a0)"
+clip-path="url(#clipid-f31ce88b-bff8-4cad-a10a-a7c918befdf9)"
 /><text
     class="label__text"
     transform="
@@ -2126,7 +2126,7 @@ clip-path="url(#clipid-cd3a76f2-5483-4203-babb-64374740e0a0)"
         scale(-1 1)
     "
 >
-        <clipPath id="clipid-7f3dd705-4387-4406-9454-645d6c920cc4">
+        <clipPath id="clipid-0024b7f9-1669-4178-941f-fb7b5eedb04e">
     <rect
         x="0" 
         y="-10.0" 
@@ -2143,7 +2143,7 @@ clip-path="url(#clipid-cd3a76f2-5483-4203-babb-64374740e0a0)"
     width="30" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-7f3dd705-4387-4406-9454-645d6c920cc4)" 
+    clip-path="url(#clipid-0024b7f9-1669-4178-941f-fb7b5eedb04e)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2168,7 +2168,7 @@ d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-7f2afba1-0448-4209-8449-5d2cf9cdb7fc">
+/><clipPath id="clipid-69bc7ee8-36ce-4685-af2a-0d19171e5d8d">
     <rect
         x="2" 
         y="-10.0" 
@@ -2185,7 +2185,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-7f2afba1-0448-4209-8449-5d2cf9cdb7fc)" 
+    clip-path="url(#clipid-69bc7ee8-36ce-4685-af2a-0d19171e5d8d)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2206,11 +2206,11 @@ clip-path="url(#clipid-None)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-84bc4572-2bdc-4d3e-8928-4b8435bc5091">
+/><clipPath id="clipid-131a4d9a-3b11-465d-8366-726dd7ac86da">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2222,7 +2222,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-84bc4572-2bdc-4d3e-8928-4b8435bc5091)"
+clip-path="url(#clipid-131a4d9a-3b11-465d-8366-726dd7ac86da)"
 /><text
     class="label__text"
     transform="
@@ -2255,7 +2255,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-e230abd5-faf1-4f67-ae1a-c954829acab8">
+/><clipPath id="clipid-aae5a2b9-f400-4505-be97-8d7ff0fb782f">
     <path 
     d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2267,7 +2267,7 @@ class="label__body"
 d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-e230abd5-faf1-4f67-ae1a-c954829acab8)"
+clip-path="url(#clipid-aae5a2b9-f400-4505-be97-8d7ff0fb782f)"
 /><text
     class="label__text"
     transform="
@@ -2285,7 +2285,7 @@ clip-path="url(#clipid-e230abd5-faf1-4f67-ae1a-c954829acab8)"
         scale(-1 1)
     "
 >
-        <clipPath id="clipid-c8078e86-a349-4779-b0c5-751a28e91595">
+        <clipPath id="clipid-788b234c-3eb6-4ddc-979d-88b18a66855a">
     <rect
         x="0" 
         y="-10.0" 
@@ -2302,7 +2302,7 @@ clip-path="url(#clipid-e230abd5-faf1-4f67-ae1a-c954829acab8)"
     width="30" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-c8078e86-a349-4779-b0c5-751a28e91595)" 
+    clip-path="url(#clipid-788b234c-3eb6-4ddc-979d-88b18a66855a)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2327,7 +2327,7 @@ d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-d087fa16-fa50-4c2d-bec7-7fe6795cdf8e">
+/><clipPath id="clipid-69503c64-c561-40a1-b085-aea1e6f6680b">
     <rect
         x="2" 
         y="-10.0" 
@@ -2344,7 +2344,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-d087fa16-fa50-4c2d-bec7-7fe6795cdf8e)" 
+    clip-path="url(#clipid-69503c64-c561-40a1-b085-aea1e6f6680b)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2365,11 +2365,11 @@ clip-path="url(#clipid-None)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-7b719066-a8f0-4122-a503-2cfbcf67c8fe">
+/><clipPath id="clipid-ab33e92b-d8e1-44cb-a666-fac734f6a03f">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2381,7 +2381,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-7b719066-a8f0-4122-a503-2cfbcf67c8fe)"
+clip-path="url(#clipid-ab33e92b-d8e1-44cb-a666-fac734f6a03f)"
 /><text
     class="label__text"
     transform="
@@ -2414,7 +2414,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-939d4510-eb37-42ad-aab7-118f938d360e">
+/><clipPath id="clipid-e9e8a8bc-e342-4c9d-b5ec-817b104ef842">
     <path 
     d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2426,7 +2426,7 @@ class="label__body"
 d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-939d4510-eb37-42ad-aab7-118f938d360e)"
+clip-path="url(#clipid-e9e8a8bc-e342-4c9d-b5ec-817b104ef842)"
 /><text
     class="label__text"
     transform="
@@ -2444,7 +2444,7 @@ clip-path="url(#clipid-939d4510-eb37-42ad-aab7-118f938d360e)"
         scale(-1 1)
     "
 >
-        <clipPath id="clipid-9fb938e7-f666-41d6-ba97-fa67245782fc">
+        <clipPath id="clipid-9a27db89-5c79-4172-9db7-66a1b237f1d7">
     <rect
         x="0" 
         y="-10.0" 
@@ -2461,7 +2461,7 @@ clip-path="url(#clipid-939d4510-eb37-42ad-aab7-118f938d360e)"
     width="30" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-9fb938e7-f666-41d6-ba97-fa67245782fc)" 
+    clip-path="url(#clipid-9a27db89-5c79-4172-9db7-66a1b237f1d7)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2486,7 +2486,7 @@ d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-4990fc35-a1fb-49a5-b64c-93669bd23bd0">
+/><clipPath id="clipid-c9311c0a-fdc0-4fbd-9282-a3e716ac9949">
     <rect
         x="2" 
         y="-10.0" 
@@ -2503,7 +2503,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-4990fc35-a1fb-49a5-b64c-93669bd23bd0)" 
+    clip-path="url(#clipid-c9311c0a-fdc0-4fbd-9282-a3e716ac9949)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2524,11 +2524,11 @@ clip-path="url(#clipid-None)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-b5758bb7-261a-4b59-905a-08ef02cb9104">
+/><clipPath id="clipid-f3549af1-e9d6-4d16-8401-5c9cc9db4342">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2540,7 +2540,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-b5758bb7-261a-4b59-905a-08ef02cb9104)"
+clip-path="url(#clipid-f3549af1-e9d6-4d16-8401-5c9cc9db4342)"
 /><text
     class="label__text"
     transform="
@@ -2573,7 +2573,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-b3d829ba-8825-4065-a2a5-cdf64a4ea784">
+/><clipPath id="clipid-7c4c5178-db58-4808-adbc-bd0f76d2f4c4">
     <path 
     d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2585,7 +2585,7 @@ class="label__body"
 d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-b3d829ba-8825-4065-a2a5-cdf64a4ea784)"
+clip-path="url(#clipid-7c4c5178-db58-4808-adbc-bd0f76d2f4c4)"
 /><text
     class="label__text"
     transform="
@@ -2603,7 +2603,7 @@ clip-path="url(#clipid-b3d829ba-8825-4065-a2a5-cdf64a4ea784)"
         scale(-1 1)
     "
 >
-        <clipPath id="clipid-df8bb61a-00a1-4ee1-981c-c6a6c3387f97">
+        <clipPath id="clipid-73c1b2b4-79bc-491b-9f13-ab350eb1f0f7">
     <rect
         x="0" 
         y="-10.0" 
@@ -2620,7 +2620,7 @@ clip-path="url(#clipid-b3d829ba-8825-4065-a2a5-cdf64a4ea784)"
     width="30" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-df8bb61a-00a1-4ee1-981c-c6a6c3387f97)" 
+    clip-path="url(#clipid-73c1b2b4-79bc-491b-9f13-ab350eb1f0f7)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2645,7 +2645,7 @@ d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-2522287a-a016-467c-8209-3e580254bd19">
+/><clipPath id="clipid-2da5128a-5bf4-48c7-8f6e-82e860ee21a0">
     <rect
         x="2" 
         y="-10.0" 
@@ -2662,7 +2662,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-2522287a-a016-467c-8209-3e580254bd19)" 
+    clip-path="url(#clipid-2da5128a-5bf4-48c7-8f6e-82e860ee21a0)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2683,11 +2683,11 @@ clip-path="url(#clipid-None)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-79caaa5e-ed42-4966-9a1f-dede2d7ba4c5">
+/><clipPath id="clipid-c9eda631-f8c6-48fd-b537-0d3505d70aa7">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2699,7 +2699,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-79caaa5e-ed42-4966-9a1f-dede2d7ba4c5)"
+clip-path="url(#clipid-c9eda631-f8c6-48fd-b537-0d3505d70aa7)"
 /><text
     class="label__text"
     transform="
@@ -2732,7 +2732,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-07e944e8-2d4a-44d1-9334-3f79808e7ac8">
+/><clipPath id="clipid-a929dab8-2d52-4711-ae5e-a64a2543339c">
     <path 
     d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2744,7 +2744,7 @@ class="label__body"
 d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-07e944e8-2d4a-44d1-9334-3f79808e7ac8)"
+clip-path="url(#clipid-a929dab8-2d52-4711-ae5e-a64a2543339c)"
 /><text
     class="label__text"
     transform="
@@ -2762,7 +2762,7 @@ clip-path="url(#clipid-07e944e8-2d4a-44d1-9334-3f79808e7ac8)"
         scale(-1 1)
     "
 >
-        <clipPath id="clipid-c3e003aa-96e4-4215-be9d-b42e32520276">
+        <clipPath id="clipid-dca543e4-eaba-4b8a-8224-bd6654a78f4f">
     <rect
         x="0" 
         y="-10.0" 
@@ -2779,7 +2779,7 @@ clip-path="url(#clipid-07e944e8-2d4a-44d1-9334-3f79808e7ac8)"
     width="30" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-c3e003aa-96e4-4215-be9d-b42e32520276)" 
+    clip-path="url(#clipid-dca543e4-eaba-4b8a-8224-bd6654a78f4f)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2800,11 +2800,11 @@ clip-path="url(#clipid-07e944e8-2d4a-44d1-9334-3f79808e7ac8)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 16.8 0 C 42.0 0 42.0 0 67.2 0 L 84 0" 
+d="M 0 0 l 84 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-a8180c2f-f7c1-42bd-a81b-e591cdfb9d73">
+/><clipPath id="clipid-f4e545b3-570c-485f-be3b-8952f6ef0ba8">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2816,7 +2816,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(84 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-a8180c2f-f7c1-42bd-a81b-e591cdfb9d73)"
+clip-path="url(#clipid-f4e545b3-570c-485f-be3b-8952f6ef0ba8)"
 /><text
     class="label__text"
     transform="
@@ -2849,7 +2849,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-d1a4fbe6-7437-464c-98a4-ffcb8c791982">
+/><clipPath id="clipid-485675a1-3871-43d9-8db7-85d8f395bb2b">
     <path 
     d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2861,7 +2861,7 @@ class="label__body"
 d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-d1a4fbe6-7437-464c-98a4-ffcb8c791982)"
+clip-path="url(#clipid-485675a1-3871-43d9-8db7-85d8f395bb2b)"
 /><text
     class="label__text"
     transform="
@@ -2879,7 +2879,7 @@ clip-path="url(#clipid-d1a4fbe6-7437-464c-98a4-ffcb8c791982)"
         scale(-1 1)
     "
 >
-        <clipPath id="clipid-310df6c5-4eb2-4781-b14a-2dcbfc25101f">
+        <clipPath id="clipid-96d8df93-6031-4454-b0cb-c6f62967108b">
     <rect
         x="0" 
         y="-10.0" 
@@ -2896,7 +2896,7 @@ clip-path="url(#clipid-d1a4fbe6-7437-464c-98a4-ffcb8c791982)"
     width="30" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-310df6c5-4eb2-4781-b14a-2dcbfc25101f)" 
+    clip-path="url(#clipid-96d8df93-6031-4454-b0cb-c6f62967108b)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2917,11 +2917,11 @@ clip-path="url(#clipid-d1a4fbe6-7437-464c-98a4-ffcb8c791982)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 16.8 0 C 42.0 0 42.0 0 67.2 0 L 84 0" 
+d="M 0 0 l 84 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-b769d39c-7f03-427a-ab3e-9bf2bb3618bc">
+/><clipPath id="clipid-947c7caf-4978-4f91-aaf2-48b55c192963">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2933,7 +2933,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(84 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-b769d39c-7f03-427a-ab3e-9bf2bb3618bc)"
+clip-path="url(#clipid-947c7caf-4978-4f91-aaf2-48b55c192963)"
 /><text
     class="label__text"
     transform="
@@ -2966,7 +2966,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-23637900-1280-4450-848f-98ded42bdfe4">
+/><clipPath id="clipid-a0b8bba5-dcc2-4f29-8fce-82df70806f0e">
     <rect
         x="80" 
         y="-10.0" 
@@ -2983,7 +2983,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="10" 
-    clip-path="url(#clipid-23637900-1280-4450-848f-98ded42bdfe4)" 
+    clip-path="url(#clipid-a0b8bba5-dcc2-4f29-8fce-82df70806f0e)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -3017,7 +3017,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-f578f40e-1b0f-499e-9add-17682eb7613b">
+/><clipPath id="clipid-6cd8b700-fa42-4d2e-97c6-281d85bc7cd8">
     <path 
     d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -3029,7 +3029,7 @@ class="label__body"
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-f578f40e-1b0f-499e-9add-17682eb7613b)"
+clip-path="url(#clipid-6cd8b700-fa42-4d2e-97c6-281d85bc7cd8)"
 /><text
     class="label__text"
     transform="
@@ -3049,11 +3049,11 @@ clip-path="url(#clipid-f578f40e-1b0f-499e-9add-17682eb7613b)"
 >
         <path 
 class="label__leaderline" 
-d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
+d="M 0 0 l 2 0" 
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-e45781da-a0ed-4941-b751-ec020e01c915">
+/><clipPath id="clipid-0c6139e1-fb52-4231-820c-96caf138c557">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -3065,7 +3065,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-e45781da-a0ed-4941-b751-ec020e01c915)"
+clip-path="url(#clipid-0c6139e1-fb52-4231-820c-96caf138c557)"
 /><text
     class="label__text"
     transform="
@@ -3098,7 +3098,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-f44bddaf-51fb-4192-9415-990c66bb94fe">
+/><clipPath id="clipid-fc0e9356-774c-465a-ad7e-a47cd8cc7ea0">
     <rect
         x="80" 
         y="-10.0" 
@@ -3115,7 +3115,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="10" 
-    clip-path="url(#clipid-f44bddaf-51fb-4192-9415-990c66bb94fe)" 
+    clip-path="url(#clipid-fc0e9356-774c-465a-ad7e-a47cd8cc7ea0)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -3149,7 +3149,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-67eb4430-4e2f-4c2d-80b4-1cf3786b89c8">
+/><clipPath id="clipid-d8ef7b04-0690-4dab-8aad-1efc9b3e9f57">
     <rect
         x="80" 
         y="-10.0" 
@@ -3166,7 +3166,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="10" 
-    clip-path="url(#clipid-67eb4430-4e2f-4c2d-80b4-1cf3786b89c8)" 
+    clip-path="url(#clipid-d8ef7b04-0690-4dab-8aad-1efc9b3e9f57)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -3208,7 +3208,7 @@ d="M 0 0 L 0 46.66666666666667 A 23.333333333333332 23.333333333333332 0 0 0 23.
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-a227c809-701c-4eb0-a818-280f0c4077db">
+/><clipPath id="clipid-c09ccbd2-2f36-4eef-a752-a11206df2375">
     <rect
         x="230" 
         y="60.0" 
@@ -3225,7 +3225,7 @@ clip-path="url(#clipid-None)"
     width="120" 
     height="20" 
     rx="10" 
-    clip-path="url(#clipid-a227c809-701c-4eb0-a818-280f0c4077db)" 
+    clip-path="url(#clipid-c09ccbd2-2f36-4eef-a752-a11206df2375)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -3259,7 +3259,7 @@ d="M 0 0 L 0 32.0 A 16.0 16.0 0 0 0 16.0 48 L 118 48"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-bf8be1a7-76bb-4226-8cef-ae3777d4d80d">
+/><clipPath id="clipid-8c3037ba-1338-4e4b-9f82-712b4c1fdd26">
     <rect
         x="118" 
         y="38.0" 
@@ -3276,7 +3276,7 @@ clip-path="url(#clipid-None)"
     width="120" 
     height="20" 
     rx="10" 
-    clip-path="url(#clipid-bf8be1a7-76bb-4226-8cef-ae3777d4d80d)" 
+    clip-path="url(#clipid-8c3037ba-1338-4e4b-9f82-712b4c1fdd26)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"

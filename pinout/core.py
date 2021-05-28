@@ -20,7 +20,8 @@ class Layout(TransformMixin):
         self.clip_id = clip_id
 
     def add(self, instance):
-        self.children.append(instance)
+        if issubclass(type(instance), (SvgShape, Layout)):
+            self.children.append(instance)
         return instance
 
     def bounding_rect(self):

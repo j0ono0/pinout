@@ -34,10 +34,41 @@ class Rect(core.Path):
 
 class LabelBase(core.Group):
     def __init__(self, **kwargs):
+        self.offset = core.Coords(*kwargs.pop("offset", (1, 1)))
+
         tag = kwargs.pop("tag", "")
         taglist = tag.split(" ")
         taglist.append("label")
+
         super().__init__(tag=tag, **kwargs)
+
+        self.add(self.body())
+
+    def leaderline(self):
+        pass
+
+    def body(self):
+        pass
+
+    def text_content(self):
+        pass
+
+
+class TestLabel(LabelBase):
+    def __init__(self, content, tag="", **kwargs):
+        self.body_width = kwargs.pop("width", 0)
+        self.body_height = kwargs.pop("height", 0)
+        super().__init__(**kwargs)
+
+    def body(self):
+        return core.Rect(
+            r=5,
+            x=self.offset.x,
+            y=self.offset.y - (self.body_height / 2),
+            width=self.body_width,
+            height=self.body_height,
+            tag="label__body",
+        )
 
 
 class Label(LabelBase):
@@ -54,9 +85,8 @@ class Label(LabelBase):
         offset=(0, 0),
         **kwargs,
     ):
-        self.offset = core.Coords(*offset)
         scale = core.Coords(*kwargs.pop("scale", (1, 1)))
-
+        super().__init__(x=x, y=y, tag=tag, scale=scale, offset=offset, **kwargs)
         if self.offset.x < 0:
             msg = f"""
                 {self}:
@@ -64,7 +94,6 @@ class Label(LabelBase):
                 Use Label.scale=(-1, 1) to 'flip' a label horizontally instead.
                 """
             warnings.warn(msg)
-        super().__init__(x=x, y=y, tag=tag, scale=scale, **kwargs)
 
         label_body = self.add(
             core.Rect(
@@ -77,6 +106,7 @@ class Label(LabelBase):
                 **kwargs,
             )
         )
+
         if self.offset.x != 0 or self.offset.y != 0:
             if style == "straight":
                 # Straight line

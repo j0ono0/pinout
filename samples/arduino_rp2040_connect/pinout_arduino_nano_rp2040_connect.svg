@@ -10,7 +10,7 @@
     class="arduino-rp2040-connect"
 >
 <defs>
-        <!-- scale  applied so pattern aligns with vertically adjacenct labels -->
+    <!-- scale  applied so pattern aligns with vertically adjacenct labels -->
 <pattern id="stripe-a" patternTransform="scale(1.3 1.3)" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
     <rect x="0" y="0" width="20" height="20" />
     <path x="0" y="0" d="M 10 0 L 20 0 L 0 20 L 0 10  Z"/>
@@ -21,7 +21,182 @@
     <rect x="0" y="0" width="20" height="20" />
     <path x="0" y="0" d="M 10 0 L 20 0 L 0 20 L 0 10  Z"/>
     <path x="0" y="0" d="M 20 10 L 20 20 L 10 20  Z"/>
-</pattern>
+</pattern><clipPath id="clipid-6b28839e-cedb-4563-96ee-83b4e50522e6">
+    <path 
+    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-be1142ee-32b5-42d6-9afa-f9ad048dcc1d">
+    <path 
+    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-76bed56b-cc38-4e34-9dd2-44e9718fa4cc">
+    <path 
+    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-0a08c8ea-2d76-4f8d-8908-5763f590f2da">
+    <path 
+    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-11e50b56-2cea-4194-834d-e54a129b6188">
+    <path 
+    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-56aa5684-f2e3-4548-9b8d-81dda0d51c1c">
+    <path 
+    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-93ea8dee-4987-45e6-95ae-9d9465b1aeaa">
+    <path 
+    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-48a7da3d-0831-4d60-883a-ea7a01e0991b">
+    <path 
+    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-02ee5a4d-0546-46ec-b6f0-f7d8d0ae1aed">
+    <path 
+    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-3ad5f955-c1f5-4f70-b067-0bee78303383">
+    <path 
+    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-7179b690-e030-4c11-90ca-a4acd7fb20f4">
+    <path 
+    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-0b99e9b1-7622-4e63-9ddf-f678c5997f77">
+    <path 
+    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-1aa0469c-778e-4f07-902d-a6efa0199864">
+    <path 
+    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-9142f419-4dac-4673-99ea-5d4d90c2db79">
+    <path 
+    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-43da966a-15c7-4a29-b953-b23e60a0e81f">
+    <path 
+    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-e24a219a-a1da-492c-b8dd-73712db457c9">
+    <path 
+    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-ccd43c53-b8b0-4c6b-8513-32c7e5852662">
+    <path 
+    d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-870e3440-57f9-4660-91da-a0d58a52c86d">
+    <path 
+    d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-c20fde9d-eddf-401e-a180-4d418425707d">
+    <path 
+    d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-d729fc6a-3c49-4070-bee5-2a754b70269f">
+    <path 
+    d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-0f3cba13-232a-4295-8f3f-655a75fc56b9">
+    <path 
+    d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-98a3dc23-5b9b-4fde-8503-1ddc2d55de65">
+    <path 
+    d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-46d6693a-0f5c-424d-ad87-7e3ff14ca951">
+    <path 
+    d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-a6804d9b-15d8-4835-9a9f-6229a8e4a1c7">
+    <path 
+    d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath><clipPath id="clipid-637fd69e-734a-48e5-a39e-eb9823dd705e">
+    <path 
+    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
+    transform="scale(1 1) translate(0 0)" 
+    shape-rendering="geometricPrecision"
+    clipPathUnits="userSpaceOnUse"
+    />
+</clipPath>
 </defs>
 
     <style type="text/css" media="screen">  
@@ -252,19 +427,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-72c74c45-aa4d-41a5-a29c-440afffac401">
-    <path 
-    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-72c74c45-aa4d-41a5-a29c-440afffac401)"
+clip-path="url(#clipid-6b28839e-cedb-4563-96ee-83b4e50522e6)"
 /><text
     class="label__text"
     transform="
@@ -288,7 +456,7 @@ d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-5d893dc0-bdc8-41b6-b8cd-72a59dcfc932">
+/><clipPath id="clipid-1f7f4a4f-b047-4e24-9aaa-05a61a0e690a">
     <rect
         x="2" 
         y="-10.0" 
@@ -305,7 +473,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-5d893dc0-bdc8-41b6-b8cd-72a59dcfc932)" 
+    clip-path="url(#clipid-1f7f4a4f-b047-4e24-9aaa-05a61a0e690a)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -330,7 +498,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-f643dab0-306b-4b9a-8c1f-384e0f6de79a">
+/><clipPath id="clipid-7c086d07-19ba-4592-8299-39d8d8997ceb">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -342,7 +510,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-f643dab0-306b-4b9a-8c1f-384e0f6de79a)"
+clip-path="url(#clipid-7c086d07-19ba-4592-8299-39d8d8997ceb)"
 /><text
     class="label__text"
     transform="
@@ -375,19 +543,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-5fef49a0-7b6c-4600-a247-b56c21b3cf07">
-    <path 
-    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-5fef49a0-7b6c-4600-a247-b56c21b3cf07)"
+clip-path="url(#clipid-be1142ee-32b5-42d6-9afa-f9ad048dcc1d)"
 /><text
     class="label__text"
     transform="
@@ -411,7 +572,7 @@ d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-d62ac528-6d68-409f-9726-f0812b42c79e">
+/><clipPath id="clipid-1758c3a2-8bf4-4863-916b-17c85ccade9e">
     <rect
         x="2" 
         y="-10.0" 
@@ -428,7 +589,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-d62ac528-6d68-409f-9726-f0812b42c79e)" 
+    clip-path="url(#clipid-1758c3a2-8bf4-4863-916b-17c85ccade9e)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -453,7 +614,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-d3eb9825-424c-42db-b29b-188fe2f60a97">
+/><clipPath id="clipid-4f6dea1c-d036-4a4f-b8e6-b73fe178de00">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -465,7 +626,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-d3eb9825-424c-42db-b29b-188fe2f60a97)"
+clip-path="url(#clipid-4f6dea1c-d036-4a4f-b8e6-b73fe178de00)"
 /><text
     class="label__text"
     transform="
@@ -498,19 +659,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-98b69fcf-6e79-4285-aeb2-a9456c911dd9">
-    <path 
-    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-98b69fcf-6e79-4285-aeb2-a9456c911dd9)"
+clip-path="url(#clipid-76bed56b-cc38-4e34-9dd2-44e9718fa4cc)"
 /><text
     class="label__text"
     transform="
@@ -534,7 +688,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-4e3e08f0-18d1-4532-bbf7-e8e3089944a3">
+/><clipPath id="clipid-a8b7f128-6521-49cf-9479-7f64604cc300">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -546,7 +700,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-4e3e08f0-18d1-4532-bbf7-e8e3089944a3)"
+clip-path="url(#clipid-a8b7f128-6521-49cf-9479-7f64604cc300)"
 /><text
     class="label__text"
     transform="
@@ -579,19 +733,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-94686d27-d3d7-46c4-b486-3afb8b15add5">
-    <path 
-    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-94686d27-d3d7-46c4-b486-3afb8b15add5)"
+clip-path="url(#clipid-0a08c8ea-2d76-4f8d-8908-5763f590f2da)"
 /><text
     class="label__text"
     transform="
@@ -615,7 +762,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-b41af428-cced-4ac5-a07b-dacffdc02085">
+/><clipPath id="clipid-9e257170-d00a-487d-b101-fbafa314a6c0">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -627,7 +774,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-b41af428-cced-4ac5-a07b-dacffdc02085)"
+clip-path="url(#clipid-9e257170-d00a-487d-b101-fbafa314a6c0)"
 /><text
     class="label__text"
     transform="
@@ -660,19 +807,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-449dcbb2-0729-4ae4-b860-ce3131c3a347">
-    <path 
-    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-449dcbb2-0729-4ae4-b860-ce3131c3a347)"
+clip-path="url(#clipid-11e50b56-2cea-4194-834d-e54a129b6188)"
 /><text
     class="label__text"
     transform="
@@ -696,7 +836,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-97e0f5da-0137-41b4-8d4d-1f09492649a1">
+/><clipPath id="clipid-ad626624-6c4d-42e0-8ff4-ac006b5c6fd0">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -708,7 +848,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-97e0f5da-0137-41b4-8d4d-1f09492649a1)"
+clip-path="url(#clipid-ad626624-6c4d-42e0-8ff4-ac006b5c6fd0)"
 /><text
     class="label__text"
     transform="
@@ -741,19 +881,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-b904f8a2-b29c-4e5b-87dd-1e35623e46a8">
-    <path 
-    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-b904f8a2-b29c-4e5b-87dd-1e35623e46a8)"
+clip-path="url(#clipid-56aa5684-f2e3-4548-9b8d-81dda0d51c1c)"
 /><text
     class="label__text"
     transform="
@@ -777,7 +910,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-3f2459c1-30f0-48b8-a063-254c76ebaf66">
+/><clipPath id="clipid-86f0839b-9681-4991-947e-73caa6caebc1">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -789,7 +922,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-3f2459c1-30f0-48b8-a063-254c76ebaf66)"
+clip-path="url(#clipid-86f0839b-9681-4991-947e-73caa6caebc1)"
 /><text
     class="label__text"
     transform="
@@ -822,19 +955,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-16887cc2-b817-4f9e-a5d5-5c117a89cf62">
-    <path 
-    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-16887cc2-b817-4f9e-a5d5-5c117a89cf62)"
+clip-path="url(#clipid-93ea8dee-4987-45e6-95ae-9d9465b1aeaa)"
 /><text
     class="label__text"
     transform="
@@ -858,7 +984,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-00a1d2a5-c130-486c-b148-ab9c7c38905d">
+/><clipPath id="clipid-e700d9a3-1c52-4ade-bb2e-3e2ca63842ce">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -870,7 +996,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-00a1d2a5-c130-486c-b148-ab9c7c38905d)"
+clip-path="url(#clipid-e700d9a3-1c52-4ade-bb2e-3e2ca63842ce)"
 /><text
     class="label__text"
     transform="
@@ -903,19 +1029,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-ef389c16-2794-443d-a99a-42e4da71e16d">
-    <path 
-    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-ef389c16-2794-443d-a99a-42e4da71e16d)"
+clip-path="url(#clipid-48a7da3d-0831-4d60-883a-ea7a01e0991b)"
 /><text
     class="label__text"
     transform="
@@ -939,7 +1058,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-99dbed7c-b540-4db9-81f6-2f99c33be933">
+/><clipPath id="clipid-4b4b3295-6d76-4219-891e-e5ed3370f7ae">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -951,7 +1070,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-99dbed7c-b540-4db9-81f6-2f99c33be933)"
+clip-path="url(#clipid-4b4b3295-6d76-4219-891e-e5ed3370f7ae)"
 /><text
     class="label__text"
     transform="
@@ -984,19 +1103,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-d9a5e669-835b-4ab0-a95b-389743a9a5f9">
-    <path 
-    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-d9a5e669-835b-4ab0-a95b-389743a9a5f9)"
+clip-path="url(#clipid-02ee5a4d-0546-46ec-b6f0-f7d8d0ae1aed)"
 /><text
     class="label__text"
     transform="
@@ -1020,7 +1132,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-b42b0667-ad4f-443a-9ea9-159cce7a75b7">
+/><clipPath id="clipid-da1666b3-6c35-4103-8f99-4d856b50b568">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1032,7 +1144,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-b42b0667-ad4f-443a-9ea9-159cce7a75b7)"
+clip-path="url(#clipid-da1666b3-6c35-4103-8f99-4d856b50b568)"
 /><text
     class="label__text"
     transform="
@@ -1065,19 +1177,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-669c45cf-3ebc-4e24-be41-7960aa5b5f9a">
-    <path 
-    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-669c45cf-3ebc-4e24-be41-7960aa5b5f9a)"
+clip-path="url(#clipid-3ad5f955-c1f5-4f70-b067-0bee78303383)"
 /><text
     class="label__text"
     transform="
@@ -1101,7 +1206,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-12251322-3533-4871-9a6b-5e2230804db6">
+/><clipPath id="clipid-0d2e3edf-276d-41d0-8b18-6cd2234d4003">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1113,7 +1218,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-12251322-3533-4871-9a6b-5e2230804db6)"
+clip-path="url(#clipid-0d2e3edf-276d-41d0-8b18-6cd2234d4003)"
 /><text
     class="label__text"
     transform="
@@ -1146,19 +1251,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-ade6f503-f7c5-4a8a-8bb8-0d5b34d42281">
-    <path 
-    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-ade6f503-f7c5-4a8a-8bb8-0d5b34d42281)"
+clip-path="url(#clipid-7179b690-e030-4c11-90ca-a4acd7fb20f4)"
 /><text
     class="label__text"
     transform="
@@ -1182,7 +1280,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-b4d2df07-31e0-4c67-9583-b3d257ecfa01">
+/><clipPath id="clipid-fe74323b-2bd9-4b57-957d-498618046c98">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1194,7 +1292,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-b4d2df07-31e0-4c67-9583-b3d257ecfa01)"
+clip-path="url(#clipid-fe74323b-2bd9-4b57-957d-498618046c98)"
 /><text
     class="label__text"
     transform="
@@ -1227,7 +1325,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-b779550d-2a5f-4ac2-973e-d6d6b9020aae">
+/><clipPath id="clipid-0f345d37-e2f5-4298-9a88-00dfdec667de">
     <rect
         x="80" 
         y="-10.0" 
@@ -1244,7 +1342,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="10" 
-    clip-path="url(#clipid-b779550d-2a5f-4ac2-973e-d6d6b9020aae)" 
+    clip-path="url(#clipid-0f345d37-e2f5-4298-9a88-00dfdec667de)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1278,19 +1376,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-8f6ab2dc-5fdd-47a2-ba0b-04dd5b52be43">
-    <path 
-    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-8f6ab2dc-5fdd-47a2-ba0b-04dd5b52be43)"
+clip-path="url(#clipid-0b99e9b1-7622-4e63-9ddf-f678c5997f77)"
 /><text
     class="label__text"
     transform="
@@ -1314,7 +1405,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-fb96813c-9090-4a6d-b5a3-574a7b0364c9">
+/><clipPath id="clipid-a02092ed-20e9-401d-82e4-f060945e0b15">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1326,7 +1417,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-fb96813c-9090-4a6d-b5a3-574a7b0364c9)"
+clip-path="url(#clipid-a02092ed-20e9-401d-82e4-f060945e0b15)"
 /><text
     class="label__text"
     transform="
@@ -1359,19 +1450,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-f73b13e5-ebab-4a94-a0fa-c46d0bc9b4b8">
-    <path 
-    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-f73b13e5-ebab-4a94-a0fa-c46d0bc9b4b8)"
+clip-path="url(#clipid-1aa0469c-778e-4f07-902d-a6efa0199864)"
 /><text
     class="label__text"
     transform="
@@ -1395,7 +1479,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-932e3596-fa17-474f-bfa6-f5848e113c79">
+/><clipPath id="clipid-8dbd452e-7104-404d-a75e-2f9d9bda72aa">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1407,7 +1491,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-932e3596-fa17-474f-bfa6-f5848e113c79)"
+clip-path="url(#clipid-8dbd452e-7104-404d-a75e-2f9d9bda72aa)"
 /><text
     class="label__text"
     transform="
@@ -1440,19 +1524,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-598caa03-67ee-4a01-a125-c56ce14f3c51">
-    <path 
-    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-598caa03-67ee-4a01-a125-c56ce14f3c51)"
+clip-path="url(#clipid-9142f419-4dac-4673-99ea-5d4d90c2db79)"
 /><text
     class="label__text"
     transform="
@@ -1476,7 +1553,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-ea621e41-0fff-4eaa-9e77-7bd8eaa7fde9">
+/><clipPath id="clipid-04648990-9f65-48f9-b03f-a296e88e4c9e">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1488,7 +1565,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-ea621e41-0fff-4eaa-9e77-7bd8eaa7fde9)"
+clip-path="url(#clipid-04648990-9f65-48f9-b03f-a296e88e4c9e)"
 /><text
     class="label__text"
     transform="
@@ -1529,19 +1606,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-9c0b05a0-c238-41de-8252-799f3c6da1ca">
-    <path 
-    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-9c0b05a0-c238-41de-8252-799f3c6da1ca)"
+clip-path="url(#clipid-43da966a-15c7-4a29-b953-b23e60a0e81f)"
 /><text
     class="label__text"
     transform="
@@ -1565,7 +1635,7 @@ d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-ce6a77c7-863f-4162-9849-d3ed219eef93">
+/><clipPath id="clipid-198b813f-190f-4d0a-9ffa-4c12529b3f08">
     <rect
         x="2" 
         y="-10.0" 
@@ -1582,7 +1652,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-ce6a77c7-863f-4162-9849-d3ed219eef93)" 
+    clip-path="url(#clipid-198b813f-190f-4d0a-9ffa-4c12529b3f08)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1607,7 +1677,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-05e4f0e0-d78b-4789-a6c8-89c163da2465">
+/><clipPath id="clipid-fdf49c73-55d4-4ede-83a6-bf834129bdbf">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1619,7 +1689,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-05e4f0e0-d78b-4789-a6c8-89c163da2465)"
+clip-path="url(#clipid-fdf49c73-55d4-4ede-83a6-bf834129bdbf)"
 /><text
     class="label__text"
     transform="
@@ -1652,19 +1722,25 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-47acfda3-0455-4a44-b5dc-fd7c1912b817">
-    <path 
-    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
+/><clipPath id="clipid-80d46727-cb78-4276-bc51-5a4c0de466a7">
+    <rect
+        x="80" 
+        y="-10.0" 
+        width="80" 
+        height="20" 
+        rx="10" 
     />
-</clipPath><path 
-class="label__body" 
-d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-transform="scale(1 1) translate(80 -10.0) " 
-shape-rendering="geometricPrecision"
-clip-path="url(#clipid-47acfda3-0455-4a44-b5dc-fd7c1912b817)"
+</clipPath>
+
+<rect
+ class="block label__body" 
+    x="80" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
+    rx="10" 
+    clip-path="url(#clipid-80d46727-cb78-4276-bc51-5a4c0de466a7)" 
+    shape-rendering="geometricPrecision"
 /><text
     class="label__text"
     transform="
@@ -1697,19 +1773,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-7b324086-6106-47d1-a775-2bf0242a876b">
-    <path 
-    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-7b324086-6106-47d1-a775-2bf0242a876b)"
+clip-path="url(#clipid-e24a219a-a1da-492c-b8dd-73712db457c9)"
 /><text
     class="label__text"
     transform="
@@ -1733,7 +1802,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-a97b691f-a2be-426b-8820-d6428f3518bd">
+/><clipPath id="clipid-fbf3be6f-c0af-41b8-b7ce-bec0d3ae271c">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1745,7 +1814,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-a97b691f-a2be-426b-8820-d6428f3518bd)"
+clip-path="url(#clipid-fbf3be6f-c0af-41b8-b7ce-bec0d3ae271c)"
 /><text
     class="label__text"
     transform="
@@ -1778,19 +1847,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-f1dfb34a-3555-4ebf-bb79-eb1f4d6b4426">
-    <path 
-    d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-f1dfb34a-3555-4ebf-bb79-eb1f4d6b4426)"
+clip-path="url(#clipid-ccd43c53-b8b0-4c6b-8513-32c7e5852662)"
 /><text
     class="label__text"
     transform="
@@ -1808,7 +1870,7 @@ clip-path="url(#clipid-f1dfb34a-3555-4ebf-bb79-eb1f4d6b4426)"
         scale(-1 1)
     "
 >
-        <clipPath id="clipid-77e38442-79bc-4e8e-87a5-58ef1bd5d2e5">
+        <clipPath id="clipid-47d539b4-fc4d-48ef-aa9c-3da9f2b0edc1">
     <rect
         x="0" 
         y="-10.0" 
@@ -1825,7 +1887,7 @@ clip-path="url(#clipid-f1dfb34a-3555-4ebf-bb79-eb1f4d6b4426)"
     width="30" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-77e38442-79bc-4e8e-87a5-58ef1bd5d2e5)" 
+    clip-path="url(#clipid-47d539b4-fc4d-48ef-aa9c-3da9f2b0edc1)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1850,7 +1912,7 @@ d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-7848a5db-2fbc-4874-8106-a90b3e1f5048">
+/><clipPath id="clipid-7228974b-6248-4968-bddc-30a99755e8f2">
     <rect
         x="2" 
         y="-10.0" 
@@ -1867,7 +1929,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-7848a5db-2fbc-4874-8106-a90b3e1f5048)" 
+    clip-path="url(#clipid-7228974b-6248-4968-bddc-30a99755e8f2)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1892,7 +1954,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-a34e36cc-5213-49c1-8eb3-f7994edaf89b">
+/><clipPath id="clipid-50e78e8c-20a9-45ea-8f49-bf5f2140795c">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -1904,7 +1966,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-a34e36cc-5213-49c1-8eb3-f7994edaf89b)"
+clip-path="url(#clipid-50e78e8c-20a9-45ea-8f49-bf5f2140795c)"
 /><text
     class="label__text"
     transform="
@@ -1937,19 +1999,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-47d60785-08a5-4c4c-abc1-b4d6516f9b1f">
-    <path 
-    d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-47d60785-08a5-4c4c-abc1-b4d6516f9b1f)"
+clip-path="url(#clipid-870e3440-57f9-4660-91da-a0d58a52c86d)"
 /><text
     class="label__text"
     transform="
@@ -1967,7 +2022,7 @@ clip-path="url(#clipid-47d60785-08a5-4c4c-abc1-b4d6516f9b1f)"
         scale(-1 1)
     "
 >
-        <clipPath id="clipid-42cd7329-927a-422d-9eac-f36a4c957d24">
+        <clipPath id="clipid-fae0d11b-4821-4764-ad8d-c00276c055c8">
     <rect
         x="0" 
         y="-10.0" 
@@ -1984,7 +2039,7 @@ clip-path="url(#clipid-47d60785-08a5-4c4c-abc1-b4d6516f9b1f)"
     width="30" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-42cd7329-927a-422d-9eac-f36a4c957d24)" 
+    clip-path="url(#clipid-fae0d11b-4821-4764-ad8d-c00276c055c8)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2009,7 +2064,7 @@ d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-ca20f7aa-addf-4a69-920b-cfe50ee5c31a">
+/><clipPath id="clipid-e6526c8b-7e21-42df-b016-54f7490eb35b">
     <rect
         x="2" 
         y="-10.0" 
@@ -2026,7 +2081,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-ca20f7aa-addf-4a69-920b-cfe50ee5c31a)" 
+    clip-path="url(#clipid-e6526c8b-7e21-42df-b016-54f7490eb35b)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2051,7 +2106,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-d22bb744-f46b-40f8-8758-61e1f52cf393">
+/><clipPath id="clipid-4539776f-4d77-4137-a3f0-419196664f56">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2063,7 +2118,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-d22bb744-f46b-40f8-8758-61e1f52cf393)"
+clip-path="url(#clipid-4539776f-4d77-4137-a3f0-419196664f56)"
 /><text
     class="label__text"
     transform="
@@ -2096,19 +2151,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-b2477fba-6c93-4d72-9086-4a966a395b29">
-    <path 
-    d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-b2477fba-6c93-4d72-9086-4a966a395b29)"
+clip-path="url(#clipid-c20fde9d-eddf-401e-a180-4d418425707d)"
 /><text
     class="label__text"
     transform="
@@ -2126,7 +2174,7 @@ clip-path="url(#clipid-b2477fba-6c93-4d72-9086-4a966a395b29)"
         scale(-1 1)
     "
 >
-        <clipPath id="clipid-583eed4e-97b9-4f9f-b889-b26df74a08a4">
+        <clipPath id="clipid-5689af5c-7650-4fc2-8430-8e1c5506f328">
     <rect
         x="0" 
         y="-10.0" 
@@ -2143,7 +2191,7 @@ clip-path="url(#clipid-b2477fba-6c93-4d72-9086-4a966a395b29)"
     width="30" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-583eed4e-97b9-4f9f-b889-b26df74a08a4)" 
+    clip-path="url(#clipid-5689af5c-7650-4fc2-8430-8e1c5506f328)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2168,7 +2216,7 @@ d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-5b6aed98-fb5d-4f12-a008-40657c8cd1a2">
+/><clipPath id="clipid-974b0780-3a7e-4112-a72b-78e7672cd277">
     <rect
         x="2" 
         y="-10.0" 
@@ -2185,7 +2233,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-5b6aed98-fb5d-4f12-a008-40657c8cd1a2)" 
+    clip-path="url(#clipid-974b0780-3a7e-4112-a72b-78e7672cd277)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2210,7 +2258,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-bb8e7cbc-b11d-485d-bfb4-abf871aea7dc">
+/><clipPath id="clipid-eb6cc3fd-e7f6-4a9e-9b25-c956d416c9d2">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2222,7 +2270,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-bb8e7cbc-b11d-485d-bfb4-abf871aea7dc)"
+clip-path="url(#clipid-eb6cc3fd-e7f6-4a9e-9b25-c956d416c9d2)"
 /><text
     class="label__text"
     transform="
@@ -2255,19 +2303,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-36cc7fbb-41e2-4116-bbd2-28b6e0980c0a">
-    <path 
-    d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-36cc7fbb-41e2-4116-bbd2-28b6e0980c0a)"
+clip-path="url(#clipid-d729fc6a-3c49-4070-bee5-2a754b70269f)"
 /><text
     class="label__text"
     transform="
@@ -2285,7 +2326,7 @@ clip-path="url(#clipid-36cc7fbb-41e2-4116-bbd2-28b6e0980c0a)"
         scale(-1 1)
     "
 >
-        <clipPath id="clipid-da7504f3-f814-4293-a031-c18f69ef8162">
+        <clipPath id="clipid-5e406504-df2e-4d9b-b09f-764c8accf4e8">
     <rect
         x="0" 
         y="-10.0" 
@@ -2302,7 +2343,7 @@ clip-path="url(#clipid-36cc7fbb-41e2-4116-bbd2-28b6e0980c0a)"
     width="30" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-da7504f3-f814-4293-a031-c18f69ef8162)" 
+    clip-path="url(#clipid-5e406504-df2e-4d9b-b09f-764c8accf4e8)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2327,7 +2368,7 @@ d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-1239e4e6-ee29-4e5e-a5f2-b8cfa3790c35">
+/><clipPath id="clipid-333b62ff-158e-46d3-8874-4edd166a0d97">
     <rect
         x="2" 
         y="-10.0" 
@@ -2344,7 +2385,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-1239e4e6-ee29-4e5e-a5f2-b8cfa3790c35)" 
+    clip-path="url(#clipid-333b62ff-158e-46d3-8874-4edd166a0d97)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2369,7 +2410,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-b8415aca-8734-4a89-b5a1-4e889b447034">
+/><clipPath id="clipid-544e3094-0ad4-47c3-992d-d7a1e0de081e">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2381,7 +2422,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-b8415aca-8734-4a89-b5a1-4e889b447034)"
+clip-path="url(#clipid-544e3094-0ad4-47c3-992d-d7a1e0de081e)"
 /><text
     class="label__text"
     transform="
@@ -2414,19 +2455,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-e4f7709a-70d0-44d6-9626-11e6e1780cdb">
-    <path 
-    d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-e4f7709a-70d0-44d6-9626-11e6e1780cdb)"
+clip-path="url(#clipid-0f3cba13-232a-4295-8f3f-655a75fc56b9)"
 /><text
     class="label__text"
     transform="
@@ -2444,7 +2478,7 @@ clip-path="url(#clipid-e4f7709a-70d0-44d6-9626-11e6e1780cdb)"
         scale(-1 1)
     "
 >
-        <clipPath id="clipid-451a8291-63ea-4eb2-bf65-c78fc452d1a0">
+        <clipPath id="clipid-bd60e3e9-bedd-48db-90f0-985a2823cca6">
     <rect
         x="0" 
         y="-10.0" 
@@ -2461,7 +2495,7 @@ clip-path="url(#clipid-e4f7709a-70d0-44d6-9626-11e6e1780cdb)"
     width="30" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-451a8291-63ea-4eb2-bf65-c78fc452d1a0)" 
+    clip-path="url(#clipid-bd60e3e9-bedd-48db-90f0-985a2823cca6)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2486,7 +2520,7 @@ d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-106aa594-a3f6-4f95-84f1-3929fa5054e0">
+/><clipPath id="clipid-9c4b7a6f-5f67-4d73-adc9-c225c81ebae0">
     <rect
         x="2" 
         y="-10.0" 
@@ -2503,7 +2537,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-106aa594-a3f6-4f95-84f1-3929fa5054e0)" 
+    clip-path="url(#clipid-9c4b7a6f-5f67-4d73-adc9-c225c81ebae0)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2528,7 +2562,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-84e9d85f-bc6c-4c15-ba53-9f3989df22d0">
+/><clipPath id="clipid-05f46aea-5821-4776-9e51-91b9926006be">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2540,7 +2574,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-84e9d85f-bc6c-4c15-ba53-9f3989df22d0)"
+clip-path="url(#clipid-05f46aea-5821-4776-9e51-91b9926006be)"
 /><text
     class="label__text"
     transform="
@@ -2573,19 +2607,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-fcd5740d-20f2-41a6-8f23-306bf964e54f">
-    <path 
-    d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-fcd5740d-20f2-41a6-8f23-306bf964e54f)"
+clip-path="url(#clipid-98a3dc23-5b9b-4fde-8503-1ddc2d55de65)"
 /><text
     class="label__text"
     transform="
@@ -2603,7 +2630,7 @@ clip-path="url(#clipid-fcd5740d-20f2-41a6-8f23-306bf964e54f)"
         scale(-1 1)
     "
 >
-        <clipPath id="clipid-5e99bc7a-30bc-462e-a709-4e523820485a">
+        <clipPath id="clipid-047b88d4-42e4-44cf-851c-334b3b6e05fd">
     <rect
         x="0" 
         y="-10.0" 
@@ -2620,7 +2647,7 @@ clip-path="url(#clipid-fcd5740d-20f2-41a6-8f23-306bf964e54f)"
     width="30" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-5e99bc7a-30bc-462e-a709-4e523820485a)" 
+    clip-path="url(#clipid-047b88d4-42e4-44cf-851c-334b3b6e05fd)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2645,7 +2672,7 @@ d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-ef584237-3b07-4ccb-b9af-ff69c9121421">
+/><clipPath id="clipid-6b8ffc94-c347-42d7-8f5c-f543a9c7fe1e">
     <rect
         x="2" 
         y="-10.0" 
@@ -2662,7 +2689,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-ef584237-3b07-4ccb-b9af-ff69c9121421)" 
+    clip-path="url(#clipid-6b8ffc94-c347-42d7-8f5c-f543a9c7fe1e)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2687,7 +2714,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-7b603bae-665a-4ea7-9452-0bedeb9c7377">
+/><clipPath id="clipid-948956bc-7464-4ccd-8336-2bb5f17f680d">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2699,7 +2726,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-7b603bae-665a-4ea7-9452-0bedeb9c7377)"
+clip-path="url(#clipid-948956bc-7464-4ccd-8336-2bb5f17f680d)"
 /><text
     class="label__text"
     transform="
@@ -2732,19 +2759,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-682c6a28-6f9b-4dd8-bc84-e2d1d3c9bc14">
-    <path 
-    d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-682c6a28-6f9b-4dd8-bc84-e2d1d3c9bc14)"
+clip-path="url(#clipid-46d6693a-0f5c-424d-ad87-7e3ff14ca951)"
 /><text
     class="label__text"
     transform="
@@ -2762,7 +2782,7 @@ clip-path="url(#clipid-682c6a28-6f9b-4dd8-bc84-e2d1d3c9bc14)"
         scale(-1 1)
     "
 >
-        <clipPath id="clipid-17d65b4e-db86-4e87-9e29-75122d0aab78">
+        <clipPath id="clipid-8715a486-81f9-4a4a-9dd5-e12e54c46881">
     <rect
         x="0" 
         y="-10.0" 
@@ -2779,7 +2799,7 @@ clip-path="url(#clipid-682c6a28-6f9b-4dd8-bc84-e2d1d3c9bc14)"
     width="30" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-17d65b4e-db86-4e87-9e29-75122d0aab78)" 
+    clip-path="url(#clipid-8715a486-81f9-4a4a-9dd5-e12e54c46881)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2804,7 +2824,7 @@ d="M 0 0 l 84 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-0f3f5817-4fba-4347-86a4-36c8255b8f79">
+/><clipPath id="clipid-5b5ce801-1ab6-430d-b7c8-660e67269b67">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2816,7 +2836,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(84 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-0f3f5817-4fba-4347-86a4-36c8255b8f79)"
+clip-path="url(#clipid-5b5ce801-1ab6-430d-b7c8-660e67269b67)"
 /><text
     class="label__text"
     transform="
@@ -2849,19 +2869,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-c806eed2-c3ee-4443-8d8c-1c153d16e032">
-    <path 
-    d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 50 0 L 50 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-c806eed2-c3ee-4443-8d8c-1c153d16e032)"
+clip-path="url(#clipid-a6804d9b-15d8-4835-9a9f-6229a8e4a1c7)"
 /><text
     class="label__text"
     transform="
@@ -2879,7 +2892,7 @@ clip-path="url(#clipid-c806eed2-c3ee-4443-8d8c-1c153d16e032)"
         scale(-1 1)
     "
 >
-        <clipPath id="clipid-96407ce5-fc0b-4ab3-bf20-eae39ab121f1">
+        <clipPath id="clipid-4305d873-f688-4034-a9ba-05881c331ddb">
     <rect
         x="0" 
         y="-10.0" 
@@ -2896,7 +2909,7 @@ clip-path="url(#clipid-c806eed2-c3ee-4443-8d8c-1c153d16e032)"
     width="30" 
     height="20" 
     rx="0" 
-    clip-path="url(#clipid-96407ce5-fc0b-4ab3-bf20-eae39ab121f1)" 
+    clip-path="url(#clipid-4305d873-f688-4034-a9ba-05881c331ddb)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2921,7 +2934,7 @@ d="M 0 0 l 84 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-edee87af-52d6-4a07-95cb-5af505739c6f">
+/><clipPath id="clipid-531929af-a942-4783-a2df-52e790d71d3d">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -2933,7 +2946,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(84 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-edee87af-52d6-4a07-95cb-5af505739c6f)"
+clip-path="url(#clipid-531929af-a942-4783-a2df-52e790d71d3d)"
 /><text
     class="label__text"
     transform="
@@ -2966,7 +2979,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-71558926-da2d-4767-9745-2519c0e81f98">
+/><clipPath id="clipid-38a93aa4-ef28-4c1e-815c-c4671d402c99">
     <rect
         x="80" 
         y="-10.0" 
@@ -2983,7 +2996,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="10" 
-    clip-path="url(#clipid-71558926-da2d-4767-9745-2519c0e81f98)" 
+    clip-path="url(#clipid-38a93aa4-ef28-4c1e-815c-c4671d402c99)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -3017,19 +3030,12 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-b361fe78-8da6-411e-87f6-c2df809d6fc4">
-    <path 
-    d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
-    transform="scale(1 1) translate(0 0)" 
-    shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
-    />
-</clipPath><path 
+/><path 
 class="label__body" 
 d="M 10.0 0 L 80 0 L 80 20 L 10.0 20 A 10.0 10.0 0 0 1 10.0 0 Z" 
 transform="scale(1 1) translate(80 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-b361fe78-8da6-411e-87f6-c2df809d6fc4)"
+clip-path="url(#clipid-637fd69e-734a-48e5-a39e-eb9823dd705e)"
 /><text
     class="label__text"
     transform="
@@ -3053,7 +3059,7 @@ d="M 0 0 l 2 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-cef91729-6c5a-4853-8780-c621474b456b">
+/><clipPath id="clipid-884a8cbb-a55c-4bc7-81f3-43e198394739">
     <path 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(0 0)" 
@@ -3065,7 +3071,7 @@ class="label__body"
 d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
 transform="scale(1 1) translate(2 -10.0) " 
 shape-rendering="geometricPrecision"
-clip-path="url(#clipid-cef91729-6c5a-4853-8780-c621474b456b)"
+clip-path="url(#clipid-884a8cbb-a55c-4bc7-81f3-43e198394739)"
 /><text
     class="label__text"
     transform="
@@ -3098,7 +3104,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-e829b3d7-6307-41c8-8692-bda21e856f03">
+/><clipPath id="clipid-767873b1-239b-4332-aeaa-656cdaee18b7">
     <rect
         x="80" 
         y="-10.0" 
@@ -3115,7 +3121,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="10" 
-    clip-path="url(#clipid-e829b3d7-6307-41c8-8692-bda21e856f03)" 
+    clip-path="url(#clipid-767873b1-239b-4332-aeaa-656cdaee18b7)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -3149,7 +3155,7 @@ d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-af20b97f-1091-4836-9d28-09b48009aa2b">
+/><clipPath id="clipid-26047646-13b7-4c96-b19b-8f29a55aa7fe">
     <rect
         x="80" 
         y="-10.0" 
@@ -3166,7 +3172,7 @@ clip-path="url(#clipid-None)"
     width="80" 
     height="20" 
     rx="10" 
-    clip-path="url(#clipid-af20b97f-1091-4836-9d28-09b48009aa2b)" 
+    clip-path="url(#clipid-26047646-13b7-4c96-b19b-8f29a55aa7fe)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -3208,7 +3214,7 @@ d="M 0 0 L 0 46.66666666666667 A 23.333333333333332 23.333333333333332 0 0 0 23.
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-c94e9742-ba6f-454f-b1ea-4bb8ea52e419">
+/><clipPath id="clipid-9ae9f0c3-34fd-45e4-9ab4-d40458948654">
     <rect
         x="230" 
         y="60.0" 
@@ -3225,7 +3231,7 @@ clip-path="url(#clipid-None)"
     width="120" 
     height="20" 
     rx="10" 
-    clip-path="url(#clipid-c94e9742-ba6f-454f-b1ea-4bb8ea52e419)" 
+    clip-path="url(#clipid-9ae9f0c3-34fd-45e4-9ab4-d40458948654)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -3259,7 +3265,7 @@ d="M 0 0 L 0 32.0 A 16.0 16.0 0 0 0 16.0 48 L 118 48"
 transform="scale(1 1) translate(0 0) " 
 shape-rendering="geometricPrecision"
 clip-path="url(#clipid-None)"
-/><clipPath id="clipid-0b1ced5a-e0ac-47d5-8453-a4345fd5f292">
+/><clipPath id="clipid-81205451-f4dd-4848-b56f-d5aa5978d51b">
     <rect
         x="118" 
         y="38.0" 
@@ -3276,7 +3282,7 @@ clip-path="url(#clipid-None)"
     width="120" 
     height="20" 
     rx="10" 
-    clip-path="url(#clipid-0b1ced5a-e0ac-47d5-8453-a4345fd5f292)" 
+    clip-path="url(#clipid-81205451-f4dd-4848-b56f-d5aa5978d51b)" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"

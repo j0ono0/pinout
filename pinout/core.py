@@ -25,6 +25,10 @@ class Layout(TransformMixin):
             self.children.append(instance)
         return instance
 
+    def add_defs(self, instance):
+        self.defs.append(instance)
+        return instance
+
     def bounding_rect(self):
         x1, y1, x2, y2 = self.bounding_coords()
         return BoundingRect(x1, y1, x2 - x1, y2 - y1)
@@ -55,6 +59,16 @@ class Layout(TransformMixin):
         except IndexError:
             # There are no children
             return BoundingCoords(0, 0, 0, 0)
+
+    def render_defs(self):
+        content = ""
+        for d in self.defs:
+            content += d.render()
+        for child in [
+            child for child in self.children if hasattr(child, "render_defs")
+        ]:
+            content += child.render_defs()
+        return content
 
     def render_children(self):
         content = ""
@@ -93,10 +107,6 @@ class Diagram(Layout):
 
     def add_stylesheet(self, path, embed=True):
         self.children.insert(0, StyleSheet(path, embed))
-
-    def add_defs(self, instance):
-        self.defs.append(instance)
-        return instance
 
     def render(self):
         tplt = templates.get("svg.svg")

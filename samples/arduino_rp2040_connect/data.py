@@ -112,7 +112,7 @@ header_lhs = [
         (Label, "GPIO6", "mu-port", cfg("block")),
         (LabelLast, "SCK", "default", cfg("end")),
     ],
-    [(FirstLabel, "+3V3", "pwr", cfg("single"))],
+    [(Label, "+3V3", "pwr", cfg("single"))],
     [
         (FirstLabel, "AREF", "other", cfg("start")),
         (LabelLast, "PA03", "mu-port", cfg("end")),

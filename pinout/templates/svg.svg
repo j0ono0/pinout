@@ -13,9 +13,7 @@
 >
 {% if svg.defs %}
 <defs>
-    {% for def in svg.defs %}
-        {{ def.render() }}
-    {% endfor %}
+    {{ svg.render_defs() }}
 </defs>
 {% endif %}
 {% block body %}

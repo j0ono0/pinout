@@ -42,7 +42,7 @@ class FirstLabel(LabelBase):
         # Clip-path is used to display stroke as an inner-stroke.
         # This ensures labels align correctly regardless of stroke existance or width
         # Consequently the CSS stroke-width should be double intended width
-        clip = self.add(
+        clip = self.add_defs(
             core.ClipPath(
                 path_definition=path_def,
                 # x=self.offset.x,

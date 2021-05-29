@@ -14,7 +14,7 @@
 {% if svg.defs %}
 <defs>
     {% for def in svg.defs %}
-        {{ def }}
+        {{ def.render() }}
     {% endfor %}
 </defs>
 {% endif %}

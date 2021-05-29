@@ -1,4 +1,4 @@
-from pinout.core import Diagram, Group, Image
+from pinout.core import Diagram, Group, Image, Raw
 from pinout import components as cmp
 from pinout.components import Rect, LabelSet, TextBlock
 
@@ -13,8 +13,12 @@ diagram = Diagram(1200, 675, tag="arduino-rp2040-connect")
 # Add a stylesheet and some custom patterns
 diagram.add_stylesheet("styles.css", True)
 
-
-diagram.add_defs("patterns.xml")
+# Load some svg markup to be used as patterns
+# The Raw class allows arbitary code to be inserted
+# into the diagram.
+with open("patterns.xml") as f:
+    patterns = f.read()
+diagram.add_defs(Raw(patterns))
 
 # Construct a layout and add some backgrounds
 group_main = diagram.add(Group(0, 0, tag="panel panel--main"))

@@ -17,6 +17,7 @@ class Layout(TransformMixin):
         self.x = x
         self.y = y
         self.children = []
+        self.defs = []
         self.clip_id = clip_id
 
     def add(self, instance):
@@ -56,10 +57,10 @@ class Layout(TransformMixin):
             return BoundingCoords(0, 0, 0, 0)
 
     def render_children(self):
-        output = ""
+        content = ""
         for child in self.children:
-            output += child.render()
-        return output
+            content += child.render()
+        return content
 
 
 class StyleSheet:
@@ -76,18 +77,26 @@ class StyleSheet:
             return tplt.render(data=data)
 
 
+class Raw:
+    def __init__(self, content):
+        self.content = content
+
+    def render(self):
+        return self.content
+
+
 class Diagram(Layout):
     def __init__(self, width, height, tag=None, **kwargs):
         super().__init__(tag=tag, **kwargs)
         self.width = width
         self.height = height
-        self.defs = []
 
     def add_stylesheet(self, path, embed=True):
         self.children.insert(0, StyleSheet(path, embed))
 
-    def add_defs(self, path):
-        self.defs.append(file_manager.load_data(path))
+    def add_defs(self, instance):
+        self.defs.append(instance)
+        return instance
 
     def render(self):
         tplt = templates.get("svg.svg")

@@ -45,10 +45,10 @@ class FirstLabel(LabelBase):
         clip = self.add(
             core.ClipPath(
                 path_definition=path_def,
-                x=0,
-                y=0,
-                width=width,
-                height=height,
+                # x=self.offset.x,
+                # y=self.offset.y - (height / 2),
+                # width=width,
+                # height=height,
             )
         )
 

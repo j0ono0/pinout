@@ -28,31 +28,19 @@ class FirstLabel(LabelBase):
             )
 
         # Label body
-        bx = height / 2
+        br = height / 2
         path_def = " ".join(
             [
-                f"M {bx} 0",
-                f"L {width} 0",
-                f"L {width} {height}",
-                f"L {bx} {height}",
-                f"A {bx} {bx} 0 0 1 {bx} 0",
-                "Z",
+                f"M {br} 0",
+                f"l {width - br} 0",
+                f"l 0 {height}",
+                f"l {-(width - br)} 0",
+                f"a {-br} {-br} 0 0 1 0 {-height}",
+                "z",
             ]
         )
-        # Clip-path is used to display stroke as an inner-stroke.
-        # This ensures labels align correctly regardless of stroke existance or width
-        # Consequently the CSS stroke-width should be double intended width
-        clip = self.add_defs(
-            core.ClipPath(
-                path_definition=path_def,
-                # x=self.offset.x,
-                # y=self.offset.y - (height / 2),
-                # width=width,
-                # height=height,
-            )
-        )
 
-        # Add the label body shape
+        # Add the label body
         label_body = self.add(
             core.Path(
                 path_definition=path_def,
@@ -61,7 +49,34 @@ class FirstLabel(LabelBase):
                 width=width,
                 height=height,
                 tag="label__body",
-                clip_id=clip.uuid,
+            )
+        )
+
+        # SVG does not support stroke alignment.
+        # To achive an 'inner stroke' effect another
+        # component has been added with the desired inset.
+        inset = 2
+        h = height - inset
+        w = width - inset
+        br = h / 2
+        path_def = " ".join(
+            [
+                f"M {br + inset/2} {inset/2}",
+                f"l {w - br} 0",
+                f"l 0 {h}",
+                f"l {-(w - br)} 0",
+                f"a {-br} {-br} 0 0 1 0 {-h}",
+                "z",
+            ]
+        )
+        self.add(
+            core.Path(
+                path_definition=path_def,
+                x=self.offset.x,
+                y=self.offset.y - (height / 2),
+                width=width,
+                height=height,
+                tag="label__bodyinner",
             )
         )
 
@@ -101,7 +116,6 @@ class LabelLast(LabelBase):
                 "Z",
             ]
         )
-        clip = self.add(core.ClipPath(path_definition=path_def))
         label_body = self.add(
             core.Path(
                 path_definition=path_def,
@@ -110,7 +124,6 @@ class LabelLast(LabelBase):
                 width=width,
                 height=height,
                 tag="label__body",
-                clip_id=clip.uuid,
             )
         )
 
@@ -153,7 +166,6 @@ class Label(LabelBase):
             )
 
         # Label body
-        # core.Rect has a clip-path added automatically, no requirement to include one here.
         label_body = self.add(
             core.Rect(
                 r=r,
@@ -162,6 +174,18 @@ class Label(LabelBase):
                 width=width,
                 height=height,
                 tag="block label__body",
+            )
+        )
+        # Add an inner body for 'inner-stroke' styling
+        inset = 2
+        self.add(
+            core.Rect(
+                r=r,
+                x=self.offset.x + inset / 2,
+                y=self.offset.y - (height / 2) + inset / 2,
+                width=width - inset,
+                height=height - inset,
+                tag="block label__bodyinner",
             )
         )
 

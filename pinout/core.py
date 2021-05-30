@@ -1,4 +1,3 @@
-import uuid
 import base64
 from . import file_manager, templates
 from .mixins import (
@@ -11,21 +10,20 @@ import pathlib
 
 
 class Layout(TransformMixin):
-    def __init__(self, x=0, y=0, tag=None, clip_id=None, **kwargs):
+    def __init__(self, x=0, y=0, tag=None, **kwargs):
         super().__init__(**kwargs)
         self.tag = tag
         self.x = x
         self.y = y
         self.children = []
         self.defs = []
-        self.clip_id = clip_id
 
     def add(self, instance):
         if issubclass(type(instance), (SvgShape, Layout)):
             self.children.append(instance)
         return instance
 
-    def add_defs(self, instance):
+    def add_def(self, instance):
         self.defs.append(instance)
         return instance
 
@@ -150,14 +148,21 @@ class Group(Layout):
 
 
 class SvgShape(TransformMixin):
-    def __init__(self, x=0, y=0, width=0, height=0, tag=None, clip_id=None, **kwargs):
+    def __init__(
+        self,
+        x=0,
+        y=0,
+        width=0,
+        height=0,
+        tag=None,
+        **kwargs,
+    ):
         super().__init__(**kwargs)
         self.tag = tag
         self.x = x
         self.y = y
         self.width = width
         self.height = height
-        self.clip_id = clip_id
 
     def bounding_rect(self):
         x1, y1, x2, y2 = self.bounding_coords()
@@ -179,22 +184,10 @@ class Path(SvgShape):
         return tplt.render(path=self)
 
 
-class ClipPath(Path):
-    def __init__(self, path_definition="", **kwargs):
-        super().__init__(**kwargs)
-        self.uuid = uuid.uuid4()
-        self.d = path_definition
-
-    def render(self):
-        tplt = templates.get("clippath.svg")
-        return tplt.render(path=self)
-
-
 class Rect(SvgShape):
     def __init__(self, r, **kwargs):
         super().__init__(**kwargs)
         self.r = r
-        self.uuid = uuid.uuid4()
 
     def render(self):
         tplt = templates.get("rect.svg")

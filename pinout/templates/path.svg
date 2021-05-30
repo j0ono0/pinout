@@ -5,7 +5,4 @@ class="{{ path.tag }}"
 d="{{ path.d }}" 
 transform="scale({{ path.scale.x }} {{ path.scale.y }}) translate({{ path.x }} {{  path.y }}) " 
 shape-rendering="geometricPrecision"
-{% if clip_id is not none %}
-clip-path="url(#clipid-{{ path.clip_id }})"
-{% endif %}
 />

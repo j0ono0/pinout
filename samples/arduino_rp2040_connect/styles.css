@@ -49,7 +49,10 @@ text {
 
 .label__body{
     fill: rgb(36, 36, 36);
-    
+}
+.label__bodyinner{
+    fill: none;
+    stroke-linejoin: "bevel";
 }
 .label__leaderline{
     stroke: rgba(255, 255, 255, 0);
@@ -117,6 +120,9 @@ text {
     }
 .analog .label__body{
     fill: url("#stripe-b");
+}
+.analog .label__bodyinner{
+    fill: none;
     stroke: #d35400;
     stroke-width: 2;
 }
@@ -138,6 +144,9 @@ text {
     
 .other .label__body{
     fill: #fff;
+}
+.other .label__bodyinner{
+    
     stroke: #d86e29;
     stroke-width: 2;
 }

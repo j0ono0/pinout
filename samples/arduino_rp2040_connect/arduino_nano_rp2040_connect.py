@@ -18,7 +18,7 @@ diagram.add_stylesheet("styles.css", True)
 # into the diagram.
 with open("patterns.xml") as f:
     patterns = f.read()
-diagram.add_defs(Raw(patterns))
+diagram.add_def(Raw(patterns))
 
 # Construct a layout and add some backgrounds
 group_main = diagram.add(Group(0, 0, tag="panel panel--main"))

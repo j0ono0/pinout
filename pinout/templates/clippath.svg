@@ -1,8 +1,10 @@
-<clipPath id="clipid-{{ path.uuid }}">
+<clipPath 
+    id="{{ path.uuid }}"
+    clipPathUnits="userSpaceOnUse"
+>
     <path 
     d="{{ path.d }}" 
     transform="scale({{ path.scale.x }} {{ path.scale.y }}) translate({{ path.x }} {{  path.y }})" 
     shape-rendering="geometricPrecision"
-    clipPathUnits="userSpaceOnUse"
     />
 </clipPath>

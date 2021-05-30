@@ -2,7 +2,7 @@
     {% if group.tag %}
         class="{{ group.tag }}"
     {% endif %}
-    {% if clip_id is not none %}
+    {% if clip_id %}
         clip-path="url(#clipid-{{ group.clip_id }})"
     {% endif %}
     transform="

@@ -23,7 +23,7 @@ path, rect {
     stroke-dashoffset: 0;
     stroke-linecap: round;
     stroke-linejoin: miter;
-    stroke-miterlimit: 0;
+    stroke-miterlimit: inherit;
     stroke-opacity: 1;
     stroke-width: 0;
 }

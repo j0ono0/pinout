@@ -89,7 +89,7 @@ text {
 .label__text{
     dominant-baseline: central;
     fill: #fff;
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Roboto', Helvetica, Verdana, monospace;
     font-size: 12px;
     font-weight: 600;
     stroke-width: 0;
@@ -2830,7 +2830,7 @@ text {
         scale(1 1)
     "  
 >
-    <tspan class="p">Pinout diagram create with <tspan class="italic">pinout (v0.0.10)</tspan></tspan>
+    <tspan class="p">Pinout diagram created with <tspan class="italic">pinout (v0.0.10)</tspan></tspan>
 </text><text
     transform="
         translate(0 17) 

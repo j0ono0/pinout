@@ -191,7 +191,7 @@ title_1 = [
     '<tspan class="h1">UNO REV3</tspan>',
 ]
 para_1 = [
-    '<tspan class="p">Pinout diagram create with <tspan class="italic">pinout (v0.0.10)</tspan></tspan>',
+    '<tspan class="p">Pinout diagram created with <tspan class="italic">pinout (v0.0.10)</tspan></tspan>',
     '<tspan class="p">A Python package for creating pinout diagrams.</tspan>',
     '<tspan class="p"><tspan class="strong"><a href="https://pinout.readthedocs.io">pinout.readthedocs.io</a></tspan></tspan>',
 ]

@@ -72,4 +72,4 @@ pinout_graphic.add(
     LabelSet(x=62, y=392, pitch=(39, -185), scale=(-1, 1), rows=data.leds_b)
 )
 
-diagram.export("pinout_arduino_nano_rp2040_connect.svg", True)
+diagram.export("pinout_arduino_uno_rev3.svg", True)

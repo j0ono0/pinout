@@ -8,19 +8,26 @@ class FirstLabel(LabelBase):
         # Extract kwargs that are used locally
         height = kwargs.pop("height")
         width = kwargs.pop("width")
+        style = kwargs.pop("style", "")
         super().__init__(**kwargs)
 
-        # Leaderline
-        # note: beizer curve used to display feature!
-        # Simpler straight line path_def could be used
-        if self.offset.x != 0 or self.offset.y != 0:
-            len = self.offset.x / 5
-            ctl_x = self.offset.x / 2
-            path_def = f"M 0 0 L {len} 0 C {ctl_x} 0 {ctl_x} {self.offset.y} {self.offset.x - len} {self.offset.y} L {self.offset.x} {self.offset.y}"
+        # Add a leaderline if label is offset from origin
+        if self.offset != (0, 0):
+            if style == "cnr":
+                # Single bend
+                llr = min(*self.offset) / 3
+                path_def = f"M 0 0 L 0 {self.offset.y - llr} A {llr} {llr} 0 0 0 {llr} {self.offset.y} L {self.offset.x} {self.offset.y}"
+            else:
+                # Beizer curve (default)
+                len = self.offset.x / 5
+                ctl_x = self.offset.x / 2
+                path_def = f"M 0 0 L {len} 0 C {ctl_x} 0 {ctl_x} {self.offset.y} {self.offset.x - len} {self.offset.y} L {self.offset.x} {self.offset.y}"
 
             self.add(
                 core.Path(
                     path_definition=path_def,
+                    x=0,
+                    y=0,
                     width=self.offset.x,
                     height=self.offset.y,
                     tag="label__leaderline",

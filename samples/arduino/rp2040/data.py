@@ -1,4 +1,5 @@
 from pinout import config
+
 from arduino_components import Label, FirstLabel, LabelLast
 
 

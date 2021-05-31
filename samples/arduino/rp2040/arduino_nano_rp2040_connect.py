@@ -1,14 +1,13 @@
 from pinout.core import Diagram, Group, Image, Raw
-from pinout import components as cmp
 from pinout.components import Rect, LabelSet, TextBlock
 
 
 # Import data from another script
 import data
 
+
 # Create a new digram
 diagram = Diagram(1200, 675, tag="arduino-rp2040-connect")
-
 
 # Add a stylesheet and some custom patterns
 diagram.add_stylesheet("styles.css", True)
@@ -35,7 +34,6 @@ group_notes.add(TextBlock(data.title_1, 22, x=50, y=30))
 group_notes.add(TextBlock(data.para_1, 17, x=50, y=74))
 group_notes.add(TextBlock(data.para_2, 17, x=800, y=74))
 
-
 # Add a hardware image
 # Note its coordinates are relative to the group it is within
 pinout_graphic.add(
@@ -52,7 +50,6 @@ pinout_graphic.add(
 pinout_graphic.add(
     LabelSet(x=86, y=58, pitch=(0, 24.6), scale=(1, 1), rows=data.header_rhs)
 )
-
 
 # Left hand side pin header
 pinout_graphic.add(

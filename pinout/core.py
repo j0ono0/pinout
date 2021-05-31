@@ -1,4 +1,6 @@
 import base64
+import warnings
+import uuid
 from . import file_manager, templates
 from .mixins import (
     TransformMixin,
@@ -147,6 +149,16 @@ class Group(Layout):
         return tplt.render(group=self)
 
 
+class ClipPath(Group):
+    def __init__(self, x=0, y=0, tag=None, **kwargs):
+        self.uuid = str(uuid.uuid4())
+        super().__init__(x=x, y=y, tag=tag, **kwargs)
+
+    def render(self):
+        tplt = templates.get("clippath.svg")
+        return tplt.render(path=self)
+
+
 class SvgShape(TransformMixin):
     def __init__(
         self,
@@ -157,12 +169,13 @@ class SvgShape(TransformMixin):
         tag=None,
         **kwargs,
     ):
-        super().__init__(**kwargs)
         self.tag = tag
         self.x = x
         self.y = y
         self.width = width
         self.height = height
+        self.clip_id = kwargs.pop("clip_id", None)
+        super().__init__(**kwargs)
 
     def bounding_rect(self):
         x1, y1, x2, y2 = self.bounding_coords()

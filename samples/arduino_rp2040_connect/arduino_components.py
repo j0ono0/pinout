@@ -55,6 +55,10 @@ class FirstLabel(LabelBase):
         # SVG does not support stroke alignment.
         # To achive an 'inner stroke' effect another
         # component has been added with the desired inset.
+        #
+        # !NOTE: clip-path has not been used here due to a bug
+        # causing the path to display incorrectly in InkScape!
+
         inset = 2
         h = height - inset
         w = width - inset
@@ -176,6 +180,7 @@ class Label(LabelBase):
                 tag="block label__body",
             )
         )
+
         # Add an inner body for 'inner-stroke' styling
         inset = 2
         self.add(

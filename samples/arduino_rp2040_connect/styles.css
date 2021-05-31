@@ -22,7 +22,7 @@ path, rect {
     stroke-dasharray: 0;
     stroke-dashoffset: 0;
     stroke-linecap: round;
-    stroke-linejoin: round;
+    stroke-linejoin: miter;
     stroke-miterlimit: 0;
     stroke-opacity: 1;
     stroke-width: 0;
@@ -52,7 +52,7 @@ text {
 }
 .label__bodyinner{
     fill: none;
-    stroke-linejoin: "bevel";
+    stroke-linejoin: "miter";
 }
 .label__leaderline{
     stroke: rgba(255, 255, 255, 0);
@@ -77,23 +77,21 @@ text {
 #########################################################
 */
 
-.panel--main .panel__bg,
-.panel--notes .panel__bg{
-    stroke: #ccc;
-    stroke-width: 2;
+.diagram__bg{
+    fill: #333
 }
+
 .panel--main .panel__bg{
     fill: #fff;
 }
 .panel--notes .panel__bg{
-    fill: rgb(228, 228, 226);
+    fill: #e4e4e2;
 }
 
 .labelrow .label:first-child .label__leaderline,
 .show-leader .label__leaderline{
     stroke: #bcc6c6;
 }
-
 
 .led .label__body{
     fill: #1da086;
@@ -146,7 +144,6 @@ text {
     fill: #fff;
 }
 .other .label__bodyinner{
-    
     stroke: #d86e29;
     stroke-width: 2;
 }

@@ -43,24 +43,6 @@ class LabelBase(core.Group):
         super().__init__(**kwargs)
 
 
-class TestLabel(LabelBase):
-    def __init__(self, *args, **kwargs):
-        height = kwargs.pop("height")
-        width = kwargs.pop("width")
-        super().__init__(**kwargs)
-
-        self.add(
-            core.Rect(
-                r=5,
-                x=self.offset.x,
-                y=self.offset.y - (height / 2),
-                width=width,
-                height=height,
-                tag="label__body",
-            )
-        )
-
-
 class Label(LabelBase):
     def __init__(
         self,
@@ -73,6 +55,7 @@ class Label(LabelBase):
         style="curve",
         r=0,
         offset=(0, 0),
+        clip=False,
         **kwargs,
     ):
         scale = core.Coords(*kwargs.pop("scale", (1, 1)))
@@ -85,6 +68,21 @@ class Label(LabelBase):
                 """
             warnings.warn(msg)
 
+        clip_id = None
+        if clip:
+            clip_path = self.add_def(core.ClipPath())
+            clip_id = clip_path.uuid
+            clip_path.add(
+                core.Rect(
+                    r=r,
+                    x=self.offset.x,
+                    y=self.offset.y - (height / 2),
+                    width=width,
+                    height=height,
+                    **kwargs,
+                )
+            )
+
         label_body = self.add(
             core.Rect(
                 r=r,
@@ -93,6 +91,7 @@ class Label(LabelBase):
                 width=width,
                 height=height,
                 tag="label__body",
+                clip_id=clip_id,
                 **kwargs,
             )
         )

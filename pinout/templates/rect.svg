@@ -6,4 +6,7 @@
     height="{{ rect.height }}" 
     rx="{{ rect.r }}" 
     shape-rendering="geometricPrecision"
+    {% if rect.clip_id %}
+    clip-path="url(#{{ rect.clip_id }})"
+    {% endif %}
 />

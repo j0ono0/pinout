@@ -1,49 +1,15 @@
-from collections import namedtuple
 import warnings
-from . import core
-
-LabelAttrs = namedtuple("LabelAttrs", ("cls content tag config"))
-LabelAttrs.__new__.__defaults__ = (None, None, None, {})
+from pinout import core
 
 
-class Rect(core.Path):
-    def __init__(self, x=0, y=0, width=10, height=10, tag=None, r=0, **kwargs):
-        x1 = 0
-        y1 = 0
-        x2 = width
-        y2 = height
-
-        path_def = " ".join(
-            (
-                f"M {x1 + r} {y1}",
-                f"L {x2 - r} {y1}",
-                f"A {r} {r} 0 0 1 {x2} {y1 + r}",
-                f"L {x2} {y2 - r}",
-                f"A {r} {r} 0 0 1 {x2 - r} {y2}",
-                f"L {x1 + r} {y2}",
-                f"A {r} {r} 0 0 1 {x1} {y2 - r}",
-                f"L {x1} {y1 + r}",
-                f"A {r} {r} 0 0 1 {x1 + r} {y1}",
-                "z",
-            )
-        )
-        super().__init__(
-            path_def, x=x, y=y, width=width, height=height, tag=tag, **kwargs
-        )
-
-
-class LabelBase(core.Group):
+class Base(core.Group):
     def __init__(self, **kwargs):
         self.offset = core.Coords(*kwargs.pop("offset", (1, 1)))
-
-        tag = kwargs.pop("tag", "")
-        taglist = tag.split(" ")
-        taglist.append("label")
-        kwargs["tag"] = " ".join(taglist)
+        kwargs["tag"] = ("label " + kwargs.pop("tag", "")).strip()
         super().__init__(**kwargs)
 
 
-class Label(LabelBase):
+class Label(Base):
     def __init__(
         self,
         content,
@@ -134,13 +100,9 @@ class Label(LabelBase):
         )
 
 
-class LabelRow(core.Group):
+class Row(core.Group):
     def __init__(self, labels, **kwargs):
-
-        tag = kwargs.pop("tag", "")
-        taglist = tag.split(" ")
-        taglist.append("labelrow")
-        kwargs["tag"] = " ".join(taglist)
+        kwargs["tag"] = ("labelrow " + kwargs.pop("tag", "")).strip()
         scale = core.Coords(*kwargs.pop("scale", (1, 1)))
         super().__init__(**kwargs)
 
@@ -158,14 +120,14 @@ class LabelRow(core.Group):
             self.add(cls(content, x=x, y=y, tag=tag, scale=scale, **config))
 
     def add(self, label):
-        if issubclass(type(label), LabelBase):
+        if issubclass(type(label), Base):
             self.children.append(label)
             return label
-        # Only allow Labels to be added to a LabelRow
+        # Only allow Labels to be added to a label Row
         raise TypeError(label)
 
 
-class LabelSet(core.Group):
+class Header(core.Group):
     def __init__(self, pitch, rows, **kwargs):
         scale = kwargs.pop("scale", (1, 1))
         super().__init__(**kwargs)
@@ -173,19 +135,4 @@ class LabelSet(core.Group):
         for ind, row in enumerate(rows):
             row_x = pitch.x * ind
             row_y = pitch.y * ind
-            self.add(LabelRow(labels=row, x=row_x, y=row_y, scale=scale))
-
-
-class TextBlock(core.Group):
-    def __init__(self, content, line_height, **kwargs):
-        scale = kwargs.pop("scale", (1, 1))
-        tag = kwargs.pop("tag", "")
-        taglist = tag.split(" ")
-        taglist.insert(0, "textblock")
-        kwargs["tag"] = " ".join(taglist)
-        super().__init__(**kwargs)
-        self.line_height = line_height
-        y = 0
-        for text in content:
-            self.add(core.Text(content=text, y=y, scale=scale))
-            y += self.line_height
+            self.add(Row(labels=row, x=row_x, y=row_y, scale=scale))

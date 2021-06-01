@@ -73,7 +73,12 @@ class Layout(TransformMixin):
     def render_children(self):
         content = ""
         for child in self.children:
-            content += child.render()
+            try:
+                content += child.render()
+            except TypeError as e:
+                print(child)
+                print(child.render())
+                print(e)
         return content
 
 

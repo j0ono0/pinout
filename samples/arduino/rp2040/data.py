@@ -34,6 +34,25 @@ cfg = config.PinConfig(
 
 #########################################################
 #
+# Legend
+#
+#########################################################
+legend = [
+    ("Ground", "gnd"),
+    ("Power", "pwr"),
+    ("LED", "led"),
+    ("Internal Pin", "internal"),
+    ("SWD Pin", "swd"),
+    ("Digital Pin", "digital"),
+    ("Analog Pin", "analog"),
+    ("Other Pin", "other"),
+    ("Microcontroller's Port", "mu-port"),
+    ("Default", "default"),
+]
+
+
+#########################################################
+#
 # Header: Right-hand-side
 #
 #########################################################

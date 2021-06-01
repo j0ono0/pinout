@@ -96,6 +96,17 @@ text {
     text-anchor: middle;
 }
 
+.legend rect{
+    fill: none;
+}
+.legend .swatch__body{
+    fill: #f0f;
+}
+.legend-entry__text{
+    dominant-baseline: central;
+    fill: #000;
+}
+
 
 /*
 #########################################################
@@ -121,20 +132,24 @@ text {
     stroke: #bcc6c6;
 }
 
-.led .label__body{
+.led .label__body,
+.led .swatch__body{
     fill: #1da086;
 }
 
-.mu-port .label__body{
+.mu-port .label__body,
+.mu-port .swatch__body{
     fill: #f39c12;
 }
-.default .label__body{
+.default .label__body,
+.default .swatch__body{
     fill: #f1c40f;
 }
-.default text{
+.default .label__text{
     fill: #000;
 }
-.digital .label__body{
+.digital .label__body,
+.digital .swatch__body{
     fill: url("#stripe-a");
 }
     /* Custom svg pattern styling */
@@ -152,7 +167,7 @@ text {
     stroke: #d35400;
     stroke-width: 2;
 }
-.analog text{
+.analog .label__text{
     fill: #d35400;
 }
     /* Custom svg pattern styling */
@@ -162,21 +177,39 @@ text {
     #stripe-b path{
         fill: #f8e6d9;
     }
-
-    
-.pwr .label__body{
+.analog .swatch__body{
+    fill: url("#stripe-b");
+    stroke: #d35400;
+    stroke-width: 2;   
+}
+.pwr .label__body,
+.pwr .swatch__body{
     fill: #c11f09;
 }
-    
-.other .label__body{
+
+.other .label__body,
+.other .swatch__body{
     fill: #fff;
 }
-.other .label__bodyinner{
+.other .label__bodyinner,
+.other .swatch__body{
     stroke: #d86e29;
     stroke-width: 2;
 }
-.other text{
+.other .label__text{
     fill: #d86e29;
+}
+.gnd .label__body,
+.gnd .swatch__body{
+    fill: #000;
+}
+.internal .label__body,
+.internal .swatch__body{
+    fill: #94a3a6;
+}
+.swd .label__body,
+.swd .swatch__body{
+    fill: #9e856e;
 }
 
 
@@ -198,10 +231,13 @@ text {
 .italic{ font-style: italic; }
     ]]>  
 </style>
-<path 
-    class="diagram__bg" 
-    d="M 0 0 L 1200 0 A 0 0 0 0 1 1200 0 L 1200 675 A 0 0 0 0 1 1200 675 L 0 675 A 0 0 0 0 1 0 675 L 0 0 A 0 0 0 0 1 0 0 z" 
-    transform="scale(1 1) translate(0 0) " 
+<rect
+ class="diagram__bg" 
+    x="0" 
+    y="0" 
+    width="1200" 
+    height="675" 
+    rx="0" 
     shape-rendering="geometricPrecision"
 /><g 
         class="panel panel--main"
@@ -210,10 +246,13 @@ text {
         scale(1 1)
     "
 >
-        <path 
-    class="panel__bg" 
-    d="M 0 0 L 1196 0 A 0 0 0 0 1 1196 0 L 1196 548 A 0 0 0 0 1 1196 548 L 0 548 A 0 0 0 0 1 0 548 L 0 0 A 0 0 0 0 1 0 0 z" 
-    transform="scale(1 1) translate(0 0) " 
+        <rect
+ class="panel__bg" 
+    x="0" 
+    y="0" 
+    width="1196" 
+    height="548" 
+    rx="0" 
     shape-rendering="geometricPrecision"
 /><g 
         class="pinout-graphic"
@@ -238,14 +277,14 @@ text {
     "
 >
         <g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 0.0) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -276,7 +315,7 @@ text {
     D12
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(160 0) 
         scale(1 1)
@@ -313,7 +352,7 @@ text {
     GPIO4
 </text>
 </g><g 
-        class="default label"
+        class="label default"
     transform="
         translate(242 0) 
         scale(1 1)
@@ -340,14 +379,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 24.6) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -378,7 +417,7 @@ text {
     D11
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(160 0) 
         scale(1 1)
@@ -415,7 +454,7 @@ text {
     GPIO7
 </text>
 </g><g 
-        class="default label"
+        class="label default"
     transform="
         translate(242 0) 
         scale(1 1)
@@ -442,14 +481,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 49.2) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -480,7 +519,7 @@ text {
     D10
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(160 0) 
         scale(1 1)
@@ -507,14 +546,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 73.80000000000001) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -545,7 +584,7 @@ text {
     D9
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(160 0) 
         scale(1 1)
@@ -572,14 +611,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 98.4) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -610,7 +649,7 @@ text {
     D8
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(160 0) 
         scale(1 1)
@@ -637,14 +676,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 123.0) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -675,7 +714,7 @@ text {
     D7
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(160 0) 
         scale(1 1)
@@ -702,14 +741,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 147.60000000000002) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -740,7 +779,7 @@ text {
     D6
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(160 0) 
         scale(1 1)
@@ -767,14 +806,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 172.20000000000002) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -805,7 +844,7 @@ text {
     D5
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(160 0) 
         scale(1 1)
@@ -832,14 +871,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 196.8) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -870,7 +909,7 @@ text {
     D4
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(160 0) 
         scale(1 1)
@@ -897,14 +936,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 221.4) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -935,7 +974,7 @@ text {
     D3
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(160 0) 
         scale(1 1)
@@ -962,14 +1001,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 246.0) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -1000,7 +1039,7 @@ text {
     D2
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(160 0) 
         scale(1 1)
@@ -1027,14 +1066,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 270.6) 
         scale(1 1)
     "
 >
         <g 
-        class="gnd label"
+        class="label gnd"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -1072,14 +1111,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 295.20000000000005) 
         scale(1 1)
     "
 >
         <g 
-        class="other label"
+        class="label other"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -1110,7 +1149,7 @@ text {
     RESET
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(160 0) 
         scale(1 1)
@@ -1137,14 +1176,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 319.8) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -1175,7 +1214,7 @@ text {
     RX
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(160 0) 
         scale(1 1)
@@ -1202,14 +1241,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 344.40000000000003) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -1240,7 +1279,7 @@ text {
     TX
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(160 0) 
         scale(1 1)
@@ -1274,14 +1313,14 @@ text {
     "
 >
         <g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 0.0) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -1312,7 +1351,7 @@ text {
     D13
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(-160 0) 
         scale(-1 1)
@@ -1349,7 +1388,7 @@ text {
     GPIO6
 </text>
 </g><g 
-        class="default label"
+        class="label default"
     transform="
         translate(-242 0) 
         scale(-1 1)
@@ -1376,14 +1415,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 24.6) 
         scale(1 1)
     "
 >
         <g 
-        class="pwr label"
+        class="label pwr"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -1421,14 +1460,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 49.2) 
         scale(1 1)
     "
 >
         <g 
-        class="other label"
+        class="label other"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -1459,7 +1498,7 @@ text {
     AREF
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(-160 0) 
         scale(-1 1)
@@ -1486,14 +1525,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 73.80000000000001) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -1524,7 +1563,7 @@ text {
     D14
 </text>
 </g><g 
-        class="analog label"
+        class="label analog"
     transform="
         translate(-130 0) 
         scale(-1 1)
@@ -1556,7 +1595,7 @@ text {
     A0
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(-160 0) 
         scale(-1 1)
@@ -1593,7 +1632,7 @@ text {
     GPIO26
 </text>
 </g><g 
-        class="default label"
+        class="label default"
     transform="
         translate(-242 0) 
         scale(-1 1)
@@ -1620,14 +1659,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 98.4) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -1658,7 +1697,7 @@ text {
     D15
 </text>
 </g><g 
-        class="analog label"
+        class="label analog"
     transform="
         translate(-130 0) 
         scale(-1 1)
@@ -1690,7 +1729,7 @@ text {
     A1
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(-160 0) 
         scale(-1 1)
@@ -1727,7 +1766,7 @@ text {
     GPIO27
 </text>
 </g><g 
-        class="default label"
+        class="label default"
     transform="
         translate(-242 0) 
         scale(-1 1)
@@ -1754,14 +1793,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 123.0) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -1792,7 +1831,7 @@ text {
     D16
 </text>
 </g><g 
-        class="analog label"
+        class="label analog"
     transform="
         translate(-130 0) 
         scale(-1 1)
@@ -1824,7 +1863,7 @@ text {
     A2
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(-160 0) 
         scale(-1 1)
@@ -1861,7 +1900,7 @@ text {
     GPIO28
 </text>
 </g><g 
-        class="default label"
+        class="label default"
     transform="
         translate(-242 0) 
         scale(-1 1)
@@ -1888,14 +1927,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 147.60000000000002) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -1926,7 +1965,7 @@ text {
     D17
 </text>
 </g><g 
-        class="analog label"
+        class="label analog"
     transform="
         translate(-130 0) 
         scale(-1 1)
@@ -1958,7 +1997,7 @@ text {
     A3
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(-160 0) 
         scale(-1 1)
@@ -1995,7 +2034,7 @@ text {
     GPIO29
 </text>
 </g><g 
-        class="default label"
+        class="label default"
     transform="
         translate(-242 0) 
         scale(-1 1)
@@ -2022,14 +2061,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 172.20000000000002) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -2060,7 +2099,7 @@ text {
     D18
 </text>
 </g><g 
-        class="analog label"
+        class="label analog"
     transform="
         translate(-130 0) 
         scale(-1 1)
@@ -2092,7 +2131,7 @@ text {
     A4
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(-160 0) 
         scale(-1 1)
@@ -2129,7 +2168,7 @@ text {
     GPIO12
 </text>
 </g><g 
-        class="default label"
+        class="label default"
     transform="
         translate(-242 0) 
         scale(-1 1)
@@ -2156,14 +2195,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 196.8) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -2194,7 +2233,7 @@ text {
     D19
 </text>
 </g><g 
-        class="analog label"
+        class="label analog"
     transform="
         translate(-130 0) 
         scale(-1 1)
@@ -2226,7 +2265,7 @@ text {
     A5
 </text>
 </g><g 
-        class="mu-port label"
+        class="label mu-port"
     transform="
         translate(-160 0) 
         scale(-1 1)
@@ -2263,7 +2302,7 @@ text {
     GPIO13
 </text>
 </g><g 
-        class="default label"
+        class="label default"
     transform="
         translate(-242 0) 
         scale(-1 1)
@@ -2290,14 +2329,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 221.4) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -2328,7 +2367,7 @@ text {
     D20
 </text>
 </g><g 
-        class="analog label"
+        class="label analog"
     transform="
         translate(-130 0) 
         scale(-1 1)
@@ -2360,7 +2399,7 @@ text {
     A6
 </text>
 </g><g 
-        class="default show-leader label"
+        class="label default show-leader"
     transform="
         translate(-160 0) 
         scale(-1 1)
@@ -2387,14 +2426,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 246.0) 
         scale(1 1)
     "
 >
         <g 
-        class="digital label"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -2425,7 +2464,7 @@ text {
     D21
 </text>
 </g><g 
-        class="analog label"
+        class="label analog"
     transform="
         translate(-130 0) 
         scale(-1 1)
@@ -2457,7 +2496,7 @@ text {
     A7
 </text>
 </g><g 
-        class="default show-leader label"
+        class="label default show-leader"
     transform="
         translate(-160 0) 
         scale(-1 1)
@@ -2484,14 +2523,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 270.6) 
         scale(1 1)
     "
 >
         <g 
-        class="pwr label"
+        class="label pwr"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -2529,14 +2568,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 295.20000000000005) 
         scale(1 1)
     "
 >
         <g 
-        class="other label"
+        class="label other"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -2567,7 +2606,7 @@ text {
     RESET
 </text>
 </g><g 
-        class="default label"
+        class="label default"
     transform="
         translate(-160 0) 
         scale(-1 1)
@@ -2594,14 +2633,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 319.8) 
         scale(1 1)
     "
 >
         <g 
-        class="gnd label"
+        class="label gnd"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -2639,14 +2678,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 344.40000000000003) 
         scale(1 1)
     "
 >
         <g 
-        class="pwr label"
+        class="label pwr"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -2691,14 +2730,14 @@ text {
     "
 >
         <g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="led label"
+        class="label led"
     transform="
         translate(0 0) 
         scale(1 -1)
@@ -2736,14 +2775,14 @@ text {
 </text>
 </g>
 </g><g 
-        class=" labelrow"
+        class="labelrow"
     transform="
         translate(112 0) 
         scale(1 1)
     "
 >
         <g 
-        class="led label"
+        class="label led"
     transform="
         translate(0 0) 
         scale(1 -1)
@@ -2790,15 +2829,354 @@ text {
         scale(1 1)
     "
 >
-        <path 
-    class="panel__bg" 
-    d="M 0 0 L 1196 0 A 0 0 0 0 1 1196 0 L 1196 121 A 0 0 0 0 1 1196 121 L 0 121 A 0 0 0 0 1 0 121 L 0 0 A 0 0 0 0 1 0 0 z" 
-    transform="scale(1 1) translate(0 0) " 
+        <rect
+ class="panel__bg" 
+    x="0" 
+    y="0" 
+    width="1196" 
+    height="121" 
+    rx="0" 
     shape-rendering="geometricPrecision"
 /><g 
-        class="textblock "
+        class="legend"
     transform="
-        translate(50 30) 
+        translate(14 9) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend__bg" 
+    x="-4" 
+    y="-4" 
+    width="488" 
+    height="112" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="legend-entry gnd"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="160" 
+    height="26" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="swatch__body" 
+    x="3" 
+    y="3" 
+    width="20" 
+    height="20" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="legend-entry__text"
+    transform="
+        translate(30.0 13.0) 
+        scale(1 1)
+    "  
+>
+    Ground
+</text>
+</g><g 
+        class="legend-entry pwr"
+    transform="
+        translate(0 26) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="160" 
+    height="26" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="swatch__body" 
+    x="3" 
+    y="3" 
+    width="20" 
+    height="20" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="legend-entry__text"
+    transform="
+        translate(30.0 13.0) 
+        scale(1 1)
+    "  
+>
+    Power
+</text>
+</g><g 
+        class="legend-entry led"
+    transform="
+        translate(0 52) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="160" 
+    height="26" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="swatch__body" 
+    x="3" 
+    y="3" 
+    width="20" 
+    height="20" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="legend-entry__text"
+    transform="
+        translate(30.0 13.0) 
+        scale(1 1)
+    "  
+>
+    LED
+</text>
+</g><g 
+        class="legend-entry internal"
+    transform="
+        translate(0 78) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="160" 
+    height="26" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="swatch__body" 
+    x="3" 
+    y="3" 
+    width="20" 
+    height="20" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="legend-entry__text"
+    transform="
+        translate(30.0 13.0) 
+        scale(1 1)
+    "  
+>
+    Internal Pin
+</text>
+</g><g 
+        class="legend-entry swd"
+    transform="
+        translate(160 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="160" 
+    height="26" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="swatch__body" 
+    x="3" 
+    y="3" 
+    width="20" 
+    height="20" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="legend-entry__text"
+    transform="
+        translate(30.0 13.0) 
+        scale(1 1)
+    "  
+>
+    SWD Pin
+</text>
+</g><g 
+        class="legend-entry digital"
+    transform="
+        translate(160 26) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="160" 
+    height="26" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="swatch__body" 
+    x="3" 
+    y="3" 
+    width="20" 
+    height="20" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="legend-entry__text"
+    transform="
+        translate(30.0 13.0) 
+        scale(1 1)
+    "  
+>
+    Digital Pin
+</text>
+</g><g 
+        class="legend-entry analog"
+    transform="
+        translate(160 52) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="160" 
+    height="26" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="swatch__body" 
+    x="3" 
+    y="3" 
+    width="20" 
+    height="20" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="legend-entry__text"
+    transform="
+        translate(30.0 13.0) 
+        scale(1 1)
+    "  
+>
+    Analog Pin
+</text>
+</g><g 
+        class="legend-entry other"
+    transform="
+        translate(160 78) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="160" 
+    height="26" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="swatch__body" 
+    x="3" 
+    y="3" 
+    width="20" 
+    height="20" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="legend-entry__text"
+    transform="
+        translate(30.0 13.0) 
+        scale(1 1)
+    "  
+>
+    Other Pin
+</text>
+</g><g 
+        class="legend-entry mu-port"
+    transform="
+        translate(320 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="160" 
+    height="26" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="swatch__body" 
+    x="3" 
+    y="3" 
+    width="20" 
+    height="20" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="legend-entry__text"
+    transform="
+        translate(30.0 13.0) 
+        scale(1 1)
+    "  
+>
+    Microcontroller's Port
+</text>
+</g><g 
+        class="legend-entry default"
+    transform="
+        translate(320 26) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="160" 
+    height="26" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="swatch__body" 
+    x="3" 
+    y="3" 
+    width="20" 
+    height="20" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="legend-entry__text"
+    transform="
+        translate(30.0 13.0) 
+        scale(1 1)
+    "  
+>
+    Default
+</text>
+</g>
+</g><g 
+        class="textblock"
+    transform="
+        translate(580 30) 
         scale(1 1)
     "
 >
@@ -2818,9 +3196,9 @@ text {
     <tspan class="h1">Nano RP2024 Connect</tspan>
 </text>
 </g><g 
-        class="textblock "
+        class="textblock"
     transform="
-        translate(50 74) 
+        translate(580 74) 
         scale(1 1)
     "
 >
@@ -2847,9 +3225,9 @@ text {
     <tspan class="p"><tspan class="strong"><a href="https://pinout.readthedocs.io">pinout.readthedocs.io</a></tspan></tspan>
 </text>
 </g><g 
-        class="textblock "
+        class="textblock"
     transform="
-        translate(800 74) 
+        translate(900 74) 
         scale(1 1)
     "
 >

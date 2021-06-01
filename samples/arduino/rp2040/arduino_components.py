@@ -1,9 +1,9 @@
 # Customised components for Arduino pinout diagram
 from pinout import core
-from pinout.components import LabelBase
+from pinout.components.pinlabel import Base
 
 
-class FirstLabel(LabelBase):
+class FirstLabel(Base):
     def __init__(self, content, **kwargs):
         # Extract kwargs that are used locally
         height = kwargs.pop("height")
@@ -96,7 +96,7 @@ class FirstLabel(LabelBase):
         self.add(core.Text(content, x=x, y=y, tag="label__text", scale=self.scale))
 
 
-class LabelLast(LabelBase):
+class LabelLast(Base):
     def __init__(self, content, **kwargs):
         height = kwargs.pop("height")
         width = kwargs.pop("width")
@@ -144,7 +144,7 @@ class LabelLast(LabelBase):
         self.add(core.Text(content, x=x, y=y, tag="label__text", scale=self.scale))
 
 
-class Label(LabelBase):
+class Label(Base):
     def __init__(self, content, **kwargs):
         height = kwargs.pop("height")
         width = kwargs.pop("width")

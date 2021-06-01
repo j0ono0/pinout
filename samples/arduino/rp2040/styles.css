@@ -68,6 +68,17 @@ text {
     text-anchor: middle;
 }
 
+.legend rect{
+    fill: none;
+}
+.legend .swatch__body{
+    fill: #f0f;
+}
+.legend-entry__text{
+    dominant-baseline: central;
+    fill: #000;
+}
+
 
 /*
 #########################################################
@@ -93,20 +104,24 @@ text {
     stroke: #bcc6c6;
 }
 
-.led .label__body{
+.led .label__body,
+.led .swatch__body{
     fill: #1da086;
 }
 
-.mu-port .label__body{
+.mu-port .label__body,
+.mu-port .swatch__body{
     fill: #f39c12;
 }
-.default .label__body{
+.default .label__body,
+.default .swatch__body{
     fill: #f1c40f;
 }
-.default text{
+.default .label__text{
     fill: #000;
 }
-.digital .label__body{
+.digital .label__body,
+.digital .swatch__body{
     fill: url("#stripe-a");
 }
     /* Custom svg pattern styling */
@@ -124,7 +139,7 @@ text {
     stroke: #d35400;
     stroke-width: 2;
 }
-.analog text{
+.analog .label__text{
     fill: #d35400;
 }
     /* Custom svg pattern styling */
@@ -134,21 +149,39 @@ text {
     #stripe-b path{
         fill: #f8e6d9;
     }
-
-    
-.pwr .label__body{
+.analog .swatch__body{
+    fill: url("#stripe-b");
+    stroke: #d35400;
+    stroke-width: 2;   
+}
+.pwr .label__body,
+.pwr .swatch__body{
     fill: #c11f09;
 }
-    
-.other .label__body{
+
+.other .label__body,
+.other .swatch__body{
     fill: #fff;
 }
-.other .label__bodyinner{
+.other .label__bodyinner,
+.other .swatch__body{
     stroke: #d86e29;
     stroke-width: 2;
 }
-.other text{
+.other .label__text{
     fill: #d86e29;
+}
+.gnd .label__body,
+.gnd .swatch__body{
+    fill: #000;
+}
+.internal .label__body,
+.internal .swatch__body{
+    fill: #94a3a6;
+}
+.swd .label__body,
+.swd .swatch__body{
+    fill: #9e856e;
 }
 
 

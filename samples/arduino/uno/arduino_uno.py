@@ -1,5 +1,6 @@
-from pinout.core import Diagram, Group, Image, Raw
-from pinout.components import Rect, LabelSet, TextBlock
+from pinout.core import Diagram, Group, Image, Raw, Rect
+from pinout.components import pinlabel, legend
+from pinout.components.type import TextBlock
 
 
 # Import data from another script
@@ -20,19 +21,20 @@ with open("patterns.xml") as f:
 diagram.add_def(Raw(patterns))
 
 # Construct a layout and add some backgrounds
-diagram.add(Rect(0, 0, 1200, 675, tag="diagram__bg"))
+diagram.add(Rect(r=0, x=0, y=0, width=1200, height=675, tag="diagram__bg"))
 group_main = diagram.add(Group(2, 2, tag="panel panel--main"))
-group_main.add(Rect(0, 0, 1196, 548, tag="panel__bg"))
+group_main.add(Rect(r=0, x=0, y=0, width=1196, height=548, tag="panel__bg"))
 
 # Keeping elements in a group allows for easier measuring and moving
 # Create a group for the main pinout graphic
 pinout_graphic = group_main.add(Group(600, 10, tag="pinout-graphic"))
 
 group_notes = diagram.add(Group(2, 552, tag="panel panel--notes"))
-group_notes.add(Rect(0, 0, 1196, 121, tag="panel__bg"))
-group_notes.add(TextBlock(data.title_1, 22, x=50, y=30))
-group_notes.add(TextBlock(data.para_1, 17, x=50, y=74))
-group_notes.add(TextBlock(data.para_2, 17, x=800, y=74))
+group_notes.add(Rect(r=0, x=0, y=0, width=1196, height=121, tag="panel__bg"))
+group_notes.add(legend.Legend(data.legend, max_height=100, x=10, y=5))
+group_notes.add(TextBlock(data.title_1, 22, x=580, y=30))
+group_notes.add(TextBlock(data.para_1, 17, x=580, y=74))
+group_notes.add(TextBlock(data.para_2, 17, x=900, y=74))
 
 # Add a hardware image
 # Note its coordinates are relative to the group it is within
@@ -48,28 +50,36 @@ pinout_graphic.add(
 )
 # Right hand side pin headers
 pinout_graphic.add(
-    LabelSet(x=147, y=153, pitch=(0, 15.35), scale=(1, 1), rows=data.header_rhs_a)
+    pinlabel.Header(
+        x=147, y=153, pitch=(0, 15.35), scale=(1, 1), rows=data.header_rhs_a
+    )
 )
 pinout_graphic.add(
-    LabelSet(x=147, y=316, pitch=(0, 15.35), scale=(1, 1), rows=data.header_rhs_b)
+    pinlabel.Header(
+        x=147, y=316, pitch=(0, 15.35), scale=(1, 1), rows=data.header_rhs_b
+    )
 )
 
 # Left hand side pin header
 pinout_graphic.add(
-    LabelSet(x=-147, y=208, pitch=(0, 15.35), scale=(-1, 1), rows=data.header_lhs_a)
+    pinlabel.Header(
+        x=-147, y=208, pitch=(0, 15.35), scale=(-1, 1), rows=data.header_lhs_a
+    )
 )
 pinout_graphic.add(
-    LabelSet(x=-147, y=347, pitch=(0, 15.35), scale=(-1, 1), rows=data.header_lhs_b)
+    pinlabel.Header(
+        x=-147, y=347, pitch=(0, 15.35), scale=(-1, 1), rows=data.header_lhs_b
+    )
 )
 
 # LEDs RX & TX
 pinout_graphic.add(
-    LabelSet(x=46, y=206, pitch=(17, 0), scale=(-1, -1), rows=data.leds_a)
+    pinlabel.Header(x=46, y=206, pitch=(17, 0), scale=(-1, -1), rows=data.leds_a)
 )
 
 # LEDs pwr
 pinout_graphic.add(
-    LabelSet(x=62, y=392, pitch=(39, -185), scale=(-1, 1), rows=data.leds_b)
+    pinlabel.Header(x=62, y=392, pitch=(39, -185), scale=(-1, 1), rows=data.leds_b)
 )
 
 diagram.export("pinout_arduino_uno_rev3.svg", True)

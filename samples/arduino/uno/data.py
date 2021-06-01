@@ -145,7 +145,7 @@ header_rhs_b = [
 #########################################################
 cfg.set_pitch((90, -64), (0, 8))
 header_lhs_a = [
-    [(Label, "NC", "pwr", cfg("single"))],
+    [(Label, "NC", "nc", cfg("single"))],
     [(Label, "IOREF", "other", cfg("single"))],
     [
         (FirstLabel, "RESET", "other", cfg("start")),

@@ -184,6 +184,19 @@ text {
     fill: #9e856e;
 }
 
+.nc .label__body,
+.nc .swatch__body{
+    fill: #fff;
+}
+.nc .label__text{
+    fill: #ccc;
+}
+
+.nc .label__bodyinner,
+.nc .swatch__body{
+    stroke: #ccc;
+    stroke-width: 2;
+}
 
 /*
 #########################################################

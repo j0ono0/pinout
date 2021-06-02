@@ -77,7 +77,7 @@ class Label(Base):
                 path_def = f"M 0 0 L 0 {self.offset.y - r} A {r} {r} 0 0 0 {r} {self.offset.y} L {self.offset.x} {self.offset.y}"
             else:
                 # Beizer curve (default)
-                len = self.offset.x / 5
+                len = self.offset.x / 8
                 ctl_x = self.offset.x / 2
                 path_def = f"M 0 0 L {len} 0 C {ctl_x} 0 {ctl_x} {self.offset.y} {self.offset.x - len} {self.offset.y} L {self.offset.x} {self.offset.y}"
 

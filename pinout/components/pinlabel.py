@@ -20,12 +20,14 @@ class Label(Base):
         tag="",
         style="curve",
         r=0,
-        offset=(0, 0),
+        offset=(18, 0),
         clip=False,
         **kwargs,
     ):
+        self.content = content
         scale = core.Coords(*kwargs.pop("scale", (1, 1)))
         super().__init__(x=x, y=y, tag=tag, scale=scale, offset=offset, **kwargs)
+
         if self.offset.x < 0:
             msg = f"""
                 {self}:
@@ -49,7 +51,7 @@ class Label(Base):
                 )
             )
 
-        label_body = self.add(
+        self.label_body = self.add(
             core.Rect(
                 r=r,
                 x=self.offset.x,
@@ -93,11 +95,14 @@ class Label(Base):
                 )
             )
 
-        x = label_body.width / 2 + self.offset.x
+    def render(self):
+        # Apply text just before render as scale may change
+
+        x = self.label_body.width / 2 + self.offset.x
         y = self.offset.y
-        self.add(
-            core.Text(content, x=x, y=y, tag="label__text", scale=self.scale, **kwargs)
-        )
+        self.add(core.Text(self.content, x=x, y=y, tag="label__text", scale=self.scale))
+
+        return super().render()
 
 
 class Row(core.Group):
@@ -106,18 +111,26 @@ class Row(core.Group):
         scale = core.Coords(*kwargs.pop("scale", (1, 1)))
         super().__init__(**kwargs)
 
-        for cls, content, tag, config in labels:
+        for label in labels:
+            if type(label) is tuple:
+                label = Label(*label)
+            elif type(label) is dict:
+                label = Label(**label)
+
+            # pass scale to label instance
+            label.scale = scale
 
             # Align each label to the end of the previous label.
-            x = self.width * scale.x
-            y = 0
+            label.x = self.width * scale.x
             try:
                 prev_label = self.children[-1]
-                y = prev_label.y + prev_label.offset.y * scale.y
+                label.y = prev_label.y + prev_label.offset.y * scale.y
             except IndexError:
-                pass  # no children yet
+                # No children yet
+                label.y = 0
+            self.add(label)
 
-            self.add(cls(content, x=x, y=y, tag=tag, scale=scale, **config))
+            # self.add(cls(content, x=x, y=y, tag=tag, scale=scale, **config))
 
     def add(self, label):
         if issubclass(type(label), Base):

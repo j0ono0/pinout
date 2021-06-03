@@ -49,6 +49,12 @@ class Layout(TransformMixin):
         self.defs.append(instance)
         return instance
 
+    def add_tag(self, tag):
+        if self.tag is None:
+            self.tag = tag
+        else:
+            self.tag = " ".join([tag, self.tag])
+
     def bounding_rect(self):
         x1, y1, x2, y2 = self.bounding_coords()
         return BoundingRect(x1, y1, x2 - x1, y2 - y1)
@@ -211,6 +217,12 @@ class SvgShape(TransformMixin):
         y = [self.y, (self.y * self.scale.y + self.height) * self.scale.y]
         return BoundingCoords(min(x), min(y), max(x), max(y))
 
+    def add_tag(self, tag):
+        if self.tag is None:
+            self.tag = tag
+        else:
+            self.tag = " ".join([tag, self.tag])
+
 
 class Path(SvgShape):
     def __init__(self, path_definition="", **kwargs):
@@ -223,7 +235,7 @@ class Path(SvgShape):
 
 
 class Rect(SvgShape):
-    def __init__(self, r, **kwargs):
+    def __init__(self, r=0, **kwargs):
         super().__init__(**kwargs)
         self.r = r
 

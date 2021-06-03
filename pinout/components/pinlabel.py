@@ -149,3 +149,28 @@ class Header(core.Group):
             row_x = pitch.x * ind
             row_y = pitch.y * ind
             self.add(Row(labels=row, x=row_x, y=row_y, scale=scale))
+
+
+class PinLabelGroup(core.Group):
+    def __init__(self, labels, **kwargs):
+        scale = core.Coords(*kwargs.pop("scale", (1, 1)))
+        super().__init__(**kwargs)
+        for row in labels:
+            row_group = self.add(core.Group(tag="label__row"))
+            for label in row:
+
+                # If data supplied convert to Label
+                if type(label) is tuple:
+                    label = Label(*label)
+                elif type(label) is dict:
+                    label = Label(**label)
+
+                # Align labels in row
+                try:
+                    prev_label = row_group.children[-1]
+                    label.y = prev_label.y + prev_label.offset.y * label.scale.y
+                    label.x = prev_label.x + prev_label.width * label.scale.x
+                except IndexError:
+                    # No children yet
+                    pass
+                row_group.add(label)

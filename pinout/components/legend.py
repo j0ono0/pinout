@@ -20,7 +20,7 @@ class Swatch(core.Group):
 
 
 class LegendEntry(core.Group):
-    def __init__(self, content, tag=None, width=160, height=30, swatch=None, **kwargs):
+    def __init__(self, content, tag=None, width=160, height=28, swatch=None, **kwargs):
         swatch = swatch or Swatch()
         kwargs["tag"] = tag
         super().__init__(**kwargs)

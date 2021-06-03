@@ -3121,7 +3121,7 @@ text {
 /><g 
         class="legend"
     transform="
-        translate(14 9) 
+        translate(14 4) 
         scale(1 1)
     "
 >
@@ -3130,7 +3130,7 @@ text {
     x="-4" 
     y="-4" 
     width="488" 
-    height="112" 
+    height="120" 
     rx="0" 
     shape-rendering="geometricPrecision"
 /><g 
@@ -3145,21 +3145,29 @@ text {
     x="0" 
     y="0" 
     width="160" 
-    height="26" 
+    height="28" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><rect
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
  class="swatch__body" 
-    x="3" 
-    y="3" 
+    x="0" 
+    y="-10.0" 
     width="20" 
     height="20" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="legend-entry__text"
     transform="
-        translate(30.0 13.0) 
+        translate(28.0 14.0) 
         scale(1 1)
     "  
 >
@@ -3168,7 +3176,7 @@ text {
 </g><g 
         class="legend-entry pwr"
     transform="
-        translate(0 26) 
+        translate(0 28) 
         scale(1 1)
     "
 >
@@ -3177,21 +3185,29 @@ text {
     x="0" 
     y="0" 
     width="160" 
-    height="26" 
+    height="28" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><rect
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
  class="swatch__body" 
-    x="3" 
-    y="3" 
+    x="0" 
+    y="-10.0" 
     width="20" 
     height="20" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="legend-entry__text"
     transform="
-        translate(30.0 13.0) 
+        translate(28.0 14.0) 
         scale(1 1)
     "  
 >
@@ -3200,7 +3216,7 @@ text {
 </g><g 
         class="legend-entry led"
     transform="
-        translate(0 52) 
+        translate(0 56) 
         scale(1 1)
     "
 >
@@ -3209,21 +3225,29 @@ text {
     x="0" 
     y="0" 
     width="160" 
-    height="26" 
+    height="28" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><rect
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
  class="swatch__body" 
-    x="3" 
-    y="3" 
+    x="0" 
+    y="-10.0" 
     width="20" 
     height="20" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="legend-entry__text"
     transform="
-        translate(30.0 13.0) 
+        translate(28.0 14.0) 
         scale(1 1)
     "  
 >
@@ -3232,7 +3256,7 @@ text {
 </g><g 
         class="legend-entry internal"
     transform="
-        translate(0 78) 
+        translate(0 84) 
         scale(1 1)
     "
 >
@@ -3241,21 +3265,29 @@ text {
     x="0" 
     y="0" 
     width="160" 
-    height="26" 
+    height="28" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><rect
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
  class="swatch__body" 
-    x="3" 
-    y="3" 
+    x="0" 
+    y="-10.0" 
     width="20" 
     height="20" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="legend-entry__text"
     transform="
-        translate(30.0 13.0) 
+        translate(28.0 14.0) 
         scale(1 1)
     "  
 >
@@ -3273,21 +3305,29 @@ text {
     x="0" 
     y="0" 
     width="160" 
-    height="26" 
+    height="28" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><rect
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
  class="swatch__body" 
-    x="3" 
-    y="3" 
+    x="0" 
+    y="-10.0" 
     width="20" 
     height="20" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="legend-entry__text"
     transform="
-        translate(30.0 13.0) 
+        translate(28.0 14.0) 
         scale(1 1)
     "  
 >
@@ -3296,7 +3336,7 @@ text {
 </g><g 
         class="legend-entry digital"
     transform="
-        translate(160 26) 
+        translate(160 28) 
         scale(1 1)
     "
 >
@@ -3305,21 +3345,29 @@ text {
     x="0" 
     y="0" 
     width="160" 
-    height="26" 
+    height="28" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><rect
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
  class="swatch__body" 
-    x="3" 
-    y="3" 
+    x="0" 
+    y="-10.0" 
     width="20" 
     height="20" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="legend-entry__text"
     transform="
-        translate(30.0 13.0) 
+        translate(28.0 14.0) 
         scale(1 1)
     "  
 >
@@ -3328,7 +3376,7 @@ text {
 </g><g 
         class="legend-entry analog"
     transform="
-        translate(160 52) 
+        translate(160 56) 
         scale(1 1)
     "
 >
@@ -3337,21 +3385,29 @@ text {
     x="0" 
     y="0" 
     width="160" 
-    height="26" 
+    height="28" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><rect
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
  class="swatch__body" 
-    x="3" 
-    y="3" 
+    x="0" 
+    y="-10.0" 
     width="20" 
     height="20" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="legend-entry__text"
     transform="
-        translate(30.0 13.0) 
+        translate(28.0 14.0) 
         scale(1 1)
     "  
 >
@@ -3360,7 +3416,7 @@ text {
 </g><g 
         class="legend-entry other"
     transform="
-        translate(160 78) 
+        translate(160 84) 
         scale(1 1)
     "
 >
@@ -3369,21 +3425,29 @@ text {
     x="0" 
     y="0" 
     width="160" 
-    height="26" 
+    height="28" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><rect
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
  class="swatch__body" 
-    x="3" 
-    y="3" 
+    x="0" 
+    y="-10.0" 
     width="20" 
     height="20" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="legend-entry__text"
     transform="
-        translate(30.0 13.0) 
+        translate(28.0 14.0) 
         scale(1 1)
     "  
 >
@@ -3401,21 +3465,29 @@ text {
     x="0" 
     y="0" 
     width="160" 
-    height="26" 
+    height="28" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><rect
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
  class="swatch__body" 
-    x="3" 
-    y="3" 
+    x="0" 
+    y="-10.0" 
     width="20" 
     height="20" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="legend-entry__text"
     transform="
-        translate(30.0 13.0) 
+        translate(28.0 14.0) 
         scale(1 1)
     "  
 >
@@ -3424,7 +3496,7 @@ text {
 </g><g 
         class="legend-entry default"
     transform="
-        translate(320 26) 
+        translate(320 28) 
         scale(1 1)
     "
 >
@@ -3433,21 +3505,29 @@ text {
     x="0" 
     y="0" 
     width="160" 
-    height="26" 
+    height="28" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><rect
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
  class="swatch__body" 
-    x="3" 
-    y="3" 
+    x="0" 
+    y="-10.0" 
     width="20" 
     height="20" 
     rx="0" 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="legend-entry__text"
     transform="
-        translate(30.0 13.0) 
+        translate(28.0 14.0) 
         scale(1 1)
     "  
 >

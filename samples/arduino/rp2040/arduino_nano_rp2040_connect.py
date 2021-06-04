@@ -50,20 +50,11 @@ pinout_graphic.add(
     )
 )
 # Right hand side pin header
-pinout_graphic.add(
-    pinlabel.Header(x=86, y=58, pitch=(0, 24.6), scale=(1, 1), rows=data.header_rhs)
-)
+pinout_graphic.add(pinlabel.PinLabelGroup(x=86, y=58, labels=data.header_rhs))
 
 # Left hand side pin header
-pinout_graphic.add(
-    pinlabel.Header(
-        x=-86,
-        y=58,
-        pitch=(0, 24.6),
-        scale=(-1, 1),
-        rows=data.header_lhs,
-    )
-)
+pinout_graphic.add(pinlabel.PinLabelGroup(x=-86, y=58, labels=data.header_lhs))
+"""
 
 # LED labels
 pinout_graphic.add(
@@ -75,5 +66,6 @@ pinout_graphic.add(
         rows=data.leds,
     )
 )
+"""
 
 diagram.export("pinout_arduino_nano_rp2040_connect.svg", True)

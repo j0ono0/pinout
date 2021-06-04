@@ -19,7 +19,6 @@ class Label(Base):
         width=60,
         height=24,
         tag="",
-        style="curve",
         r=0,
         offset=(18, 0),
         clip=False,

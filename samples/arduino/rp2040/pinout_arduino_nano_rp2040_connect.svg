@@ -82,9 +82,8 @@ text {
     fill: none;
     stroke-linejoin: "miter";
 }
-.label__leaderline{
-    stroke: rgba(255, 255, 255, 0);
-    stroke-width: 2;
+.label .lline{
+    stroke-width: 0;
 }
 .label__text{
     dominant-baseline: central;
@@ -127,8 +126,9 @@ text {
     fill: #e4e4e2;
 }
 
-.labelrow .label:first-child .label__leaderline,
-.show-leader .label__leaderline{
+.label__row .label:first-child .lline,
+.label.show-leader  .lline{
+    stroke-width: 2px;
     stroke: #bcc6c6;
 }
 
@@ -185,6 +185,7 @@ text {
 .pwr .label__body,
 .pwr .swatch__body{
     fill: #c11f09;
+    rx: 10px;
 }
 
 .other .label__body,
@@ -201,6 +202,7 @@ text {
 }
 .gnd .label__body,
 .gnd .swatch__body{
+    rx: 10px;
     fill: #000;
 }
 .internal .label__body,
@@ -290,9 +292,9 @@ text {
     "
 >
         <g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 0.0) 
+        translate(0 0) 
         scale(1 1)
     "
 >
@@ -304,11 +306,6 @@ text {
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -317,6 +314,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -334,12 +336,7 @@ text {
         scale(1 1)
     "
 >
-        <path 
-    class="label__leaderline" 
-    d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
+        <rect
  class="block label__body" 
     x="2" 
     y="-10.0" 
@@ -354,6 +351,11 @@ text {
     width="78" 
     height="18" 
     rx="0" 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -372,14 +374,14 @@ text {
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -392,25 +394,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 24.6) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 24.6) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -419,6 +416,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -432,16 +434,11 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(160 0) 
+        translate(160 24.6) 
         scale(1 1)
     "
 >
-        <path 
-    class="label__leaderline" 
-    d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
+        <rect
  class="block label__body" 
     x="2" 
     y="-10.0" 
@@ -457,6 +454,11 @@ text {
     height="18" 
     rx="0" 
     shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
 /><text
     class="label__text"
     transform="
@@ -469,19 +471,19 @@ text {
 </g><g 
         class="label default"
     transform="
-        translate(242 0) 
+        translate(242 24.6) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -494,25 +496,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 49.2) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 49.2) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -521,6 +518,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -534,19 +536,19 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(160 0) 
+        translate(160 49.2) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -559,25 +561,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 73.80000000000001) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 73.80000000000001) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -586,6 +583,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -599,19 +601,19 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(160 0) 
+        translate(160 73.80000000000001) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -624,25 +626,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 98.4) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 98.4) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -651,6 +648,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -664,19 +666,19 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(160 0) 
+        translate(160 98.4) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -689,25 +691,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 123.0) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 123.0) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -716,6 +713,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -729,19 +731,19 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(160 0) 
+        translate(160 123.0) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -754,25 +756,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 147.60000000000002) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 147.6) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -781,6 +778,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -794,19 +796,19 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(160 0) 
+        translate(160 147.6) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -819,25 +821,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 172.20000000000002) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 172.2) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -846,6 +843,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -859,19 +861,19 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(160 0) 
+        translate(160 172.2) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -884,25 +886,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 196.8) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 196.79999999999998) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -911,6 +908,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -924,19 +926,19 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(160 0) 
+        translate(160 196.79999999999998) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -949,25 +951,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 221.4) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 221.39999999999998) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -976,6 +973,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -989,19 +991,19 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(160 0) 
+        translate(160 221.39999999999998) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1014,25 +1016,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 246.0) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 245.99999999999997) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -1041,6 +1038,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1054,19 +1056,19 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(160 0) 
+        translate(160 245.99999999999997) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1079,31 +1081,26 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 270.6) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label gnd"
     transform="
-        translate(0 0) 
+        translate(0 270.59999999999997) 
         scale(1 1)
     "
 >
-        <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
+        <rect
  class="block label__body" 
     x="80" 
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="10" 
+    rx="0" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -1111,7 +1108,12 @@ text {
     y="-9.0" 
     width="78" 
     height="18" 
-    rx="10" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1124,25 +1126,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 295.20000000000005) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label other"
     transform="
-        translate(0 0) 
+        translate(0 295.2) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -1151,6 +1148,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1164,19 +1166,19 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(160 0) 
+        translate(160 295.2) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1189,25 +1191,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 319.8) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 319.8) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -1216,6 +1213,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1229,19 +1231,19 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(160 0) 
+        translate(160 319.8) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1254,25 +1256,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 344.40000000000003) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 344.40000000000003) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -1281,6 +1278,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1294,19 +1296,19 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(160 0) 
+        translate(160 344.40000000000003) 
         scale(1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1326,9 +1328,9 @@ text {
     "
 >
         <g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 0.0) 
+        translate(0 0) 
         scale(1 1)
     "
 >
@@ -1340,11 +1342,6 @@ text {
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -1353,6 +1350,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1370,12 +1372,7 @@ text {
         scale(-1 1)
     "
 >
-        <path 
-    class="label__leaderline" 
-    d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
+        <rect
  class="block label__body" 
     x="2" 
     y="-10.0" 
@@ -1390,6 +1387,11 @@ text {
     width="78" 
     height="18" 
     rx="0" 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1408,14 +1410,14 @@ text {
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1428,31 +1430,26 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 24.6) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label pwr"
     transform="
-        translate(0 0) 
+        translate(0 24.6) 
         scale(-1 1)
     "
 >
-        <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
+        <rect
  class="block label__body" 
     x="80" 
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="10" 
+    rx="0" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -1460,7 +1457,12 @@ text {
     y="-9.0" 
     width="78" 
     height="18" 
-    rx="10" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1473,25 +1475,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 49.2) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label other"
     transform="
-        translate(0 0) 
+        translate(0 49.2) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -1500,6 +1497,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1513,19 +1515,19 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(-160 0) 
+        translate(-160 49.2) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1538,25 +1540,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 73.80000000000001) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 73.80000000000001) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -1565,6 +1562,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1578,7 +1580,7 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(-130 0) 
+        translate(-130 73.80000000000001) 
         scale(-1 1)
     "
 >
@@ -1610,16 +1612,11 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(-160 0) 
+        translate(-160 73.80000000000001) 
         scale(-1 1)
     "
 >
-        <path 
-    class="label__leaderline" 
-    d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
+        <rect
  class="block label__body" 
     x="2" 
     y="-10.0" 
@@ -1634,6 +1631,11 @@ text {
     width="78" 
     height="18" 
     rx="0" 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1647,19 +1649,19 @@ text {
 </g><g 
         class="label default"
     transform="
-        translate(-242 0) 
+        translate(-242 73.80000000000001) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1672,25 +1674,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 98.4) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 98.4) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -1699,6 +1696,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1712,7 +1714,7 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(-130 0) 
+        translate(-130 98.4) 
         scale(-1 1)
     "
 >
@@ -1744,16 +1746,11 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(-160 0) 
+        translate(-160 98.4) 
         scale(-1 1)
     "
 >
-        <path 
-    class="label__leaderline" 
-    d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
+        <rect
  class="block label__body" 
     x="2" 
     y="-10.0" 
@@ -1768,6 +1765,11 @@ text {
     width="78" 
     height="18" 
     rx="0" 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1781,19 +1783,19 @@ text {
 </g><g 
         class="label default"
     transform="
-        translate(-242 0) 
+        translate(-242 98.4) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1806,25 +1808,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 123.0) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 123.0) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -1833,6 +1830,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1846,7 +1848,7 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(-130 0) 
+        translate(-130 123.0) 
         scale(-1 1)
     "
 >
@@ -1878,16 +1880,11 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(-160 0) 
+        translate(-160 123.0) 
         scale(-1 1)
     "
 >
-        <path 
-    class="label__leaderline" 
-    d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
+        <rect
  class="block label__body" 
     x="2" 
     y="-10.0" 
@@ -1902,6 +1899,11 @@ text {
     width="78" 
     height="18" 
     rx="0" 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1915,19 +1917,19 @@ text {
 </g><g 
         class="label default"
     transform="
-        translate(-242 0) 
+        translate(-242 123.0) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1940,25 +1942,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 147.60000000000002) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 147.6) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -1967,6 +1964,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1980,7 +1982,7 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(-130 0) 
+        translate(-130 147.6) 
         scale(-1 1)
     "
 >
@@ -2012,16 +2014,11 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(-160 0) 
+        translate(-160 147.6) 
         scale(-1 1)
     "
 >
-        <path 
-    class="label__leaderline" 
-    d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
+        <rect
  class="block label__body" 
     x="2" 
     y="-10.0" 
@@ -2036,6 +2033,11 @@ text {
     width="78" 
     height="18" 
     rx="0" 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2049,19 +2051,19 @@ text {
 </g><g 
         class="label default"
     transform="
-        translate(-242 0) 
+        translate(-242 147.6) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2074,25 +2076,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 172.20000000000002) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 172.2) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -2101,6 +2098,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2114,7 +2116,7 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(-130 0) 
+        translate(-130 172.2) 
         scale(-1 1)
     "
 >
@@ -2146,16 +2148,11 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(-160 0) 
+        translate(-160 172.2) 
         scale(-1 1)
     "
 >
-        <path 
-    class="label__leaderline" 
-    d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
+        <rect
  class="block label__body" 
     x="2" 
     y="-10.0" 
@@ -2170,6 +2167,11 @@ text {
     width="78" 
     height="18" 
     rx="0" 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2183,19 +2185,19 @@ text {
 </g><g 
         class="label default"
     transform="
-        translate(-242 0) 
+        translate(-242 172.2) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2208,25 +2210,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 196.8) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 196.79999999999998) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -2235,6 +2232,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2248,7 +2250,7 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(-130 0) 
+        translate(-130 196.79999999999998) 
         scale(-1 1)
     "
 >
@@ -2280,16 +2282,11 @@ text {
 </g><g 
         class="label mu-port"
     transform="
-        translate(-160 0) 
+        translate(-160 196.79999999999998) 
         scale(-1 1)
     "
 >
-        <path 
-    class="label__leaderline" 
-    d="M 0 0 L 0.4 0 C 1.0 0 1.0 0 1.6 0 L 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
+        <rect
  class="block label__body" 
     x="2" 
     y="-10.0" 
@@ -2305,6 +2302,11 @@ text {
     height="18" 
     rx="0" 
     shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
 /><text
     class="label__text"
     transform="
@@ -2317,19 +2319,19 @@ text {
 </g><g 
         class="label default"
     transform="
-        translate(-242 0) 
+        translate(-242 196.79999999999998) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2342,25 +2344,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 221.4) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 221.39999999999998) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -2369,6 +2366,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2382,7 +2384,7 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(-130 0) 
+        translate(-130 221.39999999999998) 
         scale(-1 1)
     "
 >
@@ -2414,19 +2416,19 @@ text {
 </g><g 
         class="label default show-leader"
     transform="
-        translate(-160 0) 
+        translate(-160 221.39999999999998) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 84 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(84 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 84 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2439,25 +2441,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 246.0) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label digital"
     transform="
-        translate(0 0) 
+        translate(0 245.99999999999997) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -2466,6 +2463,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2479,7 +2481,7 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(-130 0) 
+        translate(-130 245.99999999999997) 
         scale(-1 1)
     "
 >
@@ -2511,19 +2513,19 @@ text {
 </g><g 
         class="label default show-leader"
     transform="
-        translate(-160 0) 
+        translate(-160 245.99999999999997) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 84 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(84 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 84 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2536,31 +2538,26 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 270.6) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label pwr"
     transform="
-        translate(0 0) 
+        translate(0 270.59999999999997) 
         scale(-1 1)
     "
 >
-        <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
+        <rect
  class="block label__body" 
     x="80" 
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="10" 
+    rx="0" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -2568,7 +2565,12 @@ text {
     y="-9.0" 
     width="78" 
     height="18" 
-    rx="10" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2581,25 +2583,20 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 295.20000000000005) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label other"
     transform="
-        translate(0 0) 
+        translate(0 295.2) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
     transform="scale(1 1) translate(80 -10.0) " 
@@ -2608,6 +2605,11 @@ text {
     class="label__bodyinner" 
     d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
     transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2621,19 +2623,19 @@ text {
 </g><g 
         class="label default"
     transform="
-        translate(-160 0) 
+        translate(-160 295.2) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__leaderline" 
-    d="M 0 0 l 2 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="label__body" 
     d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
     transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2646,31 +2648,26 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 319.8) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label gnd"
     transform="
-        translate(0 0) 
+        translate(0 319.8) 
         scale(-1 1)
     "
 >
-        <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
+        <rect
  class="block label__body" 
     x="80" 
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="10" 
+    rx="0" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -2678,7 +2675,12 @@ text {
     y="-9.0" 
     width="78" 
     height="18" 
-    rx="10" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2691,31 +2693,26 @@ text {
 </text>
 </g>
 </g><g 
-        class="labelrow"
+        class="label__row"
     transform="
-        translate(0 344.40000000000003) 
+        translate(0 0) 
         scale(1 1)
     "
 >
         <g 
         class="label pwr"
     transform="
-        translate(0 0) 
+        translate(0 344.40000000000003) 
         scale(-1 1)
     "
 >
-        <path 
-    class="label__leaderline" 
-    d="M 0 0 L 16.0 0 C 40.0 0 40.0 0 64.0 0 L 80 0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
+        <rect
  class="block label__body" 
     x="80" 
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="10" 
+    rx="0" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -2723,7 +2720,12 @@ text {
     y="-9.0" 
     width="78" 
     height="18" 
-    rx="10" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2733,103 +2735,6 @@ text {
     "  
 >
     VIN
-</text>
-</g>
-</g>
-</g><g 
-    transform="
-        translate(-56 28) 
-        scale(1 1)
-    "
->
-        <g 
-        class="labelrow"
-    transform="
-        translate(0 0) 
-        scale(1 1)
-    "
->
-        <g 
-        class="label led"
-    transform="
-        translate(0 0) 
-        scale(1 -1)
-    "
->
-        <path 
-    class="label__leaderline" 
-    d="M 0 0 L 0 46.66666666666667 A 23.333333333333332 23.333333333333332 0 0 0 23.333333333333332 70 L 230 70" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__body" 
-    x="230" 
-    y="60.0" 
-    width="120" 
-    height="20" 
-    rx="10" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="231.0" 
-    y="61.0" 
-    width="118" 
-    height="18" 
-    rx="10" 
-    shape-rendering="geometricPrecision"
-/><text
-    class="label__text"
-    transform="
-        translate(290.0 70) 
-        scale(1 -1)
-    "  
->
-    Power
-</text>
-</g>
-</g><g 
-        class="labelrow"
-    transform="
-        translate(112 0) 
-        scale(1 1)
-    "
->
-        <g 
-        class="label led"
-    transform="
-        translate(0 0) 
-        scale(1 -1)
-    "
->
-        <path 
-    class="label__leaderline" 
-    d="M 0 0 L 0 32.0 A 16.0 16.0 0 0 0 16.0 48 L 118 48" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__body" 
-    x="118" 
-    y="38.0" 
-    width="120" 
-    height="20" 
-    rx="10" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="119.0" 
-    y="39.0" 
-    width="118" 
-    height="18" 
-    rx="10" 
-    shape-rendering="geometricPrecision"
-/><text
-    class="label__text"
-    transform="
-        translate(178.0 48) 
-        scale(1 -1)
-    "  
->
-    LED_BUILTIN
 </text>
 </g>
 </g>

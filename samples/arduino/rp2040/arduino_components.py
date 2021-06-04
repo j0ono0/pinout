@@ -1,16 +1,18 @@
 # Customised components for Arduino pinout diagram
 from pinout import core
 from pinout.components.pinlabel import Base
+from pinout.components import leaderline as lline
 
 
 class FirstLabel(Base):
-    def __init__(self, content, **kwargs):
+    def __init__(self, content, tag, **kwargs):
         # Extract kwargs that are used locally
         height = kwargs.pop("height")
         width = kwargs.pop("width")
         style = kwargs.pop("style", "")
-        super().__init__(**kwargs)
+        super().__init__(tag=tag, **kwargs)
 
+        """
         # Add a leaderline if label is offset from origin
         if self.offset != (0, 0):
             if style == "cnr":
@@ -33,7 +35,7 @@ class FirstLabel(Base):
                     tag="label__leaderline",
                 )
             )
-
+        """
         # Label body
         br = height / 2
         path_def = " ".join(
@@ -91,30 +93,19 @@ class FirstLabel(Base):
             )
         )
 
+        leaderline = self.add(lline.Straight(direction="hh"))
+        leaderline.route(core.Rect(0), label_body)
+
         x = label_body.width / 2 + self.offset.x
         y = self.offset.y
         self.add(core.Text(content, x=x, y=y, tag="label__text", scale=self.scale))
 
 
 class LabelLast(Base):
-    def __init__(self, content, **kwargs):
+    def __init__(self, content, tag, **kwargs):
         height = kwargs.pop("height")
         width = kwargs.pop("width")
-        super().__init__(**kwargs)
-
-        if self.offset != (0, 0):
-            # Straight line
-            path_def = f"M 0 0 l {self.offset.x} {self.offset.y}"
-            self.add(
-                core.Path(
-                    path_definition=path_def,
-                    x=0,
-                    y=0,
-                    width=self.offset.x,
-                    height=self.offset.y,
-                    tag="label__leaderline",
-                )
-            )
+        super().__init__(tag=tag, **kwargs)
 
         # Label body
         bx = height / 2
@@ -138,6 +129,10 @@ class LabelLast(Base):
             )
         )
 
+        if self.offset != (0, 0):
+            leaderline = self.add(lline.Straight(direction="hh"))
+            leaderline.route(core.Rect(0), label_body)
+
         # Label text
         x = label_body.width / 2 + self.offset.x
         y = self.offset.y
@@ -145,36 +140,13 @@ class LabelLast(Base):
 
 
 class Label(Base):
-    def __init__(self, content, **kwargs):
+    def __init__(self, content, tag, **kwargs):
         height = kwargs.pop("height")
         width = kwargs.pop("width")
         style = kwargs.pop("style", "")
         # 'r' is used for the label body radius (leaderline corner curve radius is 'hard coded'.)
         r = kwargs.pop("r", 0)
-        super().__init__(**kwargs)
-
-        # Add a leaderline if label is offset from origin
-        if self.offset != (0, 0):
-            if style == "cnr":
-                # Single bend
-                llr = min(*self.offset) / 3
-                path_def = f"M 0 0 L 0 {self.offset.y - llr} A {llr} {llr} 0 0 0 {llr} {self.offset.y} L {self.offset.x} {self.offset.y}"
-            else:
-                # Beizer curve (default)
-                len = self.offset.x / 5
-                ctl_x = self.offset.x / 2
-                path_def = f"M 0 0 L {len} 0 C {ctl_x} 0 {ctl_x} {self.offset.y} {self.offset.x - len} {self.offset.y} L {self.offset.x} {self.offset.y}"
-
-            self.add(
-                core.Path(
-                    path_definition=path_def,
-                    x=0,
-                    y=0,
-                    width=self.offset.x,
-                    height=self.offset.y,
-                    tag="label__leaderline",
-                )
-            )
+        super().__init__(tag=tag, **kwargs)
 
         # Label body
         label_body = self.add(
@@ -200,6 +172,10 @@ class Label(Base):
                 tag="block label__bodyinner",
             )
         )
+
+        if self.offset != (0, 0):
+            leaderline = self.add(lline.Straight(direction="hh"))
+            leaderline.route(core.Rect(0), label_body)
 
         x = label_body.width / 2 + self.offset.x
         y = self.offset.y

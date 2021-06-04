@@ -7,7 +7,7 @@ import warnings
 import copy
 
 
-class PinConfig:
+class PinConfig_OLD:
     """Convenience class to store common pin configurations."""
 
     def __init__(self, presets):
@@ -43,7 +43,7 @@ class PinConfig:
         self.pitch = self.pitch_generator(start, pitch)
 
 
-class PinConfig2:
+class PinConfig:
     """Convenience class to store common pin configurations."""
 
     def __init__(self, presets):

@@ -1,5 +1,4 @@
 import base64
-import warnings
 import uuid
 from collections import namedtuple
 from . import file_manager, templates
@@ -41,8 +40,7 @@ class Layout(TransformMixin):
         self.defs = []
 
     def add(self, instance):
-        if issubclass(type(instance), (SvgShape, Layout)):
-            self.children.append(instance)
+        self.children.append(instance)
         return instance
 
     def add_def(self, instance):

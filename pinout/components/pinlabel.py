@@ -47,6 +47,7 @@ class Label(Base):
                     y=self.offset.y - (height / 2),
                     width=width,
                     height=height,
+                    tag="label__body-clip",
                     **kwargs,
                 )
             )

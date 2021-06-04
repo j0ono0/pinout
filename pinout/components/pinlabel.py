@@ -1,5 +1,6 @@
 import warnings
 from pinout import core
+from pinout.components import leaderline as lline
 
 
 class Base(core.Group):
@@ -22,6 +23,7 @@ class Label(Base):
         r=0,
         offset=(18, 0),
         clip=False,
+        leaderline=None,
         **kwargs,
     ):
         self.content = content
@@ -36,6 +38,8 @@ class Label(Base):
                 """
             warnings.warn(msg)
 
+        ##########################
+        # Clipping mask
         clip_id = None
         if clip:
             clip_path = self.add_def(core.ClipPath())
@@ -52,6 +56,8 @@ class Label(Base):
                 )
             )
 
+        ##########################
+        # Label body
         self.label_body = self.add(
             core.Rect(
                 r=r,
@@ -65,36 +71,12 @@ class Label(Base):
             )
         )
 
-        if self.offset.x != 0 or self.offset.y != 0:
-            if style == "straight":
-                # Straight line
-                path_def = f"M 0 0 l {self.offset.x} {self.offset.y}"
-            elif style == "angle_bend":
-                # Single bend
-                path_def = f"M 0 0 l 0 {self.offset.y} l {self.offset.x} 0"
-            elif style == "smooth_bend":
-                # Single bend
-                r = min(*self.offset)
-                # TODO: determine 'r' in a non-arbitary way
-                r = r / 3
-                path_def = f"M 0 0 L 0 {self.offset.y - r} A {r} {r} 0 0 0 {r} {self.offset.y} L {self.offset.x} {self.offset.y}"
-            else:
-                # Beizer curve (default)
-                len = self.offset.x / 8
-                ctl_x = self.offset.x / 2
-                path_def = f"M 0 0 L {len} 0 C {ctl_x} 0 {ctl_x} {self.offset.y} {self.offset.x - len} {self.offset.y} L {self.offset.x} {self.offset.y}"
+        ##########################
+        # Leaderline
+        leaderline = leaderline or lline.Curved(direction="hh")
+        leaderline.route(core.Rect(r=0, x=0, y=0, width=0, height=0), self.label_body)
 
-            self.add(
-                core.Path(
-                    path_definition=path_def,
-                    x=0,
-                    y=0,
-                    width=self.offset.x,
-                    height=self.offset.y,
-                    tag="label__leaderline",
-                    **kwargs,
-                )
-            )
+        self.add(leaderline)
 
     def render(self):
         # Apply text just before render as scale may change

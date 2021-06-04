@@ -1,11 +1,13 @@
 from pinout import core
 
 
-class Base:
+class Base(core.SvgShape):
     def __init__(self, direction="hh", **kwargs):
         self.direction = direction
         self.path_def = ""
         self.kwargs = kwargs
+        self.start = core.Coords(0, 0)
+        self.end = core.Coords(0, 0)
 
     def end_points(self, origin, destination):
         # origin and destination are components with bounding-boxes
@@ -26,12 +28,21 @@ class Base:
                 destination.x + (d_coords.x2 - d_coords.x1) / 2, d_coords.y1
             ),
         }
-        return (start[self.direction[0]], end[self.direction[-1]])
+        self.start = start[self.direction[0]]
+        self.end = end[self.direction[-1]]
+        return (self.start, self.end)
+
+    def bounding_coords(self):
+        return core.BoundingCoords(
+            min(self.start.x, self.end.x),
+            min(self.start.y, self.end.y),
+            max(self.start.x, self.end.x),
+            max(self.start.y, self.end.y),
+        )
 
     def render(self):
         path = core.Path(path_definition=self.path_def, **self.kwargs)
-        path.add_tag("lline lline--curved")
-        print("rendering lline")
+        path.add_tag("lline")
         return path.render()
 
 

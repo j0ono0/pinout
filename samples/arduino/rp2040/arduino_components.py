@@ -9,33 +9,9 @@ class FirstLabel(Base):
         # Extract kwargs that are used locally
         height = kwargs.pop("height")
         width = kwargs.pop("width")
-        style = kwargs.pop("style", "")
+        leaderline = kwargs.pop("leaderline", lline.Curved("hh"))
         super().__init__(tag=tag, **kwargs)
 
-        """
-        # Add a leaderline if label is offset from origin
-        if self.offset != (0, 0):
-            if style == "cnr":
-                # Single bend
-                llr = min(*self.offset) / 3
-                path_def = f"M 0 0 L 0 {self.offset.y - llr} A {llr} {llr} 0 0 0 {llr} {self.offset.y} L {self.offset.x} {self.offset.y}"
-            else:
-                # Beizer curve (default)
-                len = self.offset.x / 5
-                ctl_x = self.offset.x / 2
-                path_def = f"M 0 0 L {len} 0 C {ctl_x} 0 {ctl_x} {self.offset.y} {self.offset.x - len} {self.offset.y} L {self.offset.x} {self.offset.y}"
-
-            self.add(
-                core.Path(
-                    path_definition=path_def,
-                    x=0,
-                    y=0,
-                    width=self.offset.x,
-                    height=self.offset.y,
-                    tag="label__leaderline",
-                )
-            )
-        """
         # Label body
         br = height / 2
         path_def = " ".join(
@@ -93,7 +69,7 @@ class FirstLabel(Base):
             )
         )
 
-        leaderline = self.add(lline.Straight(direction="hh"))
+        self.add(leaderline)
         leaderline.route(core.Rect(0), label_body)
 
         x = label_body.width / 2 + self.offset.x
@@ -105,6 +81,7 @@ class LabelLast(Base):
     def __init__(self, content, tag, **kwargs):
         height = kwargs.pop("height")
         width = kwargs.pop("width")
+        leaderline = kwargs.pop("leaderline", lline.Curved("hh"))
         super().__init__(tag=tag, **kwargs)
 
         # Label body
@@ -130,7 +107,7 @@ class LabelLast(Base):
         )
 
         if self.offset != (0, 0):
-            leaderline = self.add(lline.Straight(direction="hh"))
+            self.add(leaderline)
             leaderline.route(core.Rect(0), label_body)
 
         # Label text
@@ -143,7 +120,7 @@ class Label(Base):
     def __init__(self, content, tag, **kwargs):
         height = kwargs.pop("height")
         width = kwargs.pop("width")
-        style = kwargs.pop("style", "")
+        leaderline = kwargs.pop("leaderline", lline.Curved("hh"))
         # 'r' is used for the label body radius (leaderline corner curve radius is 'hard coded'.)
         r = kwargs.pop("r", 0)
         super().__init__(tag=tag, **kwargs)
@@ -174,7 +151,7 @@ class Label(Base):
         )
 
         if self.offset != (0, 0):
-            leaderline = self.add(lline.Straight(direction="hh"))
+            self.add(leaderline)
             leaderline.route(core.Rect(0), label_body)
 
         x = label_body.width / 2 + self.offset.x

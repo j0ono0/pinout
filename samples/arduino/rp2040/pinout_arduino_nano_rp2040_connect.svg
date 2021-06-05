@@ -59,7 +59,7 @@ path{
     fill: none;
 }
 rect {
-    fill: #000;
+    fill: rgba(0, 0, 0, 0);
 }
 
 text {
@@ -88,7 +88,6 @@ text {
 .label__text{
     dominant-baseline: central;
     fill: #fff;
-    font-family: 'Roboto', Helvetica, Verdana, monospace;
     font-size: 12px;
     font-weight: 600;
     stroke-width: 0;
@@ -99,7 +98,7 @@ text {
     fill: none;
 }
 .legend .swatch__body{
-    fill: #f0f;
+    fill: rgba(0,0,0,0);
 }
 .legend-entry__text{
     dominant-baseline: central;
@@ -110,20 +109,31 @@ text {
 /*
 #########################################################
 #
-# Custom component styles
+# Arduino component styles
 #
 #########################################################
 */
 
 .diagram__bg{
-    fill: #333
+    fill: #333;
 }
 
 .panel--main .panel__bg{
     fill: #fff;
 }
+
 .panel--notes .panel__bg{
     fill: #e4e4e2;
+}
+
+.led .label__body,
+.gnd .label__body,
+.pwr .label__body,
+.nc .label__body,
+.nc .label__bodyinner,
+.other .label__body,
+.other .label__bodyinner{
+    rx: 10px;
 }
 
 .label__row .label:first-child .lline,
@@ -156,19 +166,13 @@ text {
     #stripe-a rect{
         fill: #d35400;
     }
+
     #stripe-a path{
         fill: #de7f40;
     }
+
 .analog .label__body{
     fill: url("#stripe-b");
-}
-.analog .label__bodyinner{
-    fill: none;
-    stroke: #d35400;
-    stroke-width: 2;
-}
-.analog .label__text{
-    fill: #d35400;
 }
     /* Custom svg pattern styling */
     #stripe-b rect{
@@ -177,6 +181,17 @@ text {
     #stripe-b path{
         fill: #f8e6d9;
     }
+
+.analog .label__bodyinner{
+    fill: none;
+    stroke: #d35400;
+    stroke-width: 2;
+}
+
+.analog .label__text{
+    fill: #d35400;
+}
+
 .analog .swatch__body{
     fill: url("#stripe-b");
     stroke: #d35400;
@@ -185,30 +200,33 @@ text {
 .pwr .label__body,
 .pwr .swatch__body{
     fill: #c11f09;
-    rx: 10px;
 }
 
 .other .label__body,
 .other .swatch__body{
     fill: #fff;
 }
+
 .other .label__bodyinner,
 .other .swatch__body{
     stroke: #d86e29;
     stroke-width: 2;
 }
+
 .other .label__text{
     fill: #d86e29;
 }
+
 .gnd .label__body,
 .gnd .swatch__body{
-    rx: 10px;
     fill: #000;
 }
+
 .internal .label__body,
 .internal .swatch__body{
     fill: #94a3a6;
 }
+
 .swd .label__body,
 .swd .swatch__body{
     fill: #9e856e;
@@ -317,7 +335,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -354,7 +372,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -380,7 +398,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -419,7 +437,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -456,7 +474,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -482,7 +500,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -521,7 +539,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -547,7 +565,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -586,7 +604,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -612,7 +630,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -651,7 +669,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -677,7 +695,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -716,7 +734,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -742,7 +760,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -781,7 +799,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -807,7 +825,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -846,7 +864,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -872,7 +890,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -911,7 +929,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -937,7 +955,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -976,7 +994,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1002,7 +1020,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1041,7 +1059,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1067,7 +1085,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1112,7 +1130,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1151,7 +1169,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1177,7 +1195,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1216,7 +1234,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1242,7 +1260,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1281,7 +1299,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1307,7 +1325,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1353,7 +1371,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1390,7 +1408,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1416,7 +1434,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1461,7 +1479,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1500,7 +1518,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1526,7 +1544,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1565,7 +1583,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1634,7 +1652,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1660,7 +1678,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1699,7 +1717,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1768,7 +1786,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1794,7 +1812,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1833,7 +1851,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1902,7 +1920,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1928,7 +1946,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -1967,7 +1985,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -2036,7 +2054,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -2062,7 +2080,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -2101,7 +2119,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -2170,7 +2188,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -2196,7 +2214,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -2235,7 +2253,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -2304,7 +2322,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -2330,7 +2348,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -2369,7 +2387,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -2427,7 +2445,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 84 0.0" 
+    d="M 0 0.0 L 10.5 0.0 C 42.0 0.0 42.0 0.0 73.5 0.0 L 84 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -2466,7 +2484,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -2524,7 +2542,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 84 0.0" 
+    d="M 0 0.0 L 10.5 0.0 C 42.0 0.0 42.0 0.0 73.5 0.0 L 84 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -2569,7 +2587,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -2608,7 +2626,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -2634,7 +2652,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -2679,7 +2697,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -2724,7 +2742,7 @@ text {
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
-    d="M 0 0.0 L 80 0.0" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
@@ -2735,6 +2753,103 @@ text {
     "  
 >
     VIN
+</text>
+</g>
+</g>
+</g><g 
+    transform="
+        translate(-56 28) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label led"
+    transform="
+        translate(0 0) 
+        scale(-1 -1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="112" 
+    y="50.0" 
+    width="120" 
+    height="20" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="113.0" 
+    y="51.0" 
+    width="118" 
+    height="18" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0.0 0 L 0.0 43.33333333333333 A 16.666666666666668 16.666666666666668 0 0 0 16.666666666666668 60.0 L 112 60.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(172.0 60) 
+        scale(-1 -1)
+    "  
+>
+    Power
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label led"
+    transform="
+        translate(112 0) 
+        scale(-1 -1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="224" 
+    y="72.0" 
+    width="120" 
+    height="20" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="225.0" 
+    y="73.0" 
+    width="118" 
+    height="18" 
+    rx="0" 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="lline" 
+    d="M 0.0 0 L 0.0 58.0 A 24.0 24.0 0 0 0 24.0 82.0 L 224 82.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(284.0 82) 
+        scale(-1 -1)
+    "  
+>
+    LED_BUILTIN
 </text>
 </g>
 </g>

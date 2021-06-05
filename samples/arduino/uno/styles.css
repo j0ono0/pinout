@@ -31,7 +31,7 @@ path{
     fill: none;
 }
 rect {
-    fill: #000;
+    fill: rgba(0, 0, 0, 0);
 }
 
 text {
@@ -54,14 +54,12 @@ text {
     fill: none;
     stroke-linejoin: "miter";
 }
-.label__leaderline{
-    stroke: rgba(255, 255, 255, 0);
-    stroke-width: 2;
+.label .lline{
+    stroke-width: 0;
 }
 .label__text{
     dominant-baseline: central;
     fill: #fff;
-    font-family: 'Roboto', Helvetica, Verdana, monospace;
     font-size: 12px;
     font-weight: 600;
     stroke-width: 0;
@@ -72,7 +70,7 @@ text {
     fill: none;
 }
 .legend .swatch__body{
-    fill: #f0f;
+    fill: rgba(0,0,0,0);
 }
 .legend-entry__text{
     dominant-baseline: central;
@@ -83,24 +81,36 @@ text {
 /*
 #########################################################
 #
-# Custom component styles
+# Arduino component styles
 #
 #########################################################
 */
 
 .diagram__bg{
-    fill: #333
+    fill: #333;
 }
 
 .panel--main .panel__bg{
     fill: #fff;
 }
+
 .panel--notes .panel__bg{
     fill: #e4e4e2;
 }
 
-.labelrow .label:first-child .label__leaderline,
-.show-leader .label__leaderline{
+.led .label__body,
+.gnd .label__body,
+.pwr .label__body,
+.nc .label__body,
+.nc .label__bodyinner,
+.other .label__body,
+.other .label__bodyinner{
+    rx: 10px;
+}
+
+.label__row .label:first-child .lline,
+.label.show-leader  .lline{
+    stroke-width: 2px;
     stroke: #bcc6c6;
 }
 
@@ -128,19 +138,13 @@ text {
     #stripe-a rect{
         fill: #d35400;
     }
+
     #stripe-a path{
         fill: #de7f40;
     }
+
 .analog .label__body{
     fill: url("#stripe-b");
-}
-.analog .label__bodyinner{
-    fill: none;
-    stroke: #d35400;
-    stroke-width: 2;
-}
-.analog .label__text{
-    fill: #d35400;
 }
     /* Custom svg pattern styling */
     #stripe-b rect{
@@ -149,6 +153,17 @@ text {
     #stripe-b path{
         fill: #f8e6d9;
     }
+
+.analog .label__bodyinner{
+    fill: none;
+    stroke: #d35400;
+    stroke-width: 2;
+}
+
+.analog .label__text{
+    fill: #d35400;
+}
+
 .analog .swatch__body{
     fill: url("#stripe-b");
     stroke: #d35400;
@@ -163,22 +178,27 @@ text {
 .other .swatch__body{
     fill: #fff;
 }
+
 .other .label__bodyinner,
 .other .swatch__body{
     stroke: #d86e29;
     stroke-width: 2;
 }
+
 .other .label__text{
     fill: #d86e29;
 }
+
 .gnd .label__body,
 .gnd .swatch__body{
     fill: #000;
 }
+
 .internal .label__body,
 .internal .swatch__body{
     fill: #94a3a6;
 }
+
 .swd .label__body,
 .swd .swatch__body{
     fill: #9e856e;

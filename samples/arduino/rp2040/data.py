@@ -1,5 +1,5 @@
 from pinout import config
-
+from pinout.components import leaderline as lline
 from arduino_components import Label, FirstLabel, LabelLast
 
 
@@ -15,6 +15,13 @@ cfg = config.PinConfig(
         "lft": {"width": 80, "height": 20, "scale": (-1, 1), "offset": (2, 0)},
         "lft_sm": {"width": 30, "height": 20, "scale": (-1, 1), "offset": (0, 0)},
         "lft_single": {"width": 80, "height": 20, "scale": (-1, 1)},
+        # LEDs
+        "led": {
+            "width": 120,
+            "height": 20,
+            "scale": (-1, -1),
+            "leaderline": lline.Curved("vh"),
+        },
     }
 )
 
@@ -91,7 +98,9 @@ header_rhs = [
         FirstLabel("D2", "digital", **cfg("rgt_first")),
         LabelLast("GPIO25", "mu-port", **cfg("rgt")),
     ],
-    [Label("GND", "gnd", **cfg("rgt_single"))],
+    [
+        Label("GND", "gnd", **cfg("rgt_single")),
+    ],
     [
         FirstLabel("RESET", "other", **cfg("rgt_first")),
         LabelLast("RESET", "mu-port", **cfg("rgt")),
@@ -122,7 +131,9 @@ header_lhs = [
         Label("GPIO6", "mu-port", **cfg("lft")),
         LabelLast("SCK", "default", **cfg("lft")),
     ],
-    [Label("+3V3", "pwr", **cfg("lft_single"))],
+    [
+        Label("+3V3", "pwr", **cfg("lft_single")),
+    ],
     [
         FirstLabel("AREF", "other", **cfg("lft_first")),
         LabelLast("PA03", "mu-port", **cfg("lft")),
@@ -173,7 +184,9 @@ header_lhs = [
         Label("A7", "analog", **cfg("lft_sm")),
         LabelLast("A7", "default show-leader", **cfg("lft", offset=(84, 0))),
     ],
-    [Label("+5V", "pwr", **cfg("lft_single"))],
+    [
+        Label("+5V", "pwr", **cfg("lft_single")),
+    ],
     [
         FirstLabel("RESET", "other", **cfg("lft_first")),
         LabelLast("QSPI_CSn", "default", **cfg("lft")),
@@ -188,10 +201,11 @@ header_lhs = [
 # LED labels
 #
 #########################################################
-cfg.set_offset((230, 70), (-112, -22))
+cfg.set_origin((0, 0), (112, 0))
+cfg.set_offset((112, 60), (112, 22))
 leds = [
-    [Label("Power", "led", **cfg("rgt_single", width=120, style="cnr"))],
-    [Label("LED_BUILTIN", "led", **cfg("rgt_single", width=120, style="cnr"))],
+    [Label("Power", "led", **cfg("led"))],
+    [Label("LED_BUILTIN", "led", **cfg("led"))],
 ]
 
 

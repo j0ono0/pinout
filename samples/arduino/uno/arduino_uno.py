@@ -49,37 +49,18 @@ pinout_graphic.add(
     )
 )
 # Right hand side pin headers
-pinout_graphic.add(
-    pinlabel.Header(
-        x=147, y=153, pitch=(0, 15.35), scale=(1, 1), rows=data.header_rhs_a
-    )
-)
-pinout_graphic.add(
-    pinlabel.Header(
-        x=147, y=316, pitch=(0, 15.35), scale=(1, 1), rows=data.header_rhs_b
-    )
-)
+pinout_graphic.add(pinlabel.PinLabelGroup(x=147, y=153, labels=data.header_rhs_a))
+
+pinout_graphic.add(pinlabel.PinLabelGroup(x=147, y=316, labels=data.header_rhs_b))
 
 # Left hand side pin header
-pinout_graphic.add(
-    pinlabel.Header(
-        x=-147, y=208, pitch=(0, 15.35), scale=(-1, 1), rows=data.header_lhs_a
-    )
-)
-pinout_graphic.add(
-    pinlabel.Header(
-        x=-147, y=347, pitch=(0, 15.35), scale=(-1, 1), rows=data.header_lhs_b
-    )
-)
+pinout_graphic.add(pinlabel.PinLabelGroup(x=-147, y=208, labels=data.header_lhs_a))
+pinout_graphic.add(pinlabel.PinLabelGroup(x=-147, y=347, labels=data.header_lhs_b))
 
 # LEDs RX & TX
-pinout_graphic.add(
-    pinlabel.Header(x=46, y=206, pitch=(17, 0), scale=(-1, -1), rows=data.leds_a)
-)
+pinout_graphic.add(pinlabel.PinLabelGroup(x=46, y=206, labels=data.leds_a))
 
 # LEDs pwr
-pinout_graphic.add(
-    pinlabel.Header(x=62, y=392, pitch=(39, -185), scale=(-1, 1), rows=data.leds_b)
-)
+pinout_graphic.add(pinlabel.PinLabelGroup(x=62, y=392, labels=data.leds_b))
 
 diagram.export("pinout_arduino_uno_rev3.svg", True)

@@ -83,23 +83,24 @@ class PinLabelGroup(core.Group):
         scale = core.Coords(*kwargs.pop("scale", (1, 1)))
         super().__init__(x=x, y=y, **kwargs)
 
-        # Setup generator for row locations
+        # Setup generators for row locations
         pin_coords = config.pitch_generator((0, 0), pin_pitch)
         label_coords = config.pitch_generator(label_start, label_pitch)
 
         for row in labels:
             row_group = self.add(core.Group(tag="label__row"))
             for label in row:
+
+                # Label follows another label in the row
                 try:
-                    # Label follows another label in the row
                     prev_label = row_group.children[-1]
                     x = prev_label.x + prev_label.width * scale.x
                     y = prev_label.y + prev_label.offset.y * scale.y
                     _leaderline = lline.Straight(direction="hh")
                     offset = config.pinlabel_offset
 
+                # Start of a new row
                 except IndexError:
-                    # Start of a new row
                     x, y = next(pin_coords)
                     offset = next(label_coords)
                     _leaderline = copy.deepcopy(leaderline)
@@ -108,6 +109,7 @@ class PinLabelGroup(core.Group):
                 if type(label) is tuple:
                     content, tag, *args = label
                     attrs = args[0] if len(args) > 0 else {}
+
                     # Update label attributes
                     attrs["offset"] = attrs.get("offset", offset)
                     attrs["scale"] = attrs.get("scale", scale)

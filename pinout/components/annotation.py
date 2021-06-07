@@ -43,7 +43,6 @@ class Label(Base):
         ##########################
         # Target
         config = {
-            "r": 0,
             "x": -5,
             "y": -5,
             "width": 10,
@@ -59,11 +58,10 @@ class Label(Base):
         ##########################
         # Body
         config = {
-            "r": 0,
             "x": offset.x,
             "y": offset.y,
             "width": 200,
-            "height": len(content) * line_height + text_offset.x,
+            "height": len(content) * line_height + text_offset.x * 2,
         }
         try:
             cls, config_overrides = body
@@ -87,7 +85,7 @@ class Label(Base):
             x = body.x + text_offset.x
         else:
             x = body.x + body.width - text_offset.x
-        y = body.y + text_offset.y + line_height / 2 + text_offset.x / 2
+        y = body.y + text_offset.y * self.scale.y + line_height / 2 + text_offset.x / 2
 
         self.add(
             type.TextBlock(

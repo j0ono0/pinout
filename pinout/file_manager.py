@@ -129,6 +129,7 @@ if __name__ == "__main__":
         choices=["quick_start", "full_sample", "config", "annotations"],
         help="duplicate pinout resources",
     )
+    parser.add_argument("-b", "--build")
     args = parser.parse_args()
     if args.duplicate:
         duplicate(args.duplicate)

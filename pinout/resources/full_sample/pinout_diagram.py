@@ -6,7 +6,7 @@
 ###########################################
 
 from pinout.core import Diagram, Group, Rect, Image
-from pinout.components import pinlabel
+from pinout.components import pinlabel, annotation
 from pinout.components import leaderline as lline
 
 import data
@@ -30,7 +30,7 @@ panel_main.add(Rect(0, 0, 1196, 598, "bg"))
 
 
 # Create a group to hold the pinout-diagram components.
-graphic = panel_main.add(Group(510, 80))
+graphic = panel_main.add(Group(510, 140))
 
 
 # Add and embed an image
@@ -43,8 +43,8 @@ graphic.add(
         x=204,
         y=106,
         pin_pitch=(0, 30),
-        label_start=(60, -12),
-        label_pitch=(0, 8),
+        label_start=(60, 0),
+        label_pitch=(0, 0),
         labels=data.rhs,
     )
 )
@@ -86,6 +86,34 @@ graphic.add(
         label_pitch=(30, 30),
         labels=data.btm_rhs,
         leaderline=lline.Curved(direction="vh"),
+    )
+)
+
+graphic.add(
+    pinlabel.PinLabelGroup(
+        x=47,
+        y=80,
+        scale=(-1, -1),
+        pin_pitch=(15, 15),
+        label_start=(91, 110),
+        label_pitch=(15, 45),
+        labels=data.aux,
+        leaderline=lline.Curved(direction="vh"),
+    )
+)
+
+graphic.add(
+    annotation.Label(
+        ["USB-C connector", "Host/device functionality"],
+        offset=(-10, 44),
+        text_offset=(12, 0),
+        x=110,
+        y=20,
+        scale=(1, -1),
+        body=(
+            Rect,
+            {"x": -10, "y": 44, "width": 340, "height": 54, "tag": "annotation__body"},
+        ),
     )
 )
 

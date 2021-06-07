@@ -3,6 +3,7 @@ from pinout import config
 from pinout.components.pinlabel import Label
 from pinout.components import leaderline as lline
 
+
 rhs = [
     [
         ("Vcc", "pwr--3v3"),
@@ -29,16 +30,15 @@ lhs = [
     ],
     [
         ("1", "gpio"),
-        # ("Lc1a", "comms"),
-        Label("Lc1a", "comms", offset=(60, 0), scale=(-1, 1)),
+        ("Lc1a", "comms", {"offset": (92, 0)}),
     ],
     [
         ("2", "gpio"),
-        ("Lc2a", "analog", {"offset": (60, 0)}),
+        ("Lc2a", "analog"),
         ("Lc2b", "led"),
     ],
     [
-        ("RESET", "pwr"),
+        ("RESET", "pwr", {"offset": (232, 0)}),
     ],
 ]
 
@@ -67,37 +67,14 @@ btm_rhs = [
     ],
 ]
 
-aux_1 = [
-    ("a", "led"),
-    ("AUX_a", "analog"),
+aux = [
+    [
+        ("a", "led"),
+        ("AUX_a", "analog"),
+    ],
+    [
+        ("b", "led"),
+        ("AUX_b", "pwm"),
+        ("PWM", "pwm"),
+    ],
 ]
-
-aux_2 = [
-    ("b", "led"),
-    ("AUX_b", "pwm"),
-    ("PWM", "pwm"),
-]
-"""
-
-
-    # Left interior pin
-    {
-        "x": 47,
-        "y": 80,
-        "offset": (-107, -100),
-        "labels": [
-            [("a", "led"), ("AUX_a", "analog")],
-        ],
-    },
-    # Right interior pin
-    {
-        "x": 62,
-        "y": 95,
-        "pitch": (30, 0),
-        "offset": (-122, -145),
-        "labels": [
-            [("b", "led"), ("AUX_b", "pwm"), ("PWM", "pwm")],
-        ],
-    },
-]
-"""

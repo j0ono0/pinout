@@ -27,7 +27,7 @@ rect {
 
 text {
     font-family: Helvetica, Verdana, Georgia, sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 300;
     dominant-baseline: auto;
 }
@@ -68,6 +68,28 @@ text {
     fill: #000;
 }
 
+
+/*************************************/
+/* Annotation                        */
+
+.annotation__body{
+    fill: #e6b413;
+    ry: 10px;
+}
+.annotation__target{
+    fill: none;
+    stroke: #e6b413;
+    stroke-width: 3px;
+}
+.annotation text{
+    dominant-baseline: central;
+    font-size: 18px;
+    fill: #fff;
+}
+.annotation .lline{
+    stroke: #e6b413;
+    stroke-width: 3px;
+}
 
 /*
 #########################################################

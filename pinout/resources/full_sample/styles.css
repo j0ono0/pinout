@@ -1,0 +1,137 @@
+/*
+#########################################################
+#
+# Default SVG presentation attributes (styles)
+#
+#########################################################
+*/
+
+
+
+path, rect {
+    stroke: rgb(0, 0, 0);
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    stroke-linejoin: miter;
+    stroke-miterlimit: inherit;
+    stroke-opacity: 1;
+    stroke-width: 0;
+}
+path{
+    fill: none;
+}
+rect {
+    fill: none;
+}
+
+text {
+    font-family: Helvetica, Verdana, Georgia, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    dominant-baseline: auto;
+}
+
+
+/*************************************/
+/* pinlabel defaults                 */
+
+.label__body{
+    fill: rgb(36, 36, 36);
+    ry: 2px;
+}
+
+.label .lline{
+    stroke-width: 2;
+}
+.label__text{
+    dominant-baseline: central;
+    fill: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    stroke-width: 0;
+    text-anchor: middle;
+}
+
+
+/*************************************/
+/* Legend                            */
+
+.legend rect{
+    fill: none;
+}
+.legend .swatch__body{
+    fill: rgba(0,0,0,0);
+}
+.legend-entry__text{
+    dominant-baseline: central;
+    fill: #000;
+}
+
+
+/*
+#########################################################
+#
+# Styles specific to user defined tags
+#
+#########################################################
+*/
+
+/* Layout */
+
+.diagram__bg{
+    fill: #333;
+}
+.panel--main .bg{
+    fill: #fff;
+}
+.panel--meta .bg{
+    fill: #f4f4f4;
+}
+
+/* PinLabels */
+
+[class^="pwr"] .label__body,
+[class*=" pwr"] .label__body{
+    fill: rgb(173, 0, 0);
+}
+[class^="pwr"] .lline,
+[class*=" pwr"] .lline{
+    stroke: rgb(173, 0, 0);
+}
+
+[class^="gpio"] .label__body,
+[class*=" gpio"] .label__body{
+    fill: rgb(130, 139, 48);
+}
+[class^="gpio"] .lline,
+[class*=" gpio"] .lline{
+    stroke: rgb(130, 139, 48);
+}
+
+[class^="analog"] .label__body,
+[class*=" analog"] .label__body{
+    fill: rgb(18, 96, 133);
+}
+[class^="analog"] .lline,
+[class*=" analog"] .lline{
+    stroke: rgb(18, 96, 133);
+}
+
+[class^="led"] .label__body,
+[class*=" led"] .label__body{
+    fill: rgb(216, 158, 0);
+}
+[class^="led"] .lline,
+[class*=" led"] .lline{
+    stroke: rgb(216, 158, 0);
+}
+
+[class^="comms"] .label__body,
+[class*=" comms"] .label__body{
+    fill: rgb(182, 69, 176);
+}
+[class^="comms"] .lline,
+[class*=" comms"] .lline{
+    stroke: rgb(182, 69, 176);
+}

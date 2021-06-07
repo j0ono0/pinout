@@ -70,7 +70,7 @@ class FirstLabel(Base):
         )
 
         self.add(leaderline)
-        leaderline.route(core.Rect(0), label_body)
+        leaderline.route(core.Rect(), label_body)
 
         x = label_body.width / 2 + self.offset.x
         y = self.offset.y
@@ -108,7 +108,7 @@ class LabelLast(Base):
 
         if self.offset != (0, 0):
             self.add(leaderline)
-            leaderline.route(core.Rect(0), label_body)
+            leaderline.route(core.Rect(), label_body)
 
         # Label text
         x = label_body.width / 2 + self.offset.x
@@ -128,7 +128,6 @@ class Label(Base):
         # Label body
         label_body = self.add(
             core.Rect(
-                r=r,
                 x=self.offset.x,
                 y=self.offset.y - (height / 2),
                 width=width,
@@ -141,7 +140,6 @@ class Label(Base):
         inset = 2
         self.add(
             core.Rect(
-                r=r,
                 x=self.offset.x + inset / 2,
                 y=self.offset.y - (height / 2) + inset / 2,
                 width=width - inset,
@@ -152,7 +150,7 @@ class Label(Base):
 
         if self.offset != (0, 0):
             self.add(leaderline)
-            leaderline.route(core.Rect(0), label_body)
+            leaderline.route(core.Rect(), label_body)
 
         x = label_body.width / 2 + self.offset.x
         y = self.offset.y

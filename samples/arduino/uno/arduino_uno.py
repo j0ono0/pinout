@@ -21,16 +21,16 @@ with open("patterns.xml") as f:
 diagram.add_def(Raw(patterns))
 
 # Construct a layout and add some backgrounds
-diagram.add(Rect(r=0, x=0, y=0, width=1200, height=675, tag="diagram__bg"))
+diagram.add(Rect(x=0, y=0, width=1200, height=675, tag="diagram__bg"))
 group_main = diagram.add(Group(2, 2, tag="panel panel--main"))
-group_main.add(Rect(r=0, x=0, y=0, width=1196, height=548, tag="panel__bg"))
+group_main.add(Rect(x=0, y=0, width=1196, height=548, tag="panel__bg"))
 
 # Keeping elements in a group allows for easier measuring and moving
 # Create a group for the main pinout graphic
 pinout_graphic = group_main.add(Group(600, 10, tag="pinout-graphic"))
 
 group_notes = diagram.add(Group(2, 552, tag="panel panel--notes"))
-group_notes.add(Rect(r=0, x=0, y=0, width=1196, height=121, tag="panel__bg"))
+group_notes.add(Rect(x=0, y=0, width=1196, height=121, tag="panel__bg"))
 group_notes.add(legend.Legend(data.legend, max_height=100, x=10, y=0))
 group_notes.add(TextBlock(data.title_1, 22, x=580, y=30))
 group_notes.add(TextBlock(data.para_1, 17, x=580, y=74))

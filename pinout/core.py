@@ -233,9 +233,8 @@ class Path(SvgShape):
 
 
 class Rect(SvgShape):
-    def __init__(self, r=0, **kwargs):
-        super().__init__(**kwargs)
-        self.r = r
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
     def render(self):
         tplt = templates.get("rect.svg")

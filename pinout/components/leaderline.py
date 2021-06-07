@@ -17,13 +17,11 @@ class Base(core.SvgShape):
         d_coords = destination.bounding_coords()
 
         start = {
-            "h": core.Coords(o_coords.x2, origin.y + (o_coords.y2 - o_coords.y1) / 2),
+            "h": core.Coords(o_coords.x2, o_coords.y1 + origin.height / 2),
             "v": core.Coords(origin.x + (o_coords.x2 - o_coords.x1) / 2, o_coords.y2),
         }
         end = {
-            "h": core.Coords(
-                d_coords.x1, destination.y + (d_coords.y2 - d_coords.y1) / 2
-            ),
+            "h": core.Coords(d_coords.x1, d_coords.y1 + destination.height / 2),
             "v": core.Coords(
                 destination.x + (d_coords.x2 - d_coords.x1) / 2, d_coords.y1
             ),

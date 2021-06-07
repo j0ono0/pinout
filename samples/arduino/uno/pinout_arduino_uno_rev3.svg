@@ -270,7 +270,7 @@ text {
     y="0" 
     width="1200" 
     height="675" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="panel panel--main"
@@ -285,7 +285,7 @@ text {
     y="0" 
     width="1196" 
     height="548" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="pinout-graphic"
@@ -360,7 +360,7 @@ text {
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -368,7 +368,7 @@ text {
     y="-9.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -462,7 +462,7 @@ text {
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -470,7 +470,7 @@ text {
     y="-9.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -533,7 +533,7 @@ text {
     y="-74.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -541,7 +541,7 @@ text {
     y="-73.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -578,7 +578,7 @@ text {
     y="-66.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -586,7 +586,7 @@ text {
     y="-65.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -654,7 +654,7 @@ text {
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -662,7 +662,7 @@ text {
     y="-9.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -756,7 +756,7 @@ text {
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -764,7 +764,7 @@ text {
     y="-9.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -858,7 +858,7 @@ text {
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -866,7 +866,7 @@ text {
     y="-9.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -960,7 +960,7 @@ text {
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -968,7 +968,7 @@ text {
     y="-9.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -1695,7 +1695,7 @@ text {
     y="-74.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -1703,7 +1703,7 @@ text {
     y="-73.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -1740,7 +1740,7 @@ text {
     y="-66.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -1748,7 +1748,7 @@ text {
     y="-65.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -1850,7 +1850,7 @@ text {
     y="-50.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -1858,7 +1858,7 @@ text {
     y="-49.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -1895,7 +1895,7 @@ text {
     y="-42.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -1903,7 +1903,7 @@ text {
     y="-41.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -1940,7 +1940,7 @@ text {
     y="-34.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -1948,7 +1948,7 @@ text {
     y="-33.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -1985,7 +1985,7 @@ text {
     y="-26.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -1993,7 +1993,7 @@ text {
     y="-25.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -2030,7 +2030,7 @@ text {
     y="-18.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -2038,7 +2038,7 @@ text {
     y="-17.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -2113,7 +2113,7 @@ text {
     y="-10.0" 
     width="30" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -2121,7 +2121,7 @@ text {
     y="-9.0" 
     width="28" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2145,7 +2145,7 @@ text {
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -2153,7 +2153,7 @@ text {
     y="-9.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -2247,7 +2247,7 @@ text {
     y="-10.0" 
     width="30" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -2255,7 +2255,7 @@ text {
     y="-9.0" 
     width="28" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2279,7 +2279,7 @@ text {
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -2287,7 +2287,7 @@ text {
     y="-9.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -2381,7 +2381,7 @@ text {
     y="-10.0" 
     width="30" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -2389,7 +2389,7 @@ text {
     y="-9.0" 
     width="28" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2413,7 +2413,7 @@ text {
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -2421,7 +2421,7 @@ text {
     y="-9.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -2515,7 +2515,7 @@ text {
     y="-10.0" 
     width="30" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -2523,7 +2523,7 @@ text {
     y="-9.0" 
     width="28" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2547,7 +2547,7 @@ text {
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -2555,7 +2555,7 @@ text {
     y="-9.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -2649,7 +2649,7 @@ text {
     y="-10.0" 
     width="30" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -2657,7 +2657,7 @@ text {
     y="-9.0" 
     width="28" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2681,7 +2681,7 @@ text {
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -2689,7 +2689,7 @@ text {
     y="-9.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -2783,7 +2783,7 @@ text {
     y="-10.0" 
     width="30" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -2791,7 +2791,7 @@ text {
     y="-9.0" 
     width="28" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2815,7 +2815,7 @@ text {
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -2823,7 +2823,7 @@ text {
     y="-9.0" 
     width="78" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -3030,7 +3030,7 @@ text {
     y="80.0" 
     width="120" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><rect
  class="block label__bodyinner" 
@@ -3038,7 +3038,7 @@ text {
     y="81.0" 
     width="118" 
     height="18" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><path 
     class="lline" 
@@ -3136,7 +3136,7 @@ text {
     y="0" 
     width="1196" 
     height="121" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="legend"
@@ -3151,7 +3151,7 @@ text {
     y="-4" 
     width="488" 
     height="120" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="legend-entry gnd"
@@ -3166,7 +3166,7 @@ text {
     y="0" 
     width="160" 
     height="28" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -3181,7 +3181,7 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -3206,7 +3206,7 @@ text {
     y="0" 
     width="160" 
     height="28" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -3221,7 +3221,7 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -3246,7 +3246,7 @@ text {
     y="0" 
     width="160" 
     height="28" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -3261,7 +3261,7 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -3286,7 +3286,7 @@ text {
     y="0" 
     width="160" 
     height="28" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -3301,7 +3301,7 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -3326,7 +3326,7 @@ text {
     y="0" 
     width="160" 
     height="28" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -3341,7 +3341,7 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -3366,7 +3366,7 @@ text {
     y="0" 
     width="160" 
     height="28" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -3381,7 +3381,7 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -3406,7 +3406,7 @@ text {
     y="0" 
     width="160" 
     height="28" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -3421,7 +3421,7 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -3446,7 +3446,7 @@ text {
     y="0" 
     width="160" 
     height="28" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -3461,7 +3461,7 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -3486,7 +3486,7 @@ text {
     y="0" 
     width="160" 
     height="28" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -3501,7 +3501,7 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -3526,7 +3526,7 @@ text {
     y="0" 
     width="160" 
     height="28" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -3541,7 +3541,7 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="0" 
+    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text

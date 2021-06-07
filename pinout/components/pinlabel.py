@@ -1,158 +1,130 @@
 import warnings
+import copy
 from pinout import core
 from pinout.components import leaderline as lline
+from pinout import config
 
 
-class Base(core.Group):
-    def __init__(self, **kwargs):
-        self.offset = core.Coords(*kwargs.pop("offset", (1, 1)))
-        kwargs["tag"] = ("label " + kwargs.pop("tag", "")).strip()
-        super().__init__(**kwargs)
+class PinLabelBody(core.SvgShape):
+    def __init__(self, x, y, width, height, **kwargs):
+        super().__init__(x=x, y=y, width=width, height=height, **kwargs)
+
+    def bounding_coords(self):
+        # PinLabelBody origin is vertically centered
+        return core.BoundingCoords(
+            self.x,
+            self.y - (self.height / 2),
+            self.x + self.width,
+            self.y + (self.height / 2),
+        )
+
+    def render(self):
+        body = core.Rect(
+            x=self.x,
+            y=self.y - (self.height / 2),
+            width=self.width,
+            height=self.height,
+        )
+        body.add_tag("label__body")
+        return body.render()
 
 
-class Label(Base):
+class Label(core.Group):
     def __init__(
         self,
-        content,
+        content="",
+        tag=None,
         x=0,
         y=0,
-        width=60,
-        height=24,
-        tag="",
-        r=0,
-        offset=(18, 0),
-        clip=False,
+        offset=config.pinlabel_offset,
+        body=None,
         leaderline=None,
         **kwargs,
     ):
+        super().__init__(x, y, tag=tag, **kwargs)
         self.content = content
-        scale = core.Coords(*kwargs.pop("scale", (1, 1)))
-        super().__init__(x=x, y=y, tag=tag, scale=scale, offset=offset, **kwargs)
+        self.offset = core.Coords(*offset)
 
-        if self.offset.x < 0:
-            msg = f"""
-                {self}:
-                Negative value in Label.offset.x has unexpected results!
-                Use Label.scale=(-1, 1) to 'flip' a label horizontally instead.
-                """
-            warnings.warn(msg)
+        self.body = body or PinLabelBody(*offset, **config.pinlabel_body)
+        self.leaderline = leaderline or lline.Curved("hh")
 
-        ##########################
-        # Clipping mask
-        clip_id = None
-        if clip:
-            clip_path = self.add_def(core.ClipPath())
-            clip_id = clip_path.uuid
-            clip_path.add(
-                core.Rect(
-                    r=r,
-                    x=self.offset.x,
-                    y=self.offset.y - (height / 2),
-                    width=width,
-                    height=height,
-                    tag="label__body-clip",
-                    **kwargs,
-                )
-            )
-
-        ##########################
-        # Label body
-        self.label_body = self.add(
-            core.Rect(
-                r=r,
-                x=self.offset.x,
-                y=self.offset.y - (height / 2),
-                width=width,
-                height=height,
-                tag="label__body",
-                clip_id=clip_id,
-                **kwargs,
-            )
-        )
-
-        ##########################
-        # Leaderline
-        leaderline = leaderline or lline.Curved(direction="hh")
-        leaderline.route(core.Rect(r=0, x=0, y=0, width=0, height=0), self.label_body)
-
-        self.add(leaderline)
+        self.add(self.leaderline)
+        self.add(self.body)
 
     def render(self):
-        # Apply text just before render as scale may change
-
-        x = self.label_body.width / 2 + self.offset.x
+        # Update final body position
+        self.body.x = self.offset.x
+        self.body.y = self.offset.y
+        # Add text content
+        x = self.body.width / 2 + self.offset.x
         y = self.offset.y
         self.add(core.Text(self.content, x=x, y=y, tag="label__text", scale=self.scale))
+        # Route leaderline
+        self.leaderline.route(core.Rect(), self.body)
+
+        self.add_tag("label")
 
         return super().render()
 
 
-class Row(core.Group):
-    def __init__(self, labels, **kwargs):
-        kwargs["tag"] = ("labelrow " + kwargs.pop("tag", "")).strip()
-        scale = core.Coords(*kwargs.pop("scale", (1, 1)))
-        super().__init__(**kwargs)
-
-        for label in labels:
-            if type(label) is tuple:
-                label = Label(*label)
-            elif type(label) is dict:
-                label = Label(**label)
-
-            # pass scale to label instance
-            label.scale = scale
-
-            # Align each label to the end of the previous label.
-            label.x = self.width * scale.x
-            try:
-                prev_label = self.children[-1]
-                label.y = prev_label.y + prev_label.offset.y * scale.y
-            except IndexError:
-                # No children yet
-                label.y = 0
-            self.add(label)
-
-            # self.add(cls(content, x=x, y=y, tag=tag, scale=scale, **config))
-
-    def add(self, label):
-        if issubclass(type(label), Base):
-            self.children.append(label)
-            return label
-        # Only allow Labels to be added to a label Row
-        raise TypeError(label)
-
-
-class Header(core.Group):
-    def __init__(self, pitch, rows, **kwargs):
-        scale = kwargs.pop("scale", (1, 1))
-        super().__init__(**kwargs)
-        pitch = core.Coords(*pitch)
-        for ind, row in enumerate(rows):
-            row_x = pitch.x * ind
-            row_y = pitch.y * ind
-            self.add(Row(labels=row, x=row_x, y=row_y, scale=scale))
-
-
 class PinLabelGroup(core.Group):
-    def __init__(self, labels, **kwargs):
+    def __init__(
+        self,
+        x,
+        y,
+        pin_pitch,
+        label_start,
+        label_pitch,
+        labels,
+        leaderline=None,
+        body=None,
+        **kwargs,
+    ):
         scale = core.Coords(*kwargs.pop("scale", (1, 1)))
-        super().__init__(**kwargs)
+        super().__init__(x=x, y=y, **kwargs)
+
+        # Setup generator for row locations
+        pin_coords = config.pitch_generator((0, 0), pin_pitch)
+        label_coords = config.pitch_generator(label_start, label_pitch)
+
         for row in labels:
             row_group = self.add(core.Group(tag="label__row"))
             for label in row:
+                try:
+                    # Label follows another label in the row
+                    prev_label = row_group.children[-1]
+                    x = prev_label.x + prev_label.width * scale.x
+                    y = prev_label.y + prev_label.offset.y * scale.y
+                    _leaderline = lline.Straight(direction="hh")
+                    offset = config.pinlabel_offset
+
+                except IndexError:
+                    # Start of a new row
+                    x, y = next(pin_coords)
+                    offset = next(label_coords)
+                    _leaderline = copy.deepcopy(leaderline)
 
                 # If data supplied convert to Label
                 if type(label) is tuple:
-                    label = Label(*label)
-                elif type(label) is dict:
-                    label = Label(**label)
+                    content, tag, *args = label
+                    attrs = args[0] if len(args) > 0 else {}
+                    # Update label attributes
+                    attrs["offset"] = attrs.get("offset", offset)
+                    attrs["scale"] = attrs.get("scale", scale)
+                    attrs["body"] = attrs.get("body", body)
+                    attrs["leaderline"] = attrs.get("leaderline", _leaderline)
 
-                # Align labels in row
-                try:
-                    prev_label = row_group.children[-1]
-                    label.y = prev_label.y + prev_label.offset.y * label.scale.y
-                    label.x = prev_label.x + prev_label.width * label.scale.x
-                except IndexError:
-                    # No children yet
-                    pass
+                    label = Label(content, tag, **attrs)
+
+                # Align label within row
+                label.x = x
+                label.y = y
+
                 row_group.add(label)
+
+
+#######################
+# Module config
+
+body = PinLabelBody(x=0, y=0, width=80, height=26)
+leaderline = lline.Curved(direction="hh")

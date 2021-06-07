@@ -57,18 +57,13 @@ class Label(Base):
 
         ##########################
         # Body
-        config = {
-            "x": offset.x,
-            "y": offset.y,
-            "width": 200,
-            "height": len(content) * line_height + text_offset.x * 2,
-        }
-        try:
-            cls, config_overrides = body
-            config.update(config_overrides)
-        except TypeError:
-            cls = Body
-        body = cls(**config)
+        body = body or Body(
+            width=200,
+            height=len(content) * line_height + text_offset.x * 2,
+        )
+        body.x = offset.x
+        body.y = offset.y
+        body.add_tag("annotation__body")
 
         ##########################
         # Leaderline

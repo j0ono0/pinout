@@ -89,6 +89,7 @@ text {
 .annotation__body{
     fill: #e6b413;
     ry: 10px;
+    box-shadow:2px 2px 2px rgba(0,0,0,.6);
 }
 .annotation__target{
     fill: none;
@@ -1311,7 +1312,7 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0.0 5 L 0.0 3.125 C 0.0 24.5 160.0 24.5 160.0 45.875 L 160.0 44" 
+    d="M 0.0 5 L 0.0 1.875 C 0.0 27.5 110.0 27.5 110.0 53.125 L 110.0 50" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
@@ -1324,22 +1325,22 @@ text {
     shape-rendering="geometricPrecision"
 /><rect
  class="annotation__body" 
-    x="-10" 
-    y="44" 
-    width="340" 
-    height="54" 
+    x="-20" 
+    y="50" 
+    width="260" 
+    height="80" 
     rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="textblock"
     transform="
-        translate(2 61.0) 
+        translate(0 56.0) 
         scale(1 1)
     "
 >
         <text
     transform="
-        translate(0 0) 
+        translate(0 44) 
         scale(1 -1)
     "  
 >

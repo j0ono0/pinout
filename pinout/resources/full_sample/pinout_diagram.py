@@ -105,33 +105,16 @@ graphic.add(
 graphic.add(
     annotation.Label(
         ["USB-C connector", "Host/device functionality"],
-        offset=(-10, 44),
-        text_offset=(12, 0),
+        offset=(-20, 50),
+        text_offset=(20, 15),
         x=110,
         y=20,
         scale=(1, -1),
-        body=(
-            Rect,
-            {"x": -10, "y": 44, "width": 340, "height": 54, "tag": "annotation__body"},
-        ),
+        body=Rect(0, 0, 260, 80),
     )
 )
 
 """
-# Add pinlabels
-pinlabel_config = cmpt.Component.config["pinlabel"]
-for data in pindata:
-    panel_main.add(cmpt.PinLabelSet(**data, config=pinlabel_config))
-
-# Add an annotation sample
-panel_main.add(
-    cmpt.Annotation(
-        "USB-C connector  \nHost/Device functionality",
-        x=110,
-        y=20,
-        config=cmpt.Component.config["annotation"],
-    )
-)
 
 # Add pinlabel legend panel
 panel_legend = diagram.add(cmpt.Panel(x=500, y=0, tag="legend__pinlabels"))

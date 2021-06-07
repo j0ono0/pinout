@@ -60,6 +60,44 @@ def pitch_generator(start, pitch):
         y += pitch[1]
 
 
-# Pinlabel defaults
+###########################
+#
+# Defaults
+#
+
+# Pinlabel
 pinlabel_body = {"width": 80, "height": 26}
 pinlabel_offset = (6, 0)
+
+
+# Annotation
+annotation = {
+    "body": {
+        "width": 200,
+        "height": 60,
+        "offset": (60, 60),
+        "tag": "annotation__body",
+    },
+    "target": {
+        "width": 10,
+        "height": 10,
+        "tag": "annotation__target",
+    },
+    "text": {
+        "line_height": 22,
+        "offset": (0, 0),
+    },
+    "leaderline": {
+        "direction": "vv",
+    },
+}
+
+annotation_body_width = 200
+annotation_body_height = 60
+annotation_body_offset = (0, 0)
+
+annotation_target_width = 10
+annotation_target_height = 10
+
+annotation_text_line_height = 22
+annotation_text_offset = (0, 0)

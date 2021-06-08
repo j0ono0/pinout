@@ -5,7 +5,7 @@
 #
 ###########################################
 
-from pinout.core import Diagram, Group, Rect, Image
+from pinout.core import Diagram, Group, Rect, Image, Text
 from pinout.components.pinlabel import PinLabelGroup
 from pinout.components.annotation import AnnotationLabel
 from pinout.components.type import TextBlock
@@ -25,15 +25,15 @@ diagram.add_stylesheet("styles.css", True)
 
 # Create some panels to group content together
 # and add backgrounds to them
-panel_main = diagram.add(Group(2, 75, "panel--main"))
-panel_main.add(Rect(0, 0, 1196, 598, "bg"))
+panel_main = diagram.add(Group(2, 2, "panel--main"))
+panel_main.add(Rect(0, 0, 856, 671, "bg"))
 
-panel_meta = diagram.add(Group(2, 2, "panel--meta"))
-panel_meta.add(Rect(0, 0, 1196, 71, "bg"))
+panel_meta = diagram.add(Group(860, 2, "panel--meta"))
+panel_meta.add(Rect(0, 0, 338, 671, "bg"))
 
 
 # Create a group to hold the pinout-diagram components.
-graphic = panel_main.add(Group(410, 175))
+graphic = panel_main.add(Group(325, 200))
 
 # Add and embed an image
 graphic.add(Image("hardware.png", width=220, height=300, embed=True))
@@ -125,22 +125,17 @@ graphic.add(
     )
 )
 
+panel_meta.add(Text(data.title, x=10, y=40))
 panel_meta.add(
     TextBlock(
-        [
-            "*pinout* is a Python application",
-            "that creates SVG diagrams. Development is active",
-            "and ongoing to convert a promising idea",
-            "into a useful tool to assist",
-            "with documentation of electronic hardware.",
-        ],
+        data.desc.split("\n"),
         x=10,
-        y=20,
+        y=220,
         line_height=18,
     )
 )
 
-panel_main.add(Legend(data.legend, x=850, y=20))
+panel_meta.add(Legend(data.legend, x=0, y=60, max_height=112))
 
 # Export final SVG diagram
 diagram.export("pinout_diagram.svg", True)

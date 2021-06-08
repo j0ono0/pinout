@@ -74,6 +74,16 @@ legend = {
     "max_height": None,
     "inset": (8, 8, 8, 8),
     "tag": "legend",
+    "swatch": {
+        "width": 20,
+        "height": 20,
+        "tag": "swatch",
+    },
+    "entry": {
+        "width": 160,
+        "height": 28,
+        "tag": "legend-entry",
+    },
 }
 
 # TextBlock

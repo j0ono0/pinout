@@ -1,37 +1,44 @@
-from pinout import core
+from pinout import core, config
 
 
 class Swatch(core.Group):
-
-    width = 20
-    height = 20
-    r = 0
-
-    def __init__(self, width=None, height=None, r=None, **kwargs):
-        r = r or Swatch.r
-        width = width or Swatch.width
-        height = height or Swatch.height
+    def __init__(self, width=None, height=None, **kwargs):
         super().__init__(**kwargs)
+        self.update_config(config.legend["swatch"])
+        width = width or self.config["width"]
+        height = height or self.config["height"]
 
         # Rect aligned left hand edge, vertically centered around origin.
-        shape = self.add(core.Rect(r=r, y=-height / 2, width=width, height=height))
+        shape = self.add(core.Rect(y=-height / 2, width=width, height=height))
         self.add_tag("swatch")
         shape.add_tag("swatch__body")
 
 
 class LegendEntry(core.Group):
-    def __init__(self, content, tag=None, width=160, height=28, swatch=None, **kwargs):
-        swatch = swatch or Swatch()
-        kwargs["tag"] = tag
+    def __init__(
+        self,
+        content,
+        width=None,
+        height=None,
+        swatch=None,
+        **kwargs,
+    ):
+
         super().__init__(**kwargs)
-        self.add_tag("legend-entry")
+        self.update_config(config.legend["entry"])
+        width = width or self.config["width"]
+        height = height or self.config["height"]
+        swatch = swatch or {}
+        self.add_tag(self.config["tag"])
+
+        if isinstance(swatch, dict):
+            swatch = Swatch(**swatch)
 
         self.add(
             core.Rect(
-                r=0,
                 width=width,
                 height=height,
-                tag="legend-entry__bg",
+                tag=f"{self.config['tag']}__bg",
             ),
         )
 
@@ -44,35 +51,53 @@ class LegendEntry(core.Group):
                 content,
                 x=swatch.bounding_coords().x2 + swatch.x,
                 y=self.height / 2,
-                tag="legend-entry__text",
+                tag=f"{self.config['tag']}__text",
             )
         )
 
 
 class Legend(core.Group):
-    def __init__(self, entries, max_height=104, inset=(8, 8, 8, 8), **kwargs):
+    def __init__(
+        self,
+        data,
+        max_height=None,
+        inset=None,
+        swatch=None,
+        entry=None,
+        **kwargs,
+    ):
+
         super().__init__(**kwargs)
+
+        self.update_config(config.legend)
+        self.add_tag(self.config["tag"])
+
+        swatch = swatch or {}
+        entry = entry or {}
+
+        inset = inset or self.config["inset"]
         inset = core.BoundingCoords(*inset)
-        self.add_tag("legend")
+        max_height = max_height or self.config["max_height"]
 
         x = 0
         y = 0
 
-        for entry in entries:
-            # Convert tuple or dict into default LegendEntry
+        for entry in data:
+
             if type(entry) is tuple:
-                entry = LegendEntry(*entry)
-            elif type(entry) is dict:
-                entry = LegendEntry(**entry)
-            entry.x = x
-            entry.y = y
+                content, tag, *args = entry
+                attrs = args[0] if len(args) > 0 else {}
+                entry = LegendEntry(content, tag=tag, **attrs, scale=self.scale)
 
             self.add(entry)
 
-            y += entry.height
-            if y >= max_height:
+            # Position entry in legend
+            if max_height is not None and y + entry.height > max_height:
                 x = self.width
                 y = 0
+            entry.x = x
+            entry.y = y
+            y += entry.height
 
         # Add a background Rect and offset origin
         self.x += inset.x1

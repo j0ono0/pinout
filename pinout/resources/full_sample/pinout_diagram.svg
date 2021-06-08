@@ -76,6 +76,7 @@ text {
 }
 .legend .swatch__body{
     fill: rgba(0,0,0,0);
+    ry: 2px;
 }
 .legend-entry__text{
     dominant-baseline: central;
@@ -111,9 +112,8 @@ text {
 /*************************************/
 /* Legend                            */
 .legend__bg{
-    stroke: #ccc;
-    stroke-width: 1px;
-    ry: 8px;
+    stroke: rgb(36, 36, 36);
+    stroke-width: 2px;
 }
 .legend-entry .swatch__body{
     fill: #ccc;
@@ -199,6 +199,19 @@ text {
     stroke: rgb(28, 119, 123);
 }
 
+/* typography styles */
+
+.h1 {
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+}
+.italic{
+    font-style: italic;
+}
+.strong{
+    font-weight: bold;
+}
     ]]>  
 </style>
 <rect
@@ -212,7 +225,7 @@ text {
 /><g 
         class="panel--main"
     transform="
-        translate(2 75) 
+        translate(2 2) 
         scale(1 1)
     "
 >
@@ -220,13 +233,13 @@ text {
  class="bg" 
     x="0" 
     y="0" 
-    width="1196" 
-    height="598" 
+    width="856" 
+    height="671" 
     rx="" 
     shape-rendering="geometricPrecision"
 /><g 
     transform="
-        translate(410 175) 
+        translate(325 200) 
         scale(1 1)
     "
 >
@@ -1433,10 +1446,83 @@ text {
 </g>
 </g>
 </g>
+</g>
+</g><g 
+        class="panel--meta"
+    transform="
+        translate(860 2) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="bg" 
+    x="0" 
+    y="0" 
+    width="338" 
+    height="671" 
+    rx="" 
+    shape-rendering="geometricPrecision"
+/><text
+    transform="
+        translate(10 40) 
+        scale(1 1)
+    "  
+>
+    <tspan class='h1'>pinout</tspan>
+</text><g 
+        class="textblock"
+    transform="
+        translate(10 220) 
+        scale(1 1)
+    "
+>
+        <text
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "  
+>
+    <tspan class='italic'>pinout</tspan> is a Python application to assist
+</text><text
+    transform="
+        translate(0 18) 
+        scale(1 1)
+    "  
+>
+    with documentation of electronic hardware. 
+</text><text
+    transform="
+        translate(0 36) 
+        scale(1 1)
+    "  
+>
+    Development is active with a goal to convert 
+</text><text
+    transform="
+        translate(0 54) 
+        scale(1 1)
+    "  
+>
+    a promising idea into a useful tool.
+</text><text
+    transform="
+        translate(0 72) 
+        scale(1 1)
+    "  
+>
+    
+</text><text
+    transform="
+        translate(0 90) 
+        scale(1 1)
+    "  
+>
+    More info: <tspan class='strong'>www.readthedocs.pinout</tspan>
+</text>
 </g><g 
         class="legend"
     transform="
-        translate(858 28) 
+        translate(8 68) 
         scale(1 1)
     "
 >
@@ -1729,65 +1815,6 @@ text {
     PWM
 </text>
 </g>
-</g>
-</g><g 
-        class="panel--meta"
-    transform="
-        translate(2 2) 
-        scale(1 1)
-    "
->
-        <rect
- class="bg" 
-    x="0" 
-    y="0" 
-    width="1196" 
-    height="71" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><g 
-        class="textblock"
-    transform="
-        translate(10 20) 
-        scale(1 1)
-    "
->
-        <text
-    transform="
-        translate(0 0) 
-        scale(1 1)
-    "  
->
-    *pinout* is a Python application
-</text><text
-    transform="
-        translate(0 18) 
-        scale(1 1)
-    "  
->
-    that creates SVG diagrams. Development is active
-</text><text
-    transform="
-        translate(0 36) 
-        scale(1 1)
-    "  
->
-    and ongoing to convert a promising idea
-</text><text
-    transform="
-        translate(0 54) 
-        scale(1 1)
-    "  
->
-    into a useful tool to assist
-</text><text
-    transform="
-        translate(0 72) 
-        scale(1 1)
-    "  
->
-    with documentation of electronic hardware.
-</text>
 </g>
 </g>
     

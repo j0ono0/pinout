@@ -8,6 +8,7 @@ legend = [
     ("PWM", "pwm"),
 ]
 
+# Pinlabels
 rhs = [
     [
         ("Vcc", "pwr--3v3"),
@@ -82,3 +83,14 @@ aux = [
         ("PWM", "pwm"),
     ],
 ]
+
+# Text
+
+title = "<tspan class='h1'>pinout</tspan>"
+
+desc = """<tspan class='italic'>pinout</tspan> is a Python application to assist
+with documentation of electronic hardware. 
+Development is active with a goal to convert 
+a promising idea into a useful tool.
+
+More info: <tspan class='strong'>www.readthedocs.pinout</tspan>"""

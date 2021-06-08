@@ -62,6 +62,7 @@ text {
 }
 .legend .swatch__body{
     fill: rgba(0,0,0,0);
+    ry: 2px;
 }
 .legend-entry__text{
     dominant-baseline: central;
@@ -97,9 +98,8 @@ text {
 /*************************************/
 /* Legend                            */
 .legend__bg{
-    stroke: #ccc;
-    stroke-width: 1px;
-    ry: 8px;
+    stroke: rgb(36, 36, 36);
+    stroke-width: 2px;
 }
 .legend-entry .swatch__body{
     fill: #ccc;
@@ -183,4 +183,18 @@ text {
 }
 .pwm .lline{
     stroke: rgb(28, 119, 123);
+}
+
+/* typography styles */
+
+.h1 {
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+}
+.italic{
+    font-style: italic;
+}
+.strong{
+    font-weight: bold;
 }

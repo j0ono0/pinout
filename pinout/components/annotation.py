@@ -2,6 +2,8 @@ from pinout import core
 from pinout.components import type
 from pinout.components import leaderline as lline
 
+from pinout import config
+
 
 class Base(core.Group):
     def __init__(self, **kwargs):
@@ -10,80 +12,78 @@ class Base(core.Group):
         super().__init__(**kwargs)
 
 
+class Leaderline(lline.Curved):
+    pass
+
+
 class Target(core.Rect):
     def __init__(self, **kwargs):
         kwargs["tag"] = ("annotation__target " + kwargs.pop("tag", "")).strip()
         super().__init__(**kwargs)
 
 
-class Body(core.Rect):
-    def __init__(self, **kwargs):
-        kwargs["tag"] = ("annotation__body " + kwargs.pop("tag", "")).strip()
+class Body(core.Group):
+    def __init__(self, content, width, height, **kwargs):
+        self.content = content
+        self._scale = core.Coords(*kwargs.pop("scale", (1, 1)))
         super().__init__(**kwargs)
 
+        self.update_config(config.annotation["text"])
 
-class Label(Base):
+        # Add a 'spacer' (non-rendering) SvgShape so component
+        # reports correct size before Body.render() called.
+        self.add(core.SvgShape(width=width, height=height))
+
+    def render(self):
+        # Assemble at render as attributes may have
+        # changed since instatiation.
+        self.add(core.Rect(0, 0, self.width, self.height))
+
+        if self._scale.x < 0:
+            self.config["x"] = self.width - self.config["x"]
+        if self._scale.y < 0:
+            self.config["y"] = self.height - self.config["y"]
+
+        self.add(
+            type.TextBlock(
+                self.content,
+                scale=self._scale,
+                **self.config,
+            )
+        )
+
+        return super().render()
+
+
+class AnnotationLabel(Base):
     def __init__(
         self,
         content,
-        line_height=22,
-        offset=(0, 0),
-        text_offset=None,
         body=None,
         leaderline=None,
         target=None,
         **kwargs,
     ):
         self.content = content
+        body = body or {}
+        leaderline = leaderline or {}
+        target = target or {}
         super().__init__(**kwargs)
-        offset = core.Coords(*offset)
-        text_offset = core.Coords(*text_offset)
-        scale = core.Coords(*kwargs.get("scale", core.Coords(1, 1)))
 
-        ##########################
-        # Target
-        config = {
-            "x": -5,
-            "y": -5,
-            "width": 10,
-            "height": 10,
-        }
-        try:
-            cls, config_overrides = target
-            config.update(config_overrides)
-        except TypeError:
-            cls = Target
-        target = cls(**config)
+        self.update_config(config.annotation)
 
-        ##########################
-        # Body
-        body = body or Body(
-            width=200,
-            height=len(content) * line_height + text_offset.x * 2,
-        )
-        body.x = offset.x
-        body.y = offset.y
-        body.add_tag("annotation__body")
+        # add annotation sub-components
+        leaderline = self.add_component(Leaderline, "leaderline", leaderline)
+        target = self.add_component(Target, "target", target)
+        body = self.add_component(Body, "body", body, self.scale)
 
-        ##########################
-        # Leaderline
-        leaderline = leaderline or lline.Curved(direction="vv")
+        # Route leaderline once other elements exist
         leaderline.route(target, body)
 
-        self.add(leaderline)
-        self.add(target)
-        self.add(body)
+    def add_component(self, Cls, name, obj, scale=(1, 1)):
 
-        ##########################
-        # Text content
-        if scale.x > 0:
-            x = body.x + text_offset.x
-        else:
-            x = body.x + body.width - text_offset.x
-        y = body.y + text_offset.y * self.scale.y + line_height / 2 + text_offset.x / 2
+        if isinstance(obj, dict):
+            self.config[name].update(obj)
+            obj = Cls(content=self.content, scale=scale, **self.config[name])
 
-        self.add(
-            type.TextBlock(
-                content, line_height, x=x, y=y, width=body.width, scale=scale
-            )
-        )
+        return self.add(obj)

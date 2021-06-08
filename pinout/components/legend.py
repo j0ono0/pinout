@@ -50,7 +50,7 @@ class LegendEntry(core.Group):
 
 
 class Legend(core.Group):
-    def __init__(self, entries, max_height=104, inset=(4, 4, 4, 4), **kwargs):
+    def __init__(self, entries, max_height=104, inset=(8, 8, 8, 8), **kwargs):
         super().__init__(**kwargs)
         inset = core.BoundingCoords(*inset)
         self.add_tag("legend")

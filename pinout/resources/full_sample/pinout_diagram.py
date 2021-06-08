@@ -6,8 +6,11 @@
 ###########################################
 
 from pinout.core import Diagram, Group, Rect, Image
-from pinout.components import pinlabel, annotation
+from pinout.components.pinlabel import PinLabelGroup
+from pinout.components.annotation import AnnotationLabel
+from pinout.components.type import TextBlock
 from pinout.components import leaderline as lline
+from pinout.components.legend import Legend
 
 import data
 
@@ -22,16 +25,15 @@ diagram.add_stylesheet("styles.css", True)
 
 # Create some panels to group content together
 # and add backgrounds to them
-panel_meta = diagram.add(Group(2, 2, "panel--meta"))
-panel_meta.add(Rect(0, 0, 1196, 71, "bg"))
-
 panel_main = diagram.add(Group(2, 75, "panel--main"))
 panel_main.add(Rect(0, 0, 1196, 598, "bg"))
 
+panel_meta = diagram.add(Group(2, 2, "panel--meta"))
+panel_meta.add(Rect(0, 0, 1196, 71, "bg"))
+
 
 # Create a group to hold the pinout-diagram components.
-graphic = panel_main.add(Group(510, 140))
-
+graphic = panel_main.add(Group(410, 175))
 
 # Add and embed an image
 graphic.add(Image("hardware.png", width=220, height=300, embed=True))
@@ -39,7 +41,7 @@ graphic.add(Image("hardware.png", width=220, height=300, embed=True))
 
 # Add a pinlabels to the right header
 graphic.add(
-    pinlabel.PinLabelGroup(
+    PinLabelGroup(
         x=204,
         y=106,
         pin_pitch=(0, 30),
@@ -51,7 +53,7 @@ graphic.add(
 
 # Add a pinlabels to the left header
 graphic.add(
-    pinlabel.PinLabelGroup(
+    PinLabelGroup(
         x=16,
         y=106,
         pin_pitch=(0, 30),
@@ -64,7 +66,7 @@ graphic.add(
 
 # Add a pinlabels to the left header
 graphic.add(
-    pinlabel.PinLabelGroup(
+    PinLabelGroup(
         x=65,
         y=284,
         pin_pitch=(30, 0),
@@ -78,7 +80,7 @@ graphic.add(
 
 # Add a pinlabels to the left header
 graphic.add(
-    pinlabel.PinLabelGroup(
+    PinLabelGroup(
         x=155,
         y=284,
         pin_pitch=(-30, 0),
@@ -90,7 +92,7 @@ graphic.add(
 )
 
 graphic.add(
-    pinlabel.PinLabelGroup(
+    PinLabelGroup(
         x=47,
         y=80,
         scale=(-1, -1),
@@ -102,51 +104,43 @@ graphic.add(
     )
 )
 
+
 graphic.add(
-    annotation.Label(
+    AnnotationLabel(
         ["USB-C connector", "Host/device functionality"],
-        offset=(-20, 50),
-        text_offset=(20, 15),
         x=110,
-        y=20,
-        scale=(1, -1),
-        body=Rect(0, 0, 260, 80),
-    )
-)
-
-"""
-
-# Add pinlabel legend panel
-panel_legend = diagram.add(cmpt.Panel(x=500, y=0, tag="legend__pinlabels"))
-
-panel_legend.add(
-    cmpt.Legend(
-        x=-234,
-        y=380,
-        categories=["analog", "comms", "gpio", "led", "pwm", "pwr"],
-        config=cmpt.Component.config["legend"],
-    )
-)
-
-# Calculate left over space
-x = panel_legend.x
-y = panel_legend.height + 20  # INVESTIGATE: padding not in dimensions???
-w = panel_legend.width + 20
-h = panel_main.height - panel_legend.height + 30  ### NOTSURE  WHY THIS IS OUT?
-
-panel_text = diagram.add(
-    cmpt.Panel(x=x, y=y, width=w, height=h, tag="experimental_text")
-)
-panel_text.add(
-    elem.TextBlock(
-        text_content="*pinout* is a Python application \nthat creates SVG diagrams. Development is active \nand ongoing to convert a promising idea \ninto a useful tool to assist \nwith documentation of electronic hardware.",
-        x=0,
         y=0,
-        width=w,
-        height=h,
-        config=cmpt.Component.config["label"],
+        scale=(1, -1),
     )
 )
-"""
+
+graphic.add(
+    AnnotationLabel(
+        ["Onboard", "LED"],
+        x=86.5,
+        y=85,
+        scale=(1, -1),
+        target={"x": -20, "y": -20, "width": 40, "height": 40},
+        body={"y": 168, "width": 125},
+    )
+)
+
+panel_meta.add(
+    TextBlock(
+        [
+            "*pinout* is a Python application",
+            "that creates SVG diagrams. Development is active",
+            "and ongoing to convert a promising idea",
+            "into a useful tool to assist",
+            "with documentation of electronic hardware.",
+        ],
+        x=10,
+        y=20,
+        line_height=18,
+    )
+)
+
+panel_main.add(Legend(data.legend, x=850, y=20))
+
 # Export final SVG diagram
 diagram.export("pinout_diagram.svg", True)

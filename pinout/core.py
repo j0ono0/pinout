@@ -1,5 +1,6 @@
 import base64
 import uuid
+import copy
 from collections import namedtuple
 from . import file_manager, templates
 import pathlib
@@ -38,6 +39,7 @@ class Layout(TransformMixin):
         self.y = y
         self.children = []
         self.defs = []
+        self.config = {}
 
     def add(self, instance):
         self.children.append(instance)
@@ -52,6 +54,9 @@ class Layout(TransformMixin):
             self.tag = tag
         else:
             self.tag = " ".join([tag, self.tag])
+
+    def update_config(self, vals):
+        self.config.update(copy.deepcopy(vals))
 
     def bounding_rect(self):
         x1, y1, x2, y2 = self.bounding_coords()
@@ -220,6 +225,14 @@ class SvgShape(TransformMixin):
             self.tag = tag
         else:
             self.tag = " ".join([tag, self.tag])
+
+    def render(self):
+        """Return SVG markup.
+
+        :return: Empty string
+        :rtype: str
+        """
+        return ""
 
 
 class Path(SvgShape):

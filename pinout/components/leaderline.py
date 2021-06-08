@@ -1,7 +1,7 @@
 from pinout import core
 
 
-class Base(core.SvgShape):
+class Leaderline(core.SvgShape):
     def __init__(self, direction="hh", **kwargs):
         self.direction = direction
         self.path_def = ""
@@ -44,7 +44,7 @@ class Base(core.SvgShape):
         return path.render()
 
 
-class Curved(Base):
+class Curved(Leaderline):
     def route(self, origin, destination):
 
         o_coords = origin.bounding_coords()
@@ -103,7 +103,7 @@ class Curved(Base):
         self.path_def = path_def
 
 
-class Angled(Base):
+class Angled(Leaderline):
     def route(self, origin, destination):
 
         start, end = self.end_points(origin, destination)
@@ -152,7 +152,7 @@ class Angled(Base):
         self.path_def = path_def
 
 
-class Straight(Base):
+class Straight(Leaderline):
     def route(self, origin, destination):
 
         start, end = self.end_points(origin, destination)

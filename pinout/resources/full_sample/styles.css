@@ -72,24 +72,37 @@ text {
 /*************************************/
 /* Annotation                        */
 
-.annotation__body{
-    fill: #e6b413;
-    ry: 10px;
-    box-shadow:2px 2px 2px rgba(0,0,0,.6);
+.annotation__body rect{
+    fill: rgb(230, 180, 10);
+    stroke-width: 0;
+    ry: 30px;
+}
+.annotation__body text{
+    dominant-baseline: central;
+    font-size: 18px;
+    fill: #000;
 }
 .annotation__target{
     fill: none;
-    stroke: #e6b413;
-    stroke-width: 3px;
-}
-.annotation text{
-    dominant-baseline: central;
-    font-size: 18px;
-    fill: #fff;
+    stroke: rgb(230, 180, 10);
+    stroke-width: 4px;
+    ry: 100%;
 }
 .annotation .lline{
-    stroke: #e6b413;
-    stroke-width: 3px;
+    stroke: rgb(230, 180, 10);
+    stroke-width: 4px;
+}
+
+
+/*************************************/
+/* Legend                            */
+.legend__bg{
+    stroke: #ccc;
+    stroke-width: 1px;
+    ry: 8px;
+}
+.legend-entry .swatch__body{
+    fill: #ccc;
 }
 
 /*
@@ -112,10 +125,11 @@ text {
     fill: #f4f4f4;
 }
 
-/* PinLabels */
+/* PinLabels & legend */
 
 [class^="pwr"] .label__body,
-[class*=" pwr"] .label__body{
+[class*=" pwr"] .label__body,
+.pwr .swatch__body{
     fill: rgb(173, 0, 0);
 }
 [class^="pwr"] .lline,
@@ -123,38 +137,50 @@ text {
     stroke: rgb(173, 0, 0);
 }
 
-[class^="gpio"] .label__body,
-[class*=" gpio"] .label__body{
+.gpio .label__body,
+.gpio .swatch__body{
     fill: rgb(130, 139, 48);
 }
-[class^="gpio"] .lline,
-[class*=" gpio"] .lline{
+.gpio .lline{
     stroke: rgb(130, 139, 48);
 }
 
-[class^="analog"] .label__body,
-[class*=" analog"] .label__body{
+.analog .label__body,
+.analog .swatch__body{
     fill: rgb(18, 96, 133);
 }
-[class^="analog"] .lline,
-[class*=" analog"] .lline{
+.analog .lline{
     stroke: rgb(18, 96, 133);
 }
 
-[class^="led"] .label__body,
-[class*=" led"] .label__body{
-    fill: rgb(216, 158, 0);
+.led .label__body,
+.led .swatch__body{
+    fill: rgb(230, 180, 10);
 }
-[class^="led"] .lline,
-[class*=" led"] .lline{
-    stroke: rgb(216, 158, 0);
+.led .lline{
+    stroke: rgb(230, 180, 10);
 }
 
-[class^="comms"] .label__body,
-[class*=" comms"] .label__body{
+.comms .label__body,
+.comms .swatch__body{
     fill: rgb(182, 69, 176);
 }
-[class^="comms"] .lline,
-[class*=" comms"] .lline{
+.comms .lline{
     stroke: rgb(182, 69, 176);
+}
+
+.gnd .label__body,
+.gnd .swatch__body{
+    fill: #000;
+}
+.gnd .lline{
+    stroke: #000;
+}
+
+.pwm .label__body,
+.pwm .swatch__body{
+    fill: rgb(28, 119, 123);
+}
+.pwm .lline{
+    stroke: rgb(28, 119, 123);
 }

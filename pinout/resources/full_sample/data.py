@@ -1,8 +1,12 @@
-from pinout.config import PinConfig
-from pinout import config
-from pinout.components.pinlabel import Label
-from pinout.components import leaderline as lline
-
+legend = [
+    ("Analog", "analog"),
+    ("Communication", "comms"),
+    ("Ground", "gnd"),
+    ("GPIO", "gpio"),
+    ("LED", "led"),
+    ("Power", "pwr"),
+    ("PWM", "pwm"),
+]
 
 rhs = [
     [

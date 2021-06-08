@@ -86,24 +86,37 @@ text {
 /*************************************/
 /* Annotation                        */
 
-.annotation__body{
-    fill: #e6b413;
-    ry: 10px;
-    box-shadow:2px 2px 2px rgba(0,0,0,.6);
+.annotation__body rect{
+    fill: rgb(230, 180, 10);
+    stroke-width: 0;
+    ry: 30px;
+}
+.annotation__body text{
+    dominant-baseline: central;
+    font-size: 18px;
+    fill: #000;
 }
 .annotation__target{
     fill: none;
-    stroke: #e6b413;
-    stroke-width: 3px;
-}
-.annotation text{
-    dominant-baseline: central;
-    font-size: 18px;
-    fill: #fff;
+    stroke: rgb(230, 180, 10);
+    stroke-width: 4px;
+    ry: 100%;
 }
 .annotation .lline{
-    stroke: #e6b413;
-    stroke-width: 3px;
+    stroke: rgb(230, 180, 10);
+    stroke-width: 4px;
+}
+
+
+/*************************************/
+/* Legend                            */
+.legend__bg{
+    stroke: #ccc;
+    stroke-width: 1px;
+    ry: 8px;
+}
+.legend-entry .swatch__body{
+    fill: #ccc;
 }
 
 /*
@@ -126,10 +139,11 @@ text {
     fill: #f4f4f4;
 }
 
-/* PinLabels */
+/* PinLabels & legend */
 
 [class^="pwr"] .label__body,
-[class*=" pwr"] .label__body{
+[class*=" pwr"] .label__body,
+.pwr .swatch__body{
     fill: rgb(173, 0, 0);
 }
 [class^="pwr"] .lline,
@@ -137,41 +151,54 @@ text {
     stroke: rgb(173, 0, 0);
 }
 
-[class^="gpio"] .label__body,
-[class*=" gpio"] .label__body{
+.gpio .label__body,
+.gpio .swatch__body{
     fill: rgb(130, 139, 48);
 }
-[class^="gpio"] .lline,
-[class*=" gpio"] .lline{
+.gpio .lline{
     stroke: rgb(130, 139, 48);
 }
 
-[class^="analog"] .label__body,
-[class*=" analog"] .label__body{
+.analog .label__body,
+.analog .swatch__body{
     fill: rgb(18, 96, 133);
 }
-[class^="analog"] .lline,
-[class*=" analog"] .lline{
+.analog .lline{
     stroke: rgb(18, 96, 133);
 }
 
-[class^="led"] .label__body,
-[class*=" led"] .label__body{
-    fill: rgb(216, 158, 0);
+.led .label__body,
+.led .swatch__body{
+    fill: rgb(230, 180, 10);
 }
-[class^="led"] .lline,
-[class*=" led"] .lline{
-    stroke: rgb(216, 158, 0);
+.led .lline{
+    stroke: rgb(230, 180, 10);
 }
 
-[class^="comms"] .label__body,
-[class*=" comms"] .label__body{
+.comms .label__body,
+.comms .swatch__body{
     fill: rgb(182, 69, 176);
 }
-[class^="comms"] .lline,
-[class*=" comms"] .lline{
+.comms .lline{
     stroke: rgb(182, 69, 176);
 }
+
+.gnd .label__body,
+.gnd .swatch__body{
+    fill: #000;
+}
+.gnd .lline{
+    stroke: #000;
+}
+
+.pwm .label__body,
+.pwm .swatch__body{
+    fill: rgb(28, 119, 123);
+}
+.pwm .lline{
+    stroke: rgb(28, 119, 123);
+}
+
     ]]>  
 </style>
 <rect
@@ -183,22 +210,6 @@ text {
     rx="" 
     shape-rendering="geometricPrecision"
 /><g 
-        class="panel--meta"
-    transform="
-        translate(2 2) 
-        scale(1 1)
-    "
->
-        <rect
- class="bg" 
-    x="0" 
-    y="0" 
-    width="1196" 
-    height="71" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/>
-</g><g 
         class="panel--main"
     transform="
         translate(2 75) 
@@ -215,7 +226,7 @@ text {
     shape-rendering="geometricPrecision"
 /><g 
     transform="
-        translate(510 140) 
+        translate(410 175) 
         scale(1 1)
     "
 >
@@ -1306,48 +1317,55 @@ text {
 </g><g 
         class="annotation"
     transform="
-        translate(110 20) 
+        translate(110 0) 
         scale(1 -1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0.0 5 L 0.0 1.875 C 0.0 27.5 110.0 27.5 110.0 53.125 L 110.0 50" 
+    class="lline annotation__leaderline" 
+    d="M 0.0 10 L 0.0 43.333333333333336 A 6.666666666666667 6.666666666666667 0 0 0 6.666666666666667 50.0 L 40 50.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="annotation__target" 
-    x="-5" 
-    y="-5" 
-    width="10" 
-    height="10" 
+ class="annotation__target annotation__target" 
+    x="-10" 
+    y="-10" 
+    width="20" 
+    height="20" 
     rx="" 
     shape-rendering="geometricPrecision"
-/><rect
- class="annotation__body" 
-    x="-20" 
-    y="50" 
-    width="260" 
-    height="80" 
+/><g 
+        class="annotation__body"
+    transform="
+        translate(40 20) 
+        scale(1 1)
+    "
+>
+        <rect
+ 
+    x="0" 
+    y="0" 
+    width="250" 
+    height="60" 
     rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="textblock"
     transform="
-        translate(0 56.0) 
+        translate(26 38) 
         scale(1 1)
     "
 >
         <text
     transform="
-        translate(0 44) 
+        translate(0 0) 
         scale(1 -1)
     "  
 >
     USB-C connector
 </text><text
     transform="
-        translate(0 22) 
+        translate(0 -18) 
         scale(1 -1)
     "  
 >
@@ -1355,6 +1373,421 @@ text {
 </text>
 </g>
 </g>
+</g><g 
+        class="annotation"
+    transform="
+        translate(86.5 85) 
+        scale(1 -1)
+    "
+>
+        <path 
+    class="lline annotation__leaderline" 
+    d="M 0.0 20 L 0.0 184.66666666666666 A 13.333333333333334 13.333333333333334 0 0 0 13.333333333333334 198.0 L 40 198.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="annotation__target annotation__target" 
+    x="-20" 
+    y="-20" 
+    width="40" 
+    height="40" 
+    rx="" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="annotation__body"
+    transform="
+        translate(40 168) 
+        scale(1 1)
+    "
+>
+        <rect
+ 
+    x="0" 
+    y="0" 
+    width="125" 
+    height="60" 
+    rx="" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="textblock"
+    transform="
+        translate(26 38) 
+        scale(1 1)
+    "
+>
+        <text
+    transform="
+        translate(0 0) 
+        scale(1 -1)
+    "  
+>
+    Onboard
+</text><text
+    transform="
+        translate(0 -18) 
+        scale(1 -1)
+    "  
+>
+    LED
+</text>
+</g>
+</g>
+</g>
+</g><g 
+        class="legend"
+    transform="
+        translate(858 28) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend__bg" 
+    x="-8" 
+    y="-8" 
+    width="336" 
+    height="128" 
+    rx="" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="legend-entry analog"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="160" 
+    height="28" 
+    rx="" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    rx="" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Analog
+</text>
+</g><g 
+        class="legend-entry comms"
+    transform="
+        translate(0 28) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="160" 
+    height="28" 
+    rx="" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    rx="" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Communication
+</text>
+</g><g 
+        class="legend-entry gnd"
+    transform="
+        translate(0 56) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="160" 
+    height="28" 
+    rx="" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    rx="" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Ground
+</text>
+</g><g 
+        class="legend-entry gpio"
+    transform="
+        translate(0 84) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="160" 
+    height="28" 
+    rx="" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    rx="" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    GPIO
+</text>
+</g><g 
+        class="legend-entry led"
+    transform="
+        translate(160 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="160" 
+    height="28" 
+    rx="" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    rx="" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    LED
+</text>
+</g><g 
+        class="legend-entry pwr"
+    transform="
+        translate(160 28) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="160" 
+    height="28" 
+    rx="" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    rx="" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Power
+</text>
+</g><g 
+        class="legend-entry pwm"
+    transform="
+        translate(160 56) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="160" 
+    height="28" 
+    rx="" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    rx="" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    PWM
+</text>
+</g>
+</g>
+</g><g 
+        class="panel--meta"
+    transform="
+        translate(2 2) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="bg" 
+    x="0" 
+    y="0" 
+    width="1196" 
+    height="71" 
+    rx="" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="textblock"
+    transform="
+        translate(10 20) 
+        scale(1 1)
+    "
+>
+        <text
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "  
+>
+    *pinout* is a Python application
+</text><text
+    transform="
+        translate(0 18) 
+        scale(1 1)
+    "  
+>
+    that creates SVG diagrams. Development is active
+</text><text
+    transform="
+        translate(0 36) 
+        scale(1 1)
+    "  
+>
+    and ongoing to convert a promising idea
+</text><text
+    transform="
+        translate(0 54) 
+        scale(1 1)
+    "  
+>
+    into a useful tool to assist
+</text><text
+    transform="
+        translate(0 72) 
+        scale(1 1)
+    "  
+>
+    with documentation of electronic hardware.
+</text>
 </g>
 </g>
     

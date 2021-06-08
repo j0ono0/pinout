@@ -69,35 +69,41 @@ def pitch_generator(start, pitch):
 pinlabel_body = {"width": 80, "height": 26}
 pinlabel_offset = (6, 0)
 
+# Legend
+legend = {
+    "max_height": None,
+    "inset": (8, 8, 8, 8),
+    "tag": "legend",
+}
+
+# TextBlock
+textblock = {
+    "line_height": 22,
+}
 
 # Annotation
 annotation = {
     "body": {
-        "width": 200,
+        "x": 40,
+        "y": 20,
+        "width": 250,
         "height": 60,
-        "offset": (60, 60),
         "tag": "annotation__body",
     },
     "target": {
-        "width": 10,
-        "height": 10,
+        "x": -10,
+        "y": -10,
+        "width": 20,
+        "height": 20,
         "tag": "annotation__target",
     },
     "text": {
-        "line_height": 22,
-        "offset": (0, 0),
+        "x": 26,
+        "y": 22,
+        "line_height": 18,
     },
     "leaderline": {
-        "direction": "vv",
+        "direction": "vh",
+        "tag": "annotation__leaderline",
     },
 }
-
-annotation_body_width = 200
-annotation_body_height = 60
-annotation_body_offset = (0, 0)
-
-annotation_target_width = 10
-annotation_target_height = 10
-
-annotation_text_line_height = 22
-annotation_text_offset = (0, 0)

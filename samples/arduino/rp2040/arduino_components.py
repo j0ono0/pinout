@@ -1,10 +1,11 @@
 # Customised components for Arduino pinout diagram
 from pinout import core
-from pinout.components.pinlabel import Base
+from pinout.components.pinlabel import Label
+from pinout.components.pinlabel import PinLabelBody
 from pinout.components import leaderline as lline
 
 
-class FirstLabel(Base):
+class FirstLabel(Label):
     def __init__(self, content, tag, **kwargs):
         # Extract kwargs that are used locally
         height = kwargs.pop("height")
@@ -29,8 +30,8 @@ class FirstLabel(Base):
         label_body = self.add(
             core.Path(
                 path_definition=path_def,
-                x=self.offset.x,
-                y=self.offset.y - (height / 2),
+                x=self.body.x,
+                y=self.body.y - (height / 2),
                 width=width,
                 height=height,
                 tag="label__body",
@@ -61,8 +62,8 @@ class FirstLabel(Base):
         self.add(
             core.Path(
                 path_definition=path_def,
-                x=self.offset.x,
-                y=self.offset.y - (height / 2),
+                x=self.body.x,
+                y=self.body.y - (height / 2),
                 width=width,
                 height=height,
                 tag="label__bodyinner",
@@ -72,12 +73,12 @@ class FirstLabel(Base):
         self.add(leaderline)
         leaderline.route(core.Rect(), label_body)
 
-        x = label_body.width / 2 + self.offset.x
-        y = self.offset.y
+        x = label_body.width / 2 + self.body.x
+        y = self.body.y
         self.add(core.Text(content, x=x, y=y, tag="label__text", scale=self.scale))
 
 
-class LabelLast(Base):
+class LabelLast(Label):
     def __init__(self, content, tag, **kwargs):
         height = kwargs.pop("height")
         width = kwargs.pop("width")
@@ -98,25 +99,25 @@ class LabelLast(Base):
         label_body = self.add(
             core.Path(
                 path_definition=path_def,
-                x=self.offset.x,
-                y=self.offset.y - (height / 2),
+                x=self.body.x,
+                y=self.body.y - (height / 2),
                 width=width,
                 height=height,
                 tag="label__body",
             )
         )
 
-        if self.offset != (0, 0):
+        if self.body.x != 0:
             self.add(leaderline)
             leaderline.route(core.Rect(), label_body)
 
         # Label text
-        x = label_body.width / 2 + self.offset.x
-        y = self.offset.y
+        x = label_body.width / 2 + self.body.x
+        y = self.body.y
         self.add(core.Text(content, x=x, y=y, tag="label__text", scale=self.scale))
 
 
-class Label(Base):
+class Label(Label):
     def __init__(self, content, tag, **kwargs):
         height = kwargs.pop("height")
         width = kwargs.pop("width")
@@ -128,8 +129,8 @@ class Label(Base):
         # Label body
         label_body = self.add(
             core.Rect(
-                x=self.offset.x,
-                y=self.offset.y - (height / 2),
+                x=self.body.x,
+                y=self.body.y - (height / 2),
                 width=width,
                 height=height,
                 tag="block label__body",
@@ -140,18 +141,18 @@ class Label(Base):
         inset = 2
         self.add(
             core.Rect(
-                x=self.offset.x + inset / 2,
-                y=self.offset.y - (height / 2) + inset / 2,
+                x=self.body.x + inset / 2,
+                y=self.body.y - (height / 2) + inset / 2,
                 width=width - inset,
                 height=height - inset,
                 tag="block label__bodyinner",
             )
         )
 
-        if self.offset != (0, 0):
+        if self.body != (0, 0):
             self.add(leaderline)
             leaderline.route(core.Rect(), label_body)
 
-        x = label_body.width / 2 + self.offset.x
-        y = self.offset.y
+        x = label_body.width / 2 + self.body.x
+        y = self.body.y
         self.add(core.Text(content, x=x, y=y, tag="label__text", scale=self.scale))

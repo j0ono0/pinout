@@ -270,7 +270,6 @@ text {
     y="0" 
     width="1200" 
     height="675" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="panel panel--main"
@@ -285,7 +284,6 @@ text {
     y="0" 
     width="1196" 
     height="548" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="pinout-graphic"
@@ -317,26 +315,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -348,32 +343,23 @@ text {
     D12
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(160 0) 
         scale(1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="2" 
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="3.0" 
-    y="-9.0" 
-    width="78" 
-    height="18" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
-    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -385,21 +371,23 @@ text {
     GPIO4
 </text>
 </g><g 
-        class="label default"
+        class="label default pinlabel"
     transform="
         translate(242 0) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -419,26 +407,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 24.6) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -450,32 +435,23 @@ text {
     D11
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(160 24.6) 
         scale(1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="2" 
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="3.0" 
-    y="-9.0" 
-    width="78" 
-    height="18" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
-    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -487,21 +463,23 @@ text {
     GPIO7
 </text>
 </g><g 
-        class="label default"
+        class="label default pinlabel"
     transform="
         translate(242 24.6) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -521,26 +499,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 49.2) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -552,21 +527,23 @@ text {
     D10
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(160 49.2) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -586,26 +563,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 73.80000000000001) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -617,21 +591,23 @@ text {
     D9
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(160 73.80000000000001) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -651,26 +627,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 98.4) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -682,21 +655,23 @@ text {
     D8
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(160 98.4) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -716,26 +691,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 123.0) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -747,21 +719,23 @@ text {
     D7
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(160 123.0) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -781,26 +755,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 147.6) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -812,21 +783,23 @@ text {
     D6
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(160 147.6) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -846,26 +819,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 172.2) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -877,21 +847,23 @@ text {
     D5
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(160 172.2) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -911,26 +883,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 196.79999999999998) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -942,21 +911,23 @@ text {
     D4
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(160 196.79999999999998) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -976,26 +947,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 221.39999999999998) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1007,21 +975,23 @@ text {
     D3
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(160 221.39999999999998) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1041,26 +1011,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 245.99999999999997) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1072,21 +1039,23 @@ text {
     D2
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(160 245.99999999999997) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1106,32 +1075,23 @@ text {
     "
 >
         <g 
-        class="label gnd"
+        class="label gnd pinlabel"
     transform="
         translate(0 270.59999999999997) 
         scale(1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="80" 
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="81.0" 
-    y="-9.0" 
-    width="78" 
-    height="18" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="lline" 
-    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
-    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1151,26 +1111,23 @@ text {
     "
 >
         <g 
-        class="label other"
+        class="label other pinlabel"
     transform="
         translate(0 295.2) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1182,21 +1139,23 @@ text {
     RESET
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(160 295.2) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1216,26 +1175,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 319.8) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1247,21 +1203,23 @@ text {
     RX
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(160 319.8) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1281,26 +1239,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 344.40000000000003) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1312,21 +1267,23 @@ text {
     TX
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(160 344.40000000000003) 
         scale(1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1353,26 +1310,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 0) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1384,32 +1338,23 @@ text {
     D13
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(-160 0) 
         scale(-1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="2" 
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="3.0" 
-    y="-9.0" 
-    width="78" 
-    height="18" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
-    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1421,21 +1366,23 @@ text {
     GPIO6
 </text>
 </g><g 
-        class="label default"
+        class="label default pinlabel"
     transform="
         translate(-242 0) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1455,32 +1402,23 @@ text {
     "
 >
         <g 
-        class="label pwr"
+        class="label pwr pinlabel"
     transform="
         translate(0 24.6) 
         scale(-1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="80" 
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="81.0" 
-    y="-9.0" 
-    width="78" 
-    height="18" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="lline" 
-    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
-    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1500,26 +1438,23 @@ text {
     "
 >
         <g 
-        class="label other"
+        class="label other pinlabel"
     transform="
         translate(0 49.2) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1531,21 +1466,23 @@ text {
     AREF
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(-160 49.2) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1565,26 +1502,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 73.80000000000001) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="50" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1596,27 +1530,23 @@ text {
     D14
 </text>
 </g><g 
-        class="label analog"
+        class="label analog pinlabel"
     transform="
         translate(-130 73.80000000000001) 
         scale(-1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="0" 
     y="-10.0" 
     width="30" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="1.0" 
-    y="-9.0" 
-    width="28" 
-    height="18" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1628,32 +1558,23 @@ text {
     A0
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(-160 73.80000000000001) 
         scale(-1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="2" 
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="3.0" 
-    y="-9.0" 
-    width="78" 
-    height="18" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
-    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1665,21 +1586,23 @@ text {
     GPIO26
 </text>
 </g><g 
-        class="label default"
+        class="label default pinlabel"
     transform="
         translate(-242 73.80000000000001) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1699,26 +1622,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 98.4) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="50" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1730,27 +1650,23 @@ text {
     D15
 </text>
 </g><g 
-        class="label analog"
+        class="label analog pinlabel"
     transform="
         translate(-130 98.4) 
         scale(-1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="0" 
     y="-10.0" 
     width="30" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="1.0" 
-    y="-9.0" 
-    width="28" 
-    height="18" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1762,32 +1678,23 @@ text {
     A1
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(-160 98.4) 
         scale(-1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="2" 
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="3.0" 
-    y="-9.0" 
-    width="78" 
-    height="18" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
-    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1799,21 +1706,23 @@ text {
     GPIO27
 </text>
 </g><g 
-        class="label default"
+        class="label default pinlabel"
     transform="
         translate(-242 98.4) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1833,26 +1742,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 123.0) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="50" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1864,27 +1770,23 @@ text {
     D16
 </text>
 </g><g 
-        class="label analog"
+        class="label analog pinlabel"
     transform="
         translate(-130 123.0) 
         scale(-1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="0" 
     y="-10.0" 
     width="30" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="1.0" 
-    y="-9.0" 
-    width="28" 
-    height="18" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1896,32 +1798,23 @@ text {
     A2
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(-160 123.0) 
         scale(-1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="2" 
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="3.0" 
-    y="-9.0" 
-    width="78" 
-    height="18" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
-    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1933,21 +1826,23 @@ text {
     GPIO28
 </text>
 </g><g 
-        class="label default"
+        class="label default pinlabel"
     transform="
         translate(-242 123.0) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1967,26 +1862,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 147.6) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="50" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1998,27 +1890,23 @@ text {
     D17
 </text>
 </g><g 
-        class="label analog"
+        class="label analog pinlabel"
     transform="
         translate(-130 147.6) 
         scale(-1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="0" 
     y="-10.0" 
     width="30" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="1.0" 
-    y="-9.0" 
-    width="28" 
-    height="18" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2030,32 +1918,23 @@ text {
     A3
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(-160 147.6) 
         scale(-1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="2" 
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="3.0" 
-    y="-9.0" 
-    width="78" 
-    height="18" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
-    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2067,21 +1946,23 @@ text {
     GPIO29
 </text>
 </g><g 
-        class="label default"
+        class="label default pinlabel"
     transform="
         translate(-242 147.6) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2101,26 +1982,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 172.2) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="50" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2132,27 +2010,23 @@ text {
     D18
 </text>
 </g><g 
-        class="label analog"
+        class="label analog pinlabel"
     transform="
         translate(-130 172.2) 
         scale(-1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="0" 
     y="-10.0" 
     width="30" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="1.0" 
-    y="-9.0" 
-    width="28" 
-    height="18" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2164,32 +2038,23 @@ text {
     A4
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(-160 172.2) 
         scale(-1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="2" 
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="3.0" 
-    y="-9.0" 
-    width="78" 
-    height="18" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
-    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2201,21 +2066,23 @@ text {
     GPIO12
 </text>
 </g><g 
-        class="label default"
+        class="label default pinlabel"
     transform="
         translate(-242 172.2) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2235,26 +2102,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 196.79999999999998) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="50" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2266,27 +2130,23 @@ text {
     D19
 </text>
 </g><g 
-        class="label analog"
+        class="label analog pinlabel"
     transform="
         translate(-130 196.79999999999998) 
         scale(-1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="0" 
     y="-10.0" 
     width="30" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="1.0" 
-    y="-9.0" 
-    width="28" 
-    height="18" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2298,32 +2158,23 @@ text {
     A5
 </text>
 </g><g 
-        class="label mu-port"
+        class="label mu-port pinlabel"
     transform="
         translate(-160 196.79999999999998) 
         scale(-1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="2" 
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="3.0" 
-    y="-9.0" 
-    width="78" 
-    height="18" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
-    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2335,21 +2186,23 @@ text {
     GPIO13
 </text>
 </g><g 
-        class="label default"
+        class="label default pinlabel"
     transform="
         translate(-242 196.79999999999998) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2369,26 +2222,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 221.39999999999998) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="50" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2400,27 +2250,23 @@ text {
     D20
 </text>
 </g><g 
-        class="label analog"
+        class="label analog pinlabel"
     transform="
         translate(-130 221.39999999999998) 
         scale(-1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="0" 
     y="-10.0" 
     width="30" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="1.0" 
-    y="-9.0" 
-    width="28" 
-    height="18" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2432,26 +2278,28 @@ text {
     A6
 </text>
 </g><g 
-        class="label default show-leader"
+        class="label default show-leader pinlabel"
     transform="
         translate(-160 221.39999999999998) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(84 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 10.5 0.0 C 42.0 0.0 42.0 0.0 73.5 0.0 L 84 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
     transform="
-        translate(124.0 0) 
+        translate(42.0 0) 
         scale(-1 1)
     "  
 >
@@ -2466,26 +2314,23 @@ text {
     "
 >
         <g 
-        class="label digital"
+        class="label digital pinlabel"
     transform="
         translate(0 245.99999999999997) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="50" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2497,27 +2342,23 @@ text {
     D21
 </text>
 </g><g 
-        class="label analog"
+        class="label analog pinlabel"
     transform="
         translate(-130 245.99999999999997) 
         scale(-1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="0" 
     y="-10.0" 
     width="30" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="1.0" 
-    y="-9.0" 
-    width="28" 
-    height="18" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2529,26 +2370,28 @@ text {
     A7
 </text>
 </g><g 
-        class="label default show-leader"
+        class="label default show-leader pinlabel"
     transform="
         translate(-160 245.99999999999997) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(84 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 10.5 0.0 C 42.0 0.0 42.0 0.0 73.5 0.0 L 84 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
     transform="
-        translate(124.0 0) 
+        translate(42.0 0) 
         scale(-1 1)
     "  
 >
@@ -2563,32 +2406,23 @@ text {
     "
 >
         <g 
-        class="label pwr"
+        class="label pwr pinlabel"
     transform="
         translate(0 270.59999999999997) 
         scale(-1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="80" 
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="81.0" 
-    y="-9.0" 
-    width="78" 
-    height="18" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="lline" 
-    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
-    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2608,26 +2442,23 @@ text {
     "
 >
         <g 
-        class="label other"
+        class="label other pinlabel"
     transform="
         translate(0 295.2) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="label__bodyinner" 
-    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
-    transform="scale(1 1) translate(80 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="80" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2639,21 +2470,23 @@ text {
     RESET
 </text>
 </g><g 
-        class="label default"
+        class="label default pinlabel"
     transform="
         translate(-160 295.2) 
         scale(-1 1)
     "
 >
         <path 
-    class="label__body" 
-    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
-    transform="scale(1 1) translate(2 -10.0) " 
-    shape-rendering="geometricPrecision"
-/><path 
     class="lline" 
-    d="M 0 0.0 L 0.25 0.0 C 1.0 0.0 1.0 0.0 1.75 0.0 L 2 0.0" 
+    d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2673,32 +2506,23 @@ text {
     "
 >
         <g 
-        class="label gnd"
+        class="label gnd pinlabel"
     transform="
         translate(0 319.8) 
         scale(-1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="80" 
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="81.0" 
-    y="-9.0" 
-    width="78" 
-    height="18" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="lline" 
-    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
-    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2718,32 +2542,23 @@ text {
     "
 >
         <g 
-        class="label pwr"
+        class="label pwr pinlabel"
     transform="
         translate(0 344.40000000000003) 
         scale(-1 1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="80" 
     y="-10.0" 
     width="80" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="81.0" 
-    y="-9.0" 
-    width="78" 
-    height="18" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="lline" 
-    d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
-    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2770,32 +2585,23 @@ text {
     "
 >
         <g 
-        class="label led"
+        class="label led pinlabel"
     transform="
         translate(0 0) 
         scale(-1 -1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0.0 0 L 0.0 40.0 A 20.0 20.0 0 0 0 20.0 60.0 L 112 60.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="112" 
     y="50.0" 
     width="120" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="113.0" 
-    y="51.0" 
-    width="118" 
-    height="18" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="lline" 
-    d="M 0.0 0 L 0.0 43.33333333333333 A 16.666666666666668 16.666666666666668 0 0 0 16.666666666666668 60.0 L 112 60.0" 
-    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2815,32 +2621,23 @@ text {
     "
 >
         <g 
-        class="label led"
+        class="label led pinlabel"
     transform="
         translate(112 0) 
         scale(-1 -1)
     "
 >
-        <rect
- class="block label__body" 
+        <path 
+    class="lline" 
+    d="M 0.0 0 L 0.0 54.66666666666667 A 27.333333333333332 27.333333333333332 0 0 0 27.333333333333332 82.0 L 224 82.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
     x="224" 
     y="72.0" 
     width="120" 
     height="20" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><rect
- class="block label__bodyinner" 
-    x="225.0" 
-    y="73.0" 
-    width="118" 
-    height="18" 
-    rx="" 
-    shape-rendering="geometricPrecision"
-/><path 
-    class="lline" 
-    d="M 0.0 0 L 0.0 58.0 A 24.0 24.0 0 0 0 24.0 82.0 L 224 82.0" 
-    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -2868,22 +2665,20 @@ text {
     y="0" 
     width="1196" 
     height="121" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="legend"
     transform="
-        translate(14 4) 
+        translate(10 5) 
         scale(1 1)
     "
 >
         <rect
  class="legend__bg" 
-    x="-4" 
-    y="-4" 
-    width="488" 
-    height="120" 
-    rx="" 
+    x="0" 
+    y="0" 
+    width="477" 
+    height="112" 
     shape-rendering="geometricPrecision"
 /><g 
         class="legend-entry gnd"
@@ -2896,9 +2691,8 @@ text {
  class="legend-entry__bg" 
     x="0" 
     y="0" 
-    width="160" 
+    width="159" 
     height="28" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -2913,7 +2707,6 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -2936,9 +2729,8 @@ text {
  class="legend-entry__bg" 
     x="0" 
     y="0" 
-    width="160" 
+    width="159" 
     height="28" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -2953,7 +2745,6 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -2976,9 +2767,8 @@ text {
  class="legend-entry__bg" 
     x="0" 
     y="0" 
-    width="160" 
+    width="159" 
     height="28" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -2993,7 +2783,6 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -3016,9 +2805,8 @@ text {
  class="legend-entry__bg" 
     x="0" 
     y="0" 
-    width="160" 
+    width="159" 
     height="28" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -3033,7 +2821,6 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -3048,7 +2835,7 @@ text {
 </g><g 
         class="legend-entry swd"
     transform="
-        translate(160 0) 
+        translate(159 0) 
         scale(1 1)
     "
 >
@@ -3056,9 +2843,8 @@ text {
  class="legend-entry__bg" 
     x="0" 
     y="0" 
-    width="160" 
+    width="159" 
     height="28" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -3073,7 +2859,6 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -3088,7 +2873,7 @@ text {
 </g><g 
         class="legend-entry digital"
     transform="
-        translate(160 28) 
+        translate(159 28) 
         scale(1 1)
     "
 >
@@ -3096,9 +2881,8 @@ text {
  class="legend-entry__bg" 
     x="0" 
     y="0" 
-    width="160" 
+    width="159" 
     height="28" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -3113,7 +2897,6 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -3128,7 +2911,7 @@ text {
 </g><g 
         class="legend-entry analog"
     transform="
-        translate(160 56) 
+        translate(159 56) 
         scale(1 1)
     "
 >
@@ -3136,9 +2919,8 @@ text {
  class="legend-entry__bg" 
     x="0" 
     y="0" 
-    width="160" 
+    width="159" 
     height="28" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -3153,7 +2935,6 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -3168,7 +2949,7 @@ text {
 </g><g 
         class="legend-entry other"
     transform="
-        translate(160 84) 
+        translate(159 84) 
         scale(1 1)
     "
 >
@@ -3176,9 +2957,8 @@ text {
  class="legend-entry__bg" 
     x="0" 
     y="0" 
-    width="160" 
+    width="159" 
     height="28" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -3193,7 +2973,6 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -3208,7 +2987,7 @@ text {
 </g><g 
         class="legend-entry mu-port"
     transform="
-        translate(320 0) 
+        translate(318 0) 
         scale(1 1)
     "
 >
@@ -3216,9 +2995,8 @@ text {
  class="legend-entry__bg" 
     x="0" 
     y="0" 
-    width="160" 
+    width="159" 
     height="28" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -3233,7 +3011,6 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -3248,7 +3025,7 @@ text {
 </g><g 
         class="legend-entry default"
     transform="
-        translate(320 28) 
+        translate(318 28) 
         scale(1 1)
     "
 >
@@ -3256,9 +3033,8 @@ text {
  class="legend-entry__bg" 
     x="0" 
     y="0" 
-    width="160" 
+    width="159" 
     height="28" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -3273,7 +3049,6 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -3287,13 +3062,14 @@ text {
 </text>
 </g>
 </g><g 
-        class="textblock"
+        class="textblock textblock"
     transform="
         translate(580 30) 
         scale(1 1)
     "
 >
         <text
+    class="textblock"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -3301,6 +3077,7 @@ text {
 >
     <tspan class="h1">Arduino</tspan>
 </text><text
+    class="textblock"
     transform="
         translate(0 22) 
         scale(1 1)
@@ -3309,13 +3086,14 @@ text {
     <tspan class="h1">Nano RP2024 Connect</tspan>
 </text>
 </g><g 
-        class="textblock"
+        class="textblock textblock"
     transform="
         translate(580 74) 
         scale(1 1)
     "
 >
         <text
+    class="textblock"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -3323,6 +3101,7 @@ text {
 >
     <tspan class="p">Pinout diagram created with <tspan class="italic">pinout (v0.0.10)</tspan></tspan>
 </text><text
+    class="textblock"
     transform="
         translate(0 17) 
         scale(1 1)
@@ -3330,6 +3109,7 @@ text {
 >
     <tspan class="p">A Python package for creating pinout diagrams.</tspan>
 </text><text
+    class="textblock"
     transform="
         translate(0 34) 
         scale(1 1)
@@ -3338,13 +3118,14 @@ text {
     <tspan class="p"><tspan class="strong"><a href="https://pinout.readthedocs.io">pinout.readthedocs.io</a></tspan></tspan>
 </text>
 </g><g 
-        class="textblock"
+        class="textblock textblock"
     transform="
         translate(900 74) 
         scale(1 1)
     "
 >
         <text
+    class="textblock"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -3352,6 +3133,7 @@ text {
 >
     <tspan class="p">NOTE: This is not official documentation.</tspan>
 </text><text
+    class="textblock"
     transform="
         translate(0 17) 
         scale(1 1)
@@ -3359,6 +3141,7 @@ text {
 >
     <tspan class="p">Diagram aesthetics from Arduino docs.</tspan>
 </text><text
+    class="textblock"
     transform="
         translate(0 34) 
         scale(1 1)

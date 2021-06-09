@@ -1,5 +1,5 @@
 from pinout.core import Diagram, Group, Image, Raw, Rect
-from pinout.components import pinlabel, legend
+from pinout.components import pinlabel, legend, leaderline
 from pinout.components.type import TextBlock
 
 
@@ -31,11 +31,12 @@ pinout_graphic = group_main.add(Group(600, 80, tag="pinout-graphic"))
 
 group_notes = diagram.add(Group(2, 552, tag="panel panel--notes"))
 group_notes.add(Rect(x=0, y=0, width=1196, height=121, tag="panel__bg"))
-group_notes.add(legend.Legend(data.legend, max_height=100, x=10, y=0))
+group_notes.add(
+    legend.Legend(data.legend, max_height=112, x=10, y=5, inset=(0, 0, 0, 0))
+)
 group_notes.add(TextBlock(data.title_1, 22, x=580, y=30))
 group_notes.add(TextBlock(data.para_1, 17, x=580, y=74))
 group_notes.add(TextBlock(data.para_2, 17, x=900, y=74))
-
 
 # Add a hardware image
 # Note its coordinates are relative to the group it is within
@@ -50,14 +51,42 @@ pinout_graphic.add(
     )
 )
 # Right hand side pin header
-pinout_graphic.add(pinlabel.PinLabelGroup(x=86, y=58, labels=data.header_rhs))
+pinout_graphic.add(
+    pinlabel.PinLabelGroup(
+        x=86,
+        y=58,
+        pin_pitch=(0, 24.6),
+        label_start=(80, 0),
+        label_pitch=(0, 0),
+        labels=data.header_rhs,
+    )
+)
 
 # Left hand side pin header
-pinout_graphic.add(pinlabel.PinLabelGroup(x=-86, y=58, labels=data.header_lhs))
-
+pinout_graphic.add(
+    pinlabel.PinLabelGroup(
+        x=-86,
+        y=58,
+        pin_pitch=(0, 24.6),
+        label_start=(80, 0),
+        label_pitch=(0, 0),
+        scale=(-1, 1),
+        labels=data.header_lhs,
+    )
+)
 
 # LED labels
-pinout_graphic.add(pinlabel.PinLabelGroup(x=-56, y=28, labels=data.leds))
-
+pinout_graphic.add(
+    pinlabel.PinLabelGroup(
+        x=-56,
+        y=28,
+        pin_pitch=(112, 0),
+        label_start=(112, 60),
+        label_pitch=(112, 22),
+        scale=(-1, -1),
+        labels=data.leds,
+        leaderline=leaderline.Curved(direction="vh"),
+    )
+)
 
 diagram.export("pinout_arduino_nano_rp2040_connect.svg", True)

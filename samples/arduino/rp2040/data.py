@@ -1,29 +1,31 @@
 from pinout import config
 from pinout.components import leaderline as lline
+
 from arduino_components import Label, FirstLabel, LabelLast
 
 
-cfg = config.PinConfig(
-    {
-        # Right header
-        "rgt_first": {"width": 80, "height": 20},
-        "rgt_single": {"width": 80, "height": 20},
-        "rgt": {"width": 80, "height": 20, "offset": (2, 0)},
-        # Left header
-        "lft_first": {"width": 80, "height": 20, "scale": (-1, 1)},
-        "lft_first_sm": {"width": 50, "height": 20, "scale": (-1, 1)},
-        "lft": {"width": 80, "height": 20, "scale": (-1, 1), "offset": (2, 0)},
-        "lft_sm": {"width": 30, "height": 20, "scale": (-1, 1), "offset": (0, 0)},
-        "lft_single": {"width": 80, "height": 20, "scale": (-1, 1)},
-        # LEDs
-        "led": {
+cfg = {
+    # Right header
+    "rgt_first": {"body": {"width": 80, "height": 20}},
+    "rgt_single": {"body": {"width": 80, "height": 20}},
+    "rgt": {"body": {"width": 80, "height": 20, "x": 2, "y": 0}},
+    # Left header
+    "lft_first": {"body": {"width": 80, "height": 20, "scale": (-1, 1)}},
+    "lft_first_sm": {"body": {"width": 50, "height": 20, "scale": (-1, 1)}},
+    "lft": {"body": {"width": 80, "height": 20, "scale": (-1, 1), "x": 2, "y": 0}},
+    "lft_sm": {"body": {"width": 30, "height": 20, "scale": (-1, 1), "x": 0, "y": 0}},
+    "lft_single": {"body": {"width": 80, "height": 20, "scale": (-1, 1)}},
+    # LEDs
+    "led": {
+        "body": {
             "width": 120,
             "height": 20,
             "scale": (-1, -1),
             "leaderline": lline.Curved("vh"),
         },
-    }
-)
+    },
+}
+
 
 #########################################################
 #
@@ -49,72 +51,71 @@ legend = [
 # Header: Right-hand-side
 #
 #########################################################
-cfg.set_origin((0, 0), (0, 24.6))
-cfg.set_offset((80, 0), (0, 0))
+# cfg\.set_origin((0, 0), (0, 24.6))
+# cfg\.set_offset((80, 0), (0, 0))
 header_rhs = [
     [
-        FirstLabel("D12", "digital", **cfg("rgt_first")),
-        Label("GPIO4", "mu-port", **cfg("rgt")),
-        LabelLast("CIPO", "default", **cfg("rgt")),
+        ("D12", "digital", cfg["rgt_first"]),
+        ("GPIO4", "mu-port", cfg["rgt"]),
+        ("CIPO", "default", cfg["rgt"]),
     ],
     [
-        FirstLabel("D11", "digital", **cfg("rgt_first")),
-        Label("GPIO7", "mu-port", **cfg("rgt")),
-        LabelLast("CIPI", "default", **cfg("rgt")),
+        ("D11", "digital", cfg["rgt_first"]),
+        ("GPIO7", "mu-port", cfg["rgt"]),
+        ("CIPI", "default", cfg["rgt"]),
     ],
     [
-        FirstLabel("D10", "digital", **cfg("rgt_first")),
-        LabelLast("GPIO5", "mu-port", **cfg("rgt")),
+        ("D10", "digital", cfg["rgt_first"]),
+        ("GPIO5", "mu-port", cfg["rgt"]),
     ],
     [
-        FirstLabel("D9", "digital", **cfg("rgt_first")),
-        LabelLast("GPIO21", "mu-port", **cfg("rgt")),
+        ("D9", "digital", cfg["rgt_first"]),
+        ("GPIO21", "mu-port", cfg["rgt"]),
     ],
     [
-        FirstLabel("D8", "digital", **cfg("rgt_first")),
-        LabelLast("GPIO20", "mu-port", **cfg("rgt")),
+        ("D8", "digital", cfg["rgt_first"]),
+        ("GPIO20", "mu-port", cfg["rgt"]),
     ],
     [
-        FirstLabel("D7", "digital", **cfg("rgt_first")),
-        LabelLast("GPIO19", "mu-port", **cfg("rgt")),
+        ("D7", "digital", cfg["rgt_first"]),
+        ("GPIO19", "mu-port", cfg["rgt"]),
     ],
     [
-        FirstLabel("D6", "digital", **cfg("rgt_first")),
-        LabelLast("GPIO18", "mu-port", **cfg("rgt")),
+        ("D6", "digital", cfg["rgt_first"]),
+        ("GPIO18", "mu-port", cfg["rgt"]),
     ],
     [
-        FirstLabel("D5", "digital", **cfg("rgt_first")),
-        LabelLast("GPIO17", "mu-port", **cfg("rgt")),
+        ("D5", "digital", cfg["rgt_first"]),
+        ("GPIO17", "mu-port", cfg["rgt"]),
     ],
     [
-        FirstLabel("D4", "digital", **cfg("rgt_first")),
-        LabelLast("GPIO16", "mu-port", **cfg("rgt")),
+        ("D4", "digital", cfg["rgt_first"]),
+        ("GPIO16", "mu-port", cfg["rgt"]),
     ],
     [
-        FirstLabel("D3", "digital", **cfg("rgt_first")),
-        LabelLast("GPIO15", "mu-port", **cfg("rgt")),
+        ("D3", "digital", cfg["rgt_first"]),
+        ("GPIO15", "mu-port", cfg["rgt"]),
     ],
     [
-        FirstLabel("D2", "digital", **cfg("rgt_first")),
-        LabelLast("GPIO25", "mu-port", **cfg("rgt")),
+        ("D2", "digital", cfg["rgt_first"]),
+        ("GPIO25", "mu-port", cfg["rgt"]),
     ],
     [
-        Label("GND", "gnd", **cfg("rgt_single")),
+        ("GND", "gnd", cfg["rgt_single"]),
     ],
     [
-        FirstLabel("RESET", "other", **cfg("rgt_first")),
-        LabelLast("RESET", "mu-port", **cfg("rgt")),
+        ("RESET", "other", cfg["rgt_first"]),
+        ("RESET", "mu-port", cfg["rgt"]),
     ],
     [
-        FirstLabel("RX", "digital", **cfg("rgt_first")),
-        LabelLast("GPIO1", "mu-port", **cfg("rgt")),
+        ("RX", "digital", cfg["rgt_first"]),
+        ("GPIO1", "mu-port", cfg["rgt"]),
     ],
     [
-        FirstLabel("TX", "digital", **cfg("rgt_first")),
-        LabelLast("GPIO0", "mu-port", **cfg("rgt")),
+        ("TX", "digital", cfg["rgt_first"]),
+        ("GPIO0", "mu-port", cfg["rgt"]),
     ],
 ]
-
 
 #########################################################
 #
@@ -123,76 +124,76 @@ header_rhs = [
 #########################################################
 
 
-cfg.set_origin((0, 0), (0, 24.6))
-cfg.set_offset((80, 0), (0, 0))
+# cfg\.set_origin((0, 0), (0, 24.6))
+# cfg\.set_offset((80, 0), (0, 0))
 header_lhs = [
     [
-        FirstLabel("D13", "digital", **cfg("lft_first")),
-        Label("GPIO6", "mu-port", **cfg("lft")),
-        LabelLast("SCK", "default", **cfg("lft")),
+        ("D13", "digital", cfg["lft_first"]),
+        ("GPIO6", "mu-port", cfg["lft"]),
+        ("SCK", "default", cfg["lft"]),
     ],
     [
-        Label("+3V3", "pwr", **cfg("lft_single")),
+        ("+3V3", "pwr", cfg["lft_single"]),
     ],
     [
-        FirstLabel("AREF", "other", **cfg("lft_first")),
-        LabelLast("PA03", "mu-port", **cfg("lft")),
+        ("AREF", "other", cfg["lft_first"]),
+        ("PA03", "mu-port", cfg["lft"]),
     ],
     [
-        FirstLabel("D14", "digital", **cfg("lft_first_sm")),
-        Label("A0", "analog", **cfg("lft_sm")),
-        Label("GPIO26", "mu-port", **cfg("lft")),
-        LabelLast("A0/DAC0", "default", **cfg("lft")),
+        ("D14", "digital", cfg["lft_first_sm"]),
+        ("A0", "analog", cfg["lft_sm"]),
+        ("GPIO26", "mu-port", cfg["lft"]),
+        ("A0/DAC0", "default", cfg["lft"]),
     ],
     [
-        FirstLabel("D15", "digital", **cfg("lft_first_sm")),
-        Label("A1", "analog", **cfg("lft_sm")),
-        Label("GPIO27", "mu-port", **cfg("lft")),
-        LabelLast("A1", "default", **cfg("lft")),
+        ("D15", "digital", cfg["lft_first_sm"]),
+        ("A1", "analog", cfg["lft_sm"]),
+        ("GPIO27", "mu-port", cfg["lft"]),
+        ("A1", "default", cfg["lft"]),
     ],
     [
-        FirstLabel("D16", "digital", **cfg("lft_first_sm")),
-        Label("A2", "analog", **cfg("lft_sm")),
-        Label("GPIO28", "mu-port", **cfg("lft")),
-        LabelLast("A2", "default", **cfg("lft")),
+        ("D16", "digital", cfg["lft_first_sm"]),
+        ("A2", "analog", cfg["lft_sm"]),
+        ("GPIO28", "mu-port", cfg["lft"]),
+        ("A2", "default", cfg["lft"]),
     ],
     [
-        FirstLabel("D17", "digital", **cfg("lft_first_sm")),
-        Label("A3", "analog", **cfg("lft_sm")),
-        Label("GPIO29", "mu-port", **cfg("lft")),
-        LabelLast("A3", "default", **cfg("lft")),
+        ("D17", "digital", cfg["lft_first_sm"]),
+        ("A3", "analog", cfg["lft_sm"]),
+        ("GPIO29", "mu-port", cfg["lft"]),
+        ("A3", "default", cfg["lft"]),
     ],
     [
-        FirstLabel("D18", "digital", **cfg("lft_first_sm")),
-        Label("A4", "analog", **cfg("lft_sm")),
-        Label("GPIO12", "mu-port", **cfg("lft")),
-        LabelLast("A4", "default", **cfg("lft")),
+        ("D18", "digital", cfg["lft_first_sm"]),
+        ("A4", "analog", cfg["lft_sm"]),
+        ("GPIO12", "mu-port", cfg["lft"]),
+        ("A4", "default", cfg["lft"]),
     ],
     [
-        FirstLabel("D19", "digital", **cfg("lft_first_sm")),
-        Label("A5", "analog", **cfg("lft_sm")),
-        Label("GPIO13", "mu-port", **cfg("lft")),
-        LabelLast("A5", "default", **cfg("lft")),
+        ("D19", "digital", cfg["lft_first_sm"]),
+        ("A5", "analog", cfg["lft_sm"]),
+        ("GPIO13", "mu-port", cfg["lft"]),
+        ("A5", "default", cfg["lft"]),
     ],
     [
-        FirstLabel("D20", "digital", **cfg("lft_first_sm")),
-        Label("A6", "analog", **cfg("lft_sm")),
-        LabelLast("A6", "default show-leader", **cfg("lft", offset=(84, 0))),
+        ("D20", "digital", cfg["lft_first_sm"]),
+        ("A6", "analog", cfg["lft_sm"]),
+        ("A6", "default show-leader", cfg["lft"]),
     ],
     [
-        FirstLabel("D21", "digital", **cfg("lft_first_sm")),
-        Label("A7", "analog", **cfg("lft_sm")),
-        LabelLast("A7", "default show-leader", **cfg("lft", offset=(84, 0))),
+        ("D21", "digital", cfg["lft_first_sm"]),
+        ("A7", "analog", cfg["lft_sm"]),
+        ("A7", "default show-leader", cfg["lft"]),
     ],
     [
-        Label("+5V", "pwr", **cfg("lft_single")),
+        ("+5V", "pwr", cfg["lft_single"]),
     ],
     [
-        FirstLabel("RESET", "other", **cfg("lft_first")),
-        LabelLast("QSPI_CSn", "default", **cfg("lft")),
+        ("RESET", "other", cfg["lft_first"]),
+        ("QSPI_CSn", "default", cfg["lft"]),
     ],
-    [Label("GND", "gnd", **cfg("lft_single"))],
-    [Label("VIN", "pwr", **cfg("lft_single"))],
+    [("GND", "gnd", cfg["lft_single"])],
+    [("VIN", "pwr", cfg["lft_single"])],
 ]
 
 
@@ -201,11 +202,11 @@ header_lhs = [
 # LED labels
 #
 #########################################################
-cfg.set_origin((0, 0), (112, 0))
-cfg.set_offset((112, 60), (112, 22))
+# cfg\.set_origin((0, 0), (112, 0))
+# cfg\.set_offset((112, 60), (112, 22))
 leds = [
-    [Label("Power", "led", **cfg("led"))],
-    [Label("LED_BUILTIN", "led", **cfg("led"))],
+    [("Power", "led", cfg["led"])],
+    [("LED_BUILTIN", "led", cfg["led"])],
 ]
 
 

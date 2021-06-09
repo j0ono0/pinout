@@ -40,7 +40,7 @@ rect {
 }
 
 text {
-    font-family: Helvetica, Verdana, Georgia, sans-serif;
+    font-family: Verdana, Georgia, sans-serif;
     font-size: 14px;
     font-weight: 300;
     dominant-baseline: auto;
@@ -71,9 +71,6 @@ text {
 /*************************************/
 /* Legend                            */
 
-.legend rect{
-    fill: none;
-}
 .legend .swatch__body{
     fill: rgba(0,0,0,0);
     ry: 2px;
@@ -83,6 +80,12 @@ text {
     fill: #000;
 }
 
+.legend__bg{
+    fill: #fff;
+}
+.legend-entry .swatch__body{
+    fill: #ccc;
+}
 
 /*************************************/
 /* Annotation                        */
@@ -90,18 +93,16 @@ text {
 .annotation__body rect{
     fill: rgb(230, 180, 10);
     stroke-width: 0;
-    ry: 30px;
 }
 .annotation__body text{
     dominant-baseline: central;
-    font-size: 18px;
+    font-size: 14px;
     fill: #000;
 }
 .annotation__target{
     fill: none;
     stroke: rgb(230, 180, 10);
     stroke-width: 4px;
-    ry: 100%;
 }
 .annotation .lline{
     stroke: rgb(230, 180, 10);
@@ -109,15 +110,6 @@ text {
 }
 
 
-/*************************************/
-/* Legend                            */
-.legend__bg{
-    stroke: rgb(36, 36, 36);
-    stroke-width: 2px;
-}
-.legend-entry .swatch__body{
-    fill: #ccc;
-}
 
 /*
 #########################################################
@@ -132,12 +124,11 @@ text {
 .diagram__bg{
     fill: #333;
 }
-.panel--main .bg{
+.panel .textblock__bg,
+.panel__bg{
     fill: #fff;
 }
-.panel--meta .bg{
-    fill: #f4f4f4;
-}
+
 
 /* PinLabels & legend */
 
@@ -212,6 +203,12 @@ text {
 .strong{
     font-weight: bold;
 }
+
+.panel__name{
+    fill: #ccc;
+    font-weight: bold;
+    font-style: italic;
+}
     ]]>  
 </style>
 <rect
@@ -220,22 +217,20 @@ text {
     y="0" 
     width="1200" 
     height="675" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
-        class="panel--main"
+        class="panel panel--main"
     transform="
         translate(2 2) 
         scale(1 1)
     "
 >
         <rect
- class="bg" 
+ class="panel__bg" 
     x="0" 
     y="0" 
     width="856" 
     height="671" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
     transform="
@@ -266,7 +261,7 @@ text {
     "
 >
         <g 
-        class="label pwr--3v3"
+        class="label pwr--3v3 pinlabel"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -283,7 +278,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -303,7 +297,7 @@ text {
     "
 >
         <g 
-        class="label gnd"
+        class="label gnd pinlabel"
     transform="
         translate(0 30) 
         scale(1 1)
@@ -320,7 +314,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -340,7 +333,7 @@ text {
     "
 >
         <g 
-        class="label gpio"
+        class="label gpio pinlabel"
     transform="
         translate(0 60) 
         scale(1 1)
@@ -357,7 +350,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -369,7 +361,7 @@ text {
     3
 </text>
 </g><g 
-        class="label analog"
+        class="label analog pinlabel"
     transform="
         translate(140 60) 
         scale(1 1)
@@ -386,7 +378,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -398,7 +389,7 @@ text {
     Lc2a
 </text>
 </g><g 
-        class="label led"
+        class="label led pinlabel"
     transform="
         translate(226 60) 
         scale(1 1)
@@ -415,7 +406,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -435,7 +425,7 @@ text {
     "
 >
         <g 
-        class="label gpio"
+        class="label gpio pinlabel"
     transform="
         translate(0 90) 
         scale(1 1)
@@ -452,7 +442,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -464,7 +453,7 @@ text {
     4
 </text>
 </g><g 
-        class="label analog"
+        class="label analog pinlabel"
     transform="
         translate(140 90) 
         scale(1 1)
@@ -481,7 +470,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -508,7 +496,7 @@ text {
     "
 >
         <g 
-        class="label gpio"
+        class="label gpio pinlabel"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -525,7 +513,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -537,7 +524,7 @@ text {
     0
 </text>
 </g><g 
-        class="label gpio"
+        class="label gpio pinlabel"
     transform="
         translate(-140 0) 
         scale(-1 1)
@@ -554,7 +541,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -566,7 +552,7 @@ text {
     Lb0a
 </text>
 </g><g 
-        class="label comms"
+        class="label comms pinlabel"
     transform="
         translate(-226 0) 
         scale(-1 1)
@@ -583,7 +569,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -603,7 +588,7 @@ text {
     "
 >
         <g 
-        class="label gpio"
+        class="label gpio pinlabel"
     transform="
         translate(0 30) 
         scale(-1 1)
@@ -620,7 +605,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -632,7 +616,7 @@ text {
     1
 </text>
 </g><g 
-        class="label comms"
+        class="label comms pinlabel"
     transform="
         translate(-140 30) 
         scale(-1 1)
@@ -640,21 +624,20 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 92 0.0" 
+    d="M 0 0.0 L 6 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="92" 
+    x="6" 
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
     transform="
-        translate(132.0 0) 
+        translate(46.0 0) 
         scale(-1 1)
     "  
 >
@@ -669,7 +652,7 @@ text {
     "
 >
         <g 
-        class="label gpio"
+        class="label gpio pinlabel"
     transform="
         translate(0 60) 
         scale(-1 1)
@@ -686,7 +669,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -698,7 +680,7 @@ text {
     2
 </text>
 </g><g 
-        class="label analog"
+        class="label analog pinlabel"
     transform="
         translate(-140 60) 
         scale(-1 1)
@@ -715,7 +697,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -727,7 +708,7 @@ text {
     Lc2a
 </text>
 </g><g 
-        class="label led"
+        class="label led pinlabel"
     transform="
         translate(-226 60) 
         scale(-1 1)
@@ -744,7 +725,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -764,7 +744,7 @@ text {
     "
 >
         <g 
-        class="label pwr"
+        class="label pwr pinlabel"
     transform="
         translate(0 90) 
         scale(-1 1)
@@ -772,21 +752,20 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 29.0 0.0 C 116.0 0.0 116.0 0.0 203.0 0.0 L 232 0.0" 
+    d="M 0 0.0 L 7.5 0.0 C 30.0 0.0 30.0 0.0 52.5 0.0 L 60 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="232" 
+    x="60" 
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
     transform="
-        translate(272.0 0) 
+        translate(100.0 0) 
         scale(-1 1)
     "  
 >
@@ -808,7 +787,7 @@ text {
     "
 >
         <g 
-        class="label gpio"
+        class="label gpio pinlabel"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -825,7 +804,6 @@ text {
     y="47.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -837,7 +815,7 @@ text {
     3
 </text>
 </g><g 
-        class="label analog"
+        class="label analog pinlabel"
     transform="
         translate(-189 60) 
         scale(-1 1)
@@ -854,7 +832,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -866,7 +843,7 @@ text {
     Lc2a
 </text>
 </g><g 
-        class="label led"
+        class="label led pinlabel"
     transform="
         translate(-275 60) 
         scale(-1 1)
@@ -883,7 +860,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -903,7 +879,7 @@ text {
     "
 >
         <g 
-        class="label gpio"
+        class="label gpio pinlabel"
     transform="
         translate(30 0) 
         scale(-1 1)
@@ -920,7 +896,6 @@ text {
     y="77.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -932,7 +907,7 @@ text {
     4
 </text>
 </g><g 
-        class="label pwm"
+        class="label pwm pinlabel"
     transform="
         translate(-189 90) 
         scale(-1 1)
@@ -949,7 +924,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -961,7 +935,7 @@ text {
     Lc2a
 </text>
 </g><g 
-        class="label led"
+        class="label led pinlabel"
     transform="
         translate(-275 90) 
         scale(-1 1)
@@ -978,7 +952,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1005,7 +978,7 @@ text {
     "
 >
         <g 
-        class="label gpio"
+        class="label gpio pinlabel"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -1022,7 +995,6 @@ text {
     y="47.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1034,7 +1006,7 @@ text {
     6
 </text>
 </g><g 
-        class="label analog"
+        class="label analog pinlabel"
     transform="
         translate(189 60) 
         scale(1 1)
@@ -1051,7 +1023,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1071,7 +1042,7 @@ text {
     "
 >
         <g 
-        class="label gpio"
+        class="label gpio pinlabel"
     transform="
         translate(-30 0) 
         scale(1 1)
@@ -1088,7 +1059,6 @@ text {
     y="77.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1100,7 +1070,7 @@ text {
     5
 </text>
 </g><g 
-        class="label pwm"
+        class="label pwm pinlabel"
     transform="
         translate(189 90) 
         scale(1 1)
@@ -1117,7 +1087,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1129,7 +1098,7 @@ text {
     Lc2a
 </text>
 </g><g 
-        class="label led"
+        class="label led pinlabel"
     transform="
         translate(275 90) 
         scale(1 1)
@@ -1146,7 +1115,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1173,7 +1141,7 @@ text {
     "
 >
         <g 
-        class="label led"
+        class="label led pinlabel"
     transform="
         translate(0 0) 
         scale(-1 -1)
@@ -1190,7 +1158,6 @@ text {
     y="97.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1202,7 +1169,7 @@ text {
     a
 </text>
 </g><g 
-        class="label analog"
+        class="label analog pinlabel"
     transform="
         translate(-171 -110) 
         scale(-1 -1)
@@ -1219,7 +1186,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1239,7 +1205,7 @@ text {
     "
 >
         <g 
-        class="label led"
+        class="label led pinlabel"
     transform="
         translate(15 15) 
         scale(-1 -1)
@@ -1256,7 +1222,6 @@ text {
     y="142.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1268,7 +1233,7 @@ text {
     b
 </text>
 </g><g 
-        class="label pwm"
+        class="label pwm pinlabel"
     transform="
         translate(-171 -140) 
         scale(-1 -1)
@@ -1285,7 +1250,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1297,7 +1261,7 @@ text {
     AUX_b
 </text>
 </g><g 
-        class="label pwm"
+        class="label pwm pinlabel"
     transform="
         translate(-257 -140) 
         scale(-1 -1)
@@ -1314,7 +1278,6 @@ text {
     y="-13.0" 
     width="80" 
     height="26" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
@@ -1345,8 +1308,8 @@ text {
     y="-10" 
     width="20" 
     height="20" 
-    rx="" 
     shape-rendering="geometricPrecision"
+    rx="10" 
 /><g 
         class="annotation__body"
     transform="
@@ -1360,16 +1323,17 @@ text {
     y="0" 
     width="250" 
     height="60" 
-    rx="" 
     shape-rendering="geometricPrecision"
+    rx="30" 
 /><g 
-        class="textblock"
+        class="textblock textblock"
     transform="
-        translate(26 38) 
+        translate(28 38) 
         scale(1 1)
     "
 >
         <text
+    class="textblock"
     transform="
         translate(0 0) 
         scale(1 -1)
@@ -1377,6 +1341,7 @@ text {
 >
     USB-C connector
 </text><text
+    class="textblock"
     transform="
         translate(0 -18) 
         scale(1 -1)
@@ -1404,8 +1369,8 @@ text {
     y="-20" 
     width="40" 
     height="40" 
-    rx="" 
     shape-rendering="geometricPrecision"
+    rx="20" 
 /><g 
         class="annotation__body"
     transform="
@@ -1419,16 +1384,17 @@ text {
     y="0" 
     width="125" 
     height="60" 
-    rx="" 
     shape-rendering="geometricPrecision"
+    rx="30" 
 /><g 
-        class="textblock"
+        class="textblock textblock"
     transform="
-        translate(26 38) 
+        translate(28 38) 
         scale(1 1)
     "
 >
         <text
+    class="textblock"
     transform="
         translate(0 0) 
         scale(1 -1)
@@ -1436,6 +1402,7 @@ text {
 >
     Onboard
 </text><text
+    class="textblock"
     transform="
         translate(0 -18) 
         scale(1 -1)
@@ -1448,96 +1415,46 @@ text {
 </g>
 </g>
 </g><g 
-        class="panel--meta"
+        class="textblock textblock panel title_block"
     transform="
         translate(860 2) 
         scale(1 1)
     "
 >
         <rect
- class="bg" 
+ class="textblock__bg" 
     x="0" 
     y="0" 
     width="338" 
-    height="671" 
-    rx="" 
+    height="60" 
     shape-rendering="geometricPrecision"
 /><text
+    class="textblock"
     transform="
         translate(10 40) 
         scale(1 1)
     "  
 >
     <tspan class='h1'>pinout</tspan>
-</text><g 
-        class="textblock"
-    transform="
-        translate(10 220) 
-        scale(1 1)
-    "
->
-        <text
-    transform="
-        translate(0 0) 
-        scale(1 1)
-    "  
->
-    <tspan class='italic'>pinout</tspan> is a Python application to assist
-</text><text
-    transform="
-        translate(0 18) 
-        scale(1 1)
-    "  
->
-    with documentation of electronic hardware. 
-</text><text
-    transform="
-        translate(0 36) 
-        scale(1 1)
-    "  
->
-    Development is active with a goal to convert 
-</text><text
-    transform="
-        translate(0 54) 
-        scale(1 1)
-    "  
->
-    a promising idea into a useful tool.
-</text><text
-    transform="
-        translate(0 72) 
-        scale(1 1)
-    "  
->
-    
-</text><text
-    transform="
-        translate(0 90) 
-        scale(1 1)
-    "  
->
-    More info: <tspan class='strong'>www.readthedocs.pinout</tspan>
 </text>
 </g><g 
         class="legend"
     transform="
-        translate(8 68) 
+        translate(860 64) 
         scale(1 1)
     "
 >
         <rect
  class="legend__bg" 
-    x="-8" 
-    y="-8" 
-    width="336" 
-    height="128" 
-    rx="" 
+    x="0" 
+    y="0" 
+    width="338" 
+    height="132" 
     shape-rendering="geometricPrecision"
 /><g 
         class="legend-entry analog"
     transform="
-        translate(0 0) 
+        translate(10 10) 
         scale(1 1)
     "
 >
@@ -1545,9 +1462,8 @@ text {
  class="legend-entry__bg" 
     x="0" 
     y="0" 
-    width="160" 
+    width="159" 
     height="28" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -1562,7 +1478,6 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -1577,7 +1492,7 @@ text {
 </g><g 
         class="legend-entry comms"
     transform="
-        translate(0 28) 
+        translate(10 38) 
         scale(1 1)
     "
 >
@@ -1585,9 +1500,8 @@ text {
  class="legend-entry__bg" 
     x="0" 
     y="0" 
-    width="160" 
+    width="159" 
     height="28" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -1602,7 +1516,6 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -1617,7 +1530,7 @@ text {
 </g><g 
         class="legend-entry gnd"
     transform="
-        translate(0 56) 
+        translate(10 66) 
         scale(1 1)
     "
 >
@@ -1625,9 +1538,8 @@ text {
  class="legend-entry__bg" 
     x="0" 
     y="0" 
-    width="160" 
+    width="159" 
     height="28" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -1642,7 +1554,6 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -1657,7 +1568,7 @@ text {
 </g><g 
         class="legend-entry gpio"
     transform="
-        translate(0 84) 
+        translate(10 94) 
         scale(1 1)
     "
 >
@@ -1665,9 +1576,8 @@ text {
  class="legend-entry__bg" 
     x="0" 
     y="0" 
-    width="160" 
+    width="159" 
     height="28" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -1682,7 +1592,6 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -1697,7 +1606,7 @@ text {
 </g><g 
         class="legend-entry led"
     transform="
-        translate(160 0) 
+        translate(169 10) 
         scale(1 1)
     "
 >
@@ -1705,9 +1614,8 @@ text {
  class="legend-entry__bg" 
     x="0" 
     y="0" 
-    width="160" 
+    width="159" 
     height="28" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -1722,7 +1630,6 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -1737,7 +1644,7 @@ text {
 </g><g 
         class="legend-entry pwr"
     transform="
-        translate(160 28) 
+        translate(169 38) 
         scale(1 1)
     "
 >
@@ -1745,9 +1652,8 @@ text {
  class="legend-entry__bg" 
     x="0" 
     y="0" 
-    width="160" 
+    width="159" 
     height="28" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -1762,7 +1668,6 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -1777,7 +1682,7 @@ text {
 </g><g 
         class="legend-entry pwm"
     transform="
-        translate(160 56) 
+        translate(169 66) 
         scale(1 1)
     "
 >
@@ -1785,9 +1690,8 @@ text {
  class="legend-entry__bg" 
     x="0" 
     y="0" 
-    width="160" 
+    width="159" 
     height="28" 
-    rx="" 
     shape-rendering="geometricPrecision"
 /><g 
         class="swatch"
@@ -1802,7 +1706,6 @@ text {
     y="-10.0" 
     width="20" 
     height="20" 
-    rx="" 
     shape-rendering="geometricPrecision"
 />
 </g><text
@@ -1815,7 +1718,132 @@ text {
     PWM
 </text>
 </g>
-</g>
+</g><g 
+        class="textblock textblock panel text_block"
+    transform="
+        translate(860 198) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="textblock__bg" 
+    x="0" 
+    y="0" 
+    width="338" 
+    height="100" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="textblock"
+    transform="
+        translate(10 18) 
+        scale(1 1)
+    "  
+>
+    <tspan class='panel__name'>Description</tspan>
+</text><text
+    class="textblock"
+    transform="
+        translate(10 36) 
+        scale(1 1)
+    "  
+>
+    Demonstration diagram displaying pin-out
+</text><text
+    class="textblock"
+    transform="
+        translate(10 54) 
+        scale(1 1)
+    "  
+>
+    information of non-existent hardware.
+</text><text
+    class="textblock"
+    transform="
+        translate(10 72) 
+        scale(1 1)
+    "  
+>
+    Created with version 0.0.10
+</text><text
+    class="textblock"
+    transform="
+        translate(10 90) 
+        scale(1 1)
+    "  
+>
+    
+</text>
+</g><g 
+        class="textblock textblock panel text_block"
+    transform="
+        translate(860 300) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="textblock__bg" 
+    x="0" 
+    y="0" 
+    width="338" 
+    height="373" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="textblock"
+    transform="
+        translate(10 18) 
+        scale(1 1)
+    "  
+>
+    <tspan class='panel__name'>Notes</tspan>
+</text><text
+    class="textblock"
+    transform="
+        translate(10 36) 
+        scale(1 1)
+    "  
+>
+    <tspan class='italic'>pinout</tspan> is a Python application to assist
+</text><text
+    class="textblock"
+    transform="
+        translate(10 54) 
+        scale(1 1)
+    "  
+>
+    with documentation of electronic hardware. 
+</text><text
+    class="textblock"
+    transform="
+        translate(10 72) 
+        scale(1 1)
+    "  
+>
+    Development is active with a goal to convert 
+</text><text
+    class="textblock"
+    transform="
+        translate(10 90) 
+        scale(1 1)
+    "  
+>
+    a promising idea into a useful tool.
+</text><text
+    class="textblock"
+    transform="
+        translate(10 108) 
+        scale(1 1)
+    "  
+>
+    
+</text><text
+    class="textblock"
+    transform="
+        translate(10 126) 
+        scale(1 1)
+    "  
+>
+    More info: <tspan class='strong'>www.readthedocs.pinout</tspan>
+</text>
 </g>
     
 </svg>

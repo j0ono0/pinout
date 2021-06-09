@@ -36,28 +36,48 @@ class Label(core.Group):
         tag=None,
         x=0,
         y=0,
-        offset=config.pinlabel_offset,
         body=None,
         leaderline=None,
         **kwargs,
     ):
-        super().__init__(x, y, tag=tag, **kwargs)
         self.content = content
-        self.offset = core.Coords(*offset)
+        super().__init__(x, y, tag=tag, **kwargs)
+        self.update_config(config.pinlabel)
 
-        self.body = body or PinLabelBody(*offset, **config.pinlabel_body)
-        self.leaderline = leaderline or lline.Curved("hh")
+        # offset = offset or self.config["offset"]
+        # self.offset = core.Coords(*offset)
+
+        leaderline = leaderline or self.config["leaderline"]
+        if isinstance(leaderline, dict):
+            leaderline_config = self.config["leaderline"]
+            leaderline_config.update(leaderline)
+            leaderline = lline.Curved(**leaderline_config)
+
+        body = body or self.config["body"]
+        if isinstance(body, dict):
+            body_config = self.config["body"]
+            body_config.update(body)
+            body = PinLabelBody(**body_config)
+
+        self.leaderline = leaderline
+        self.body = body
+
+    def bounding_coords(self):
+        return core.BoundingCoords(
+            self.x,
+            self.y,
+            self.x + self.body.bounding_coords().x2,
+            self.y + self.body.bounding_coords().y2,
+        )
+
+    def render(self):
 
         self.add(self.leaderline)
         self.add(self.body)
 
-    def render(self):
-        # Update final body position
-        self.body.x = self.offset.x
-        self.body.y = self.offset.y
         # Add text content
-        x = self.body.width / 2 + self.offset.x
-        y = self.offset.y
+        x = self.body.width / 2 + self.body.x
+        y = self.body.y
         self.add(core.Text(self.content, x=x, y=y, tag="label__text", scale=self.scale))
         # Route leaderline
         self.leaderline.route(core.Rect(), self.body)
@@ -91,36 +111,41 @@ class PinLabelGroup(core.Group):
             row_group = self.add(core.Group(tag="label__row"))
             for label in row:
 
-                # Label follows another label in the row
-                try:
-                    prev_label = row_group.children[-1]
-                    x = prev_label.x + prev_label.width * scale.x
-                    y = prev_label.y + prev_label.offset.y * scale.y
-                    _leaderline = lline.Straight(direction="hh")
-                    offset = config.pinlabel_offset
-
-                # Start of a new row
-                except IndexError:
-                    x, y = next(pin_coords)
-                    offset = next(label_coords)
-                    _leaderline = copy.deepcopy(leaderline)
-
                 # If data supplied convert to Label
                 if type(label) is tuple:
                     content, tag, *args = label
                     attrs = args[0] if len(args) > 0 else {}
 
-                    # Update label attributes
-                    attrs["offset"] = attrs.get("offset", offset)
-                    attrs["scale"] = attrs.get("scale", scale)
-                    attrs["body"] = attrs.get("body", body)
-                    attrs["leaderline"] = attrs.get("leaderline", _leaderline)
+                    label_config = copy.deepcopy(config.pinlabel)
+                    label_config.update(attrs)
 
-                    label = Label(content, tag, **attrs)
+                    label_config["leaderline"] = (
+                        leaderline or label_config["leaderline"]
+                    )
+                    label_config["body"] = body or label_config["body"]
 
-                # Align label within row
-                label.x = x
-                label.y = y
+                    label = Label(
+                        content=content,
+                        scale=scale,
+                        **label_config,
+                    )
+                    label.add_tag(tag)
+
+                # -- label now exists -- #
+
+                # Label follows another label in the row
+                try:
+                    prev_label = row_group.children[-1]
+                    label.x = prev_label.x + prev_label.width * scale.x
+                    label.y = prev_label.y + prev_label.body.y * scale.y
+                    label.leaderline = lline.Straight(direction="hh")
+                    label.body.x = label_config["body"]["x"]
+                    label.body.y = label_config["body"]["y"]
+
+                # Start of a new row
+                except IndexError:
+                    label.x, label.y = next(pin_coords)
+                    label.body.x, label.body.y = next(label_coords)
 
                 row_group.add(label)
 

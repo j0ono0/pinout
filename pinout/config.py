@@ -66,22 +66,33 @@ def pitch_generator(start, pitch):
 #
 
 # Pinlabel
-pinlabel_body = {"width": 80, "height": 26}
-pinlabel_offset = (6, 0)
+pinlabel = {
+    "tag": "pinlabel",
+    "body": {
+        "x": 6,
+        "y": 0,
+        "width": 80,
+        "height": 26,
+        "corner_radius": 30,
+    },
+    "leaderline": {
+        "direction": "hh",
+    },
+}
 
 # Legend
 legend = {
     "max_height": None,
-    "inset": (8, 8, 8, 8),
+    "inset": (10, 10, 10, 10),
     "tag": "legend",
-    "swatch": {
-        "width": 20,
-        "height": 20,
-        "tag": "swatch",
-    },
     "entry": {
-        "width": 160,
+        "width": 159,
         "height": 28,
+        "swatch": {
+            "width": 20,
+            "height": 20,
+            "tag": "swatch",
+        },
         "tag": "legend-entry",
     },
 }
@@ -89,28 +100,35 @@ legend = {
 # TextBlock
 textblock = {
     "line_height": 22,
+    "width": None,
+    "height": None,
+    "offset": (0, 0),
+    "tag": "textblock",
 }
 
 # Annotation
 annotation = {
+    "tag": "annotation",
     "body": {
         "x": 40,
         "y": 20,
         "width": 250,
         "height": 60,
+        "corner_radius": 30,
         "tag": "annotation__body",
+        "textblock": {
+            "x": 28,
+            "y": 22,
+            "line_height": 18,
+        },
     },
     "target": {
         "x": -10,
         "y": -10,
         "width": 20,
         "height": 20,
+        "corner_radius": 10,
         "tag": "annotation__target",
-    },
-    "text": {
-        "x": 26,
-        "y": 22,
-        "line_height": 18,
     },
     "leaderline": {
         "direction": "vh",

@@ -246,7 +246,8 @@ class Path(SvgShape):
 
 
 class Rect(SvgShape):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, corner_radius=0, **kwargs):
+        self.corner_radius = corner_radius
         super().__init__(*args, **kwargs)
 
     def render(self):

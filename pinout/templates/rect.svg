@@ -4,8 +4,10 @@
     y="{{ rect.y }}" 
     width="{{ rect.width }}" 
     height="{{ rect.height }}" 
-    rx="{{ rect.r }}" 
     shape-rendering="geometricPrecision"
+    {% if rect.corner_radius %}
+    rx="{{ rect.corner_radius }}" 
+    {% endif %}
     {% if rect.clip_id %}
     clip-path="url(#{{ rect.clip_id }})"
     {% endif %}

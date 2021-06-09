@@ -23,36 +23,47 @@ class Target(core.Rect):
 
 
 class Body(core.Group):
-    def __init__(self, content, width, height, **kwargs):
-        self.content = content
-        self._scale = core.Coords(*kwargs.pop("scale", (1, 1)))
+    def __init__(
+        self,
+        content,
+        x=None,
+        y=None,
+        width=None,
+        height=None,
+        corner_radius=None,
+        textblock=None,
+        **kwargs,
+    ):
+        scale = core.Coords(*kwargs.pop("scale", (1, 1)))
         super().__init__(**kwargs)
 
-        self.update_config(config.annotation["text"])
+        # Load default config (in case of creation independently)
+        self.update_config(config.annotation["body"])
 
-        # Add a 'spacer' (non-rendering) SvgShape so component
-        # reports correct size before Body.render() called.
-        self.add(core.SvgShape(width=width, height=height))
-
-    def render(self):
-        # Assemble at render as attributes may have
-        # changed since instatiation.
-        self.add(core.Rect(0, 0, self.width, self.height))
-
-        if self._scale.x < 0:
-            self.config["x"] = self.width - self.config["x"]
-        if self._scale.y < 0:
-            self.config["y"] = self.height - self.config["y"]
-
+        # Body background shape
+        width = width or self.config["width"]
+        height = height or self.config["height"]
+        corner_radius = corner_radius or self.config["corner_radius"]
         self.add(
-            type.TextBlock(
-                self.content,
-                scale=self._scale,
-                **self.config,
-            )
+            core.Rect(x=0, y=0, width=width, height=height, corner_radius=corner_radius)
         )
 
-        return super().render()
+        self.x = x or self.config["x"]
+        self.y = y or self.config["y"]
+
+        textblock = textblock or {}
+        if isinstance(textblock, dict):
+            textblock_config = self.config["textblock"]
+            textblock_config.update(textblock)
+
+            # Align text block accoring to +/- scale
+            if scale.x < 0:
+                textblock_config["x"] = self.width - textblock_config["x"]
+            if scale.y < 0:
+                textblock_config["y"] = self.height - textblock_config["y"]
+
+            textblock = type.TextBlock(content, scale=scale, **textblock_config)
+        self.add(textblock)
 
 
 class AnnotationLabel(Base):
@@ -68,8 +79,8 @@ class AnnotationLabel(Base):
         body = body or {}
         leaderline = leaderline or {}
         target = target or {}
-        super().__init__(**kwargs)
 
+        super().__init__(**kwargs)
         self.update_config(config.annotation)
 
         # add annotation sub-components
@@ -83,7 +94,11 @@ class AnnotationLabel(Base):
     def add_component(self, Cls, name, obj, scale=(1, 1)):
 
         if isinstance(obj, dict):
+            # Update config with dict items
             self.config[name].update(obj)
+            # Replace dict with class instance
+            # Unneeded attr (content) is 'consumed'
+            # by kwargs in target and leaderline
             obj = Cls(content=self.content, scale=scale, **self.config[name])
 
         return self.add(obj)

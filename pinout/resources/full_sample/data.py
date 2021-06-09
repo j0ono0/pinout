@@ -84,11 +84,19 @@ aux = [
     ],
 ]
 
+
 # Text
 
 title = "<tspan class='h1'>pinout</tspan>"
 
-desc = """<tspan class='italic'>pinout</tspan> is a Python application to assist
+desc = """<tspan class='panel__name'>Description</tspan>
+Demonstration diagram displaying pin-out
+information of non-existent hardware.
+Created with version 0.0.10
+"""
+
+notes = """<tspan class='panel__name'>Notes</tspan>
+<tspan class='italic'>pinout</tspan> is a Python application to assist
 with documentation of electronic hardware. 
 Development is active with a goal to convert 
 a promising idea into a useful tool.

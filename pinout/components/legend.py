@@ -4,7 +4,7 @@ from pinout import core, config
 class Swatch(core.Group):
     def __init__(self, width=None, height=None, **kwargs):
         super().__init__(**kwargs)
-        self.update_config(config.legend["swatch"])
+        self.update_config(config.legend["entry"]["swatch"])
         width = width or self.config["width"]
         height = height or self.config["height"]
 
@@ -26,10 +26,11 @@ class LegendEntry(core.Group):
 
         super().__init__(**kwargs)
         self.update_config(config.legend["entry"])
+        self.add_tag(self.config["tag"])
+
         width = width or self.config["width"]
         height = height or self.config["height"]
         swatch = swatch or {}
-        self.add_tag(self.config["tag"])
 
         if isinstance(swatch, dict):
             swatch = Swatch(**swatch)
@@ -62,25 +63,19 @@ class Legend(core.Group):
         data,
         max_height=None,
         inset=None,
-        swatch=None,
-        entry=None,
         **kwargs,
     ):
 
         super().__init__(**kwargs)
-
         self.update_config(config.legend)
         self.add_tag(self.config["tag"])
-
-        swatch = swatch or {}
-        entry = entry or {}
 
         inset = inset or self.config["inset"]
         inset = core.BoundingCoords(*inset)
         max_height = max_height or self.config["max_height"]
 
-        x = 0
-        y = 0
+        x = inset.x1
+        y = inset.y1
 
         for entry in data:
 
@@ -92,22 +87,17 @@ class Legend(core.Group):
             self.add(entry)
 
             # Position entry in legend
-            if max_height is not None and y + entry.height > max_height:
+            if max_height and y + entry.height + inset.y2 > max_height:
                 x = self.width
-                y = 0
+                y = inset.y1
             entry.x = x
             entry.y = y
             y += entry.height
 
         # Add a background Rect and offset origin
-        self.x += inset.x1
-        self.y += inset.y1
         self.children.insert(
             0,
             core.Rect(
-                r=0,
-                x=-inset.x1,
-                y=-inset.y1,
                 width=self.width + inset.x1 + inset.x2,
                 height=self.height + inset.y1 + inset.y2,
                 tag="legend__bg",

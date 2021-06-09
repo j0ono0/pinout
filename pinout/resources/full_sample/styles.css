@@ -26,7 +26,7 @@ rect {
 }
 
 text {
-    font-family: Helvetica, Verdana, Georgia, sans-serif;
+    font-family: Verdana, Georgia, sans-serif;
     font-size: 14px;
     font-weight: 300;
     dominant-baseline: auto;
@@ -57,9 +57,6 @@ text {
 /*************************************/
 /* Legend                            */
 
-.legend rect{
-    fill: none;
-}
 .legend .swatch__body{
     fill: rgba(0,0,0,0);
     ry: 2px;
@@ -69,6 +66,12 @@ text {
     fill: #000;
 }
 
+.legend__bg{
+    fill: #fff;
+}
+.legend-entry .swatch__body{
+    fill: #ccc;
+}
 
 /*************************************/
 /* Annotation                        */
@@ -76,18 +79,16 @@ text {
 .annotation__body rect{
     fill: rgb(230, 180, 10);
     stroke-width: 0;
-    ry: 30px;
 }
 .annotation__body text{
     dominant-baseline: central;
-    font-size: 18px;
+    font-size: 14px;
     fill: #000;
 }
 .annotation__target{
     fill: none;
     stroke: rgb(230, 180, 10);
     stroke-width: 4px;
-    ry: 100%;
 }
 .annotation .lline{
     stroke: rgb(230, 180, 10);
@@ -95,15 +96,6 @@ text {
 }
 
 
-/*************************************/
-/* Legend                            */
-.legend__bg{
-    stroke: rgb(36, 36, 36);
-    stroke-width: 2px;
-}
-.legend-entry .swatch__body{
-    fill: #ccc;
-}
 
 /*
 #########################################################
@@ -118,12 +110,11 @@ text {
 .diagram__bg{
     fill: #333;
 }
-.panel--main .bg{
+.panel .textblock__bg,
+.panel__bg{
     fill: #fff;
 }
-.panel--meta .bg{
-    fill: #f4f4f4;
-}
+
 
 /* PinLabels & legend */
 
@@ -197,4 +188,10 @@ text {
 }
 .strong{
     font-weight: bold;
+}
+
+.panel__name{
+    fill: #ccc;
+    font-weight: bold;
+    font-style: italic;
 }

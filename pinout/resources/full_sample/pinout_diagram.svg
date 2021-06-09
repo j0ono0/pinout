@@ -12,16 +12,7 @@
 
     <style type="text/css" media="screen">  
     <![CDATA[  
-    /*
-#########################################################
-#
-# Default SVG presentation attributes (styles)
-#
-#########################################################
-*/
-
-
-
+    
 path, rect {
     stroke: rgb(0, 0, 0);
     stroke-dasharray: 0;
@@ -35,10 +26,6 @@ path, rect {
 path{
     fill: none;
 }
-rect {
-    fill: none;
-}
-
 text {
     font-family: Verdana, Georgia, sans-serif;
     font-size: 14px;
@@ -47,12 +34,9 @@ text {
 }
 
 
-/*************************************/
-/* pinlabel defaults                 */
 
 .label__body{
     fill: rgb(36, 36, 36);
-    ry: 2px;
 }
 
 .label .lline{
@@ -68,29 +52,25 @@ text {
 }
 
 
-/*************************************/
-/* Legend                            */
 
 .legend .swatch__body{
     fill: rgba(0,0,0,0);
-    ry: 2px;
 }
 .legend-entry__text{
     dominant-baseline: central;
     fill: #000;
 }
-
-.legend__bg{
+.legend__bg,
+.legend-entry__bg{
     fill: #fff;
 }
 .legend-entry .swatch__body{
     fill: #ccc;
 }
 
-/*************************************/
-/* Annotation                        */
 
-.annotation__body rect{
+
+.annotation__bg{
     fill: rgb(230, 180, 10);
     stroke-width: 0;
 }
@@ -111,18 +91,8 @@ text {
 
 
 
-/*
-#########################################################
-#
-# Styles specific to user defined tags
-#
-#########################################################
-*/
-
-/* Layout */
-
 .diagram__bg{
-    fill: #333;
+    fill: rgb(51, 51, 51);
 }
 .panel .textblock__bg,
 .panel__bg{
@@ -130,18 +100,14 @@ text {
 }
 
 
-/* PinLabels & legend */
 
-[class^="pwr"] .label__body,
-[class*=" pwr"] .label__body,
+.pwr .label__body,
 .pwr .swatch__body{
     fill: rgb(173, 0, 0);
 }
-[class^="pwr"] .lline,
-[class*=" pwr"] .lline{
+.pwr .lline{
     stroke: rgb(173, 0, 0);
 }
-
 .gpio .label__body,
 .gpio .swatch__body{
     fill: rgb(130, 139, 48);
@@ -149,7 +115,6 @@ text {
 .gpio .lline{
     stroke: rgb(130, 139, 48);
 }
-
 .analog .label__body,
 .analog .swatch__body{
     fill: rgb(18, 96, 133);
@@ -157,7 +122,6 @@ text {
 .analog .lline{
     stroke: rgb(18, 96, 133);
 }
-
 .led .label__body,
 .led .swatch__body{
     fill: rgb(230, 180, 10);
@@ -165,7 +129,6 @@ text {
 .led .lline{
     stroke: rgb(230, 180, 10);
 }
-
 .comms .label__body,
 .comms .swatch__body{
     fill: rgb(182, 69, 176);
@@ -173,7 +136,6 @@ text {
 .comms .lline{
     stroke: rgb(182, 69, 176);
 }
-
 .gnd .label__body,
 .gnd .swatch__body{
     fill: #000;
@@ -190,7 +152,7 @@ text {
     stroke: rgb(28, 119, 123);
 }
 
-/* typography styles */
+
 
 .h1 {
     font-size: 30px;
@@ -203,7 +165,6 @@ text {
 .strong{
     font-weight: bold;
 }
-
 .panel__name{
     fill: #ccc;
     font-weight: bold;
@@ -261,7 +222,7 @@ text {
     "
 >
         <g 
-        class="label pwr--3v3 pinlabel"
+        class="label pwr pinlabel"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -1299,7 +1260,7 @@ text {
 >
         <path 
     class="lline annotation__leaderline" 
-    d="M 0.0 10 L 0.0 43.333333333333336 A 6.666666666666667 6.666666666666667 0 0 0 6.666666666666667 50.0 L 40 50.0" 
+    d="M 0.0 10 L 0.0 44.333333333333336 A 9.666666666666666 9.666666666666666 0 0 0 9.666666666666666 54.0 L 40 54.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
@@ -1310,25 +1271,27 @@ text {
     height="20" 
     shape-rendering="geometricPrecision"
     rx="10" 
+    ry="10" 
 /><g 
         class="annotation__body"
     transform="
-        translate(40 20) 
+        translate(40 29) 
         scale(1 1)
     "
 >
         <rect
- 
+ class="annotation__bg" 
     x="0" 
     y="0" 
     width="250" 
-    height="60" 
+    height="50" 
     shape-rendering="geometricPrecision"
-    rx="30" 
+    rx="25" 
+    ry="25" 
 /><g 
         class="textblock textblock"
     transform="
-        translate(28 38) 
+        translate(28 33) 
         scale(1 1)
     "
 >
@@ -1360,7 +1323,7 @@ text {
 >
         <path 
     class="lline annotation__leaderline" 
-    d="M 0.0 20 L 0.0 184.66666666666666 A 13.333333333333334 13.333333333333334 0 0 0 13.333333333333334 198.0 L 40 198.0" 
+    d="M 0.0 20 L 0.0 179.66666666666666 A 13.333333333333334 13.333333333333334 0 0 0 13.333333333333334 193.0 L 40 193.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
@@ -1371,6 +1334,7 @@ text {
     height="40" 
     shape-rendering="geometricPrecision"
     rx="20" 
+    ry="20" 
 /><g 
         class="annotation__body"
     transform="
@@ -1379,17 +1343,18 @@ text {
     "
 >
         <rect
- 
+ class="annotation__bg" 
     x="0" 
     y="0" 
     width="125" 
-    height="60" 
+    height="50" 
     shape-rendering="geometricPrecision"
-    rx="30" 
+    rx="25" 
+    ry="25" 
 /><g 
         class="textblock textblock"
     transform="
-        translate(28 38) 
+        translate(28 33) 
         scale(1 1)
     "
 >

@@ -44,8 +44,16 @@ class Body(core.Group):
         width = width or self.config["width"]
         height = height or self.config["height"]
         corner_radius = corner_radius or self.config["corner_radius"]
+        tag = config.annotation["tag"] + "__bg"
         self.add(
-            core.Rect(x=0, y=0, width=width, height=height, corner_radius=corner_radius)
+            core.Rect(
+                x=0,
+                y=0,
+                width=width,
+                height=height,
+                corner_radius=corner_radius,
+                tag=tag,
+            )
         )
 
         self.x = x or self.config["x"]

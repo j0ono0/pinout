@@ -111,14 +111,14 @@ annotation = {
     "tag": "annotation",
     "body": {
         "x": 40,
-        "y": 20,
+        "y": 29,
         "width": 250,
-        "height": 60,
-        "corner_radius": 30,
+        "height": 50,
+        "corner_radius": 25,
         "tag": "annotation__body",
         "textblock": {
             "x": 28,
-            "y": 22,
+            "y": 17,
             "line_height": 18,
         },
     },

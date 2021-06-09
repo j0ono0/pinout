@@ -11,7 +11,7 @@ legend = [
 # Pinlabels
 rhs = [
     [
-        ("Vcc", "pwr--3v3"),
+        ("Vcc", "pwr"),
     ],
     [
         ("GND", "gnd"),

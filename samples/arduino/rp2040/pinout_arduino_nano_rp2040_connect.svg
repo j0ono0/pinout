@@ -315,7 +315,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -343,7 +343,7 @@ text {
     D12
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(160 0) 
         scale(1 1)
@@ -371,7 +371,7 @@ text {
     GPIO4
 </text>
 </g><g 
-        class="label default pinlabel"
+        class="label default"
     transform="
         translate(242 0) 
         scale(1 1)
@@ -407,7 +407,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 24.6) 
         scale(1 1)
@@ -435,7 +435,7 @@ text {
     D11
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(160 24.6) 
         scale(1 1)
@@ -463,7 +463,7 @@ text {
     GPIO7
 </text>
 </g><g 
-        class="label default pinlabel"
+        class="label default"
     transform="
         translate(242 24.6) 
         scale(1 1)
@@ -499,7 +499,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 49.2) 
         scale(1 1)
@@ -527,7 +527,7 @@ text {
     D10
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(160 49.2) 
         scale(1 1)
@@ -563,7 +563,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 73.80000000000001) 
         scale(1 1)
@@ -591,7 +591,7 @@ text {
     D9
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(160 73.80000000000001) 
         scale(1 1)
@@ -627,7 +627,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 98.4) 
         scale(1 1)
@@ -655,7 +655,7 @@ text {
     D8
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(160 98.4) 
         scale(1 1)
@@ -691,7 +691,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 123.0) 
         scale(1 1)
@@ -719,7 +719,7 @@ text {
     D7
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(160 123.0) 
         scale(1 1)
@@ -755,7 +755,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 147.6) 
         scale(1 1)
@@ -783,7 +783,7 @@ text {
     D6
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(160 147.6) 
         scale(1 1)
@@ -819,7 +819,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 172.2) 
         scale(1 1)
@@ -847,7 +847,7 @@ text {
     D5
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(160 172.2) 
         scale(1 1)
@@ -883,7 +883,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 196.79999999999998) 
         scale(1 1)
@@ -911,7 +911,7 @@ text {
     D4
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(160 196.79999999999998) 
         scale(1 1)
@@ -947,7 +947,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 221.39999999999998) 
         scale(1 1)
@@ -975,7 +975,7 @@ text {
     D3
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(160 221.39999999999998) 
         scale(1 1)
@@ -1011,7 +1011,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 245.99999999999997) 
         scale(1 1)
@@ -1039,7 +1039,7 @@ text {
     D2
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(160 245.99999999999997) 
         scale(1 1)
@@ -1075,7 +1075,7 @@ text {
     "
 >
         <g 
-        class="label gnd pinlabel"
+        class="label gnd"
     transform="
         translate(0 270.59999999999997) 
         scale(1 1)
@@ -1111,7 +1111,7 @@ text {
     "
 >
         <g 
-        class="label other pinlabel"
+        class="label other"
     transform="
         translate(0 295.2) 
         scale(1 1)
@@ -1139,7 +1139,7 @@ text {
     RESET
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(160 295.2) 
         scale(1 1)
@@ -1175,7 +1175,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 319.8) 
         scale(1 1)
@@ -1203,7 +1203,7 @@ text {
     RX
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(160 319.8) 
         scale(1 1)
@@ -1239,7 +1239,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 344.40000000000003) 
         scale(1 1)
@@ -1267,7 +1267,7 @@ text {
     TX
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(160 344.40000000000003) 
         scale(1 1)
@@ -1310,7 +1310,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -1338,7 +1338,7 @@ text {
     D13
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(-160 0) 
         scale(-1 1)
@@ -1366,7 +1366,7 @@ text {
     GPIO6
 </text>
 </g><g 
-        class="label default pinlabel"
+        class="label default"
     transform="
         translate(-242 0) 
         scale(-1 1)
@@ -1402,7 +1402,7 @@ text {
     "
 >
         <g 
-        class="label pwr pinlabel"
+        class="label pwr"
     transform="
         translate(0 24.6) 
         scale(-1 1)
@@ -1438,7 +1438,7 @@ text {
     "
 >
         <g 
-        class="label other pinlabel"
+        class="label other"
     transform="
         translate(0 49.2) 
         scale(-1 1)
@@ -1466,7 +1466,7 @@ text {
     AREF
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(-160 49.2) 
         scale(-1 1)
@@ -1502,7 +1502,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 73.80000000000001) 
         scale(-1 1)
@@ -1530,7 +1530,7 @@ text {
     D14
 </text>
 </g><g 
-        class="label analog pinlabel"
+        class="label analog"
     transform="
         translate(-130 73.80000000000001) 
         scale(-1 1)
@@ -1558,7 +1558,7 @@ text {
     A0
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(-160 73.80000000000001) 
         scale(-1 1)
@@ -1586,7 +1586,7 @@ text {
     GPIO26
 </text>
 </g><g 
-        class="label default pinlabel"
+        class="label default"
     transform="
         translate(-242 73.80000000000001) 
         scale(-1 1)
@@ -1622,7 +1622,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 98.4) 
         scale(-1 1)
@@ -1650,7 +1650,7 @@ text {
     D15
 </text>
 </g><g 
-        class="label analog pinlabel"
+        class="label analog"
     transform="
         translate(-130 98.4) 
         scale(-1 1)
@@ -1678,7 +1678,7 @@ text {
     A1
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(-160 98.4) 
         scale(-1 1)
@@ -1706,7 +1706,7 @@ text {
     GPIO27
 </text>
 </g><g 
-        class="label default pinlabel"
+        class="label default"
     transform="
         translate(-242 98.4) 
         scale(-1 1)
@@ -1742,7 +1742,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 123.0) 
         scale(-1 1)
@@ -1770,7 +1770,7 @@ text {
     D16
 </text>
 </g><g 
-        class="label analog pinlabel"
+        class="label analog"
     transform="
         translate(-130 123.0) 
         scale(-1 1)
@@ -1798,7 +1798,7 @@ text {
     A2
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(-160 123.0) 
         scale(-1 1)
@@ -1826,7 +1826,7 @@ text {
     GPIO28
 </text>
 </g><g 
-        class="label default pinlabel"
+        class="label default"
     transform="
         translate(-242 123.0) 
         scale(-1 1)
@@ -1862,7 +1862,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 147.6) 
         scale(-1 1)
@@ -1890,7 +1890,7 @@ text {
     D17
 </text>
 </g><g 
-        class="label analog pinlabel"
+        class="label analog"
     transform="
         translate(-130 147.6) 
         scale(-1 1)
@@ -1918,7 +1918,7 @@ text {
     A3
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(-160 147.6) 
         scale(-1 1)
@@ -1946,7 +1946,7 @@ text {
     GPIO29
 </text>
 </g><g 
-        class="label default pinlabel"
+        class="label default"
     transform="
         translate(-242 147.6) 
         scale(-1 1)
@@ -1982,7 +1982,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 172.2) 
         scale(-1 1)
@@ -2010,7 +2010,7 @@ text {
     D18
 </text>
 </g><g 
-        class="label analog pinlabel"
+        class="label analog"
     transform="
         translate(-130 172.2) 
         scale(-1 1)
@@ -2038,7 +2038,7 @@ text {
     A4
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(-160 172.2) 
         scale(-1 1)
@@ -2066,7 +2066,7 @@ text {
     GPIO12
 </text>
 </g><g 
-        class="label default pinlabel"
+        class="label default"
     transform="
         translate(-242 172.2) 
         scale(-1 1)
@@ -2102,7 +2102,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 196.79999999999998) 
         scale(-1 1)
@@ -2130,7 +2130,7 @@ text {
     D19
 </text>
 </g><g 
-        class="label analog pinlabel"
+        class="label analog"
     transform="
         translate(-130 196.79999999999998) 
         scale(-1 1)
@@ -2158,7 +2158,7 @@ text {
     A5
 </text>
 </g><g 
-        class="label mu-port pinlabel"
+        class="label mu-port"
     transform="
         translate(-160 196.79999999999998) 
         scale(-1 1)
@@ -2186,7 +2186,7 @@ text {
     GPIO13
 </text>
 </g><g 
-        class="label default pinlabel"
+        class="label default"
     transform="
         translate(-242 196.79999999999998) 
         scale(-1 1)
@@ -2222,7 +2222,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 221.39999999999998) 
         scale(-1 1)
@@ -2250,7 +2250,7 @@ text {
     D20
 </text>
 </g><g 
-        class="label analog pinlabel"
+        class="label analog"
     transform="
         translate(-130 221.39999999999998) 
         scale(-1 1)
@@ -2278,7 +2278,7 @@ text {
     A6
 </text>
 </g><g 
-        class="label default show-leader pinlabel"
+        class="label default show-leader"
     transform="
         translate(-160 221.39999999999998) 
         scale(-1 1)
@@ -2314,7 +2314,7 @@ text {
     "
 >
         <g 
-        class="label digital pinlabel"
+        class="label digital"
     transform="
         translate(0 245.99999999999997) 
         scale(-1 1)
@@ -2342,7 +2342,7 @@ text {
     D21
 </text>
 </g><g 
-        class="label analog pinlabel"
+        class="label analog"
     transform="
         translate(-130 245.99999999999997) 
         scale(-1 1)
@@ -2370,7 +2370,7 @@ text {
     A7
 </text>
 </g><g 
-        class="label default show-leader pinlabel"
+        class="label default show-leader"
     transform="
         translate(-160 245.99999999999997) 
         scale(-1 1)
@@ -2406,7 +2406,7 @@ text {
     "
 >
         <g 
-        class="label pwr pinlabel"
+        class="label pwr"
     transform="
         translate(0 270.59999999999997) 
         scale(-1 1)
@@ -2442,7 +2442,7 @@ text {
     "
 >
         <g 
-        class="label other pinlabel"
+        class="label other"
     transform="
         translate(0 295.2) 
         scale(-1 1)
@@ -2470,7 +2470,7 @@ text {
     RESET
 </text>
 </g><g 
-        class="label default pinlabel"
+        class="label default"
     transform="
         translate(-160 295.2) 
         scale(-1 1)
@@ -2506,7 +2506,7 @@ text {
     "
 >
         <g 
-        class="label gnd pinlabel"
+        class="label gnd"
     transform="
         translate(0 319.8) 
         scale(-1 1)
@@ -2542,7 +2542,7 @@ text {
     "
 >
         <g 
-        class="label pwr pinlabel"
+        class="label pwr"
     transform="
         translate(0 344.40000000000003) 
         scale(-1 1)
@@ -2585,7 +2585,7 @@ text {
     "
 >
         <g 
-        class="label led pinlabel"
+        class="label led"
     transform="
         translate(0 0) 
         scale(-1 -1)
@@ -2621,7 +2621,7 @@ text {
     "
 >
         <g 
-        class="label led pinlabel"
+        class="label led"
     transform="
         translate(112 0) 
         scale(-1 -1)

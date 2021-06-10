@@ -1,3 +1,5 @@
+import components
+
 legend = [
     ("Analog", "analog"),
     ("Communication", "comms"),
@@ -11,7 +13,7 @@ legend = [
 # Pinlabels
 rhs = [
     [
-        ("Vcc", "pwr"),
+        ("Vcc", "pwr", {"body": components.LabelIn(0, 0, 50, 20)}),
     ],
     [
         ("GND", "gnd"),

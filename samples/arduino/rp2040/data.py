@@ -4,25 +4,21 @@ from pinout.components import leaderline as lline
 from arduino_components import Label, FirstLabel, LabelLast
 
 
-cfg = {
-    # Right header
-    "rgt_first": {"body": {"width": 80, "height": 20}},
-    "rgt_single": {"body": {"width": 80, "height": 20}},
-    "rgt": {"body": {"width": 80, "height": 20, "x": 2, "y": 0}},
-    # Left header
-    "lft_first": {"body": {"width": 80, "height": 20, "scale": (-1, 1)}},
-    "lft_first_sm": {"body": {"width": 50, "height": 20, "scale": (-1, 1)}},
-    "lft": {"body": {"width": 80, "height": 20, "scale": (-1, 1), "x": 2, "y": 0}},
-    "lft_sm": {"body": {"width": 30, "height": 20, "scale": (-1, 1), "x": 0, "y": 0}},
-    "lft_single": {"body": {"width": 80, "height": 20, "scale": (-1, 1)}},
-    # LEDs
-    "led": {
-        "body": {
-            "width": 120,
-            "height": 20,
-            "scale": (-1, -1),
-            "leaderline": lline.Curved("vh"),
-        },
+# Right header
+lbl_first = {
+    "body": {"width": 80, "height": 20},
+}
+lbl = {"body": {"width": 80, "height": 20, "x": 2}}
+
+# Left header
+lbl_first_sm = {"body": {"width": 50, "height": 20}}
+lbl_sm = {"body": {"width": 30, "height": 20, "x": 0, "y": 0}}
+
+# LEDs
+led = {
+    "body": {
+        "width": 120,
+        "height": 20,
     },
 }
 
@@ -32,6 +28,7 @@ cfg = {
 # Legend
 #
 #########################################################
+
 legend = [
     ("Ground", "gnd"),
     ("Power", "pwr"),
@@ -51,69 +48,68 @@ legend = [
 # Header: Right-hand-side
 #
 #########################################################
-# cfg\.set_origin((0, 0), (0, 24.6))
-# cfg\.set_offset((80, 0), (0, 0))
+
 header_rhs = [
     [
-        ("D12", "digital", cfg["rgt_first"]),
-        ("GPIO4", "mu-port", cfg["rgt"]),
-        ("CIPO", "default", cfg["rgt"]),
+        ("D12", "digital", lbl_first),
+        ("GPIO4", "mu-port", lbl),
+        ("CIPO", "default", lbl),
     ],
     [
-        ("D11", "digital", cfg["rgt_first"]),
-        ("GPIO7", "mu-port", cfg["rgt"]),
-        ("CIPI", "default", cfg["rgt"]),
+        ("D11", "digital", lbl_first),
+        ("GPIO7", "mu-port", lbl),
+        ("CIPI", "default", lbl),
     ],
     [
-        ("D10", "digital", cfg["rgt_first"]),
-        ("GPIO5", "mu-port", cfg["rgt"]),
+        ("D10", "digital", lbl_first),
+        ("GPIO5", "mu-port", lbl),
     ],
     [
-        ("D9", "digital", cfg["rgt_first"]),
-        ("GPIO21", "mu-port", cfg["rgt"]),
+        ("D9", "digital", lbl_first),
+        ("GPIO21", "mu-port", lbl),
     ],
     [
-        ("D8", "digital", cfg["rgt_first"]),
-        ("GPIO20", "mu-port", cfg["rgt"]),
+        ("D8", "digital", lbl_first),
+        ("GPIO20", "mu-port", lbl),
     ],
     [
-        ("D7", "digital", cfg["rgt_first"]),
-        ("GPIO19", "mu-port", cfg["rgt"]),
+        ("D7", "digital", lbl_first),
+        ("GPIO19", "mu-port", lbl),
     ],
     [
-        ("D6", "digital", cfg["rgt_first"]),
-        ("GPIO18", "mu-port", cfg["rgt"]),
+        ("D6", "digital", lbl_first),
+        ("GPIO18", "mu-port", lbl),
     ],
     [
-        ("D5", "digital", cfg["rgt_first"]),
-        ("GPIO17", "mu-port", cfg["rgt"]),
+        ("D5", "digital", lbl_first),
+        ("GPIO17", "mu-port", lbl),
     ],
     [
-        ("D4", "digital", cfg["rgt_first"]),
-        ("GPIO16", "mu-port", cfg["rgt"]),
+        ("D4", "digital", lbl_first),
+        ("GPIO16", "mu-port", lbl),
     ],
     [
-        ("D3", "digital", cfg["rgt_first"]),
-        ("GPIO15", "mu-port", cfg["rgt"]),
+        ("D3", "digital", lbl_first),
+        ("GPIO15", "mu-port", lbl),
     ],
     [
-        ("D2", "digital", cfg["rgt_first"]),
-        ("GPIO25", "mu-port", cfg["rgt"]),
+        ("D2", "digital", lbl_first),
+        ("GPIO25", "mu-port", lbl),
     ],
     [
-        ("GND", "gnd", cfg["rgt_single"]),
+        ("GND", "gnd", lbl_first),
     ],
     [
-        ("RESET", "other", cfg["rgt_first"]),
-        ("RESET", "mu-port", cfg["rgt"]),
+        ("RESET", "other", lbl_first),
+        ("RESET", "mu-port", lbl),
     ],
     [
-        ("RX", "digital", cfg["rgt_first"]),
-        ("GPIO1", "mu-port", cfg["rgt"]),
+        ("RX", "digital", lbl_first),
+        ("GPIO1", "mu-port", lbl),
     ],
     [
-        ("TX", "digital", cfg["rgt_first"]),
-        ("GPIO0", "mu-port", cfg["rgt"]),
+        ("TX", "digital", lbl_first),
+        ("GPIO0", "mu-port", lbl),
     ],
 ]
 
@@ -123,77 +119,74 @@ header_rhs = [
 #
 #########################################################
 
-
-# cfg\.set_origin((0, 0), (0, 24.6))
-# cfg\.set_offset((80, 0), (0, 0))
 header_lhs = [
     [
-        ("D13", "digital", cfg["lft_first"]),
-        ("GPIO6", "mu-port", cfg["lft"]),
-        ("SCK", "default", cfg["lft"]),
+        ("D13", "digital", lbl_first),
+        ("GPIO6", "mu-port", lbl),
+        ("SCK", "default", lbl),
     ],
     [
-        ("+3V3", "pwr", cfg["lft_single"]),
+        ("+3V3", "pwr", lbl_first),
     ],
     [
-        ("AREF", "other", cfg["lft_first"]),
-        ("PA03", "mu-port", cfg["lft"]),
+        ("AREF", "other", lbl_first),
+        ("PA03", "mu-port", lbl),
     ],
     [
-        ("D14", "digital", cfg["lft_first_sm"]),
-        ("A0", "analog", cfg["lft_sm"]),
-        ("GPIO26", "mu-port", cfg["lft"]),
-        ("A0/DAC0", "default", cfg["lft"]),
+        ("D14", "digital", lbl_first_sm),
+        ("A0", "analog", lbl_sm),
+        ("GPIO26", "mu-port", lbl),
+        ("A0/DAC0", "default", lbl),
     ],
     [
-        ("D15", "digital", cfg["lft_first_sm"]),
-        ("A1", "analog", cfg["lft_sm"]),
-        ("GPIO27", "mu-port", cfg["lft"]),
-        ("A1", "default", cfg["lft"]),
+        ("D15", "digital", lbl_first_sm),
+        ("A1", "analog", lbl_sm),
+        ("GPIO27", "mu-port", lbl),
+        ("A1", "default", lbl),
     ],
     [
-        ("D16", "digital", cfg["lft_first_sm"]),
-        ("A2", "analog", cfg["lft_sm"]),
-        ("GPIO28", "mu-port", cfg["lft"]),
-        ("A2", "default", cfg["lft"]),
+        ("D16", "digital", lbl_first_sm),
+        ("A2", "analog", lbl_sm),
+        ("GPIO28", "mu-port", lbl),
+        ("A2", "default", lbl),
     ],
     [
-        ("D17", "digital", cfg["lft_first_sm"]),
-        ("A3", "analog", cfg["lft_sm"]),
-        ("GPIO29", "mu-port", cfg["lft"]),
-        ("A3", "default", cfg["lft"]),
+        ("D17", "digital", lbl_first_sm),
+        ("A3", "analog", lbl_sm),
+        ("GPIO29", "mu-port", lbl),
+        ("A3", "default", lbl),
     ],
     [
-        ("D18", "digital", cfg["lft_first_sm"]),
-        ("A4", "analog", cfg["lft_sm"]),
-        ("GPIO12", "mu-port", cfg["lft"]),
-        ("A4", "default", cfg["lft"]),
+        ("D18", "digital", lbl_first_sm),
+        ("A4", "analog", lbl_sm),
+        ("GPIO12", "mu-port", lbl),
+        ("A4", "default", lbl),
     ],
     [
-        ("D19", "digital", cfg["lft_first_sm"]),
-        ("A5", "analog", cfg["lft_sm"]),
-        ("GPIO13", "mu-port", cfg["lft"]),
-        ("A5", "default", cfg["lft"]),
+        ("D19", "digital", lbl_first_sm),
+        ("A5", "analog", lbl_sm),
+        ("GPIO13", "mu-port", lbl),
+        ("A5", "default", lbl),
     ],
     [
-        ("D20", "digital", cfg["lft_first_sm"]),
-        ("A6", "analog", cfg["lft_sm"]),
-        ("A6", "default show-leader", cfg["lft"]),
+        ("D20", "digital", lbl_first_sm),
+        ("A6", "analog", lbl_sm),
+        ("A6", "default show-leader", lbl),
     ],
     [
-        ("D21", "digital", cfg["lft_first_sm"]),
-        ("A7", "analog", cfg["lft_sm"]),
-        ("A7", "default show-leader", cfg["lft"]),
+        ("D21", "digital", lbl_first_sm),
+        ("A7", "analog", lbl_sm),
+        ("A7", "default show-leader", lbl),
     ],
     [
-        ("+5V", "pwr", cfg["lft_single"]),
+        ("+5V", "pwr", lbl_first),
     ],
     [
-        ("RESET", "other", cfg["lft_first"]),
-        ("QSPI_CSn", "default", cfg["lft"]),
+        ("RESET", "other", lbl_first),
+        ("QSPI_CSn", "default", lbl),
     ],
-    [("GND", "gnd", cfg["lft_single"])],
-    [("VIN", "pwr", cfg["lft_single"])],
+    [("GND", "gnd", lbl_first)],
+    [("VIN", "pwr", lbl_first)],
 ]
 
 
@@ -202,11 +195,10 @@ header_lhs = [
 # LED labels
 #
 #########################################################
-# cfg\.set_origin((0, 0), (112, 0))
-# cfg\.set_offset((112, 60), (112, 22))
+
 leds = [
-    [("Power", "led", cfg["led"])],
-    [("LED_BUILTIN", "led", cfg["led"])],
+    [("Power", "led", led)],
+    [("LED_BUILTIN", "led", led)],
 ]
 
 

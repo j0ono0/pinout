@@ -222,7 +222,7 @@ text {
     "
 >
         <g 
-        class="label pwr pinlabel"
+        class="label pwr"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -233,17 +233,15 @@ text {
     d="M 0 0.0 L 7.5 0.0 C 30.0 0.0 30.0 0.0 52.5 0.0 L 60 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="60" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+/><path 
+    class="label__body" 
+    d="M 63 -10.0 l 50 0 l -6 20 -50 0 z" 
+    transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><text
     class="label__text"
     transform="
-        translate(100.0 0) 
+        translate(85.0 0) 
         scale(1 1)
     "  
 >
@@ -258,7 +256,7 @@ text {
     "
 >
         <g 
-        class="label gnd pinlabel"
+        class="label gnd"
     transform="
         translate(0 30) 
         scale(1 1)
@@ -294,7 +292,7 @@ text {
     "
 >
         <g 
-        class="label gpio pinlabel"
+        class="label gpio"
     transform="
         translate(0 60) 
         scale(1 1)
@@ -322,7 +320,7 @@ text {
     3
 </text>
 </g><g 
-        class="label analog pinlabel"
+        class="label analog"
     transform="
         translate(140 60) 
         scale(1 1)
@@ -350,7 +348,7 @@ text {
     Lc2a
 </text>
 </g><g 
-        class="label led pinlabel"
+        class="label led"
     transform="
         translate(226 60) 
         scale(1 1)
@@ -386,7 +384,7 @@ text {
     "
 >
         <g 
-        class="label gpio pinlabel"
+        class="label gpio"
     transform="
         translate(0 90) 
         scale(1 1)
@@ -414,7 +412,7 @@ text {
     4
 </text>
 </g><g 
-        class="label analog pinlabel"
+        class="label analog"
     transform="
         translate(140 90) 
         scale(1 1)
@@ -457,7 +455,7 @@ text {
     "
 >
         <g 
-        class="label gpio pinlabel"
+        class="label gpio"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -485,7 +483,7 @@ text {
     0
 </text>
 </g><g 
-        class="label gpio pinlabel"
+        class="label gpio"
     transform="
         translate(-140 0) 
         scale(-1 1)
@@ -513,7 +511,7 @@ text {
     Lb0a
 </text>
 </g><g 
-        class="label comms pinlabel"
+        class="label comms"
     transform="
         translate(-226 0) 
         scale(-1 1)
@@ -549,7 +547,7 @@ text {
     "
 >
         <g 
-        class="label gpio pinlabel"
+        class="label gpio"
     transform="
         translate(0 30) 
         scale(-1 1)
@@ -577,7 +575,7 @@ text {
     1
 </text>
 </g><g 
-        class="label comms pinlabel"
+        class="label comms"
     transform="
         translate(-140 30) 
         scale(-1 1)
@@ -613,7 +611,7 @@ text {
     "
 >
         <g 
-        class="label gpio pinlabel"
+        class="label gpio"
     transform="
         translate(0 60) 
         scale(-1 1)
@@ -641,7 +639,7 @@ text {
     2
 </text>
 </g><g 
-        class="label analog pinlabel"
+        class="label analog"
     transform="
         translate(-140 60) 
         scale(-1 1)
@@ -669,7 +667,7 @@ text {
     Lc2a
 </text>
 </g><g 
-        class="label led pinlabel"
+        class="label led"
     transform="
         translate(-226 60) 
         scale(-1 1)
@@ -705,7 +703,7 @@ text {
     "
 >
         <g 
-        class="label pwr pinlabel"
+        class="label pwr"
     transform="
         translate(0 90) 
         scale(-1 1)
@@ -748,7 +746,7 @@ text {
     "
 >
         <g 
-        class="label gpio pinlabel"
+        class="label gpio"
     transform="
         translate(0 0) 
         scale(-1 1)
@@ -776,7 +774,7 @@ text {
     3
 </text>
 </g><g 
-        class="label analog pinlabel"
+        class="label analog"
     transform="
         translate(-189 60) 
         scale(-1 1)
@@ -804,7 +802,7 @@ text {
     Lc2a
 </text>
 </g><g 
-        class="label led pinlabel"
+        class="label led"
     transform="
         translate(-275 60) 
         scale(-1 1)
@@ -840,7 +838,7 @@ text {
     "
 >
         <g 
-        class="label gpio pinlabel"
+        class="label gpio"
     transform="
         translate(30 0) 
         scale(-1 1)
@@ -868,7 +866,7 @@ text {
     4
 </text>
 </g><g 
-        class="label pwm pinlabel"
+        class="label pwm"
     transform="
         translate(-189 90) 
         scale(-1 1)
@@ -896,7 +894,7 @@ text {
     Lc2a
 </text>
 </g><g 
-        class="label led pinlabel"
+        class="label led"
     transform="
         translate(-275 90) 
         scale(-1 1)
@@ -939,7 +937,7 @@ text {
     "
 >
         <g 
-        class="label gpio pinlabel"
+        class="label gpio"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -967,7 +965,7 @@ text {
     6
 </text>
 </g><g 
-        class="label analog pinlabel"
+        class="label analog"
     transform="
         translate(189 60) 
         scale(1 1)
@@ -1003,7 +1001,7 @@ text {
     "
 >
         <g 
-        class="label gpio pinlabel"
+        class="label gpio"
     transform="
         translate(-30 0) 
         scale(1 1)
@@ -1031,7 +1029,7 @@ text {
     5
 </text>
 </g><g 
-        class="label pwm pinlabel"
+        class="label pwm"
     transform="
         translate(189 90) 
         scale(1 1)
@@ -1059,7 +1057,7 @@ text {
     Lc2a
 </text>
 </g><g 
-        class="label led pinlabel"
+        class="label led"
     transform="
         translate(275 90) 
         scale(1 1)
@@ -1102,7 +1100,7 @@ text {
     "
 >
         <g 
-        class="label led pinlabel"
+        class="label led"
     transform="
         translate(0 0) 
         scale(-1 -1)
@@ -1130,7 +1128,7 @@ text {
     a
 </text>
 </g><g 
-        class="label analog pinlabel"
+        class="label analog"
     transform="
         translate(-171 -110) 
         scale(-1 -1)
@@ -1166,7 +1164,7 @@ text {
     "
 >
         <g 
-        class="label led pinlabel"
+        class="label led"
     transform="
         translate(15 15) 
         scale(-1 -1)
@@ -1194,7 +1192,7 @@ text {
     b
 </text>
 </g><g 
-        class="label pwm pinlabel"
+        class="label pwm"
     transform="
         translate(-171 -140) 
         scale(-1 -1)
@@ -1222,7 +1220,7 @@ text {
     AUX_b
 </text>
 </g><g 
-        class="label pwm pinlabel"
+        class="label pwm"
     transform="
         translate(-257 -140) 
         scale(-1 -1)

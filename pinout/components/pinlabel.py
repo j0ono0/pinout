@@ -33,9 +33,9 @@ class Label(core.Group):
     def __init__(
         self,
         content="",
-        tag=None,
         x=0,
         y=0,
+        tag=None,
         body=None,
         leaderline=None,
         **kwargs,
@@ -43,9 +43,6 @@ class Label(core.Group):
         self.content = content
         super().__init__(x, y, tag=tag, **kwargs)
         self.update_config(config.pinlabel)
-
-        # offset = offset or self.config["offset"]
-        # self.offset = core.Coords(*offset)
 
         leaderline = leaderline or self.config["leaderline"]
         if isinstance(leaderline, dict):
@@ -111,24 +108,23 @@ class PinLabelGroup(core.Group):
             row_group = self.add(core.Group(tag="label__row"))
             for label in row:
 
-                # If data supplied convert to Label
+                # If data is supplied convert to Label
                 if type(label) is tuple:
                     content, tag, *args = label
                     attrs = args[0] if len(args) > 0 else {}
 
-                    label_config = copy.deepcopy(config.pinlabel)
-                    label_config.update(attrs)
-
-                    label_config["leaderline"] = (
-                        leaderline or label_config["leaderline"]
-                    )
-                    label_config["body"] = body or label_config["body"]
+                    # Set leaderline and body in attrs if supplied in either:
+                    # 1. data
+                    # 2. PinlabelGroup
+                    attrs["leaderline"] = attrs.get("leaderline", leaderline)
+                    attrs["body"] = attrs.get("body", body)
 
                     label = Label(
                         content=content,
                         scale=scale,
-                        **label_config,
+                        **attrs,
                     )
+
                     label.add_tag(tag)
 
                 # -- label now exists -- #
@@ -139,8 +135,6 @@ class PinLabelGroup(core.Group):
                     label.x = prev_label.x + prev_label.width * scale.x
                     label.y = prev_label.y + prev_label.body.y * scale.y
                     label.leaderline = lline.Straight(direction="hh")
-                    label.body.x = label_config["body"]["x"]
-                    label.body.y = label_config["body"]["y"]
 
                 # Start of a new row
                 except IndexError:
@@ -148,10 +142,3 @@ class PinLabelGroup(core.Group):
                     label.body.x, label.body.y = next(label_coords)
 
                 row_group.add(label)
-
-
-#######################
-# Module config
-
-body = PinLabelBody(x=0, y=0, width=80, height=26)
-leaderline = lline.Curved(direction="hh")

@@ -44,13 +44,13 @@ class Label(core.Group):
         super().__init__(x, y, tag=tag, **kwargs)
         self.update_config(config.pinlabel)
 
-        leaderline = leaderline or self.config["leaderline"]
+        leaderline = copy.deepcopy(leaderline or self.config["leaderline"])
         if isinstance(leaderline, dict):
             leaderline_config = self.config["leaderline"]
             leaderline_config.update(leaderline)
             leaderline = lline.Curved(**leaderline_config)
 
-        body = body or self.config["body"]
+        body = copy.deepcopy(body or self.config["body"])
         if isinstance(body, dict):
             body_config = self.config["body"]
             body_config.update(body)
@@ -116,8 +116,8 @@ class PinLabelGroup(core.Group):
                     # Set leaderline and body in attrs if supplied in either:
                     # 1. data
                     # 2. PinlabelGroup
-                    attrs["leaderline"] = attrs.get("leaderline", leaderline)
-                    attrs["body"] = attrs.get("body", body)
+                    attrs["leaderline"] = attrs.get("leaderline", None) or leaderline
+                    attrs["body"] = attrs.get("body", None) or body
 
                     label = Label(
                         content=content,

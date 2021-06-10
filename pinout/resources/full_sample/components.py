@@ -1,21 +1,10 @@
 # User defined components
 
+from pinout.components.pinlabel import PinLabelBody
 from pinout import core
 
 
-class LabelIn(core.SvgShape):
-    def __init__(self, x, y, width, height, **kwargs):
-        super().__init__(x=x, y=y, width=width, height=height, **kwargs)
-
-    def bounding_coords(self):
-        # Report origin as vertically centered
-        return core.BoundingCoords(
-            self.x,
-            self.y - (self.height / 2),
-            self.x + self.width,
-            self.y + (self.height / 2),
-        )
-
+class LabelIn(PinLabelBody):
     def render(self):
         skew = 3
         body = core.Path(

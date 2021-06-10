@@ -326,14 +326,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -354,14 +364,28 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="2" 
     y="-10.0" 
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -382,14 +406,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -418,14 +447,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -446,14 +485,28 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="2" 
     y="-10.0" 
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -474,14 +527,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -510,14 +568,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -538,14 +606,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -574,14 +647,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -602,14 +685,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -638,14 +726,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -666,14 +764,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -702,14 +805,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -730,14 +843,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -766,14 +884,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -794,14 +922,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -830,14 +963,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -858,14 +1001,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -894,14 +1042,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -922,14 +1080,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -958,14 +1121,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -986,14 +1159,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -1022,14 +1200,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -1050,14 +1238,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -1086,14 +1279,28 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="80" 
     y="-10.0" 
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="81.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -1122,14 +1329,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -1150,14 +1367,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -1186,14 +1408,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -1214,14 +1446,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -1250,14 +1487,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -1278,14 +1525,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -1321,14 +1573,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -1349,14 +1611,28 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="2" 
     y="-10.0" 
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -1377,14 +1653,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -1413,14 +1694,28 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="80" 
     y="-10.0" 
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="81.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -1449,14 +1744,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -1477,14 +1782,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -1513,14 +1823,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="50" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(105.0 0) 
@@ -1541,14 +1861,28 @@ text {
     d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="0" 
     y="-10.0" 
     width="30" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="1.0" 
+    y="-9.0" 
+    width="28" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(15.0 0) 
@@ -1569,14 +1903,28 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="2" 
     y="-10.0" 
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -1597,14 +1945,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -1633,14 +1986,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="50" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(105.0 0) 
@@ -1661,14 +2024,28 @@ text {
     d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="0" 
     y="-10.0" 
     width="30" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="1.0" 
+    y="-9.0" 
+    width="28" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(15.0 0) 
@@ -1689,14 +2066,28 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="2" 
     y="-10.0" 
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -1717,14 +2108,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -1753,14 +2149,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="50" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(105.0 0) 
@@ -1781,14 +2187,28 @@ text {
     d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="0" 
     y="-10.0" 
     width="30" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="1.0" 
+    y="-9.0" 
+    width="28" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(15.0 0) 
@@ -1809,14 +2229,28 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="2" 
     y="-10.0" 
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -1837,14 +2271,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -1873,14 +2312,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="50" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(105.0 0) 
@@ -1901,14 +2350,28 @@ text {
     d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="0" 
     y="-10.0" 
     width="30" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="1.0" 
+    y="-9.0" 
+    width="28" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(15.0 0) 
@@ -1929,14 +2392,28 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="2" 
     y="-10.0" 
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -1957,14 +2434,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -1993,14 +2475,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="50" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(105.0 0) 
@@ -2021,14 +2513,28 @@ text {
     d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="0" 
     y="-10.0" 
     width="30" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="1.0" 
+    y="-9.0" 
+    width="28" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(15.0 0) 
@@ -2049,14 +2555,28 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="2" 
     y="-10.0" 
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -2077,14 +2597,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -2113,14 +2638,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="50" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(105.0 0) 
@@ -2141,14 +2676,28 @@ text {
     d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="0" 
     y="-10.0" 
     width="30" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="1.0" 
+    y="-9.0" 
+    width="28" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(15.0 0) 
@@ -2169,14 +2718,28 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="2" 
     y="-10.0" 
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -2197,14 +2760,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -2233,14 +2801,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="50" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(105.0 0) 
@@ -2261,14 +2839,28 @@ text {
     d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="0" 
     y="-10.0" 
     width="30" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="1.0" 
+    y="-9.0" 
+    width="28" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(15.0 0) 
@@ -2286,20 +2878,25 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 84 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(84 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(124.0 0) 
         scale(-1 1)
     "  
 >
@@ -2325,14 +2922,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="50" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(105.0 0) 
@@ -2353,14 +2960,28 @@ text {
     d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="0" 
     y="-10.0" 
     width="30" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="1.0" 
+    y="-9.0" 
+    width="28" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(15.0 0) 
@@ -2378,20 +2999,25 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 84 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(84 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(124.0 0) 
         scale(-1 1)
     "  
 >
@@ -2417,14 +3043,28 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="80" 
     y="-10.0" 
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="81.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -2453,14 +3093,24 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="80" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(80 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -2481,14 +3131,19 @@ text {
     d="M 0 0.0 L 2 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-10.0" 
-    width="80" 
-    height="20" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
     shape-rendering="geometricPrecision"
-/><text
+/>
+</g><text
     class="label__text"
     transform="
         translate(42.0 0) 
@@ -2517,14 +3172,28 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="80" 
     y="-10.0" 
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="81.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 
@@ -2553,14 +3222,28 @@ text {
     d="M 0 0.0 L 10.0 0.0 C 40.0 0.0 40.0 0.0 70.0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
     x="80" 
     y="-10.0" 
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="81.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
     class="label__text"
     transform="
         translate(120.0 0) 

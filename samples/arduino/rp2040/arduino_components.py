@@ -1,39 +1,36 @@
 # Customised components for Arduino pinout diagram
 from pinout import core
-from pinout.components.pinlabel import Label
 from pinout.components.pinlabel import PinLabelBody
-from pinout.components import leaderline as lline
 
 
-class FirstLabel(Label):
-    def __init__(self, content, tag, **kwargs):
-        # Extract kwargs that are used locally
-        height = kwargs.pop("height")
-        width = kwargs.pop("width")
-        leaderline = kwargs.pop("leaderline", lline.Curved("hh"))
-        super().__init__(tag=tag, **kwargs)
+# PinBodyStart and PinBody include an inset shape
+INSET = 2
+
+
+class PlbStart(PinLabelBody):
+    def render(self):
+
+        output = core.Group()
 
         # Label body
-        br = height / 2
+        radius = self.height / 2
         path_def = " ".join(
             [
-                f"M {br} 0",
-                f"l {width - br} 0",
-                f"l 0 {height}",
-                f"l {-(width - br)} 0",
-                f"a {-br} {-br} 0 0 1 0 {-height}",
+                f"M {radius} 0",
+                f"l {self.width - radius} 0",
+                f"l 0 {self.height}",
+                f"l {-(self.width - radius)} 0",
+                f"a {-radius} {-radius} 0 0 1 0 {-self.height}",
                 "z",
             ]
         )
-
-        # Add the label body
-        label_body = self.add(
+        output.add(
             core.Path(
                 path_definition=path_def,
-                x=self.body.x,
-                y=self.body.y - (height / 2),
-                width=width,
-                height=height,
+                x=self.x,
+                y=self.y - (self.height / 2),
+                width=self.width,
+                height=self.height,
                 tag="label__body",
             )
         )
@@ -41,118 +38,86 @@ class FirstLabel(Label):
         # SVG does not support stroke alignment.
         # To achive an 'inner stroke' effect another
         # component has been added with the desired inset.
-        #
-        # !NOTE: clip-path has not been used here due to a bug
-        # causing the path to display incorrectly in InkScape!
 
-        inset = 2
-        h = height - inset
-        w = width - inset
-        br = h / 2
+        h = self.height - INSET
+        w = self.width - INSET
+        radius = h / 2
         path_def = " ".join(
             [
-                f"M {br + inset/2} {inset/2}",
-                f"l {w - br} 0",
+                f"M {radius + INSET/2} {INSET/2}",
+                f"l {w - radius} 0",
                 f"l 0 {h}",
-                f"l {-(w - br)} 0",
-                f"a {-br} {-br} 0 0 1 0 {-h}",
+                f"l {-(w - radius)} 0",
+                f"a {-radius} {-radius} 0 0 1 0 {-h}",
                 "z",
             ]
         )
-        self.add(
+        output.add(
             core.Path(
                 path_definition=path_def,
-                x=self.body.x,
-                y=self.body.y - (height / 2),
-                width=width,
-                height=height,
+                x=self.x,
+                y=self.y - (self.height / 2),
+                width=self.width,
+                height=self.height,
                 tag="label__bodyinner",
             )
         )
-
-        self.add(leaderline)
-        leaderline.route(core.Rect(), label_body)
-
-        x = label_body.width / 2 + self.body.x
-        y = self.body.y
-        self.add(core.Text(content, x=x, y=y, tag="label__text", scale=self.scale))
+        return output.render()
 
 
-class LabelLast(Label):
-    def __init__(self, content, tag, **kwargs):
-        height = kwargs.pop("height")
-        width = kwargs.pop("width")
-        leaderline = kwargs.pop("leaderline", lline.Curved("hh"))
-        super().__init__(tag=tag, **kwargs)
+class PlbEnd(PinLabelBody):
+    def render(self):
 
-        # Label body
-        bx = height / 2
+        output = core.Group()
+
+        radius = self.height / 2
         path_def = " ".join(
             [
                 f"M 0 0",
-                f"L {width - bx} 0",
-                f"a {bx} {bx} 0 0 1 0 {height}",
-                f"L 0 {height}",
+                f"L {self.width - radius} 0",
+                f"a {radius} {radius} 0 0 1 0 {self.height}",
+                f"L 0 {self.height}",
                 "Z",
             ]
         )
-        label_body = self.add(
+        output.add(
             core.Path(
                 path_definition=path_def,
-                x=self.body.x,
-                y=self.body.y - (height / 2),
-                width=width,
-                height=height,
+                x=self.x,
+                y=self.y - (self.height / 2),
+                width=self.width,
+                height=self.height,
                 tag="label__body",
             )
         )
 
-        if self.body.x != 0:
-            self.add(leaderline)
-            leaderline.route(core.Rect(), label_body)
-
-        # Label text
-        x = label_body.width / 2 + self.body.x
-        y = self.body.y
-        self.add(core.Text(content, x=x, y=y, tag="label__text", scale=self.scale))
+        return output.render()
 
 
-class Label(Label):
-    def __init__(self, content, tag, **kwargs):
-        height = kwargs.pop("height")
-        width = kwargs.pop("width")
-        leaderline = kwargs.pop("leaderline", lline.Curved("hh"))
-        # 'r' is used for the label body radius (leaderline corner curve radius is 'hard coded'.)
-        r = kwargs.pop("r", 0)
-        super().__init__(tag=tag, **kwargs)
+class Plb(PinLabelBody):
+    # this class differs from the default version as it include an
+    # # 'inner rect' for custom styling
+    def render(self):
+        output = core.Group()
 
-        # Label body
-        label_body = self.add(
+        output.add(
             core.Rect(
-                x=self.body.x,
-                y=self.body.y - (height / 2),
-                width=width,
-                height=height,
+                x=self.x,
+                y=self.y - (self.height / 2),
+                width=self.width,
+                height=self.height,
                 tag="block label__body",
             )
         )
 
         # Add an inner body for 'inner-stroke' styling
-        inset = 2
-        self.add(
+        output.add(
             core.Rect(
-                x=self.body.x + inset / 2,
-                y=self.body.y - (height / 2) + inset / 2,
-                width=width - inset,
-                height=height - inset,
+                x=self.x + INSET / 2,
+                y=self.y - (self.height / 2) + INSET / 2,
+                width=self.width - INSET,
+                height=self.height - INSET,
                 tag="block label__bodyinner",
             )
         )
-
-        if self.body != (0, 0):
-            self.add(leaderline)
-            leaderline.route(core.Rect(), label_body)
-
-        x = label_body.width / 2 + self.body.x
-        y = self.body.y
-        self.add(core.Text(content, x=x, y=y, tag="label__text", scale=self.scale))
+        return output.render()

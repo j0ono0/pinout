@@ -1,28 +1,17 @@
-from pinout import config
-from pinout.components import leaderline as lline
+from arduino_components import PlbStart, PlbEnd, Plb
+from copy import deepcopy
 
+lbl_start = {"body": PlbStart(x=0, y=0, width=80, height=20)}
+lbl_start_sm = {"body": PlbStart(x=0, y=0, width=50, height=20)}
+lbl_end = {"body": PlbEnd(x=2, y=0, width=80, height=20)}
+lbl_end_ext = {"body": PlbEnd(x=84, y=0, width=80, height=20)}
+lbl = {"body": Plb(width=80, height=20, x=2, y=0)}
+lbl_sm = {"body": Plb(width=30, height=20, x=0, y=0)}
+lbl_single = {"body": Plb(width=80, height=20, x=2, y=0, corner_radius=10)}
 
-cfg = {
-    # Right header
-    "rgt_first": {"body": {"width": 80, "height": 20}},
-    "rgt_single": {"body": {"width": 80, "height": 20}},
-    "rgt": {"body": {"width": 80, "height": 20, "x": 2, "y": 0}},
-    # Left header
-    "lft_first": {"body": {"width": 80, "height": 20, "scale": (-1, 1)}},
-    "lft_first_sm": {"body": {"width": 50, "height": 20, "scale": (-1, 1)}},
-    "lft": {"body": {"width": 80, "height": 20, "scale": (-1, 1), "x": 2, "y": 0}},
-    "lft_sm": {"body": {"width": 30, "height": 20, "scale": (-1, 1), "x": 0, "y": 0}},
-    "lft_single": {"body": {"width": 80, "height": 20, "scale": (-1, 1)}},
-    # LEDs
-    "led": {
-        "body": {
-            "width": 120,
-            "height": 20,
-            "scale": (-1, -1),
-            "leaderline": lline.Curved("vh"),
-        },
-    },
-}
+# LEDs
+led = {"body": {"width": 120, "height": 20}}
+
 
 #########################################################
 #
@@ -49,85 +38,86 @@ legend = [
 #
 #########################################################
 
+
 header_rhs_a = [
     [
-        ("D19/SCL", "digital", cfg["rgt_first"]),
-        ("PC5", "mu-port", cfg["rgt"]),
-        ("SCL", "default", cfg["rgt"]),
+        ("D19/SCL", "digital", lbl_start),
+        ("PC5", "mu-port", lbl),
+        ("SCL", "default", lbl_end),
     ],
     [
-        ("D18/SDA", "digital", cfg["rgt_first"]),
-        ("PC4", "mu-port", cfg["rgt"]),
-        ("SDA", "default", cfg["rgt"]),
+        ("D18/SDA", "digital", lbl_start),
+        ("PC4", "mu-port", lbl),
+        ("SDA", "default", lbl_end),
     ],
     [
-        ("AREF", "other", cfg["rgt_first"]),
+        ("AREF", "other", lbl_single),
     ],
     [
-        ("GND", "gnd", cfg["rgt_first"]),
+        ("GND", "gnd", lbl_single),
     ],
     [
-        ("D13", "digital", cfg["rgt_first"]),
-        ("PB5", "mu-port", cfg["rgt"]),
-        ("SCK", "default", cfg["rgt"]),
+        ("D13", "digital", lbl_start),
+        ("PB5", "mu-port", lbl),
+        ("SCK", "default", lbl_end),
     ],
     [
-        ("D12", "digital", cfg["rgt_first"]),
-        ("PB4", "mu-port", cfg["rgt"]),
-        ("MISO", "default", cfg["rgt"]),
+        ("D12", "digital", lbl_start),
+        ("PB4", "mu-port", lbl),
+        ("MISO", "default", lbl_end),
     ],
     [
-        ("~D11", "digital", cfg["rgt_first"]),
-        ("PB3", "mu-port", cfg["rgt"]),
-        ("MOSI", "default", cfg["rgt"]),
+        ("~D11", "digital", lbl_start),
+        ("PB3", "mu-port", lbl),
+        ("MOSI", "default", lbl_end),
     ],
     [
-        ("~D10", "digital", cfg["rgt_first"]),
-        ("PB2", "mu-port", cfg["rgt"]),
-        ("SS", "default", cfg["rgt"]),
+        ("~D10", "digital", lbl_start),
+        ("PB2", "mu-port", lbl),
+        ("SS", "default", lbl_end),
     ],
     [
-        ("~D9", "digital", cfg["rgt_first"]),
-        ("PB1", "mu-port", cfg["rgt"]),
+        ("~D9", "digital", lbl_start),
+        ("PB1", "mu-port", lbl_end),
     ],
     [
-        ("D8", "digital", cfg["rgt_first"]),
-        ("PB0", "mu-port", cfg["rgt"]),
+        ("D8", "digital", lbl_start),
+        ("PB0", "mu-port", lbl_end),
     ],
 ]
 
 header_rhs_b = [
     [
-        ("D7", "digital", cfg["rgt_first"]),
-        ("PD7", "default", cfg["rgt"]),
+        ("D7", "digital", lbl_start),
+        ("PD7", "default", lbl_end),
     ],
     [
-        ("~D6", "digital", cfg["rgt_first"]),
-        ("PD6", "default", cfg["rgt"]),
+        ("~D6", "digital", lbl_start),
+        ("PD6", "default", lbl_end),
     ],
     [
-        ("~D5", "digital", cfg["rgt_first"]),
-        ("PD5", "mu-port", cfg["rgt"]),
+        ("~D5", "digital", lbl_start),
+        ("PD5", "mu-port", lbl_end),
     ],
     [
-        ("D4", "digital", cfg["rgt_first"]),
-        ("PD4", "mu-port", cfg["rgt"]),
+        ("D4", "digital", lbl_start),
+        ("PD4", "mu-port", lbl_end),
     ],
     [
-        ("~D3", "digital", cfg["rgt_first"]),
-        ("PD3", "mu-port", cfg["rgt"]),
+        ("~D3", "digital", lbl_start),
+        ("PD3", "mu-port", lbl_end),
     ],
     [
-        ("D2", "digital", cfg["rgt_first"]),
-        ("PD2", "mu-port", cfg["rgt"]),
+        ("D2", "digital", lbl_start),
+        ("PD2", "mu-port", lbl_end),
     ],
     [
-        ("D1/TX", "digital", cfg["rgt_first"]),
-        ("PD1", "mu-port", cfg["rgt"]),
+        ("D1/TX", "digital", lbl_start),
+        ("PD1", "mu-port", lbl_end),
     ],
     [
-        ("D0/RX", "digital", cfg["rgt_first"]),
-        ("PD0", "mu-port", cfg["rgt"]),
+        ("D0/RX", "digital", lbl_start),
+        ("PD0", "mu-port", lbl_end),
     ],
 ]
 
@@ -138,17 +128,17 @@ header_rhs_b = [
 #########################################################
 
 header_lhs_a = [
-    [("NC", "nc", cfg["lft_first"])],
-    [("IOREF", "other", cfg["lft_first"])],
+    [("NC", "nc", lbl_single)],
+    [("IOREF", "other", lbl_single)],
     [
-        ("RESET", "other", cfg["lft_first"]),
-        ("PC6", "default", cfg["lft"]),
+        ("RESET", "other", lbl_start),
+        ("PC6", "default", lbl_end),
     ],
-    [("+3V3", "pwr", cfg["lft_first"])],
-    [("+5", "pwr", cfg["lft_first"])],
-    [("GND", "gnd", cfg["lft_first"])],
-    [("GND", "gnd", cfg["lft_first"])],
-    [("VIN", "pwr", cfg["lft_first"])],
+    [("+3V3", "pwr", lbl_single)],
+    [("+5", "pwr", lbl_single)],
+    [("GND", "gnd", lbl_single)],
+    [("GND", "gnd", lbl_single)],
+    [("VIN", "pwr", lbl_single)],
 ]
 
 # Example of using a list comprehension to generate pin data
@@ -156,10 +146,10 @@ header_lhs_a = [
 
 header_lhs_b = [
     [
-        (f"D{14 + i}", "digital", cfg["lft_first_sm"]),
-        (f"A{i}", "analog", cfg["lft_sm"]),
-        (f"PC{i}", "mu-port", cfg["lft"]),
-        (f"ADC[{i}]", "default", cfg["lft"]),
+        (f"D{14 + i}", "digital", lbl_start_sm),
+        (f"A{i}", "analog", lbl_sm),
+        (f"PC{i}", "mu-port", lbl),
+        (f"ADC[{i}]", "default", lbl_end),
     ]
     for i in range(6)
 ]
@@ -172,23 +162,23 @@ header_lhs_b = [
 
 leds_a = [
     [
-        ("RX LED", "led", cfg["led"]),
-        # ("PD4", "default", {**cfg["led"], "x": 2, "y": 0}),
+        ("RX LED", "led", lbl_start),
+        ("PD4", "default", lbl_end),
     ],
     [
-        ("TX LED", "led", cfg["led"]),
-        # ("PD5", "default", {**cfg["led"], "x": 2, "y": 0}),
+        ("TX LED", "led", lbl_start),
+        ("PD5", "default", lbl_end),
     ],
 ]
 
 
 leds_b = [
     [
-        ("POWER", "led", cfg["led"]),
+        ("POWER", "led", lbl_single),
     ],
     [
-        ("LED_BUILTIN", "led", cfg["led"]),
-        # ("PB5", "default", {**cfg["led"], "x": 2, "y": 0}),
+        ("LED_BUILTIN", "led", lbl_start),
+        ("PB5", "default", lbl_end),
     ],
 ]
 

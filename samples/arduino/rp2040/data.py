@@ -7,10 +7,10 @@ lbl_end = {"body": PlbEnd(x=2, y=0, width=80, height=20)}
 lbl_end_ext = {"body": PlbEnd(x=84, y=0, width=80, height=20)}
 lbl = {"body": Plb(width=80, height=20, x=2, y=0)}
 lbl_sm = {"body": Plb(width=30, height=20, x=0, y=0)}
-lbl_single = {"body": Plb(width=80, height=20, x=2, y=0, corner_radius=10)}
+lbl_single = {"body": Plb(width=80, height=20, x=0, y=0, corner_radius=10)}
 
 # LEDs
-led = {"body": {"width": 120, "height": 20}}
+led = {"body": {"width": 120, "height": 20, "corner_radius": 10}}
 
 
 #########################################################

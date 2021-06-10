@@ -1,13 +1,6 @@
 
-/*
-#########################################################
-#
-# Default SVG presentation attributes (styles)
-#
-#########################################################
-*/
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&family=Roboto:wght@300;900&display=swap');
+
 
  svg {
     fill-opacity: 1;
@@ -39,13 +32,8 @@ text {
 }
 
 
-/*
-#########################################################
-#
-# Default component styles
-#
-#########################################################
-*/
+
+
 
 .label__body{
     fill: rgb(36, 36, 36);
@@ -78,13 +66,7 @@ text {
 }
 
 
-/*
-#########################################################
-#
-# Arduino component styles
-#
-#########################################################
-*/
+
 
 .diagram__bg{
     fill: #333;
@@ -134,7 +116,7 @@ text {
 .digital .swatch__body{
     fill: url("#stripe-a");
 }
-    /* Custom svg pattern styling */
+    
     #stripe-a rect{
         fill: #d35400;
     }
@@ -146,7 +128,7 @@ text {
 .analog .label__body{
     fill: url("#stripe-b");
 }
-    /* Custom svg pattern styling */
+    
     #stripe-b rect{
         fill: #ffffff;
     }
@@ -218,13 +200,8 @@ text {
     stroke-width: 2;
 }
 
-/*
-#########################################################
-#
-# Typography styles
-#
-#########################################################
-*/
+
+
 .h1{
     font-size: 28px;
     font-weight: 900;

@@ -107,6 +107,7 @@ class Plb(PinLabelBody):
                 y=self.y - (self.height / 2),
                 width=self.width,
                 height=self.height,
+                corner_radius=self.corner_radius,
                 tag="block label__body",
             )
         )
@@ -118,6 +119,7 @@ class Plb(PinLabelBody):
                 y=self.y - (self.height / 2) + INSET / 2,
                 width=self.width - INSET,
                 height=self.height - INSET,
+                corner_radius=self.corner_radius,
                 tag="block label__bodyinner",
             )
         )

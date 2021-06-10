@@ -27,15 +27,8 @@
     <style type="text/css" media="screen">  
     <![CDATA[  
     
-/*
-#########################################################
-#
-# Default SVG presentation attributes (styles)
-#
-#########################################################
-*/
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&family=Roboto:wght@300;900&display=swap');
+
 
  svg {
     fill-opacity: 1;
@@ -67,13 +60,8 @@ text {
 }
 
 
-/*
-#########################################################
-#
-# Default component styles
-#
-#########################################################
-*/
+
+
 
 .label__body{
     fill: rgb(36, 36, 36);
@@ -106,13 +94,7 @@ text {
 }
 
 
-/*
-#########################################################
-#
-# Arduino component styles
-#
-#########################################################
-*/
+
 
 .diagram__bg{
     fill: #333;
@@ -162,7 +144,7 @@ text {
 .digital .swatch__body{
     fill: url("#stripe-a");
 }
-    /* Custom svg pattern styling */
+    
     #stripe-a rect{
         fill: #d35400;
     }
@@ -174,7 +156,7 @@ text {
 .analog .label__body{
     fill: url("#stripe-b");
 }
-    /* Custom svg pattern styling */
+    
     #stripe-b rect{
         fill: #ffffff;
     }
@@ -246,13 +228,8 @@ text {
     stroke-width: 2;
 }
 
-/*
-#########################################################
-#
-# Typography styles
-#
-#########################################################
-*/
+
+
 .h1{
     font-size: 28px;
     font-weight: 900;
@@ -581,6 +558,8 @@ text {
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 /><rect
  class="block label__bodyinner" 
     x="91.0" 
@@ -588,6 +567,8 @@ text {
     width="78" 
     height="18" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 />
 </g><text
     class="label__text"
@@ -631,6 +612,8 @@ text {
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 /><rect
  class="block label__bodyinner" 
     x="91.0" 
@@ -638,6 +621,8 @@ text {
     width="78" 
     height="18" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 />
 </g><text
     class="label__text"
@@ -1969,6 +1954,8 @@ text {
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 /><rect
  class="block label__bodyinner" 
     x="91.0" 
@@ -1976,6 +1963,8 @@ text {
     width="78" 
     height="18" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 />
 </g><text
     class="label__text"
@@ -2019,6 +2008,8 @@ text {
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 /><rect
  class="block label__bodyinner" 
     x="91.0" 
@@ -2026,6 +2017,8 @@ text {
     width="78" 
     height="18" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 />
 </g><text
     class="label__text"
@@ -2148,6 +2141,8 @@ text {
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 /><rect
  class="block label__bodyinner" 
     x="91.0" 
@@ -2155,6 +2150,8 @@ text {
     width="78" 
     height="18" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 />
 </g><text
     class="label__text"
@@ -2198,6 +2195,8 @@ text {
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 /><rect
  class="block label__bodyinner" 
     x="91.0" 
@@ -2205,6 +2204,8 @@ text {
     width="78" 
     height="18" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 />
 </g><text
     class="label__text"
@@ -2248,6 +2249,8 @@ text {
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 /><rect
  class="block label__bodyinner" 
     x="91.0" 
@@ -2255,6 +2258,8 @@ text {
     width="78" 
     height="18" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 />
 </g><text
     class="label__text"
@@ -2298,6 +2303,8 @@ text {
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 /><rect
  class="block label__bodyinner" 
     x="91.0" 
@@ -2305,6 +2312,8 @@ text {
     width="78" 
     height="18" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 />
 </g><text
     class="label__text"
@@ -2348,6 +2357,8 @@ text {
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 /><rect
  class="block label__bodyinner" 
     x="91.0" 
@@ -2355,6 +2366,8 @@ text {
     width="78" 
     height="18" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 />
 </g><text
     class="label__text"
@@ -3555,6 +3568,8 @@ text {
     width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 /><rect
  class="block label__bodyinner" 
     x="39.0" 
@@ -3562,6 +3577,8 @@ text {
     width="78" 
     height="18" 
     shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
 />
 </g><text
     class="label__text"

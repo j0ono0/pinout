@@ -6,7 +6,8 @@ from pinout import config
 
 
 class PinLabelBody(core.SvgShape):
-    def __init__(self, x, y, width, height, **kwargs):
+    def __init__(self, x, y, width, height, corner_radius=0, **kwargs):
+        self.corner_radius = corner_radius
         super().__init__(x=x, y=y, width=width, height=height, **kwargs)
 
     def bounding_coords(self):
@@ -24,6 +25,7 @@ class PinLabelBody(core.SvgShape):
             y=self.y - (self.height / 2),
             width=self.width,
             height=self.height,
+            corner_radius=self.corner_radius,
         )
         body.add_tag("label__body")
         return body.render()
@@ -44,12 +46,14 @@ class Label(core.Group):
         super().__init__(x, y, tag=tag, **kwargs)
         self.update_config(config.pinlabel)
 
+        # ensure instance data is unique
         leaderline = copy.deepcopy(leaderline or self.config["leaderline"])
         if isinstance(leaderline, dict):
             leaderline_config = self.config["leaderline"]
             leaderline_config.update(leaderline)
             leaderline = lline.Curved(**leaderline_config)
 
+        # ensure instance data is unique
         body = copy.deepcopy(body or self.config["body"])
         if isinstance(body, dict):
             body_config = self.config["body"]

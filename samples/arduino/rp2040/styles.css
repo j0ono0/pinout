@@ -1,14 +1,4 @@
 
-/*
-#########################################################
-#
-# Default SVG presentation attributes (styles)
-#
-#########################################################
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&family=Roboto:wght@300;900&display=swap');
-
  svg {
     fill-opacity: 1;
     font-family: 'Roboto', Helvetica, Verdana, monospace;
@@ -37,15 +27,6 @@ rect {
 text {
     dominant-baseline: auto;
 }
-
-
-/*
-#########################################################
-#
-# Default component styles
-#
-#########################################################
-*/
 
 .label__body{
     fill: rgb(36, 36, 36);
@@ -77,35 +58,14 @@ text {
     fill: #000;
 }
 
-
-/*
-#########################################################
-#
-# Arduino component styles
-#
-#########################################################
-*/
-
 .diagram__bg{
     fill: #333;
 }
-
 .panel--main .panel__bg{
     fill: #fff;
 }
-
 .panel--notes .panel__bg{
     fill: #e4e4e2;
-}
-
-.led .label__body,
-.gnd .label__body,
-.pwr .label__body,
-.nc .label__body,
-.nc .label__bodyinner,
-.other .label__body,
-.other .label__bodyinner{
-    rx: 10px;
 }
 
 .label__row .label:first-child .lline,
@@ -118,7 +78,6 @@ text {
 .led .swatch__body{
     fill: #1da086;
 }
-
 .mu-port .label__body,
 .mu-port .swatch__body{
     fill: #f39c12;
@@ -134,7 +93,7 @@ text {
 .digital .swatch__body{
     fill: url("#stripe-a");
 }
-    /* Custom svg pattern styling */
+    
     #stripe-a rect{
         fill: #d35400;
     }
@@ -146,7 +105,7 @@ text {
 .analog .label__body{
     fill: url("#stripe-b");
 }
-    /* Custom svg pattern styling */
+    
     #stripe-b rect{
         fill: #ffffff;
     }
@@ -159,11 +118,9 @@ text {
     stroke: #d35400;
     stroke-width: 2;
 }
-
 .analog .label__text{
     fill: #d35400;
 }
-
 .analog .swatch__body{
     fill: url("#stripe-b");
     stroke: #d35400;
@@ -178,32 +135,26 @@ text {
 .other .swatch__body{
     fill: #fff;
 }
-
 .other .label__bodyinner,
 .other .swatch__body{
     stroke: #d86e29;
     stroke-width: 2;
 }
-
 .other .label__text{
     fill: #d86e29;
 }
-
 .gnd .label__body,
 .gnd .swatch__body{
     fill: #000;
 }
-
 .internal .label__body,
 .internal .swatch__body{
     fill: #94a3a6;
 }
-
 .swd .label__body,
 .swd .swatch__body{
     fill: #9e856e;
 }
-
 .nc .label__body,
 .nc .swatch__body{
     fill: #fff;
@@ -211,20 +162,12 @@ text {
 .nc .label__text{
     fill: #ccc;
 }
-
 .nc .label__bodyinner,
 .nc .swatch__body{
     stroke: #ccc;
     stroke-width: 2;
 }
 
-/*
-#########################################################
-#
-# Typography styles
-#
-#########################################################
-*/
 .h1{
     font-size: 28px;
     font-weight: 900;

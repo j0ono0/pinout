@@ -1,0 +1,130 @@
+
+path, rect {
+    stroke: rgb(0, 0, 0);
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    stroke-linejoin: miter;
+    stroke-miterlimit: inherit;
+    stroke-opacity: 1;
+    stroke-width: 0;
+    fill: none;
+}
+path{
+}
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    dominant-baseline: auto;
+}
+
+
+
+.label__body{
+    fill: rgb(36, 36, 36);
+}
+
+.label .lline{
+    stroke-width: 2;
+}
+.label__text{
+    dominant-baseline: central;
+    fill: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    stroke-width: 0;
+    text-anchor: middle;
+}
+
+
+
+.legend .swatch__body{
+    fill: rgba(0,0,0,0);
+}
+.legend-entry__text{
+    dominant-baseline: central;
+    fill: #000;
+}
+
+.legend-entry .swatch__body{
+    fill: #ccc;
+}
+
+
+.diagram__bg{
+    fill: rgb(51, 51, 51);
+}
+.panel__bg{
+    fill: #fff;
+}
+.panel--info .panel__bg{
+    fill: #f4f4f4;
+}
+
+
+
+.pwr .label__body,
+.pwr .swatch__body{
+    fill: rgb(173, 0, 0);
+}
+.pwr .lline{
+    stroke: rgb(173, 0, 0);
+}
+.gpio .label__body,
+.gpio .swatch__body{
+    fill: rgb(160, 133, 26);
+}
+.gpio .lline{
+    stroke: rgb(160, 133, 26);
+}
+.analog .label__body,
+.analog .swatch__body{
+    fill: rgb(32, 150, 165);
+}
+.analog .lline{
+    stroke: rgb(32, 150, 165);
+}
+.touch .label__body,
+.touch .swatch__body{
+    fill: rgb(230, 87, 10);
+}
+.touch .lline{
+    stroke: rgb(230, 87, 10);
+}
+.comms .label__body,
+.comms .swatch__body{
+    fill: rgb(182, 69, 176);
+}
+.comms .lline{
+    stroke: rgb(182, 69, 176);
+}
+.gnd .label__body,
+.gnd .swatch__body{
+    fill: #000;
+}
+.gnd .lline{
+    stroke: #000;
+}
+
+.pwm .label__body,
+.pwm .swatch__body{
+    fill: rgb(35, 66, 133);
+}
+.pwm .lline{
+    stroke: rgb(35, 66, 133);
+}
+
+
+
+.h1 {
+    font-size: 26px;
+    font-weight: bold;
+    font-style: italic;
+}
+.italic{
+    font-style: italic;
+}
+.strong{
+    font-weight: bold;
+}

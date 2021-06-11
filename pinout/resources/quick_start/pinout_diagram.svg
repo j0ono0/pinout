@@ -1,0 +1,1268 @@
+
+<svg  
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0"
+    y="0"
+    width="896" 
+    height="504" 
+    viewBox="0 0 896 504"
+    class="diagram"
+>
+
+    <style type="text/css" media="screen">  
+    <![CDATA[  
+    
+path, rect {
+    stroke: rgb(0, 0, 0);
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    stroke-linejoin: miter;
+    stroke-miterlimit: inherit;
+    stroke-opacity: 1;
+    stroke-width: 0;
+    fill: none;
+}
+path{
+}
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    dominant-baseline: auto;
+}
+
+
+
+.label__body{
+    fill: rgb(36, 36, 36);
+}
+
+.label .lline{
+    stroke-width: 2;
+}
+.label__text{
+    dominant-baseline: central;
+    fill: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    stroke-width: 0;
+    text-anchor: middle;
+}
+
+
+
+.legend .swatch__body{
+    fill: rgba(0,0,0,0);
+}
+.legend-entry__text{
+    dominant-baseline: central;
+    fill: #000;
+}
+
+.legend-entry .swatch__body{
+    fill: #ccc;
+}
+
+
+.diagram__bg{
+    fill: rgb(51, 51, 51);
+}
+.panel__bg{
+    fill: #fff;
+}
+.panel--info .panel__bg{
+    fill: #f4f4f4;
+}
+
+
+
+.pwr .label__body,
+.pwr .swatch__body{
+    fill: rgb(173, 0, 0);
+}
+.pwr .lline{
+    stroke: rgb(173, 0, 0);
+}
+.gpio .label__body,
+.gpio .swatch__body{
+    fill: rgb(160, 133, 26);
+}
+.gpio .lline{
+    stroke: rgb(160, 133, 26);
+}
+.analog .label__body,
+.analog .swatch__body{
+    fill: rgb(32, 150, 165);
+}
+.analog .lline{
+    stroke: rgb(32, 150, 165);
+}
+.touch .label__body,
+.touch .swatch__body{
+    fill: rgb(230, 87, 10);
+}
+.touch .lline{
+    stroke: rgb(230, 87, 10);
+}
+.comms .label__body,
+.comms .swatch__body{
+    fill: rgb(182, 69, 176);
+}
+.comms .lline{
+    stroke: rgb(182, 69, 176);
+}
+.gnd .label__body,
+.gnd .swatch__body{
+    fill: #000;
+}
+.gnd .lline{
+    stroke: #000;
+}
+
+.pwm .label__body,
+.pwm .swatch__body{
+    fill: rgb(35, 66, 133);
+}
+.pwm .lline{
+    stroke: rgb(35, 66, 133);
+}
+
+
+
+.h1 {
+    font-size: 26px;
+    font-weight: bold;
+    font-style: italic;
+}
+.italic{
+    font-style: italic;
+}
+.strong{
+    font-weight: bold;
+}
+    ]]>  
+</style>
+<rect
+ class="diagram__bg" 
+    x="0" 
+    y="0" 
+    width="896" 
+    height="504" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="panel panel--main"
+    transform="
+        translate(2 2) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="panel__bg" 
+    x="0" 
+    y="0" 
+    width="892" 
+    height="500" 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(338 8) 
+        scale(1 1)
+    "
+>
+        <image 
+ 
+    x="0" 
+    y="0" 
+    href="quick_start_hardware.png" 
+    xlink:href="quick_start_hardware.png" 
+    height="260" 
+    width="220"
+/>
+<g 
+        class="label pwr"
+    transform="
+        translate(155 244) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0.0 0 L 0.0 20.0 A 10.0 10.0 0 0 0 10.0 30.0 L 117 30.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="117" 
+    y="17.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(157.0 30) 
+        scale(1 1)
+    "  
+>
+    RESET
+</text>
+</g><g 
+    transform="
+        translate(206 100) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label pwr"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="66" 
+    y="-13.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(106.0 0) 
+        scale(1 1)
+    "  
+>
+    Vcc
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label gnd"
+    transform="
+        translate(0 30) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="66" 
+    y="-13.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(106.0 0) 
+        scale(1 1)
+    "  
+>
+    GND
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label gpio"
+    transform="
+        translate(0 60) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="66" 
+    y="-13.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(106.0 0) 
+        scale(1 1)
+    "  
+>
+    6
+</text>
+</g><g 
+        class="label analog"
+    transform="
+        translate(146 60) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="6" 
+    y="-13.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    A4
+</text>
+</g><g 
+        class="label touch"
+    transform="
+        translate(232 60) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="6" 
+    y="-13.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    TOUCH
+</text>
+</g>
+</g>
+</g><g 
+    transform="
+        translate(16 100) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label gpio"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="66" 
+    y="-13.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(106.0 0) 
+        scale(-1 1)
+    "  
+>
+    0
+</text>
+</g><g 
+        class="label analog"
+    transform="
+        translate(-146 0) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="6" 
+    y="-13.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(46.0 0) 
+        scale(-1 1)
+    "  
+>
+    A0
+</text>
+</g><g 
+        class="label comms"
+    transform="
+        translate(-232 0) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="6" 
+    y="-13.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(46.0 0) 
+        scale(-1 1)
+    "  
+>
+    MISO
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label gpio"
+    transform="
+        translate(0 30) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="66" 
+    y="-13.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(106.0 0) 
+        scale(-1 1)
+    "  
+>
+    1
+</text>
+</g><g 
+        class="label comms"
+    transform="
+        translate(-146 30) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 92 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="92" 
+    y="-13.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(132.0 0) 
+        scale(-1 1)
+    "  
+>
+    MOSI
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label gpio"
+    transform="
+        translate(0 60) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="66" 
+    y="-13.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(106.0 0) 
+        scale(-1 1)
+    "  
+>
+    2
+</text>
+</g><g 
+        class="label analog"
+    transform="
+        translate(-146 60) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="6" 
+    y="-13.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(46.0 0) 
+        scale(-1 1)
+    "  
+>
+    A1
+</text>
+</g><g 
+        class="label comms"
+    transform="
+        translate(-232 60) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="6" 
+    y="-13.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(46.0 0) 
+        scale(-1 1)
+    "  
+>
+    SCLK
+</text>
+</g>
+</g>
+</g><g 
+    transform="
+        translate(65 244) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label gpio"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0.0 0 L 0.0 20.0 A 10.0 10.0 0 0 0 10.0 30.0 L 116 30.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="116" 
+    y="17.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(156.0 30) 
+        scale(-1 1)
+    "  
+>
+    3
+</text>
+</g><g 
+        class="label pwm"
+    transform="
+        translate(-196 30) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="6" 
+    y="-13.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(46.0 0) 
+        scale(-1 1)
+    "  
+>
+    PWM
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label gpio"
+    transform="
+        translate(30 0) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0.0 0 L 0.0 40.0 A 20.0 20.0 0 0 0 20.0 60.0 L 146 60.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="146" 
+    y="47.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(186.0 60) 
+        scale(-1 1)
+    "  
+>
+    4
+</text>
+</g><g 
+        class="label analog"
+    transform="
+        translate(-196 60) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="6" 
+    y="-13.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(46.0 0) 
+        scale(-1 1)
+    "  
+>
+    A2
+</text>
+</g><g 
+        class="label touch"
+    transform="
+        translate(-282 60) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="6" 
+    y="-13.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(46.0 0) 
+        scale(-1 1)
+    "  
+>
+    TOUCH
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label gpio"
+    transform="
+        translate(60 0) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0.0 0 L 0.0 60.0 A 30.0 30.0 0 0 0 30.0 90.0 L 176 90.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="176" 
+    y="77.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(216.0 90) 
+        scale(-1 1)
+    "  
+>
+    5
+</text>
+</g><g 
+        class="label analog"
+    transform="
+        translate(-196 90) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="6" 
+    y="-13.0" 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="label__text"
+    transform="
+        translate(46.0 0) 
+        scale(-1 1)
+    "  
+>
+    A3
+</text>
+</g>
+</g>
+</g>
+</g>
+</g><g 
+        class="panel panel--info"
+    transform="
+        translate(2 368) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="panel__bg" 
+    x="0" 
+    y="0" 
+    width="892" 
+    height="132" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="textblock textblock panel title_block"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="textblock__bg" 
+    x="0" 
+    y="0" 
+    width="338" 
+    height="42" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="textblock"
+    transform="
+        translate(20 33) 
+        scale(1 1)
+    "  
+>
+    <tspan class='h1'>Pinout Quick start</tspan>
+</text>
+</g><g 
+        class="legend"
+    transform="
+        translate(338 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend__bg" 
+    x="0" 
+    y="0" 
+    width="338" 
+    height="132" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="legend-entry analog"
+    transform="
+        translate(10 10) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="159" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Analog
+</text>
+</g><g 
+        class="legend-entry comms"
+    transform="
+        translate(10 38) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="159" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Communication
+</text>
+</g><g 
+        class="legend-entry gnd"
+    transform="
+        translate(10 66) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="159" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Ground
+</text>
+</g><g 
+        class="legend-entry gpio"
+    transform="
+        translate(10 94) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="159" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    GPIO
+</text>
+</g><g 
+        class="legend-entry touch"
+    transform="
+        translate(169 10) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="159" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Touch
+</text>
+</g><g 
+        class="legend-entry pwr"
+    transform="
+        translate(169 38) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="159" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Power
+</text>
+</g><g 
+        class="legend-entry pwm"
+    transform="
+        translate(169 66) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="159" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    PWM
+</text>
+</g>
+</g><g 
+        class="textblock textblock panel text_block"
+    transform="
+        translate(0 42) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="textblock__bg" 
+    x="0" 
+    y="0" 
+    width="338" 
+    height="90" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="textblock"
+    transform="
+        translate(20 18) 
+        scale(1 1)
+    "  
+>
+    Python tool kit to assist with 
+</text><text
+    class="textblock"
+    transform="
+        translate(20 36) 
+        scale(1 1)
+    "  
+>
+    documentation of electronic hardware. 
+</text><text
+    class="textblock"
+    transform="
+        translate(20 54) 
+        scale(1 1)
+    "  
+>
+    More info at <tspan class='italic strong'>pinout.readthedocs.io</tspan>
+</text>
+</g>
+</g>
+    
+</svg>

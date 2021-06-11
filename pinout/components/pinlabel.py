@@ -143,6 +143,8 @@ class PinLabelGroup(core.Group):
                 # Start of a new row
                 except IndexError:
                     label.x, label.y = next(pin_coords)
-                    label.body.x, label.body.y = next(label_coords)
+                    x, y = next(label_coords)
+                    label.body.x += x
+                    label.body.y += y
 
                 row_group.add(label)

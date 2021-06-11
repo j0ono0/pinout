@@ -21,7 +21,7 @@ pinlabel = {
         "y": 0,
         "width": 80,
         "height": 26,
-        "corner_radius": 30,
+        "corner_radius": 3,
     },
     "leaderline": {
         "direction": "hh",
@@ -67,7 +67,7 @@ annotation = {
         "textblock": {
             "x": 28,
             "y": 17,
-            "line_height": 18,
+            "line_height": 16,
         },
     },
     "target": {

@@ -5,12 +5,56 @@ legend = [
     ("Communication", "comms"),
     ("Ground", "gnd"),
     ("GPIO", "gpio"),
-    ("LED", "led"),
+    ("Touch", "touch"),
     ("Power", "pwr"),
     ("PWM", "pwm"),
 ]
 
 # Pinlabels
+
+lhs = [
+    [
+        ("0", "gpio"),
+        ("A0", "analog"),
+        ("MISO", "comms"),
+    ],
+    [
+        ("1", "gpio"),
+        ("MOSI", "comms", {"body": {"x": 92}}),
+    ],
+    [
+        ("2", "gpio"),
+        ("A1", "analog"),
+        ("SCLK", "comms"),
+    ],
+    [
+        ("RESET", "pwr"),
+    ],
+]
+
+btm_lhs = [
+    [
+        ("3", "gpio"),
+        ("A2", "analog"),
+        ("PWM", "pwm"),
+    ],
+    [
+        ("4", "gpio"),
+        ("A3", "analog"),
+    ],
+]
+
+btm_rhs = [
+    [
+        ("6", "gpio"),
+        ("PWM", "pwm"),
+    ],
+    [
+        ("5", "gpio"),
+        ("A4", "analog"),
+        ("PWM", "pwm"),
+    ],
+]
 rhs = [
     [
         ("Vcc", "pwr"),
@@ -20,74 +64,31 @@ rhs = [
     ],
     [
         ("3", "gpio"),
-        ("Lc2a", "analog"),
-        ("Lc2b", "led"),
+        ("A6", "analog"),
+        ("TOUCH", "touch"),
     ],
     [
         ("4", "gpio"),
-        ("Lc3a", "analog"),
+        ("A5", "analog"),
     ],
 ]
 
-lhs = [
-    [
-        ("0", "gpio"),
-        ("Lb0a", "gpio"),
-        ("Lb03", "comms"),
-    ],
-    [
-        ("1", "gpio"),
-        ("Lc1a", "comms", {"offset": (92, 0)}),
-    ],
-    [
-        ("2", "gpio"),
-        ("Lc2a", "analog"),
-        ("Lc2b", "led"),
-    ],
-    [
-        ("RESET", "pwr", {"offset": (232, 0)}),
-    ],
-]
-
-btm_lhs = [
-    [
-        ("3", "gpio"),
-        ("Lc2a", "analog"),
-        ("Lc2b", "led"),
-    ],
-    [
-        ("4", "gpio"),
-        ("Lc2a", "pwm"),
-        ("Lc2b", "led"),
-    ],
-]
-
-btm_rhs = [
-    [
-        ("6", "gpio"),
-        ("Lc3a", "analog"),
-    ],
-    [
-        ("5", "gpio"),
-        ("Lc2a", "pwm"),
-        ("Lc2b", "led"),
-    ],
-]
 
 aux = [
     [
-        ("a", "led"),
-        ("AUX_a", "analog"),
+        ("TOUCH", "touch"),
+        ("A7", "analog"),
     ],
     [
-        ("b", "led"),
-        ("AUX_b", "pwm"),
-        ("PWM", "pwm"),
+        ("TOUCH", "touch"),
     ],
 ]
 
 
 # Text
+
+annotation_usb = ["USB-C", "port"]
+annotation_led = ["Status", "LED"]
 
 title = "<tspan class='h1'>pinout</tspan>"
 
@@ -103,4 +104,5 @@ with documentation of electronic hardware.
 Development is active with a goal to convert 
 a promising idea into a useful tool.
 
-More info: <tspan class='strong'>www.readthedocs.pinout</tspan>"""
+Current release: 
+<tspan class='strong'>pinout.readthedocs.io</tspan>"""

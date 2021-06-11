@@ -57,21 +57,22 @@ text {
 
 
 .annotation__bg{
-    fill: rgb(230, 180, 10);
+    fill: rgb(253, 203, 36);
     stroke-width: 0;
 }
 .annotation__body text{
     dominant-baseline: central;
     font-size: 14px;
-    fill: #000;
+    font-weight: bold;
+    fill: rgb(63, 40, 6);
 }
 .annotation__target{
     fill: none;
-    stroke: rgb(230, 180, 10);
+    stroke: rgb(253, 203, 36);
     stroke-width: 4px;
 }
 .annotation .lline{
-    stroke: rgb(230, 180, 10);
+    stroke: rgb(253, 203, 36);
     stroke-width: 4px;
 }
 
@@ -96,24 +97,24 @@ text {
 }
 .gpio .label__body,
 .gpio .swatch__body{
-    fill: rgb(130, 139, 48);
+    fill: rgb(160, 133, 26);
 }
 .gpio .lline{
-    stroke: rgb(130, 139, 48);
+    stroke: rgb(160, 133, 26);
 }
 .analog .label__body,
 .analog .swatch__body{
-    fill: rgb(18, 96, 133);
+    fill: rgb(32, 150, 165);
 }
 .analog .lline{
-    stroke: rgb(18, 96, 133);
+    stroke: rgb(32, 150, 165);
 }
-.led .label__body,
-.led .swatch__body{
-    fill: rgb(230, 180, 10);
+.touch .label__body,
+.touch .swatch__body{
+    fill: rgb(230, 87, 10);
 }
-.led .lline{
-    stroke: rgb(230, 180, 10);
+.touch .lline{
+    stroke: rgb(230, 87, 10);
 }
 .comms .label__body,
 .comms .swatch__body{
@@ -132,10 +133,10 @@ text {
 
 .pwm .label__body,
 .pwm .swatch__body{
-    fill: rgb(28, 119, 123);
+    fill: rgb(35, 66, 133);
 }
 .pwm .lline{
-    stroke: rgb(28, 119, 123);
+    stroke: rgb(35, 66, 133);
 }
 
 

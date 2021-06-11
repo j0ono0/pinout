@@ -71,21 +71,22 @@ text {
 
 
 .annotation__bg{
-    fill: rgb(230, 180, 10);
+    fill: rgb(253, 203, 36);
     stroke-width: 0;
 }
 .annotation__body text{
     dominant-baseline: central;
     font-size: 14px;
-    fill: #000;
+    font-weight: bold;
+    fill: rgb(63, 40, 6);
 }
 .annotation__target{
     fill: none;
-    stroke: rgb(230, 180, 10);
+    stroke: rgb(253, 203, 36);
     stroke-width: 4px;
 }
 .annotation .lline{
-    stroke: rgb(230, 180, 10);
+    stroke: rgb(253, 203, 36);
     stroke-width: 4px;
 }
 
@@ -110,24 +111,24 @@ text {
 }
 .gpio .label__body,
 .gpio .swatch__body{
-    fill: rgb(130, 139, 48);
+    fill: rgb(160, 133, 26);
 }
 .gpio .lline{
-    stroke: rgb(130, 139, 48);
+    stroke: rgb(160, 133, 26);
 }
 .analog .label__body,
 .analog .swatch__body{
-    fill: rgb(18, 96, 133);
+    fill: rgb(32, 150, 165);
 }
 .analog .lline{
-    stroke: rgb(18, 96, 133);
+    stroke: rgb(32, 150, 165);
 }
-.led .label__body,
-.led .swatch__body{
-    fill: rgb(230, 180, 10);
+.touch .label__body,
+.touch .swatch__body{
+    fill: rgb(230, 87, 10);
 }
-.led .lline{
-    stroke: rgb(230, 180, 10);
+.touch .lline{
+    stroke: rgb(230, 87, 10);
 }
 .comms .label__body,
 .comms .swatch__body{
@@ -146,10 +147,10 @@ text {
 
 .pwm .label__body,
 .pwm .swatch__body{
-    fill: rgb(28, 119, 123);
+    fill: rgb(35, 66, 133);
 }
 .pwm .lline{
-    stroke: rgb(28, 119, 123);
+    stroke: rgb(35, 66, 133);
 }
 
 
@@ -195,7 +196,7 @@ text {
     shape-rendering="geometricPrecision"
 /><g 
     transform="
-        translate(325 200) 
+        translate(318 200) 
         scale(1 1)
     "
 >
@@ -230,20 +231,22 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 7.5 0.0 C 30.0 0.0 30.0 0.0 52.5 0.0 L 60 0.0" 
+    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="60" 
+    x="66" 
     y="-13.0" 
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(100.0 0) 
+        translate(106.0 0) 
         scale(1 1)
     "  
 >
@@ -266,20 +269,22 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 7.5 0.0 C 30.0 0.0 30.0 0.0 52.5 0.0 L 60 0.0" 
+    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="60" 
+    x="66" 
     y="-13.0" 
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(100.0 0) 
+        translate(106.0 0) 
         scale(1 1)
     "  
 >
@@ -302,20 +307,22 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 7.5 0.0 C 30.0 0.0 30.0 0.0 52.5 0.0 L 60 0.0" 
+    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="60" 
+    x="66" 
     y="-13.0" 
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(100.0 0) 
+        translate(106.0 0) 
         scale(1 1)
     "  
 >
@@ -324,7 +331,7 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(140 60) 
+        translate(146 60) 
         scale(1 1)
     "
 >
@@ -340,6 +347,8 @@ text {
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -347,12 +356,12 @@ text {
         scale(1 1)
     "  
 >
-    Lc2a
+    A6
 </text>
 </g><g 
-        class="label led"
+        class="label touch"
     transform="
-        translate(226 60) 
+        translate(232 60) 
         scale(1 1)
     "
 >
@@ -368,6 +377,8 @@ text {
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -375,7 +386,7 @@ text {
         scale(1 1)
     "  
 >
-    Lc2b
+    TOUCH
 </text>
 </g>
 </g><g 
@@ -394,20 +405,22 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 7.5 0.0 C 30.0 0.0 30.0 0.0 52.5 0.0 L 60 0.0" 
+    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="60" 
+    x="66" 
     y="-13.0" 
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(100.0 0) 
+        translate(106.0 0) 
         scale(1 1)
     "  
 >
@@ -416,7 +429,7 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(140 90) 
+        translate(146 90) 
         scale(1 1)
     "
 >
@@ -432,6 +445,8 @@ text {
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -439,7 +454,7 @@ text {
         scale(1 1)
     "  
 >
-    Lc3a
+    A5
 </text>
 </g>
 </g>
@@ -465,29 +480,31 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 7.5 0.0 C 30.0 0.0 30.0 0.0 52.5 0.0 L 60 0.0" 
+    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="60" 
+    x="66" 
     y="-13.0" 
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(100.0 0) 
+        translate(106.0 0) 
         scale(-1 1)
     "  
 >
     0
 </text>
 </g><g 
-        class="label gpio"
+        class="label analog"
     transform="
-        translate(-140 0) 
+        translate(-146 0) 
         scale(-1 1)
     "
 >
@@ -503,6 +520,8 @@ text {
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -510,12 +529,12 @@ text {
         scale(-1 1)
     "  
 >
-    Lb0a
+    A0
 </text>
 </g><g 
         class="label comms"
     transform="
-        translate(-226 0) 
+        translate(-232 0) 
         scale(-1 1)
     "
 >
@@ -531,6 +550,8 @@ text {
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -538,7 +559,7 @@ text {
         scale(-1 1)
     "  
 >
-    Lb03
+    MISO
 </text>
 </g>
 </g><g 
@@ -557,20 +578,22 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 7.5 0.0 C 30.0 0.0 30.0 0.0 52.5 0.0 L 60 0.0" 
+    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="60" 
+    x="66" 
     y="-13.0" 
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(100.0 0) 
+        translate(106.0 0) 
         scale(-1 1)
     "  
 >
@@ -579,30 +602,32 @@ text {
 </g><g 
         class="label comms"
     transform="
-        translate(-140 30) 
+        translate(-146 30) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    d="M 0 0.0 L 92 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="6" 
+    x="92" 
     y="-13.0" 
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(46.0 0) 
+        translate(132.0 0) 
         scale(-1 1)
     "  
 >
-    Lc1a
+    MOSI
 </text>
 </g>
 </g><g 
@@ -621,20 +646,22 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 7.5 0.0 C 30.0 0.0 30.0 0.0 52.5 0.0 L 60 0.0" 
+    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="60" 
+    x="66" 
     y="-13.0" 
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(100.0 0) 
+        translate(106.0 0) 
         scale(-1 1)
     "  
 >
@@ -643,7 +670,7 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(-140 60) 
+        translate(-146 60) 
         scale(-1 1)
     "
 >
@@ -659,6 +686,8 @@ text {
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -666,12 +695,12 @@ text {
         scale(-1 1)
     "  
 >
-    Lc2a
+    A1
 </text>
 </g><g 
-        class="label led"
+        class="label comms"
     transform="
-        translate(-226 60) 
+        translate(-232 60) 
         scale(-1 1)
     "
 >
@@ -687,6 +716,8 @@ text {
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -694,7 +725,7 @@ text {
         scale(-1 1)
     "  
 >
-    Lc2b
+    SCLK
 </text>
 </g>
 </g><g 
@@ -713,20 +744,22 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 7.5 0.0 C 30.0 0.0 30.0 0.0 52.5 0.0 L 60 0.0" 
+    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="60" 
+    x="66" 
     y="-13.0" 
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(100.0 0) 
+        translate(106.0 0) 
         scale(-1 1)
     "  
 >
@@ -756,20 +789,22 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0.0 0 L 0.0 40.0 A 20.0 20.0 0 0 0 20.0 60.0 L 109 60.0" 
+    d="M 0.0 0 L 0.0 40.0 A 20.0 20.0 0 0 0 20.0 60.0 L 115 60.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="109" 
+    x="115" 
     y="47.0" 
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(149.0 60) 
+        translate(155.0 60) 
         scale(-1 1)
     "  
 >
@@ -778,7 +813,7 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(-189 60) 
+        translate(-195 60) 
         scale(-1 1)
     "
 >
@@ -794,6 +829,8 @@ text {
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -801,12 +838,12 @@ text {
         scale(-1 1)
     "  
 >
-    Lc2a
+    A2
 </text>
 </g><g 
-        class="label led"
+        class="label pwm"
     transform="
-        translate(-275 60) 
+        translate(-281 60) 
         scale(-1 1)
     "
 >
@@ -822,6 +859,8 @@ text {
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -829,7 +868,7 @@ text {
         scale(-1 1)
     "  
 >
-    Lc2b
+    PWM
 </text>
 </g>
 </g><g 
@@ -848,29 +887,31 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0.0 0 L 0.0 60.0 A 30.0 30.0 0 0 0 30.0 90.0 L 139 90.0" 
+    d="M 0.0 0 L 0.0 60.0 A 30.0 30.0 0 0 0 30.0 90.0 L 145 90.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="139" 
+    x="145" 
     y="77.0" 
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(179.0 90) 
+        translate(185.0 90) 
         scale(-1 1)
     "  
 >
     4
 </text>
 </g><g 
-        class="label pwm"
+        class="label analog"
     transform="
-        translate(-189 90) 
+        translate(-195 90) 
         scale(-1 1)
     "
 >
@@ -886,6 +927,8 @@ text {
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -893,35 +936,7 @@ text {
         scale(-1 1)
     "  
 >
-    Lc2a
-</text>
-</g><g 
-        class="label led"
-    transform="
-        translate(-275 90) 
-        scale(-1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
-        scale(-1 1)
-    "  
->
-    Lc2b
+    A3
 </text>
 </g>
 </g>
@@ -947,29 +962,31 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0.0 0 L 0.0 40.0 A 20.0 20.0 0 0 0 20.0 60.0 L 109 60.0" 
+    d="M 0.0 0 L 0.0 40.0 A 20.0 20.0 0 0 0 20.0 60.0 L 115 60.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="109" 
+    x="115" 
     y="47.0" 
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(149.0 60) 
+        translate(155.0 60) 
         scale(1 1)
     "  
 >
     6
 </text>
 </g><g 
-        class="label analog"
+        class="label pwm"
     transform="
-        translate(189 60) 
+        translate(195 60) 
         scale(1 1)
     "
 >
@@ -985,6 +1002,8 @@ text {
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -992,7 +1011,7 @@ text {
         scale(1 1)
     "  
 >
-    Lc3a
+    PWM
 </text>
 </g>
 </g><g 
@@ -1011,29 +1030,31 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0.0 0 L 0.0 60.0 A 30.0 30.0 0 0 0 30.0 90.0 L 139 90.0" 
+    d="M 0.0 0 L 0.0 60.0 A 30.0 30.0 0 0 0 30.0 90.0 L 145 90.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="139" 
+    x="145" 
     y="77.0" 
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(179.0 90) 
+        translate(185.0 90) 
         scale(1 1)
     "  
 >
     5
 </text>
 </g><g 
-        class="label pwm"
+        class="label analog"
     transform="
-        translate(189 90) 
+        translate(195 90) 
         scale(1 1)
     "
 >
@@ -1049,6 +1070,8 @@ text {
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -1056,12 +1079,12 @@ text {
         scale(1 1)
     "  
 >
-    Lc2a
+    A4
 </text>
 </g><g 
-        class="label led"
+        class="label pwm"
     transform="
-        translate(275 90) 
+        translate(281 90) 
         scale(1 1)
     "
 >
@@ -1077,6 +1100,8 @@ text {
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -1084,7 +1109,7 @@ text {
         scale(1 1)
     "  
 >
-    Lc2b
+    PWM
 </text>
 </g>
 </g>
@@ -1102,7 +1127,7 @@ text {
     "
 >
         <g 
-        class="label led"
+        class="label touch"
     transform="
         translate(0 0) 
         scale(-1 -1)
@@ -1110,29 +1135,31 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0.0 0 L 0.0 79.66666666666667 A 30.333333333333332 30.333333333333332 0 0 0 30.333333333333332 110.0 L 91 110.0" 
+    d="M 0.0 0 L 0.0 77.66666666666666 A 32.333333333333336 32.333333333333336 0 0 0 32.333333333333336 110.0 L 97 110.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="91" 
+    x="97" 
     y="97.0" 
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(131.0 110) 
+        translate(137.0 110) 
         scale(-1 -1)
     "  
 >
-    a
+    TOUCH
 </text>
 </g><g 
         class="label analog"
     transform="
-        translate(-171 -110) 
+        translate(-177 -110) 
         scale(-1 -1)
     "
 >
@@ -1148,6 +1175,8 @@ text {
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -1155,7 +1184,7 @@ text {
         scale(-1 -1)
     "  
 >
-    AUX_a
+    A7
 </text>
 </g>
 </g><g 
@@ -1166,7 +1195,7 @@ text {
     "
 >
         <g 
-        class="label led"
+        class="label touch"
     transform="
         translate(15 15) 
         scale(-1 -1)
@@ -1174,80 +1203,26 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0.0 0 L 0.0 119.66666666666666 A 35.333333333333336 35.333333333333336 0 0 0 35.333333333333336 155.0 L 106 155.0" 
+    d="M 0.0 0 L 0.0 117.66666666666666 A 37.333333333333336 37.333333333333336 0 0 0 37.333333333333336 155.0 L 112 155.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="106" 
+    x="112" 
     y="142.0" 
     width="80" 
     height="26" 
     shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(146.0 155) 
+        translate(152.0 155) 
         scale(-1 -1)
     "  
 >
-    b
-</text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(-171 -140) 
-        scale(-1 -1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
-        scale(-1 -1)
-    "  
->
-    AUX_b
-</text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(-257 -140) 
-        scale(-1 -1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
-        scale(-1 -1)
-    "  
->
-    PWM
+    TOUCH
 </text>
 </g>
 </g>
@@ -1283,7 +1258,7 @@ text {
  class="annotation__bg" 
     x="0" 
     y="0" 
-    width="250" 
+    width="125" 
     height="50" 
     shape-rendering="geometricPrecision"
     rx="25" 
@@ -1302,22 +1277,22 @@ text {
         scale(1 -1)
     "  
 >
-    USB-C connector
+    USB-C
 </text><text
     class="textblock"
     transform="
-        translate(0 -18) 
+        translate(0 -16) 
         scale(1 -1)
     "  
 >
-    Host/device functionality
+    port
 </text>
 </g>
 </g>
 </g><g 
         class="annotation"
     transform="
-        translate(86.5 85) 
+        translate(87 85) 
         scale(1 -1)
     "
 >
@@ -1365,11 +1340,11 @@ text {
         scale(1 -1)
     "  
 >
-    Onboard
+    Status
 </text><text
     class="textblock"
     transform="
-        translate(0 -18) 
+        translate(0 -16) 
         scale(1 -1)
     "  
 >
@@ -1569,7 +1544,7 @@ text {
     GPIO
 </text>
 </g><g 
-        class="legend-entry led"
+        class="legend-entry touch"
     transform="
         translate(169 10) 
         scale(1 1)
@@ -1604,7 +1579,7 @@ text {
         scale(1 1)
     "  
 >
-    LED
+    Touch
 </text>
 </g><g 
         class="legend-entry pwr"
@@ -1807,7 +1782,15 @@ text {
         scale(1 1)
     "  
 >
-    More info: <tspan class='strong'>www.readthedocs.pinout</tspan>
+    Current release: 
+</text><text
+    class="textblock"
+    transform="
+        translate(10 144) 
+        scale(1 1)
+    "  
+>
+    <tspan class='strong'>pinout.readthedocs.io</tspan>
 </text>
 </g>
     

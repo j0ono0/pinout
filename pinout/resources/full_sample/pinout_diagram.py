@@ -28,7 +28,7 @@ panel_main = diagram.add(Group(2, 2, "panel panel--main"))
 panel_main.add(Rect(0, 0, 856, 671, "panel__bg"))
 
 # Create a group to hold the pinout-diagram components.
-graphic = panel_main.add(Group(325, 200))
+graphic = panel_main.add(Group(318, 200))
 
 # Add and embed an image
 graphic.add(Image("hardware.png", width=220, height=300, embed=True))
@@ -102,17 +102,18 @@ graphic.add(
 
 graphic.add(
     AnnotationLabel(
-        ["USB-C connector", "Host/device functionality"],
+        content=data.annotation_usb,
         x=110,
         y=0,
         scale=(1, -1),
+        body={"width": 125},
     )
 )
 
 graphic.add(
     AnnotationLabel(
-        content=["Onboard", "LED"],
-        x=86.5,
+        content=data.annotation_led,
+        x=87,
         y=85,
         scale=(1, -1),
         target={"x": -20, "y": -20, "width": 40, "height": 40, "corner_radius": 20},

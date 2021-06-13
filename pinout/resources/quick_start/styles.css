@@ -10,8 +10,8 @@ path, rect {
     stroke-width: 0;
     fill: none;
 }
-path{
-}
+
+
 text {
     font-family: Verdana, Georgia, sans-serif;
     font-size: 14px;
@@ -20,11 +20,9 @@ text {
 }
 
 
-
 .label__body{
     fill: rgb(36, 36, 36);
 }
-
 .label .lline{
     stroke-width: 2;
 }
@@ -36,7 +34,6 @@ text {
     stroke-width: 0;
     text-anchor: middle;
 }
-
 
 
 .legend .swatch__body{
@@ -61,7 +58,6 @@ text {
 .panel--info .panel__bg{
     fill: #f4f4f4;
 }
-
 
 
 .pwr .label__body,
@@ -106,7 +102,6 @@ text {
 .gnd .lline{
     stroke: #000;
 }
-
 .pwm .label__body,
 .pwm .swatch__body{
     fill: rgb(35, 66, 133);
@@ -114,7 +109,6 @@ text {
 .pwm .lline{
     stroke: rgb(35, 66, 133);
 }
-
 
 
 .h1 {

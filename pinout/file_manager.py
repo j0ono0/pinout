@@ -1,7 +1,7 @@
 # File Manager: common file manipulation functions
+import os
 from pathlib import Path
 import pkg_resources
-import yaml
 
 
 def unique_filepath(filepath):
@@ -51,26 +51,6 @@ def load_data(path):
         return f.read()
 
 
-def load_config(path=None):
-    """Load a config file either from a user nominated location or, if no path is supplied, load the default config file from the *pinout* package.
-
-    :param path: [description], defaults to None
-    :type path: [type], optional
-    :return: [description]
-    :rtype: [type]
-    """
-    if path is None:
-        # Load default settings
-        path = "resources/config.yaml"
-        return yaml.safe_load(
-            pkg_resources.resource_string(__name__, path).decode("utf-8")
-        )
-    # Load user supplied settings
-    path = Path(path)
-    with path.open() as f:
-        return yaml.safe_load(f)
-
-
 def duplicate(resource_name):
     """Duplicate resources from *pinout* package.
 
@@ -90,21 +70,17 @@ def duplicate(resource_name):
     """
 
     resources = {
-        "config": [(".", "config.yaml")],
         "quick_start": [
-            ("quick_start", "quick_start_config.yaml"),
-            ("quick_start", "quick_start_hardware.png"),
-            ("quick_start", "quick_start_pinout.py"),
+            ("quick_start", "data.py"),
+            ("quick_start", "hardware.png"),
+            ("quick_start", "pinout_diagram.py"),
+            ("quick_start", "styles.css"),
         ],
         "full_sample": [
-            ("full_sample", "full_sample_config.yaml"),
-            ("full_sample", "full_sample_hardware.png"),
-            ("full_sample", "full_sample_pinout.py"),
-        ],
-        "annotations": [
-            ("annotations", "annotations.py"),
-            ("annotations", "annotations_config.yaml"),
-            ("shared", "hardware_board.svg"),
+            ("full_sample", "data.py"),
+            ("full_sample", "hardware.png"),
+            ("full_sample", "pinout_diagram.py"),
+            ("full_sample", "styles.css"),
         ],
     }
 
@@ -129,7 +105,7 @@ if __name__ == "__main__":
         choices=["quick_start", "full_sample", "config", "annotations"],
         help="duplicate pinout resources",
     )
-    parser.add_argument("-b", "--build")
+
     args = parser.parse_args()
     if args.duplicate:
         duplicate(args.duplicate)

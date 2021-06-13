@@ -1,5 +1,3 @@
-from components import LabelIn
-
 legend = [
     ("Analog", "analog"),
     ("Communication", "comms"),

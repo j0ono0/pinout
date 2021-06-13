@@ -12,27 +12,30 @@ from pinout.components.type import TextBlock
 from pinout.components import leaderline as lline
 from pinout.components.legend import Legend
 
+# Import data for the diagram
 import data
 
 # Create a new diagram and add a background
-diagram = Diagram(896, 504, "diagram")
-diagram.add(Rect(0, 0, 896, 504, "diagram__bg"))
+diagram = Diagram(1024, 574, "diagram")
+diagram.add(Rect(0, 0, 1024, 576, "diagram__bg"))
 
 # Add a stylesheet
 diagram.add_stylesheet("styles.css", True)
 
-# Create a 'main' panel and add a background
+# Create a layout for diagram
 panel_main = diagram.add(Group(2, 2, "panel panel--main"))
-panel_main.add(Rect(0, 0, 892, 500, "panel__bg"))
+panel_main.add(Rect(0, 0, 1020, 438, "panel__bg"))
+
+info_panel = diagram.add(Group(x=2, y=442, tag="panel panel--info"))
+info_panel.add(Rect(0, 0, 1020, 132, tag="panel__bg"))
 
 # Create a group to hold the pinout-diagram components.
-graphic = panel_main.add(Group(338, 8))
+graphic = panel_main.add(Group(400, 42))
 
 # Add and embed an image
-graphic.add(Image("quick_start_hardware.png", width=220, height=260, embed=True))
+graphic.add(Image("hardware.png", width=220, height=260, embed=True))
 
-
-# Example: adding a single pin label
+# Create a single pin label
 graphic.add(
     Label(
         content="RESET",
@@ -44,8 +47,7 @@ graphic.add(
     )
 )
 
-
-# Add a pinlabels to the right header
+# Create pinlabels on the right header
 graphic.add(
     PinLabelGroup(
         x=206,
@@ -57,7 +59,7 @@ graphic.add(
     )
 )
 
-# Add a pinlabels to the left header
+# Create pinlabels on the left header
 graphic.add(
     PinLabelGroup(
         x=16,
@@ -70,7 +72,7 @@ graphic.add(
     )
 )
 
-
+# Create pinlabels on the lower header
 graphic.add(
     PinLabelGroup(
         x=65,
@@ -84,10 +86,7 @@ graphic.add(
     )
 )
 
-info_panel = diagram.add(Group(x=2, y=368, tag="panel panel--info"))
-info_panel.add(Rect(0, 0, 892, 132, tag="panel__bg"))
-
-
+# Create a title and a text-block
 title_block = info_panel.add(
     TextBlock(
         data.title,
@@ -100,17 +99,6 @@ title_block = info_panel.add(
         tag="panel title_block",
     )
 )
-
-legend = info_panel.add(
-    Legend(
-        data.legend,
-        x=338,
-        y=0,
-        max_height=132,
-    )
-)
-
-
 info_panel.add(
     TextBlock(
         data.description.split("\n"),
@@ -124,5 +112,15 @@ info_panel.add(
     )
 )
 
+# Create a legend
+legend = info_panel.add(
+    Legend(
+        data.legend,
+        x=338,
+        y=0,
+        max_height=132,
+    )
+)
+
 # Export final SVG diagram
-diagram.export("pinout_diagram.svg", True)
+diagram.export("quick_start_pinout_diagram.svg", True)

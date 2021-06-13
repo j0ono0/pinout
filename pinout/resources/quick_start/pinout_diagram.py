@@ -12,6 +12,7 @@ from pinout.components.type import TextBlock
 from pinout.components import leaderline as lline
 from pinout.components.legend import Legend
 
+
 # Import data for the diagram
 import data
 

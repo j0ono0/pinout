@@ -54,7 +54,7 @@ def load_data(path):
 def duplicate(resource_name):
     """Duplicate resources from *pinout* package.
 
-    A variety of resources can be copied via this function. Access is also available via the command line::
+    A variety of resources can be copied via this function, access is available via the command line::
 
         py -m pinout.file_manager --duplicate <resource_name>
 
@@ -62,8 +62,6 @@ def duplicate(resource_name):
 
         + config
         + quick_start
-        + full_sample
-        + annotations
 
     :param resource_name: Name of resource to duplicate.
     :type resource_name: string
@@ -76,12 +74,7 @@ def duplicate(resource_name):
             ("quick_start", "pinout_diagram.py"),
             ("quick_start", "styles.css"),
         ],
-        "full_sample": [
-            ("full_sample", "data.py"),
-            ("full_sample", "hardware.png"),
-            ("full_sample", "pinout_diagram.py"),
-            ("full_sample", "styles.css"),
-        ],
+        "config": [("config.py",)],
     }
 
     resource_package = "pinout"
@@ -102,7 +95,7 @@ if __name__ == "__main__":
         "-d",
         "--duplicate",
         action="store",
-        choices=["quick_start", "full_sample", "config", "annotations"],
+        choices=["quick_start", "config"],
         help="duplicate pinout resources",
     )
 

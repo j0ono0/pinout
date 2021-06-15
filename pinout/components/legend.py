@@ -58,6 +58,16 @@ class LegendEntry(core.Group):
 
 
 class Legend(core.Group):
+    """Auto generate a legend component
+
+    :param data: [description]
+    :type data: [type]
+    :param max_height: [description], defaults to None
+    :type max_height: [type], optional
+    :param inset: [description], defaults to None
+    :type inset: [type], optional
+    """
+
     def __init__(
         self,
         data,
@@ -65,7 +75,6 @@ class Legend(core.Group):
         inset=None,
         **kwargs,
     ):
-
         super().__init__(**kwargs)
         self.update_config(config.legend)
         self.add_tag(self.config["tag"])

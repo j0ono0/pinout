@@ -32,6 +32,8 @@ class TransformMixin:
 
 
 class Layout(TransformMixin):
+    """Base class for components that fundamentally group other components together."""
+
     def __init__(self, x=0, y=0, tag=None, **kwargs):
         super().__init__(**kwargs)
         self.tag = tag
@@ -46,19 +48,40 @@ class Layout(TransformMixin):
         return instance
 
     def add_def(self, instance):
+        """Add a component to the svg 'def' section
+
+        :param instance: pinout component
+        :return: instance added
+        :rtype: pinout components
+        """
         self.defs.append(instance)
         return instance
 
     def add_tag(self, tag):
+        """Append a tag to the instance
+
+        :param tag: CSS class name(s)
+        :type tag: string
+        """
         if self.tag is None:
             self.tag = tag
         else:
             self.tag = " ".join([tag, self.tag])
 
     def update_config(self, vals):
+        """update config dict
+
+        :param vals: Values to update
+        :type vals: dict
+        """
         self.config.update(copy.deepcopy(vals))
 
     def bounding_rect(self):
+        """Top left coordinates with width and height of a bounding rectangle
+
+        :return: origin coordinates and rectangle dimensions
+        :rtype: tuple (x, y, w, h)
+        """
         x1, y1, x2, y2 = self.bounding_coords()
         return BoundingRect(x1, y1, x2 - x1, y2 - y1)
 
@@ -90,6 +113,11 @@ class Layout(TransformMixin):
             return BoundingCoords(0, 0, 0, 0)
 
     def render_defs(self):
+        """Render SVG markup from 'defs'
+
+        :return: SVG markup
+        :rtype: string
+        """
         content = ""
         for d in self.defs:
             content += d.render()
@@ -100,6 +128,11 @@ class Layout(TransformMixin):
         return content
 
     def render_children(self):
+        """Render SVG markup from 'children'
+
+        :return: SVG markup
+        :rtype: string
+        """
         content = ""
         for child in self.children:
             try:
@@ -112,6 +145,8 @@ class Layout(TransformMixin):
 
 
 class StyleSheet:
+    """Include a cascading stylesheet."""
+
     def __init__(self, path, embed=False):
         self.path = path
         self.embed = embed
@@ -126,6 +161,8 @@ class StyleSheet:
 
 
 class Raw:
+    """Include arbitary code to the document"""
+
     def __init__(self, content):
         self.content = content
 
@@ -134,26 +171,34 @@ class Raw:
 
 
 class Diagram(Layout):
+    """Basis of a pinout diagram"""
+
     def __init__(self, width, height, tag=None, **kwargs):
         super().__init__(tag=tag, **kwargs)
         self.width = width
         self.height = height
 
     def add_stylesheet(self, path, embed=True):
+        """Add a stylesheet to the diagram
+
+        :param path: Path to stylesheet file
+        :type path: string
+        :param embed: embed stylesheet in exported file, defaults to True
+        :type embed: bool, optional
+        """
         self.children.insert(0, StyleSheet(path, embed))
 
     def render(self):
+        """Render children into an <svg> tag.
+
+        :return: SVG markup
+        :rtype: string
+        """
         tplt = templates.get("svg.svg")
         return tplt.render(svg=self)
 
     def export(self, path, overwrite=False):
-        """Output the diagram in SVG format.
-
-        :param path: File location and name
-        :type path: string
-        :param overwrite: Overwrite existing file of same path, defaults to False
-        :type overwrite: bool, optional
-        """
+        """Output the diagram in SVG format."""
         # Create export location and unique filename if required
         path = pathlib.Path(path)
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -167,6 +212,8 @@ class Diagram(Layout):
 
 
 class Group(Layout):
+    """Group components together"""
+
     def __init__(self, x=0, y=0, tag=None, **kwargs):
         super().__init__(x=x, y=y, tag=tag, **kwargs)
 
@@ -179,21 +226,35 @@ class Group(Layout):
         return self.bounding_rect().h
 
     def render(self):
+        """Render children into a <group> tag.
+
+        :return: SVG markup
+        :rtype: string
+        """
         tplt = templates.get("group.svg")
         return tplt.render(group=self)
 
 
 class ClipPath(Group):
+    """Define a clip-path component"""
+
     def __init__(self, x=0, y=0, tag=None, **kwargs):
         self.uuid = str(uuid.uuid4())
         super().__init__(x=x, y=y, tag=tag, **kwargs)
 
     def render(self):
+        """Render children into a <clipPath> tag.
+
+        :return: SVG markup
+        :rtype: string
+        """
         tplt = templates.get("clippath.svg")
         return tplt.render(path=self)
 
 
 class SvgShape(TransformMixin):
+    """Base class for components that have a graphical representation"""
+
     def __init__(
         self,
         x=0,
@@ -227,45 +288,63 @@ class SvgShape(TransformMixin):
             self.tag = " ".join([tag, self.tag])
 
     def render(self):
-        """Return SVG markup.
-
-        :return: Empty string
-        :rtype: str
-        """
         return ""
 
 
 class Path(SvgShape):
+    """SVG Path object"""
+
     def __init__(self, path_definition="", **kwargs):
         super().__init__(**kwargs)
         self.d = path_definition
 
     def render(self):
+        """Render a <path> tag.
+
+        :return: SVG markup
+        :rtype: string
+        """
         tplt = templates.get("path.svg")
         return tplt.render(path=self)
 
 
 class Rect(SvgShape):
+    """SVG <rect> object"""
+
     def __init__(self, *args, corner_radius=0, **kwargs):
         self.corner_radius = corner_radius
         super().__init__(*args, **kwargs)
 
     def render(self):
+        """Render a <rect> tag.
+
+        :return: SVG markup
+        :rtype: string
+        """
         tplt = templates.get("rect.svg")
         return tplt.render(rect=self)
 
 
 class Text(SvgShape):
+    """SVG <text> object"""
+
     def __init__(self, content, **kwargs):
         super().__init__(**kwargs)
         self.content = content
 
     def render(self):
+        """Render a <text> tag.
+
+        :return: SVG markup
+        :rtype: string
+        """
         tplt = templates.get("text.svg")
         return tplt.render(text=self)
 
 
 class Image(SvgShape):
+    """Include a image in the diagram. Access via Diagram.add_image()"""
+
     def __init__(self, path, embed=False, **kwargs):
         super().__init__(**kwargs)
         self.path = path
@@ -295,13 +374,3 @@ class Image(SvgShape):
                 path = f"data:image/{media_type};base64,{encoded_img.decode('utf-8')}"
 
         return tplt.render(image=self)
-
-
-########
-# misc helper functions
-
-
-def separate_sign(coords):
-    sign = [coord // abs(coord) if coord != 0 else 1 for coord in coords]
-    coords = [abs(coord) for coord in coords]
-    return (tuple(coords), tuple(sign))

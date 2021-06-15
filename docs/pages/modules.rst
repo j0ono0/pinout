@@ -8,5 +8,8 @@ Modules
     :maxdepth: 2
     :caption: Contents:
 
-    elements
-    components
+    core
+    pinlabel
+    leaderline
+    annotation
+    legend

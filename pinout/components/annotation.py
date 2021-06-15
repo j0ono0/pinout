@@ -83,6 +83,17 @@ class AnnotationLabel(Base):
         target=None,
         **kwargs,
     ):
+        """Annotation style label.
+
+        :param content: [description]
+        :type content: [type]
+        :param body: [description], defaults to None
+        :type body: [type], optional
+        :param leaderline: [description], defaults to None
+        :type leaderline: [type], optional
+        :param target: [description], defaults to None
+        :type target: [type], optional
+        """
         self.content = content
         body = body or {}
         leaderline = leaderline or {}

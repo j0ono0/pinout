@@ -7,7 +7,7 @@
 ###########################################
 
 from pinout.core import Diagram, Group, Rect, Image
-from pinout.components.pinlabel import PinLabelGroup, Label
+from pinout.components.pinlabel import PinLabelGroup, PinLabel
 from pinout.components.type import TextBlock
 from pinout.components import leaderline as lline
 from pinout.components.legend import Legend
@@ -17,7 +17,7 @@ from pinout.components.legend import Legend
 import data
 
 # Create a new diagram and add a background
-diagram = Diagram(1024, 574, "diagram")
+diagram = Diagram(1024, 576, "diagram")
 diagram.add(Rect(0, 0, 1024, 576, "diagram__bg"))
 
 # Add a stylesheet
@@ -38,7 +38,7 @@ graphic.add(Image("hardware.png", width=220, height=260, embed=True))
 
 # Create a single pin label
 graphic.add(
-    Label(
+    PinLabel(
         content="RESET",
         x=155,
         y=244,

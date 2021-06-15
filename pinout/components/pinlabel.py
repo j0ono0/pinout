@@ -1,11 +1,10 @@
-import warnings
 import copy
 from pinout import core
 from pinout.components import leaderline as lline
 from pinout import config
 
 
-class PinLabelBody(core.SvgShape):
+class Body(core.SvgShape):
     def __init__(self, x, y, width, height, corner_radius=0, **kwargs):
         self.corner_radius = corner_radius
         super().__init__(x=x, y=y, width=width, height=height, **kwargs)
@@ -31,7 +30,11 @@ class PinLabelBody(core.SvgShape):
         return body.render()
 
 
-class Label(core.Group):
+class Leaderline(lline.Curved):
+    pass
+
+
+class Base(core.Group):
     def __init__(
         self,
         content="",
@@ -51,14 +54,14 @@ class Label(core.Group):
         if isinstance(leaderline, dict):
             leaderline_config = self.config["leaderline"]
             leaderline_config.update(leaderline)
-            leaderline = lline.Curved(**leaderline_config)
+            leaderline = Leaderline(**leaderline_config)
 
         # ensure instance data is unique
         body = copy.deepcopy(body or self.config["body"])
         if isinstance(body, dict):
             body_config = self.config["body"]
             body_config.update(body)
-            body = PinLabelBody(**body_config)
+            body = Body(**body_config)
 
         self.leaderline = leaderline
         self.body = body
@@ -88,7 +91,31 @@ class Label(core.Group):
         return super().render()
 
 
+class PinLabel(Base):
+    pass
+
+
 class PinLabelGroup(core.Group):
+    """Convenience class to place multiple rows of pin-labels on a pin-header.
+
+    :param x: x-coordinate of the first pin in the header
+    :type x: int
+    :param y:  y-coordinate of the first pin in the header
+    :type y: int
+    :param pin_pitch: Distance between pins in the header
+    :type pin_pitch: tuple: (x,y)
+    :param label_start: Offset of the first label from the first pin
+    :type label_start: tuple: (x,y)
+    :param label_pitch: Distance between each row of labels
+    :type label_pitch: tuple: (x,y)
+    :param labels: Label data
+    :type labels: List
+    :param leaderline: Leaderline customisations, defaults to None
+    :type leaderline: dict or Leaderline object, optional
+    :param body: Label body customisations, defaults to None
+    :type body: dict or LabelBody object, optional
+    """
+
     def __init__(
         self,
         x,
@@ -123,7 +150,7 @@ class PinLabelGroup(core.Group):
                     attrs["leaderline"] = attrs.get("leaderline", None) or leaderline
                     attrs["body"] = attrs.get("body", None) or body
 
-                    label = Label(
+                    label = PinLabel(
                         content=content,
                         scale=scale,
                         **attrs,

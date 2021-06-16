@@ -190,39 +190,6 @@ The final diagram can be exported as a graphic in SVG format and should match th
 
     
 The most convenient method of viewing the newly exported SVG file is with your browser.
-
-
-Document measurments
---------------------
-Taking some critical measurements of the hardware image before starting will streamline processes and save adjusting by trial-and-error later. Where pins are arranged in 'headers' (a line of evenly spaced pins) the *PinLabelSet* class can be used to automate pin and label placement.
-
-.. figure:: /_static/quick_start_measurements_left_header.*
-
-- **x, y**: Coordinates of the first pin in the header.
-- **pitch**: Distance between each pin of the header. (0, 30) steps 0px right and 30px down for each pin. *TIP*: (30, 0) creates a horizontal header.
-- **offset**: **Relative to the pin's (x, y) coodinates**. Locates the start position for a row of labels.
-- **labels**: Data that documents each label and its position in the header. Each list within 'labels' represents a pin in the header. Each entry within those lists becomes a label. Label entries must include a 'title', 'tag', and optionally a dict of custom configurations.
-
-These details are documented in a dict. Multiple headers can be grouped into a list for convenient processing later.Note some labels are demonstrated with customisations::
-    
-    # Custom pinlabel configuration
-    long_label_config = {"label": {"rect": {"width": 108}}}
-
-    pin_headers = [
-        {
-            # LHS header
-            "x": 16,
-            "y": 100,
-            "pitch": (0, 30),
-            "offset": (-58, 0),
-            "labels": [
-                [("Vcc", "pwr", long_label_config)],
-                [("1", "gpio"), ("A1", "analog")],
-                [("2", "gpio"), ("PWM", "pwm", {"offset": (66, 0)})],
-            ],
-        },
-        # x2 more headers are included in 'quick_start_pinout.py'
-    ]
     
 **Note on coodinates**: SVG format sets (0, 0) as top-left with increasing x and y values moving to the right and down respectively. Component placement in pinout is made from an arbitrary (0, 0) location. The final diagram size and boundaries are calculated on export ensuring all components are visible - ie negative coordinates do not risk being outside the final diagram boundaries.
 

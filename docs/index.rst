@@ -8,9 +8,7 @@
 
 SVG diagram creation from Python code - **pinout** provides an easy method to create pin-out diagrams for electronic hardware.
 
-.. figure:: _static/quick_start_pinout_diagram.*
-
-    Sample diagram: micropython pin-out on Adafruit Huzzah32 ESP32 Feather Board.
+.. figure:: _static/demo_pinout_diagram.*
 
 .. toctree::
     :maxdepth: 2

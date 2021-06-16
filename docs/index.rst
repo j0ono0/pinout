@@ -19,6 +19,7 @@ SVG diagram creation from Python code - **pinout** provides an easy method to cr
     pages/install
     pages/tutorial
     pages/modules
+    pages/customise
     pages/resources
 
 

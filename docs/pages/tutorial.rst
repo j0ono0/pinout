@@ -210,4 +210,4 @@ Depending on you intended usage, linking (instead of embedding) the image might 
 
 **TIP:** Embedding the image allows the SVG display correctly in InkScape. This might be an appealing work-flow option for encorporating the diagram into other media.
 
-A more feature-rich example are available in the samples folder of the `pinout github repository <https://github.com/j0ono0/pinout>`_.
+A more feature-rich examples are available in the samples folder of the `pinout github repository <https://github.com/j0ono0/pinout>`_.

@@ -57,7 +57,7 @@ pinout_graphic.add(
         y=58,
         pin_pitch=(0, 24.6),
         label_start=(80, 0),
-        label_pitch=(0, 0),
+        label_pitch=(0, 24.6),
         labels=data.header_rhs,
     )
 )
@@ -69,7 +69,7 @@ pinout_graphic.add(
         y=58,
         pin_pitch=(0, 24.6),
         label_start=(80, 0),
-        label_pitch=(0, 0),
+        label_pitch=(0, 24.6),
         scale=(-1, 1),
         labels=data.header_lhs,
     )
@@ -81,8 +81,8 @@ pinout_graphic.add(
         x=-56,
         y=28,
         pin_pitch=(112, 0),
-        label_start=(112, 60),
-        label_pitch=(112, 22),
+        label_start=(104, 60),
+        label_pitch=(0, 22),
         scale=(-1, -1),
         labels=data.leds,
         leaderline=leaderline.Curved(direction="vh"),

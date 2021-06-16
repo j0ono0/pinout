@@ -56,8 +56,8 @@ pinout_graphic.add(
         x=147,
         y=153,
         pin_pitch=(0, 15.35),
-        label_start=(90, -80),
-        label_pitch=(0, 8),
+        label_start=(90, -84),
+        label_pitch=(0, 23.35),
         labels=data.header_rhs_a,
     )
 )
@@ -68,7 +68,7 @@ pinout_graphic.add(
         y=316,
         pin_pitch=(0, 15.35),
         label_start=(90, 8),
-        label_pitch=(0, 8),
+        label_pitch=(0, 23.35),
         labels=data.header_rhs_b,
     )
 )
@@ -80,7 +80,7 @@ pinout_graphic.add(
         y=208,
         pin_pitch=(0, 15.35),
         label_start=(90, -64),
-        label_pitch=(0, 8),
+        label_pitch=(0, 23.35),
         scale=(-1, 1),
         labels=data.header_lhs_a,
     )
@@ -90,8 +90,8 @@ pinout_graphic.add(
         x=-147,
         y=347,
         pin_pitch=(0, 15.35),
-        label_start=(90, 8),
-        label_pitch=(0, 8),
+        label_start=(90, 12),
+        label_pitch=(0, 23.35),
         scale=(-1, 1),
         labels=data.header_lhs_b,
     )
@@ -104,8 +104,8 @@ pinout_graphic.add(
         x=46,
         y=206,
         pin_pitch=(17, 0),
-        label_start=(279, 120),
-        label_pitch=(17, 23),
+        label_start=(284, 120),
+        label_pitch=(0, 23),
         scale=(-1, -1),
         labels=data.leds_a,
         leaderline=leaderline.Curved(direction="vh"),
@@ -119,7 +119,7 @@ pinout_graphic.add(
         y=392,
         pin_pitch=(39, -185),
         label_start=(38, 90),
-        label_pitch=(39, 208),
+        label_pitch=(0, 23.35),
         scale=(-1, 1),
         labels=data.leds_b,
         leaderline=leaderline.Curved(direction="vh"),

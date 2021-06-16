@@ -171,7 +171,8 @@ class PinLabelGroup(core.Group):
                 except IndexError:
                     label.x, label.y = next(pin_coords)
                     x, y = next(label_coords)
-                    label.body.x += x
-                    label.body.y += y
+
+                    label.body.x += x - label.x * scale.x
+                    label.body.y += y - label.y * scale.y
 
                 row_group.add(label)

@@ -41,7 +41,7 @@ graphic.add(
         y=106,
         pin_pitch=(0, 30),
         label_start=(60, 0),
-        label_pitch=(0, 0),
+        label_pitch=(0, 30),
         labels=data.rhs,
     )
 )
@@ -53,7 +53,7 @@ graphic.add(
         y=106,
         pin_pitch=(0, 30),
         label_start=(60, 0),
-        label_pitch=(0, 0),
+        label_pitch=(0, 30),
         scale=(-1, 1),
         labels=data.lhs,
     )
@@ -66,7 +66,7 @@ graphic.add(
         y=284,
         pin_pitch=(30, 0),
         label_start=(109, 60),
-        label_pitch=(30, 30),
+        label_pitch=(0, 30),
         scale=(-1, 1),
         labels=data.btm_lhs,
         leaderline=lline.Curved(direction="vh"),
@@ -80,7 +80,7 @@ graphic.add(
         y=284,
         pin_pitch=(-30, 0),
         label_start=(109, 60),
-        label_pitch=(30, 30),
+        label_pitch=(0, 30),
         labels=data.btm_rhs,
         leaderline=lline.Curved(direction="vh"),
     )
@@ -93,7 +93,7 @@ graphic.add(
         scale=(-1, -1),
         pin_pitch=(15, 15),
         label_start=(91, 110),
-        label_pitch=(15, 45),
+        label_pitch=(0, 30),
         labels=data.aux,
         leaderline=lline.Curved(direction="vh"),
     )

@@ -1,13 +1,13 @@
 # Customised components for Arduino pinout diagram
 from pinout import core
-from pinout.components.pinlabel import PinLabelBody
+from pinout.components import pinlabel
 
 
 # PinBodyStart and PinBody include an inset shape
 INSET = 2
 
 
-class PlbStart(PinLabelBody):
+class PlbStart(pinlabel.Body):
     def render(self):
 
         output = core.Group()
@@ -65,7 +65,7 @@ class PlbStart(PinLabelBody):
         return output.render()
 
 
-class PlbEnd(PinLabelBody):
+class PlbEnd(pinlabel.Body):
     def render(self):
 
         output = core.Group()
@@ -94,7 +94,7 @@ class PlbEnd(PinLabelBody):
         return output.render()
 
 
-class Plb(PinLabelBody):
+class Plb(pinlabel.Body):
     # this class differs from the default version as it include an
     # # 'inner rect' for custom styling
     def render(self):

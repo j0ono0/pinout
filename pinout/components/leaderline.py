@@ -2,6 +2,8 @@ from pinout import core
 
 
 class Leaderline(core.SvgShape):
+    """Leaderline base object."""
+
     def __init__(self, direction="hh", **kwargs):
         self.direction = direction
         self.path_def = ""
@@ -10,6 +12,15 @@ class Leaderline(core.SvgShape):
         self.end = core.Coords(0, 0)
 
     def end_points(self, origin, destination):
+        """Locate origin and destination coordinates.
+
+        :param origin: [description]
+        :type origin: [type]
+        :param destination: [description]
+        :type destination: [type]
+        :return: [description]
+        :rtype: [type]
+        """
         # origin and destination are components with bounding-boxes
         # direction is a 2 char code representing starting and ending directions
         # 'h' horizontal, 'v' vertical
@@ -45,6 +56,8 @@ class Leaderline(core.SvgShape):
 
 
 class Curved(Leaderline):
+    """Leaderline comprised of one or two curved corners."""
+
     def route(self, origin, destination):
 
         o_coords = origin.bounding_coords()
@@ -104,6 +117,8 @@ class Curved(Leaderline):
 
 
 class Angled(Leaderline):
+    """Leaderline comprised of one or two sharp 90 degree corners."""
+
     def route(self, origin, destination):
 
         start, end = self.end_points(origin, destination)
@@ -153,6 +168,8 @@ class Angled(Leaderline):
 
 
 class Straight(Leaderline):
+    """Leaderline comprised of a single straight line."""
+
     def route(self, origin, destination):
 
         start, end = self.end_points(origin, destination)

@@ -55,7 +55,7 @@ graphic.add(
         y=100,
         pin_pitch=(0, 30),
         label_start=(60, 0),
-        label_pitch=(0, 0),
+        label_pitch=(0, 30),
         labels=data.right_header,
     )
 )
@@ -67,7 +67,7 @@ graphic.add(
         y=100,
         pin_pitch=(0, 30),
         label_start=(60, 0),
-        label_pitch=(0, 0),
+        label_pitch=(0, 30),
         scale=(-1, 1),
         labels=data.left_header,
     )
@@ -81,7 +81,7 @@ graphic.add(
         scale=(-1, 1),
         pin_pitch=(30, 0),
         label_start=(110, 30),
-        label_pitch=(30, 30),
+        label_pitch=(0, 30),
         labels=data.lower_header,
         leaderline=lline.Curved(direction="vh"),
     )

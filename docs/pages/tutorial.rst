@@ -202,12 +202,8 @@ Next steps
 
 This guide has glossed over many attribute and configuration definitions. Experimenting with changing values and re-exporting the diagram will quickly reveal their purpose. All function are documented in the :ref:`modules` section.
 
-The default config.yaml file can be duplicated and makes a good resource of what attributes can be modified::
-
-    py -m pinout.file_manager --duplicate config
-
 Depending on you intended usage, linking (instead of embedding) the image might be desirable. Set `embed=False` when adding an image to achieve this outcome. *Note:* When linking, URLs are relative to the exported diagram file. When embedding these URLs are relative to the current working directory (the directory you run the script from).
 
-**TIP:** Embedding the image allows the SVG display correctly in InkScape. This might be an appealing work-flow option for encorporating the diagram into other media.
+**TIP:** Embedding the image and stylesheet allows the SVG display correctly in InkScape. This might be an appealing work-flow option for encorporating the diagram into other media or exporting in alternative formats.
 
 A more feature-rich examples are available in the samples folder of the `pinout github repository <https://github.com/j0ono0/pinout>`_.

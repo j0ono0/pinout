@@ -97,7 +97,7 @@ legend_serial = """<tspan class='legend__title'>Serial Ports</tspan>
 Serial1 - Serial7"""
 
 legend_i2c = """<tspan class='legend__title'>I2C Port</tspan>
-Wire librarly"""
+Wire library"""
 
 legend_spi = """<tspan class='legend__title'>SPI Port</tspan>
 SPI library"""

@@ -127,6 +127,6 @@ Microcontroller"""
 instructions = """To begin using Teensy please visit 
 'Getting Started' at <tspan class='url'>www.pjrc.com/teensy</tspan>"""
 
-notes = """&#8226; All digital pins haveInterrupt capability.
+notes = """&#8226; All digital pins have interrupt capability.
 &#8226; Loading status (Red LED): dim: Ready  |  bright: Writing  |  blink: No USB
 &#8226; LED on pin-13"""

@@ -10,6 +10,7 @@ setuptools.setup(
     author="John Newall",
     author_email="john@johnnewall.com",
     description="Generate graphical pinout references for electronic hardware.",
+    license="MIT",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/j0ono0/pinout",

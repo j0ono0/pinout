@@ -12,113 +12,156 @@
 
     <style type="text/css" media="screen">  
     <![CDATA[  
-    
-.lline{
-    stroke-width:0;
-}
-.label__row .label:first-child  .lline,
-.lline--visible .lline{
-    stroke-width: 2;
-}
+    .gnd .label__body,
+.gnd .textblock__bg {
+  fill: #000; }
 
-.label__text{
-    dominant-baseline: central;
-    fill: #fff;
-    font-size: 16px;
-    font-weight: normal;
-    letter-spacing: -1px;
-    stroke-width: 0;
-    text-anchor: middle;
-}
-.tight .label__text{
-    letter-spacing: -2px;
-}
+.gnd .lline {
+  stroke: #000; }
 
-.lline{
-    fill: none;
-}
+.pwr .label__body,
+.pwr .textblock__bg {
+  fill: #ad0000; }
 
-.digital .label__body, .digital .textblock__bg{ fill:rgb(77, 104, 107);}
-.digital .lline{ stroke: rgb(77, 104, 107);}
+.pwr .lline {
+  stroke: #ad0000; }
 
-.analog .label__body, .analog .textblock__bg{ fill:rgb(175, 116, 52);}
-.analog .lline{ stroke: rgb(175, 116, 52);}
+.digital .label__body,
+.digital .textblock__bg {
+  fill: #cfd5d5; }
 
-.pwm .label__body, .pwm .textblock__bg{ fill:rgb(202, 88, 67);}
-.pwm .lline{ stroke: rgb(202, 88, 67);}
+.digital .lline {
+  stroke: #cfd5d5; }
 
-.audio .label__body, .audio .textblock__bg{ fill:rgb(213, 181, 0);}
-.audio .lline{ stroke: rgb(213, 181, 0);}
+.analog .label__body,
+.analog .textblock__bg {
+  fill: #ffd7ad; }
 
-.serial .label__body, .serial .textblock__bg{ fill:rgb(44, 143, 157);}
-.serial .lline{ stroke: rgb(44, 143, 157);}
+.analog .lline {
+  stroke: #ffd7ad; }
 
-.i2c .label__body, .i2c .textblock__bg{ fill:rgb(55, 71, 100);}
-.i2c .lline{ stroke: rgb(55, 71, 100);}
+.pwm .label__body,
+.pwm .textblock__bg {
+  fill: #ffb3aa; }
 
-.spi .label__body, .spi .textblock__bg{ fill:rgb(54, 153, 110);}
-.spi .lline{ stroke: rgb(54, 153, 110);}
+.pwm .lline {
+  stroke: #ffb3aa; }
 
-.canbus .label__body, .canbus .textblock__bg{ fill:rgb(141, 106, 135);}
-.canbus .lline{ stroke: rgb(141, 106, 135);}
+.audio .label__body,
+.audio .textblock__bg {
+  fill: #f7f09d; }
 
+.audio .lline {
+  stroke: #f7f09d; }
 
-.pwr .label__body, .pwr .textblock__bg{  fill: rgb(173, 0, 0);}
-.pwr .lline{stroke: rgb(173, 0, 0);}
+.serial .label__body,
+.serial .textblock__bg {
+  fill: #c9daed; }
 
-.gnd .label__body, .gnd .textblock__bg{fill: #000;}
-.gnd .lline{stroke: #000;}
+.serial .lline {
+  stroke: #c9daed; }
 
+.i2c .label__body,
+.i2c .textblock__bg {
+  fill: #b1add7; }
 
-.diagram__bg{
-    fill: #000;
-}
-.panel__bg{
-    fill: rgb(244, 244, 244);
-}
+.i2c .lline {
+  stroke: #b1add7; }
 
+.spi .label__body,
+.spi .textblock__bg {
+  fill: #c2e6b9; }
 
-.legend__bg{
-    fill: #000;
-}
-.legend__title{
-    font-size: 16px;
-    font-weight: bold;
-    dominant-baseline: auto;
-}
-.legend text{
-    fill: #fff;
-    font-size: 13px;
-}
+.spi .lline {
+  stroke: #c2e6b9; }
 
+.canbus .label__body,
+.canbus .textblock__bg {
+  fill: #fedae2; }
 
-text {
-    font-family: Verdana, Georgia, sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    dominant-baseline: auto;
-}
+.canbus .lline {
+  stroke: #fedae2; }
 
+.note .label__body,
+.note .textblock__bg {
+  fill: #ddd; }
+
+.note .lline {
+  stroke: #ddd; }
+
+.lline {
+  fill: none;
+  stroke-width: 0; }
+
+.label__row .label:first-child .lline,
+.lline--visible .lline {
+  stroke-width: 2; }
+
+.label__text {
+  dominant-baseline: central;
+  fill: #000;
+  font-size: 20px;
+  font-weight: normal;
+  letter-spacing: -1px;
+  stroke-width: 0;
+  text-anchor: middle; }
+
+.gnd .label__text,
+.pwr .label__text {
+  fill: #fff; }
+
+.tight text {
+  letter-spacing: -2px; }
+
+.titlebar__bg {
+  fill: #f4f4f4; }
 
 .h1 text {
-    font-size: 36px;
-    font-weight: bold;
-}
+  font-size: 36px;
+  font-weight: bold; }
+
 .h2 text {
-    font-size: 18px;
-    font-weight: bold;
-    font-style: italic;
-}
-.italic{
-    font-style: italic;
-}
-.strong{
-    font-weight: bold;
-}
-.url{
-    fill: #0084ff;
-    font-weight: bold;
-}
+  font-size: 18px;
+  font-weight: bold;
+  font-style: italic; }
+
+.italic {
+  font-style: italic; }
+
+.strong {
+  font-weight: bold; }
+
+.url {
+  fill: #0084ff;
+  font-weight: bold; }
+
+text {
+  fill: #000;
+  font-family: Arial, Georgia, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  dominant-baseline: auto; }
+
+.legend__bg {
+  fill: #000; }
+
+.legend__title {
+  font-size: 18px;
+  font-weight: bold;
+  dominant-baseline: auto; }
+
+.legend text {
+  fill: #000;
+  font-family: Arial, Georgia, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  dominant-baseline: auto; }
+
+.diagram__bg {
+  fill: #000; }
+
+.mainpanel__bg {
+  fill: #f4f4f4; }
 
     ]]>  
 </style>
@@ -137,7 +180,7 @@ text {
     "
 >
         <rect
- class="panel__bg" 
+ class="mainpanel__bg" 
     x="0" 
     y="0" 
     width="1108" 
@@ -179,26 +222,52 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="170" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(127.0 0) 
+        translate(80.0 0) 
         scale(1 1)
     "  
 >
-    Vin (3.6 to 5.5 volts)
+    Vin
+</text>
+</g><g 
+        class="label note"
+    transform="
+        translate(120 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="0" 
+    y="-14.0" 
+    width="170" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(85.0 0) 
+        scale(1 1)
+    "  
+>
+    (3.6 to 5.5 volts)
 </text>
 </g>
 </g><g 
@@ -217,22 +286,20 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="170" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(127.0 0) 
+        translate(80.0 0) 
         scale(1 1)
     "  
 >
@@ -255,26 +322,52 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="170" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(127.0 0) 
+        translate(80.0 0) 
         scale(1 1)
     "  
 >
-    3.3V (250 mA max)
+    3.3V
+</text>
+</g><g 
+        class="label note"
+    transform="
+        translate(120 60) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="0" 
+    y="-14.0" 
+    width="170" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(85.0 0) 
+        scale(1 1)
+    "  
+>
+    (250 mA max)
 </text>
 </g>
 </g><g 
@@ -293,18 +386,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -317,24 +408,22 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(78 90) 
+        translate(80 90) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -347,28 +436,26 @@ text {
 </g><g 
         class="label pwm"
     transform="
-        translate(116 90) 
+        translate(120 90) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(26.5 0) 
+        translate(30.0 0) 
         scale(1 1)
     "  
 >
@@ -377,28 +464,26 @@ text {
 </g><g 
         class="label canbus"
     transform="
-        translate(167 90) 
+        translate(180 90) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
@@ -407,28 +492,26 @@ text {
 </g><g 
         class="label audio"
     transform="
-        translate(249 90) 
+        translate(260 90) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
@@ -451,18 +534,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -475,24 +556,22 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(78 120) 
+        translate(80 120) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -505,28 +584,26 @@ text {
 </g><g 
         class="label pwm"
     transform="
-        translate(116 120) 
+        translate(120 120) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(26.5 0) 
+        translate(30.0 0) 
         scale(1 1)
     "  
 >
@@ -535,28 +612,26 @@ text {
 </g><g 
         class="label canbus"
     transform="
-        translate(167 120) 
+        translate(180 120) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
@@ -565,28 +640,26 @@ text {
 </g><g 
         class="label audio"
     transform="
-        translate(249 120) 
+        translate(260 120) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
@@ -609,18 +682,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -633,24 +704,22 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(78 150) 
+        translate(80 150) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -663,28 +732,26 @@ text {
 </g><g 
         class="label serial lline--visible"
     transform="
-        translate(116 150) 
+        translate(120 150) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 53 0.0" 
+    d="M 0 0.0 L 60 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="53" 
-    y="-13.0" 
+    x="60" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(93.0 0) 
+        translate(100.0 0) 
         scale(1 1)
     "  
 >
@@ -693,28 +760,26 @@ text {
 </g><g 
         class="label audio"
     transform="
-        translate(249 150) 
+        translate(260 150) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
@@ -737,18 +802,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -761,24 +824,22 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(78 180) 
+        translate(80 180) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -791,28 +852,26 @@ text {
 </g><g 
         class="label serial lline--visible"
     transform="
-        translate(116 180) 
+        translate(120 180) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 53 0.0" 
+    d="M 0 0.0 L 60 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="53" 
-    y="-13.0" 
+    x="60" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(93.0 0) 
+        translate(100.0 0) 
         scale(1 1)
     "  
 >
@@ -821,28 +880,26 @@ text {
 </g><g 
         class="label audio"
     transform="
-        translate(249 180) 
+        translate(260 180) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
@@ -865,18 +922,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -889,24 +944,22 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(78 210) 
+        translate(80 210) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -919,28 +972,26 @@ text {
 </g><g 
         class="label pwm"
     transform="
-        translate(116 210) 
+        translate(120 210) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(26.5 0) 
+        translate(30.0 0) 
         scale(1 1)
     "  
 >
@@ -949,28 +1000,26 @@ text {
 </g><g 
         class="label i2c lline--visible"
     transform="
-        translate(167 210) 
+        translate(180 210) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 84 0.0" 
+    d="M 0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="84" 
-    y="-13.0" 
+    x="80" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(124.0 0) 
+        translate(120.0 0) 
         scale(1 1)
     "  
 >
@@ -993,18 +1042,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -1017,24 +1064,22 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(78 240) 
+        translate(80 240) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -1047,28 +1092,26 @@ text {
 </g><g 
         class="label pwm"
     transform="
-        translate(116 240) 
+        translate(120 240) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(26.5 0) 
+        translate(30.0 0) 
         scale(1 1)
     "  
 >
@@ -1077,28 +1120,26 @@ text {
 </g><g 
         class="label i2c lline--visible"
     transform="
-        translate(167 240) 
+        translate(180 240) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 84 0.0" 
+    d="M 0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="84" 
-    y="-13.0" 
+    x="80" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(124.0 0) 
+        translate(120.0 0) 
         scale(1 1)
     "  
 >
@@ -1121,18 +1162,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -1145,24 +1184,22 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(78 270) 
+        translate(80 270) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -1175,28 +1212,26 @@ text {
 </g><g 
         class="label serial lline--visible"
     transform="
-        translate(116 270) 
+        translate(120 270) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 53 0.0" 
+    d="M 0 0.0 L 60 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="53" 
-    y="-13.0" 
+    x="60" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(93.0 0) 
+        translate(100.0 0) 
         scale(1 1)
     "  
 >
@@ -1205,28 +1240,26 @@ text {
 </g><g 
         class="label i2c"
     transform="
-        translate(249 270) 
+        translate(260 270) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
@@ -1249,18 +1282,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -1273,24 +1304,22 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(78 300) 
+        translate(80 300) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -1303,28 +1332,26 @@ text {
 </g><g 
         class="label serial lline--visible"
     transform="
-        translate(116 300) 
+        translate(120 300) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 53 0.0" 
+    d="M 0 0.0 L 60 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="53" 
-    y="-13.0" 
+    x="60" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(93.0 0) 
+        translate(100.0 0) 
         scale(1 1)
     "  
 >
@@ -1333,28 +1360,26 @@ text {
 </g><g 
         class="label i2c"
     transform="
-        translate(249 300) 
+        translate(260 300) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
@@ -1377,18 +1402,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -1401,24 +1424,22 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(78 330) 
+        translate(80 330) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -1431,28 +1452,26 @@ text {
 </g><g 
         class="label pwm"
     transform="
-        translate(116 330) 
+        translate(120 330) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(26.5 0) 
+        translate(30.0 0) 
         scale(1 1)
     "  
 >
@@ -1461,28 +1480,26 @@ text {
 </g><g 
         class="label serial"
     transform="
-        translate(167 330) 
+        translate(180 330) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
@@ -1491,32 +1508,30 @@ text {
 </g><g 
         class="label audio tight"
     transform="
-        translate(249 330) 
+        translate(260 330) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
-    S/PDIF IN
+    DIF IN
 </text>
 </g>
 </g><g 
@@ -1535,18 +1550,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -1559,24 +1572,22 @@ text {
 </g><g 
         class="label analog"
     transform="
-        translate(78 360) 
+        translate(80 360) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -1589,28 +1600,26 @@ text {
 </g><g 
         class="label pwm"
     transform="
-        translate(116 360) 
+        translate(120 360) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(26.5 0) 
+        translate(30.0 0) 
         scale(1 1)
     "  
 >
@@ -1619,28 +1628,26 @@ text {
 </g><g 
         class="label serial"
     transform="
-        translate(167 360) 
+        translate(180 360) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
@@ -1649,32 +1656,30 @@ text {
 </g><g 
         class="label audio tight"
     transform="
-        translate(249 360) 
+        translate(260 360) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
-    S/PDIF OUT
+    DIF OUT
 </text>
 </g>
 </g><g 
@@ -1693,18 +1698,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -1717,7 +1720,7 @@ text {
 </g><g 
         class="label pwm lline--visible"
     transform="
-        translate(78 390) 
+        translate(80 390) 
         scale(1 1)
     "
 >
@@ -1729,80 +1732,74 @@ text {
 /><rect
  class="label__body" 
     x="40" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(64.5 0) 
+        translate(70.0 0) 
         scale(1 1)
     "  
 >
     PWM
 </text>
 </g><g 
-        class="label spi"
-    transform="
-        translate(167 390) 
-        scale(1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 2 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(42.0 0) 
-        scale(1 1)
-    "  
->
-    SCK
-</text>
-</g><g 
         class="label canbus"
     transform="
-        translate(249 390) 
+        translate(180 390) 
         scale(1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
     CRX1
+</text>
+</g><g 
+        class="label spi"
+    transform="
+        translate(260 390) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="label__body" 
+    x="0" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="label__text"
+    transform="
+        translate(40.0 0) 
+        scale(1 1)
+    "  
+>
+    SCK
 </text>
 </g>
 </g>
@@ -1828,22 +1825,20 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="170" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(127.0 0) 
+        translate(80.0 0) 
         scale(-1 1)
     "  
 >
@@ -1866,18 +1861,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -1890,28 +1883,26 @@ text {
 </g><g 
         class="label pwm"
     transform="
-        translate(-78 30) 
+        translate(-80 30) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(26.5 0) 
+        translate(30.0 0) 
         scale(-1 1)
     "  
 >
@@ -1920,28 +1911,26 @@ text {
 </g><g 
         class="label serial"
     transform="
-        translate(-129 30) 
+        translate(-140 30) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
@@ -1950,28 +1939,26 @@ text {
 </g><g 
         class="label canbus"
     transform="
-        translate(-211 30) 
+        translate(-220 30) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
@@ -1994,18 +1981,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -2018,28 +2003,26 @@ text {
 </g><g 
         class="label pwm"
     transform="
-        translate(-78 60) 
+        translate(-80 60) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(26.5 0) 
+        translate(30.0 0) 
         scale(-1 1)
     "  
 >
@@ -2048,28 +2031,26 @@ text {
 </g><g 
         class="label serial"
     transform="
-        translate(-129 60) 
+        translate(-140 60) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
@@ -2078,28 +2059,26 @@ text {
 </g><g 
         class="label canbus"
     transform="
-        translate(-211 60) 
+        translate(-220 60) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
@@ -2122,18 +2101,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -2146,28 +2123,26 @@ text {
 </g><g 
         class="label pwm"
     transform="
-        translate(-78 90) 
+        translate(-80 90) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(26.5 0) 
+        translate(30.0 0) 
         scale(-1 1)
     "  
 >
@@ -2176,28 +2151,26 @@ text {
 </g><g 
         class="label audio lline--visible"
     transform="
-        translate(-129 90) 
+        translate(-140 90) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 84 0.0" 
+    d="M 0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="84" 
-    y="-13.0" 
+    x="80" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(124.0 0) 
+        translate(120.0 0) 
         scale(-1 1)
     "  
 >
@@ -2220,18 +2193,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -2244,28 +2215,26 @@ text {
 </g><g 
         class="label pwm"
     transform="
-        translate(-78 120) 
+        translate(-80 120) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(26.5 0) 
+        translate(30.0 0) 
         scale(-1 1)
     "  
 >
@@ -2274,28 +2243,26 @@ text {
 </g><g 
         class="label audio lline--visible"
     transform="
-        translate(-129 120) 
+        translate(-140 120) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 84 0.0" 
+    d="M 0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="84" 
-    y="-13.0" 
+    x="80" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(124.0 0) 
+        translate(120.0 0) 
         scale(-1 1)
     "  
 >
@@ -2318,18 +2285,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -2342,28 +2307,26 @@ text {
 </g><g 
         class="label pwm"
     transform="
-        translate(-78 150) 
+        translate(-80 150) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(26.5 0) 
+        translate(30.0 0) 
         scale(-1 1)
     "  
 >
@@ -2372,28 +2335,26 @@ text {
 </g><g 
         class="label audio lline--visible"
     transform="
-        translate(-129 150) 
+        translate(-140 150) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 84 0.0" 
+    d="M 0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="84" 
-    y="-13.0" 
+    x="80" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(124.0 0) 
+        translate(120.0 0) 
         scale(-1 1)
     "  
 >
@@ -2416,18 +2377,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -2440,28 +2399,26 @@ text {
 </g><g 
         class="label pwm"
     transform="
-        translate(-78 180) 
+        translate(-80 180) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(26.5 0) 
+        translate(30.0 0) 
         scale(-1 1)
     "  
 >
@@ -2470,28 +2427,26 @@ text {
 </g><g 
         class="label audio lline--visible"
     transform="
-        translate(-129 180) 
+        translate(-140 180) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 84 0.0" 
+    d="M 0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="84" 
-    y="-13.0" 
+    x="80" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(124.0 0) 
+        translate(120.0 0) 
         scale(-1 1)
     "  
 >
@@ -2514,18 +2469,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -2538,28 +2491,26 @@ text {
 </g><g 
         class="label pwm"
     transform="
-        translate(-78 210) 
+        translate(-80 210) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(26.5 0) 
+        translate(30.0 0) 
         scale(-1 1)
     "  
 >
@@ -2568,28 +2519,26 @@ text {
 </g><g 
         class="label audio lline--visible"
     transform="
-        translate(-129 210) 
+        translate(-140 210) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 84 0.0" 
+    d="M 0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="84" 
-    y="-13.0" 
+    x="80" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(124.0 0) 
+        translate(120.0 0) 
         scale(-1 1)
     "  
 >
@@ -2612,18 +2561,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -2636,28 +2583,26 @@ text {
 </g><g 
         class="label pwm"
     transform="
-        translate(-78 240) 
+        translate(-80 240) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(26.5 0) 
+        translate(30.0 0) 
         scale(-1 1)
     "  
 >
@@ -2666,28 +2611,26 @@ text {
 </g><g 
         class="label serial"
     transform="
-        translate(-129 240) 
+        translate(-140 240) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
@@ -2696,28 +2639,26 @@ text {
 </g><g 
         class="label audio"
     transform="
-        translate(-211 240) 
+        translate(-220 240) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
@@ -2740,18 +2681,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -2764,28 +2703,26 @@ text {
 </g><g 
         class="label pwm"
     transform="
-        translate(-78 270) 
+        translate(-80 270) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(26.5 0) 
+        translate(30.0 0) 
         scale(-1 1)
     "  
 >
@@ -2794,28 +2731,26 @@ text {
 </g><g 
         class="label serial"
     transform="
-        translate(-129 270) 
+        translate(-140 270) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
@@ -2824,28 +2759,26 @@ text {
 </g><g 
         class="label audio"
     transform="
-        translate(-211 270) 
+        translate(-220 270) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
@@ -2868,18 +2801,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -2892,28 +2823,26 @@ text {
 </g><g 
         class="label pwm"
     transform="
-        translate(-78 300) 
+        translate(-80 300) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(26.5 0) 
+        translate(30.0 0) 
         scale(-1 1)
     "  
 >
@@ -2922,28 +2851,26 @@ text {
 </g><g 
         class="label audio lline--visible"
     transform="
-        translate(-129 300) 
+        translate(-140 300) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 84 0.0" 
+    d="M 0 0.0 L 80 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="84" 
-    y="-13.0" 
+    x="80" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(124.0 0) 
+        translate(120.0 0) 
         scale(-1 1)
     "  
 >
@@ -2966,18 +2893,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -2990,28 +2915,26 @@ text {
 </g><g 
         class="label pwm"
     transform="
-        translate(-78 330) 
+        translate(-80 330) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(26.5 0) 
+        translate(30.0 0) 
         scale(-1 1)
     "  
 >
@@ -3020,28 +2943,26 @@ text {
 </g><g 
         class="label spi"
     transform="
-        translate(-129 330) 
+        translate(-140 330) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
@@ -3050,28 +2971,26 @@ text {
 </g><g 
         class="label audio"
     transform="
-        translate(-211 330) 
+        translate(-220 330) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
@@ -3094,18 +3013,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -3118,28 +3035,26 @@ text {
 </g><g 
         class="label pwm"
     transform="
-        translate(-78 360) 
+        translate(-80 360) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(26.5 0) 
+        translate(30.0 0) 
         scale(-1 1)
     "  
 >
@@ -3148,28 +3063,26 @@ text {
 </g><g 
         class="label spi"
     transform="
-        translate(-129 360) 
+        translate(-140 360) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
@@ -3178,28 +3091,26 @@ text {
 </g><g 
         class="label canbus"
     transform="
-        translate(-211 360) 
+        translate(-220 360) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
@@ -3222,18 +3133,16 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 5.25 0.0 C 21.0 0.0 21.0 0.0 36.75 0.0 L 42 0.0" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="42" 
-    y="-13.0" 
-    width="36" 
-    height="26" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
@@ -3246,28 +3155,26 @@ text {
 </g><g 
         class="label pwm"
     transform="
-        translate(-78 390) 
+        translate(-80 390) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
-    width="49" 
-    height="26" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(26.5 0) 
+        translate(30.0 0) 
         scale(-1 1)
     "  
 >
@@ -3276,28 +3183,26 @@ text {
 </g><g 
         class="label spi"
     transform="
-        translate(-129 390) 
+        translate(-140 390) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
@@ -3306,28 +3211,26 @@ text {
 </g><g 
         class="label audio"
     transform="
-        translate(-211 390) 
+        translate(-220 390) 
         scale(-1 1)
     "
 >
         <path 
     class="lline" 
-    d="M 0 0.0 L 2 0.0" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="2" 
-    y="-13.0" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(42.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
@@ -3357,22 +3260,20 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0.0 0 L 0.0 20.0 A 10.0 10.0 0 0 0 10.0 30.0 L 72 30.0" 
+    d="M 0.0 0 L 0.0 20.0 A 10.0 10.0 0 0 0 10.0 30.0 L 70 30.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="72" 
-    y="17.0" 
-    width="166" 
-    height="26" 
+    x="70" 
+    y="16.0" 
+    width="80" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(155.0 30) 
+        translate(110.0 30) 
         scale(-1 1)
     "  
 >
@@ -3395,22 +3296,20 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0.0 0 L 0.0 40.0 A 20.0 20.0 0 0 0 20.0 60.0 L 102 60.0" 
+    d="M 0.0 0 L 0.0 40.0 A 20.0 20.0 0 0 0 20.0 60.0 L 100 60.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="102" 
-    y="47.0" 
-    width="166" 
-    height="26" 
+    x="100" 
+    y="46.0" 
+    width="80" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(185.0 60) 
+        translate(140.0 60) 
         scale(-1 1)
     "  
 >
@@ -3433,22 +3332,20 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0.0 0 L 0.0 60.0 A 30.0 30.0 0 0 0 30.0 90.0 L 132 90.0" 
+    d="M 0.0 0 L 0.0 60.0 A 30.0 30.0 0 0 0 30.0 90.0 L 130 90.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="132" 
-    y="77.0" 
-    width="166" 
-    height="26" 
+    x="130" 
+    y="76.0" 
+    width="80" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(215.0 90) 
+        translate(170.0 90) 
         scale(-1 1)
     "  
 >
@@ -3478,26 +3375,24 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0.0 0 L 0.0 60.0 A 30.0 30.0 0 0 0 30.0 90.0 L 102 90.0" 
+    d="M 0.0 0 L 0.0 60.0 A 30.0 30.0 0 0 0 30.0 90.0 L 100 90.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="102" 
-    y="77.0" 
-    width="166" 
-    height="26" 
+    x="100" 
+    y="76.0" 
+    width="80" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(185.0 90) 
+        translate(140.0 90) 
         scale(1 1)
     "  
 >
-    Program
+    Prog
 </text>
 </g>
 </g><g 
@@ -3516,22 +3411,20 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0.0 0 L 0.0 40.0 A 20.0 20.0 0 0 0 20.0 60.0 L 72 60.0" 
+    d="M 0.0 0 L 0.0 40.0 A 20.0 20.0 0 0 0 20.0 60.0 L 70 60.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
  class="label__body" 
-    x="72" 
-    y="47.0" 
-    width="166" 
-    height="26" 
+    x="70" 
+    y="46.0" 
+    width="80" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
     class="label__text"
     transform="
-        translate(155.0 60) 
+        translate(110.0 60) 
         scale(1 1)
     "  
 >
@@ -3572,7 +3465,7 @@ text {
 /><text
     class="textblock"
     transform="
-        translate(10 28) 
+        translate(8 26) 
         scale(1 1)
     "  
 >
@@ -3580,7 +3473,7 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 46) 
+        translate(8 45) 
         scale(1 1)
     "  
 >
@@ -3588,7 +3481,7 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 64) 
+        translate(8 64) 
         scale(1 1)
     "  
 >
@@ -3596,7 +3489,7 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 82) 
+        translate(8 83) 
         scale(1 1)
     "  
 >
@@ -3619,7 +3512,7 @@ text {
 /><text
     class="textblock"
     transform="
-        translate(10 28) 
+        translate(8 26) 
         scale(1 1)
     "  
 >
@@ -3627,7 +3520,7 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 46) 
+        translate(8 45) 
         scale(1 1)
     "  
 >
@@ -3650,7 +3543,7 @@ text {
 /><text
     class="textblock"
     transform="
-        translate(10 28) 
+        translate(8 26) 
         scale(1 1)
     "  
 >
@@ -3658,7 +3551,7 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 46) 
+        translate(8 45) 
         scale(1 1)
     "  
 >
@@ -3681,7 +3574,7 @@ text {
 /><text
     class="textblock"
     transform="
-        translate(10 28) 
+        translate(8 26) 
         scale(1 1)
     "  
 >
@@ -3689,7 +3582,7 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 46) 
+        translate(8 45) 
         scale(1 1)
     "  
 >
@@ -3712,7 +3605,7 @@ text {
 /><text
     class="textblock"
     transform="
-        translate(10 28) 
+        translate(8 26) 
         scale(1 1)
     "  
 >
@@ -3720,7 +3613,7 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 46) 
+        translate(8 45) 
         scale(1 1)
     "  
 >
@@ -3743,7 +3636,7 @@ text {
 /><text
     class="textblock"
     transform="
-        translate(10 28) 
+        translate(8 26) 
         scale(1 1)
     "  
 >
@@ -3751,7 +3644,7 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 46) 
+        translate(8 45) 
         scale(1 1)
     "  
 >
@@ -3774,7 +3667,7 @@ text {
 /><text
     class="textblock"
     transform="
-        translate(10 28) 
+        translate(8 26) 
         scale(1 1)
     "  
 >
@@ -3782,7 +3675,7 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 46) 
+        translate(8 45) 
         scale(1 1)
     "  
 >
@@ -3805,7 +3698,7 @@ text {
 /><text
     class="textblock"
     transform="
-        translate(10 28) 
+        translate(8 26) 
         scale(1 1)
     "  
 >
@@ -3813,11 +3706,19 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 46) 
+        translate(8 45) 
         scale(1 1)
     "  
 >
-    FlexCAN_t4 library
+    FlexCAN_t4 
+</text><text
+    class="textblock"
+    transform="
+        translate(8 64) 
+        scale(1 1)
+    "  
+>
+    library
 </text>
 </g>
 </g><g 
@@ -3888,7 +3789,7 @@ text {
         scale(1 1)
     "  
 >
-    To begin using Teensy please visit 
+    To begin please visit 'Getting Started' 
 </text><text
     class="textblock"
     transform="
@@ -3896,7 +3797,7 @@ text {
         scale(1 1)
     "  
 >
-    'Getting Started' at <tspan class='url'>www.pjrc.com/teensy</tspan>
+    at <tspan class='url'>www.pjrc.com/teensy</tspan>
 </text>
 </g><g 
         class="textblock textblock p"

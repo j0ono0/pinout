@@ -1,0 +1,115 @@
+
+$panel_bg: rgb(244, 244, 244);
+
+@mixin paragraph_text {
+    fill: #000;
+    font-family: Arial, Georgia, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    dominant-baseline: auto;
+}
+
+// pinlabels /////////////////////////////////////////
+
+$pinlabels: (
+    "gnd": #000,
+    "pwr": #ad0000,
+    "digital": #cfd5d5,
+    "analog": #ffd7ad,
+    "pwm": #ffb3aa,
+    "audio": #f7f09d,
+    "serial": #c9daed,
+    "i2c": #b1add7,
+    "spi": #c2e6b9,
+    "canbus": #fedae2,
+    "note": #ddd
+);
+    @each $name, $color in $pinlabels {
+    .#{$name} .label__body,
+    .#{$name} .textblock__bg{
+        fill: #{$color}
+    }
+    .#{$name} .lline{
+        stroke: #{$color}
+    }
+}
+
+.lline{
+    fill: none;
+    stroke-width:0;
+}
+.label__row .label:first-child  .lline,
+.lline--visible .lline{
+    stroke-width: 2;
+}
+
+.label__text{
+    dominant-baseline: central;
+    fill: #000;
+    font-size: 20px;
+    font-weight: normal;
+    letter-spacing: -1px;
+    stroke-width: 0;
+    text-anchor: middle;
+}
+// Power and ground labels have dark background and need light text
+.gnd .label__text,
+.pwr .label__text{
+    fill:#fff;
+}
+.tight text{
+    letter-spacing: -2px;
+}
+
+
+// Title block /////////////////////////////////////////
+
+.titlebar__bg{
+    fill:$panel_bg;
+}
+.h1 text {
+    font-size: 36px;
+    font-weight: bold;
+}
+.h2 text {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+}
+.italic{
+    font-style: italic;
+}
+.strong{
+    font-weight: bold;
+}
+.url{
+    fill: #0084ff;
+    font-weight: bold;
+}
+text {
+    @include paragraph_text;
+}
+
+
+// legend /////////////////////////////////////////
+
+.legend__bg{
+    fill: #000;
+}
+.legend__title{
+    font-size: 18px;
+    font-weight: bold;
+    dominant-baseline: auto;
+}
+.legend text{
+    @include paragraph_text;
+}
+
+// diagram layout /////////////////////////////////
+
+.diagram__bg{
+    fill: #000;
+}
+.mainpanel__bg{
+    fill:$panel_bg;
+}

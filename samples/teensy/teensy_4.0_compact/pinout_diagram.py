@@ -10,7 +10,9 @@ from pinout.components import leaderline as lline
 import data
 
 # Override default config settings
-config.pinlabel["body"]["x"] = 2
+config.pinlabel["body"]["x"] = 0
+config.pinlabel["body"]["height"] = 28
+config.pinlabel["body"]["corner_radius"] = 0
 
 ################################################
 # EXPERIMENTAL: DATA PREPROCESSOR
@@ -38,9 +40,9 @@ def data_preprocessor(data_list):
 
             config = {}
             if label[1] in ["digital", "analog"]:
-                config = {"body": {"width": 36}}
+                config = {"body": {"width": 40}}
             elif label[1] in ["pwm"]:
-                config = {"body": {"width": 49}}
+                config = {"body": {"width": 60}}
 
             update_config(config, data_config)
 
@@ -49,7 +51,21 @@ def data_preprocessor(data_list):
 
 
 ################################################
+# Using SASS here to try out some
+# more succinct style documentation.
+# It is not required for pinout but
+# might suit some workflows.
 
+# build css from scss
+import sass
+
+with open("styles.scss", "r") as f:
+    styles = sass.compile(string=f.read())
+
+with open("styles.css", "w") as f:
+    f.write(styles)
+
+################################################
 
 # Create a new diagram and add a background
 # Official Teensy pinout cards are 1.41 ratio (or very close)
@@ -64,7 +80,7 @@ diagram.add_stylesheet("styles.css", True)
 
 # Create a layout
 panel_main = diagram.add(Group(10, 10, "panel panel--main"))
-panel_main.add(Rect(0, 0, 1108, 638, "panel__bg"))
+panel_main.add(Rect(0, 0, 1108, 638, "mainpanel__bg"))
 
 
 # Create a group to hold the actual diagram components.
@@ -126,7 +142,6 @@ graphic.add(
         label_pitch=(0, 30),
         labels=data.header_end_lhs,
         leaderline=lline.Curved(direction="vh"),
-        body={"width": 166},
     )
 )
 
@@ -140,7 +155,6 @@ graphic.add(
         label_pitch=(0, -30),
         labels=data.header_end_rhs,
         leaderline=lline.Curved(direction="vh"),
-        body={"width": 166},
     )
 )
 
@@ -156,8 +170,8 @@ for ind, (entry, tag) in enumerate(data.legend_content):
             y=0 + ind * (entry_height + gutter),
             width=145,
             height=entry_height,
-            offset=(10, 28),
-            line_height=18,
+            offset=(8, 26),
+            line_height=19,
             tag=f"{tag} legend__entry",
         )
     )

@@ -1,5 +1,5 @@
-lline_84 = {"body": {"x": 84}, "tag": "lline--visible"}
-lline_53 = {"body": {"x": 53}, "tag": "lline--visible"}
+lline_84 = {"body": {"x": 80}, "tag": "lline--visible"}
+lline_53 = {"body": {"x": 60}, "tag": "lline--visible"}
 lline_40 = {"body": {"x": 40}, "tag": "lline--visible"}
 lg_body = {"body": {"width": 170}}
 
@@ -7,9 +7,9 @@ lg_body = {"body": {"width": 170}}
 # Pinlabels
 
 header_rhs = [
-    [("Vin (3.6 to 5.5 volts)", "pwr", lg_body)],
-    [("GND", "gnd", lg_body)],
-    [("3.3V (250 mA max)", "pwr", lg_body)],
+    [("Vin", "pwr"), ("(3.6 to 5.5 volts)", "note", lg_body)],
+    [("GND", "gnd")],
+    [("3.3V", "pwr"), ("(250 mA max)", "note", lg_body)],
     [
         ("23", "digital"),
         ("A9", "analog"),
@@ -45,25 +45,25 @@ header_rhs = [
         ("A1", "analog"),
         ("PWM", "pwm"),
         ("RX3", "serial"),
-        ("S/PDIF IN", "audio tight"),
+        ("DIF IN", "audio tight"),
     ],
     [
         ("14", "digital"),
         ("A0", "analog"),
         ("PWM", "pwm"),
         ("TX3", "serial"),
-        ("S/PDIF OUT", "audio tight"),
+        ("DIF OUT", "audio tight"),
     ],
     [
         ("13", "digital"),
         ("PWM", "pwm", lline_40),
-        ("SCK", "spi"),
         ("CRX1", "canbus"),
+        ("SCK", "spi"),
     ],
 ]
 
 header_lhs = [
-    [("GND", "gnd", lg_body)],
+    [("GND", "gnd")],
     [("0", "digital"), ("PWM", "pwm"), ("RX1", "serial"), ("CRX2", "canbus")],
     [("1", "digital"), ("PWM", "pwm"), ("TX1", "serial"), ("CTX2", "canbus")],
     [("2", "digital"), ("PWM", "pwm"), ("OUT2", "audio", lline_84)],
@@ -86,7 +86,7 @@ header_end_lhs = [
     [("GND", "gnd")],
 ]
 header_end_rhs = [
-    [("Program", "pwr")],
+    [("Prog", "pwr")],
     [("On/Off", "gnd")],
 ]
 
@@ -116,7 +116,8 @@ legend_spi = """<tspan class='legend__title'>SPI Port</tspan>
 SPI library"""
 
 legend_canbus = """<tspan class='legend__title'>CAN Bus</tspan>
-FlexCAN_t4 library"""
+FlexCAN_t4 
+library"""
 
 legend_content = [
     (legend_digital, "digital"),
@@ -136,8 +137,8 @@ title = ["Teensy 4 pinout"]
 title_2 = """32 Bit Arduino Compatible 
 Microcontroller"""
 
-instructions = """To begin using Teensy please visit 
-'Getting Started' at <tspan class='url'>www.pjrc.com/teensy</tspan>"""
+instructions = """To begin please visit 'Getting Started' 
+at <tspan class='url'>www.pjrc.com/teensy</tspan>"""
 
 notes = """&#8226; All digital pins have interrupt capability.
 &#8226; Loading status (Red LED): dim: Ready  |  bright: Writing  |  blink: No USB

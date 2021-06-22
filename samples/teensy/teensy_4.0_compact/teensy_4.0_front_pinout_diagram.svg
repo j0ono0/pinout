@@ -160,7 +160,8 @@ text {
 .diagram__bg {
   fill: #000; }
 
-.mainpanel__bg {
+.mainpanel .panel__bg,
+.titlebar .panel__bg {
   fill: #f4f4f4; }
 
     ]]>  
@@ -173,17 +174,31 @@ text {
     height="800" 
     shape-rendering="geometricPrecision"
 /><g 
-        class="panel panel--main"
+        class="diagram__inner"
     transform="
         translate(10 10) 
         scale(1 1)
     "
 >
         <rect
- class="mainpanel__bg" 
+ class="panel__bg" 
     x="0" 
     y="0" 
     width="1108" 
+    height="780" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="mainpanel"
+    transform="
+        translate(1 1) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="panel__bg" 
+    x="0" 
+    y="0" 
+    width="958" 
     height="638" 
     shape-rendering="geometricPrecision"
 /><g 
@@ -3437,16 +3452,16 @@ text {
 </g><g 
         class="legend"
     transform="
-        translate(971 10) 
+        translate(961 1) 
         scale(1 1)
     "
 >
         <rect
- class="legend__bg panel__bg" 
+ class="panel__bg" 
     x="0" 
     y="0" 
-    width="147" 
-    height="780" 
+    width="146" 
+    height="778" 
     shape-rendering="geometricPrecision"
 /><g 
         class="textblock textblock digital legend__entry"
@@ -3460,7 +3475,7 @@ text {
     x="0" 
     y="0" 
     width="145" 
-    height="95.75" 
+    height="95.5" 
     shape-rendering="geometricPrecision"
 /><text
     class="textblock"
@@ -3498,7 +3513,7 @@ text {
 </g><g 
         class="textblock textblock analog legend__entry"
     transform="
-        translate(2 97.75) 
+        translate(2 97.5) 
         scale(1 1)
     "
 >
@@ -3507,7 +3522,7 @@ text {
     x="0" 
     y="0" 
     width="145" 
-    height="95.75" 
+    height="95.5" 
     shape-rendering="geometricPrecision"
 /><text
     class="textblock"
@@ -3529,7 +3544,7 @@ text {
 </g><g 
         class="textblock textblock pwm legend__entry"
     transform="
-        translate(2 195.5) 
+        translate(2 195.0) 
         scale(1 1)
     "
 >
@@ -3538,7 +3553,7 @@ text {
     x="0" 
     y="0" 
     width="145" 
-    height="95.75" 
+    height="95.5" 
     shape-rendering="geometricPrecision"
 /><text
     class="textblock"
@@ -3560,7 +3575,7 @@ text {
 </g><g 
         class="textblock textblock audio legend__entry"
     transform="
-        translate(2 293.25) 
+        translate(2 292.5) 
         scale(1 1)
     "
 >
@@ -3569,7 +3584,7 @@ text {
     x="0" 
     y="0" 
     width="145" 
-    height="95.75" 
+    height="95.5" 
     shape-rendering="geometricPrecision"
 /><text
     class="textblock"
@@ -3591,7 +3606,7 @@ text {
 </g><g 
         class="textblock textblock serial legend__entry"
     transform="
-        translate(2 391.0) 
+        translate(2 390.0) 
         scale(1 1)
     "
 >
@@ -3600,7 +3615,7 @@ text {
     x="0" 
     y="0" 
     width="145" 
-    height="95.75" 
+    height="95.5" 
     shape-rendering="geometricPrecision"
 /><text
     class="textblock"
@@ -3622,7 +3637,7 @@ text {
 </g><g 
         class="textblock textblock i2c legend__entry"
     transform="
-        translate(2 488.75) 
+        translate(2 487.5) 
         scale(1 1)
     "
 >
@@ -3631,7 +3646,7 @@ text {
     x="0" 
     y="0" 
     width="145" 
-    height="95.75" 
+    height="95.5" 
     shape-rendering="geometricPrecision"
 /><text
     class="textblock"
@@ -3653,7 +3668,7 @@ text {
 </g><g 
         class="textblock textblock spi legend__entry"
     transform="
-        translate(2 586.5) 
+        translate(2 585.0) 
         scale(1 1)
     "
 >
@@ -3662,7 +3677,7 @@ text {
     x="0" 
     y="0" 
     width="145" 
-    height="95.75" 
+    height="95.5" 
     shape-rendering="geometricPrecision"
 /><text
     class="textblock"
@@ -3684,7 +3699,7 @@ text {
 </g><g 
         class="textblock textblock canbus legend__entry"
     transform="
-        translate(2 684.25) 
+        translate(2 682.5) 
         scale(1 1)
     "
 >
@@ -3693,7 +3708,7 @@ text {
     x="0" 
     y="0" 
     width="145" 
-    height="95.75" 
+    height="95.5" 
     shape-rendering="geometricPrecision"
 /><text
     class="textblock"
@@ -3724,16 +3739,16 @@ text {
 </g><g 
         class="titlebar"
     transform="
-        translate(10 650) 
+        translate(1 641) 
         scale(1 1)
     "
 >
         <rect
- class="titlebar__bg panel__bg" 
+ class="panel__bg" 
     x="0" 
     y="0" 
-    width="961" 
-    height="140" 
+    width="958" 
+    height="138" 
     shape-rendering="geometricPrecision"
 /><g 
         class="textblock textblock h1"
@@ -3831,6 +3846,7 @@ text {
 >
     &#8226; LED on pin-13
 </text>
+</g>
 </g>
 </g>
     

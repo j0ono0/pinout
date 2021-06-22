@@ -110,6 +110,7 @@ text {
 .diagram__bg{
     fill: #000;
 }
-.mainpanel__bg{
+.mainpanel .panel__bg,
+.titlebar .panel__bg{
     fill:$panel_bg;
 }

@@ -7,6 +7,11 @@ from pinout.components.pinlabel import PinLabelGroup
 from pinout.components.type import TextBlock
 from pinout.components import leaderline as lline
 
+################################################
+# EXPERIMENTAL: Panel class
+from components import Panel
+
+
 import data
 
 # Override default config settings
@@ -69,30 +74,62 @@ with open("styles.css", "w") as f:
 
 # Create a new diagram and add a background
 # Official Teensy pinout cards are 1.41 ratio (or very close)
-# and comfortable to read at approx A6 dimensions 148mm x 105mm
-# 10 "units" is equal to 1mm if printed at A6
+
 diagram = Diagram(1128, 800, "diagram")
-
-diagram.add(Rect(0, 0, 1128, 800, "diagram__bg"))
-
+diagram.add(Rect(width=1128, height=800, tag="diagram__bg"))
 # Add a stylesheet
 diagram.add_stylesheet("styles.css", True)
 
 # Create a layout
-panel_main = diagram.add(Group(10, 10, "panel panel--main"))
-panel_main.add(Rect(0, 0, 1108, 638, "mainpanel__bg"))
 
+diagram_inner = diagram.add(
+    Panel(
+        x=0,
+        y=0,
+        width=1128,
+        height=800,
+        inset=(10, 10, 10, 10),
+        tag="diagram__inner",
+    )
+)
+
+panel_main = diagram_inner.add(
+    Panel(
+        x=0,
+        y=0,
+        width=960,
+        height=640,
+        inset=(1, 1, 1, 1),
+        tag="mainpanel",
+    )
+)
 
 # Create a group to hold the actual diagram components.
 graphic = panel_main.add(Group(340, 25, scale=(1.1, 1.1)))
 
 # Custom legend
-legend = diagram.add(Group(971, 10, "legend"))
-legend.add(Rect(0, 0, 147, 780, "legend__bg panel__bg"))
+legend = diagram_inner.add(
+    Panel(
+        x=panel_main.bounding_coords().x2,
+        y=0,
+        width=diagram_inner.inset_width - panel_main.width,
+        height=diagram_inner.inset_height,
+        inset=(1, 1, 1, 1),
+        tag="legend",
+    )
+)
 
 # Title bar
-titlebar = diagram.add(Group(10, 650, "titlebar"))
-titlebar.add(Rect(0, 0, 961, 140, "titlebar__bg panel__bg"))
+titlebar = diagram_inner.add(
+    Panel(
+        x=0,
+        y=panel_main.height,
+        width=panel_main.width,
+        height=diagram_inner.inset_height - panel_main.height,
+        inset=(1, 1, 1, 1),
+        tag="titlebar",
+    )
+)
 
 # Add and embed an image
 graphic.add(
@@ -160,7 +197,8 @@ graphic.add(
 
 # Legend entries
 gutter = 2
-entry_height = 95.75
+entry_count = len(data.legend_content)
+entry_height = (diagram_inner.inset_height - gutter * entry_count) / entry_count
 for ind, (entry, tag) in enumerate(data.legend_content):
 
     legend.add(

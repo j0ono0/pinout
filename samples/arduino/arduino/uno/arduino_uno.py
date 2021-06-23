@@ -4,19 +4,19 @@ from pinout.components.type import TextBlock
 
 
 # Import data from another script
-import data
-
+from . import data
+from ..common.preprocessor import pinlabel_preprocessor as prep
 
 # Create a new digram
 diagram = Diagram(1200, 675, tag="arduino-rp2040-connect")
 
 # Add a stylesheet and some custom patterns
-diagram.add_stylesheet("styles.css", True)
+diagram.add_stylesheet("arduino/common/styles.css", True)
 
 # Load some svg markup to be used as patterns
 # The Raw class allows arbitary code to be inserted
 # into the diagram.
-with open("patterns.xml") as f:
+with open("arduino/common/patterns.xml") as f:
     patterns = f.read()
 diagram.add_def(Raw(patterns))
 
@@ -42,7 +42,7 @@ group_notes.add(TextBlock(data.para_2, 17, x=900, y=74))
 # Note its coordinates are relative to the group it is within
 pinout_graphic.add(
     Image(
-        "hardware.png",
+        "arduino/uno/hardware.png",
         x=-326 / 2,
         y=0,
         width=326,
@@ -58,7 +58,7 @@ pinout_graphic.add(
         pin_pitch=(0, 15.35),
         label_start=(90, -84),
         label_pitch=(0, 23.35),
-        labels=data.header_rhs_a,
+        labels=prep(data.header_rhs_a),
     )
 )
 
@@ -69,7 +69,7 @@ pinout_graphic.add(
         pin_pitch=(0, 15.35),
         label_start=(90, 8),
         label_pitch=(0, 23.35),
-        labels=data.header_rhs_b,
+        labels=prep(data.header_rhs_b),
     )
 )
 
@@ -82,7 +82,7 @@ pinout_graphic.add(
         label_start=(90, -64),
         label_pitch=(0, 23.35),
         scale=(-1, 1),
-        labels=data.header_lhs_a,
+        labels=prep(data.header_lhs_a),
     )
 )
 pinout_graphic.add(
@@ -93,7 +93,7 @@ pinout_graphic.add(
         label_start=(90, 12),
         label_pitch=(0, 23.35),
         scale=(-1, 1),
-        labels=data.header_lhs_b,
+        labels=prep(data.header_lhs_b),
     )
 )
 
@@ -107,7 +107,7 @@ pinout_graphic.add(
         label_start=(284, 120),
         label_pitch=(0, 23),
         scale=(-1, -1),
-        labels=data.leds_a,
+        labels=prep(data.leds_a),
         leaderline=leaderline.Curved(direction="vh"),
     )
 )
@@ -121,7 +121,7 @@ pinout_graphic.add(
         label_start=(38, 90),
         label_pitch=(0, 23.35),
         scale=(-1, 1),
-        labels=data.leds_b,
+        labels=prep(data.leds_b),
         leaderline=leaderline.Curved(direction="vh"),
     )
 )

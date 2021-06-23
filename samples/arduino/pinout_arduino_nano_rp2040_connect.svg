@@ -239,8 +239,8 @@ text {
  
     x="-88.0" 
     y="0" 
-    href="hardware.png" 
-    xlink:href="hardware.png" 
+    href="arduino/rp2040/hardware.png" 
+    xlink:href="arduino/rp2040/hardware.png" 
     height="449" 
     width="176"
 />
@@ -3239,22 +3239,38 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0.0 0 L 0.0 40.0 A 20.0 20.0 0 0 0 20.0 60.0 L 110 60.0" 
+    d="M 0.0 0 L 0.0 40.0 A 20.0 20.0 0 0 0 20.0 60.0 L 104 60.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="110" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="104" 
     y="50.0" 
-    width="120" 
+    width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
     rx="10" 
     ry="10" 
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="105.0" 
+    y="51.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/>
+</g><text
     class="label__text"
     transform="
-        translate(170.0 60) 
+        translate(144.0 60) 
         scale(-1 -1)
     "  
 >
@@ -3277,22 +3293,38 @@ text {
 >
         <path 
     class="lline" 
-    d="M 0.0 0 L 0.0 54.66666666666667 A 27.333333333333332 27.333333333333332 0 0 0 27.333333333333332 82.0 L 222 82.0" 
+    d="M 0.0 0 L 0.0 54.66666666666667 A 27.333333333333332 27.333333333333332 0 0 0 27.333333333333332 82.0 L 216 82.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="222" 
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="216" 
     y="72.0" 
-    width="120" 
+    width="80" 
     height="20" 
     shape-rendering="geometricPrecision"
     rx="10" 
     ry="10" 
-/><text
+/><rect
+ class="block label__bodyinner" 
+    x="217.0" 
+    y="73.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/>
+</g><text
     class="label__text"
     transform="
-        translate(282.0 82) 
+        translate(256.0 82) 
         scale(-1 -1)
     "  
 >

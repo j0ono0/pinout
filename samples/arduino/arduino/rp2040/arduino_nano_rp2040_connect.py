@@ -3,20 +3,21 @@ from pinout.components import pinlabel, legend, leaderline
 from pinout.components.type import TextBlock
 
 
-# Import data from another script
-import data
+# Import data and custom config generator
+from . import data
+from ..common.preprocessor import pinlabel_preprocessor as prep
 
 
 # Create a new diagram
 diagram = Diagram(1200, 675, tag="arduino-rp2040-connect")
 
 # Add a stylesheet and some custom patterns
-diagram.add_stylesheet("styles.css", True)
+diagram.add_stylesheet("arduino/common/styles.css", True)
 
 # Load some svg markup to be used as patterns
 # The Raw class allows arbitary code to be inserted
 # into the diagram.
-with open("patterns.xml") as f:
+with open("arduino/common/patterns.xml") as f:
     patterns = f.read()
 diagram.add_def(Raw(patterns))
 
@@ -42,7 +43,7 @@ group_notes.add(TextBlock(data.para_2, 17, x=900, y=74))
 # Note its coordinates are relative to the group it is within
 pinout_graphic.add(
     Image(
-        "hardware.png",
+        "arduino/rp2040/hardware.png",
         x=-176 / 2,
         y=0,
         width=176,
@@ -58,7 +59,7 @@ pinout_graphic.add(
         pin_pitch=(0, 24.6),
         label_start=(80, 0),
         label_pitch=(0, 24.6),
-        labels=data.header_rhs,
+        labels=prep(data.header_rhs),
     )
 )
 
@@ -71,7 +72,7 @@ pinout_graphic.add(
         label_start=(80, 0),
         label_pitch=(0, 24.6),
         scale=(-1, 1),
-        labels=data.header_lhs,
+        labels=prep(data.header_lhs),
     )
 )
 
@@ -84,7 +85,7 @@ pinout_graphic.add(
         label_start=(104, 60),
         label_pitch=(0, 22),
         scale=(-1, -1),
-        labels=data.leds,
+        labels=prep(data.leds),
         leaderline=leaderline.Curved(direction="vh"),
     )
 )

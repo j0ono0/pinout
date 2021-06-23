@@ -1,0 +1,4141 @@
+
+<svg  
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0"
+    y="0"
+    width="1200" 
+    height="675" 
+    viewBox="0 0 1200 675"
+    class="arduino-rp2040-connect"
+>
+<defs>
+    <!-- scale  applied so pattern aligns with vertically adjacenct labels -->
+<pattern id="stripe-a" patternTransform="scale(1.3 1.3)" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+    <rect x="0" y="0" width="20" height="20" />
+    <path x="0" y="0" d="M 10 0 L 20 0 L 0 20 L 0 10  Z"/>
+    <path x="0" y="0" d="M 20 10 L 20 20 L 10 20  Z"/>
+</pattern>
+
+<pattern  id="stripe-b" patternTransform="scale(1.3 1.3)" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+    <rect x="0" y="0" width="20" height="20" />
+    <path x="0" y="0" d="M 10 0 L 20 0 L 0 20 L 0 10  Z"/>
+    <path x="0" y="0" d="M 20 10 L 20 20 L 10 20  Z"/>
+</pattern>
+</defs>
+
+    <style type="text/css" media="screen">  
+    <![CDATA[  
+    
+ svg {
+    fill-opacity: 1;
+    font-family: 'Roboto', Helvetica, Verdana, monospace;
+    font-size: 13px;
+    font-weight: 300;
+    opacity: 1;
+    
+}
+path, rect {
+    stroke: rgb(0, 0, 0);
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    stroke-linejoin: miter;
+    stroke-miterlimit: inherit;
+    stroke-opacity: 1;
+    stroke-width: 0;
+}
+path{
+    fill: none;
+}
+rect {
+    fill: rgba(0, 0, 0, 0);
+}
+
+text {
+    dominant-baseline: auto;
+}
+
+.label__body{
+    fill: rgb(36, 36, 36);
+}
+.label__bodyinner{
+    fill: none;
+    stroke-linejoin: "miter";
+}
+.label .lline{
+    stroke-width: 0;
+}
+.label__text{
+    dominant-baseline: central;
+    fill: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    stroke-width: 0;
+    text-anchor: middle;
+}
+
+.legend rect{
+    fill: none;
+}
+.legend .swatch__body{
+    fill: rgba(0,0,0,0);
+}
+.legend-entry__text{
+    dominant-baseline: central;
+    fill: #000;
+}
+
+.diagram__bg{
+    fill: #333;
+}
+.panel--main .panel__bg{
+    fill: #fff;
+}
+.panel--notes .panel__bg{
+    fill: #e4e4e2;
+}
+
+.label__row .label:first-child .lline,
+.label.show-leader  .lline{
+    stroke-width: 2px;
+    stroke: #bcc6c6;
+}
+
+.led .label__body,
+.led .swatch__body{
+    fill: #1da086;
+}
+.mu-port .label__body,
+.mu-port .swatch__body{
+    fill: #f39c12;
+}
+.default .label__body,
+.default .swatch__body{
+    fill: #f1c40f;
+}
+.default .label__text{
+    fill: #000;
+}
+.digital .label__body,
+.digital .swatch__body{
+    fill: url("#stripe-a");
+}
+    
+    #stripe-a rect{
+        fill: #d35400;
+    }
+
+    #stripe-a path{
+        fill: #de7f40;
+    }
+
+.analog .label__body{
+    fill: url("#stripe-b");
+}
+    
+    #stripe-b rect{
+        fill: #ffffff;
+    }
+    #stripe-b path{
+        fill: #f8e6d9;
+    }
+
+.analog .label__bodyinner{
+    fill: none;
+    stroke: #d35400;
+    stroke-width: 2;
+}
+.analog .label__text{
+    fill: #d35400;
+}
+.analog .swatch__body{
+    fill: url("#stripe-b");
+    stroke: #d35400;
+    stroke-width: 2;   
+}
+.pwr .label__body,
+.pwr .swatch__body{
+    fill: #c11f09;
+}
+
+.other .label__body,
+.other .swatch__body{
+    fill: #fff;
+}
+.other .label__bodyinner,
+.other .swatch__body{
+    stroke: #d86e29;
+    stroke-width: 2;
+}
+.other .label__text{
+    fill: #d86e29;
+}
+.gnd .label__body,
+.gnd .swatch__body{
+    fill: #000;
+}
+.internal .label__body,
+.internal .swatch__body{
+    fill: #94a3a6;
+}
+.swd .label__body,
+.swd .swatch__body{
+    fill: #9e856e;
+}
+.nc .label__body,
+.nc .swatch__body{
+    fill: #fff;
+}
+.nc .label__text{
+    fill: #ccc;
+}
+.nc .label__bodyinner,
+.nc .swatch__body{
+    stroke: #ccc;
+    stroke-width: 2;
+}
+
+.h1{
+    font-size: 28px;
+    font-weight: 900;
+}
+.p{
+    fill: #333;
+}
+.strong{ font-weight: bold; }
+.italic{ font-style: italic; }
+    ]]>  
+</style>
+<rect
+ class="diagram__bg" 
+    x="0" 
+    y="0" 
+    width="1200" 
+    height="675" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="panel panel--main"
+    transform="
+        translate(2 2) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="panel__bg" 
+    x="0" 
+    y="0" 
+    width="1196" 
+    height="548" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="pinout-graphic"
+    transform="
+        translate(600 10) 
+        scale(1 1)
+    "
+>
+        <image 
+ 
+    x="-163.0" 
+    y="0" 
+    href="arduino/uno/hardware.png" 
+    xlink:href="arduino/uno/hardware.png" 
+    height="455" 
+    width="326"
+/>
+<g 
+    transform="
+        translate(147 153) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 -84.0 78.75 -84.0 L 90 -84.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 -94.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 -94.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 -84) 
+        scale(1 1)
+    "  
+>
+    D19/SCL
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(170 -84) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    PC5
+</text>
+</g><g 
+        class="label default"
+    transform="
+        translate(252 -84) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    SCL
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 15.35) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 -76.0 78.75 -76.0 L 90 -76.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 -86.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 -86.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 -76.0) 
+        scale(1 1)
+    "  
+>
+    D18/SDA
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(170 -60.65) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    PC4
+</text>
+</g><g 
+        class="label default"
+    transform="
+        translate(252 -60.65) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    SDA
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label other"
+    transform="
+        translate(0 30.7) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 -68.0 78.75 -68.0 L 90 -68.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="90" 
+    y="-78.0" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/><rect
+ class="block label__bodyinner" 
+    x="91.0" 
+    y="-77.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 -68.0) 
+        scale(1 1)
+    "  
+>
+    AREF
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label gnd"
+    transform="
+        translate(0 46.05) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 -60.0 78.75 -60.0 L 90 -60.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="90" 
+    y="-70.0" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/><rect
+ class="block label__bodyinner" 
+    x="91.0" 
+    y="-69.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 -59.99999999999999) 
+        scale(1 1)
+    "  
+>
+    GND
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 61.4) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 -51.99999999999999 78.75 -51.99999999999999 L 90 -51.99999999999999" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 -61.99999999999999) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 -61.99999999999999) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 -51.99999999999999) 
+        scale(1 1)
+    "  
+>
+    D13
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(170 9.400000000000006) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    PB5
+</text>
+</g><g 
+        class="label default"
+    transform="
+        translate(252 9.400000000000006) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    SCK
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 76.75) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 -43.99999999999999 78.75 -43.99999999999999 L 90 -43.99999999999999" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 -53.99999999999999) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 -53.99999999999999) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 -43.99999999999999) 
+        scale(1 1)
+    "  
+>
+    D12
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(170 32.75000000000001) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    PB4
+</text>
+</g><g 
+        class="label default"
+    transform="
+        translate(252 32.75000000000001) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    MISO
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 92.1) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 -35.999999999999986 78.75 -35.999999999999986 L 90 -35.999999999999986" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 -45.999999999999986) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 -45.999999999999986) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 -35.999999999999986) 
+        scale(1 1)
+    "  
+>
+    ~D11
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(170 56.10000000000001) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    PB3
+</text>
+</g><g 
+        class="label default"
+    transform="
+        translate(252 56.10000000000001) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    MOSI
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 107.44999999999999) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 -27.99999999999997 78.75 -27.99999999999997 L 90 -27.99999999999997" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 -37.99999999999997) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 -37.99999999999997) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 -27.99999999999997) 
+        scale(1 1)
+    "  
+>
+    ~D10
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(170 79.45000000000002) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    PB2
+</text>
+</g><g 
+        class="label default"
+    transform="
+        translate(252 79.45000000000002) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    SS
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 122.79999999999998) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 -19.99999999999997 78.75 -19.99999999999997 L 90 -19.99999999999997" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 -29.99999999999997) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 -29.99999999999997) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 -19.99999999999997) 
+        scale(1 1)
+    "  
+>
+    ~D9
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(170 102.80000000000001) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    PB1
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 138.14999999999998) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 -11.999999999999972 78.75 -11.999999999999972 L 90 -11.999999999999972" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 -21.99999999999997) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 -21.99999999999997) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 -11.999999999999972) 
+        scale(1 1)
+    "  
+>
+    D8
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(170 126.15) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    PB0
+</text>
+</g>
+</g>
+</g><g 
+    transform="
+        translate(147 316) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 8.0 78.75 8.0 L 90 8.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 -2.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 -2.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 8) 
+        scale(1 1)
+    "  
+>
+    D7
+</text>
+</g><g 
+        class="label default"
+    transform="
+        translate(170 8) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    PD7
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 15.35) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 16.0 78.75 16.0 L 90 16.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 6.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 6.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 16.0) 
+        scale(1 1)
+    "  
+>
+    ~D6
+</text>
+</g><g 
+        class="label default"
+    transform="
+        translate(170 31.35) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    PD6
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 30.7) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 24.000000000000004 78.75 24.000000000000004 L 90 24.000000000000004" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 14.000000000000004) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 14.000000000000004) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 24.000000000000004) 
+        scale(1 1)
+    "  
+>
+    ~D5
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(170 54.7) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    PD5
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 46.05) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 32.000000000000014 78.75 32.000000000000014 L 90 32.000000000000014" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 22.000000000000014) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 22.000000000000014) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 32.000000000000014) 
+        scale(1 1)
+    "  
+>
+    D4
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(170 78.05000000000001) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    PD4
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 61.4) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 40.00000000000001 78.75 40.00000000000001 L 90 40.00000000000001" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 30.000000000000007) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 30.000000000000007) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 40.00000000000001) 
+        scale(1 1)
+    "  
+>
+    ~D3
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(170 101.4) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    PD3
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 76.75) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 48.0 78.75 48.0 L 90 48.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 38.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 38.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 48.0) 
+        scale(1 1)
+    "  
+>
+    D2
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(170 124.75) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    PD2
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 92.1) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 56.0 78.75 56.0 L 90 56.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 46.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 46.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 56.0) 
+        scale(1 1)
+    "  
+>
+    D1/TX
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(170 148.1) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    PD1
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 107.44999999999999) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 64.0 78.75 64.0 L 90 64.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 54.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 54.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 64.0) 
+        scale(1 1)
+    "  
+>
+    D0/RX
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(170 171.45) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(1 1)
+    "  
+>
+    PD0
+</text>
+</g>
+</g>
+</g><g 
+    transform="
+        translate(-147 208) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label nc"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 -64.0 78.75 -64.0 L 90 -64.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="90" 
+    y="-74.0" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/><rect
+ class="block label__bodyinner" 
+    x="91.0" 
+    y="-73.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 -64) 
+        scale(-1 1)
+    "  
+>
+    NC
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label other"
+    transform="
+        translate(0 15.35) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 -56.0 78.75 -56.0 L 90 -56.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="90" 
+    y="-66.0" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/><rect
+ class="block label__bodyinner" 
+    x="91.0" 
+    y="-65.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 -56.0) 
+        scale(-1 1)
+    "  
+>
+    IOREF
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label other"
+    transform="
+        translate(0 30.7) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 -48.0 78.75 -48.0 L 90 -48.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 -58.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 -58.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 -48.0) 
+        scale(-1 1)
+    "  
+>
+    RESET
+</text>
+</g><g 
+        class="label default"
+    transform="
+        translate(-170 -17.3) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    PC6
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label pwr"
+    transform="
+        translate(0 46.05) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 -39.99999999999999 78.75 -39.99999999999999 L 90 -39.99999999999999" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="90" 
+    y="-49.99999999999999" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/><rect
+ class="block label__bodyinner" 
+    x="91.0" 
+    y="-48.99999999999999" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 -39.99999999999999) 
+        scale(-1 1)
+    "  
+>
+    +3V3
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label pwr"
+    transform="
+        translate(0 61.4) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 -31.999999999999993 78.75 -31.999999999999993 L 90 -31.999999999999993" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="90" 
+    y="-41.99999999999999" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/><rect
+ class="block label__bodyinner" 
+    x="91.0" 
+    y="-40.99999999999999" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 -31.999999999999993) 
+        scale(-1 1)
+    "  
+>
+    +5
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label gnd"
+    transform="
+        translate(0 76.75) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 -23.999999999999993 78.75 -23.999999999999993 L 90 -23.999999999999993" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="90" 
+    y="-33.99999999999999" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/><rect
+ class="block label__bodyinner" 
+    x="91.0" 
+    y="-32.99999999999999" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 -23.999999999999993) 
+        scale(-1 1)
+    "  
+>
+    GND
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label gnd"
+    transform="
+        translate(0 92.1) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 -15.999999999999986 78.75 -15.999999999999986 L 90 -15.999999999999986" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="90" 
+    y="-25.999999999999986" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/><rect
+ class="block label__bodyinner" 
+    x="91.0" 
+    y="-24.999999999999986" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 -15.999999999999986) 
+        scale(-1 1)
+    "  
+>
+    GND
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label pwr"
+    transform="
+        translate(0 107.44999999999999) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 -7.999999999999972 78.75 -7.999999999999972 L 90 -7.999999999999972" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="90" 
+    y="-17.99999999999997" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/><rect
+ class="block label__bodyinner" 
+    x="91.0" 
+    y="-16.99999999999997" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(130.0 -7.999999999999972) 
+        scale(-1 1)
+    "  
+>
+    VIN
+</text>
+</g>
+</g>
+</g><g 
+    transform="
+        translate(-147 347) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 12.0 78.75 12.0 L 90 12.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 2.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 2.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(115.0 12) 
+        scale(-1 1)
+    "  
+>
+    D14
+</text>
+</g><g 
+        class="label analog"
+    transform="
+        translate(-140 12) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="0" 
+    y="-10.0" 
+    width="30" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="1.0" 
+    y="-9.0" 
+    width="28" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(15.0 0) 
+        scale(-1 1)
+    "  
+>
+    A0
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(-170 12) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    PC0
+</text>
+</g><g 
+        class="label default"
+    transform="
+        translate(-252 12) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    ADC[0]
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 15.35) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 20.0 78.75 20.0 L 90 20.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 10.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(115.0 20.0) 
+        scale(-1 1)
+    "  
+>
+    D15
+</text>
+</g><g 
+        class="label analog"
+    transform="
+        translate(-140 35.35) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="0" 
+    y="-10.0" 
+    width="30" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="1.0" 
+    y="-9.0" 
+    width="28" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(15.0 0) 
+        scale(-1 1)
+    "  
+>
+    A1
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(-170 35.35) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    PC1
+</text>
+</g><g 
+        class="label default"
+    transform="
+        translate(-252 35.35) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    ADC[1]
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 30.7) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 28.000000000000004 78.75 28.000000000000004 L 90 28.000000000000004" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 18.000000000000004) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 18.000000000000004) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(115.0 28.000000000000004) 
+        scale(-1 1)
+    "  
+>
+    D16
+</text>
+</g><g 
+        class="label analog"
+    transform="
+        translate(-140 58.7) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="0" 
+    y="-10.0" 
+    width="30" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="1.0" 
+    y="-9.0" 
+    width="28" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(15.0 0) 
+        scale(-1 1)
+    "  
+>
+    A2
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(-170 58.7) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    PC2
+</text>
+</g><g 
+        class="label default"
+    transform="
+        translate(-252 58.7) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    ADC[2]
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 46.05) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 36.000000000000014 78.75 36.000000000000014 L 90 36.000000000000014" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 26.000000000000014) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 26.000000000000014) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(115.0 36.000000000000014) 
+        scale(-1 1)
+    "  
+>
+    D17
+</text>
+</g><g 
+        class="label analog"
+    transform="
+        translate(-140 82.05000000000001) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="0" 
+    y="-10.0" 
+    width="30" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="1.0" 
+    y="-9.0" 
+    width="28" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(15.0 0) 
+        scale(-1 1)
+    "  
+>
+    A3
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(-170 82.05000000000001) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    PC3
+</text>
+</g><g 
+        class="label default"
+    transform="
+        translate(-252 82.05000000000001) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    ADC[3]
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 61.4) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 44.00000000000001 78.75 44.00000000000001 L 90 44.00000000000001" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 34.00000000000001) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 34.00000000000001) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(115.0 44.00000000000001) 
+        scale(-1 1)
+    "  
+>
+    D18
+</text>
+</g><g 
+        class="label analog"
+    transform="
+        translate(-140 105.4) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="0" 
+    y="-10.0" 
+    width="30" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="1.0" 
+    y="-9.0" 
+    width="28" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(15.0 0) 
+        scale(-1 1)
+    "  
+>
+    A4
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(-170 105.4) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    PC4
+</text>
+</g><g 
+        class="label default"
+    transform="
+        translate(-252 105.4) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    ADC[4]
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label digital"
+    transform="
+        translate(0 76.75) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 11.25 0.0 C 45.0 0.0 45.0 52.0 78.75 52.0 L 90 52.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 40.0 0 l 0 20 l -40.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(90 42.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 39.0 0 l 0 18 l -39.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(90 42.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(115.0 52.0) 
+        scale(-1 1)
+    "  
+>
+    D19
+</text>
+</g><g 
+        class="label analog"
+    transform="
+        translate(-140 128.75) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="0" 
+    y="-10.0" 
+    width="30" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="1.0" 
+    y="-9.0" 
+    width="28" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(15.0 0) 
+        scale(-1 1)
+    "  
+>
+    A5
+</text>
+</g><g 
+        class="label mu-port"
+    transform="
+        translate(-170 128.75) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="2" 
+    y="-10.0" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="block label__bodyinner" 
+    x="3.0" 
+    y="-9.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    PC5
+</text>
+</g><g 
+        class="label default"
+    transform="
+        translate(-252 128.75) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    ADC[5]
+</text>
+</g>
+</g>
+</g><g 
+    transform="
+        translate(46 206) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label led"
+    transform="
+        translate(0 0) 
+        scale(-1 -1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0.0 0 L 0.0 80.0 A 40.0 40.0 0 0 0 40.0 120.0 L 284 120.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(284 110.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(284 110.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(324.0 120) 
+        scale(-1 -1)
+    "  
+>
+    RX LED
+</text>
+</g><g 
+        class="label default"
+    transform="
+        translate(-364 -120) 
+        scale(-1 -1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 -1)
+    "  
+>
+    PD4
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label led"
+    transform="
+        translate(17 0) 
+        scale(-1 -1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0.0 0 L 0.0 95.33333333333334 A 47.666666666666664 47.666666666666664 0 0 0 47.666666666666664 143.0 L 301 143.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(301 133.0) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(301 133.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(341.0 143) 
+        scale(-1 -1)
+    "  
+>
+    TX LED
+</text>
+</g><g 
+        class="label default"
+    transform="
+        translate(-364 -143) 
+        scale(-1 -1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 -1)
+    "  
+>
+    PD5
+</text>
+</g>
+</g>
+</g><g 
+    transform="
+        translate(62 392) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label led"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0.0 0 L 0.0 77.33333333333333 A 12.666666666666666 12.666666666666666 0 0 0 12.666666666666666 90.0 L 38 90.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="block label__body" 
+    x="38" 
+    y="80.0" 
+    width="80" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/><rect
+ class="block label__bodyinner" 
+    x="39.0" 
+    y="81.0" 
+    width="78" 
+    height="18" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(78.0 90) 
+        scale(-1 1)
+    "  
+>
+    POWER
+</text>
+</g>
+</g><g 
+        class="label__row"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class="label led"
+    transform="
+        translate(39 -185) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0.0 0 L 0.0 272.68333333333334 A 25.666666666666668 25.666666666666668 0 0 0 25.666666666666668 298.35 L 77 298.35" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 10.0 0 l 70.0 0 l 0 20 l -70.0 0 a -10.0 -10.0 0 0 1 0 -20 z" 
+    transform="scale(1 1) translate(77 288.35) " 
+    shape-rendering="geometricPrecision"
+/><path 
+    class="label__bodyinner" 
+    d="M 10.0 1.0 l 69.0 0 l 0 18 l -69.0 0 a -9.0 -9.0 0 0 1 0 -18 z" 
+    transform="scale(1 1) translate(77 288.35) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(117.0 298.35) 
+        scale(-1 1)
+    "  
+>
+    LED_BUILTIN
+</text>
+</g><g 
+        class="label default"
+    transform="
+        translate(-118 113.35000000000002) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class="lline" 
+    d="M 0 0.0 L 2 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class="label__body" 
+    d="M 0 0 L 70.0 0 a 10.0 10.0 0 0 1 0 20 L 0 20 Z" 
+    transform="scale(1 1) translate(2 -10.0) " 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="label__text"
+    transform="
+        translate(42.0 0) 
+        scale(-1 1)
+    "  
+>
+    PB5
+</text>
+</g>
+</g>
+</g>
+</g>
+</g><g 
+        class="panel panel--notes"
+    transform="
+        translate(2 552) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="panel__bg" 
+    x="0" 
+    y="0" 
+    width="1196" 
+    height="121" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="legend"
+    transform="
+        translate(10 5) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend__bg" 
+    x="0" 
+    y="0" 
+    width="477" 
+    height="112" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="legend-entry gnd"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="159" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Ground
+</text>
+</g><g 
+        class="legend-entry pwr"
+    transform="
+        translate(0 28) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="159" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Power
+</text>
+</g><g 
+        class="legend-entry led"
+    transform="
+        translate(0 56) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="159" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    LED
+</text>
+</g><g 
+        class="legend-entry internal"
+    transform="
+        translate(0 84) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="159" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Internal Pin
+</text>
+</g><g 
+        class="legend-entry swd"
+    transform="
+        translate(159 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="159" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    SWD Pin
+</text>
+</g><g 
+        class="legend-entry digital"
+    transform="
+        translate(159 28) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="159" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Digital Pin
+</text>
+</g><g 
+        class="legend-entry analog"
+    transform="
+        translate(159 56) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="159" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Analog Pin
+</text>
+</g><g 
+        class="legend-entry other"
+    transform="
+        translate(159 84) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="159" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Other Pin
+</text>
+</g><g 
+        class="legend-entry mu-port"
+    transform="
+        translate(318 0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="159" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Microcontroller's Port
+</text>
+</g><g 
+        class="legend-entry default"
+    transform="
+        translate(318 28) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="legend-entry__bg" 
+    x="0" 
+    y="0" 
+    width="159" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    class="legend-entry__text"
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Default
+</text>
+</g>
+</g><g 
+        class="textblock textblock"
+    transform="
+        translate(580 30) 
+        scale(1 1)
+    "
+>
+        <text
+    class="textblock"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "  
+>
+    <tspan class="h1">ARDUINO</tspan>
+</text><text
+    class="textblock"
+    transform="
+        translate(0 22) 
+        scale(1 1)
+    "  
+>
+    <tspan class="h1">UNO REV3</tspan>
+</text>
+</g><g 
+        class="textblock textblock"
+    transform="
+        translate(580 74) 
+        scale(1 1)
+    "
+>
+        <text
+    class="textblock"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "  
+>
+    <tspan class="p">Pinout diagram created with <tspan class="italic">pinout (v0.0.10)</tspan></tspan>
+</text><text
+    class="textblock"
+    transform="
+        translate(0 17) 
+        scale(1 1)
+    "  
+>
+    <tspan class="p">A Python package for creating pinout diagrams.</tspan>
+</text><text
+    class="textblock"
+    transform="
+        translate(0 34) 
+        scale(1 1)
+    "  
+>
+    <tspan class="p"><tspan class="strong"><a href="https://pinout.readthedocs.io">pinout.readthedocs.io</a></tspan></tspan>
+</text>
+</g><g 
+        class="textblock textblock"
+    transform="
+        translate(900 74) 
+        scale(1 1)
+    "
+>
+        <text
+    class="textblock"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "  
+>
+    <tspan class="p">NOTE: This is not official documentation.</tspan>
+</text><text
+    class="textblock"
+    transform="
+        translate(0 17) 
+        scale(1 1)
+    "  
+>
+    <tspan class="p">Diagram aesthetics from Arduino docs.</tspan>
+</text><text
+    class="textblock"
+    transform="
+        translate(0 34) 
+        scale(1 1)
+    "  
+>
+    <tspan class="p"><tspan class="strong"><a href="https://www.arduino.cc/">https://www.arduino.cc/</a></tspan></tspan>
+</text>
+</g>
+</g>
+    
+</svg>

@@ -1,10 +1,4 @@
-import io
-import math
 import random
-from pathlib import Path
-
-from . import file_manager
-from . import components
 
 
 def luminace(color_component):
@@ -38,7 +32,7 @@ def relative_luminance(rgb):
     )
 
 
-def random_contrasting_rgb(ref_color):
+def unique_contrasting_rgb(ref_color):
     """Generate a psudo-random color that, compared to 'ref_color', has a contrast ratio greater than 3. This contrast value is the minimum value to pass WCAG AA contrast recommendation for UI components.
 
     :param ref_color: Tuple (or List) representing RGB value.
@@ -47,38 +41,30 @@ def random_contrasting_rgb(ref_color):
     :rtype: tuple
     """
     contrast = 0
-    while contrast < 3:
+    unique = False
+    while contrast < 3 and not unique:
         rgb = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
         lt = ref_color if sum(ref_color) > sum(rgb) else rgb
         dk = ref_color if sum(ref_color) < sum(rgb) else rgb
         contrast = (relative_luminance(lt) + 0.05) / (relative_luminance(dk) + 0.05)
+        unique = is_distinct_rbg(rgb)
+    palette.append(rgb)
     return rgb
 
 
-def find_children_by_type(component, target_type):
-    """Recursively find all children of the component and it's decendents by type.
-
-    :param component: Component instance to start seach from
-    :type component: class instance
-    :param target_type: class  to match with instances
-    :type target_type: class
-    :return: All instances of type 'target_type' that are descendents of 'component'
-    :rtype: list
-    """
-    results = []
-    try:
-        for c in component.children:
-            if isinstance(c, target_type):
-                results.append(c)
-            results += find_children_by_type(c, target_type)
-    except AttributeError:
-        pass
-        # No children
-
-    return results
+def is_distinct_rbg(rgb_color, threshold=15):
+    r, g, b = rgb_color
+    for (pr, pg, pb) in palette:
+        if (
+            abs(r - pr) < threshold
+            and abs(g - pg) < threshold
+            and abs(b - pb) < threshold
+        ):
+            return False
+    return True
 
 
-def default_css(diagram):
+def assign_color(tag_list, ref_color=(0, 0, 0)):
     """Generate a stylesheet using metrics from a diagram. Various styles are tailored by making a *best-guess* based on diagram component dimensions or a *lucky-guess* filtered by preset criteria. The output should be considered a boot-strapping step to styling a diagram ...unless you feel lucky!
 
     :param diagram: The Diagram object requiring styling
@@ -86,26 +72,10 @@ def default_css(diagram):
     :return: content of a css stylesheet with all required styles to display a diagram.
     :rtype: str
     """
-    # Extract css class tags from PinLabels
-    pinlabels = find_children_by_type(diagram, components.PinLabel)
-    pinlabel_tags = list(
-        set([tag for label in pinlabels for tag in label.tags.split(" ")])
-    )
-    # Remove config tag (common to all PinLabels)
-    try:
-        pinlabel_tags.remove(diagram.cfg.get("pinlabel", {}).get("tag", ""))
-    except ValueError:
-        pass
 
-    label_font_size = diagram.cfg.get("pinlabel", {}).get(
-        "font_size", math.floor(diagram.cfg["pinlabel"]["label"]["height"] * (3 / 5))
-    )
-    label_text_color = tuple(
-        diagram.cfg.get("pinlabel", {}).get("text", {}).get("color", (255, 255, 255))
-    )
+    # Assign random-ish color to each tag
+    return [(tag, unique_contrasting_rgb(ref_color)) for tag in tag_list]
 
-    diagram.cfg["pinlabel"]["_categories"] = {
-        label: random_contrasting_rgb(label_text_color) for label in pinlabel_tags
-    }
 
-    return stylesheet.render(diagram.cfg)
+# Store created color for reference
+palette = []

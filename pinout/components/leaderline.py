@@ -1,15 +1,14 @@
 from pinout import core
 
 
-class Leaderline(core.SvgShape):
+class Leaderline(core.Path):
     """Leaderline base object."""
 
     def __init__(self, direction="hh", **kwargs):
         self.direction = direction
-        self.path_def = ""
-        self.kwargs = kwargs
         self.start = core.Coords(0, 0)
         self.end = core.Coords(0, 0)
+        super().__init__(**kwargs)
 
     def end_points(self, origin, destination):
         """Locate origin and destination coordinates.
@@ -48,11 +47,6 @@ class Leaderline(core.SvgShape):
             max(self.start.x, self.end.x),
             max(self.start.y, self.end.y),
         )
-
-    def render(self):
-        path = core.Path(path_definition=self.path_def, **self.kwargs)
-        path.add_tag("lline")
-        return path.render()
 
 
 class Curved(Leaderline):
@@ -113,7 +107,7 @@ class Curved(Leaderline):
         else:
             path_def = ""
 
-        self.path_def = path_def
+        self.d = path_def
 
 
 class Angled(Leaderline):
@@ -164,7 +158,7 @@ class Angled(Leaderline):
         else:
             path_def = ""
 
-        self.path_def = path_def
+        self.d = path_def
 
 
 class Straight(Leaderline):
@@ -209,4 +203,4 @@ class Straight(Leaderline):
         else:
             path_def = ""
 
-        self.path_def = path_def
+        self.d = path_def

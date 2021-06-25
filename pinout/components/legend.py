@@ -1,7 +1,8 @@
 from pinout import core, config
+from pinout.components.layout import Group
 
 
-class Swatch(core.Group):
+class Swatch(Group):
     def __init__(self, width=None, height=None, **kwargs):
         super().__init__(**kwargs)
         self.update_config(config.legend["entry"]["swatch"])
@@ -14,7 +15,7 @@ class Swatch(core.Group):
         shape.add_tag("swatch__body")
 
 
-class LegendEntry(core.Group):
+class LegendEntry(Group):
     def __init__(
         self,
         content,
@@ -57,7 +58,7 @@ class LegendEntry(core.Group):
         )
 
 
-class Legend(core.Group):
+class Legend(Group):
     """Auto generate a legend component
 
     :param data: [description]

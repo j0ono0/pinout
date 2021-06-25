@@ -10,7 +10,7 @@ INSET = 2
 class PlbStart(pinlabel.Body):
     def render(self):
 
-        output = core.Group()
+        output = Group()
 
         # Label body
         radius = self.height / 2
@@ -68,7 +68,7 @@ class PlbStart(pinlabel.Body):
 class PlbEnd(pinlabel.Body):
     def render(self):
 
-        output = core.Group()
+        output = Group()
 
         radius = self.height / 2
         path_def = " ".join(
@@ -99,7 +99,7 @@ class Plb(pinlabel.Body):
     # # 'inner rect' for custom styling
     def render(self):
 
-        output = core.Group()
+        output = Group()
 
         output.add(
             core.Rect(

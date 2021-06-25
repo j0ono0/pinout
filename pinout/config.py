@@ -22,9 +22,14 @@ pinlabel = {
         "width": 80,
         "height": 26,
         "corner_radius": 3,
+        "tag": "pinlabel__body",
     },
     "leaderline": {
         "direction": "hh",
+        "tag": "pinlabel__leader",
+    },
+    "text": {
+        "tag": "pinlabel__text",
     },
 }
 
@@ -82,4 +87,12 @@ annotation = {
         "direction": "vh",
         "tag": "annotation__leaderline",
     },
+}
+
+# Panel
+panel = {
+    "inset": (5, 5, 5, 5),
+    "tag": "pppanel",
+    "inner": {"tag": "panel__inner"},
+    "outer": {"tag": "panel__outer"},
 }

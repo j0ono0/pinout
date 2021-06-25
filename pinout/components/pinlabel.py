@@ -1,17 +1,17 @@
 import copy
-from pinout import core
+from pinout.core import SvgShape, Group, Rect, Text, BoundingCoords, Coords
 from pinout.components import leaderline as lline
 from pinout import config
 
 
-class Body(core.SvgShape):
+class Body(SvgShape):
     def __init__(self, x, y, width, height, corner_radius=0, **kwargs):
         self.corner_radius = corner_radius
         super().__init__(x=x, y=y, width=width, height=height, **kwargs)
 
     def bounding_coords(self):
         # PinLabelBody origin is vertically centered
-        return core.BoundingCoords(
+        return BoundingCoords(
             self.x,
             self.y - (self.height / 2),
             self.x + self.width,
@@ -19,14 +19,14 @@ class Body(core.SvgShape):
         )
 
     def render(self):
-        body = core.Rect(
+        body = Rect(
             x=self.x,
             y=self.y - (self.height / 2),
             width=self.width,
             height=self.height,
             corner_radius=self.corner_radius,
         )
-        body.add_tag("label__body")
+        body.add_tag(config.pinlabel["body"]["tag"])
         return body.render()
 
 
@@ -34,7 +34,7 @@ class Leaderline(lline.Curved):
     pass
 
 
-class Base(core.Group):
+class Base(Group):
     def __init__(
         self,
         content="",
@@ -46,28 +46,52 @@ class Base(core.Group):
         **kwargs,
     ):
         self.content = content
+        self._leaderline = None
+        self._body = None
         super().__init__(x, y, tag=tag, **kwargs)
         self.update_config(config.pinlabel)
-
-        # ensure instance data is unique
-        leaderline = copy.deepcopy(leaderline or self.config["leaderline"])
-        if isinstance(leaderline, dict):
-            leaderline_config = self.config["leaderline"]
-            leaderline_config.update(leaderline)
-            leaderline = Leaderline(**leaderline_config)
-
-        # ensure instance data is unique
-        body = copy.deepcopy(body or self.config["body"])
-        if isinstance(body, dict):
-            body_config = self.config["body"]
-            body_config.update(body)
-            body = Body(**body_config)
 
         self.leaderline = leaderline
         self.body = body
 
+        self.add_tag(config.pinlabel["tag"])
+
+    @property
+    def body(self):
+        return self._body
+
+    @body.setter
+    def body(self, body):
+        # ensure instance data is unique
+        body = copy.deepcopy(body or self.config["body"])
+        # Convert dict into body object
+        if isinstance(body, dict):
+            body_config = self.config["body"]
+            body_config.update(body)
+            body = Body(**body_config)
+            # Add body config tag if not there
+        body.add_tag(self.config["body"]["tag"])
+        self._body = body
+
+    @property
+    def leaderline(self):
+        return self._leaderline
+
+    @leaderline.setter
+    def leaderline(self, leaderline):
+        # ensure instance data is unique
+        leaderline = copy.deepcopy(leaderline or self.config["leaderline"])
+        # Convert dict into leaderline object
+        if isinstance(leaderline, dict):
+            leaderline_config = self.config["leaderline"]
+            leaderline_config.update(leaderline)
+            leaderline = Leaderline(**leaderline_config)
+        # Add leaderline config tag if not there
+        leaderline.add_tag(self.config["leaderline"]["tag"])
+        self._leaderline = leaderline
+
     def bounding_coords(self):
-        return core.BoundingCoords(
+        return BoundingCoords(
             self.x,
             self.y,
             self.x + self.body.bounding_coords().x2,
@@ -82,12 +106,17 @@ class Base(core.Group):
         # Add text content
         x = self.body.width / 2 + self.body.x
         y = self.body.y
-        self.add(core.Text(self.content, x=x, y=y, tag="label__text", scale=self.scale))
+        self.add(
+            Text(
+                self.content,
+                x=x,
+                y=y,
+                tag=config.pinlabel["text"]["tag"],
+                scale=self.scale,
+            )
+        )
         # Route leaderline
-        self.leaderline.route(core.Rect(), self.body)
-
-        self.add_tag("label")
-
+        self.leaderline.route(Rect(), self.body)
         return super().render()
 
 
@@ -95,7 +124,7 @@ class PinLabel(Base):
     pass
 
 
-class PinLabelGroup(core.Group):
+class PinLabelGroup(Group):
     """Convenience class to place multiple rows of pin-labels on a pin-header.
 
     :param x: x-coordinate of the first pin in the header
@@ -128,7 +157,7 @@ class PinLabelGroup(core.Group):
         body=None,
         **kwargs,
     ):
-        scale = core.Coords(*kwargs.pop("scale", (1, 1)))
+        scale = Coords(*kwargs.pop("scale", (1, 1)))
         super().__init__(x=x, y=y, **kwargs)
 
         # Setup generators for row locations
@@ -136,7 +165,7 @@ class PinLabelGroup(core.Group):
         label_coords = config.pitch_generator(label_start, label_pitch)
 
         for row in labels:
-            row_group = self.add(core.Group(tag="label__row"))
+            row_group = self.add(Group())
             for label in row:
 
                 # If data is supplied convert to Label
@@ -156,9 +185,8 @@ class PinLabelGroup(core.Group):
                         **attrs,
                     )
 
-                    label.add_tag(tag)
-
                 # -- label now exists -- #
+                label.add_tag(tag)
 
                 # Label follows another label in the row
                 try:

@@ -1,9 +1,8 @@
 import base64
-import uuid
 import copy
+import pathlib
 from collections import namedtuple
 from . import file_manager, templates
-import pathlib
 
 
 Coords = namedtuple("Coords", ("x y"))
@@ -63,10 +62,10 @@ class Layout(TransformMixin):
         :param tag: CSS class name(s)
         :type tag: string
         """
-        if self.tag is None:
-            self.tag = tag
-        else:
-            self.tag = " ".join([tag, self.tag])
+        tag_list = (self.tag or "").split(" ")
+        if tag not in tag_list:
+            tag_list.append(tag)
+        self.tag = " ".join(tag_list)
 
     def update_config(self, vals):
         """update config dict
@@ -75,6 +74,29 @@ class Layout(TransformMixin):
         :type vals: dict
         """
         self.config.update(copy.deepcopy(vals))
+
+    @staticmethod
+    def find_children_by_type(component, target_type):
+        """Recursively find all children of the component and it's decendents by type.
+
+        :param component: Component instance to start seach from
+        :type component: class instance
+        :param target_type: class  to match with instances
+        :type target_type: class
+        :return: All instances of type 'target_type' that are descendents of 'component'
+        :rtype: list
+        """
+        results = []
+        try:
+            for c in component.children:
+                if isinstance(c, target_type):
+                    results.append(c)
+                results += Layout.find_children_by_type(c, target_type)
+        except AttributeError:
+            pass
+            # No children
+
+        return results
 
     def bounding_rect(self):
         """Top left coordinates with width and height of a bounding rectangle
@@ -144,73 +166,6 @@ class Layout(TransformMixin):
         return content
 
 
-class StyleSheet:
-    """Include a cascading stylesheet."""
-
-    def __init__(self, path, embed=False):
-        self.path = path
-        self.embed = embed
-
-    def render(self):
-        tplt = templates.get("style.svg")
-        if not self.embed:
-            return tplt.render(stylesheet=self)
-        else:
-            data = file_manager.load_data(self.path)
-            return tplt.render(data=data)
-
-
-class Raw:
-    """Include arbitary code to the document"""
-
-    def __init__(self, content):
-        self.content = content
-
-    def render(self):
-        return self.content
-
-
-class Diagram(Layout):
-    """Basis of a pinout diagram"""
-
-    def __init__(self, width, height, tag=None, **kwargs):
-        super().__init__(tag=tag, **kwargs)
-        self.width = width
-        self.height = height
-
-    def add_stylesheet(self, path, embed=True):
-        """Add a stylesheet to the diagram
-
-        :param path: Path to stylesheet file
-        :type path: string
-        :param embed: embed stylesheet in exported file, defaults to True
-        :type embed: bool, optional
-        """
-        self.children.insert(0, StyleSheet(path, embed))
-
-    def render(self):
-        """Render children into an <svg> tag.
-
-        :return: SVG markup
-        :rtype: string
-        """
-        tplt = templates.get("svg.svg")
-        return tplt.render(svg=self)
-
-    def export(self, path, overwrite=False):
-        """Output the diagram in SVG format."""
-        # Create export location and unique filename if required
-        path = pathlib.Path(path)
-        path.parent.mkdir(parents=True, exist_ok=True)
-        if not overwrite:
-            path = file_manager.unique_filepath(path)
-        path.touch(exist_ok=True)
-
-        # Render final SVG file
-        path.write_text(self.render())
-        print(f"'{path}' exported successfully.")
-
-
 class Group(Layout):
     """Group components together"""
 
@@ -235,21 +190,30 @@ class Group(Layout):
         return tplt.render(group=self)
 
 
-class ClipPath(Group):
-    """Define a clip-path component"""
+class StyleSheet:
+    """Include a cascading stylesheet."""
 
-    def __init__(self, x=0, y=0, tag=None, **kwargs):
-        self.uuid = str(uuid.uuid4())
-        super().__init__(x=x, y=y, tag=tag, **kwargs)
+    def __init__(self, path, embed=False):
+        self.path = path
+        self.embed = embed
 
     def render(self):
-        """Render children into a <clipPath> tag.
+        tplt = templates.get("style.svg")
+        if not self.embed:
+            return tplt.render(stylesheet=self)
+        else:
+            data = file_manager.load_data(self.path)
+            return tplt.render(data=data)
 
-        :return: SVG markup
-        :rtype: string
-        """
-        tplt = templates.get("clippath.svg")
-        return tplt.render(path=self)
+
+class Raw:
+    """Include arbitary code to the document"""
+
+    def __init__(self, content):
+        self.content = content
+
+    def render(self):
+        return self.content
 
 
 class SvgShape(TransformMixin):
@@ -282,10 +246,15 @@ class SvgShape(TransformMixin):
         return BoundingCoords(min(x), min(y), max(x), max(y))
 
     def add_tag(self, tag):
-        if self.tag is None:
-            self.tag = tag
-        else:
-            self.tag = " ".join([tag, self.tag])
+        """Append a tag to the instance
+
+        :param tag: CSS class name(s)
+        :type tag: string
+        """
+        tag_list = (self.tag or "").split(" ")
+        if tag not in tag_list:
+            tag_list.append(tag)
+        self.tag = " ".join(tag_list)
 
     def render(self):
         return ""

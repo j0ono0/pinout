@@ -6,7 +6,7 @@
 from pinout import core
 
 
-class Panel(core.Group):
+class Panel(Group):
     def __init__(self, width, height, inset, **kwargs):
         self.inset = core.BoundingCoords(*inset)
         super().__init__(**kwargs)

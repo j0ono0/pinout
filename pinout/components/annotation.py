@@ -1,11 +1,12 @@
 from pinout import core
-from pinout.components import type
+from pinout.components import type, layout
 from pinout.components import leaderline as lline
+from pinout.components.layout import Group
 
 from pinout import config
 
 
-class Base(core.Group):
+class Base(Group):
     def __init__(self, **kwargs):
         self.offset = core.Coords(*kwargs.pop("offset", (1, 1)))
         kwargs["tag"] = ("annotation " + kwargs.pop("tag", "")).strip()
@@ -22,7 +23,7 @@ class Target(core.Rect):
         super().__init__(**kwargs)
 
 
-class Body(core.Group):
+class Body(Group):
     def __init__(
         self,
         content,

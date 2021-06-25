@@ -54,6 +54,7 @@ class Diagram(Layout):
             css={
                 "pinlabel": config.pinlabel,
                 "panel": config.panel,
+                "legend": config.legend,
                 "tags": style_tools.assign_color(tags),
             }
         )

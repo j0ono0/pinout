@@ -46,7 +46,7 @@ legend = {
             "height": 20,
             "tag": "swatch",
         },
-        "tag": "legend-entry",
+        "tag": "legendentry",
     },
 }
 
@@ -92,7 +92,7 @@ annotation = {
 # Panel
 panel = {
     "inset": (5, 5, 5, 5),
-    "tag": "pppanel",
+    "tag": "panel",
     "inner": {"tag": "panel__inner"},
     "outer": {"tag": "panel__outer"},
 }

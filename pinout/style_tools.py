@@ -52,14 +52,11 @@ def unique_contrasting_rgb(ref_color):
     return rgb
 
 
-def is_distinct_rbg(rgb_color, threshold=15):
+def is_distinct_rbg(rgb_color, threshold=30):
     r, g, b = rgb_color
     for (pr, pg, pb) in palette:
-        if (
-            abs(r - pr) < threshold
-            and abs(g - pg) < threshold
-            and abs(b - pb) < threshold
-        ):
+        diff = abs(r - pr) + abs(g - pg) + abs(b - pb)
+        if diff > threshold:
             return False
     return True
 

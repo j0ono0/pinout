@@ -37,10 +37,9 @@ class LegendEntry(Group):
             swatch = Swatch(**swatch)
 
         self.add(
-            core.Rect(
+            core.SvgShape(
                 width=width,
                 height=height,
-                tag=f"{self.config['tag']}__bg",
             ),
         )
 
@@ -53,7 +52,6 @@ class LegendEntry(Group):
                 content,
                 x=swatch.bounding_coords().x2 + swatch.x,
                 y=self.height / 2,
-                tag=f"{self.config['tag']}__text",
             )
         )
 
@@ -65,28 +63,22 @@ class Legend(Group):
     :type data: [type]
     :param max_height: [description], defaults to None
     :type max_height: [type], optional
-    :param inset: [description], defaults to None
-    :type inset: [type], optional
     """
 
     def __init__(
         self,
         data,
         max_height=None,
-        inset=None,
         **kwargs,
     ):
         super().__init__(**kwargs)
         self.update_config(config.legend)
         self.add_tag(self.config["tag"])
 
-        inset = inset or self.config["inset"]
-        inset = core.BoundingCoords(*inset)
         max_height = max_height or self.config["max_height"]
 
-        x = inset.x1
-        y = inset.y1
-
+        entry_x = 0
+        entry_y = 0
         for entry in data:
 
             if type(entry) is tuple:
@@ -97,19 +89,9 @@ class Legend(Group):
             self.add(entry)
 
             # Position entry in legend
-            if max_height and y + entry.height + inset.y2 > max_height:
-                x = self.width
-                y = inset.y1
-            entry.x = x
-            entry.y = y
-            y += entry.height
-
-        # Add a background Rect and offset origin
-        self.children.insert(
-            0,
-            core.Rect(
-                width=self.width + inset.x1 + inset.x2,
-                height=self.height + inset.y1 + inset.y2,
-                tag="legend__bg",
-            ),
-        )
+            if max_height and entry_y + entry.height > max_height:
+                entry_x = self.width
+                entry_y = 0
+            entry.x = entry_x
+            entry.y = entry_y
+            entry_y += entry.height

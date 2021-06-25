@@ -1,3 +1,18 @@
+.COMMENT{
+    /* Recent version of InkScape has a bug that causes comments in CSS files to break the following style. The bug can work worked around by putting comments inside style rules! -- Hence this method of commenting here  */
+}
+
+
+.COMMENT{ /* Diagram settings  */ }
+
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
+.COMMENT{ /* Pinlabel component  */ }
 
 .{{ css.pinlabel.leaderline.tag }}{
     stroke-width: 2;
@@ -7,12 +22,14 @@
 .{{ css.pinlabel.text.tag }}{
     dominant-baseline: central;
     fill: #fff;
-    font-family: Verdana, Georgia, sans-serif;
-    font-size: 12px;
+    
     font-weight: bold;
     stroke-width: 0;
     text-anchor: middle;
 }
+
+
+.COMMENT{ /* color styling derived from pinlabel classes  */ }
 
 {% for (name, color) in css.tags %}
     .{{name}} .{{ css.pinlabel.body.tag }}{
@@ -21,11 +38,24 @@
     .{{name}} .{{ css.pinlabel.leaderline.tag }}{
         stroke: rgb{{color}}
     }
+    .{{name}} .swatch__body {
+        fill: rgb{{color}}
+    }
 {% endfor %}
+
+
+.COMMENT{ /* Panel component  */ }
 
 .{{ css.panel.inner.tag }} {
     fill: #fff;
 }
 .{{ css.panel.outer.tag }} {
     fill: #333;
+}
+
+
+.COMMENT{ /* Legend component  */ }
+
+.{{ css.legend.entry.tag }} text {
+    dominant-baseline: central;
 }

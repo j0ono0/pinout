@@ -1,0 +1,63 @@
+
+{# Diagram settings #}
+
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
+{# Pinlabel component #}
+
+{% if css.pinlabel %}
+    .{{ css.pinlabel.leaderline.tag }}{
+        stroke-width: 2;
+        fill: none;
+    }
+
+    .{{ css.pinlabel.text.tag }}{
+        dominant-baseline: central;
+        fill: #fff;
+        
+        font-weight: bold;
+        stroke-width: 0;
+        text-anchor: middle;
+    }
+{% endif %}
+
+
+{# Color styling derived from pinlabel classes  #}
+
+{% if css.tags %}
+    {% for (name, color) in css.tags %}
+        .{{name}} .{{ css.pinlabel.body.tag }}{
+            fill: rgb{{color}}
+        }
+        .{{name}} .{{ css.pinlabel.leaderline.tag }}{
+            stroke: rgb{{color}}
+        }
+        .{{name}} .swatch__body {
+            fill: rgb{{color}}
+        }
+    {% endfor %}
+{% endif %}
+
+{# Panel component #}
+
+{% if css.panel %}
+    .{{ css.panel.inner.tag }} {
+        fill: #fff;
+    }
+    .{{ css.panel.outer.tag }} {
+        fill: #333;
+    }
+{% endif %}
+
+{# Legend component #}
+
+{% if css.legend %}
+    .{{ css.legend.entry.tag }} text {
+        dominant-baseline: central;
+    }
+{% endif %}

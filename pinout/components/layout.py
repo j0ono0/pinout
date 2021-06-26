@@ -3,6 +3,7 @@ import uuid
 from pinout import templates, file_manager, config, style_tools
 from pinout.core import Layout, StyleSheet, Group, SvgShape, Rect, BoundingCoords
 from pinout.components.pinlabel import PinLabel
+from pinout.components.legend import Legend
 
 
 class Diagram(Layout):
@@ -49,15 +50,18 @@ class Diagram(Layout):
         if config.pinlabel["tag"] in tags:
             tags.remove(config.pinlabel["tag"])
 
-        css_tplt = templates.get("stylesheet.css")
-        css = css_tplt.render(
-            css={
-                "pinlabel": config.pinlabel,
-                "panel": config.panel,
-                "legend": config.legend,
-                "tags": style_tools.assign_color(tags),
-            }
-        )
+        context = {}
+        if tags:
+            context["tags"] = style_tools.assign_color(tags)
+            context["pinlabel"] = config.pinlabel
+        if self.find_children_by_type(self, Legend):
+            context["legend"] = config.legend
+        if self.find_children_by_type(self, Panel):
+            context["panel"] = config.panel
+
+        css_tplt = templates.get("stylesheet.j2")
+        css = css_tplt.render(css=context)
+
         # Create stylesheet file and link to it
         with open(path, "w") as f:
             f.write(css)

@@ -9,9 +9,9 @@ def luminace(color_component):
     :return: Luminance value of the color component
     :rtype: float
     """
-    i = float(color_component) / 255
+    i = color_component / 255
 
-    if i < 0.03928:
+    if i <= 0.03928:
         return i / 12.92
     else:
         return ((i + 0.055) / 1.055) ** 2.4
@@ -42,26 +42,35 @@ def unique_contrasting_rgb(ref_color):
     """
     contrast = 0
     unique = False
-    while contrast < 3 and not unique:
+    while contrast < 3 or not unique:
         rgb = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
-        lt = ref_color if sum(ref_color) > sum(rgb) else rgb
-        dk = ref_color if sum(ref_color) < sum(rgb) else rgb
-        contrast = (relative_luminance(lt) + 0.05) / (relative_luminance(dk) + 0.05)
+
+        color_one_luminance = relative_luminance(ref_color)
+        color_two_luminance = relative_luminance(rgb)
+
+        if color_one_luminance > color_two_luminance:
+            light = color_one_luminance
+            dark = color_two_luminance
+        else:
+            dark = color_one_luminance
+            light = color_two_luminance
+
+        contrast = (light + 0.05) / (dark + 0.05)
         unique = is_distinct_rbg(rgb)
     palette.append(rgb)
     return rgb
 
 
-def is_distinct_rbg(rgb_color, threshold=30):
+def is_distinct_rbg(rgb_color, threshold=60):
     r, g, b = rgb_color
     for (pr, pg, pb) in palette:
         diff = abs(r - pr) + abs(g - pg) + abs(b - pb)
-        if diff > threshold:
+        if diff < threshold:
             return False
     return True
 
 
-def assign_color(tag_list, ref_color=(0, 0, 0)):
+def assign_color(tag_list, ref_color=(255, 255, 255)):
     """Generate a stylesheet using metrics from a diagram. Various styles are tailored by making a *best-guess* based on diagram component dimensions or a *lucky-guess* filtered by preset criteria. The output should be considered a boot-strapping step to styling a diagram ...unless you feel lucky!
 
     :param diagram: The Diagram object requiring styling

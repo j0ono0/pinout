@@ -32,13 +32,13 @@ text {
 {% if css.tags %}
     {% for (name, color) in css.tags %}
         .{{name}} .{{ css.pinlabel.body.tag }}{
-            fill: rgb{{color}}
+            fill: rgb{{color}};
         }
         .{{name}} .{{ css.pinlabel.leaderline.tag }}{
-            stroke: rgb{{color}}
+            stroke: rgb{{color}};
         }
         .{{name}} .swatch__body {
-            fill: rgb{{color}}
+            fill: rgb{{color}};
         }
     {% endfor %}
 {% endif %}
@@ -60,4 +60,31 @@ text {
     .{{ css.legend.entry.tag }} text {
         dominant-baseline: central;
     }
+{% endif %}
+
+{# Annotation component #}
+
+{% if css.annotation %}
+    .{{ css.annotation.body.tag }} {
+        fill: rgb(253, 203, 36);
+        stroke-width: 0;
+    }
+    .{{ css.annotation.content.tag }} {
+        dominant-baseline: central;
+        font-size: 14px;
+        font-weight: bold;
+        fill: rgb(63, 40, 6);
+        text-anchor: middle;
+    }
+    .{{ css.annotation.target.tag }} {
+        fill: none;
+        stroke: rgb(253, 203, 36);
+        stroke-width: 4px;
+    }
+    .{{ css.annotation.leaderline.tag }} {
+        stroke: rgb(253, 203, 36);
+        stroke-width: 4px;
+        fill: none;
+    }
+
 {% endif %}

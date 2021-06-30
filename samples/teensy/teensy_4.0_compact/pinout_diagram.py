@@ -4,7 +4,7 @@
 from pinout.core import Diagram, Rect, Group, Image
 from pinout import config
 from pinout.components.pinlabel import PinLabelGroup
-from pinout.components.type import TextBlock
+from pinout.components.text import TextBlock
 from pinout.components import leaderline as lline
 
 ################################################

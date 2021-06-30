@@ -4,15 +4,17 @@ from pinout import templates, file_manager, config, style_tools
 from pinout.core import Layout, StyleSheet, Group, SvgShape, Rect, BoundingCoords
 from pinout.components.pinlabel import PinLabel
 from pinout.components.legend import Legend
+from pinout.components.annotation import AnnotationLabel
 
 
 class Diagram(Layout):
     """Basis of a pinout diagram"""
 
     def __init__(self, width, height, tag=None, **kwargs):
-        super().__init__(tag=tag, **kwargs)
         self.width = width
         self.height = height
+        super().__init__(tag=tag, **kwargs)
+        self.add(SvgShape(width=width, height=height))
 
     def add_stylesheet(self, path, embed=True):
         """Add a stylesheet to the diagram
@@ -35,13 +37,9 @@ class Diagram(Layout):
 
     def create_stylesheet(self, path):
         """Create a stylesheet if none supplied. Does not overwrite any existing file with the predetermined name."""
-        """
-        if path.is_file():
-            print(
-                f"A stylesheet at '{path}' already exists! Aborting auto-generation of CSS file."
-            )
-        else:
-        """
+
+        path = file_manager.unique_filepath(path)
+
         # Extract css class tags from PinLabels
         lbls = self.find_children_by_type(self, PinLabel)
         tags = list(
@@ -58,6 +56,8 @@ class Diagram(Layout):
             context["legend"] = config.legend
         if self.find_children_by_type(self, Panel):
             context["panel"] = config.panel
+        if self.find_children_by_type(self, AnnotationLabel):
+            context["annotation"] = config.annotation
 
         css_tplt = templates.get("stylesheet.j2")
         css = css_tplt.render(css=context)

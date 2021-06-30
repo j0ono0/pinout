@@ -1,6 +1,6 @@
 from pinout.core import Diagram, Group, Image, Raw, Rect
 from pinout.components import pinlabel, legend, leaderline
-from pinout.components.type import TextBlock
+from pinout.components.text import TextBlock
 
 
 # Import data and custom config generator

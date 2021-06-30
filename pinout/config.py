@@ -62,6 +62,12 @@ textblock = {
 # Annotation
 annotation = {
     "tag": "annotation",
+    "content": {
+        "tag": "annotation__text",
+        "x": 28,
+        "y": 17,
+        "line_height": 16,
+    },
     "body": {
         "x": 40,
         "y": 29,
@@ -69,11 +75,6 @@ annotation = {
         "height": 50,
         "corner_radius": 25,
         "tag": "annotation__body",
-        "textblock": {
-            "x": 28,
-            "y": 17,
-            "line_height": 16,
-        },
     },
     "target": {
         "x": -10,

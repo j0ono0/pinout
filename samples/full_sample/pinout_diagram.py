@@ -8,7 +8,7 @@
 from pinout.core import Diagram, Group, Rect, Image, Text
 from pinout.components.pinlabel import PinLabelGroup
 from pinout.components.annotation import AnnotationLabel
-from pinout.components.type import TextBlock
+from pinout.components.text import TextBlock
 from pinout.components import leaderline as lline
 from pinout.components.legend import Legend
 

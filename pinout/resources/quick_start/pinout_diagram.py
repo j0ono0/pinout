@@ -6,7 +6,8 @@
 #
 ###########################################
 
-from pinout.core import Diagram, Group, Rect, Image
+from pinout.core import Group, Rect, Image
+from pinout.components.layout import Diagram, Panel
 from pinout.components.pinlabel import PinLabelGroup, PinLabel
 from pinout.components.text import TextBlock
 from pinout.components import leaderline as lline
@@ -16,19 +17,38 @@ from pinout.components.legend import Legend
 # Import data for the diagram
 import data
 
-# Create a new diagram and add a background
+# Create a new diagram
 diagram = Diagram(1024, 576, "diagram")
-diagram.add(Rect(0, 0, 1024, 576, "diagram__bg"))
 
 # Add a stylesheet
 diagram.add_stylesheet("styles.css", True)
 
-# Create a layout for diagram
-panel_main = diagram.add(Group(2, 2, "panel panel--main"))
-panel_main.add(Rect(0, 0, 1020, 438, "panel__bg"))
-
-info_panel = diagram.add(Group(x=2, y=442, tag="panel panel--info"))
-info_panel.add(Rect(0, 0, 1020, 132, tag="panel__bg"))
+# Create a layout
+content = diagram.add(
+    Panel(
+        width=1024,
+        height=576,
+        inset=(2, 2, 2, 2),
+    )
+)
+panel_main = content.add(
+    Panel(
+        width=content.inset_width,
+        height=440,
+        inset=(2, 2, 2, 2),
+        tag="panel--main",
+    )
+)
+panel_info = content.add(
+    Panel(
+        x=0,
+        y=panel_main.height,
+        width=panel_main.width,
+        height=content.inset_height - panel_main.height,
+        inset=(2, 2, 2, 2),
+        tag="panel--info",
+    )
+)
 
 # Create a group to hold the pinout-diagram components.
 graphic = panel_main.add(Group(400, 42))
@@ -88,37 +108,33 @@ graphic.add(
 )
 
 # Create a title and a text-block
-title_block = info_panel.add(
+title_block = panel_info.add(
     TextBlock(
         data.title,
-        x=0,
-        y=0,
-        width=338,
-        height=42,
-        offset=(20, 33),
+        x=20,
+        y=30,
         line_height=18,
         tag="panel title_block",
     )
 )
-info_panel.add(
+panel_info.add(
     TextBlock(
         data.description.split("\n"),
-        x=0,
-        y=title_block.y + title_block.height,
+        x=20,
+        y=60,
         width=title_block.width,
-        height=info_panel.height - title_block.height,
-        offset=(20, 18),
+        height=panel_info.height - title_block.height,
         line_height=18,
         tag="panel text_block",
     )
 )
 
 # Create a legend
-legend = info_panel.add(
+legend = panel_info.add(
     Legend(
         data.legend,
-        x=338,
-        y=0,
+        x=340,
+        y=8,
         max_height=132,
     )
 )

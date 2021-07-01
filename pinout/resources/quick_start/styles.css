@@ -1,115 +1,96 @@
-
-path, rect {
-    stroke: rgb(0, 0, 0);
-    stroke-dasharray: 0;
-    stroke-dashoffset: 0;
-    stroke-linecap: round;
-    stroke-linejoin: miter;
-    stroke-miterlimit: inherit;
-    stroke-opacity: 1;
-    stroke-width: 0;
-    fill: none;
-}
-
-
 text {
     font-family: Verdana, Georgia, sans-serif;
     font-size: 14px;
-    font-weight: 300;
-    dominant-baseline: auto;
+    font-weight: normal;
 }
 
-
-.label__body{
-    fill: rgb(36, 36, 36);
-}
-.label .lline{
+.pinlabel__leader{
     stroke-width: 2;
+    fill: none;
 }
-.label__text{
+
+.pinlabel__text{
     dominant-baseline: central;
     fill: #fff;
-    font-size: 12px;
     font-weight: bold;
     stroke-width: 0;
     text-anchor: middle;
 }
 
-
-.legend .swatch__body{
-    fill: rgba(0,0,0,0);
-}
-.legend-entry__text{
-    dominant-baseline: central;
-    fill: #000;
-}
-
-.legend-entry .swatch__body{
-    fill: #ccc;
-}
-
-
-.diagram__bg{
-    fill: rgb(51, 51, 51);
-}
-.panel__bg{
-    fill: #fff;
-}
-.panel--info .panel__bg{
-    fill: #f4f4f4;
-}
-
-
-.pwr .label__body,
-.pwr .swatch__body{
+.pwr .pinlabel__body{
     fill: rgb(173, 0, 0);
 }
-.pwr .lline{
+.pwr .pinlabel__leader{
     stroke: rgb(173, 0, 0);
 }
-.gpio .label__body,
-.gpio .swatch__body{
-    fill: rgb(160, 133, 26);
+.pwr .swatch__body {
+    fill: rgb(173, 0, 0);
 }
-.gpio .lline{
-    stroke: rgb(160, 133, 26);
-}
-.analog .label__body,
-.analog .swatch__body{
-    fill: rgb(32, 150, 165);
-}
-.analog .lline{
-    stroke: rgb(32, 150, 165);
-}
-.touch .label__body,
-.touch .swatch__body{
-    fill: rgb(230, 87, 10);
-}
-.touch .lline{
-    stroke: rgb(230, 87, 10);
-}
-.comms .label__body,
-.comms .swatch__body{
+.comms .pinlabel__body{
     fill: rgb(182, 69, 176);
 }
-.comms .lline{
+.comms .pinlabel__leader{
     stroke: rgb(182, 69, 176);
 }
-.gnd .label__body,
-.gnd .swatch__body{
-    fill: #000;
+.comms .swatch__body {
+    fill: rgb(182, 69, 176);
 }
-.gnd .lline{
-    stroke: #000;
+.gpio .pinlabel__body{
+    fill: rgb(160, 133, 26);
 }
-.pwm .label__body,
-.pwm .swatch__body{
-    fill: rgb(35, 66, 133);
+.gpio .pinlabel__leader{
+    stroke: rgb(160, 133, 26);
 }
-.pwm .lline{
-    stroke: rgb(35, 66, 133);
+.gpio .swatch__body {
+    fill: rgb(160, 133, 26);
+}
+.analog .pinlabel__body{
+    fill: rgb(32, 150, 165);
+}
+.analog .pinlabel__leader{
+    stroke: rgb(32, 150, 165);
+}
+.analog .swatch__body {
+    fill: rgb(32, 150, 165);
+}
+.gnd .pinlabel__body{
+    fill: rgb(0, 0, 0);
+}
+.gnd .pinlabel__leader{
+    stroke: rgb(0, 0, 0);
+}
+.gnd .swatch__body {
+    fill: rgb(0, 0, 0);
+}
+.pwm .pinlabel__body{
+    fill: rgb(151, 76, 23);
+}
+.pwm .pinlabel__leader{
+    stroke: rgb(151, 76, 23);
+}
+.pwm .swatch__body {
+    fill: rgb(151, 76, 23);
+}
+.touch .pinlabel__body{
+    fill: rgb(230, 87, 10);
+}
+.touch .pinlabel__leader{
+    stroke: rgb(230, 87, 10);
+}
+.touch .swatch__body {
+    fill: rgb(230, 87, 10);
 }
 
+.panel__inner {
+    fill: #fff;
+}
+.panel__outer {
+    fill: #333;
+}
+
+.legendentry text {
+    dominant-baseline: central;
+}
 
 .h1 {
     font-size: 26px;

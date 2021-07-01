@@ -1,0 +1,104 @@
+
+
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
+
+    .pinlabel__leader{
+        stroke-width: 2;
+        fill: none;
+    }
+
+    .pinlabel__text{
+        dominant-baseline: central;
+        fill: #fff;
+        
+        font-weight: bold;
+        stroke-width: 0;
+        text-anchor: middle;
+    }
+
+
+
+        .pwm .pinlabel__body{
+            fill: rgb(114, 124, 187);
+        }
+        .pwm .pinlabel__leader{
+            stroke: rgb(114, 124, 187);
+        }
+        .pwm .swatch__body {
+            fill: rgb(114, 124, 187);
+        }
+        .gnd .pinlabel__body{
+            fill: rgb(138, 3, 218);
+        }
+        .gnd .pinlabel__leader{
+            stroke: rgb(138, 3, 218);
+        }
+        .gnd .swatch__body {
+            fill: rgb(138, 3, 218);
+        }
+        .comms .pinlabel__body{
+            fill: rgb(226, 96, 57);
+        }
+        .comms .pinlabel__leader{
+            stroke: rgb(226, 96, 57);
+        }
+        .comms .swatch__body {
+            fill: rgb(226, 96, 57);
+        }
+        .pwr .pinlabel__body{
+            fill: rgb(143, 124, 72);
+        }
+        .pwr .pinlabel__leader{
+            stroke: rgb(143, 124, 72);
+        }
+        .pwr .swatch__body {
+            fill: rgb(143, 124, 72);
+        }
+        .gpio .pinlabel__body{
+            fill: rgb(91, 89, 213);
+        }
+        .gpio .pinlabel__leader{
+            stroke: rgb(91, 89, 213);
+        }
+        .gpio .swatch__body {
+            fill: rgb(91, 89, 213);
+        }
+        .analog .pinlabel__body{
+            fill: rgb(178, 24, 251);
+        }
+        .analog .pinlabel__leader{
+            stroke: rgb(178, 24, 251);
+        }
+        .analog .swatch__body {
+            fill: rgb(178, 24, 251);
+        }
+        .touch .pinlabel__body{
+            fill: rgb(185, 94, 255);
+        }
+        .touch .pinlabel__leader{
+            stroke: rgb(185, 94, 255);
+        }
+        .touch .swatch__body {
+            fill: rgb(185, 94, 255);
+        }
+
+
+    .panel__inner {
+        fill: #fff;
+    }
+    .panel__outer {
+        fill: #333;
+    }
+
+
+    .legendentry text {
+        dominant-baseline: central;
+    }
+
+

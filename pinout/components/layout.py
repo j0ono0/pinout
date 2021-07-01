@@ -1,10 +1,6 @@
-import pathlib
 import uuid
-from pinout import templates, file_manager, config, style_tools
+from pinout import templates, config
 from pinout.core import Layout, StyleSheet, Group, SvgShape, Rect, BoundingCoords
-from pinout.components.pinlabel import PinLabel
-from pinout.components.legend import Legend
-from pinout.components.annotation import AnnotationLabel
 
 
 class Diagram(Layout):
@@ -34,57 +30,6 @@ class Diagram(Layout):
         """
         tplt = templates.get("svg.svg")
         return tplt.render(svg=self)
-
-    def create_stylesheet(self, path):
-        """Create a stylesheet if none supplied. Does not overwrite any existing file with the predetermined name."""
-
-        path = file_manager.unique_filepath(path)
-
-        # Extract css class tags from PinLabels
-        lbls = self.find_children_by_type(self, PinLabel)
-        tags = list(
-            set([tag for label in lbls for tag in label.tag.strip().split(" ")])
-        )
-        if config.pinlabel["tag"] in tags:
-            tags.remove(config.pinlabel["tag"])
-
-        context = {}
-        if tags:
-            context["tags"] = style_tools.assign_color(tags)
-            context["pinlabel"] = config.pinlabel
-        if self.find_children_by_type(self, Legend):
-            context["legend"] = config.legend
-        if self.find_children_by_type(self, Panel):
-            context["panel"] = config.panel
-        if self.find_children_by_type(self, AnnotationLabel):
-            context["annotation"] = config.annotation
-
-        css_tplt = templates.get("stylesheet.j2")
-        css = css_tplt.render(css=context)
-
-        # Create stylesheet file and link to it
-        with open(path, "w") as f:
-            f.write(css)
-        self.add(StyleSheet(path, embed=True))
-
-    def export(self, path, overwrite=False):
-        """Output the diagram in SVG format."""
-        # Create export location and unique filename if required
-        path = pathlib.Path(path)
-        path.parent.mkdir(parents=True, exist_ok=True)
-        if not overwrite:
-            path = file_manager.unique_filepath(path)
-        path.touch(exist_ok=True)
-
-        # Create a stylesheet if none exists
-        existing_styles = self.find_children_by_type(self, StyleSheet)
-        if len(existing_styles) == 0:
-            csspath = pathlib.Path(".".join(str(path).split(".")[:-1]) + ".css")
-            self.create_stylesheet(csspath)
-
-        # Render final SVG file
-        path.write_text(self.render())
-        print(f"'{path}' exported successfully.")
 
 
 class ClipPath(Group):

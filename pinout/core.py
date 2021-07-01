@@ -2,7 +2,7 @@ import base64
 import copy
 import pathlib
 from collections import namedtuple
-from . import file_manager, templates
+from pinout import manager, templates
 
 
 Coords = namedtuple("Coords", ("x y"))
@@ -202,7 +202,7 @@ class StyleSheet:
         if not self.embed:
             return tplt.render(stylesheet=self)
         else:
-            data = file_manager.load_data(self.path)
+            data = manager.load_data(self.path)
             return tplt.render(data=data)
 
 

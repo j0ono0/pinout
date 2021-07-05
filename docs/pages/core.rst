@@ -62,26 +62,6 @@ Raw
     :param content: SVG code
     :type content: string
 
-Diagram
---------
-
-.. autoclass:: Diagram
-    :show-inheritance:
-    
-    :param width: width of diagram
-    :type width: int
-    :param height: height of diagram
-    :type height: int
-    :param tag: CSS class applied to diagram, defaults to None
-    :type tag: string (must comply to CSS naming rules), optional
-
-    .. automethod:: export
-    
-    :param path: File location and name
-    :type path: string
-    :param overwrite: Overwrite existing file of same path, defaults to False
-    :type overwrite: bool, optional
-
 
 Group
 -----
@@ -96,20 +76,7 @@ Group
     :param tag: CSS class, defaults to None
     :type tag: string (must meet css class naming rules), optional
 
-
-ClipPath
---------
-.. autoclass:: ClipPath
-    :show-inheritance:
     
-    :param x: Coordinate of top-left point in x-axis, defaults to 0
-    :type x: int, optional
-    :param y: Coordinate of top-left point in y-axis, defaults to 0
-    :type y: int, optional
-    :param tag: CSS class, defaults to None
-    :type tag: string (must meet css class naming rules), optional
-
-
 SvgShape
 --------
 .. autoclass:: SvgShape

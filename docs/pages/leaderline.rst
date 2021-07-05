@@ -23,6 +23,13 @@ Leaderline
     .. automethod:: Leaderline.end_points
 
         The end_point method takes two components as arguments and returns coordinates that are  aligned with the centre coordinates of the relevant side.
+        
+        :param origin: origin component 
+        :type origin: component with width and height attributes and bounding_coords method
+        :param destination: destination component
+        :type destination: component with width and height attributes and bounding_coords method
+        :return: coordinates of start and end points
+        :rtype: Tuple ((ox, oy), (dx, dy))
 
 Curved
 ------

@@ -11,15 +11,7 @@ class Leaderline(core.Path):
         super().__init__(**kwargs)
 
     def end_points(self, origin, destination):
-        """Locate origin and destination coordinates.
-
-        :param origin: [description]
-        :type origin: [type]
-        :param destination: [description]
-        :type destination: [type]
-        :return: [description]
-        :rtype: [type]
-        """
+        """Locate origin and destination coordinates."""
         # origin and destination are components with bounding-boxes
         # direction is a 2 char code representing starting and ending directions
         # 'h' horizontal, 'v' vertical

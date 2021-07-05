@@ -3,7 +3,7 @@
 Tutorial
 ===============
 
-This tutorial walks through the main features available in *pinout*. If you have not installed *pinout* already please read the :ref:`install` section. This tutorial duplicates code from *quick_start_pinout.py*. To access a copy of this file and other resources see :ref:`quickstart`.
+This tutorial walks through the main features available in *pinout*. If you have not installed *pinout* already please read the :ref:`install` section. This tutorial duplicates code from *pinout_diagram.py*. To access a copy of this file and other resources see :ref:`quickstart`.
 
 .. figure:: /_static/quick_start_pinout_diagram.*
 
@@ -14,45 +14,69 @@ Import modules
 --------------
 Start by importing pinout modules required to create the sample diagram. For this tutorial the diagram data has been stored in a separate file which is also imported here::
 
-    from pinout.core import Diagram, Group, Rect, Image
-    from pinout.components.pinlabel import PinLabelGroup, Label
-    from pinout.components.type import TextBlock
+    from pinout.core import Group, Image
+    from pinout.components.layout import Diagram, Panel
+    from pinout.components.pinlabel import PinLabelGroup, PinLabel
+    from pinout.components.text import TextBlock
     from pinout.components import leaderline as lline
     from pinout.components.legend import Legend
-    
+
+    # Import data for the diagram
     import data
 
 
-Diagram layout
--------------- 
-Presenting a diagram with context and as a complete document assists with reader comprehension. Grouping components also helps with geometry calculations as components are added::
+Diagram setup
+-------------
 
-    # Create a new diagram and add a background
+The Diagram class creates the main component to hold all the parts together that make up a diagram. The instance is named 'diagram' here as this is the default instance name used when exporting the final graphic. Presentation styles are controlled via a cascading style-sheet (CSS), added to the diagram here::
+
+    # Create a new diagram
     diagram = Diagram(1024, 576, "diagram")
-    diagram.add(Rect(0, 0, 1024, 576, "diagram__bg"))
-
-
-    # Create a layout for diagram
-    panel_main = diagram.add(Group(2, 2, "panel panel--main"))
-    panel_main.add(Rect(0, 0, 1020, 438, "panel__bg"))
-
-    info_panel = diagram.add(Group(x=2, y=442, tag="panel panel--info"))
-    info_panel.add(Rect(0, 0, 1020, 132, tag="panel__bg"))
-
-    # Create a group to hold the actual diagram components.
-    graphic = panel_main.add(Group(400, 42))
-
-Presentation styles
--------------------
-Graphical styles that affect the appearance, but not geometric layout, are supplied via a cascading stylesheet. Note: the *path* attribute is relative to the stylesheet file if *embed* is set to False and relative to the Python script if *embed* is set to True::
 
     # Add a stylesheet
     diagram.add_stylesheet("styles.css", True)
 
+Design and layout
+-----------------
+
+Structured layout assists with clear and inviting documentation. *pinout* provides a Panel component to assist with graphical/document layout::
+
+    # Create a layout
+    content = diagram.add(
+        Panel(
+            width=1024,
+            height=576,
+            inset=(2, 2, 2, 2),
+        )
+    )
+    panel_main = content.add(
+        Panel(
+            width=content.inset_width,
+            height=440,
+            inset=(2, 2, 2, 2),
+            tag="panel--main",
+        )
+    )
+    panel_info = content.add(
+        Panel(
+            x=0,
+            y=panel_main.height,
+            width=panel_main.width,
+            height=content.inset_height - panel_main.height,
+            inset=(2, 2, 2, 2),
+            tag="panel--info",
+        )
+    )
+
+Components can also be grouped independently of a panel. This can aid with fine-tuning of the layout::
+
+    # Create a group to hold the actual diagram components.
+    graphic = panel_main.add(Group(400, 42))
+
 
 Hardware image
 --------------
-A width and height must be supplied (*pinout* does no auto detect this dimensions). It is recommended to use images at a **1:1 ratio** to simplify calculating component locations. Optionally 'x' and 'y' attributes can be supplied to position the top-left of the images to more suitable coordinates. Note: the *path* attribute is relative to the image file if *embed* is set to False and relative to the Python script if *embed* is set to True::
+An underlying image to apply pinout information to is obviously required. The width and height must be supplied (*pinout* does no auto detect this dimensions). It is recommended to use images at a **1:1 ratio** to simplify calculating component locations. Optionally 'x' and 'y' attributes can be supplied to position the top-left of the images to more suitable coordinates::
 
     # Add and embed an image
     graphic.add(Image("hardware.png", width=220, height=260, embed=True))
@@ -134,76 +158,64 @@ Title block
 -----------
 Adding a title and supporting notes can help readers quickly place a diagram in context and summarise important points:: 
 
-        # Create a title and a text-block
-        title_block = info_panel.add(
-            TextBlock(
-                data.title,
-                x=0,
-                y=0,
-                width=338,
-                height=42,
-                offset=(20, 33),
-                line_height=18,
-                tag="panel title_block",
-            )
+    # Create a title and a text-block
+    title_block = panel_info.add(
+        TextBlock(
+            data.title,
+            x=20,
+            y=30,
+            line_height=18,
+            tag="panel title_block",
         )
-        info_panel.add(
-            TextBlock(
-                data.description.split("\n"),
-                x=0,
-                y=title_block.y + title_block.height,
-                width=title_block.width,
-                height=info_panel.height - title_block.height,
-                offset=(20, 18),
-                line_height=18,
-                tag="panel text_block",
-            )
+    )
+    panel_info.add(
+        TextBlock(
+            data.description.split("\n"),
+            x=20,
+            y=60,
+            width=title_block.width,
+            height=panel_info.height - title_block.height,
+            line_height=18,
+            tag="panel text_block",
         )
+    )
 
 Legend
 ------
 Adding a legend is easy as a dedicated component exists in _pinout_. The component flows into multiple columns if a 'max_height' is supplied::
 
     # Create a legend
-    legend = info_panel.add(
+    legend = panel_info.add(
         Legend(
             data.legend,
-            x=338,
-            y=0,
+            x=340,
+            y=8,
             max_height=132,
         )
     )
 
 Export the diagram
 ------------------
-The final diagram can be exported as a graphic in SVG format and should match the finished diagram shown here. This format is excellent for high quality printing but still an effecient size for web-based usage::
+With all the required files present, the diagram can be exported via command-line::
 
-    # Export final SVG diagram
-    diagram.export("quick_start_pinout_diagram.svg", True)
+    py -m pinout.manager --export pinout_diagram diagram.svg
 
     # expected output:
-    # > 'quick_start_pinout_diagram.svg' exported successfully.
+    # > 'diagram.svg' exported successfully.
+
+The exported file is SVG format. When viewed in a web browser it should match the finished diagram shown here. This format is excellent for high quality printing but still an effecient size for web-based usage.
 
 .. figure:: /_static/quick_start_pinout_diagram.*
 
     The finished diagram from this tutorial.
 
-    
-The most convenient method of viewing the newly exported SVG file is with your browser.
-    
-**Note on coodinates**: SVG format sets (0, 0) as top-left with increasing x and y values moving to the right and down respectively. Component placement in pinout is made from an arbitrary (0, 0) location. The final diagram size and boundaries are calculated on export ensuring all components are visible - ie negative coordinates do not risk being outside the final diagram boundaries.
-
-In this tutorial all (x, y) coordinates are relative to the hardware images's top-left corner which is positioned at (0, 0).
-
-
-
 Next steps
 ----------
 
-This guide has glossed over many attribute and configuration definitions. Experimenting with changing values and re-exporting the diagram will quickly reveal their purpose. All function are documented in the :ref:`modules` section.
+This guide has glossed over many features, attribute, and configurations available. Experimenting with changing values and re-exporting the diagram will quickly reveal their purpose. All function are documented in the :ref:`modules` section.
 
 Depending on you intended usage, linking (instead of embedding) the image might be desirable. Set `embed=False` when adding an image to achieve this outcome. *Note:* When linking, URLs are relative to the exported diagram file. When embedding these URLs are relative to the current working directory (the directory you run the script from).
 
 **TIP:** Embedding the image and stylesheet allows the SVG display correctly in InkScape. This might be an appealing work-flow option for encorporating the diagram into other media or exporting in alternative formats.
 
-A more feature-rich examples are available in the samples folder of the `pinout github repository <https://github.com/j0ono0/pinout>`_.
+More feature-rich examples are available in the samples folder of the `pinout github repository <https://github.com/j0ono0/pinout>`_.

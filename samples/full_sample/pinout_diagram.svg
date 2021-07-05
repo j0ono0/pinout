@@ -12,149 +12,25 @@
 
     <style type="text/css" media="screen">  
     <![CDATA[  
+    .comments__{
+    /* NOTE: comments in a css rule to work around an InkScape bug! */
+    /* 
     
-path, rect {
-    stroke: rgb(0, 0, 0);
-    stroke-dasharray: 0;
-    stroke-dashoffset: 0;
-    stroke-linecap: round;
-    stroke-linejoin: miter;
-    stroke-miterlimit: inherit;
-    stroke-opacity: 1;
-    stroke-width: 0;
+    Just for fun css for this diagram has been auto-generated, then enhanced with this second file.
+    A new auto-generated CSS file can be created from the command-line:
+    >>> py -m pinout.manager -o --css pinout_diagram styles_auto.css 
+    
+    */
+
 }
-path{
-    fill: none;
-}
+
+
 text {
     font-family: Verdana, Georgia, sans-serif;
     font-size: 14px;
     font-weight: 300;
     dominant-baseline: auto;
 }
-
-
-
-.label__body{
-    fill: rgb(36, 36, 36);
-}
-
-.label .lline{
-    stroke-width: 2;
-}
-.label__text{
-    dominant-baseline: central;
-    fill: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    stroke-width: 0;
-    text-anchor: middle;
-}
-
-
-
-.legend .swatch__body{
-    fill: rgba(0,0,0,0);
-}
-.legend-entry__text{
-    dominant-baseline: central;
-    fill: #000;
-}
-.legend__bg,
-.legend-entry__bg{
-    fill: #fff;
-}
-.legend-entry .swatch__body{
-    fill: #ccc;
-}
-
-
-
-.annotation__bg{
-    fill: rgb(253, 203, 36);
-    stroke-width: 0;
-}
-.annotation__body text{
-    dominant-baseline: central;
-    font-size: 14px;
-    font-weight: bold;
-    fill: rgb(63, 40, 6);
-}
-.annotation__target{
-    fill: none;
-    stroke: rgb(253, 203, 36);
-    stroke-width: 4px;
-}
-.annotation .lline{
-    stroke: rgb(253, 203, 36);
-    stroke-width: 4px;
-}
-
-
-
-.diagram__bg{
-    fill: rgb(51, 51, 51);
-}
-.panel .textblock__bg,
-.panel__bg{
-    fill: #fff;
-}
-
-
-
-.pwr .label__body,
-.pwr .swatch__body{
-    fill: rgb(173, 0, 0);
-}
-.pwr .lline{
-    stroke: rgb(173, 0, 0);
-}
-.gpio .label__body,
-.gpio .swatch__body{
-    fill: rgb(160, 133, 26);
-}
-.gpio .lline{
-    stroke: rgb(160, 133, 26);
-}
-.analog .label__body,
-.analog .swatch__body{
-    fill: rgb(32, 150, 165);
-}
-.analog .lline{
-    stroke: rgb(32, 150, 165);
-}
-.touch .label__body,
-.touch .swatch__body{
-    fill: rgb(230, 87, 10);
-}
-.touch .lline{
-    stroke: rgb(230, 87, 10);
-}
-.comms .label__body,
-.comms .swatch__body{
-    fill: rgb(182, 69, 176);
-}
-.comms .lline{
-    stroke: rgb(182, 69, 176);
-}
-.gnd .label__body,
-.gnd .swatch__body{
-    fill: #000;
-}
-.gnd .lline{
-    stroke: #000;
-}
-
-.pwm .label__body,
-.pwm .swatch__body{
-    fill: rgb(35, 66, 133);
-}
-.pwm .lline{
-    stroke: rgb(35, 66, 133);
-}
-
-
-
 .h1 {
     font-size: 30px;
     font-weight: bold;
@@ -166,33 +42,185 @@ text {
 .strong{
     font-weight: bold;
 }
-.panel__name{
-    fill: #ccc;
+.panel__title .panel__inner{
+    fill: rgb(253, 203, 36);
     font-weight: bold;
     font-style: italic;
 }
     ]]>  
 </style>
-<rect
- class="diagram__bg" 
-    x="0" 
-    y="0" 
-    width="1200" 
-    height="675" 
-    shape-rendering="geometricPrecision"
-/><g 
-        class="panel panel--main"
+<style type="text/css" media="screen">  
+    <![CDATA[  
+    
+
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
+
+    .pinlabel__leader{
+        stroke-width: 2;
+        fill: none;
+    }
+
+    .pinlabel__text{
+        dominant-baseline: central;
+        fill: #fff;
+        
+        font-weight: bold;
+        stroke-width: 0;
+        text-anchor: middle;
+    }
+
+
+
+        .gpio .pinlabel__body{
+            fill: rgb(183, 76, 231);
+        }
+        .gpio .pinlabel__leader{
+            stroke: rgb(183, 76, 231);
+        }
+        .gpio .swatch__body {
+            fill: rgb(183, 76, 231);
+        }
+        .pwr .pinlabel__body{
+            fill: rgb(109, 99, 25);
+        }
+        .pwr .pinlabel__leader{
+            stroke: rgb(109, 99, 25);
+        }
+        .pwr .swatch__body {
+            fill: rgb(109, 99, 25);
+        }
+        .pwm .pinlabel__body{
+            fill: rgb(218, 96, 195);
+        }
+        .pwm .pinlabel__leader{
+            stroke: rgb(218, 96, 195);
+        }
+        .pwm .swatch__body {
+            fill: rgb(218, 96, 195);
+        }
+        .gnd .pinlabel__body{
+            fill: rgb(25, 90, 5);
+        }
+        .gnd .pinlabel__leader{
+            stroke: rgb(25, 90, 5);
+        }
+        .gnd .swatch__body {
+            fill: rgb(25, 90, 5);
+        }
+        .touch .pinlabel__body{
+            fill: rgb(200, 9, 45);
+        }
+        .touch .pinlabel__leader{
+            stroke: rgb(200, 9, 45);
+        }
+        .touch .swatch__body {
+            fill: rgb(200, 9, 45);
+        }
+        .comms .pinlabel__body{
+            fill: rgb(57, 138, 188);
+        }
+        .comms .pinlabel__leader{
+            stroke: rgb(57, 138, 188);
+        }
+        .comms .swatch__body {
+            fill: rgb(57, 138, 188);
+        }
+        .analog .pinlabel__body{
+            fill: rgb(96, 42, 122);
+        }
+        .analog .pinlabel__leader{
+            stroke: rgb(96, 42, 122);
+        }
+        .analog .swatch__body {
+            fill: rgb(96, 42, 122);
+        }
+
+
+    .panel__inner {
+        fill: #fff;
+    }
+    .panel__outer {
+        fill: #333;
+    }
+
+
+    .legendentry text {
+        dominant-baseline: central;
+    }
+
+
+    .annotation__body {
+        fill: rgb(253, 203, 36);
+        stroke-width: 0;
+    }
+    .annotation__text {
+        dominant-baseline: central;
+        font-size: 14px;
+        font-weight: bold;
+        fill: rgb(63, 40, 6);
+        text-anchor: middle;
+    }
+    .annotation__target {
+        fill: none;
+        stroke: rgb(253, 203, 36);
+        stroke-width: 4px;
+    }
+    .annotation__leaderline {
+        stroke: rgb(253, 203, 36);
+        stroke-width: 4px;
+        fill: none;
+    }
+
+
+    ]]>  
+</style>
+<g 
+        class="panel__content panel"
     transform="
         translate(2 2) 
         scale(1 1)
     "
 >
         <rect
- class="panel__bg" 
+ class="panel__outer" 
+    x="-2" 
+    y="-2" 
+    width="1200" 
+    height="675" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
+    x="0" 
+    y="0" 
+    width="1196" 
+    height="671" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="panel__graphic panel"
+    transform="
+        translate(2 2) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="panel__outer" 
+    x="-2" 
+    y="-2" 
+    width="860" 
+    height="671" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
     x="0" 
     y="0" 
     width="856" 
-    height="671" 
+    height="667" 
     shape-rendering="geometricPrecision"
 /><g 
     transform="
@@ -216,26 +244,25 @@ text {
     "
 >
         <g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label pwr"
+        class=" pinlabel pwr"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
+    class="pinlabel__leader" 
     d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="66" 
     y="-13.0" 
     width="80" 
@@ -244,7 +271,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(106.0 0) 
         scale(1 1)
@@ -254,26 +281,25 @@ text {
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label gnd"
+        class=" pinlabel gnd"
     transform="
         translate(0 30) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
+    class="pinlabel__leader" 
     d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="66" 
     y="-13.0" 
     width="80" 
@@ -282,7 +308,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(106.0 0) 
         scale(1 1)
@@ -292,26 +318,25 @@ text {
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label gpio"
+        class=" pinlabel gpio"
     transform="
         translate(0 60) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
+    class="pinlabel__leader" 
     d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="66" 
     y="-13.0" 
     width="80" 
@@ -320,7 +345,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(106.0 0) 
         scale(1 1)
@@ -329,19 +354,19 @@ text {
     3
 </text>
 </g><g 
-        class="label analog"
+        class=" pinlabel analog"
     transform="
         translate(146 60) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0 0.0 L 6 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="6" 
     y="-13.0" 
     width="80" 
@@ -350,7 +375,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(46.0 0) 
         scale(1 1)
@@ -359,19 +384,19 @@ text {
     A6
 </text>
 </g><g 
-        class="label touch"
+        class=" pinlabel touch"
     transform="
         translate(232 60) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0 0.0 L 6 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="6" 
     y="-13.0" 
     width="80" 
@@ -380,7 +405,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(46.0 0) 
         scale(1 1)
@@ -390,26 +415,25 @@ text {
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label gpio"
+        class=" pinlabel gpio"
     transform="
         translate(0 90) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
+    class="pinlabel__leader" 
     d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="66" 
     y="-13.0" 
     width="80" 
@@ -418,7 +442,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(106.0 0) 
         scale(1 1)
@@ -427,19 +451,19 @@ text {
     4
 </text>
 </g><g 
-        class="label analog"
+        class=" pinlabel analog"
     transform="
         translate(146 90) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0 0.0 L 6 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="6" 
     y="-13.0" 
     width="80" 
@@ -448,7 +472,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(46.0 0) 
         scale(1 1)
@@ -465,26 +489,25 @@ text {
     "
 >
         <g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label gpio"
+        class=" pinlabel gpio"
     transform="
         translate(0 0) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
+    class="pinlabel__leader" 
     d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="66" 
     y="-13.0" 
     width="80" 
@@ -493,7 +516,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(106.0 0) 
         scale(-1 1)
@@ -502,19 +525,19 @@ text {
     0
 </text>
 </g><g 
-        class="label analog"
+        class=" pinlabel analog"
     transform="
         translate(-146 0) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0 0.0 L 6 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="6" 
     y="-13.0" 
     width="80" 
@@ -523,7 +546,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(46.0 0) 
         scale(-1 1)
@@ -532,19 +555,19 @@ text {
     A0
 </text>
 </g><g 
-        class="label comms"
+        class=" pinlabel comms"
     transform="
         translate(-232 0) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0 0.0 L 6 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="6" 
     y="-13.0" 
     width="80" 
@@ -553,7 +576,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(46.0 0) 
         scale(-1 1)
@@ -563,26 +586,25 @@ text {
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label gpio"
+        class=" pinlabel gpio"
     transform="
         translate(0 30) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
+    class="pinlabel__leader" 
     d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="66" 
     y="-13.0" 
     width="80" 
@@ -591,7 +613,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(106.0 0) 
         scale(-1 1)
@@ -600,19 +622,19 @@ text {
     1
 </text>
 </g><g 
-        class="label comms"
+        class=" pinlabel comms"
     transform="
         translate(-146 30) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0 0.0 L 92 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="92" 
     y="-13.0" 
     width="80" 
@@ -621,7 +643,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(132.0 0) 
         scale(-1 1)
@@ -631,26 +653,25 @@ text {
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label gpio"
+        class=" pinlabel gpio"
     transform="
         translate(0 60) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
+    class="pinlabel__leader" 
     d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="66" 
     y="-13.0" 
     width="80" 
@@ -659,7 +680,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(106.0 0) 
         scale(-1 1)
@@ -668,19 +689,19 @@ text {
     2
 </text>
 </g><g 
-        class="label analog"
+        class=" pinlabel analog"
     transform="
         translate(-146 60) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0 0.0 L 6 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="6" 
     y="-13.0" 
     width="80" 
@@ -689,7 +710,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(46.0 0) 
         scale(-1 1)
@@ -698,19 +719,19 @@ text {
     A1
 </text>
 </g><g 
-        class="label comms"
+        class=" pinlabel comms"
     transform="
         translate(-232 60) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0 0.0 L 6 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="6" 
     y="-13.0" 
     width="80" 
@@ -719,7 +740,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(46.0 0) 
         scale(-1 1)
@@ -729,26 +750,25 @@ text {
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label pwr"
+        class=" pinlabel pwr"
     transform="
         translate(0 90) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
+    class="pinlabel__leader" 
     d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="66" 
     y="-13.0" 
     width="80" 
@@ -757,7 +777,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(106.0 0) 
         scale(-1 1)
@@ -774,26 +794,25 @@ text {
     "
 >
         <g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label gpio"
+        class=" pinlabel gpio"
     transform="
         translate(0 0) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0.0 0 L 0.0 40.0 A 20.0 20.0 0 0 0 20.0 60.0 L 115 60.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="115" 
     y="47.0" 
     width="80" 
@@ -802,7 +821,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(155.0 60) 
         scale(-1 1)
@@ -811,19 +830,19 @@ text {
     3
 </text>
 </g><g 
-        class="label analog"
+        class=" pinlabel analog"
     transform="
         translate(-195 60) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0 0.0 L 6 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="6" 
     y="-13.0" 
     width="80" 
@@ -832,7 +851,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(46.0 0) 
         scale(-1 1)
@@ -841,19 +860,19 @@ text {
     A2
 </text>
 </g><g 
-        class="label pwm"
+        class=" pinlabel pwm"
     transform="
         translate(-281 60) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0 0.0 L 6 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="6" 
     y="-13.0" 
     width="80" 
@@ -862,7 +881,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(46.0 0) 
         scale(-1 1)
@@ -872,26 +891,25 @@ text {
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label gpio"
+        class=" pinlabel gpio"
     transform="
         translate(30 0) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0.0 0 L 0.0 60.0 A 30.0 30.0 0 0 0 30.0 90.0 L 145 90.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="145" 
     y="77.0" 
     width="80" 
@@ -900,7 +918,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(185.0 90) 
         scale(-1 1)
@@ -909,19 +927,19 @@ text {
     4
 </text>
 </g><g 
-        class="label analog"
+        class=" pinlabel analog"
     transform="
         translate(-195 90) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0 0.0 L 6 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="6" 
     y="-13.0" 
     width="80" 
@@ -930,7 +948,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(46.0 0) 
         scale(-1 1)
@@ -947,26 +965,25 @@ text {
     "
 >
         <g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label gpio"
+        class=" pinlabel gpio"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0.0 0 L 0.0 40.0 A 20.0 20.0 0 0 0 20.0 60.0 L 115 60.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="115" 
     y="47.0" 
     width="80" 
@@ -975,7 +992,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(155.0 60) 
         scale(1 1)
@@ -984,19 +1001,19 @@ text {
     6
 </text>
 </g><g 
-        class="label pwm"
+        class=" pinlabel pwm"
     transform="
         translate(195 60) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0 0.0 L 6 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="6" 
     y="-13.0" 
     width="80" 
@@ -1005,7 +1022,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(46.0 0) 
         scale(1 1)
@@ -1015,26 +1032,25 @@ text {
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label gpio"
+        class=" pinlabel gpio"
     transform="
         translate(-30 0) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0.0 0 L 0.0 60.0 A 30.0 30.0 0 0 0 30.0 90.0 L 145 90.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="145" 
     y="77.0" 
     width="80" 
@@ -1043,7 +1059,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(185.0 90) 
         scale(1 1)
@@ -1052,19 +1068,19 @@ text {
     5
 </text>
 </g><g 
-        class="label analog"
+        class=" pinlabel analog"
     transform="
         translate(195 90) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0 0.0 L 6 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="6" 
     y="-13.0" 
     width="80" 
@@ -1073,7 +1089,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(46.0 0) 
         scale(1 1)
@@ -1082,19 +1098,19 @@ text {
     A4
 </text>
 </g><g 
-        class="label pwm"
+        class=" pinlabel pwm"
     transform="
         translate(281 90) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0 0.0 L 6 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="6" 
     y="-13.0" 
     width="80" 
@@ -1103,7 +1119,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(46.0 0) 
         scale(1 1)
@@ -1120,26 +1136,25 @@ text {
     "
 >
         <g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label touch"
+        class=" pinlabel touch"
     transform="
         translate(0 0) 
         scale(-1 -1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0.0 0 L 0.0 77.66666666666666 A 32.333333333333336 32.333333333333336 0 0 0 32.333333333333336 110.0 L 97 110.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="97" 
     y="97.0" 
     width="80" 
@@ -1148,7 +1163,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(137.0 110) 
         scale(-1 -1)
@@ -1157,19 +1172,19 @@ text {
     TOUCH
 </text>
 </g><g 
-        class="label analog"
+        class=" pinlabel analog"
     transform="
         translate(-177 -110) 
         scale(-1 -1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0 0.0 L 6 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="6" 
     y="-13.0" 
     width="80" 
@@ -1178,7 +1193,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(46.0 0) 
         scale(-1 -1)
@@ -1188,26 +1203,25 @@ text {
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label touch"
+        class=" pinlabel touch"
     transform="
         translate(15 15) 
         scale(-1 -1)
     "
 >
         <path 
-    class="lline" 
+    class=" pinlabel__leader" 
     d="M 0.0 0 L 0.0 117.66666666666666 A 37.333333333333336 37.333333333333336 0 0 0 37.333333333333336 155.0 L 112 155.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
+ class=" pinlabel__body" 
     x="112" 
     y="142.0" 
     width="80" 
@@ -1216,7 +1230,7 @@ text {
     rx="3" 
     ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
         translate(152.0 155) 
         scale(-1 -1)
@@ -1227,19 +1241,19 @@ text {
 </g>
 </g>
 </g><g 
-        class="annotation"
+        class=" annotation"
     transform="
         translate(110 0) 
         scale(1 -1)
     "
 >
         <path 
-    class="lline annotation__leaderline" 
+    class="annotation__leaderline" 
     d="M 0.0 10 L 0.0 44.333333333333336 A 9.666666666666666 9.666666666666666 0 0 0 9.666666666666666 54.0 L 40 54.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="annotation__target annotation__target" 
+ class="annotation__target" 
     x="-10" 
     y="-10" 
     width="20" 
@@ -1247,62 +1261,54 @@ text {
     shape-rendering="geometricPrecision"
     rx="10" 
     ry="10" 
-/><g 
-        class="annotation__body"
-    transform="
-        translate(40 29) 
-        scale(1 1)
-    "
->
-        <rect
- class="annotation__bg" 
-    x="0" 
-    y="0" 
+/><rect
+ class="annotation__body" 
+    x="40" 
+    y="29" 
     width="125" 
     height="50" 
     shape-rendering="geometricPrecision"
     rx="25" 
     ry="25" 
 /><g 
-        class="textblock textblock"
+        class="annotation__text textblock"
     transform="
-        translate(28 33) 
-        scale(1 1)
+        translate(102 55) 
+        scale(1 -1)
     "
 >
         <text
     class="textblock"
     transform="
         translate(0 0) 
-        scale(1 -1)
+        scale(1 1)
     "  
 >
     USB-C
 </text><text
     class="textblock"
     transform="
-        translate(0 -16) 
-        scale(1 -1)
+        translate(0 16) 
+        scale(1 1)
     "  
 >
     port
 </text>
 </g>
-</g>
 </g><g 
-        class="annotation"
+        class=" annotation"
     transform="
         translate(87 85) 
         scale(1 -1)
     "
 >
         <path 
-    class="lline annotation__leaderline" 
+    class="annotation__leaderline" 
     d="M 0.0 20 L 0.0 179.66666666666666 A 13.333333333333334 13.333333333333334 0 0 0 13.333333333333334 193.0 L 40 193.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="annotation__target annotation__target" 
+ class="annotation__target" 
     x="-20" 
     y="-20" 
     width="40" 
@@ -1310,42 +1316,35 @@ text {
     shape-rendering="geometricPrecision"
     rx="20" 
     ry="20" 
-/><g 
-        class="annotation__body"
-    transform="
-        translate(40 168) 
-        scale(1 1)
-    "
->
-        <rect
- class="annotation__bg" 
-    x="0" 
-    y="0" 
+/><rect
+ class="annotation__body" 
+    x="40" 
+    y="168" 
     width="125" 
     height="50" 
     shape-rendering="geometricPrecision"
     rx="25" 
     ry="25" 
 /><g 
-        class="textblock textblock"
+        class="annotation__text textblock"
     transform="
-        translate(28 33) 
-        scale(1 1)
+        translate(102 196) 
+        scale(1 -1)
     "
 >
         <text
     class="textblock"
     transform="
         translate(0 0) 
-        scale(1 -1)
+        scale(1 1)
     "  
 >
     Status
 </text><text
     class="textblock"
     transform="
-        translate(0 -16) 
-        scale(1 -1)
+        translate(0 16) 
+        scale(1 1)
     "  
 >
     LED
@@ -1353,67 +1352,88 @@ text {
 </g>
 </g>
 </g>
-</g>
 </g><g 
-        class="textblock textblock panel title_block"
+        class="panel__title panel"
     transform="
-        translate(860 2) 
+        translate(862 2) 
         scale(1 1)
     "
 >
         <rect
- class="textblock__bg" 
-    x="0" 
-    y="0" 
-    width="338" 
+ class="panel__outer" 
+    x="-2" 
+    y="-2" 
+    width="336" 
     height="60" 
     shape-rendering="geometricPrecision"
-/><text
-    class="textblock"
+/><rect
+ class="panel__inner" 
+    x="0" 
+    y="0" 
+    width="332" 
+    height="56" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="panel title_block textblock"
     transform="
         translate(10 40) 
+        scale(1 1)
+    "
+>
+        <text
+    class="textblock"
+    transform="
+        translate(0 0) 
         scale(1 1)
     "  
 >
     <tspan class='h1'>pinout</tspan>
 </text>
+</g>
 </g><g 
-        class="legend"
+        class="panel__legend panel"
     transform="
-        translate(860 64) 
+        translate(862 62) 
         scale(1 1)
     "
 >
         <rect
- class="legend__bg" 
+ class="panel__outer" 
+    x="-2" 
+    y="-2" 
+    width="336" 
+    height="135" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
     x="0" 
     y="0" 
-    width="338" 
-    height="132" 
+    width="332" 
+    height="131" 
     shape-rendering="geometricPrecision"
 /><g 
-        class="legend-entry analog"
+        class=" legend"
     transform="
-        translate(10 10) 
+        translate(10 5) 
         scale(1 1)
     "
 >
-        <rect
- class="legend-entry__bg" 
-    x="0" 
-    y="0" 
-    width="159" 
-    height="28" 
-    shape-rendering="geometricPrecision"
-/><g 
-        class="swatch"
+        <g 
+        class="analog legendentry"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "
+>
+        <g 
+        class=" swatch"
     transform="
         translate(4.0 14.0) 
         scale(1 1)
     "
 >
         <rect
- class="swatch__body" 
+ class=" swatch__body" 
     x="0" 
     y="-10.0" 
     width="20" 
@@ -1421,7 +1441,6 @@ text {
     shape-rendering="geometricPrecision"
 />
 </g><text
-    class="legend-entry__text"
     transform="
         translate(28.0 14.0) 
         scale(1 1)
@@ -1430,28 +1449,21 @@ text {
     Analog
 </text>
 </g><g 
-        class="legend-entry comms"
+        class="comms legendentry"
     transform="
-        translate(10 38) 
+        translate(0 28) 
         scale(1 1)
     "
 >
-        <rect
- class="legend-entry__bg" 
-    x="0" 
-    y="0" 
-    width="159" 
-    height="28" 
-    shape-rendering="geometricPrecision"
-/><g 
-        class="swatch"
+        <g 
+        class=" swatch"
     transform="
         translate(4.0 14.0) 
         scale(1 1)
     "
 >
         <rect
- class="swatch__body" 
+ class=" swatch__body" 
     x="0" 
     y="-10.0" 
     width="20" 
@@ -1459,7 +1471,6 @@ text {
     shape-rendering="geometricPrecision"
 />
 </g><text
-    class="legend-entry__text"
     transform="
         translate(28.0 14.0) 
         scale(1 1)
@@ -1468,28 +1479,21 @@ text {
     Communication
 </text>
 </g><g 
-        class="legend-entry gnd"
+        class="gnd legendentry"
     transform="
-        translate(10 66) 
+        translate(0 56) 
         scale(1 1)
     "
 >
-        <rect
- class="legend-entry__bg" 
-    x="0" 
-    y="0" 
-    width="159" 
-    height="28" 
-    shape-rendering="geometricPrecision"
-/><g 
-        class="swatch"
+        <g 
+        class=" swatch"
     transform="
         translate(4.0 14.0) 
         scale(1 1)
     "
 >
         <rect
- class="swatch__body" 
+ class=" swatch__body" 
     x="0" 
     y="-10.0" 
     width="20" 
@@ -1497,7 +1501,6 @@ text {
     shape-rendering="geometricPrecision"
 />
 </g><text
-    class="legend-entry__text"
     transform="
         translate(28.0 14.0) 
         scale(1 1)
@@ -1506,28 +1509,21 @@ text {
     Ground
 </text>
 </g><g 
-        class="legend-entry gpio"
+        class="gpio legendentry"
     transform="
-        translate(10 94) 
+        translate(0 84) 
         scale(1 1)
     "
 >
-        <rect
- class="legend-entry__bg" 
-    x="0" 
-    y="0" 
-    width="159" 
-    height="28" 
-    shape-rendering="geometricPrecision"
-/><g 
-        class="swatch"
+        <g 
+        class=" swatch"
     transform="
         translate(4.0 14.0) 
         scale(1 1)
     "
 >
         <rect
- class="swatch__body" 
+ class=" swatch__body" 
     x="0" 
     y="-10.0" 
     width="20" 
@@ -1535,7 +1531,6 @@ text {
     shape-rendering="geometricPrecision"
 />
 </g><text
-    class="legend-entry__text"
     transform="
         translate(28.0 14.0) 
         scale(1 1)
@@ -1544,28 +1539,21 @@ text {
     GPIO
 </text>
 </g><g 
-        class="legend-entry touch"
+        class="touch legendentry"
     transform="
-        translate(169 10) 
+        translate(159 0) 
         scale(1 1)
     "
 >
-        <rect
- class="legend-entry__bg" 
-    x="0" 
-    y="0" 
-    width="159" 
-    height="28" 
-    shape-rendering="geometricPrecision"
-/><g 
-        class="swatch"
+        <g 
+        class=" swatch"
     transform="
         translate(4.0 14.0) 
         scale(1 1)
     "
 >
         <rect
- class="swatch__body" 
+ class=" swatch__body" 
     x="0" 
     y="-10.0" 
     width="20" 
@@ -1573,7 +1561,6 @@ text {
     shape-rendering="geometricPrecision"
 />
 </g><text
-    class="legend-entry__text"
     transform="
         translate(28.0 14.0) 
         scale(1 1)
@@ -1582,28 +1569,21 @@ text {
     Touch
 </text>
 </g><g 
-        class="legend-entry pwr"
+        class="pwr legendentry"
     transform="
-        translate(169 38) 
+        translate(159 28) 
         scale(1 1)
     "
 >
-        <rect
- class="legend-entry__bg" 
-    x="0" 
-    y="0" 
-    width="159" 
-    height="28" 
-    shape-rendering="geometricPrecision"
-/><g 
-        class="swatch"
+        <g 
+        class=" swatch"
     transform="
         translate(4.0 14.0) 
         scale(1 1)
     "
 >
         <rect
- class="swatch__body" 
+ class=" swatch__body" 
     x="0" 
     y="-10.0" 
     width="20" 
@@ -1611,7 +1591,6 @@ text {
     shape-rendering="geometricPrecision"
 />
 </g><text
-    class="legend-entry__text"
     transform="
         translate(28.0 14.0) 
         scale(1 1)
@@ -1620,28 +1599,21 @@ text {
     Power
 </text>
 </g><g 
-        class="legend-entry pwm"
+        class="pwm legendentry"
     transform="
-        translate(169 66) 
+        translate(159 56) 
         scale(1 1)
     "
 >
-        <rect
- class="legend-entry__bg" 
-    x="0" 
-    y="0" 
-    width="159" 
-    height="28" 
-    shape-rendering="geometricPrecision"
-/><g 
-        class="swatch"
+        <g 
+        class=" swatch"
     transform="
         translate(4.0 14.0) 
         scale(1 1)
     "
 >
         <rect
- class="swatch__body" 
+ class=" swatch__body" 
     x="0" 
     y="-10.0" 
     width="20" 
@@ -1649,7 +1621,6 @@ text {
     shape-rendering="geometricPrecision"
 />
 </g><text
-    class="legend-entry__text"
     transform="
         translate(28.0 14.0) 
         scale(1 1)
@@ -1658,24 +1629,39 @@ text {
     PWM
 </text>
 </g>
+</g>
 </g><g 
-        class="textblock textblock panel text_block"
+        class="panel__description panel"
     transform="
-        translate(860 198) 
+        translate(862 197) 
         scale(1 1)
     "
 >
         <rect
- class="textblock__bg" 
+ class="panel__outer" 
+    x="-2" 
+    y="-2" 
+    width="336" 
+    height="120" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
     x="0" 
     y="0" 
-    width="338" 
-    height="100" 
+    width="332" 
+    height="116" 
     shape-rendering="geometricPrecision"
-/><text
+/><g 
+        class="panel text_block textblock"
+    transform="
+        translate(10 20) 
+        scale(1 1)
+    "
+>
+        <text
     class="textblock"
     transform="
-        translate(10 18) 
+        translate(0 0) 
         scale(1 1)
     "  
 >
@@ -1683,7 +1669,7 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 36) 
+        translate(0 18) 
         scale(1 1)
     "  
 >
@@ -1691,7 +1677,7 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 54) 
+        translate(0 36) 
         scale(1 1)
     "  
 >
@@ -1699,7 +1685,7 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 72) 
+        translate(0 54) 
         scale(1 1)
     "  
 >
@@ -1707,30 +1693,45 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 90) 
+        translate(0 72) 
         scale(1 1)
     "  
 >
     
 </text>
+</g>
 </g><g 
-        class="textblock textblock panel text_block"
+        class="panel__notes panel"
     transform="
-        translate(860 300) 
+        translate(862 317) 
         scale(1 1)
     "
 >
         <rect
- class="textblock__bg" 
+ class="panel__outer" 
+    x="-2" 
+    y="-2" 
+    width="336" 
+    height="356" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
     x="0" 
     y="0" 
-    width="338" 
-    height="373" 
+    width="332" 
+    height="352" 
     shape-rendering="geometricPrecision"
-/><text
+/><g 
+        class="panel text_block textblock"
+    transform="
+        translate(10 20) 
+        scale(1 1)
+    "
+>
+        <text
     class="textblock"
     transform="
-        translate(10 18) 
+        translate(0 0) 
         scale(1 1)
     "  
 >
@@ -1738,7 +1739,7 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 36) 
+        translate(0 18) 
         scale(1 1)
     "  
 >
@@ -1746,23 +1747,23 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 54) 
+        translate(0 36) 
         scale(1 1)
     "  
 >
-    with documentation of electronic hardware. 
+    with documentation of electronic hardware.
 </text><text
     class="textblock"
     transform="
-        translate(10 72) 
+        translate(0 54) 
         scale(1 1)
     "  
 >
-    Development is active with a goal to convert 
+    Development is active with a goal to convert
 </text><text
     class="textblock"
     transform="
-        translate(10 90) 
+        translate(0 72) 
         scale(1 1)
     "  
 >
@@ -1770,7 +1771,7 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 108) 
+        translate(0 90) 
         scale(1 1)
     "  
 >
@@ -1778,20 +1779,22 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 126) 
+        translate(0 108) 
         scale(1 1)
     "  
 >
-    Current release: 
+    Current release:
 </text><text
     class="textblock"
     transform="
-        translate(10 144) 
+        translate(0 126) 
         scale(1 1)
     "  
 >
     <tspan class='strong'>pinout.readthedocs.io</tspan>
 </text>
+</g>
+</g>
 </g>
     
 </svg>

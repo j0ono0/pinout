@@ -4,139 +4,249 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     x="0"
     y="0"
-    width="1280" 
-    height="720" 
-    viewBox="0 0 1280 720"
+    width="1128" 
+    height="800" 
+    viewBox="0 0 1128 800"
     class="diagram"
 >
 
     <style type="text/css" media="screen">  
     <![CDATA[  
-    
-.label .lline{
-    stroke-width: 2;
-}
-.label__text{
-    dominant-baseline: central;
-    fill: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: -1px;
-    stroke-width: 0;
-    text-anchor: middle;
-}
+    .gnd .pinlabel__body,
+.gnd .textblock__bg {
+  fill: #000; }
 
-.lline{
-    fill: none;
-}
+.gnd .pinlabel__leader {
+  stroke: #000; }
 
-.digital .label__body, .digital .textblock__bg{ fill:rgb(77, 104, 107);}
-.digital .lline{ stroke: rgb(77, 104, 107);}
+.gnd.legend__entry .panel__inner {
+  fill: #000; }
 
-.analog .label__body, .analog .textblock__bg{ fill:rgb(175, 116, 52);}
-.analog .lline{ stroke: rgb(175, 116, 52);}
+.pwr .pinlabel__body,
+.pwr .textblock__bg {
+  fill: #ad0000; }
 
-.pwm .label__body, .pwm .textblock__bg{ fill:rgb(202, 88, 67);}
-.pwm .lline{ stroke: rgb(202, 88, 67);}
+.pwr .pinlabel__leader {
+  stroke: #ad0000; }
 
-.audio .label__body, .audio .textblock__bg{ fill:rgb(213, 181, 0);}
-.audio .lline{ stroke: rgb(213, 181, 0);}
+.pwr.legend__entry .panel__inner {
+  fill: #ad0000; }
 
-.serial .label__body, .serial .textblock__bg{ fill:rgb(44, 143, 157);}
-.serial .lline{ stroke: rgb(44, 143, 157);}
+.digital .pinlabel__body,
+.digital .textblock__bg {
+  fill: #cfd5d5; }
 
-.i2c .label__body, .i2c .textblock__bg{ fill:rgb(55, 71, 100);}
-.i2c .lline{ stroke: rgb(55, 71, 100);}
+.digital .pinlabel__leader {
+  stroke: #cfd5d5; }
 
-.spi .label__body, .spi .textblock__bg{ fill:rgb(54, 153, 110);}
-.spi .lline{ stroke: rgb(54, 153, 110);}
+.digital.legend__entry .panel__inner {
+  fill: #cfd5d5; }
 
-.canbus .label__body, .canbus .textblock__bg{ fill:rgb(141, 106, 135);}
-.canbus .lline{ stroke: rgb(141, 106, 135);}
+.analog .pinlabel__body,
+.analog .textblock__bg {
+  fill: #ffd7ad; }
 
+.analog .pinlabel__leader {
+  stroke: #ffd7ad; }
 
-.pwr .label__body, .pwr .textblock__bg{  fill: rgb(173, 0, 0);}
-.pwr .lline{stroke: rgb(173, 0, 0);}
+.analog.legend__entry .panel__inner {
+  fill: #ffd7ad; }
 
-.gnd .label__body, .gnd .textblock__bg{fill: #000;}
-.gnd .lline{stroke: #000;}
+.pwm .pinlabel__body,
+.pwm .textblock__bg {
+  fill: #ffb3aa; }
 
+.pwm .pinlabel__leader {
+  stroke: #ffb3aa; }
 
-.diagram__bg{
-    fill: #000;
-}
-.panel__bg{
-    fill: rgb(244, 244, 244);
-}
+.pwm.legend__entry .panel__inner {
+  fill: #ffb3aa; }
 
+.audio .pinlabel__body,
+.audio .textblock__bg {
+  fill: #f7f09d; }
 
-.legend__bg{
-    fill: #000;
-}
-.legend__title{
-    font-size: 16px;
-    font-weight: bold;
-    dominant-baseline: auto;
-}
-.legend text{
-    fill: #fff;
-}
+.audio .pinlabel__leader {
+  stroke: #f7f09d; }
 
+.audio.legend__entry .panel__inner {
+  fill: #f7f09d; }
 
-text {
-    font-family: Verdana, Georgia, sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    dominant-baseline: auto;
-}
+.serial .pinlabel__body,
+.serial .textblock__bg {
+  fill: #c9daed; }
 
+.serial .pinlabel__leader {
+  stroke: #c9daed; }
+
+.serial.legend__entry .panel__inner {
+  fill: #c9daed; }
+
+.i2c .pinlabel__body,
+.i2c .textblock__bg {
+  fill: #b1add7; }
+
+.i2c .pinlabel__leader {
+  stroke: #b1add7; }
+
+.i2c.legend__entry .panel__inner {
+  fill: #b1add7; }
+
+.spi .pinlabel__body,
+.spi .textblock__bg {
+  fill: #c2e6b9; }
+
+.spi .pinlabel__leader {
+  stroke: #c2e6b9; }
+
+.spi.legend__entry .panel__inner {
+  fill: #c2e6b9; }
+
+.canbus .pinlabel__body,
+.canbus .textblock__bg {
+  fill: #fedae2; }
+
+.canbus .pinlabel__leader {
+  stroke: #fedae2; }
+
+.canbus.legend__entry .panel__inner {
+  fill: #fedae2; }
+
+.note .pinlabel__body,
+.note .textblock__bg {
+  fill: #ddd; }
+
+.note .pinlabel__leader {
+  stroke: #ddd; }
+
+.note.legend__entry .panel__inner {
+  fill: #ddd; }
+
+.pinlabel__leader {
+  fill: none;
+  stroke-width: 0; }
+
+.pingroup g .pinlabel:first-child .pinlabel__leader,
+.lline--visible .pinlabel__leader {
+  stroke-width: 2; }
+
+.pinlabel__text {
+  dominant-baseline: central;
+  fill: #000;
+  font-size: 20px;
+  font-weight: normal;
+  letter-spacing: -1px;
+  stroke-width: 0;
+  text-anchor: middle; }
+
+.gnd .pinlabel__text,
+.pwr .pinlabel__text {
+  fill: #fff; }
+
+.tight text {
+  letter-spacing: -2px; }
+
+.titlebar__bg {
+  fill: white; }
 
 .h1 text {
-    font-size: 36px;
-    font-weight: bold;
-}
+  font-size: 36px;
+  font-weight: bold; }
+
 .h2 text {
-    font-size: 18px;
-    font-weight: bold;
-    font-style: italic;
-}
-.italic{
-    font-style: italic;
-}
-.strong{
-    font-weight: bold;
-}
-.url{
-    fill: #0084ff;
-    font-weight: bold;
-}
+  font-size: 18px;
+  font-weight: bold;
+  font-style: italic; }
+
+.italic {
+  font-style: italic; }
+
+.strong {
+  font-weight: bold; }
+
+.url {
+  fill: #0084ff;
+  font-weight: bold; }
+
+text {
+  fill: #000;
+  font-family: Arial, Georgia, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  dominant-baseline: auto; }
+
+.legend__bg {
+  fill: black; }
+
+.legend__entry .panel__outer {
+  fill: black; }
+
+.legend__title {
+  font-size: 18px;
+  font-weight: bold;
+  dominant-baseline: auto; }
+
+.legend text {
+  fill: #000;
+  font-family: Arial, Georgia, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  dominant-baseline: auto; }
+
+.diagram__bg {
+  fill: #000; }
+
+.panel__inner {
+  fill: white; }
+
     ]]>  
 </style>
-<rect
- class="diagram__bg" 
-    x="0" 
-    y="0" 
-    width="1280" 
-    height="720" 
-    shape-rendering="geometricPrecision"
-/><g 
-        class="panel panel--main"
+<g 
+        class=" panel"
     transform="
-        translate(2 2) 
+        translate(10 10) 
         scale(1 1)
     "
 >
         <rect
- class="panel__bg" 
+ class="panel__outer" 
+    x="-10" 
+    y="-10" 
+    width="1128" 
+    height="800" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
     x="0" 
     y="0" 
-    width="1276" 
-    height="576" 
+    width="1108" 
+    height="780" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="mainpanel panel"
+    transform="
+        translate(1 1) 
+        scale(1 1)
+    "
+>
+        <rect
+ class="panel__outer" 
+    x="-1" 
+    y="-1" 
+    width="960" 
+    height="640" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
+    x="0" 
+    y="0" 
+    width="958" 
+    height="638" 
     shape-rendering="geometricPrecision"
 /><g 
     transform="
-        translate(420 25) 
-        scale(1 1)
+        translate(340 25) 
+        scale(1.1 1.1)
     "
 >
         <g 
@@ -148,81 +258,104 @@ text {
     b'<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" enable-background="new -7.5 -7.793 225.7 454.993" height="454.993px" id="Layer_1" version="1.1" viewBox="-7.5 -7.793 225.7 454.993" width="225.7px" x="0px" y="0px" xml:space="preserve">\n<ns0:path d="M147.422,14.932H63.375H1V438.7h208.7V14.932H147.422z M15.345,427.811  c-3.309,0-5.996-2.689-5.996-5.998c0-3.312,2.688-6.002,5.996-6.002c3.31,0,6.004,2.69,6.004,6.002  C21.349,425.122,18.655,427.811,15.345,427.811z M15.345,397.811c-3.309,0-5.996-2.689-5.996-6c0-3.31,2.688-6,5.996-6  c3.31,0,6.004,2.69,6.004,6C21.349,395.122,18.655,397.811,15.345,397.811z M15.345,367.811c-3.309,0-5.996-2.689-5.996-5.998  c0-3.312,2.688-6.002,5.996-6.002c3.31,0,6.004,2.69,6.004,6.002C21.349,365.122,18.655,367.811,15.345,367.811z M15.345,337.821  c-3.309,0-5.996-2.689-5.996-6c0-3.309,2.688-6,5.996-6c3.31,0,6.004,2.691,6.004,6C21.349,335.131,18.655,337.821,15.345,337.821z   M15.345,307.811c-3.309,0-5.996-2.69-5.996-6s2.688-6,5.996-6c3.31,0,6.004,2.69,6.004,6S18.655,307.811,15.345,307.811z   M15.345,277.821c-3.309,0-5.996-2.69-5.996-6c0-3.309,2.688-6,5.996-6c3.31,0,6.004,2.691,6.004,6S18.655,277.821,15.345,277.821z   M15.345,247.811c-3.309,0-5.996-2.69-5.996-6c0-3.311,2.688-6,5.996-6c3.31,0,6.004,2.689,6.004,6  C21.349,245.121,18.655,247.811,15.345,247.811z M15.345,217.811c-3.309,0-5.996-2.69-5.996-6s2.688-6,5.996-6  c3.31,0,6.004,2.691,6.004,6C21.349,215.121,18.655,217.811,15.345,217.811z M15.345,187.811c-3.309,0-5.996-2.691-5.996-6  c0-3.31,2.688-6,5.996-6c3.31,0,6.004,2.691,6.004,6S18.655,187.811,15.345,187.811z M15.345,157.811c-3.309,0-5.996-2.691-5.996-6  c0-3.31,2.688-6,5.996-6c3.31,0,6.004,2.691,6.004,6S18.655,157.811,15.345,157.811z M15.345,127.811c-3.309,0-5.996-2.691-5.996-6  c0-3.31,2.688-6,5.996-6c3.31,0,6.004,2.691,6.004,6S18.655,127.811,15.345,127.811z M15.345,97.811c-3.309,0-5.996-2.691-5.996-6  c0-3.31,2.688-6,5.996-6c3.31,0,6.004,2.691,6.004,6C21.349,95.121,18.655,97.811,15.345,97.811z M15.345,67.813  c-3.309,0-5.996-2.691-5.996-6c0-3.31,2.688-6,5.996-6c3.31,0,6.004,2.691,6.004,6S18.655,67.813,15.345,67.813z M15.345,37.815  c-3.309,0-5.996-2.691-5.996-6c0-3.31,2.688-6,5.996-6c3.31,0,6.004,2.691,6.004,6C21.349,35.125,18.655,37.815,15.345,37.815z   M45.35,427.807c-3.31,0-6.001-2.689-6.001-5.996c0-3.312,2.691-6.004,6.001-6.004s5.999,2.692,5.999,6.004  C51.349,425.12,48.66,427.807,45.35,427.807z M75.354,427.807c-3.31,0-6.001-2.689-6.001-5.996c0-3.312,2.691-6.004,6.001-6.004  s5.999,2.692,5.999,6.004C81.353,425.12,78.664,427.807,75.354,427.807z M105.351,427.807c-3.311,0-6.002-2.689-6.002-5.996  c0-3.312,2.691-6.004,6.002-6.004c3.31,0,5.999,2.692,5.999,6.004C111.35,425.12,108.661,427.807,105.351,427.807z M135.35,427.807  c-3.311,0-6-2.689-6-5.996c0-3.312,2.689-6.004,6-6.004s6,2.692,6,6.004C141.35,425.12,138.661,427.807,135.35,427.807z   M165.352,427.807c-3.313,0-6.002-2.689-6.002-5.996c0-3.312,2.689-6.004,6.002-6.004c3.309,0,5.998,2.692,5.998,6.004  C171.35,425.12,168.661,427.807,165.352,427.807z M165.35,67.813c-3.311,0-5.996-2.691-5.996-6c0-3.31,2.688-6,5.996-6  s6.004,2.691,6.004,6S168.659,67.813,165.35,67.813z M195.35,427.811c-3.311,0-5.996-2.689-5.996-5.998  c0-3.312,2.688-6.002,5.996-6.002s6.004,2.69,6.004,6.002C201.354,425.122,198.659,427.811,195.35,427.811z M195.35,397.811  c-3.311,0-5.996-2.689-5.996-6c0-3.31,2.688-6,5.996-6s6.004,2.69,6.004,6C201.354,395.122,198.659,397.811,195.35,397.811z   M195.35,367.811c-3.311,0-5.996-2.689-5.996-5.998c0-3.312,2.688-6.002,5.996-6.002s6.004,2.69,6.004,6.002  C201.354,365.122,198.659,367.811,195.35,367.811z M195.35,337.821c-3.311,0-5.996-2.689-5.996-6c0-3.309,2.688-6,5.996-6  s6.004,2.691,6.004,6C201.354,335.131,198.659,337.821,195.35,337.821z M195.35,307.811c-3.311,0-5.996-2.69-5.996-6  s2.688-6,5.996-6s6.004,2.69,6.004,6S198.659,307.811,195.35,307.811z M195.35,277.821c-3.311,0-5.996-2.69-5.996-6  c0-3.309,2.688-6,5.996-6s6.004,2.691,6.004,6S198.659,277.821,195.35,277.821z M195.35,247.811c-3.311,0-5.996-2.69-5.996-6  c0-3.311,2.688-6,5.996-6s6.004,2.689,6.004,6C201.354,245.121,198.659,247.811,195.35,247.811z M195.35,217.811  c-3.311,0-5.996-2.69-5.996-6s2.688-6,5.996-6s6.004,2.691,6.004,6C201.354,215.121,198.659,217.811,195.35,217.811z   M195.35,187.811c-3.311,0-5.996-2.691-5.996-6c0-3.31,2.688-6,5.996-6s6.004,2.691,6.004,6S198.659,187.811,195.35,187.811z   M195.35,157.811c-3.311,0-5.996-2.691-5.996-6c0-3.31,2.688-6,5.996-6s6.004,2.691,6.004,6S198.659,157.811,195.35,157.811z   M195.35,127.811c-3.311,0-5.996-2.691-5.996-6c0-3.31,2.688-6,5.996-6s6.004,2.691,6.004,6S198.659,127.811,195.35,127.811z   M195.35,97.811c-3.311,0-5.996-2.691-5.996-6c0-3.31,2.688-6,5.996-6s6.004,2.691,6.004,6  C201.354,95.121,198.659,97.811,195.35,97.811z M195.35,67.813c-3.311,0-5.996-2.691-5.996-6c0-3.31,2.688-6,5.996-6  s6.004,2.691,6.004,6S198.659,67.813,195.35,67.813z M195.35,37.815c-3.311,0-5.996-2.691-5.996-6c0-3.31,2.688-6,5.996-6  s6.004,2.691,6.004,6C201.354,35.125,198.659,37.815,195.35,37.815z" fill="#FFFFFF" stroke="#00A3F0" />\n<ns0:rect fill="#FFFFFF" height="116.5" stroke="#00A3F0" width="116.5" x="45.348" y="160.311" />\n<ns0:g>\n\t<ns0:path d="M105.349,403.701c9.466,0,17.142-1.718,17.142-3.832v-46.276   c0-2.117-7.676-3.83-17.142-3.83c-9.47,0-17.146,1.713-17.146,3.83v46.276C88.204,401.983,95.879,403.701,105.349,403.701z" fill="#FFFFFF" stroke="#00A3F0" />\n\t<ns0:path d="M90.465,376.721c0-8.222,6.664-14.879,14.886-14.879c8.224,0,14.884,6.657,14.884,14.879   c0,8.229-6.66,14.891-14.884,14.891C97.129,391.612,90.465,384.95,90.465,376.721z" fill="#FFFFFF" stroke="#00A3F0" />\n</ns0:g>\n<ns0:path d="M63.375,7.029v56.248h84.047V7.029h-1.158l3.953-3.676l-2.158-2.007l-6.111,5.683h-1.98  V0.724H70.831v6.306h-1.789l-6.324-6.323L60.48,2.938l4.091,4.091L63.375,7.029L63.375,7.029z M83.12,22.527v12.062h-8.324V22.527  c-0.693-1.286-1.121-2.66-1.121-3.62c0-0.593,0.463-0.857,1.121-1.015l1.645-0.178c0.76-0.01,1.588,0,2.52,0  c0.931,0,1.758-0.01,2.518,0l1.645,0.178c0.662,0.157,1.123,0.421,1.123,1.015C84.243,19.869,83.812,21.242,83.12,22.527z   M136.002,22.527v12.062h-8.324V22.527c-0.693-1.286-1.123-2.66-1.123-3.62c0-0.593,0.461-0.857,1.123-1.015l1.645-0.178h5.035  l1.645,0.178c0.658,0.157,1.125,0.421,1.125,1.015C137.127,19.869,136.696,21.242,136.002,22.527z" fill="#FFFFFF" stroke="#00A3F0" />\n<ns0:path d="M63.375,7.029v56.248h84.047V7.029h-1.158l3.953-3.676l-2.158-2.007l-6.111,5.683h-1.98  V0.724H70.831v6.306h-1.789l-6.324-6.323L60.48,2.938l4.091,4.091L63.375,7.029L63.375,7.029z M83.12,22.527v12.062h-8.324V22.527  c-0.693-1.286-1.121-2.66-1.121-3.62c0-0.593,0.463-0.857,1.121-1.015l1.645-0.178c0.76-0.01,1.588,0,2.52,0  c0.931,0,1.758-0.01,2.518,0l1.645,0.178c0.662,0.157,1.123,0.421,1.123,1.015C84.243,19.869,83.812,21.242,83.12,22.527z   M136.002,22.527v12.062h-8.324V22.527c-0.693-1.286-1.123-2.66-1.123-3.62c0-0.593,0.461-0.857,1.123-1.015l1.645-0.178h5.035  l1.645,0.178c0.658,0.157,1.125,0.421,1.125,1.015C137.127,19.869,136.696,21.242,136.002,22.527z" fill="#FFFFFF" stroke="#00A3F0" />\n<ns0:path d="M209.7,6.432h-51.56c0.378-0.972,0.577-2.014,0.577-3.078c0-2.361-0.982-4.617-2.712-6.225  l-2.158-2.007c-2.562-2.382-6.226-2.892-9.261-1.535c-1.33-0.862-2.916-1.363-4.619-1.363H70.831c-1.462,0-2.838,0.369-4.041,1.02  c-3.221-1.76-7.343-1.278-10.075,1.444l-2.237,2.231c-1.598,1.593-2.497,3.756-2.498,6.013c-0.001,1.218,0.26,2.41,0.751,3.5H1  c-4.694,0-8.5,3.806-8.5,8.5V438.7c0,4.694,3.806,8.5,8.5,8.5h208.7c4.694,0,8.5-3.806,8.5-8.5V14.932  C218.2,10.237,214.394,6.432,209.7,6.432z M209.7,438.7H1V14.932h62.375l0.001-7.902V7.028h1.195L60.48,2.938l2.237-2.231  l6.324,6.323h1.789V0.724h69.137v6.306h1.98l6.111-5.683l2.158,2.007l-3.953,3.676h1.158v7.902H209.7V438.7z" fill="#00A3F0" opacity="0.18" />\n</ns0:svg>'
 </g>
 <g 
+        class="pingroup"
     transform="
         translate(195 32) 
         scale(1 1)
     "
 >
         <g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label pwr"
+        class=" pinlabel pwr"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="166" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(149.0 0) 
+        translate(80.0 0) 
         scale(1 1)
     "  
 >
-    Vin (3.6 to 5.5 volts)
+    Vin
+</text>
+</g><g 
+        class=" pinlabel note"
+    transform="
+        translate(120 0) 
+        scale(1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="170" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(85.0 0) 
+        scale(1 1)
+    "  
+>
+    (3.6 to 5.5 volts)
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label gnd"
+        class=" pinlabel gnd"
     transform="
         translate(0 30) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="166" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(149.0 0) 
+        translate(80.0 0) 
         scale(1 1)
     "  
 >
@@ -230,481 +363,475 @@ text {
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label pwr"
+        class=" pinlabel pwr"
     transform="
         translate(0 60) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="166" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(149.0 0) 
+        translate(80.0 0) 
         scale(1 1)
     "  
 >
-    3.3V (250 mA max)
+    3.3V
+</text>
+</g><g 
+        class=" pinlabel note"
+    transform="
+        translate(120 60) 
+        scale(1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="170" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(85.0 0) 
+        scale(1 1)
+    "  
+>
+    (250 mA max)
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 90) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(1 1)
     "  
 >
     23
 </text>
 </g><g 
-        class="label analog"
+        class=" pinlabel analog"
     transform="
-        translate(146 90) 
+        translate(80 90) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(20.0 0) 
         scale(1 1)
     "  
 >
     A9
 </text>
 </g><g 
-        class="label canbus"
+        class=" pinlabel pwm"
     transform="
-        translate(232 90) 
+        translate(120 90) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(30.0 0) 
+        scale(1 1)
+    "  
+>
+    PWM
+</text>
+</g><g 
+        class=" pinlabel canbus"
+    transform="
+        translate(180 90) 
+        scale(1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
     CRX1
 </text>
 </g><g 
-        class="label audio"
+        class=" pinlabel audio"
     transform="
-        translate(318 90) 
+        translate(260 90) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
     MCLK1
 </text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(404 90) 
-        scale(1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
-        scale(1 1)
-    "  
->
-    PWM
-</text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 120) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(1 1)
     "  
 >
     22
 </text>
 </g><g 
-        class="label analog"
+        class=" pinlabel analog"
     transform="
-        translate(146 120) 
+        translate(80 120) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(20.0 0) 
         scale(1 1)
     "  
 >
     A8
 </text>
 </g><g 
-        class="label canbus"
+        class=" pinlabel pwm"
     transform="
-        translate(232 120) 
+        translate(120 120) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(30.0 0) 
+        scale(1 1)
+    "  
+>
+    PWM
+</text>
+</g><g 
+        class=" pinlabel canbus"
+    transform="
+        translate(180 120) 
+        scale(1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
     CTX1
 </text>
 </g><g 
-        class="label audio"
+        class=" pinlabel audio"
     transform="
-        translate(318 120) 
+        translate(260 120) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
     MCLK1
 </text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(404 120) 
-        scale(1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
-        scale(1 1)
-    "  
->
-    PWM
-</text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 150) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(1 1)
     "  
 >
     21
 </text>
 </g><g 
-        class="label analog"
+        class=" pinlabel analog"
     transform="
-        translate(146 150) 
+        translate(80 150) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(20.0 0) 
         scale(1 1)
     "  
 >
     A7
 </text>
 </g><g 
-        class="label serial"
+        class="lline--visible pinlabel serial"
     transform="
-        translate(232 150) 
+        translate(120 150) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 60 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="60" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(100.0 0) 
         scale(1 1)
     "  
 >
     RX5
 </text>
 </g><g 
-        class="label audio"
+        class=" pinlabel audio"
     transform="
-        translate(318 150) 
+        translate(260 150) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
@@ -712,127 +839,118 @@ text {
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 180) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(1 1)
     "  
 >
     20
 </text>
 </g><g 
-        class="label analog"
+        class=" pinlabel analog"
     transform="
-        translate(146 180) 
+        translate(80 180) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(20.0 0) 
         scale(1 1)
     "  
 >
     A6
 </text>
 </g><g 
-        class="label serial"
+        class="lline--visible pinlabel serial"
     transform="
-        translate(232 180) 
+        translate(120 180) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 60 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="60" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(100.0 0) 
         scale(1 1)
     "  
 >
     TX5
 </text>
 </g><g 
-        class="label audio"
+        class=" pinlabel audio"
     transform="
-        translate(318 180) 
+        translate(260 180) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
@@ -840,383 +958,356 @@ text {
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 210) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(1 1)
     "  
 >
     19
 </text>
 </g><g 
-        class="label analog"
+        class=" pinlabel analog"
     transform="
-        translate(146 210) 
+        translate(80 210) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(20.0 0) 
         scale(1 1)
     "  
 >
     A5
 </text>
 </g><g 
-        class="label i2c"
+        class=" pinlabel pwm"
     transform="
-        translate(232 210) 
+        translate(120 210) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 92 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="92" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(132.0 0) 
-        scale(1 1)
-    "  
->
-    SCL0
-</text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(404 210) 
-        scale(1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
+        translate(30.0 0) 
         scale(1 1)
     "  
 >
     PWM
 </text>
+</g><g 
+        class="lline--visible pinlabel i2c"
+    transform="
+        translate(180 210) 
+        scale(1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="80" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(120.0 0) 
+        scale(1 1)
+    "  
+>
+    SCL0
+</text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 240) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(1 1)
     "  
 >
     18
 </text>
 </g><g 
-        class="label analog"
+        class=" pinlabel analog"
     transform="
-        translate(146 240) 
+        translate(80 240) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(20.0 0) 
         scale(1 1)
     "  
 >
     A4
 </text>
 </g><g 
-        class="label i2c"
+        class=" pinlabel pwm"
     transform="
-        translate(232 240) 
+        translate(120 240) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 92 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="92" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(132.0 0) 
-        scale(1 1)
-    "  
->
-    SDA0
-</text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(404 240) 
-        scale(1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
+        translate(30.0 0) 
         scale(1 1)
     "  
 >
     PWM
 </text>
+</g><g 
+        class="lline--visible pinlabel i2c"
+    transform="
+        translate(180 240) 
+        scale(1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="80" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(120.0 0) 
+        scale(1 1)
+    "  
+>
+    SDA0
+</text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 270) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(1 1)
     "  
 >
     17
 </text>
 </g><g 
-        class="label analog"
+        class=" pinlabel analog"
     transform="
-        translate(146 270) 
+        translate(80 270) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(20.0 0) 
         scale(1 1)
     "  
 >
     A3
 </text>
 </g><g 
-        class="label serial"
+        class="lline--visible pinlabel serial"
     transform="
-        translate(232 270) 
+        translate(120 270) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 60 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="60" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(100.0 0) 
         scale(1 1)
     "  
 >
     TX4
 </text>
 </g><g 
-        class="label i2c"
+        class=" pinlabel i2c"
     transform="
-        translate(318 270) 
+        translate(260 270) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
@@ -1224,127 +1315,118 @@ text {
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 300) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(1 1)
     "  
 >
     16
 </text>
 </g><g 
-        class="label analog"
+        class=" pinlabel analog"
     transform="
-        translate(146 300) 
+        translate(80 300) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(20.0 0) 
         scale(1 1)
     "  
 >
     A2
 </text>
 </g><g 
-        class="label serial"
+        class="lline--visible pinlabel serial"
     transform="
-        translate(232 300) 
+        translate(120 300) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 60 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="60" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(100.0 0) 
         scale(1 1)
     "  
 >
     RX4
 </text>
 </g><g 
-        class="label i2c"
+        class=" pinlabel i2c"
     transform="
-        translate(318 300) 
+        translate(260 300) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
@@ -1352,488 +1434,455 @@ text {
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 330) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(1 1)
     "  
 >
     15
 </text>
 </g><g 
-        class="label analog"
+        class=" pinlabel analog"
     transform="
-        translate(146 330) 
+        translate(80 330) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(20.0 0) 
         scale(1 1)
     "  
 >
     A1
 </text>
 </g><g 
-        class="label serial"
+        class=" pinlabel pwm"
     transform="
-        translate(232 330) 
+        translate(120 330) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(30.0 0) 
+        scale(1 1)
+    "  
+>
+    PWM
+</text>
+</g><g 
+        class=" pinlabel serial"
+    transform="
+        translate(180 330) 
+        scale(1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
     RX3
 </text>
 </g><g 
-        class="label audio"
+        class=" pinlabel audio tight"
     transform="
-        translate(318 330) 
+        translate(260 330) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
-    S/PDIF IN
-</text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(404 330) 
-        scale(1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
-        scale(1 1)
-    "  
->
-    PWM
+    DIF IN
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 360) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(1 1)
     "  
 >
     14
 </text>
 </g><g 
-        class="label analog"
+        class=" pinlabel analog"
     transform="
-        translate(146 360) 
+        translate(80 360) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(20.0 0) 
         scale(1 1)
     "  
 >
     A0
 </text>
 </g><g 
-        class="label serial"
+        class=" pinlabel pwm"
     transform="
-        translate(232 360) 
+        translate(120 360) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(30.0 0) 
+        scale(1 1)
+    "  
+>
+    PWM
+</text>
+</g><g 
+        class=" pinlabel serial"
+    transform="
+        translate(180 360) 
+        scale(1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
     TX3
 </text>
 </g><g 
-        class="label audio"
+        class=" pinlabel audio tight"
     transform="
-        translate(318 360) 
+        translate(260 360) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
-    S/PDIF OUT
-</text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(404 360) 
-        scale(1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
-        scale(1 1)
-    "  
->
-    PWM
+    DIF OUT
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 390) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(1 1)
     "  
 >
     13
 </text>
 </g><g 
-        class="label spi"
+        class="lline--visible pinlabel pwm"
     transform="
-        translate(146 390) 
+        translate(80 390) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(70.0 0) 
         scale(1 1)
     "  
 >
-    SCK
+    PWM
 </text>
 </g><g 
-        class="label canbus"
+        class=" pinlabel canbus"
     transform="
-        translate(232 390) 
+        translate(180 390) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
     CRX1
 </text>
 </g><g 
-        class="label pwm"
+        class=" pinlabel spi"
     transform="
-        translate(318 390) 
+        translate(260 390) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 92 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="92" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(132.0 0) 
+        translate(40.0 0) 
         scale(1 1)
     "  
 >
-    PWM
+    SCK
 </text>
 </g>
 </g>
 </g><g 
+        class="pingroup"
     transform="
         translate(15 32) 
         scale(1 1)
     "
 >
         <g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label gnd"
+        class=" pinlabel gnd"
     transform="
         translate(0 0) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="166" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(149.0 0) 
+        translate(80.0 0) 
         scale(-1 1)
     "  
 >
@@ -1841,1528 +1890,1421 @@ text {
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 30) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(-1 1)
     "  
 >
     0
 </text>
 </g><g 
-        class="label serial"
+        class=" pinlabel pwm"
     transform="
-        translate(-146 30) 
+        translate(-80 30) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(30.0 0) 
+        scale(-1 1)
+    "  
+>
+    PWM
+</text>
+</g><g 
+        class=" pinlabel serial"
+    transform="
+        translate(-140 30) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
     RX1
 </text>
 </g><g 
-        class="label canbus"
+        class=" pinlabel canbus"
     transform="
-        translate(-232 30) 
+        translate(-220 30) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
     CRX2
 </text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(-318 30) 
-        scale(-1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
-        scale(-1 1)
-    "  
->
-    PWM
-</text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 60) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(-1 1)
     "  
 >
     1
 </text>
 </g><g 
-        class="label serial"
+        class=" pinlabel pwm"
     transform="
-        translate(-146 60) 
+        translate(-80 60) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(30.0 0) 
+        scale(-1 1)
+    "  
+>
+    PWM
+</text>
+</g><g 
+        class=" pinlabel serial"
+    transform="
+        translate(-140 60) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
     TX1
 </text>
 </g><g 
-        class="label canbus"
+        class=" pinlabel canbus"
     transform="
-        translate(-232 60) 
+        translate(-220 60) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
     CTX2
 </text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(-318 60) 
-        scale(-1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
-        scale(-1 1)
-    "  
->
-    PWM
-</text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 90) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(-1 1)
     "  
 >
     2
 </text>
 </g><g 
-        class="label audio"
+        class=" pinlabel pwm"
     transform="
-        translate(-146 90) 
+        translate(-80 90) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 92 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="92" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(132.0 0) 
-        scale(-1 1)
-    "  
->
-    OUT2
-</text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(-318 90) 
-        scale(-1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
+        translate(30.0 0) 
         scale(-1 1)
     "  
 >
     PWM
 </text>
+</g><g 
+        class="lline--visible pinlabel audio"
+    transform="
+        translate(-140 90) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="80" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(120.0 0) 
+        scale(-1 1)
+    "  
+>
+    OUT2
+</text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 120) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(-1 1)
     "  
 >
     3
 </text>
 </g><g 
-        class="label audio"
+        class=" pinlabel pwm"
     transform="
-        translate(-146 120) 
+        translate(-80 120) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 92 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="92" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(132.0 0) 
-        scale(-1 1)
-    "  
->
-    LRCLK2
-</text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(-318 120) 
-        scale(-1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
+        translate(30.0 0) 
         scale(-1 1)
     "  
 >
     PWM
 </text>
+</g><g 
+        class="lline--visible pinlabel audio"
+    transform="
+        translate(-140 120) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="80" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(120.0 0) 
+        scale(-1 1)
+    "  
+>
+    LRCLK2
+</text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 150) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(-1 1)
     "  
 >
     4
 </text>
 </g><g 
-        class="label audio"
+        class=" pinlabel pwm"
     transform="
-        translate(-146 150) 
+        translate(-80 150) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 92 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="92" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(132.0 0) 
-        scale(-1 1)
-    "  
->
-    BCLK2
-</text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(-318 150) 
-        scale(-1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
+        translate(30.0 0) 
         scale(-1 1)
     "  
 >
     PWM
 </text>
+</g><g 
+        class="lline--visible pinlabel audio"
+    transform="
+        translate(-140 150) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="80" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(120.0 0) 
+        scale(-1 1)
+    "  
+>
+    BCLK2
+</text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 180) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(-1 1)
     "  
 >
     5
 </text>
 </g><g 
-        class="label audio"
+        class=" pinlabel pwm"
     transform="
-        translate(-146 180) 
+        translate(-80 180) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 92 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="92" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(132.0 0) 
-        scale(-1 1)
-    "  
->
-    IN2
-</text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(-318 180) 
-        scale(-1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
+        translate(30.0 0) 
         scale(-1 1)
     "  
 >
     PWM
 </text>
+</g><g 
+        class="lline--visible pinlabel audio"
+    transform="
+        translate(-140 180) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="80" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(120.0 0) 
+        scale(-1 1)
+    "  
+>
+    IN2
+</text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 210) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(-1 1)
     "  
 >
     6
 </text>
 </g><g 
-        class="label audio"
+        class=" pinlabel pwm"
     transform="
-        translate(-146 210) 
+        translate(-80 210) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 92 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="92" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(132.0 0) 
-        scale(-1 1)
-    "  
->
-    OUT1D
-</text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(-318 210) 
-        scale(-1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
+        translate(30.0 0) 
         scale(-1 1)
     "  
 >
     PWM
 </text>
+</g><g 
+        class="lline--visible pinlabel audio"
+    transform="
+        translate(-140 210) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="80" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(120.0 0) 
+        scale(-1 1)
+    "  
+>
+    OUT1D
+</text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 240) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(-1 1)
     "  
 >
     7
 </text>
 </g><g 
-        class="label serial"
+        class=" pinlabel pwm"
     transform="
-        translate(-146 240) 
+        translate(-80 240) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(30.0 0) 
+        scale(-1 1)
+    "  
+>
+    PWM
+</text>
+</g><g 
+        class=" pinlabel serial"
+    transform="
+        translate(-140 240) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
     RX2
 </text>
 </g><g 
-        class="label audio"
+        class=" pinlabel audio"
     transform="
-        translate(-232 240) 
+        translate(-220 240) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
     OUT1A
 </text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(-318 240) 
-        scale(-1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
-        scale(-1 1)
-    "  
->
-    PWM
-</text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 270) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(-1 1)
     "  
 >
     8
 </text>
 </g><g 
-        class="label serial"
+        class=" pinlabel pwm"
     transform="
-        translate(-146 270) 
+        translate(-80 270) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(30.0 0) 
+        scale(-1 1)
+    "  
+>
+    PWM
+</text>
+</g><g 
+        class=" pinlabel serial"
+    transform="
+        translate(-140 270) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
     TX2
 </text>
 </g><g 
-        class="label audio"
+        class=" pinlabel audio"
     transform="
-        translate(-232 270) 
+        translate(-220 270) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
     IN1
 </text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(-318 270) 
-        scale(-1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
-        scale(-1 1)
-    "  
->
-    PWM
-</text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 300) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(-1 1)
     "  
 >
     9
 </text>
 </g><g 
-        class="label audio"
+        class=" pinlabel pwm"
     transform="
-        translate(-146 300) 
+        translate(-80 300) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 92 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="92" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(132.0 0) 
-        scale(-1 1)
-    "  
->
-    OUT1C
-</text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(-318 300) 
-        scale(-1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
+        translate(30.0 0) 
         scale(-1 1)
     "  
 >
     PWM
 </text>
+</g><g 
+        class="lline--visible pinlabel audio"
+    transform="
+        translate(-140 300) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 80 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="80" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(120.0 0) 
+        scale(-1 1)
+    "  
+>
+    OUT1C
+</text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 330) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(-1 1)
     "  
 >
     10
 </text>
 </g><g 
-        class="label spi"
+        class=" pinlabel pwm"
     transform="
-        translate(-146 330) 
+        translate(-80 330) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(30.0 0) 
+        scale(-1 1)
+    "  
+>
+    PWM
+</text>
+</g><g 
+        class=" pinlabel spi"
+    transform="
+        translate(-140 330) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
     CS
 </text>
 </g><g 
-        class="label audio"
+        class=" pinlabel audio"
     transform="
-        translate(-232 330) 
+        translate(-220 330) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
     MQSR
 </text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(-318 330) 
-        scale(-1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
-        scale(-1 1)
-    "  
->
-    PWM
-</text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 360) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(-1 1)
     "  
 >
     11
 </text>
 </g><g 
-        class="label spi"
+        class=" pinlabel pwm"
     transform="
-        translate(-146 360) 
+        translate(-80 360) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(30.0 0) 
+        scale(-1 1)
+    "  
+>
+    PWM
+</text>
+</g><g 
+        class=" pinlabel spi"
+    transform="
+        translate(-140 360) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
     MOSI
 </text>
 </g><g 
-        class="label canbus"
+        class=" pinlabel canbus"
     transform="
-        translate(-232 360) 
+        translate(-220 360) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
     CTX1
 </text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(-318 360) 
-        scale(-1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
-        scale(-1 1)
-    "  
->
-    PWM
-</text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label digital"
+        class=" pinlabel digital"
     transform="
         translate(0 390) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 5.0 0.0 C 20.0 0.0 20.0 0.0 35.0 0.0 L 40 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="66" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="40" 
+    y="-14.0" 
+    width="40" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(106.0 0) 
+        translate(60.0 0) 
         scale(-1 1)
     "  
 >
     12
 </text>
 </g><g 
-        class="label spi"
+        class=" pinlabel pwm"
     transform="
-        translate(-146 390) 
+        translate(-80 390) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="60" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(30.0 0) 
+        scale(-1 1)
+    "  
+>
+    PWM
+</text>
+</g><g 
+        class=" pinlabel spi"
+    transform="
+        translate(-140 390) 
+        scale(-1 1)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
     MISO
 </text>
 </g><g 
-        class="label audio"
+        class=" pinlabel audio"
     transform="
-        translate(-232 390) 
+        translate(-220 390) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 0 0.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
+ class=" pinlabel__body" 
+    x="0" 
+    y="-14.0" 
     width="80" 
-    height="26" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(46.0 0) 
+        translate(40.0 0) 
         scale(-1 1)
     "  
 >
     MQSL
 </text>
-</g><g 
-        class="label pwm"
-    transform="
-        translate(-318 390) 
-        scale(-1 1)
-    "
->
-        <path 
-    class="lline" 
-    d="M 0 0.0 L 6 0.0" 
-    transform="scale(1 1) translate(0 0) " 
-    shape-rendering="geometricPrecision"
-/><rect
- class="label__body" 
-    x="6" 
-    y="-13.0" 
-    width="80" 
-    height="26" 
-    shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
-/><text
-    class="label__text"
-    transform="
-        translate(46.0 0) 
-        scale(-1 1)
-    "  
->
-    PWM
-</text>
 </g>
 </g>
 </g><g 
+        class="pingroup"
     transform="
         translate(45 422) 
         scale(1 1)
     "
 >
         <g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label pwr"
+        class=" pinlabel pwr"
     transform="
         translate(0 0) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0.0 0 L 0.0 20.0 A 10.0 10.0 0 0 0 10.0 30.0 L 96 30.0" 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 20.0 A 10.0 10.0 0 0 0 10.0 30.0 L 70 30.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="96" 
-    y="17.0" 
-    width="166" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="70" 
+    y="16.0" 
+    width="80" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(179.0 30) 
+        translate(110.0 30) 
         scale(-1 1)
     "  
 >
@@ -3370,37 +3312,34 @@ text {
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label pwr"
+        class=" pinlabel pwr"
     transform="
         translate(30 0) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0.0 0 L 0.0 40.0 A 20.0 20.0 0 0 0 20.0 60.0 L 126 60.0" 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 40.0 A 20.0 20.0 0 0 0 20.0 60.0 L 100 60.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="126" 
-    y="47.0" 
-    width="166" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="100" 
+    y="46.0" 
+    width="80" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(209.0 60) 
+        translate(140.0 60) 
         scale(-1 1)
     "  
 >
@@ -3408,37 +3347,34 @@ text {
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label gnd"
+        class=" pinlabel gnd"
     transform="
         translate(60 0) 
         scale(-1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0.0 0 L 0.0 60.0 A 30.0 30.0 0 0 0 30.0 90.0 L 156 90.0" 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 60.0 A 30.0 30.0 0 0 0 30.0 90.0 L 130 90.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="156" 
-    y="77.0" 
-    width="166" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="130" 
+    y="76.0" 
+    width="80" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(239.0 90) 
+        translate(170.0 90) 
         scale(-1 1)
     "  
 >
@@ -3447,81 +3383,76 @@ text {
 </g>
 </g>
 </g><g 
+        class="pingroup"
     transform="
         translate(135 422) 
         scale(1 1)
     "
 >
         <g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label pwr"
+        class=" pinlabel pwr"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0.0 0 L 0.0 60.0 A 30.0 30.0 0 0 0 30.0 90.0 L 126 90.0" 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 60.0 A 30.0 30.0 0 0 0 30.0 90.0 L 100 90.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="126" 
-    y="77.0" 
-    width="166" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="100" 
+    y="76.0" 
+    width="80" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(209.0 90) 
+        translate(140.0 90) 
         scale(1 1)
     "  
 >
-    Program
+    Prog
 </text>
 </g>
 </g><g 
-        class="label__row"
     transform="
         translate(0 0) 
         scale(1 1)
     "
 >
         <g 
-        class="label gnd"
+        class=" pinlabel gnd"
     transform="
         translate(30 0) 
         scale(1 1)
     "
 >
         <path 
-    class="lline" 
-    d="M 0.0 0 L 0.0 40.0 A 20.0 20.0 0 0 0 20.0 60.0 L 96 60.0" 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 40.0 A 20.0 20.0 0 0 0 20.0 60.0 L 70 60.0" 
     transform="scale(1 1) translate(0 0) " 
     shape-rendering="geometricPrecision"
 /><rect
- class="label__body" 
-    x="96" 
-    y="47.0" 
-    width="166" 
-    height="26" 
+ class=" pinlabel__body" 
+    x="70" 
+    y="46.0" 
+    width="80" 
+    height="28" 
     shape-rendering="geometricPrecision"
-    rx="3" 
-    ry="3" 
 /><text
-    class="label__text"
+    class="pinlabel__text"
     transform="
-        translate(179.0 60) 
+        translate(110.0 60) 
         scale(1 1)
     "  
 >
@@ -3532,37 +3463,58 @@ text {
 </g>
 </g>
 </g><g 
-        class="legend"
+        class="legend panel"
     transform="
-        translate(1132 0) 
+        translate(961 1) 
         scale(1 1)
     "
 >
         <rect
- class="legend__bg panel__bg" 
+ class="panel__outer" 
+    x="-1" 
+    y="-1" 
+    width="148" 
+    height="780" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
     x="0" 
     y="0" 
-    width="148" 
-    height="720" 
+    width="146" 
+    height="778" 
     shape-rendering="geometricPrecision"
 /><g 
-        class="textblock textblock digital legend__entry"
+        class="digital legend__entry panel"
     transform="
-        translate(4 2.0) 
+        translate(1 1.0) 
         scale(1 1)
     "
 >
         <rect
- class="textblock__bg" 
+ class="panel__outer" 
+    x="-1" 
+    y="-1" 
+    width="146" 
+    height="97.25" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
     x="0" 
     y="0" 
-    width="140" 
-    height="87.5" 
+    width="144" 
+    height="95.25" 
     shape-rendering="geometricPrecision"
-/><text
+/><g 
+        class=" textblock"
+    transform="
+        translate(10 22) 
+        scale(1 1)
+    "
+>
+        <text
     class="textblock"
     transform="
-        translate(10 20) 
+        translate(0 0) 
         scale(1 1)
     "  
 >
@@ -3570,7 +3522,7 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 38) 
+        translate(0 19) 
         scale(1 1)
     "  
 >
@@ -3578,7 +3530,7 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 56) 
+        translate(0 38) 
         scale(1 1)
     "  
 >
@@ -3586,30 +3538,45 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 74) 
+        translate(0 57) 
         scale(1 1)
     "  
 >
     pinMode
 </text>
+</g>
 </g><g 
-        class="textblock textblock analog legend__entry"
+        class="analog legend__entry panel"
     transform="
-        translate(4 91.5) 
+        translate(1 98.25) 
         scale(1 1)
     "
 >
         <rect
- class="textblock__bg" 
+ class="panel__outer" 
+    x="-1" 
+    y="-1" 
+    width="146" 
+    height="97.25" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
     x="0" 
     y="0" 
-    width="140" 
-    height="87.5" 
+    width="144" 
+    height="95.25" 
     shape-rendering="geometricPrecision"
-/><text
+/><g 
+        class=" textblock"
+    transform="
+        translate(10 22) 
+        scale(1 1)
+    "
+>
+        <text
     class="textblock"
     transform="
-        translate(10 20) 
+        translate(0 0) 
         scale(1 1)
     "  
 >
@@ -3617,30 +3584,45 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 38) 
+        translate(0 19) 
         scale(1 1)
     "  
 >
     analogRead
 </text>
+</g>
 </g><g 
-        class="textblock textblock pwm legend__entry"
+        class="pwm legend__entry panel"
     transform="
-        translate(4 181.0) 
+        translate(1 195.5) 
         scale(1 1)
     "
 >
         <rect
- class="textblock__bg" 
+ class="panel__outer" 
+    x="-1" 
+    y="-1" 
+    width="146" 
+    height="97.25" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
     x="0" 
     y="0" 
-    width="140" 
-    height="87.5" 
+    width="144" 
+    height="95.25" 
     shape-rendering="geometricPrecision"
-/><text
+/><g 
+        class=" textblock"
+    transform="
+        translate(10 22) 
+        scale(1 1)
+    "
+>
+        <text
     class="textblock"
     transform="
-        translate(10 20) 
+        translate(0 0) 
         scale(1 1)
     "  
 >
@@ -3648,30 +3630,45 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 38) 
+        translate(0 19) 
         scale(1 1)
     "  
 >
     analogWrite
 </text>
+</g>
 </g><g 
-        class="textblock textblock audio legend__entry"
+        class="audio legend__entry panel"
     transform="
-        translate(4 270.5) 
+        translate(1 292.75) 
         scale(1 1)
     "
 >
         <rect
- class="textblock__bg" 
+ class="panel__outer" 
+    x="-1" 
+    y="-1" 
+    width="146" 
+    height="97.25" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
     x="0" 
     y="0" 
-    width="140" 
-    height="87.5" 
+    width="144" 
+    height="95.25" 
     shape-rendering="geometricPrecision"
-/><text
+/><g 
+        class=" textblock"
+    transform="
+        translate(10 22) 
+        scale(1 1)
+    "
+>
+        <text
     class="textblock"
     transform="
-        translate(10 20) 
+        translate(0 0) 
         scale(1 1)
     "  
 >
@@ -3679,30 +3676,45 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 38) 
+        translate(0 19) 
         scale(1 1)
     "  
 >
     Audio library
 </text>
+</g>
 </g><g 
-        class="textblock textblock serial legend__entry"
+        class="serial legend__entry panel"
     transform="
-        translate(4 360.0) 
+        translate(1 390.0) 
         scale(1 1)
     "
 >
         <rect
- class="textblock__bg" 
+ class="panel__outer" 
+    x="-1" 
+    y="-1" 
+    width="146" 
+    height="97.25" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
     x="0" 
     y="0" 
-    width="140" 
-    height="87.5" 
+    width="144" 
+    height="95.25" 
     shape-rendering="geometricPrecision"
-/><text
+/><g 
+        class=" textblock"
+    transform="
+        translate(10 22) 
+        scale(1 1)
+    "
+>
+        <text
     class="textblock"
     transform="
-        translate(10 20) 
+        translate(0 0) 
         scale(1 1)
     "  
 >
@@ -3710,30 +3722,45 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 38) 
+        translate(0 19) 
         scale(1 1)
     "  
 >
     Serial1 - Serial7
 </text>
+</g>
 </g><g 
-        class="textblock textblock i2c legend__entry"
+        class="i2c legend__entry panel"
     transform="
-        translate(4 449.5) 
+        translate(1 487.25) 
         scale(1 1)
     "
 >
         <rect
- class="textblock__bg" 
+ class="panel__outer" 
+    x="-1" 
+    y="-1" 
+    width="146" 
+    height="97.25" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
     x="0" 
     y="0" 
-    width="140" 
-    height="87.5" 
+    width="144" 
+    height="95.25" 
     shape-rendering="geometricPrecision"
-/><text
+/><g 
+        class=" textblock"
+    transform="
+        translate(10 22) 
+        scale(1 1)
+    "
+>
+        <text
     class="textblock"
     transform="
-        translate(10 20) 
+        translate(0 0) 
         scale(1 1)
     "  
 >
@@ -3741,30 +3768,45 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 38) 
+        translate(0 19) 
         scale(1 1)
     "  
 >
-    Wire librarly
+    Wire library
 </text>
+</g>
 </g><g 
-        class="textblock textblock spi legend__entry"
+        class="spi legend__entry panel"
     transform="
-        translate(4 539.0) 
+        translate(1 584.5) 
         scale(1 1)
     "
 >
         <rect
- class="textblock__bg" 
+ class="panel__outer" 
+    x="-1" 
+    y="-1" 
+    width="146" 
+    height="97.25" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
     x="0" 
     y="0" 
-    width="140" 
-    height="87.5" 
+    width="144" 
+    height="95.25" 
     shape-rendering="geometricPrecision"
-/><text
+/><g 
+        class=" textblock"
+    transform="
+        translate(10 22) 
+        scale(1 1)
+    "
+>
+        <text
     class="textblock"
     transform="
-        translate(10 20) 
+        translate(0 0) 
         scale(1 1)
     "  
 >
@@ -3772,30 +3814,45 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 38) 
+        translate(0 19) 
         scale(1 1)
     "  
 >
     SPI library
 </text>
+</g>
 </g><g 
-        class="textblock textblock canbus legend__entry"
+        class="canbus legend__entry panel"
     transform="
-        translate(4 628.5) 
+        translate(1 681.75) 
         scale(1 1)
     "
 >
         <rect
- class="textblock__bg" 
+ class="panel__outer" 
+    x="-1" 
+    y="-1" 
+    width="146" 
+    height="97.25" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
     x="0" 
     y="0" 
-    width="140" 
-    height="87.5" 
+    width="144" 
+    height="95.25" 
     shape-rendering="geometricPrecision"
-/><text
+/><g 
+        class=" textblock"
+    transform="
+        translate(10 22) 
+        scale(1 1)
+    "
+>
+        <text
     class="textblock"
     transform="
-        translate(10 20) 
+        translate(0 0) 
         scale(1 1)
     "  
 >
@@ -3803,7 +3860,7 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 38) 
+        translate(0 19) 
         scale(1 1)
     "  
 >
@@ -3811,29 +3868,37 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(10 56) 
+        translate(0 38) 
         scale(1 1)
     "  
 >
     library
 </text>
 </g>
+</g>
 </g><g 
-        class="titlebar"
+        class="titlebar panel"
     transform="
-        translate(2 580) 
+        translate(1 641) 
         scale(1 1)
     "
 >
         <rect
- class="titlebar__bg panel__bg" 
+ class="panel__outer" 
+    x="-1" 
+    y="-1" 
+    width="960" 
+    height="140" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
     x="0" 
     y="0" 
-    width="1130" 
+    width="958" 
     height="138" 
     shape-rendering="geometricPrecision"
 /><g 
-        class="textblock textblock h1"
+        class="h1 textblock"
     transform="
         translate(20 38) 
         scale(1 1)
@@ -3849,16 +3914,16 @@ text {
     Teensy 4 pinout
 </text>
 </g><g 
-        class="textblock textblock h2"
+        class="h2 textblock"
     transform="
-        translate(20 48) 
+        translate(20 60) 
         scale(1 1)
     "
 >
         <text
     class="textblock"
     transform="
-        translate(8 18) 
+        translate(0 0) 
         scale(1 1)
     "  
 >
@@ -3866,55 +3931,55 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(8 36) 
+        translate(0 18) 
         scale(1 1)
     "  
 >
     Microcontroller
 </text>
 </g><g 
-        class="textblock textblock p"
+        class="p textblock"
     transform="
-        translate(20 90) 
+        translate(20 100) 
         scale(1 1)
     "
 >
         <text
     class="textblock"
     transform="
-        translate(8 18) 
+        translate(0 0) 
         scale(1 1)
     "  
 >
-    To begin using Teensy please visit 
+    To begin please visit 'Getting Started' 
 </text><text
     class="textblock"
     transform="
-        translate(8 36) 
+        translate(0 18) 
         scale(1 1)
     "  
 >
-    'Getting Started' at <tspan class='url'>www.pjrc.com/teensy</tspan>
+    at <tspan class='url'>www.pjrc.com/teensy</tspan>
 </text>
 </g><g 
-        class="textblock textblock p"
+        class="p textblock"
     transform="
-        translate(395 72) 
+        translate(395 60) 
         scale(1 1)
     "
 >
         <text
     class="textblock"
     transform="
-        translate(8 18) 
+        translate(0 0) 
         scale(1 1)
     "  
 >
-    &#8226; All digital pins haveInterrupt capability.
+    &#8226; All digital pins have interrupt capability.
 </text><text
     class="textblock"
     transform="
-        translate(8 36) 
+        translate(0 18) 
         scale(1 1)
     "  
 >
@@ -3922,12 +3987,13 @@ text {
 </text><text
     class="textblock"
     transform="
-        translate(8 54) 
+        translate(0 36) 
         scale(1 1)
     "  
 >
     &#8226; LED on pin-13
 </text>
+</g>
 </g>
 </g>
     

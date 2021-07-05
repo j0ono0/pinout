@@ -13,9 +13,14 @@ pinlabel = {
         "width": 80,
         "height": 26,
         "corner_radius": 3,
+        "tag": "pinlabel__body",
     },
     "leaderline": {
         "direction": "hh",
+        "tag": "pinlabel__leader",
+    },
+    "text": {
+        "tag": "pinlabel__text",
     },
 }
 
@@ -32,7 +37,7 @@ legend = {
             "height": 20,
             "tag": "swatch",
         },
-        "tag": "legend-entry",
+        "tag": "legendentry",
     },
 }
 
@@ -48,6 +53,12 @@ textblock = {
 # Annotation
 annotation = {
     "tag": "annotation",
+    "content": {
+        "tag": "annotation__text",
+        "x": 28,
+        "y": 17,
+        "line_height": 16,
+    },
     "body": {
         "x": 40,
         "y": 29,
@@ -55,11 +66,6 @@ annotation = {
         "height": 50,
         "corner_radius": 25,
         "tag": "annotation__body",
-        "textblock": {
-            "x": 28,
-            "y": 17,
-            "line_height": 16,
-        },
     },
     "target": {
         "x": -10,
@@ -73,4 +79,12 @@ annotation = {
         "direction": "vh",
         "tag": "annotation__leaderline",
     },
+}
+
+# Panel
+panel = {
+    "inset": (5, 5, 5, 5),
+    "tag": "panel",
+    "inner": {"tag": "panel__inner"},
+    "outer": {"tag": "panel__outer"},
 }

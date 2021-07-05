@@ -13,7 +13,7 @@ These attributes are stored as Python dictionaries in the **config** module.
 
 A complete set of all default configurations can be duplicated for reference from the command line::
 
-    py -m pinout.file_manager --duplicate config
+    py -m pinout.manager --duplicate config
     
     # expected response:
     # >>> config.py duplicated.

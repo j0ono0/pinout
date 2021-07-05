@@ -13,68 +13,19 @@ class Leaderline(lline.Curved):
 
 class Target(core.Rect):
     pass
-    # def __init__(self, **kwargs):
-    # kwargs["tag"] = ("annotation__target " + kwargs.pop("tag", "")).strip()
-    # super().__init__(**kwargs)
 
 
 class Body(core.Rect):
     pass
 
 
-class Body_OLD(Group):
-    def __init__(
-        self,
-        content,
-        x=None,
-        y=None,
-        width=None,
-        height=None,
-        corner_radius=None,
-        textblock=None,
-        **kwargs,
-    ):
-        scale = core.Coords(*kwargs.pop("scale", (1, 1)))
-        super().__init__(**kwargs)
-
-        # Load default config (in case of creation independently)
-        self.update_config(config.annotation["body"])
-
-        # Body background shape
-        width = width or self.config["width"]
-        height = height or self.config["height"]
-        corner_radius = corner_radius or self.config["corner_radius"]
-        tag = config.annotation["tag"] + "__bg"
-        self.add(
-            core.Rect(
-                x=0,
-                y=0,
-                width=width,
-                height=height,
-                corner_radius=corner_radius,
-                tag=tag,
-            )
-        )
-
-        self.x = x or self.config["x"]
-        self.y = y or self.config["y"]
-
-        textblock = textblock or {}
-        if isinstance(textblock, dict):
-            textblock_config = self.config["textblock"]
-            textblock_config.update(textblock)
-
-            # Align text block accoring to +/- scale
-            if scale.x < 0:
-                textblock_config["x"] = self.width - textblock_config["x"]
-            if scale.y < 0:
-                textblock_config["y"] = self.height - textblock_config["y"]
-
-            textblock = TextBlock(content, scale=scale, **textblock_config)
-        self.add(textblock)
+class Content(TextBlock):
+    pass
 
 
 class AnnotationLabel(Group):
+    """Annotation style label."""
+
     def __init__(
         self,
         content=None,
@@ -83,17 +34,6 @@ class AnnotationLabel(Group):
         target=None,
         **kwargs,
     ):
-        """Annotation style label.
-
-        :param content: [description]
-        :type content: [type]
-        :param body: [description], defaults to None
-        :type body: [type], optional
-        :param leaderline: [description], defaults to None
-        :type leaderline: [type], optional
-        :param target: [description], defaults to None
-        :type target: [type], optional
-        """
         self._content = None
         self._body = None
         self._leaderline = None
@@ -137,7 +77,7 @@ class AnnotationLabel(Group):
             }
         if isinstance(content, dict):
             config.update(content)
-            content = TextBlock(**config)
+            content = Content(**config)
         content.add_tag(self.config["content"]["tag"])
         content.scale = self.scale
         self._content = content

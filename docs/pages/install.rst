@@ -24,14 +24,22 @@ Quickstart
 
 This guide makes use of a hardware image, stylesheet, data file, and a Python script. Sample files are included with the package and can be duplicated for your use. Open a command line (with enabled virtual environment if you are using one) in the location you plan to work and enter the following::
 
-    py -m pinout.file_manager --duplicate quick_start
-
     # expected output:
     # >>> data.py duplicated.
     # >>> hardware.png duplicated.
     # >>> pinout_diagram.py duplicated.
     # >>> styles.css duplicated.
 
-*Spoiler Alert*: 'pinout_diagram.py' is a completed script that duplicates the code in this guide. Running it will create a sample SVG pinout diagram - identical to the one pictured here - that can be viewed in your browser.
 
-Once you have installed the *pinout* package explore its features in the :ref:`tutorial`.
+    py -m pinout.manager --duplicate quick_start
+
+Generating the final SVG graphic is done from the command line::
+
+    py -m pinout.manager --export pinout_diagram diagram.svg
+
+If everything is correctly configured the newly created file 'diagram.svg' can be viewed in a browser and should look identical to the diagram pictured here.
+
+.. note::
+    Depending on your operating system the command to invoke Python may differ. This guide uses Windows default method. Exchanging 'py' for 'python' or similar may be required for examples to work on other systems.
+
+Once you have installed the *pinout* package explore its main features in the :ref:`tutorial`.

@@ -103,3 +103,7 @@ text {
 .strong{
     font-weight: bold;
 }
+
+.panel--info .panel__inner{
+    fill: #f4f4f4;
+}

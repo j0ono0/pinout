@@ -1,5 +1,6 @@
 
-$panel_bg: rgb(244, 244, 244);
+$panel_bg: rgb(255,255,255);
+$diagram_bg: rgb(0,0,0);
 
 @mixin paragraph_text {
     fill: #000;
@@ -25,25 +26,28 @@ $pinlabels: (
     "note": #ddd
 );
     @each $name, $color in $pinlabels {
-    .#{$name} .label__body,
+    .#{$name} .pinlabel__body,
     .#{$name} .textblock__bg{
         fill: #{$color}
     }
-    .#{$name} .lline{
+    .#{$name} .pinlabel__leader{
         stroke: #{$color}
+    }
+    .#{$name}.legend__entry .panel__inner{
+        fill: #{$color}
     }
 }
 
-.lline{
+.pinlabel__leader{
     fill: none;
     stroke-width:0;
 }
-.label__row .label:first-child  .lline,
-.lline--visible .lline{
+.pingroup g .pinlabel:first-child  .pinlabel__leader,
+.lline--visible .pinlabel__leader{
     stroke-width: 2;
 }
 
-.label__text{
+.pinlabel__text{
     dominant-baseline: central;
     fill: #000;
     font-size: 20px;
@@ -53,8 +57,8 @@ $pinlabels: (
     text-anchor: middle;
 }
 // Power and ground labels have dark background and need light text
-.gnd .label__text,
-.pwr .label__text{
+.gnd .pinlabel__text,
+.pwr .pinlabel__text{
     fill:#fff;
 }
 .tight text{
@@ -94,7 +98,10 @@ text {
 // legend /////////////////////////////////////////
 
 .legend__bg{
-    fill: #000;
+    fill: $diagram_bg;
+}
+.legend__entry .panel__outer{
+    fill: $diagram_bg;
 }
 .legend__title{
     font-size: 18px;
@@ -110,7 +117,6 @@ text {
 .diagram__bg{
     fill: #000;
 }
-.mainpanel .panel__bg,
-.titlebar .panel__bg{
+.panel__inner{
     fill:$panel_bg;
 }

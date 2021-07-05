@@ -1,89 +1,122 @@
-.gnd .label__body,
+.gnd .pinlabel__body,
 .gnd .textblock__bg {
   fill: #000; }
 
-.gnd .lline {
+.gnd .pinlabel__leader {
   stroke: #000; }
 
-.pwr .label__body,
+.gnd.legend__entry .panel__inner {
+  fill: #000; }
+
+.pwr .pinlabel__body,
 .pwr .textblock__bg {
   fill: #ad0000; }
 
-.pwr .lline {
+.pwr .pinlabel__leader {
   stroke: #ad0000; }
 
-.digital .label__body,
+.pwr.legend__entry .panel__inner {
+  fill: #ad0000; }
+
+.digital .pinlabel__body,
 .digital .textblock__bg {
   fill: #cfd5d5; }
 
-.digital .lline {
+.digital .pinlabel__leader {
   stroke: #cfd5d5; }
 
-.analog .label__body,
+.digital.legend__entry .panel__inner {
+  fill: #cfd5d5; }
+
+.analog .pinlabel__body,
 .analog .textblock__bg {
   fill: #ffd7ad; }
 
-.analog .lline {
+.analog .pinlabel__leader {
   stroke: #ffd7ad; }
 
-.pwm .label__body,
+.analog.legend__entry .panel__inner {
+  fill: #ffd7ad; }
+
+.pwm .pinlabel__body,
 .pwm .textblock__bg {
   fill: #ffb3aa; }
 
-.pwm .lline {
+.pwm .pinlabel__leader {
   stroke: #ffb3aa; }
 
-.audio .label__body,
+.pwm.legend__entry .panel__inner {
+  fill: #ffb3aa; }
+
+.audio .pinlabel__body,
 .audio .textblock__bg {
   fill: #f7f09d; }
 
-.audio .lline {
+.audio .pinlabel__leader {
   stroke: #f7f09d; }
 
-.serial .label__body,
+.audio.legend__entry .panel__inner {
+  fill: #f7f09d; }
+
+.serial .pinlabel__body,
 .serial .textblock__bg {
   fill: #c9daed; }
 
-.serial .lline {
+.serial .pinlabel__leader {
   stroke: #c9daed; }
 
-.i2c .label__body,
+.serial.legend__entry .panel__inner {
+  fill: #c9daed; }
+
+.i2c .pinlabel__body,
 .i2c .textblock__bg {
   fill: #b1add7; }
 
-.i2c .lline {
+.i2c .pinlabel__leader {
   stroke: #b1add7; }
 
-.spi .label__body,
+.i2c.legend__entry .panel__inner {
+  fill: #b1add7; }
+
+.spi .pinlabel__body,
 .spi .textblock__bg {
   fill: #c2e6b9; }
 
-.spi .lline {
+.spi .pinlabel__leader {
   stroke: #c2e6b9; }
 
-.canbus .label__body,
+.spi.legend__entry .panel__inner {
+  fill: #c2e6b9; }
+
+.canbus .pinlabel__body,
 .canbus .textblock__bg {
   fill: #fedae2; }
 
-.canbus .lline {
+.canbus .pinlabel__leader {
   stroke: #fedae2; }
 
-.note .label__body,
+.canbus.legend__entry .panel__inner {
+  fill: #fedae2; }
+
+.note .pinlabel__body,
 .note .textblock__bg {
   fill: #ddd; }
 
-.note .lline {
+.note .pinlabel__leader {
   stroke: #ddd; }
 
-.lline {
+.note.legend__entry .panel__inner {
+  fill: #ddd; }
+
+.pinlabel__leader {
   fill: none;
   stroke-width: 0; }
 
-.label__row .label:first-child .lline,
-.lline--visible .lline {
+.pingroup g .pinlabel:first-child .pinlabel__leader,
+.lline--visible .pinlabel__leader {
   stroke-width: 2; }
 
-.label__text {
+.pinlabel__text {
   dominant-baseline: central;
   fill: #000;
   font-size: 20px;
@@ -92,15 +125,15 @@
   stroke-width: 0;
   text-anchor: middle; }
 
-.gnd .label__text,
-.pwr .label__text {
+.gnd .pinlabel__text,
+.pwr .pinlabel__text {
   fill: #fff; }
 
 .tight text {
   letter-spacing: -2px; }
 
 .titlebar__bg {
-  fill: #f4f4f4; }
+  fill: white; }
 
 .h1 text {
   font-size: 36px;
@@ -129,7 +162,10 @@ text {
   dominant-baseline: auto; }
 
 .legend__bg {
-  fill: #000; }
+  fill: black; }
+
+.legend__entry .panel__outer {
+  fill: black; }
 
 .legend__title {
   font-size: 18px;
@@ -146,6 +182,5 @@ text {
 .diagram__bg {
   fill: #000; }
 
-.mainpanel .panel__bg,
-.titlebar .panel__bg {
-  fill: #f4f4f4; }
+.panel__inner {
+  fill: white; }

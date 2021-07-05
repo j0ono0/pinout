@@ -13,21 +13,11 @@ class Diagram(Layout):
         self.add(SvgShape(width=width, height=height))
 
     def add_stylesheet(self, path, embed=True):
-        """Add a stylesheet to the diagram
-
-        :param path: Path to stylesheet file
-        :type path: string
-        :param embed: embed stylesheet in exported file, defaults to True
-        :type embed: bool, optional
-        """
+        """Add a stylesheet to the diagram"""
         self.children.insert(0, StyleSheet(path, embed))
 
     def render(self):
-        """Render children into an <svg> tag.
-
-        :return: SVG markup
-        :rtype: string
-        """
+        """Render children into an <svg> tag."""
         tplt = templates.get("svg.svg")
         return tplt.render(svg=self)
 
@@ -40,17 +30,14 @@ class ClipPath(Group):
         super().__init__(x=x, y=y, tag=tag, **kwargs)
 
     def render(self):
-        """Render children into a <clipPath> tag.
-
-        :return: SVG markup
-        :rtype: string
-        """
+        """Render children into a <clipPath> tag."""
         tplt = templates.get("clippath.svg")
         return tplt.render(path=self)
 
 
 class Panel(Group):
     def __init__(self, width, height, inset=None, **kwargs):
+        """Assist with content grouping and positioning"""
         inset = inset or config.panel["inset"]
         self.inset = BoundingCoords(*inset)
         super().__init__(**kwargs)

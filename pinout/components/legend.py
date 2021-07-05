@@ -3,6 +3,8 @@ from pinout.components.layout import Group
 
 
 class Swatch(Group):
+    """Graphical icon for display in LegendEntry"""
+
     def __init__(self, width=None, height=None, **kwargs):
         super().__init__(**kwargs)
         self.update_config(config.legend["entry"]["swatch"])
@@ -16,6 +18,8 @@ class Swatch(Group):
 
 
 class LegendEntry(Group):
+    """Legend entry comprised of a swatch and single line of text."""
+
     def __init__(
         self,
         content,
@@ -24,7 +28,6 @@ class LegendEntry(Group):
         swatch=None,
         **kwargs,
     ):
-
         super().__init__(**kwargs)
         self.update_config(config.legend["entry"])
         self.add_tag(self.config["tag"])
@@ -57,13 +60,7 @@ class LegendEntry(Group):
 
 
 class Legend(Group):
-    """Auto generate a legend component
-
-    :param data: [description]
-    :type data: [type]
-    :param max_height: [description], defaults to None
-    :type max_height: [type], optional
-    """
+    """Auto generate a legend component"""
 
     def __init__(
         self,

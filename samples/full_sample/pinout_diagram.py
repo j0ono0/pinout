@@ -1,34 +1,82 @@
 ###########################################
 #
 # Example script to build a pinout diagram
-# Includes examples of all features
+# Includes examples of all basic features
+#
+# Export SVG diagram via command-line:
+# >>> py -m pinout.manager --export pinout_diagram pinout_diagram.svg -o
 #
 ###########################################
-
-from pinout.core import Diagram, Group, Rect, Image, Text
+from pinout import config
+from pinout.core import Group, Image
+from pinout.components.layout import Diagram, Panel
 from pinout.components.pinlabel import PinLabelGroup
 from pinout.components.annotation import AnnotationLabel
 from pinout.components.text import TextBlock
 from pinout.components import leaderline as lline
 from pinout.components.legend import Legend
 
+
 import data
 
-# Create a new diagram and add a background
+# Edit some component default config
+config.panel["inset"] = (2, 2, 2, 2)
+
+# Create a new diagram, add styles and a base panel
 diagram = Diagram(1200, 675, "diagram")
-diagram.add(Rect(0, 0, 1200, 675, "diagram__bg"))
-
-
-# Add a stylesheet
+diagram.add_stylesheet("styles_auto.css", True)
 diagram.add_stylesheet("styles.css", True)
+content = diagram.add(Panel(width=1200, height=675, tag="panel__content"))
 
 
-# Create a panels to group content together
-panel_main = diagram.add(Group(2, 2, "panel panel--main"))
-panel_main.add(Rect(0, 0, 856, 671, "panel__bg"))
+# Create panels to from a graphical layout
 
-# Create a group to hold the pinout-diagram components.
-graphic = panel_main.add(Group(318, 200))
+panel_graphic = content.add(
+    Panel(
+        width=860,
+        height=content.inset_height,
+        tag="panel__graphic",
+    )
+)
+panel_title = content.add(
+    Panel(
+        x=panel_graphic.width,
+        y=0,
+        width=content.inset_width - panel_graphic.width,
+        height=60,
+        tag="panel__title",
+    )
+)
+panel_legend = content.add(
+    Panel(
+        x=panel_graphic.width,
+        y=panel_title.bounding_coords().y2,
+        width=panel_title.width,
+        height=135,
+        tag="panel__legend",
+    )
+)
+panel_description = content.add(
+    Panel(
+        x=panel_graphic.width,
+        y=panel_legend.bounding_coords().y2,
+        width=panel_title.width,
+        height=120,
+        tag="panel__description",
+    )
+)
+panel_notes = content.add(
+    Panel(
+        x=panel_graphic.width,
+        y=panel_description.bounding_coords().y2,
+        width=panel_title.width,
+        height=content.inset_height - panel_description.bounding_coords().y2,
+        tag="panel__notes",
+    )
+)
+
+# Create a group to hold the actual diagram components.
+graphic = panel_graphic.add(Group(318, 200))
 
 # Add and embed an image
 graphic.add(Image("hardware.png", width=220, height=300, embed=True))
@@ -102,7 +150,7 @@ graphic.add(
 
 graphic.add(
     AnnotationLabel(
-        content=data.annotation_usb,
+        content={"x": 102, "y": 55, "content": data.annotation_usb},
         x=110,
         y=0,
         scale=(1, -1),
@@ -112,62 +160,50 @@ graphic.add(
 
 graphic.add(
     AnnotationLabel(
-        content=data.annotation_led,
         x=87,
         y=85,
         scale=(1, -1),
-        target={"x": -20, "y": -20, "width": 40, "height": 40, "corner_radius": 20},
+        content={"x": 102, "y": 196, "content": data.annotation_led},
         body={"y": 168, "width": 125},
+        target={"x": -20, "y": -20, "width": 40, "height": 40, "corner_radius": 20},
     )
 )
 
-title_block = diagram.add(
+title_block = panel_title.add(
     TextBlock(
         [data.title],
-        x=860,
-        y=2,
-        width=338,
-        height=60,
-        offset=(10, 40),
+        x=10,
+        y=40,
         line_height=18,
         tag="panel title_block",
     )
 )
 
-legend = diagram.add(
+legend = panel_legend.add(
     Legend(
         data.legend,
-        x=860,
-        y=title_block.y + title_block.height + 2,
+        x=10,
+        y=5,
         max_height=132,
     )
 )
 
-description = diagram.add(
+description = panel_description.add(
     TextBlock(
-        data.desc.split("\n"),
-        x=860,
-        y=legend.y + legend.height + 2,
-        width=338,
-        height=100,
-        offset=(10, 18),
+        data.desc,
+        x=10,
+        y=20,
         line_height=18,
         tag="panel text_block",
     )
 )
 
-diagram.add(
+panel_notes.add(
     TextBlock(
-        data.notes.split("\n"),
-        x=860,
-        y=description.y + description.height + 2,
-        width=338,
-        height=diagram.height - (description.bounding_coords().y2) - 4,
-        offset=(10, 18),
+        data.notes,
+        x=10,
+        y=20,
         line_height=18,
         tag="panel text_block",
     )
 )
-
-# Export final SVG diagram
-diagram.export("pinout_diagram.svg", True)

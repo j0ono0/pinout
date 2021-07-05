@@ -6,7 +6,7 @@
 #
 ###########################################
 
-from pinout.core import Group, Rect, Image
+from pinout.core import Group, Image
 from pinout.components.layout import Diagram, Panel
 from pinout.components.pinlabel import PinLabelGroup, PinLabel
 from pinout.components.text import TextBlock
@@ -139,5 +139,5 @@ legend = panel_info.add(
     )
 )
 
-# Export final SVG diagram
-diagram.export("quick_start_pinout_diagram.svg", True)
+# Export the diagram via commandline:
+# >>> py -m pinout.manager --export pinout_diagram diagram.svg

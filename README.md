@@ -28,7 +28,7 @@ pip install --upgrade pinout
 
 A normal pinout diagram will include a hardware image, stylesheet, data file, and a Python script. Sample files are included with the package and can be duplicated for your use. Open a command line (with enabled virtual environment if you are using one) in the location you plan to work and enter the following:
 ```python
-py -m pinout.file_manager --duplicate quick_start
+py -m pinout.manager --duplicate quick_start
 
 # expected output:
 # >>> data.py duplicated.

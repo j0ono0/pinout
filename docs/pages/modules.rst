@@ -10,7 +10,9 @@ Modules
     
     config
     core
+    layout
     pinlabel
     leaderline
     annotation
     legend
+    text

@@ -1,15 +1,12 @@
 # Teensy 4.0 Pinout
 # https://www.pjrc.com/store/teensy40.html
 
-from pinout.core import Diagram, Rect, Group, Image
+from pinout.core import Rect, Group, Image
 from pinout import config
+from pinout.components.layout import Diagram, Panel
 from pinout.components.pinlabel import PinLabelGroup
 from pinout.components.text import TextBlock
 from pinout.components import leaderline as lline
-
-################################################
-# EXPERIMENTAL: Panel class
-from components import Panel
 
 
 import data
@@ -76,12 +73,11 @@ with open("styles.css", "w") as f:
 # Official Teensy pinout cards are 1.41 ratio (or very close)
 
 diagram = Diagram(1128, 800, "diagram")
-diagram.add(Rect(width=1128, height=800, tag="diagram__bg"))
+
 # Add a stylesheet
 diagram.add_stylesheet("styles.css", True)
 
 # Create a layout
-
 diagram_inner = diagram.add(
     Panel(
         x=0,
@@ -89,7 +85,6 @@ diagram_inner = diagram.add(
         width=1128,
         height=800,
         inset=(10, 10, 10, 10),
-        tag="diagram__inner",
     )
 )
 
@@ -152,6 +147,7 @@ graphic.add(
         label_start=(40, 0),
         label_pitch=(0, 30),
         labels=data_preprocessor(data.header_rhs),
+        tag="pingroup",
     )
 )
 
@@ -165,6 +161,7 @@ graphic.add(
         label_start=(40, 0),
         label_pitch=(0, 30),
         labels=data_preprocessor(data.header_lhs),
+        tag="pingroup",
     )
 )
 
@@ -179,6 +176,7 @@ graphic.add(
         label_pitch=(0, 30),
         labels=data.header_end_lhs,
         leaderline=lline.Curved(direction="vh"),
+        tag="pingroup",
     )
 )
 
@@ -192,25 +190,30 @@ graphic.add(
         label_pitch=(0, -30),
         labels=data.header_end_rhs,
         leaderline=lline.Curved(direction="vh"),
+        tag="pingroup",
     )
 )
 
 # Legend entries
-gutter = 2
 entry_count = len(data.legend_content)
-entry_height = (diagram_inner.inset_height - gutter * entry_count) / entry_count
-for ind, (entry, tag) in enumerate(data.legend_content):
-
-    legend.add(
-        TextBlock(
-            entry.split("\n"),
-            x=gutter,
-            y=0 + ind * (entry_height + gutter),
-            width=145,
+entry_height = legend.inset_height / entry_count
+for index, (entry_text, tag) in enumerate(data.legend_content):
+    legend_entry = legend.add(
+        Panel(
+            x=0,
+            y=entry_height * index,
+            width=legend.inset_width,
             height=entry_height,
-            offset=(8, 26),
-            line_height=19,
+            inset=(1, 1, 1, 1),
             tag=f"{tag} legend__entry",
+        )
+    )
+    legend_entry.add(
+        TextBlock(
+            entry_text.split("\n"),
+            x=10,
+            y=22,
+            line_height=19,
         )
     )
 
@@ -219,7 +222,6 @@ titlebar.add(
         data.title,
         x=20,
         y=38,
-        offset=(0, 0),
         line_height=16,
         tag="h1",
     )
@@ -228,8 +230,7 @@ titlebar.add(
     TextBlock(
         data.title_2.split("\n"),
         x=20,
-        y=48,
-        offset=(8, 18),
+        y=60,
         line_height=18,
         tag="h2",
     )
@@ -238,8 +239,7 @@ titlebar.add(
     TextBlock(
         data.instructions.split("\n"),
         x=20,
-        y=90,
-        offset=(8, 18),
+        y=100,
         line_height=18,
         tag="p",
     )
@@ -248,13 +248,12 @@ titlebar.add(
     TextBlock(
         data.notes.split("\n"),
         x=395,
-        y=72,
-        offset=(8, 18),
+        y=60,
         line_height=18,
         tag="p",
     )
 )
 
 
-# Export final SVG diagram
-diagram.export("teensy_4.0_front_pinout_diagram.svg", True)
+# Export final SVG diagram from command-line
+# py -m pinout.manager -e pinout_diagram teensy_4.0_front_pinout_diagram.svg

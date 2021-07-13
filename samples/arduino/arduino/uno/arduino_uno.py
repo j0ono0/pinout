@@ -1,5 +1,5 @@
 from pinout.core import Group, Image, Raw, Rect
-from pinout.components.layout import Diagram
+from pinout.components.layout import Diagram, Panel
 from pinout.components import pinlabel, legend, leaderline
 from pinout.components.text import TextBlock
 
@@ -60,6 +60,7 @@ pinout_graphic.add(
         label_start=(90, -84),
         label_pitch=(0, 23.35),
         labels=prep(data.header_rhs_a),
+        tag="pinheader",
     )
 )
 
@@ -71,6 +72,7 @@ pinout_graphic.add(
         label_start=(90, 8),
         label_pitch=(0, 23.35),
         labels=prep(data.header_rhs_b),
+        tag="pinheader",
     )
 )
 
@@ -84,6 +86,7 @@ pinout_graphic.add(
         label_pitch=(0, 23.35),
         scale=(-1, 1),
         labels=prep(data.header_lhs_a),
+        tag="pinheader",
     )
 )
 pinout_graphic.add(
@@ -95,6 +98,7 @@ pinout_graphic.add(
         label_pitch=(0, 23.35),
         scale=(-1, 1),
         labels=prep(data.header_lhs_b),
+        tag="pinheader",
     )
 )
 
@@ -110,6 +114,7 @@ pinout_graphic.add(
         scale=(-1, -1),
         labels=prep(data.leds_a),
         leaderline=leaderline.Curved(direction="vh"),
+        tag="pinheader",
     )
 )
 
@@ -124,7 +129,6 @@ pinout_graphic.add(
         scale=(-1, 1),
         labels=prep(data.leds_b),
         leaderline=leaderline.Curved(direction="vh"),
+        tag="pinheader",
     )
 )
-
-diagram.export("pinout_arduino_uno_rev3.svg", True)

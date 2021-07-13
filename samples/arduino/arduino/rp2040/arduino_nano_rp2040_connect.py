@@ -1,5 +1,5 @@
 from pinout.core import Group, Image, Raw, Rect
-from pinout.components.layout import Diagram
+from pinout.components.layout import Diagram, Panel
 from pinout.components import pinlabel, legend, leaderline
 from pinout.components.text import TextBlock
 
@@ -61,6 +61,7 @@ pinout_graphic.add(
         label_start=(80, 0),
         label_pitch=(0, 24.6),
         labels=prep(data.header_rhs),
+        tag="pinheader",
     )
 )
 
@@ -74,6 +75,7 @@ pinout_graphic.add(
         label_pitch=(0, 24.6),
         scale=(-1, 1),
         labels=prep(data.header_lhs),
+        tag="pinheader",
     )
 )
 
@@ -88,7 +90,6 @@ pinout_graphic.add(
         scale=(-1, -1),
         labels=prep(data.leds),
         leaderline=leaderline.Curved(direction="vh"),
+        tag="pinheader",
     )
 )
-
-diagram.export("pinout_arduino_nano_rp2040_connect.svg", True)

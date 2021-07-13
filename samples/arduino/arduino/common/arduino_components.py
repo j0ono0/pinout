@@ -1,5 +1,5 @@
 # Customised components for Arduino pinout diagram
-from pinout import core
+from pinout.core import Group, Path, Rect
 from pinout.components import pinlabel
 
 
@@ -25,13 +25,13 @@ class PlbStart(pinlabel.Body):
             ]
         )
         output.add(
-            core.Path(
+            Path(
                 path_definition=path_def,
                 x=self.x,
                 y=self.y - (self.height / 2),
                 width=self.width,
                 height=self.height,
-                tag="label__body",
+                tag="pinlabel__body",
             )
         )
 
@@ -53,13 +53,13 @@ class PlbStart(pinlabel.Body):
             ]
         )
         output.add(
-            core.Path(
+            Path(
                 path_definition=path_def,
                 x=self.x,
                 y=self.y - (self.height / 2),
                 width=self.width,
                 height=self.height,
-                tag="label__bodyinner",
+                tag="pinlabel__bodyinner",
             )
         )
         return output.render()
@@ -81,13 +81,13 @@ class PlbEnd(pinlabel.Body):
             ]
         )
         output.add(
-            core.Path(
+            Path(
                 path_definition=path_def,
                 x=self.x,
                 y=self.y - (self.height / 2),
                 width=self.width,
                 height=self.height,
-                tag="label__body",
+                tag="pinlabel__body",
             )
         )
 
@@ -102,25 +102,25 @@ class Plb(pinlabel.Body):
         output = Group()
 
         output.add(
-            core.Rect(
+            Rect(
                 x=self.x,
                 y=self.y - (self.height / 2),
                 width=self.width,
                 height=self.height,
                 corner_radius=self.corner_radius,
-                tag="block label__body",
+                tag="block pinlabel__body",
             )
         )
 
         # Add an inner body for 'inner-stroke' styling
         output.add(
-            core.Rect(
+            Rect(
                 x=self.x + INSET / 2,
                 y=self.y - (self.height / 2) + INSET / 2,
                 width=self.width - INSET,
                 height=self.height - INSET,
                 corner_radius=self.corner_radius,
-                tag="block label__bodyinner",
+                tag="block pinlabel__bodyinner",
             )
         )
         return output.render()

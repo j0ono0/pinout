@@ -7,16 +7,7 @@
     opacity: 1;
     
 }
-path, rect {
-    stroke: rgb(0, 0, 0);
-    stroke-dasharray: 0;
-    stroke-dashoffset: 0;
-    stroke-linecap: round;
-    stroke-linejoin: miter;
-    stroke-miterlimit: inherit;
-    stroke-opacity: 1;
-    stroke-width: 0;
-}
+
 path{
     fill: none;
 }
@@ -28,17 +19,17 @@ text {
     dominant-baseline: auto;
 }
 
-.label__body{
+.pinlabel__body{
     fill: rgb(36, 36, 36);
 }
-.label__bodyinner{
+.pinlabel__bodyinner{
     fill: none;
     stroke-linejoin: "miter";
 }
-.label .lline{
+.pinlabel .pinlabel__leader{
     stroke-width: 0;
 }
-.label__text{
+.pinlabel__text{
     dominant-baseline: central;
     fill: #fff;
     font-size: 12px;
@@ -53,7 +44,7 @@ text {
 .legend .swatch__body{
     fill: rgba(0,0,0,0);
 }
-.legend-entry__text{
+.legendentry text{
     dominant-baseline: central;
     fill: #000;
 }
@@ -68,28 +59,28 @@ text {
     fill: #e4e4e2;
 }
 
-.label__row .label:first-child .lline,
-.label.show-leader  .lline{
+.pinheader g .pinlabel:first-child .pinlabel__leader,
+.pinlabel.show-leader  .pinlabel__leader{
     stroke-width: 2px;
     stroke: #bcc6c6;
 }
 
-.led .label__body,
+.led .pinlabel__body,
 .led .swatch__body{
     fill: #1da086;
 }
-.mu-port .label__body,
+.mu-port .pinlabel__body,
 .mu-port .swatch__body{
     fill: #f39c12;
 }
-.default .label__body,
+.default .pinlabel__body,
 .default .swatch__body{
     fill: #f1c40f;
 }
-.default .label__text{
+.default .pinlabel__text{
     fill: #000;
 }
-.digital .label__body,
+.digital .pinlabel__body,
 .digital .swatch__body{
     fill: url("#stripe-a");
 }
@@ -102,7 +93,7 @@ text {
         fill: #de7f40;
     }
 
-.analog .label__body{
+.analog .pinlabel__body{
     fill: url("#stripe-b");
 }
     
@@ -113,12 +104,12 @@ text {
         fill: #f8e6d9;
     }
 
-.analog .label__bodyinner{
+.analog .pinlabel__bodyinner{
     fill: none;
     stroke: #d35400;
     stroke-width: 2;
 }
-.analog .label__text{
+.analog .pinlabel__text{
     fill: #d35400;
 }
 .analog .swatch__body{
@@ -126,43 +117,43 @@ text {
     stroke: #d35400;
     stroke-width: 2;   
 }
-.pwr .label__body,
+.pwr .pinlabel__body,
 .pwr .swatch__body{
     fill: #c11f09;
 }
 
-.other .label__body,
+.other .pinlabel__body,
 .other .swatch__body{
     fill: #fff;
 }
-.other .label__bodyinner,
+.other .pinlabel__bodyinner,
 .other .swatch__body{
     stroke: #d86e29;
     stroke-width: 2;
 }
-.other .label__text{
+.other .pinlabel__text{
     fill: #d86e29;
 }
-.gnd .label__body,
+.gnd .pinlabel__body,
 .gnd .swatch__body{
     fill: #000;
 }
-.internal .label__body,
+.internal .pinlabel__body,
 .internal .swatch__body{
     fill: #94a3a6;
 }
-.swd .label__body,
+.swd .pinlabel__body,
 .swd .swatch__body{
     fill: #9e856e;
 }
-.nc .label__body,
+.nc .pinlabel__body,
 .nc .swatch__body{
     fill: #fff;
 }
-.nc .label__text{
+.nc .pinlabel__text{
     fill: #ccc;
 }
-.nc .label__bodyinner,
+.nc .pinlabel__bodyinner,
 .nc .swatch__body{
     stroke: #ccc;
     stroke-width: 2;

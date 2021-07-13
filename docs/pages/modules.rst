@@ -8,6 +8,7 @@ Modules
     :maxdepth: 2
     :caption: Contents:
     
+    manager
     config
     core
     layout

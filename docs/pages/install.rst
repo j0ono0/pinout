@@ -24,14 +24,14 @@ Quickstart
 
 This guide makes use of a hardware image, stylesheet, data file, and a Python script. Sample files are included with the package and can be duplicated for your use. Open a command line (with enabled virtual environment if you are using one) in the location you plan to work and enter the following::
 
+    py -m pinout.manager --duplicate quick_start
+
     # expected output:
     # >>> data.py duplicated.
     # >>> hardware.png duplicated.
     # >>> pinout_diagram.py duplicated.
     # >>> styles.css duplicated.
 
-
-    py -m pinout.manager --duplicate quick_start
 
 Generating the final SVG graphic is done from the command line::
 

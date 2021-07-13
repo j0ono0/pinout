@@ -1,4 +1,5 @@
-from pinout.core import Diagram, Group, Image, Raw, Rect
+from pinout.core import Group, Image, Raw, Rect
+from pinout.components.layout import Diagram
 from pinout.components import pinlabel, legend, leaderline
 from pinout.components.text import TextBlock
 

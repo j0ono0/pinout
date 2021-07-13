@@ -132,7 +132,7 @@ legend_content = [
 
 # Text
 
-title = ["Teensy 4 pinout"]
+title = "Teensy 4 pinout"
 
 title_2 = """32 Bit Arduino Compatible 
 Microcontroller"""

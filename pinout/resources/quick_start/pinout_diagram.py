@@ -119,7 +119,7 @@ title_block = panel_info.add(
 )
 panel_info.add(
     TextBlock(
-        data.description.split("\n"),
+        data.description,
         x=20,
         y=60,
         width=title_block.width,

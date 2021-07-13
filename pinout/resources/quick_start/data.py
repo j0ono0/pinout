@@ -60,7 +60,7 @@ right_header = [
 
 # Text
 
-title = ["<tspan class='h1'>Pinout Quick start</tspan>"]
+title = "<tspan class='h1'>Pinout Quick start</tspan>"
 
 description = """Python tool kit to assist with 
 documentation of electronic hardware. 

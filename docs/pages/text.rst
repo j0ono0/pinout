@@ -13,7 +13,7 @@ TextBlock
 
     .. note::
     
-        *pinout* cannot detect text character size! Consequently care should be taken to ensure text does not render outside expected boundaries
+        *pinout* cannot detect text character size! Consequently care should be taken to ensure text does not render outside expected boundaries.
 
     :param content: Text to be displayed
     :type content: String or List

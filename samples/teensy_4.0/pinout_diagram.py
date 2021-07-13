@@ -210,7 +210,7 @@ for index, (entry_text, tag) in enumerate(data.legend_content):
     )
     legend_entry.add(
         TextBlock(
-            entry_text.split("\n"),
+            entry_text,
             x=10,
             y=22,
             line_height=19,
@@ -228,7 +228,7 @@ titlebar.add(
 )
 titlebar.add(
     TextBlock(
-        data.title_2.split("\n"),
+        data.title_2,
         x=20,
         y=60,
         line_height=18,
@@ -237,7 +237,7 @@ titlebar.add(
 )
 titlebar.add(
     TextBlock(
-        data.instructions.split("\n"),
+        data.instructions,
         x=20,
         y=100,
         line_height=18,
@@ -246,7 +246,7 @@ titlebar.add(
 )
 titlebar.add(
     TextBlock(
-        data.notes.split("\n"),
+        data.notes,
         x=395,
         y=60,
         line_height=18,

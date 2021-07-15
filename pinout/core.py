@@ -16,7 +16,7 @@ class TransformMixin:
         matrix=None,
         translate=None,
         scale=(1, 1),
-        rotate=None,
+        rotate=0,
         skewx=None,
         skewy=None,
         **kwargs,

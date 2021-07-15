@@ -97,3 +97,17 @@ panel = {
     "inner": {"tag": "panel__inner"},
     "outer": {"tag": "panel__outer"},
 }
+
+
+# Integrated circuit
+ic_dip = {
+    "inset": (15, 0, 15, 0),
+    "tag": "ic ic--dip",
+    "corner_radius": 3,
+}
+ic_qfp = {
+    "inset": (15, 15, 15, 15),
+    "pin_pitch": 30,
+    "tag": "ic ic--qfp",
+    "corner_radius": 3,
+}

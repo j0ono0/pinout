@@ -8,6 +8,7 @@
     transform="
         translate({{ group.x }} {{  group.y }}) 
         scale({{ group.scale.x }} {{ group.scale.y }})
+        rotate({{ group.rotate }})
     "
 >
     {% block content %}

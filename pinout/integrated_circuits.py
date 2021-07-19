@@ -57,6 +57,8 @@ class DIP(Group):
                 y=y1,
                 width=self.width - (x1 + x2),
                 height=self.height - (y1 + y2),
+                corner_radius=self.config["body"]["corner_radius"],
+                tag=self.config["body"]["tag"],
             )
         )
         # Add pin legs
@@ -140,6 +142,8 @@ class QFP(Group):
                 y=y1,
                 width=self.width - (x1 + x2),
                 height=self.height - (y1 + y2),
+                corner_radius=self.config["body"]["corner_radius"],
+                tag=self.config["body"]["tag"],
             )
         )
         # Add pin legs

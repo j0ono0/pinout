@@ -103,11 +103,21 @@ panel = {
 ic_dip = {
     "inset": (15, 0, 15, 0),
     "tag": "ic ic--dip",
-    "corner_radius": 3,
+    "body": {
+        "x": 15,
+        "y": 0,
+        "corner_radius": 3,
+        "tag": "ic__body",
+    },
 }
 ic_qfp = {
     "inset": (15, 15, 15, 15),
     "pin_pitch": 30,
     "tag": "ic ic--qfp",
-    "corner_radius": 3,
+    "body": {
+        "x": 15,
+        "y": 15,
+        "corner_radius": 3,
+        "tag": "ic__body",
+    },
 }

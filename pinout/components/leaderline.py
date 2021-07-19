@@ -1,3 +1,4 @@
+import math
 from pinout import core
 
 
@@ -149,6 +150,51 @@ class Angled(Leaderline):
             )
         else:
             path_def = ""
+
+        self.d = path_def
+
+
+class Diagonal(Leaderline):
+    """ Leaderline comprised of a diagonal and horizontal line"""
+
+    def route(self, origin, destination):
+
+        start, end = self.end_points(origin, destination)
+        x_dist = abs(start.x - end.x)
+        y_dist = abs(start.y - end.y)
+
+        min_dist = min(x_dist, y_dist)
+
+        segment = min_dist / 6
+        segment_x = segment * math.cos(math.radians(45))
+        segment_y = segment * math.sin(math.radians(45))
+        radius = segment * math.tan(math.radians(67.5))
+
+        path_def = " ".join(
+            [
+                f"M {start.x} {start.y}",
+                f"L {start.x + min_dist - segment_x} {start.y + min_dist - segment_y}",
+                f"A {radius} {radius} 0 0 0  {start.x + min_dist + segment} {end.y}",
+                f"L {end.x} {end.y}",
+            ]
+        )
+
+        self.d = path_def
+
+
+class DiagonalAngled(Leaderline):
+    """ Leaderline comprised of a diagonal and horizontal line"""
+
+    def route(self, origin, destination):
+
+        start, end = self.end_points(origin, destination)
+        x_dist = abs(start.x - end.x)
+        y_dist = abs(start.y - end.y)
+        min_dist = min(x_dist, y_dist)
+
+        path_def = " ".join(
+            [f"M {start.x} {start.y}", f"l {min_dist} {min_dist}" f"L {end.x} {end.y}"]
+        )
 
         self.d = path_def
 

@@ -110,9 +110,15 @@ class QFP(Group):
 
     @property
     def pin_pitch(self):
-        body_height = self.height - (self.inset.y1 + self.inset.y2)
-        header_len = self.pin_count // 4
-        return body_height / (header_len + 1)
+        body_length = self.height - (self.inset.y1 + self.inset.y2)
+        pins_per_side = self.pin_count // 4
+        return body_length / (pins_per_side + 1)
+
+    @property
+    def pitch_coords(self):
+        pitch_x = math.cos(math.radians(self.rotate)) * self.pin_pitch
+        pitch_y = math.sin(math.radians(self.rotate)) * self.pin_pitch
+        return Coords(pitch_x, pitch_y)
 
     def pin_coords(self, index, rotate=True):
         if index <= self.pin_count * 0.25:

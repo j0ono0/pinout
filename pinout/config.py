@@ -109,6 +109,10 @@ ic_dip = {
         "corner_radius": 3,
         "tag": "ic__body",
     },
+    "polarity_mark": {
+        "radius": 5,
+        "tag": "polarity",
+    },
 }
 ic_qfp = {
     "inset": (15, 15, 15, 15),
@@ -119,5 +123,9 @@ ic_qfp = {
         "y": 15,
         "corner_radius": 3,
         "tag": "ic__body",
+    },
+    "polarity_mark": {
+        "radius": 5,
+        "tag": "polarity",
     },
 }

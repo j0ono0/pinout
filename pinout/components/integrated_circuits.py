@@ -1,10 +1,11 @@
 import math
-from .core import Group, SvgShape, Rect, BoundingCoords, Coords
-from . import config
+from pinout.core import Group, SvgShape, Rect, BoundingCoords, Coords
+from pinout import config
 
 
 class Pin(Group):
-    def __init__(self, width, height, **kwargs):
+    def __init__(self, width, height, polarity_mark=False, **kwargs):
+        self.polarity_mark = polarity_mark
         super().__init__(**kwargs)
         self.add(SvgShape(width=width, height=height))
 
@@ -18,6 +19,19 @@ class Pin(Group):
                 tag="pin__leg",
             )
         )
+        # Add polarity marking
+        if self.polarity_mark:
+            radius = self.config["radius"]
+            self.add(
+                Rect(
+                    x=-radius * 3,
+                    y=-radius,
+                    width=radius * 2,
+                    height=radius * 2,
+                    corner_radius=radius,
+                    tag=self.config["tag"],
+                )
+            )
         return super().render()
 
 
@@ -51,7 +65,7 @@ class DIP(Group):
     def render(self):
         # Add body
         x1, y1, x2, y2 = self.inset
-        body = self.add(
+        self.add(
             Rect(
                 x=x1,
                 y=y1,
@@ -76,6 +90,8 @@ class DIP(Group):
                     y=y,
                     tag=f"ic__leg pin_{i}",
                     scale=scale,
+                    polarity_mark=i == 1,
+                    config=self.config["polarity_mark"],
                 )
             )
 
@@ -170,6 +186,8 @@ class QFP(Group):
                     tag=f"ic__leg pin_{i}",
                     scale=scale,
                     rotate=rotate,
+                    polarity_mark=i == 1,
+                    config=self.config["polarity_mark"],
                 )
             )
 

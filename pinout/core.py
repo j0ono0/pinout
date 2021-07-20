@@ -40,7 +40,7 @@ class Layout(TransformMixin):
         self.y = y
         self.children = []
         self.defs = []
-        self.config = {}
+        self.config = kwargs.pop("config", {})
 
     def add(self, instance):
         self.children.append(instance)

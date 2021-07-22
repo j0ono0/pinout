@@ -1,18 +1,27 @@
 import math
 from pinout.core import Group, SvgShape, Rect, BoundingCoords, Coords
 from pinout import config
+from pinout.components.pinlabel import PinLabelGroup
+from pinout.components.leaderline import Curved
 
 
 class Pin(Group):
     def __init__(self, width, height, polarity_mark=False, **kwargs):
         self.polarity_mark = polarity_mark
         super().__init__(**kwargs)
-        self.add(SvgShape(width=width, height=height))
+        self.add(
+            SvgShape(
+                x=-width / 2,
+                y=-height / 2,
+                width=width,
+                height=height,
+            )
+        )
 
     def render(self):
         self.add(
             Rect(
-                x=0,
+                x=-self.width / 2,
                 y=-self.height / 2,
                 width=self.width,
                 height=self.height,
@@ -24,7 +33,7 @@ class Pin(Group):
             radius = self.config["radius"]
             self.add(
                 Rect(
-                    x=-radius * 3,
+                    x=-self.width / 2 - radius * 3,
                     y=-radius,
                     width=radius * 2,
                     height=radius * 2,
@@ -54,11 +63,11 @@ class DIP(Group):
     def pin_coords(self, index):
         if index <= self.pin_count // 2:
             # lhs header
-            x = self.inset.x1
+            x = self.inset.x1 / 2
         else:
             # rhs header
             index = index - self.pin_count // 2
-            x = self.width - self.inset.x2
+            x = self.width - self.inset.x2 / 2
         y = self.pin_pitch * index
         return Coords(x, y)
 
@@ -78,9 +87,9 @@ class DIP(Group):
         # Add pin legs
         for i in range(1, self.pin_count + 1):
             if i <= self.pin_count // 2:
-                scale = (-1, 1)
+                scale = Coords(-1, 1)
             else:
-                scale = (1, 1)
+                scale = Coords(1, 1)
             x, y = self.pin_coords(i)
             self.add(
                 Pin(
@@ -100,6 +109,8 @@ class DIP(Group):
 
 class QFP(Group):
     def __init__(self, pin_count, length, **kwargs):
+        if pin_count % 4 != 0:
+            raise ValueError("pin_count not divisible by 4.")
         self.pin_count = pin_count
         super().__init__(**kwargs)
         self.update_config(config.ic_qfp)
@@ -124,10 +135,10 @@ class QFP(Group):
         if index <= self.pin_count * 0.25:
             # bottom
             x = self.inset.x1 + self.pin_pitch * index
-            y = self.height - self.inset.y2
+            y = self.height - self.inset.y2 / 2
         elif index <= self.pin_count * 0.5:
             # rhs
-            x = self.width - self.inset.x2
+            x = self.width - self.inset.x2 / 2
             y = (
                 self.height
                 - self.inset.y2
@@ -140,10 +151,10 @@ class QFP(Group):
                 - self.inset.x1
                 - self.pin_pitch * (index - self.pin_count * 0.5)
             )
-            y = self.inset.y2
+            y = self.inset.y2 / 2
         else:
             # lhs
-            x = self.inset.x2
+            x = self.inset.x2 / 2
             y = self.inset.y1 + self.pin_pitch * (index - self.pin_count * 0.75)
 
         # calculate for rotation
@@ -198,3 +209,73 @@ class QFP(Group):
             )
 
         return super().render()
+
+
+def labelled_qfn(labels, length=160, label_start=(100, 20), label_pitch=(0, 30)):
+
+    graphic = Group()
+    ic = graphic.add(
+        QFP(
+            pin_count=len(labels),
+            length=length,
+            rotate=45,
+        )
+    )
+    pins_per_side = int(ic.pin_count * 0.25)
+
+    # Side 1
+    graphic.add(
+        PinLabelGroup(
+            x=ic.pin_coords(1).x,
+            y=ic.pin_coords(1).y,
+            pin_pitch=(ic.pitch_coords),
+            label_start=label_start,
+            label_pitch=label_pitch,
+            scale=(-1, 1),
+            labels=labels[:pins_per_side],
+            leaderline=Curved(direction="vh"),
+        )
+    )
+
+    # Side 2
+    graphic.add(
+        PinLabelGroup(
+            x=ic.pin_coords(pins_per_side * 2).x,
+            y=ic.pin_coords(pins_per_side * 2).y,
+            pin_pitch=(-ic.pitch_coords.y, ic.pitch_coords.x),
+            label_start=label_start,
+            label_pitch=label_pitch,
+            scale=(1, 1),
+            labels=labels[int(pins_per_side * 2) - 1 : pins_per_side - 1 : -1],
+            leaderline=Curved(direction="vh"),
+        )
+    )
+
+    # Side 3
+    graphic.add(
+        PinLabelGroup(
+            x=ic.pin_coords(pins_per_side * 2 + 1).x,
+            y=ic.pin_coords(pins_per_side * 2 + 1).y,
+            pin_pitch=(-ic.pitch_coords.x, -ic.pitch_coords.y),
+            label_start=label_start,
+            label_pitch=label_pitch,
+            scale=(1, -1),
+            labels=labels[pins_per_side * 2 : pins_per_side * 3],
+            leaderline=Curved(direction="vh"),
+        )
+    )
+
+    # Side 4
+    graphic.add(
+        PinLabelGroup(
+            x=ic.pin_coords(pins_per_side * 4).x,
+            y=ic.pin_coords(pins_per_side * 4).y,
+            pin_pitch=(ic.pitch_coords.x, -ic.pitch_coords.y),
+            label_start=label_start,
+            label_pitch=label_pitch,
+            scale=(-1, -1),
+            labels=labels[pins_per_side * 4 - 1 : pins_per_side * 3 - 1 : -1],
+            leaderline=Curved(direction="vh"),
+        )
+    )
+    return graphic

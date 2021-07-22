@@ -72,6 +72,7 @@ def create_stylesheet(module_name, path, instance_name="diagram", overwrite=Fals
     from pinout.components.layout import Panel
     from pinout.components.legend import Legend
     from pinout.components.pinlabel import PinLabel
+    from pinout.components.integrated_circuits import DIP, QFP
 
     diagram = get_instance(module_name, instance_name)
 
@@ -91,6 +92,10 @@ def create_stylesheet(module_name, path, instance_name="diagram", overwrite=Fals
         context["panel"] = config.panel
     if diagram.find_children_by_type(diagram, AnnotationLabel):
         context["annotation"] = config.annotation
+    if diagram.find_children_by_type(diagram, DIP):
+        context["ic_dip"] = config.ic_dip
+    if diagram.find_children_by_type(diagram, QFP):
+        context["ic_qfp"] = config.ic_qfp
 
     css_tplt = templates.get("stylesheet.j2")
     css = css_tplt.render(css=context)

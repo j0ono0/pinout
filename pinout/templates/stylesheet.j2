@@ -86,5 +86,45 @@ text {
         stroke-width: 4px;
         fill: none;
     }
+{% endif %}
+{# Integrated circuits #}
+{% if css.ic_dip %}
 
+    .{{ css.ic_dip.body.tag }}{
+        fill: rgb(85, 85, 85);
+        stroke-width: 1px;
+        stroke: #000;
+    }
+    .{{ css.ic_dip.leg.tag }} .{{ css.ic_dip.polarity_mark.tag }}{
+        fill: rgb(85, 85, 85);
+        stroke-width: 2px;
+        stroke: rgb(138, 138, 138);
+        
+    }
+
+    .{{ css.ic_dip.leg.tag }}{
+        fill: rgb(255, 255, 255);
+        stroke-width: 1px;
+        stroke: #000;
+    }
+
+{% endif %}
+{% if css.ic_qfp %}
+    .{{ css.ic_qfp.body.tag }}{
+        fill: rgb(85, 85, 85);
+        stroke-width: 1px;
+        stroke: #000;
+    }
+    .{{ css.ic_qfp.leg.tag }} .{{ css.ic_qfp.polarity_mark.tag }}{
+        fill: rgb(85, 85, 85);
+        stroke-width: 2px;
+        stroke: rgb(138, 138, 138);
+        
+    }
+
+    .{{ css.ic_qfp.leg.tag }}{
+        fill: rgb(255, 255, 255);
+        stroke-width: 1px;
+        stroke: #000;
+    }
 {% endif %}

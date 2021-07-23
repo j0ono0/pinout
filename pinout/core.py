@@ -1,5 +1,6 @@
 import base64
 import copy
+import math
 import pathlib
 from collections import namedtuple
 from pinout import manager, templates
@@ -107,6 +108,14 @@ class Layout(TransformMixin):
         x1, y1, x2, y2 = self.bounding_coords()
         return BoundingRect(x1, y1, x2 - x1, y2 - y1)
 
+    def rotated_coords(self, x, y):
+        return Coords(
+            x * math.cos(math.radians(-self.rotate))
+            + y * math.sin(math.radians(-self.rotate)),
+            -x * math.sin(math.radians(-self.rotate))
+            + y * math.cos(math.radians(-self.rotate)),
+        )
+
     def bounding_coords(self):
         """Coordinates of the components's bounding rectangle.
 
@@ -128,8 +137,21 @@ class Layout(TransformMixin):
             y.append(self.y + coords.y2 * self.scale.y)
         x.sort()
         y.sort()
+
         try:
-            return BoundingCoords(x[0], y[0], x[-1], y[-1])
+            # Transform with rotate
+            x1, y1, x2, y2 = x[0], y[0], x[-1], y[-1]
+            top_left = self.rotated_coords(x1, y1)
+            top_right = self.rotated_coords(x2, y1)
+            bottom_left = self.rotated_coords(x1, y2)
+            bottom_right = self.rotated_coords(x2, y2)
+            zipped = [
+                sorted(list(coord))
+                for coord in zip(top_left, top_right, bottom_left, bottom_right)
+            ]
+            return BoundingCoords(
+                zipped[0][0], zipped[1][0], zipped[0][-1], zipped[1][-1]
+            )
         except IndexError:
             # There are no children
             return BoundingCoords(0, 0, 0, 0)

@@ -6,7 +6,10 @@
     y="{{ svg.y }}"
     width="{{ svg.width }}" 
     height="{{ svg.height }}" 
+    {#
     viewBox="{{ svg.bounding_rect().x }} {{ svg.bounding_rect().y }} {{ svg.bounding_rect().w }} {{ svg.bounding_rect().h }}"
+    #}
+    viewBox="0 0 {{ svg.width }} {{ svg.height }}"
     {% if svg.tag %}
     class="{{ svg.tag }}"
     {% endif %}

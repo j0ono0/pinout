@@ -7,24 +7,28 @@ from pinout.components.leaderline import Curved
 
 class Pin(Group):
     def __init__(self, width, height, polarity_mark=False, **kwargs):
-        self.polarity_mark = polarity_mark
         super().__init__(**kwargs)
+        self.polarity_mark = polarity_mark
+        self._width = width
+        self._height = height
+
+        # Add shape so bounding coords are reported correctly
         self.add(
             SvgShape(
-                x=-width / 2,
-                y=-height / 2,
-                width=width,
-                height=height,
+                x=-self._width / 2,
+                y=-self._height / 2,
+                width=self._width,
+                height=self._height,
             )
         )
 
     def render(self):
         self.add(
             Rect(
-                x=-self.width / 2,
-                y=-self.height / 2,
-                width=self.width,
-                height=self.height,
+                x=-self._width / 2,
+                y=-self._height / 2,
+                width=self._width,
+                height=self._height,
                 tag="pin__leg",
             )
         )
@@ -33,7 +37,7 @@ class Pin(Group):
             radius = self.config["radius"]
             self.add(
                 Rect(
-                    x=-self.width / 2 - radius * 3,
+                    x=-self._width / 2 - radius * 3,
                     y=-radius,
                     width=radius * 2,
                     height=radius * 2,
@@ -111,17 +115,17 @@ class QFP(Group):
     def __init__(self, pin_count, length, **kwargs):
         if pin_count % 4 != 0:
             raise ValueError("pin_count not divisible by 4.")
-        self.pin_count = pin_count
         super().__init__(**kwargs)
-        self.update_config(config.ic_qfp)
+        self.pin_count = pin_count
+        self.length = length
 
+        self.update_config(config.ic_qfp)
         self.inset = BoundingCoords(*self.config["inset"])
-        self.add(SvgShape(width=length, height=length))
         self.add_tag(self.config["tag"])
 
     @property
     def pin_pitch(self):
-        body_length = self.height - (self.inset.y1 + self.inset.y2)
+        body_length = self.length - (self.inset.y1 + self.inset.y2)
         pins_per_side = self.pin_count // 4
         return body_length / (pins_per_side + 1)
 
@@ -132,30 +136,32 @@ class QFP(Group):
         return Coords(pitch_x, pitch_y)
 
     def pin_coords(self, index, rotate=True):
+        pins_per_side = self.pin_count // 4
+
         if index <= self.pin_count * 0.25:
             # bottom
-            x = self.inset.x1 + self.pin_pitch * index
-            y = self.height - self.inset.y2 / 2
+            x = self.inset.x1 + self.pin_pitch * (((index - 1) % pins_per_side) + 1)
+            y = self.length - self.inset.y2 / 2
         elif index <= self.pin_count * 0.5:
             # rhs
-            x = self.width - self.inset.x2 / 2
+            x = self.length - self.inset.x2 / 2
             y = (
-                self.height
+                self.length
                 - self.inset.y2
-                - self.pin_pitch * (index - self.pin_count * 0.25)
+                - self.pin_pitch * (((index - 1) % pins_per_side) + 1)
             )
         elif index <= self.pin_count * 0.75:
             # top
             x = (
-                self.width
-                - self.inset.x1
-                - self.pin_pitch * (index - self.pin_count * 0.5)
+                self.length
+                - self.inset.x2
+                - self.pin_pitch * (((index - 1) % pins_per_side) + 1)
             )
-            y = self.inset.y2 / 2
+            y = self.inset.y1 / 2
         else:
             # lhs
             x = self.inset.x2 / 2
-            y = self.inset.y1 + self.pin_pitch * (index - self.pin_count * 0.75)
+            y = self.inset.y1 + self.pin_pitch * (((index - 1) % pins_per_side) + 1)
 
         # calculate for rotation
         if rotate:
@@ -173,8 +179,8 @@ class QFP(Group):
             Rect(
                 x=x1,
                 y=y1,
-                width=self.width - (x1 + x2),
-                height=self.height - (y1 + y2),
+                width=self.length - (x1 + x2),
+                height=self.length - (y1 + y2),
                 corner_radius=self.config["body"]["corner_radius"],
                 tag=self.config["body"]["tag"],
             )
@@ -270,7 +276,7 @@ def labelled_qfn(labels, length=160, label_start=(100, 20), label_pitch=(0, 30))
         PinLabelGroup(
             x=ic.pin_coords(pins_per_side * 4).x,
             y=ic.pin_coords(pins_per_side * 4).y,
-            pin_pitch=(ic.pitch_coords.x, -ic.pitch_coords.y),
+            pin_pitch=(ic.pitch_coords.y, -ic.pitch_coords.x),
             label_start=label_start,
             label_pitch=label_pitch,
             scale=(-1, -1),

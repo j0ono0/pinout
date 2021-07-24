@@ -50,29 +50,47 @@ class Pin(Group):
 
 class DIP(Group):
     def __init__(self, pin_count, width, height, **kwargs):
-        self.pin_count = pin_count
+        if pin_count % 2 != 0:
+            raise ValueError("pin_count not divisible by 2.")
         super().__init__(**kwargs)
+        self.pin_count = pin_count
+        self._width = width
+        self._height = height
         self.update_config(config.ic_dip)
-
         self.inset = BoundingCoords(*self.config["inset"])
-        self.add(SvgShape(width=width, height=height))
         self.add_tag(self.config["tag"])
+        self.add(SvgShape(width=width, height=height))
 
     @property
     def pin_pitch(self):
-        body_height = self.height - (self.inset.y1 + self.inset.y2)
-        header_len = self.pin_count // 2
-        return body_height / (header_len + 1)
+        body_height = self._height - (self.inset.y1 + self.inset.y2)
+        pins_per_side = self.pin_count // 2
+        return body_height / (pins_per_side + 1)
 
-    def pin_coords(self, index):
+    @property
+    def pitch_coords(self):
+        pitch_x = math.cos(math.radians(self.rotate)) * self.pin_pitch
+        pitch_y = math.sin(math.radians(self.rotate)) * self.pin_pitch
+        return Coords(pitch_x, pitch_y)
+
+    def pin_coords(self, index, rotate=True):
+        pins_per_side = self.pin_count // 2
         if index <= self.pin_count // 2:
             # lhs header
             x = self.inset.x1 / 2
         else:
             # rhs header
             index = index - self.pin_count // 2
-            x = self.width - self.inset.x2 / 2
-        y = self.pin_pitch * index
+            x = self._width - self.inset.x2 / 2
+        y = self.inset.y1 + self.pin_pitch * ((index - 1) % pins_per_side + 1)
+
+        # calculate for rotation
+        if rotate:
+            rotate = math.radians(self.rotate)
+            rx = math.cos(rotate) * x - math.sin(rotate) * y
+            ry = math.sin(rotate) * x + math.cos(rotate) * y
+            return Coords(rx, ry)
+
         return Coords(x, y)
 
     def render(self):
@@ -82,8 +100,8 @@ class DIP(Group):
             Rect(
                 x=x1,
                 y=y1,
-                width=self.width - (x1 + x2),
-                height=self.height - (y1 + y2),
+                width=self._width - (x1 + x2),
+                height=self._height - (y1 + y2),
                 corner_radius=self.config["body"]["corner_radius"],
                 tag=self.config["body"]["tag"],
             )
@@ -94,7 +112,7 @@ class DIP(Group):
                 scale = Coords(-1, 1)
             else:
                 scale = Coords(1, 1)
-            x, y = self.pin_coords(i)
+            x, y = self.pin_coords(i, False)
             self.add(
                 Pin(
                     width=self.inset.x1,
@@ -284,4 +302,41 @@ def labelled_qfn(labels, length=160, label_start=(100, 20), label_pitch=(0, 30))
             leaderline=Curved(direction="vh"),
         )
     )
+    return graphic
+
+
+def labelled_dip(labels, width=100, height=160, label_start_x=100, label_pitch=(0, 30)):
+
+    graphic = Group()
+    ic = graphic.add(DIP(len(labels), width, height))
+
+    pins_per_side = len(labels) // 2
+    label_pitch = Coords(*label_pitch)
+    label_start = (label_start_x, (height - pins_per_side * label_pitch.y) / 2)
+
+    # LHS Side
+    graphic.add(
+        PinLabelGroup(
+            x=ic.pin_coords(1).x,
+            y=ic.pin_coords(1).y,
+            pin_pitch=(-ic.pitch_coords.y, ic.pitch_coords.x),
+            label_start=label_start,
+            label_pitch=label_pitch,
+            scale=(-1, 1),
+            labels=labels[:pins_per_side],
+        )
+    )
+    # RHS Side
+    graphic.add(
+        PinLabelGroup(
+            x=ic.pin_coords(pins_per_side + 1).x,
+            y=ic.pin_coords(pins_per_side + 1).y,
+            pin_pitch=(-ic.pitch_coords.y, ic.pitch_coords.x),
+            label_start=label_start,
+            label_pitch=label_pitch,
+            scale=(1, 1),
+            labels=labels[-1 : pins_per_side - 1 : -1],
+        )
+    )
+
     return graphic

@@ -309,11 +309,16 @@ def labelled_dip(labels, width=100, height=160, label_start_x=100, label_pitch=(
 
     graphic = Group()
     ic = graphic.add(DIP(len(labels), width, height))
-
     pins_per_side = len(labels) // 2
     label_pitch = Coords(*label_pitch)
-    label_start = (label_start_x, (height - pins_per_side * label_pitch.y) / 2)
-
+    label_start = (
+        label_start_x,
+        ic.pin_coords(1).y
+        - (pins_per_side * label_pitch.y - pins_per_side * ic.pin_pitch),
+    )
+    print(ic.pin_coords(1))
+    print(ic.pin_pitch)
+    print((pins_per_side * label_pitch.y - pins_per_side * ic.pin_pitch))
     # LHS Side
     graphic.add(
         PinLabelGroup(

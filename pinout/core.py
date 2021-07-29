@@ -2,6 +2,7 @@ import base64
 import copy
 import math
 import pathlib
+import urllib.request
 from collections import namedtuple
 from pinout import manager, templates
 
@@ -334,13 +335,25 @@ class Text(SvgShape):
 
 
 class Image(SvgShape):
-    """Include a image in the diagram. Access via Diagram.add_image()"""
+    """Include a image in the diagram."""
 
     def __init__(self, path, embed=False, **kwargs):
         super().__init__(**kwargs)
         self.path = path
         self.svg_data = None
         self.embed = embed
+
+    def loadData(self):
+        """Load image data from URL or local file system."""
+        try:
+            with open(self.path, "rb") as f:
+                return f.read()
+        except OSError:
+            try:
+                with urllib.request.urlopen(self.path) as f:
+                    return f.read()
+            except urllib.error.HTTPError as e:
+                print(e.code)
 
     def render(self):
         """Render SVG markup either linking or embedding an image.
@@ -349,19 +362,20 @@ class Image(SvgShape):
         :rtype: string
         """
         media_type = pathlib.Path(self.path).suffix[1:]
-        path = pathlib.Path(self.path)
         tplt = templates.get("image.svg")
+
         if self.embed:
             if media_type == "svg":
-                with path.open() as f:
-                    data = f.read()
+                data = self.loadData()
                 # Extract JUST the <svg> markup with no <XML> tag
                 import xml.etree.ElementTree as ET
 
                 tree = ET.fromstring(data)
                 self.svg_data = ET.tostring(tree)
             else:
-                encoded_img = base64.b64encode(open(self.path, "rb").read())
-                path = f"data:image/{media_type};base64,{encoded_img.decode('utf-8')}"
+                encoded_img = base64.b64encode(self.loadData())
+                self.path = (
+                    f"data:image/{media_type};base64,{encoded_img.decode('utf-8')}"
+                )
 
         return tplt.render(image=self)

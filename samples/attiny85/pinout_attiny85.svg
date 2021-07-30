@@ -1,0 +1,5350 @@
+
+<svg  
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0"
+    y="0"
+    width="1200" 
+    height="675" 
+    viewBox="0 0 1200 675"
+>
+
+    <style type="text/css" media="screen">  
+    <![CDATA[  
+    
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.panel__title{
+    font-size: 16px;
+}
+.diagram__title{
+    font-size: 22px;
+    font-weight: bold;
+}
+.italic{
+    font-style:italic;
+    font-weight: bold;
+}
+
+.panel__inner {
+    fill: #fff;
+}
+.panel__outer {
+    fill: #99a5b2;
+}
+.panel__title .panel__inner{
+    fill: #ededed;
+}
+
+.legendentry text {
+    dominant-baseline: central;
+}
+
+.pinlabel__leader{
+    stroke-width: 1;
+    fill: none;
+}
+
+.pinlabel__text{
+    dominant-baseline: central;
+    fill: #fff;
+    font-size: 12px;
+    stroke-width: 0;
+    text-anchor: middle;
+}
+
+.dnc .pinlabel__body{
+    fill: rgb(220,220,220);
+}
+.dnc .pinlabel__leader{
+    stroke: rgb(220,220,220);
+}
+.dnc text{
+    fill: #999;
+}
+.pin_id .pinlabel__body{
+    fill: rgb(85, 85, 85);
+}
+.pin_id .pinlabel__leader{
+    stroke: rgb(85, 85, 85);
+}
+.pin_id text{
+    font-size: 9px;
+}
+.comparator .pinlabel__body{
+    fill: rgb(243, 85, 191);
+}
+.comparator .pinlabel__leader{
+    stroke: rgb(243, 85, 191);
+}
+.comparator .swatch__body {
+    fill: rgb(243, 85, 191);
+}
+.adc .pinlabel__body{
+    fill: rgb(83, 93, 222);
+}
+.adc .pinlabel__leader{
+    stroke: rgb(83, 93, 222);
+}
+.adc .swatch__body {
+    fill: rgb(83, 93, 222);
+}
+.interrupt .pinlabel__body{
+    fill: rgb(3, 130, 92);
+}
+.interrupt .pinlabel__leader{
+    stroke: rgb(3, 130, 92);
+}
+.interrupt .swatch__body {
+    fill: rgb(3, 130, 92);
+}
+.pwr .pinlabel__body{
+    fill: rgb(255, 53, 53);
+}
+.pwr .pinlabel__leader{
+    stroke: rgb(255, 53, 53);
+}
+.pwr .swatch__body {
+    fill: rgb(255, 53, 53);
+}
+.port .pinlabel__body{
+    fill: rgb(177, 30, 236);
+}
+.port .pinlabel__leader{
+    stroke: rgb(177, 30, 236);
+}
+.port .swatch__body {
+    fill: rgb(177, 30, 236);
+}
+.timer-counter .pinlabel__body{
+    fill: rgb(160, 79, 27);
+}
+.timer-counter .pinlabel__leader{
+    stroke: rgb(160, 79, 27);
+}
+.timer-counter .swatch__body {
+    fill: rgb(160, 79, 27);
+}
+.comms .pinlabel__body{
+    fill: rgb(59, 145, 130);
+}
+.comms .pinlabel__leader{
+    stroke: rgb(59, 145, 130);
+}
+.comms .swatch__body {
+    fill: rgb(59, 145, 130);
+}
+.gnd .pinlabel__body{
+    fill: rgb(0, 0, 0);
+}
+.gnd .pinlabel__leader{
+    stroke: rgb(0, 0, 0);
+}
+.gnd .swatch__body {
+    fill: rgb(0, 0, 0);
+}
+.oscillator .pinlabel__body{
+    fill: rgb(124, 21, 205);
+}
+.oscillator .pinlabel__leader{
+    stroke: rgb(124, 21, 205);
+}
+.oscillator .swatch__body {
+    fill: rgb(124, 21, 205);
+}
+
+.ic__body{
+    fill: rgb(85, 85, 85);
+    stroke-width: 1px;
+    stroke: #000;
+}
+.ic__leg .polarity{
+    fill: rgb(85, 85, 85);
+    stroke-width: 2px;
+    stroke: rgb(138, 138, 138);
+    
+}
+.ic__leg{
+    fill: rgb(255, 255, 255);
+    stroke-width: 1px;
+    stroke: #000;
+}
+
+
+    ]]>  
+</style>
+<g 
+        class=" panel"
+    transform="
+        translate(1.5 1.5) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="panel__outer" 
+    x="-1.5" 
+    y="-1.5" 
+    width="1200.0" 
+    height="675.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
+    x="0" 
+    y="0" 
+    width="1197.0" 
+    height="672.0" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class=" panel"
+    transform="
+        translate(1.5 1.5) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="panel__outer" 
+    x="-1.5" 
+    y="-1.5" 
+    width="1197.0" 
+    height="200.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
+    x="0" 
+    y="0" 
+    width="1194.0" 
+    height="197.0" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class=" textblock"
+    transform="
+        translate(10 30) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <text
+    class="textblock"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "  
+>
+    <tspan class='panel__title'>PDIP / SOIC / TSSOP</tspan>
+</text>
+</g><g 
+    transform="
+        translate(450 50) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" ic ic--dip"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="ic__body" 
+    x="15" 
+    y="0" 
+    width="80" 
+    height="120" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><g 
+        class="ic__leg pin_1"
+    transform="
+        translate(7.5 24.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-7.5" 
+    y="-6.0" 
+    width="15" 
+    height="12.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="polarity" 
+    x="-22.5" 
+    y="-5" 
+    width="10" 
+    height="10" 
+    shape-rendering="geometricPrecision"
+    rx="5" 
+    ry="5" 
+/>
+</g><g 
+        class="ic__leg pin_2"
+    transform="
+        translate(7.5 48.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-7.5" 
+    y="-6.0" 
+    width="15" 
+    height="12.0" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_3"
+    transform="
+        translate(7.5 72.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-7.5" 
+    y="-6.0" 
+    width="15" 
+    height="12.0" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_4"
+    transform="
+        translate(7.5 96.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-7.5" 
+    y="-6.0" 
+    width="15" 
+    height="12.0" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_5"
+    transform="
+        translate(102.5 24.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-7.5" 
+    y="-6.0" 
+    width="15" 
+    height="12.0" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_6"
+    transform="
+        translate(102.5 48.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-7.5" 
+    y="-6.0" 
+    width="15" 
+    height="12.0" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_7"
+    transform="
+        translate(102.5 72.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-7.5" 
+    y="-6.0" 
+    width="15" 
+    height="12.0" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_8"
+    transform="
+        translate(102.5 96.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-7.5" 
+    y="-6.0" 
+    width="15" 
+    height="12.0" 
+    shape-rendering="geometricPrecision"
+/>
+</g>
+</g><g 
+    transform="
+        translate(7.5 24.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 7.0 0.0 C 28.0 0.0 28.0 -9.0 49.0 -9.0 L 56 -9.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="56" 
+    y="-16.5" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(66.0 -9.0) 
+        scale(-1 1)
+    "  
+>
+    1
+</text>
+</g><g 
+        class=" pinlabel port"
+    transform="
+        translate(-76 -9.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    PB5
+</text>
+</g><g 
+        class=" pinlabel port"
+    transform="
+        translate(-132 -9.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    dW
+</text>
+</g><g 
+        class=" pinlabel adc"
+    transform="
+        translate(-188 -9.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    ADC0
+</text>
+</g><g 
+        class=" pinlabel gnd"
+    transform="
+        translate(-244 -9.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    RESET
+</text>
+</g><g 
+        class=" pinlabel interrupt"
+    transform="
+        translate(-300 -9.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    PCINT5
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(0.0 24.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 7.0 0.0 C 28.0 0.0 28.0 -3.0 49.0 -3.0 L 56.0 -3.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="56.0" 
+    y="-10.5" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(66.0 -3.0) 
+        scale(-1 1)
+    "  
+>
+    2
+</text>
+</g><g 
+        class=" pinlabel port"
+    transform="
+        translate(-76.0 21.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    PB3
+</text>
+</g><g 
+        class=" pinlabel adc"
+    transform="
+        translate(-132.0 21.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    ADC3
+</text>
+</g><g 
+        class=" pinlabel timer-counter"
+    transform="
+        translate(-188.0 21.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    OC1B
+</text>
+</g><g 
+        class=" pinlabel comms"
+    transform="
+        translate(-244.0 21.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    CLKI
+</text>
+</g><g 
+        class=" pinlabel oscillator"
+    transform="
+        translate(-300.0 21.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    XTAL1
+</text>
+</g><g 
+        class=" pinlabel interrupt"
+    transform="
+        translate(-356.0 21.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    PCINT3
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(0.0 48.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 7.0 0.0 C 28.0 0.0 28.0 3.0 49.0 3.0 L 56.0 3.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="56.0" 
+    y="-4.5" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(66.0 3.0) 
+        scale(-1 1)
+    "  
+>
+    3
+</text>
+</g><g 
+        class=" pinlabel port"
+    transform="
+        translate(-76.0 51.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    PB4
+</text>
+</g><g 
+        class=" pinlabel adc"
+    transform="
+        translate(-132.0 51.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    ADC2
+</text>
+</g><g 
+        class=" pinlabel timer-counter"
+    transform="
+        translate(-188.0 51.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    OC1B
+</text>
+</g><g 
+        class=" pinlabel port"
+    transform="
+        translate(-244.0 51.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    CLKO
+</text>
+</g><g 
+        class=" pinlabel oscillator"
+    transform="
+        translate(-300.0 51.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    XTAL2
+</text>
+</g><g 
+        class=" pinlabel interrupt"
+    transform="
+        translate(-356.0 51.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    PCINT4
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(0.0 72.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 7.0 0.0 C 28.0 0.0 28.0 9.0 49.0 9.0 L 56.0 9.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="56.0" 
+    y="1.5" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(66.0 9.0) 
+        scale(-1 1)
+    "  
+>
+    4
+</text>
+</g><g 
+        class=" pinlabel gnd"
+    transform="
+        translate(-76.0 81.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    GND
+</text>
+</g>
+</g>
+</g><g 
+    transform="
+        translate(102.5 24.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 7.0 0.0 C 28.0 0.0 28.0 -9.0 49.0 -9.0 L 56 -9.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="56" 
+    y="-16.5" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(66.0 -9.0) 
+        scale(1 1)
+    "  
+>
+    8
+</text>
+</g><g 
+        class=" pinlabel pwr"
+    transform="
+        translate(76 -9.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    VCC
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(0.0 24.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 7.0 0.0 C 28.0 0.0 28.0 -3.0 49.0 -3.0 L 56.0 -3.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="56.0" 
+    y="-10.5" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(66.0 -3.0) 
+        scale(1 1)
+    "  
+>
+    7
+</text>
+</g><g 
+        class=" pinlabel port"
+    transform="
+        translate(76.0 21.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    PB2
+</text>
+</g><g 
+        class=" pinlabel comms"
+    transform="
+        translate(132.0 21.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    SCK
+</text>
+</g><g 
+        class=" pinlabel comms"
+    transform="
+        translate(188.0 21.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    USCK
+</text>
+</g><g 
+        class=" pinlabel comms"
+    transform="
+        translate(244.0 21.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    SCL
+</text>
+</g><g 
+        class=" pinlabel adc"
+    transform="
+        translate(300.0 21.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    ADC1
+</text>
+</g><g 
+        class=" pinlabel timer-counter"
+    transform="
+        translate(356.0 21.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    T0
+</text>
+</g><g 
+        class=" pinlabel interrupt"
+    transform="
+        translate(412.0 21.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    INT0
+</text>
+</g><g 
+        class=" pinlabel interrupt"
+    transform="
+        translate(468.0 21.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    PCINT2
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(0.0 48.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 7.0 0.0 C 28.0 0.0 28.0 3.0 49.0 3.0 L 56.0 3.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="56.0" 
+    y="-4.5" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(66.0 3.0) 
+        scale(1 1)
+    "  
+>
+    6
+</text>
+</g><g 
+        class=" pinlabel port"
+    transform="
+        translate(76.0 51.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    PB1
+</text>
+</g><g 
+        class=" pinlabel comms"
+    transform="
+        translate(132.0 51.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    MISO
+</text>
+</g><g 
+        class=" pinlabel comms"
+    transform="
+        translate(188.0 51.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    DO
+</text>
+</g><g 
+        class=" pinlabel comparator"
+    transform="
+        translate(244.0 51.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    AIN1
+</text>
+</g><g 
+        class=" pinlabel timer-counter"
+    transform="
+        translate(300.0 51.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    OC0B
+</text>
+</g><g 
+        class=" pinlabel timer-counter"
+    transform="
+        translate(356.0 51.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    OC1A
+</text>
+</g><g 
+        class=" pinlabel interrupt"
+    transform="
+        translate(412.0 51.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    PCINT1
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(0.0 72.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 7.0 0.0 C 28.0 0.0 28.0 9.0 49.0 9.0 L 56.0 9.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="56.0" 
+    y="1.5" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(66.0 9.0) 
+        scale(1 1)
+    "  
+>
+    5
+</text>
+</g><g 
+        class=" pinlabel port"
+    transform="
+        translate(76.0 81.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    PB0
+</text>
+</g><g 
+        class=" pinlabel comms"
+    transform="
+        translate(132.0 81.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    MOSI
+</text>
+</g><g 
+        class=" pinlabel comms"
+    transform="
+        translate(188.0 81.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    DI
+</text>
+</g><g 
+        class=" pinlabel comms"
+    transform="
+        translate(244.0 81.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    SDA
+</text>
+</g><g 
+        class=" pinlabel comparator"
+    transform="
+        translate(300.0 81.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    AIN0
+</text>
+</g><g 
+        class=" pinlabel timer-counter"
+    transform="
+        translate(356.0 81.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    OC0A
+</text>
+</g><g 
+        class=" pinlabel timer-counter"
+    transform="
+        translate(412.0 81.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    OC1A
+</text>
+</g><g 
+        class=" pinlabel pwr"
+    transform="
+        translate(468.0 81.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    AREF
+</text>
+</g><g 
+        class=" pinlabel interrupt"
+    transform="
+        translate(524.0 81.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    PCINT0
+</text>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g><g 
+        class=" panel"
+    transform="
+        translate(1.5 201.5) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="panel__outer" 
+    x="-1.5" 
+    y="-1.5" 
+    width="1197.0" 
+    height="360.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
+    x="0" 
+    y="0" 
+    width="1194.0" 
+    height="357.0" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class=" textblock"
+    transform="
+        translate(10 30) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <text
+    class="textblock"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "  
+>
+    <tspan class='panel__title'>QFN / MLF</tspan>
+</text>
+</g><g 
+    transform="
+        translate(500 110) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" ic ic--qfp"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(45)
+    "
+>
+        <rect
+ class="ic__body" 
+    x="3" 
+    y="3" 
+    width="94" 
+    height="94" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><g 
+        class="ic__leg pin_1"
+    transform="
+        translate(18.666666666666664 98.5) 
+        scale(1 1)
+        rotate(90)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="polarity" 
+    x="-16.5" 
+    y="-5" 
+    width="10" 
+    height="10" 
+    shape-rendering="geometricPrecision"
+    rx="5" 
+    ry="5" 
+/>
+</g><g 
+        class="ic__leg pin_2"
+    transform="
+        translate(34.33333333333333 98.5) 
+        scale(1 1)
+        rotate(90)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_3"
+    transform="
+        translate(50.0 98.5) 
+        scale(1 1)
+        rotate(90)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_4"
+    transform="
+        translate(65.66666666666666 98.5) 
+        scale(1 1)
+        rotate(90)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_5"
+    transform="
+        translate(81.33333333333333 98.5) 
+        scale(1 1)
+        rotate(90)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_6"
+    transform="
+        translate(98.5 81.33333333333333) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_7"
+    transform="
+        translate(98.5 65.66666666666667) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_8"
+    transform="
+        translate(98.5 50.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_9"
+    transform="
+        translate(98.5 34.333333333333336) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_10"
+    transform="
+        translate(98.5 18.66666666666667) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_11"
+    transform="
+        translate(81.33333333333333 1.5) 
+        scale(1 1)
+        rotate(-90)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_12"
+    transform="
+        translate(65.66666666666667 1.5) 
+        scale(1 1)
+        rotate(-90)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_13"
+    transform="
+        translate(50.0 1.5) 
+        scale(1 1)
+        rotate(-90)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_14"
+    transform="
+        translate(34.333333333333336 1.5) 
+        scale(1 1)
+        rotate(-90)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_15"
+    transform="
+        translate(18.66666666666667 1.5) 
+        scale(1 1)
+        rotate(-90)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_16"
+    transform="
+        translate(1.5 18.666666666666664) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_17"
+    transform="
+        translate(1.5 34.33333333333333) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_18"
+    transform="
+        translate(1.5 50.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_19"
+    transform="
+        translate(1.5 65.66666666666666) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="ic__leg pin_20"
+    transform="
+        translate(1.5 81.33333333333333) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="pin__leg" 
+    x="-1.5" 
+    y="-3.9166666666666665" 
+    width="3" 
+    height="7.833333333333333" 
+    shape-rendering="geometricPrecision"
+/>
+</g>
+</g><g 
+    transform="
+        translate(-56.450691364726055 82.84934452902382) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 6.666666666666666 A 3.3333333333333335 3.3333333333333335 0 0 0 3.3333333333333335 10.0 L 56 10.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="56" 
+    y="2.5" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(66.0 10) 
+        scale(-1 1)
+    "  
+>
+    1
+</text>
+</g><g 
+        class=" pinlabel port"
+    transform="
+        translate(-76 10) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    PB5
+</text>
+</g><g 
+        class=" pinlabel port"
+    transform="
+        translate(-132 10) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    dW
+</text>
+</g><g 
+        class=" pinlabel adc"
+    transform="
+        translate(-188 10) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    ADC0
+</text>
+</g><g 
+        class=" pinlabel gnd"
+    transform="
+        translate(-244 10) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    RESET
+</text>
+</g><g 
+        class=" pinlabel interrupt"
+    transform="
+        translate(-300 10) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    PCINT5
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(11.078006238589245 11.078006238589245) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 19.281329174273836 A 9.640664587136918 9.640664587136918 0 0 0 9.640664587136918 28.921993761410754 L 67.07800623858924 28.921993761410754" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="67.07800623858924" 
+    y="21.421993761410754" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(77.07800623858924 28.921993761410754) 
+        scale(-1 1)
+    "  
+>
+    2
+</text>
+</g><g 
+        class=" pinlabel port"
+    transform="
+        translate(-76.0 40.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    PB3
+</text>
+</g><g 
+        class=" pinlabel adc"
+    transform="
+        translate(-132.0 40.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    ADC3
+</text>
+</g><g 
+        class=" pinlabel timer-counter"
+    transform="
+        translate(-188.0 40.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    OC1B
+</text>
+</g><g 
+        class=" pinlabel comms"
+    transform="
+        translate(-244.0 40.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    CLKI
+</text>
+</g><g 
+        class=" pinlabel oscillator"
+    transform="
+        translate(-300.0 40.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    XTAL1
+</text>
+</g><g 
+        class=" pinlabel interrupt"
+    transform="
+        translate(-356.0 40.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    PCINT3
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(22.15601247717849 22.15601247717849) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 31.895991681881007 A 15.947995840940502 15.947995840940502 0 0 0 15.947995840940502 47.84398752282151 L 78.15601247717849 47.84398752282151" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="78.15601247717849" 
+    y="40.34398752282151" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(88.15601247717849 47.84398752282151) 
+        scale(-1 1)
+    "  
+>
+    3
+</text>
+</g><g 
+        class=" pinlabel dnc"
+    transform="
+        translate(-76.0 70.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    DNC
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(33.23401871576773 33.23401871576773) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 44.51065418948818 A 22.25532709474409 22.25532709474409 0 0 0 22.25532709474409 66.76598128423227 L 89.23401871576773 66.76598128423227" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="89.23401871576773" 
+    y="59.26598128423227" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(99.23401871576773 66.76598128423227) 
+        scale(-1 1)
+    "  
+>
+    4
+</text>
+</g><g 
+        class=" pinlabel dnc"
+    transform="
+        translate(-76.0 100.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    DNC
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(44.31202495435698 44.31202495435698) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 57.12531669709534 A 28.56265834854767 28.56265834854767 0 0 0 28.56265834854767 85.68797504564301 L 100.31202495435699 85.68797504564301" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="100.31202495435699" 
+    y="78.18797504564301" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(110.31202495435699 85.68797504564301) 
+        scale(-1 1)
+    "  
+>
+    5
+</text>
+</g><g 
+        class=" pinlabel port"
+    transform="
+        translate(-76.0 130.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    PB4
+</text>
+</g><g 
+        class=" pinlabel adc"
+    transform="
+        translate(-132.0 130.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    ADC2
+</text>
+</g><g 
+        class=" pinlabel timer-counter"
+    transform="
+        translate(-188.0 130.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    OC1B
+</text>
+</g><g 
+        class=" pinlabel port"
+    transform="
+        translate(-244.0 130.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    CLKO
+</text>
+</g><g 
+        class=" pinlabel oscillator"
+    transform="
+        translate(-300.0 130.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    XTAL2
+</text>
+</g><g 
+        class=" pinlabel interrupt"
+    transform="
+        translate(-356.0 130.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 1)
+    "  
+>
+    PCINT4
+</text>
+</g>
+</g>
+</g><g 
+    transform="
+        translate(56.45069136472605 82.84934452902382) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 6.666666666666666 A 3.3333333333333335 3.3333333333333335 0 0 0 3.3333333333333335 10.0 L 56 10.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="56" 
+    y="2.5" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(66.0 10) 
+        scale(1 1)
+    "  
+>
+    10
+</text>
+</g><g 
+        class=" pinlabel dnc"
+    transform="
+        translate(76 10) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    DNC
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(-11.078006238589245 11.078006238589245) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 19.281329174273836 A 9.640664587136918 9.640664587136918 0 0 0 9.640664587136918 28.921993761410754 L 67.07800623858924 28.921993761410754" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="67.07800623858924" 
+    y="21.421993761410754" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(77.07800623858924 28.921993761410754) 
+        scale(1 1)
+    "  
+>
+    9
+</text>
+</g><g 
+        class=" pinlabel dnc"
+    transform="
+        translate(76.0 40.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    DNC
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(-22.15601247717849 22.15601247717849) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 31.895991681881007 A 15.947995840940502 15.947995840940502 0 0 0 15.947995840940502 47.84398752282151 L 78.15601247717849 47.84398752282151" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="78.15601247717849" 
+    y="40.34398752282151" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(88.15601247717849 47.84398752282151) 
+        scale(1 1)
+    "  
+>
+    8
+</text>
+</g><g 
+        class=" pinlabel gnd"
+    transform="
+        translate(76.0 70.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    GND
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(-33.23401871576773 33.23401871576773) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 44.51065418948818 A 22.25532709474409 22.25532709474409 0 0 0 22.25532709474409 66.76598128423227 L 89.23401871576773 66.76598128423227" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="89.23401871576773" 
+    y="59.26598128423227" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(99.23401871576773 66.76598128423227) 
+        scale(1 1)
+    "  
+>
+    7
+</text>
+</g><g 
+        class=" pinlabel dnc"
+    transform="
+        translate(76.0 100.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    DNC
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(-44.31202495435698 44.31202495435698) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 57.12531669709534 A 28.56265834854767 28.56265834854767 0 0 0 28.56265834854767 85.68797504564301 L 100.31202495435699 85.68797504564301" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="100.31202495435699" 
+    y="78.18797504564301" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(110.31202495435699 85.68797504564301) 
+        scale(1 1)
+    "  
+>
+    6
+</text>
+</g><g 
+        class=" pinlabel dnc"
+    transform="
+        translate(76.0 130.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 1)
+    "  
+>
+    DNC
+</text>
+</g>
+</g>
+</g><g 
+    transform="
+        translate(56.45069136472604 58.572011708285686) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(0 0) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 6.666666666666666 A 3.3333333333333335 3.3333333333333335 0 0 0 3.3333333333333335 10.0 L 56 10.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="56" 
+    y="2.5" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(66.0 10) 
+        scale(1 -1)
+    "  
+>
+    11
+</text>
+</g><g 
+        class=" pinlabel port"
+    transform="
+        translate(76 -10) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    PB0
+</text>
+</g><g 
+        class=" pinlabel comms"
+    transform="
+        translate(132 -10) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    MOSI
+</text>
+</g><g 
+        class=" pinlabel comms"
+    transform="
+        translate(188 -10) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    DI
+</text>
+</g><g 
+        class=" pinlabel comms"
+    transform="
+        translate(244 -10) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    SDA
+</text>
+</g><g 
+        class=" pinlabel comparator"
+    transform="
+        translate(300 -10) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    AIN0
+</text>
+</g><g 
+        class=" pinlabel timer-counter"
+    transform="
+        translate(356 -10) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    OC0A
+</text>
+</g><g 
+        class=" pinlabel timer-counter"
+    transform="
+        translate(412 -10) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    OC1A
+</text>
+</g><g 
+        class=" pinlabel pwr"
+    transform="
+        translate(468 -10) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    AREF
+</text>
+</g><g 
+        class=" pinlabel interrupt"
+    transform="
+        translate(524 -10) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    PCINT0
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(-11.078006238589245 -11.078006238589245) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 19.281329174273836 A 9.640664587136918 9.640664587136918 0 0 0 9.640664587136918 28.921993761410754 L 67.07800623858924 28.921993761410754" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="67.07800623858924" 
+    y="21.421993761410754" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(77.07800623858924 28.921993761410754) 
+        scale(1 -1)
+    "  
+>
+    12
+</text>
+</g><g 
+        class=" pinlabel port"
+    transform="
+        translate(76.0 -40.0) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    PB1
+</text>
+</g><g 
+        class=" pinlabel comms"
+    transform="
+        translate(132.0 -40.0) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    MISO
+</text>
+</g><g 
+        class=" pinlabel comms"
+    transform="
+        translate(188.0 -40.0) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    DO
+</text>
+</g><g 
+        class=" pinlabel comparator"
+    transform="
+        translate(244.0 -40.0) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    AIN1
+</text>
+</g><g 
+        class=" pinlabel timer-counter"
+    transform="
+        translate(300.0 -40.0) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    OC0B
+</text>
+</g><g 
+        class=" pinlabel timer-counter"
+    transform="
+        translate(356.0 -40.0) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    OC1A
+</text>
+</g><g 
+        class=" pinlabel interrupt"
+    transform="
+        translate(412.0 -40.0) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    PCINT1
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(-22.15601247717849 -22.15601247717849) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 31.895991681881007 A 15.947995840940502 15.947995840940502 0 0 0 15.947995840940502 47.84398752282151 L 78.15601247717849 47.84398752282151" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="78.15601247717849" 
+    y="40.34398752282151" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(88.15601247717849 47.84398752282151) 
+        scale(1 -1)
+    "  
+>
+    13
+</text>
+</g><g 
+        class=" pinlabel dnc"
+    transform="
+        translate(76.0 -70.0) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    DNC
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(-33.23401871576773 -33.23401871576773) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 44.51065418948818 A 22.25532709474409 22.25532709474409 0 0 0 22.25532709474409 66.76598128423227 L 89.23401871576773 66.76598128423227" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="89.23401871576773" 
+    y="59.26598128423227" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(99.23401871576773 66.76598128423227) 
+        scale(1 -1)
+    "  
+>
+    14
+</text>
+</g><g 
+        class=" pinlabel port"
+    transform="
+        translate(76.0 -100.0) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    PB2
+</text>
+</g><g 
+        class=" pinlabel comms"
+    transform="
+        translate(132.0 -100.0) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    SCK
+</text>
+</g><g 
+        class=" pinlabel comms"
+    transform="
+        translate(188.0 -100.0) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    USCK
+</text>
+</g><g 
+        class=" pinlabel comms"
+    transform="
+        translate(244.0 -100.0) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    SCL
+</text>
+</g><g 
+        class=" pinlabel adc"
+    transform="
+        translate(300.0 -100.0) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    ADC1
+</text>
+</g><g 
+        class=" pinlabel timer-counter"
+    transform="
+        translate(356.0 -100.0) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    T0
+</text>
+</g><g 
+        class=" pinlabel interrupt"
+    transform="
+        translate(412.0 -100.0) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    INT0
+</text>
+</g><g 
+        class=" pinlabel interrupt"
+    transform="
+        translate(468.0 -100.0) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    PCINT2
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(-44.31202495435698 -44.31202495435698) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 57.12531669709534 A 28.56265834854767 28.56265834854767 0 0 0 28.56265834854767 85.68797504564301 L 100.31202495435699 85.68797504564301" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="100.31202495435699" 
+    y="78.18797504564301" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(110.31202495435699 85.68797504564301) 
+        scale(1 -1)
+    "  
+>
+    15
+</text>
+</g><g 
+        class=" pinlabel pwr"
+    transform="
+        translate(76.0 -130.0) 
+        scale(1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(1 -1)
+    "  
+>
+    VCC
+</text>
+</g>
+</g>
+</g><g 
+    transform="
+        translate(-56.45069136472604 58.572011708285686) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(0 0) 
+        scale(-1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 6.666666666666666 A 3.3333333333333335 3.3333333333333335 0 0 0 3.3333333333333335 10.0 L 56 10.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="56" 
+    y="2.5" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(66.0 10) 
+        scale(-1 -1)
+    "  
+>
+    20
+</text>
+</g><g 
+        class=" pinlabel dnc"
+    transform="
+        translate(-76 -10) 
+        scale(-1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 -1)
+    "  
+>
+    DNC
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(11.078006238589245 -11.078006238589245) 
+        scale(-1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 19.281329174273836 A 9.640664587136918 9.640664587136918 0 0 0 9.640664587136918 28.921993761410754 L 67.07800623858924 28.921993761410754" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="67.07800623858924" 
+    y="21.421993761410754" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(77.07800623858924 28.921993761410754) 
+        scale(-1 -1)
+    "  
+>
+    19
+</text>
+</g><g 
+        class=" pinlabel dnc"
+    transform="
+        translate(-76.0 -40.0) 
+        scale(-1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 -1)
+    "  
+>
+    DNC
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(22.15601247717849 -22.15601247717849) 
+        scale(-1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 31.895991681881007 A 15.947995840940502 15.947995840940502 0 0 0 15.947995840940502 47.84398752282151 L 78.15601247717849 47.84398752282151" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="78.15601247717849" 
+    y="40.34398752282151" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(88.15601247717849 47.84398752282151) 
+        scale(-1 -1)
+    "  
+>
+    18
+</text>
+</g><g 
+        class=" pinlabel dnc"
+    transform="
+        translate(-76.0 -70.0) 
+        scale(-1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 -1)
+    "  
+>
+    DNC
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(33.23401871576773 -33.23401871576773) 
+        scale(-1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 44.51065418948818 A 22.25532709474409 22.25532709474409 0 0 0 22.25532709474409 66.76598128423227 L 89.23401871576773 66.76598128423227" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="89.23401871576773" 
+    y="59.26598128423227" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(99.23401871576773 66.76598128423227) 
+        scale(-1 -1)
+    "  
+>
+    17
+</text>
+</g><g 
+        class=" pinlabel dnc"
+    transform="
+        translate(-76.0 -100.0) 
+        scale(-1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 -1)
+    "  
+>
+    DNC
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pin_id"
+    transform="
+        translate(44.31202495435698 -44.31202495435698) 
+        scale(-1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0.0 0 L 0.0 57.12531669709534 A 28.56265834854767 28.56265834854767 0 0 0 28.56265834854767 85.68797504564301 L 100.31202495435699 85.68797504564301" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="100.31202495435699" 
+    y="78.18797504564301" 
+    width="20" 
+    height="15" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(110.31202495435699 85.68797504564301) 
+        scale(-1 -1)
+    "  
+>
+    16
+</text>
+</g><g 
+        class=" pinlabel dnc"
+    transform="
+        translate(-76.0 -130.0) 
+        scale(-1 -1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-13.0" 
+    width="50" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(31.0 0) 
+        scale(-1 -1)
+    "  
+>
+    DNC
+</text>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g><g 
+        class="panel__title panel"
+    transform="
+        translate(1.5 561.5) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="panel__outer" 
+    x="-1.5" 
+    y="-1.5" 
+    width="1197.0" 
+    height="112.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
+    x="0" 
+    y="0" 
+    width="1194.0" 
+    height="109.0" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class=" textblock"
+    transform="
+        translate(10 30) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <text
+    class="textblock"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+    "  
+>
+    <tspan class='diagram__title'>Pinout ATtiny25/45/85</tspan>
+</text><text
+    class="textblock"
+    transform="
+        translate(0 22) 
+        scale(1 1)
+    "  
+>
+    Created with <tspan class='italic'>pinout</tspan> Python package.
+</text><text
+    class="textblock"
+    transform="
+        translate(0 44) 
+        scale(1 1)
+    "  
+>
+    pinout.readthedocs.io
+</text>
+</g><g 
+        class=" legend"
+    transform="
+        translate(583.0 14) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class="port legendentry"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class=" swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Port
+</text>
+</g><g 
+        class="adc legendentry"
+    transform="
+        translate(0 28.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class=" swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Analog
+</text>
+</g><g 
+        class="comparator legendentry"
+    transform="
+        translate(0 56.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class=" swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Analog Comparator
+</text>
+</g><g 
+        class="gnd legendentry"
+    transform="
+        translate(200.0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class=" swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Ground
+</text>
+</g><g 
+        class="interrupt legendentry"
+    transform="
+        translate(200.0 28.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class=" swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Interrupt
+</text>
+</g><g 
+        class="timer-counter legendentry"
+    transform="
+        translate(200.0 56.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class=" swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Timer-counter
+</text>
+</g><g 
+        class="comms legendentry"
+    transform="
+        translate(400.0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class=" swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Communications
+</text>
+</g><g 
+        class="oscillator legendentry"
+    transform="
+        translate(400.0 28.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class=" swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Oscillator
+</text>
+</g><g 
+        class="pwr legendentry"
+    transform="
+        translate(400.0 56.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class=" swatch__body" 
+    x="0" 
+    y="-10.0" 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+    "  
+>
+    Power
+</text>
+</g>
+</g>
+</g>
+</g>
+    
+</svg>

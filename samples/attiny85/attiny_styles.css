@@ -1,0 +1,163 @@
+
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.panel__title{
+    font-size: 16px;
+}
+.diagram__title{
+    font-size: 22px;
+    font-weight: bold;
+}
+.italic{
+    font-style:italic;
+    font-weight: bold;
+}
+
+.panel__inner {
+    fill: #fff;
+}
+.panel__outer {
+    fill: #99a5b2;
+}
+.panel__title .panel__inner{
+    fill: #ededed;
+}
+
+.legendentry text {
+    dominant-baseline: central;
+}
+
+.pinlabel__leader{
+    stroke-width: 1;
+    fill: none;
+}
+
+.pinlabel__text{
+    dominant-baseline: central;
+    fill: #fff;
+    font-size: 12px;
+    stroke-width: 0;
+    text-anchor: middle;
+}
+
+.dnc .pinlabel__body{
+    fill: rgb(220,220,220);
+}
+.dnc .pinlabel__leader{
+    stroke: rgb(220,220,220);
+}
+.dnc text{
+    fill: #999;
+}
+.pin_id .pinlabel__body{
+    fill: rgb(85, 85, 85);
+}
+.pin_id .pinlabel__leader{
+    stroke: rgb(85, 85, 85);
+}
+.pin_id text{
+    font-size: 9px;
+}
+.comparator .pinlabel__body{
+    fill: rgb(243, 85, 191);
+}
+.comparator .pinlabel__leader{
+    stroke: rgb(243, 85, 191);
+}
+.comparator .swatch__body {
+    fill: rgb(243, 85, 191);
+}
+.adc .pinlabel__body{
+    fill: rgb(83, 93, 222);
+}
+.adc .pinlabel__leader{
+    stroke: rgb(83, 93, 222);
+}
+.adc .swatch__body {
+    fill: rgb(83, 93, 222);
+}
+.interrupt .pinlabel__body{
+    fill: rgb(3, 130, 92);
+}
+.interrupt .pinlabel__leader{
+    stroke: rgb(3, 130, 92);
+}
+.interrupt .swatch__body {
+    fill: rgb(3, 130, 92);
+}
+.pwr .pinlabel__body{
+    fill: rgb(255, 53, 53);
+}
+.pwr .pinlabel__leader{
+    stroke: rgb(255, 53, 53);
+}
+.pwr .swatch__body {
+    fill: rgb(255, 53, 53);
+}
+.port .pinlabel__body{
+    fill: rgb(177, 30, 236);
+}
+.port .pinlabel__leader{
+    stroke: rgb(177, 30, 236);
+}
+.port .swatch__body {
+    fill: rgb(177, 30, 236);
+}
+.timer-counter .pinlabel__body{
+    fill: rgb(160, 79, 27);
+}
+.timer-counter .pinlabel__leader{
+    stroke: rgb(160, 79, 27);
+}
+.timer-counter .swatch__body {
+    fill: rgb(160, 79, 27);
+}
+.comms .pinlabel__body{
+    fill: rgb(59, 145, 130);
+}
+.comms .pinlabel__leader{
+    stroke: rgb(59, 145, 130);
+}
+.comms .swatch__body {
+    fill: rgb(59, 145, 130);
+}
+.gnd .pinlabel__body{
+    fill: rgb(0, 0, 0);
+}
+.gnd .pinlabel__leader{
+    stroke: rgb(0, 0, 0);
+}
+.gnd .swatch__body {
+    fill: rgb(0, 0, 0);
+}
+.oscillator .pinlabel__body{
+    fill: rgb(124, 21, 205);
+}
+.oscillator .pinlabel__leader{
+    stroke: rgb(124, 21, 205);
+}
+.oscillator .swatch__body {
+    fill: rgb(124, 21, 205);
+}
+
+.ic__body{
+    fill: rgb(85, 85, 85);
+    stroke-width: 1px;
+    stroke: #000;
+}
+.ic__leg .polarity{
+    fill: rgb(85, 85, 85);
+    stroke-width: 2px;
+    stroke: rgb(138, 138, 138);
+    
+}
+.ic__leg{
+    fill: rgb(255, 255, 255);
+    stroke-width: 1px;
+    stroke: #000;
+}
+

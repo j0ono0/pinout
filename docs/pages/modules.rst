@@ -17,3 +17,4 @@ Modules
     annotation
     legend
     text
+    integrated_circuits

@@ -49,6 +49,8 @@ class Pin(Group):
 
 
 class DIP(Group):
+    """Create a dual in-line package graphic"""
+
     def __init__(self, pin_count, width, height, **kwargs):
         if pin_count % 2 != 0:
             raise ValueError("pin_count not divisible by 2.")
@@ -74,6 +76,7 @@ class DIP(Group):
         return Coords(pitch_x, pitch_y)
 
     def pin_coords(self, index, rotate=True):
+        """Return coordinates of pin by its index."""
         pins_per_side = self.pin_count // 2
         if index <= self.pin_count // 2:
             # lhs header
@@ -130,6 +133,8 @@ class DIP(Group):
 
 
 class QFP(Group):
+    """Create a quad flat package graphic"""
+
     def __init__(self, pin_count, length, **kwargs):
         if pin_count % 4 != 0:
             raise ValueError("pin_count not divisible by 4.")
@@ -154,6 +159,7 @@ class QFP(Group):
         return Coords(pitch_x, pitch_y)
 
     def pin_coords(self, index, rotate=True):
+        """Return coordinates of pin by its index."""
         pins_per_side = self.pin_count // 4
 
         if index <= self.pin_count * 0.25:
@@ -236,7 +242,7 @@ class QFP(Group):
 
 
 def labelled_qfn(labels, length=160, label_start=(100, 20), label_pitch=(0, 30)):
-
+    """Generate a QFP graphic with pin-labels applied."""
     graphic = Group()
     ic = graphic.add(
         QFP(
@@ -306,7 +312,7 @@ def labelled_qfn(labels, length=160, label_start=(100, 20), label_pitch=(0, 30))
 
 
 def labelled_dip(labels, width=100, height=160, label_start_x=100, label_pitch=(0, 30)):
-
+    """Generate a DIP graphic with pin-labels applied."""
     graphic = Group()
     ic = graphic.add(DIP(len(labels), width, height))
     pins_per_side = len(labels) // 2

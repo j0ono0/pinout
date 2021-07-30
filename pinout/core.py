@@ -356,11 +356,7 @@ class Image(SvgShape):
                 print(e.code)
 
     def render(self):
-        """Render SVG markup either linking or embedding an image.
-
-        :return: SVG markup
-        :rtype: string
-        """
+        """Render SVG markup either linking or embedding an image."""
         media_type = pathlib.Path(self.path).suffix[1:]
         tplt = templates.get("image.svg")
 

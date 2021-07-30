@@ -132,7 +132,7 @@ Image
         
         Using images at a **1:1 ratio** is strongly recommended.
 
-    :param path: Path to image file. Path is relative to image file if *not* embedding, otherwise it is relative to the script exporting the file. 
+    :param path: Path to either an image file on the local file system or a URL. Path is relative to image file if *not* embedding, otherwise it is relative to the script exporting the file. 
     :type path: string
     :param embed: Embed image in exported file, defaults to False
     :type embed: bool, optional

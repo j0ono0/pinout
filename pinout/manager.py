@@ -2,6 +2,7 @@
 
 import argparse
 import importlib
+import cairosvg
 from pathlib import Path
 import pkg_resources
 
@@ -159,9 +160,24 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
         path = unique_filepath(path)
     path.touch(exist_ok=True)
 
-    # Render final SVG file
-    path.write_text(diagram.render())
-    print(f"'{path}' exported successfully.")
+    try:
+        # Render final SVG file
+        if path.suffix == ".svg":
+            path.write_text(diagram.render())
+
+        elif path.suffix == ".png":
+            cairosvg.svg2png(bytestring=diagram.render(), write_to=dest)
+
+        elif path.suffix == ".pdf":
+            cairosvg.svg2pdf(bytestring=diagram.render(), write_to=dest)
+
+        elif path.suffix == ".ps":
+            cairosvg.svg2ps(bytestring=diagram.render(), write_to=dest)
+
+        print(f"'{path}' exported successfully.")
+
+    except Exception as e:
+        print(e)
 
 
 def __main__():

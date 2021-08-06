@@ -38,6 +38,29 @@ Details to note:
 - An *--overwrite* (*-o*) can also be included to overwrite an existing file
 - if the instance name is not 'diagram' the alternative name can be added as as third argument
 
+Export in other formats
+-----------------------
+
+.. note::
+
+    cairosvg has it's own (non-Python) dependencies. If exporting to other formats is not working the most likely reason is these dependencies require installing. Installation processes are platform specific and outlined on the `cairosvg website <https://cairosvg.org/>`_.
+
+*pinout* includes `cairosvg <https://cairosvg.org/>`_ as a dependency to provide some other export options. PNG, PDF, and PS graphics can be exported via cairosvg. To access these formats replace the filename suffix to match when exporting::
+
+    # Export as png
+    >>> py pinout.manager --export pinout_diagram my_diagram.png
+
+    # Export as pdf
+    >>> py pinout.manager --export pinout_diagram my_diagram.pdf
+    
+    # Export as ps
+    >>> py pinout.manager --export pinout_diagram my_diagram.ps
+
+.. warning ::
+
+    SVG features may render differently between different browsers and cairosvg output - Test your specific *pinout* setup will export as expected before commiting to a particular solution.
+
+
 Generate a cascading stylesheet
 -------------------------------
 

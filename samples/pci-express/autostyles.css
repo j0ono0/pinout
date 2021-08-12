@@ -1,0 +1,111 @@
+
+
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
+
+.pinlabel__leader{
+    stroke-width: 1;
+    fill: none;
+}
+
+.pinlabel__text{
+    dominant-baseline: central;
+    fill: #000;
+    font-size: 12px;
+        
+        font-weight: normal;
+        stroke-width: 0;
+        text-anchor: middle;
+    }
+
+
+
+        .pinid .pinlabel__body,
+        .pinid .swatch__body{
+            fill: rgb(0, 0, 0);
+        }
+        .pinid .pinlabel__leader{
+            stroke: rgb(0, 0, 0);
+        }
+        .pinid .pinlabel__text{
+            fill: #fff;
+        }
+
+        .host-to-card .pinlabel__body,
+        .host-to-card .swatch__body{
+            fill: rgb(83, 102, 165);
+        }
+        .host-to-card .pinlabel__leader{
+            stroke: rgb(83, 102, 165);
+        }
+        
+
+        .card-to-host .pinlabel__body,
+        .card-to-host .swatch__body{
+            fill: rgb(145, 79, 158);
+        }
+        .card-to-host .pinlabel__leader{
+            stroke: rgb(145, 79, 158);
+        }
+
+        .open-drain .pinlabel__body,
+        .open-drain .swatch__body{
+            fill: rgb(158, 121, 79);
+        }
+        .open-drain .pinlabel__leader{
+            stroke: rgb(158, 121, 79);
+        }
+
+        .sense-pin .pinlabel__body,
+        .sense-pin .swatch__body{
+            fill: rgb(75, 185, 31);
+        }
+        .sense-pin .pinlabel__leader{
+            stroke: rgb(75, 185, 31);
+        }
+        
+
+        .gnd .pinlabel__body,
+        .gnd .swatch__body{
+            fill: rgb(100, 100, 100);
+        }
+        .gnd .pinlabel__leader{
+            stroke: rgb(100, 100, 100);
+        }
+        
+
+        .pwr .pinlabel__body{
+            fill: rgb(163, 34, 34);
+        }
+        .pwr .pinlabel__leader{
+            stroke: rgb(163, 34, 34);
+        }
+        .pwr .swatch__body {
+            fill: rgb(163, 34, 34);
+        }
+        .pinb .pinlabel__body{
+            fill: rgb(99, 88, 162);
+        }
+        .pinb .pinlabel__leader{
+            stroke: rgb(99, 88, 162);
+        }
+        .pinb .swatch__body {
+            fill: rgb(99, 88, 162);
+        }
+
+
+    .panel__inner {
+        fill: #fff;
+    }
+    .panel__outer {
+        fill: #333;
+    }
+
+
+
+

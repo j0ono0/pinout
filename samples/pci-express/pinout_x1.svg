@@ -1,0 +1,1896 @@
+
+<svg  
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0"
+    y="0"
+    width="1200" 
+    height="675" 
+    viewBox="0 0 1200 675"
+    class="diagram"
+>
+
+    <style type="text/css" media="screen">  
+    <![CDATA[  
+    
+
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
+
+.pinlabel__leader{
+    stroke-width: 1;
+    fill: none;
+}
+
+.pinlabel__text{
+    dominant-baseline: central;
+    fill: #000;
+    font-size: 12px;
+        
+        font-weight: normal;
+        stroke-width: 0;
+        text-anchor: middle;
+    }
+
+
+
+        .pinid .pinlabel__body,
+        .pinid .swatch__body{
+            fill: rgb(0, 0, 0);
+        }
+        .pinid .pinlabel__leader{
+            stroke: rgb(0, 0, 0);
+        }
+        .pinid .pinlabel__text{
+            fill: #fff;
+        }
+
+        .host-to-card .pinlabel__body,
+        .host-to-card .swatch__body{
+            fill: rgb(83, 102, 165);
+        }
+        .host-to-card .pinlabel__leader{
+            stroke: rgb(83, 102, 165);
+        }
+        
+
+        .card-to-host .pinlabel__body,
+        .card-to-host .swatch__body{
+            fill: rgb(145, 79, 158);
+        }
+        .card-to-host .pinlabel__leader{
+            stroke: rgb(145, 79, 158);
+        }
+
+        .open-drain .pinlabel__body,
+        .open-drain .swatch__body{
+            fill: rgb(158, 121, 79);
+        }
+        .open-drain .pinlabel__leader{
+            stroke: rgb(158, 121, 79);
+        }
+
+        .sense-pin .pinlabel__body,
+        .sense-pin .swatch__body{
+            fill: rgb(75, 185, 31);
+        }
+        .sense-pin .pinlabel__leader{
+            stroke: rgb(75, 185, 31);
+        }
+        
+
+        .gnd .pinlabel__body,
+        .gnd .swatch__body{
+            fill: rgb(100, 100, 100);
+        }
+        .gnd .pinlabel__leader{
+            stroke: rgb(100, 100, 100);
+        }
+        
+
+        .pwr .pinlabel__body{
+            fill: rgb(163, 34, 34);
+        }
+        .pwr .pinlabel__leader{
+            stroke: rgb(163, 34, 34);
+        }
+        .pwr .swatch__body {
+            fill: rgb(163, 34, 34);
+        }
+        .pinb .pinlabel__body{
+            fill: rgb(99, 88, 162);
+        }
+        .pinb .pinlabel__leader{
+            stroke: rgb(99, 88, 162);
+        }
+        .pinb .swatch__body {
+            fill: rgb(99, 88, 162);
+        }
+
+
+    .panel__inner {
+        fill: #fff;
+    }
+    .panel__outer {
+        fill: #333;
+    }
+
+
+
+
+
+    ]]>  
+</style>
+<g 
+        class="panel__content panel"
+    transform="
+        translate(5 5) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+ class="panel__outer" 
+    x="-5" 
+    y="-5" 
+    width="1200.0" 
+    height="675.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+ class="panel__inner" 
+    x="0" 
+    y="0" 
+    width="1190.0" 
+    height="665.0" 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(30 10) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+    transform="
+        translate(0 0) 
+        scale(2 2)
+    "
+>
+    b'<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" enable-background="new 0 0 94.436 264.109" height="264.109px" id="Layer_1" version="1.1" viewBox="0 0 94.436 264.109" width="94.436px" x="0px" y="0px" xml:space="preserve">\n<ns0:rect fill="none" height="6" stroke="#29ABE2" width="48.879" x="36.278" y="70.221" />\n<ns0:rect fill="none" height="6" stroke="#29ABE2" width="36.673" x="36.278" y="61.221" />\n<ns0:rect fill="none" height="6" stroke="#29ABE2" width="48.879" x="36.278" y="88.221" />\n<ns0:rect fill="none" height="6" stroke="#29ABE2" width="48.879" x="36.278" y="79.221" />\n<ns0:rect fill="none" height="6" stroke="#29ABE2" width="48.879" x="36.278" y="106.221" />\n<ns0:rect fill="none" height="6" stroke="#29ABE2" width="48.879" x="36.278" y="97.221" />\n<ns0:rect fill="none" height="6" stroke="#29ABE2" width="48.879" x="36.278" y="124.221" />\n<ns0:rect fill="none" height="6" stroke="#29ABE2" width="48.879" x="36.278" y="115.221" />\n<ns0:rect fill="none" height="6" stroke="#29ABE2" width="48.879" x="36.278" y="133.221" />\n<ns0:rect fill="none" height="6" stroke="#29ABE2" width="48.879" x="36.278" y="151.221" />\n<ns0:rect fill="none" height="6" stroke="#29ABE2" width="48.879" x="36.278" y="142.221" />\n<ns0:rect fill="none" height="6" stroke="#29ABE2" width="48.879" x="36.278" y="187.221" />\n<ns0:rect fill="none" height="6" stroke="#29ABE2" width="48.879" x="36.278" y="178.221" />\n<ns0:rect fill="none" height="6" stroke="#29ABE2" width="48.879" x="36.278" y="205.221" />\n<ns0:rect fill="none" height="6" stroke="#29ABE2" width="48.879" x="36.278" y="196.221" />\n<ns0:rect fill="none" height="6" stroke="#29ABE2" width="48.879" x="36.278" y="214.221" />\n<ns0:rect fill="none" height="6" stroke="#29ABE2" width="48.879" x="36.278" y="232.221" />\n<ns0:rect fill="none" height="6" stroke="#29ABE2" width="48.879" x="36.278" y="223.221" />\n<ns0:path d="M3.278,261.388v-20.167h81.879c3.314,0,6-2.687,6-6v-54c0-3.313-2.686-6-6-6H25.778  c-4.142,0-7.5-3.358-7.5-7.5s3.358-7.5,7.5-7.5h59.379c3.314,0,6-2.687,6-6v-90c0-3.313-2.686-6-6-6H10.778  c-4.142,0-7.5-3.358-7.5-7.5s3.358-7.5,7.5-7.5h42.514V18.675H3.278V2.721" fill="none" stroke="#29ABE2" />\n</ns0:svg>'
+</g>
+<g 
+    transform="
+        translate(160 129.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pinid"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 -40.0 92.75 -40.0 L 106 -40.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="106" 
+    y="-54.0" 
+    width="30" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(121.0 -40) 
+        scale(1 1)
+    "  
+>
+    1
+</text>
+</g><g 
+        class=" pinlabel pwr"
+    transform="
+        translate(136 -40) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    +12 V
+</text>
+</g><g 
+        class=" pinlabel sense-pin"
+    transform="
+        translate(222 -40) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    PRSNT1#
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pinid"
+    transform="
+        translate(0 18) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 -28.0 92.75 -28.0 L 106 -28.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="106" 
+    y="-42.0" 
+    width="30" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(121.0 -28) 
+        scale(1 1)
+    "  
+>
+    2
+</text>
+</g><g 
+        class=" pinlabel pwr"
+    transform="
+        translate(136 -10) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    +12 V
+</text>
+</g><g 
+        class=" pinlabel pwr"
+    transform="
+        translate(222 -10) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    +12 V
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pinid"
+    transform="
+        translate(0 36) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 -16.0 92.75 -16.0 L 106 -16.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="106" 
+    y="-30.0" 
+    width="30" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(121.0 -16) 
+        scale(1 1)
+    "  
+>
+    3
+</text>
+</g><g 
+        class=" pinlabel pwr"
+    transform="
+        translate(136 20) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    +12 V
+</text>
+</g><g 
+        class=" pinlabel pwr"
+    transform="
+        translate(222 20) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    +12 V
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pinid"
+    transform="
+        translate(0 54) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 -4.0 92.75 -4.0 L 106 -4.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="106" 
+    y="-18.0" 
+    width="30" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(121.0 -4) 
+        scale(1 1)
+    "  
+>
+    4
+</text>
+</g><g 
+        class=" pinlabel gnd"
+    transform="
+        translate(136 50) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    Ground
+</text>
+</g><g 
+        class=" pinlabel gnd"
+    transform="
+        translate(222 50) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    Ground
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pinid"
+    transform="
+        translate(0 72) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 8.0 92.75 8.0 L 106 8.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="106" 
+    y="-6.0" 
+    width="30" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(121.0 8) 
+        scale(1 1)
+    "  
+>
+    5
+</text>
+</g><g 
+        class=" pinlabel open-drain"
+    transform="
+        translate(136 80) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    SMCLK
+</text>
+</g><g 
+        class=" pinlabel reserved"
+    transform="
+        translate(222 80) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    TCK
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pinid"
+    transform="
+        translate(0 90) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 20.0 92.75 20.0 L 106 20.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="106" 
+    y="6.0" 
+    width="30" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(121.0 20) 
+        scale(1 1)
+    "  
+>
+    6
+</text>
+</g><g 
+        class=" pinlabel open-drain"
+    transform="
+        translate(136 110) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    SMDAT
+</text>
+</g><g 
+        class=" pinlabel reserved"
+    transform="
+        translate(222 110) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    TDI
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pinid"
+    transform="
+        translate(0 108) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 32.0 92.75 32.0 L 106 32.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="106" 
+    y="18.0" 
+    width="30" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(121.0 32) 
+        scale(1 1)
+    "  
+>
+    7
+</text>
+</g><g 
+        class=" pinlabel gnd"
+    transform="
+        translate(136 140) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    Ground
+</text>
+</g><g 
+        class=" pinlabel card-to-host"
+    transform="
+        translate(222 140) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    TDO
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pinid"
+    transform="
+        translate(0 126) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 44.0 92.75 44.0 L 106 44.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="106" 
+    y="30.0" 
+    width="30" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(121.0 44) 
+        scale(1 1)
+    "  
+>
+    8
+</text>
+</g><g 
+        class=" pinlabel pwr"
+    transform="
+        translate(136 170) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    +3.3 V
+</text>
+</g><g 
+        class=" pinlabel reserved"
+    transform="
+        translate(222 170) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    TMS
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pinid"
+    transform="
+        translate(0 144) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 56.0 92.75 56.0 L 106 56.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="106" 
+    y="42.0" 
+    width="30" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(121.0 56) 
+        scale(1 1)
+    "  
+>
+    9
+</text>
+</g><g 
+        class=" pinlabel reserved"
+    transform="
+        translate(136 200) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    TRST#
+</text>
+</g><g 
+        class=" pinlabel pwr"
+    transform="
+        translate(222 200) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    +3.3 V
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pinid"
+    transform="
+        translate(0 162) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 68.0 92.75 68.0 L 106 68.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="106" 
+    y="54.0" 
+    width="30" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(121.0 68) 
+        scale(1 1)
+    "  
+>
+    10
+</text>
+</g><g 
+        class=" pinlabel pwr"
+    transform="
+        translate(136 230) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    +3.3 V aux
+</text>
+</g><g 
+        class=" pinlabel pwr"
+    transform="
+        translate(222 230) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    +3.3 V
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pinid"
+    transform="
+        translate(0 180) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 80.0 92.75 80.0 L 106 80.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="106" 
+    y="66.0" 
+    width="30" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(121.0 80) 
+        scale(1 1)
+    "  
+>
+    11
+</text>
+</g><g 
+        class=" pinlabel open-drain"
+    transform="
+        translate(136 260) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    WAKE#
+</text>
+</g><g 
+        class=" pinlabel open-drain"
+    transform="
+        translate(222 260) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    PERST#
+</text>
+</g>
+</g>
+</g><g 
+    transform="
+        translate(160 362) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pinid"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 67.0 92.75 67.0 L 106 67.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="106" 
+    y="53.0" 
+    width="30" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(121.0 67.0) 
+        scale(1 1)
+    "  
+>
+    12
+</text>
+</g><g 
+        class=" pinlabel open-drain"
+    transform="
+        translate(136 67.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    CLKREQ#
+</text>
+</g><g 
+        class=" pinlabel gnd"
+    transform="
+        translate(222 67.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    Ground
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pinid"
+    transform="
+        translate(0 18) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 79.0 92.75 79.0 L 106 79.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="106" 
+    y="65.0" 
+    width="30" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(121.0 79.0) 
+        scale(1 1)
+    "  
+>
+    13
+</text>
+</g><g 
+        class=" pinlabel gnd"
+    transform="
+        translate(136 97.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    Ground
+</text>
+</g><g 
+        class=" pinlabel host-to-card"
+    transform="
+        translate(222 97.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    REFCLK+
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pinid"
+    transform="
+        translate(0 36) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 91.0 92.75 91.0 L 106 91.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="106" 
+    y="77.0" 
+    width="30" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(121.0 91.0) 
+        scale(1 1)
+    "  
+>
+    14
+</text>
+</g><g 
+        class=" pinlabel host-to-card"
+    transform="
+        translate(136 127.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    HSOp(0)
+</text>
+</g><g 
+        class=" pinlabel host-to-card"
+    transform="
+        translate(222 127.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    REFCLK&#x2212;
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pinid"
+    transform="
+        translate(0 54) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 103.0 92.75 103.0 L 106 103.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="106" 
+    y="89.0" 
+    width="30" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(121.0 103.0) 
+        scale(1 1)
+    "  
+>
+    15
+</text>
+</g><g 
+        class=" pinlabel host-to-card"
+    transform="
+        translate(136 157.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    HSOn(0)
+</text>
+</g><g 
+        class=" pinlabel gnd"
+    transform="
+        translate(222 157.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    Ground
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pinid"
+    transform="
+        translate(0 72) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 115.0 92.75 115.0 L 106 115.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="106" 
+    y="101.0" 
+    width="30" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(121.0 115.0) 
+        scale(1 1)
+    "  
+>
+    16
+</text>
+</g><g 
+        class=" pinlabel gnd"
+    transform="
+        translate(136 187.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    Ground
+</text>
+</g><g 
+        class=" pinlabel card-to-host"
+    transform="
+        translate(222 187.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    HSIp(0)
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pinid"
+    transform="
+        translate(0 90) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 127.0 92.75 127.0 L 106 127.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="106" 
+    y="113.0" 
+    width="30" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(121.0 127.0) 
+        scale(1 1)
+    "  
+>
+    17
+</text>
+</g><g 
+        class=" pinlabel sense-pin"
+    transform="
+        translate(136 217.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    PRSNT2#
+</text>
+</g><g 
+        class=" pinlabel card-to-host"
+    transform="
+        translate(222 217.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    HSIn(0)
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pinid"
+    transform="
+        translate(0 108) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    d="M 0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 139.0 92.75 139.0 L 106 139.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="106" 
+    y="125.0" 
+    width="30" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(121.0 139.0) 
+        scale(1 1)
+    "  
+>
+    18
+</text>
+</g><g 
+        class=" pinlabel gnd"
+    transform="
+        translate(136 247.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    Ground
+</text>
+</g><g 
+        class=" pinlabel gnd"
+    transform="
+        translate(222 247.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    d="M 0 0.0 L 6 0.0" 
+    transform="scale(1 1) translate(0 0) " 
+    shape-rendering="geometricPrecision"
+/><rect
+ class=" pinlabel__body" 
+    x="6" 
+    y="-14.0" 
+    width="80" 
+    height="28" 
+    shape-rendering="geometricPrecision"
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+    "  
+>
+    Ground
+</text>
+</g>
+</g>
+</g>
+</g>
+</g>
+    
+</svg>

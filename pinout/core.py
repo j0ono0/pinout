@@ -3,6 +3,7 @@ import copy
 import math
 import pathlib
 import urllib.request
+import PIL
 from collections import namedtuple
 from pinout import manager, templates
 
@@ -338,10 +339,60 @@ class Image(SvgShape):
     """Include a image in the diagram."""
 
     def __init__(self, path, embed=False, **kwargs):
-        super().__init__(**kwargs)
         self.path = path
         self.svg_data = None
         self.embed = embed
+        self.coords = {}
+
+        # Load image dimensions to avoid multiple loads when calculating coords
+        im = PIL.Image.open(self.path)
+        self.im_size = im.size
+
+        # Use actual image dimensions if none supplied
+        kwargs["width"] = kwargs.get("width", self.im_size[0])
+        kwargs["height"] = kwargs.get("height", self.im_size[1])
+
+        super().__init__(**kwargs)
+
+    def coord(self, name, raw=False):
+        """Coordnates are calculated on the scaled image.
+        **IMPORTANT** image is scaled proportionally
+        to fit within the supplied width and height"""
+
+        x, y = self.coords[name]
+
+        # Actual image size:
+        iw, ih = self.im_size
+
+        # Scale x and y to match user supplied dimensions
+        scaler = min(self.width / iw, self.height / ih)
+
+        # Transformed size
+        tw, th = iw * scaler, ih * scaler
+
+        # Transformed x and y coords
+        tx = x * scaler
+        ty = y * scaler
+
+        if not raw:
+            # NOTE: svg transforms images proportionally to 'fit' supplied dimensions
+            # if 'raw' is False translate the coords
+            tx = tx + (self.width - tw) / 2
+            ty = ty + (self.height - th) / 2
+
+        return Coords(tx, ty)
+
+    def add_coord(self, name, x, y):
+        """Record coordinates on the **unscaled** image. When returned with Image.coord() the values are scaled to match the image scaling.
+
+        :param name: Name of coordinate
+        :type name: string
+        :param x: x-axis coordinate
+        :type x: int
+        :param y: y-axis coordinate
+        :type y: int
+        """
+        self.coords[name] = Coords(x, y)
 
     def loadData(self):
         """Load image data from URL or local file system."""

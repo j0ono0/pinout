@@ -343,21 +343,33 @@ class Image(SvgShape):
         self.svg_data = None
         self.embed = embed
         self.coords = {}
+        self.im_size = (1, 1)
 
-        # Load image dimensions to avoid multiple loads when calculating coords
-        im = PIL.Image.open(self.path)
-        self.im_size = im.size
+        try:
+            # Load image dimensions to avoid multiple loads when calculating coords
+            im = PIL.Image.open(self.path)
+            self.im_size = im.size
+        except PIL.UnidentifiedImageError:
+            # Image is assumed to be SVG
+            # Match arbitary im_size to width and height so no scaling occurs
+            pass
+        except OSError:
+            try:
+                # file not at local path, try path as URL
+                im = PIL.Image.open(urllib.request.urlopen(self.path))
+                self.im_size = im.size
+            except PIL.UnidentifiedImageError:
+                # Image is assumed to be SVG
+                # Match arbitary im_size to width and height so no scaling occurs
+                pass
 
-        # Use actual image dimensions if none supplied
         kwargs["width"] = kwargs.get("width", self.im_size[0])
         kwargs["height"] = kwargs.get("height", self.im_size[1])
 
         super().__init__(**kwargs)
 
     def coord(self, name, raw=False):
-        """Coordnates are calculated on the scaled image.
-        **IMPORTANT** image is scaled proportionally
-        to fit within the supplied width and height"""
+        """Return scaled coordinatates."""
 
         x, y = self.coords[name]
 
@@ -383,15 +395,7 @@ class Image(SvgShape):
         return Coords(tx, ty)
 
     def add_coord(self, name, x, y):
-        """Record coordinates on the **unscaled** image. When returned with Image.coord() the values are scaled to match the image scaling.
-
-        :param name: Name of coordinate
-        :type name: string
-        :param x: x-axis coordinate
-        :type x: int
-        :param y: y-axis coordinate
-        :type y: int
-        """
+        """Record coordinates of the **unscaled** image."""
         self.coords[name] = Coords(x, y)
 
     def loadData(self):
@@ -426,3 +430,6 @@ class Image(SvgShape):
                 )
 
         return tplt.render(image=self)
+
+
+# py -m pinout.manager -e pinout_diagram diagram.svg -o

@@ -377,8 +377,8 @@ class Image(SvgShape):
         if not raw:
             # NOTE: svg transforms images proportionally to 'fit' supplied dimensions
             # if 'raw' is False translate the coords
-            tx = tx + (self.width - tw) / 2
-            ty = ty + (self.height - th) / 2
+            tx = tx + (self.width - tw) / 2 + self.x
+            ty = ty + (self.height - th) / 2 + self.y
 
         return Coords(tx, ty)
 

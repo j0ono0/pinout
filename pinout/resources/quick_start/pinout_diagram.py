@@ -21,7 +21,7 @@ import data
 diagram = Diagram(1024, 576, "diagram")
 
 # Add a stylesheet
-diagram.add_stylesheet("styles.css", True)
+diagram.add_stylesheet("styles.css", embed=True)
 
 # Create a layout
 content = diagram.add(

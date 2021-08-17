@@ -88,3 +88,41 @@ panel = {
     "inner": {"tag": "panel__inner"},
     "outer": {"tag": "panel__outer"},
 }
+
+
+# Integrated circuit
+ic_dip = {
+    "inset": (15, 0, 15, 0),
+    "tag": "ic ic--dip",
+    "body": {
+        "x": 15,
+        "y": 0,
+        "corner_radius": 3,
+        "tag": "ic__body",
+    },
+    "leg": {
+        "tag": "ic__leg",
+    },
+    "polarity_mark": {
+        "radius": 5,
+        "tag": "polarity",
+    },
+}
+ic_qfp = {
+    "inset": (15, 15, 15, 15),
+    "pin_pitch": 30,
+    "tag": "ic ic--qfp",
+    "body": {
+        "x": 15,
+        "y": 15,
+        "corner_radius": 3,
+        "tag": "ic__body",
+    },
+    "leg": {
+        "tag": "ic__leg",
+    },
+    "polarity_mark": {
+        "radius": 5,
+        "tag": "polarity",
+    },
+}

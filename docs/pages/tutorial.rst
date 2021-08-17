@@ -3,7 +3,7 @@
 Tutorial
 ===============
 
-This tutorial walks through the main features available in *pinout*. If you have not installed *pinout* already please read the :ref:`install` section. This tutorial duplicates code from *pinout_diagram.py*. To access a copy of this file and other resources see :ref:`quickstart`.
+This tutorial walks through the main features available in *pinout*. If you have not installed *pinout* already please read the :ref:`install` section. This tutorial duplicates code from *pinout_diagram.py*. To access a copy of this file and other resources required to complete this tutorial see :ref:`quickstart`.
 
 .. figure:: /_static/quick_start_pinout_diagram.*
 
@@ -34,7 +34,8 @@ The Diagram class creates the main component to hold all the parts together that
     diagram = Diagram(1024, 576, "diagram")
 
     # Add a stylesheet
-    diagram.add_stylesheet("styles.css", True)
+    diagram.add_stylesheet("styles.css", embed=True)
+
 
 Design and layout
 -----------------
@@ -76,22 +77,50 @@ Components can also be grouped independently of a panel. This can aid with fine-
 
 Hardware image
 --------------
-An underlying image to apply pinout information to is obviously required. The width and height must be supplied (*pinout* does no auto detect this dimensions). It is recommended to use images at a **1:1 ratio** to simplify calculating component locations. Optionally 'x' and 'y' attributes can be supplied to position the top-left of the images to more suitable coordinates::
+An image that requires pinout information to is obviously required and included with the Image class. Width and height arguments are optional. If omitted, as they are here, the pixel dimensions are automatically detected and used. 'x' and 'y' attributes can also be supplied to position the top-left of the image to more suitable coordinates::
 
     # Add and embed an image
-    graphic.add(Image("hardware.png", width=220, height=260, embed=True))
+    hardware = graphic.add(Image("hardware.png", embed=True))
 
+Measuring up
+------------
+Key coordinates on the image need to be documented for components to align correctly. It is a good idea to undertake measuring as a distinct step and usually quicker than estimating with trial-and-error later on. Measurements are pixel dimensions from the top, left corner *(with an exception - see following note on 'pin pitch')* :
+
+.. figure:: /_static/quick_start_measurements_pins.*
+
+These coordinates could be used 'as is' later on but recording them with the Image class provides a clear association plus coordinates are transformed automatically to remain correctly positioned if the image's x, y, width, or height are adjusted::
+
+    # Measure and record key location with the hardware Image instance
+    hardware.add_coord("gpio0", 16, 100)
+    hardware.add_coord("gpio3", 65, 244)
+    hardware.add_coord("reset", 155, 244)
+    hardware.add_coord("vcc", 206, 100)
+    # Other (x,y) pairs can also be stored here
+    hardware.add_coord("pin_pitch_v", 0, 30)
+    hardware.add_coord("pin_pitch_h", 30, 0)
+
+.. note::
+    Arbitary (x,y) data can also be recorded with the image. The pin-header pitch has been recorded in this manner. Transformed values can then be automatically calculated if the image's width or height are altered.
+
+*pinout* provides great flexibility when positioning pin-labels. Key details to note:
+
+- 'x' and 'y' values are **relative** to hardware coordinates. 
+- label_pitch is an (x,y) offset between each pin-label in a PinLabelGroup
+- scale is used to 'flip' labels. Negative values may yield unexpected results
+- 'x' and 'y' positions the entire label or row component, *including a leaderline*. A pin-label's body can be positioned in addition to the component positioning.
+
+.. figure:: /_static/quick_start_measurements_labels.*
 
 Add a single pin-label
 ----------------------
-In some instances adding pins individually might be appropriate. This pin is being added to the 'graphic' group so its (x,y) coordinates are relative to that group's origin. Also demonstrated on this pin are some customisations of the pin-label's body and leaderline::
+In some instances adding pins individually might be appropriate. This pin is being added to the 'graphic' group - the same component that the image is in - and references coordinates filed with the image. Also demonstrated on this pin are some customisations of the pin-label's body and leaderline::
 
     # Create a single pin label
     graphic.add(
         PinLabel(
             content="RESET",
-            x=155,
-            y=244,
+            x=hardware.coord("reset").x,
+            y=hardware.coord("reset").y,
             tag="pwr",
             body={"x": 117, "y": 30},
             leaderline={"direction": "vh"},
@@ -100,7 +129,7 @@ In some instances adding pins individually might be appropriate. This pin is bei
 
 Add Multiple pin-labels 
 -----------------------
-Where pins are arranged in 'headers' (a line of evenly spaced pins) the PinLabelGroup class can be used to automate many of the geometry calculations required to place individual pin-labels. 
+Where pins are arranged in 'headers' (a line of evenly spaced pins) the PinLabelGroup class can be used to automate many of the geometry calculations required to place individual pin-labels.
 
 - **x, y**: Coordinates of the first pin in the header.
 - **pin_pitch**: Distance between each pin of the header. (0, 30) steps 0px right and 30px down for each pin. *TIP*: (30, 0) creates a horizontal header.
@@ -113,8 +142,8 @@ Where pins are arranged in 'headers' (a line of evenly spaced pins) the PinLabel
     # Create pinlabels on the right header
     graphic.add(
         PinLabelGroup(
-            x=206,
-            y=100,
+            x=hardware.coord("vcc").x,
+            y=hardware.coord("vcc").y,
             pin_pitch=(0, 30),
             label_start=(60, 0),
             label_pitch=(0, 0),
@@ -124,14 +153,17 @@ Where pins are arranged in 'headers' (a line of evenly spaced pins) the PinLabel
 
 Pin-label orientation
 ------------------------------
+
+.. figure:: /_static/quick_start_measurements_scale.*
+
 SVG format allows 'flipping' or 'mirroring' elements by scaling them with a negative value eg. `scale=(-1, 1)` flips a component around a vertical axis. _pinout_ makes use of this feature, a scale attribute can be supplied to components to flip their layout. This can take some getting use to but provides a concise method of control. The following pin-label groups are scaled to orient in the opposite direction.  
 ::
 
     # Create pinlabels on the left header
     graphic.add(
         PinLabelGroup(
-            x=16,
-            y=100,
+            x=hardware.coord("gpio0").x,
+            y=hardware.coord("gpio0").y,
             pin_pitch=(0, 30),
             label_start=(60, 0),
             label_pitch=(0, 0),
@@ -143,8 +175,8 @@ SVG format allows 'flipping' or 'mirroring' elements by scaling them with a nega
     # Create pinlabels on the lower header
     graphic.add(
         PinLabelGroup(
-            x=65,
-            y=244,
+            x=hardware.coord("gpio3").x,
+            y=hardware.coord("gpio3").y,
             scale=(-1, 1),
             pin_pitch=(30, 0),
             label_start=(110, 30),

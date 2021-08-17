@@ -53,15 +53,25 @@ panel_info = content.add(
 # Create a group to hold the pinout-diagram components.
 graphic = panel_main.add(Group(400, 42))
 
+
 # Add and embed an image
-graphic.add(Image("hardware.png", width=220, height=260, embed=True))
+hardware = graphic.add(Image("hardware.png", embed=True))
+
+# Measure and record key location with the hardware Image instance
+hardware.add_coord("gpio0", 16, 100)
+hardware.add_coord("gpio3", 65, 244)
+hardware.add_coord("reset", 155, 244)
+hardware.add_coord("vcc", 206, 100)
+# Other (x,y) pairs can also be stored here
+hardware.add_coord("pin_pitch_v", 0, 30)
+hardware.add_coord("pin_pitch_h", 30, 0)
 
 # Create a single pin label
 graphic.add(
     PinLabel(
         content="RESET",
-        x=155,
-        y=244,
+        x=hardware.coord("reset").x,
+        y=hardware.coord("reset").y,
         tag="pwr",
         body={"x": 117, "y": 30},
         leaderline={"direction": "vh"},
@@ -71,9 +81,9 @@ graphic.add(
 # Create pinlabels on the right header
 graphic.add(
     PinLabelGroup(
-        x=206,
-        y=100,
-        pin_pitch=(0, 30),
+        x=hardware.coord("vcc").x,
+        y=hardware.coord("vcc").y,
+        pin_pitch=hardware.coord("pin_pitch_v", raw=True),
         label_start=(60, 0),
         label_pitch=(0, 30),
         labels=data.right_header,
@@ -83,9 +93,9 @@ graphic.add(
 # Create pinlabels on the left header
 graphic.add(
     PinLabelGroup(
-        x=16,
-        y=100,
-        pin_pitch=(0, 30),
+        x=hardware.coord("gpio0").x,
+        y=hardware.coord("gpio0").y,
+        pin_pitch=hardware.coord("pin_pitch_v", raw=True),
         label_start=(60, 0),
         label_pitch=(0, 30),
         scale=(-1, 1),
@@ -96,10 +106,10 @@ graphic.add(
 # Create pinlabels on the lower header
 graphic.add(
     PinLabelGroup(
-        x=65,
-        y=244,
+        x=hardware.coord("gpio3").x,
+        y=hardware.coord("gpio3").y,
         scale=(-1, 1),
-        pin_pitch=(30, 0),
+        pin_pitch=hardware.coord("pin_pitch_h", raw=True),
         label_start=(110, 30),
         label_pitch=(0, 30),
         labels=data.lower_header,

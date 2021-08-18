@@ -3,6 +3,7 @@ import copy
 import math
 import pathlib
 import urllib.request
+import PIL
 from collections import namedtuple
 from pinout import manager, templates
 
@@ -338,10 +339,64 @@ class Image(SvgShape):
     """Include a image in the diagram."""
 
     def __init__(self, path, embed=False, **kwargs):
-        super().__init__(**kwargs)
         self.path = path
         self.svg_data = None
         self.embed = embed
+        self.coords = {}
+        self.im_size = (1, 1)
+
+        try:
+            # Load image dimensions to avoid multiple loads when calculating coords
+            im = PIL.Image.open(self.path)
+            self.im_size = im.size
+        except PIL.UnidentifiedImageError:
+            # Image is assumed to be SVG
+            # Match arbitary im_size to width and height so no scaling occurs
+            pass
+        except OSError:
+            try:
+                # file not at local path, try path as URL
+                im = PIL.Image.open(urllib.request.urlopen(self.path))
+                self.im_size = im.size
+            except PIL.UnidentifiedImageError:
+                # Image is assumed to be SVG
+                # Match arbitary im_size to width and height so no scaling occurs
+                pass
+
+        kwargs["width"] = kwargs.get("width", self.im_size[0])
+        kwargs["height"] = kwargs.get("height", self.im_size[1])
+
+        super().__init__(**kwargs)
+
+    def coord(self, name, raw=False):
+        """Return scaled coordinatates."""
+
+        x, y = self.coords[name]
+
+        # Actual image size:
+        iw, ih = self.im_size
+
+        # Scale x and y to match user supplied dimensions
+        scaler = min(self.width / iw, self.height / ih)
+
+        # Transformed size
+        tw, th = iw * scaler, ih * scaler
+
+        # Transformed x and y coords
+        tx = x * scaler
+        ty = y * scaler
+
+        if not raw:
+            # NOTE: svg transforms images proportionally to 'fit' supplied dimensions
+            # if 'raw' is False translate the coords
+            tx = tx + (self.width - tw) / 2 + self.x
+            ty = ty + (self.height - th) / 2 + self.y
+
+        return Coords(tx, ty)
+
+    def add_coord(self, name, x, y):
+        """Record coordinates of the **unscaled** image."""
+        self.coords[name] = Coords(x, y)
 
     def loadData(self):
         """Load image data from URL or local file system."""
@@ -375,3 +430,6 @@ class Image(SvgShape):
                 )
 
         return tplt.render(image=self)
+
+
+# py -m pinout.manager -e pinout_diagram diagram.svg -o

@@ -22,7 +22,12 @@ Quickstart
 
 .. image:: /_static/quick_start_pinout_diagram.*
 
-This guide makes use of a hardware image, stylesheet, data file, and a Python script. Sample files are included with the package and can be duplicated for your use. Open a command line (with enabled virtual environment if you are using one) in the location you plan to work and enter the following::
+This guide makes use of a hardware image, stylesheet, data file, and a Python script. Sample files are included with the package and can be duplicated for your use. Open a command line (with enabled virtual environment if you are using one) in the location you plan to work and enter the following
+
+.. note::
+    Depending on your operating system the command to invoke Python may differ. This guide uses Windows default method. Exchanging 'py' for 'python' or similar may be required for examples to work on other systems.
+
+::
 
     py -m pinout.manager --duplicate quick_start
 
@@ -38,8 +43,5 @@ Generating the final SVG graphic is done from the command line::
     py -m pinout.manager --export pinout_diagram diagram.svg
 
 If everything is correctly configured the newly created file 'diagram.svg' can be viewed in a browser and should look identical to the diagram pictured here.
-
-.. note::
-    Depending on your operating system the command to invoke Python may differ. This guide uses Windows default method. Exchanging 'py' for 'python' or similar may be required for examples to work on other systems.
 
 Once you have installed the *pinout* package explore its main features in the :ref:`tutorial`.

@@ -44,4 +44,8 @@ Generating the final SVG graphic is done from the command line::
 
 If everything is correctly configured the newly created file 'diagram.svg' can be viewed in a browser and should look identical to the diagram pictured here.
 
+.. warning::
+    **Not all SVG viewers are build equal!**
+    *pinout* uses SVG format 'under-the-hood' and can also output diagrams in this format. SVG is well supported by modern browsers and applications that *specialize* in rendering SVG such as InkScape. If a *pinout* diagram displays unexpected results (eg. mis-aligned text) cross-check by viewing the diagram in an up-to-date browser (eg. Firefox or Chrome) as an initial trouble-shooting step.
+
 Once you have installed the *pinout* package explore its main features in the :ref:`tutorial`.

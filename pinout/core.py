@@ -43,6 +43,7 @@ class Layout(TransformMixin):
         self.y = y
         self.children = []
         self.defs = []
+        self.clip_id = kwargs.pop("clip_id", None)
         self.config = kwargs.pop("config", {})
 
     def add(self, instance):

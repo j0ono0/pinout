@@ -1,5 +1,6 @@
 {% if image.svg_data is not none %}
 <g 
+    id="{{ image.id }}"
     {% if image.tag %}
         class="{{ image.tag }}"
     {% endif %}
@@ -16,6 +17,7 @@
 </g>
 {% else %}
 <image 
+    id="{{ image.id }}"
     {% if tags %}
         class="{{image.tag}}"
     {% endif %} 

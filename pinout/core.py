@@ -2,8 +2,9 @@ import base64
 import copy
 import math
 import pathlib
-import urllib.request
 import PIL
+import urllib.request
+import uuid
 from collections import namedtuple
 from pinout import manager, templates
 
@@ -38,6 +39,7 @@ class Layout(TransformMixin):
 
     def __init__(self, x=0, y=0, tag=None, **kwargs):
         super().__init__(**kwargs)
+        self.id = str(uuid.uuid4())
         self.tag = tag
         self.x = x
         self.y = y
@@ -191,6 +193,19 @@ class Layout(TransformMixin):
         return content
 
 
+class Use(Layout):
+    """ Implement <use> svg tag"""
+
+    def __init__(self, instance, **kwargs):
+        self.target_id = instance.id
+        super().__init__(**kwargs)
+
+    def render(self):
+        # convert kwargs into parameters for <use>
+        tplt = templates.get("use.svg")
+        return tplt.render(use=self)
+
+
 class Group(Layout):
     """Group components together"""
 
@@ -253,6 +268,7 @@ class SvgShape(TransformMixin):
         tag=None,
         **kwargs,
     ):
+        self.id = str(uuid.uuid4())
         self.tag = tag
         self.x = x
         self.y = y

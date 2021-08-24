@@ -10,7 +10,7 @@
         scale({{ path.scale.x }} {{ path.scale.y }})
         rotate({{ path.rotate }})
     "
-    id="{{ path.uuid }}"
+    id="{{ path.id }}"
     clipPathUnits="userSpaceOnUse"
 >
     {{ path.render_children() }}

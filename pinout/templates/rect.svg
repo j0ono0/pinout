@@ -1,4 +1,5 @@
 <rect
+    id="{{ rect.id }}"
     {% if rect.tag %} 
         class="{{ rect.tag }}"
     {% endif %} 

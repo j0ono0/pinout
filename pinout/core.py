@@ -319,6 +319,22 @@ class Rect(SvgShape):
         return tplt.render(rect=self)
 
 
+class Circle(SvgShape):
+    """SVG <circle> object"""
+
+    def __init__(self, cx, cy, r, **kwargs):
+        self.r = r
+        kwargs["x"] = cx
+        kwargs["y"] = cy
+        super().__init__(**kwargs)
+
+    def render(self):
+        """Render a <circle> tag."""
+
+        tplt = templates.get("circle.svg")
+        return tplt.render(circle=self)
+
+
 class Text(SvgShape):
     """SVG <text> object"""
 

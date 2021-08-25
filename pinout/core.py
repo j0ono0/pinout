@@ -422,15 +422,27 @@ class Image(SvgShape):
         # Transformed size
         tw, th = iw * scaler, ih * scaler
 
-        # Transformed x and y coords
+        # Transform x and y coords
         tx = x * scaler
         ty = y * scaler
 
+        # Calculate offset to centre fitted image
+        tx = tx + (self.width - tw) / 2
+        ty = ty + (self.height - th) / 2
+
         if not raw:
-            # NOTE: svg transforms images proportionally to 'fit' supplied dimensions
             # if 'raw' is False translate the coords
-            tx = tx + (self.width - tw) / 2 + self.x
-            ty = ty + (self.height - th) / 2 + self.y
+            # NOTE: SVG transforms images proportionally to 'fit' supplied dimensions
+
+            # rotate coords
+            rtx = tx * math.cos(math.radians(self.rotate)) - ty * math.sin(
+                math.radians(self.rotate)
+            )
+            rty = tx * math.sin(math.radians(self.rotate)) + ty * math.cos(
+                math.radians(self.rotate)
+            )
+            tx = rtx + self.x
+            ty = rty + self.y
 
         return Coords(tx, ty)
 

@@ -29,8 +29,8 @@
         scale({{ image.scale.x }} {{ image.scale.y }})
         rotate({{ image.rotate }})
     "
-    href="{{ image.path }}" 
-    xlink:href="{{ image.path }}" 
+    href="{{ image.src }}" 
+    xlink:href="{{ image.src }}" 
     height="{{ image.height }}" 
     width="{{ image.width }}"
 />

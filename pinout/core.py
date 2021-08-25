@@ -371,8 +371,8 @@ class Text(SvgShape):
 class Image(SvgShape):
     """Include a image in the diagram."""
 
-    def __init__(self, path, embed=False, **kwargs):
-        self.path = path
+    def __init__(self, src, embed=False, **kwargs):
+        self.src = src
         self.svg_data = None
         self.embed = embed
         self.coords = {}
@@ -380,16 +380,23 @@ class Image(SvgShape):
 
         try:
             # Load image dimensions to avoid multiple loads when calculating coords
-            im = PIL.Image.open(self.path)
+            im = PIL.Image.open(self.src)
             self.im_size = im.size
+
+        except AttributeError:
+            # src is assumed to be an Image instance
+            self.coords = self.src.coords
+            self.im_size = self.src.im_size
+
         except PIL.UnidentifiedImageError:
             # Image is assumed to be SVG
             # Match arbitary im_size to width and height so no scaling occurs
             pass
+
         except OSError:
             try:
                 # file not at local path, try path as URL
-                im = PIL.Image.open(urllib.request.urlopen(self.path))
+                im = PIL.Image.open(urllib.request.urlopen(self.src))
                 self.im_size = im.size
             except PIL.UnidentifiedImageError:
                 # Image is assumed to be SVG
@@ -434,18 +441,42 @@ class Image(SvgShape):
     def loadData(self):
         """Load image data from URL or local file system."""
         try:
-            with open(self.path, "rb") as f:
+            with open(self.src, "rb") as f:
                 return f.read()
         except OSError:
             try:
-                with urllib.request.urlopen(self.path) as f:
+                with urllib.request.urlopen(self.src) as f:
                     return f.read()
             except urllib.error.HTTPError as e:
                 print(e.code)
 
     def render(self):
         """Render SVG markup either linking or embedding an image."""
-        media_type = pathlib.Path(self.path).suffix[1:]
+        if isinstance(self.src, Image):
+            # src image is wrapped in <use> tag which has to replicate 'fitting' behaviour of SVG images
+
+            scaler = min(self.width / self.src.width, self.height / self.src.height)
+            self.scale = Coords(
+                self.scale.x * scaler,
+                self.scale.y * scaler,
+            )
+            actual_width = self.src.width * scaler
+            actual_height = self.src.height * scaler
+            offset_x = (self.width - actual_width) / 2
+            offset_y = (self.height - actual_height) / 2
+
+            # use image from definitions with <use> tag
+            output = Use(
+                self.src,
+                x=self.x + offset_x,
+                y=self.y + offset_y,
+                scale=self.scale,
+                rotate=self.rotate,
+            )
+            return output.render()
+
+        # Use externally referenced image
+        media_type = pathlib.Path(self.src).suffix[1:]
         tplt = templates.get("image.svg")
 
         if self.embed:
@@ -458,7 +489,7 @@ class Image(SvgShape):
                 self.svg_data = ET.tostring(tree)
             else:
                 encoded_img = base64.b64encode(self.loadData())
-                self.path = (
+                self.src = (
                     f"data:image/{media_type};base64,{encoded_img.decode('utf-8')}"
                 )
 

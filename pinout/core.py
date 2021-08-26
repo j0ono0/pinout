@@ -487,12 +487,6 @@ class Image(SvgShape):
                 math.radians(self.rotate)
             )
 
-            ###############################################
-            #
-            # TODO: calculate rotated coords!
-            #
-            ###############################################
-
             # use image from definitions with <use> tag
             output = Use(
                 self.src,
@@ -500,6 +494,8 @@ class Image(SvgShape):
                 y=self.y + rty,
                 scale=self.scale,
                 rotate=self.rotate,
+                clip_id=self.clip_id,
+                tag=self.tag,
             )
             return output.render()
 

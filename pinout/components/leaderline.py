@@ -50,7 +50,7 @@ class Curved(Leaderline):
         o_coords = origin.bounding_coords()
         d_coords = destination.bounding_coords()
 
-        r = min(destination.x, destination.y) / 3
+        r = min(abs(origin.x - destination.x), abs(origin.y - destination.y)) / 3
         len = (d_coords.x1 - o_coords.x2) / 8
         ctl_h = (d_coords.x1 - o_coords.x2) / 2
         ctl_v = (d_coords.y1 - o_coords.y2) / 2

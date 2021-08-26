@@ -474,14 +474,30 @@ class Image(SvgShape):
             )
             actual_width = self.src.width * scaler
             actual_height = self.src.height * scaler
-            offset_x = (self.width - actual_width) / 2
-            offset_y = (self.height - actual_height) / 2
+
+            tx = (self.width - actual_width) / 2
+            ty = (self.height - actual_height) / 2
+
+            # Rotate coords
+            # rotate coords
+            rtx = tx * math.cos(math.radians(self.rotate)) - ty * math.sin(
+                math.radians(self.rotate)
+            )
+            rty = tx * math.sin(math.radians(self.rotate)) + ty * math.cos(
+                math.radians(self.rotate)
+            )
+
+            ###############################################
+            #
+            # TODO: calculate rotated coords!
+            #
+            ###############################################
 
             # use image from definitions with <use> tag
             output = Use(
                 self.src,
-                x=self.x + offset_x,
-                y=self.y + offset_y,
+                x=self.x + rtx,
+                y=self.y + rty,
                 scale=self.scale,
                 rotate=self.rotate,
             )

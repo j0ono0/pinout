@@ -154,7 +154,7 @@ class Layout(TransformMixin):
 
             return BoundingCoords(min(rx), min(ry), max(rx), max(ry))
 
-        except IndexError:
+        except ValueError:
             # There are no children
             return BoundingCoords(0, 0, 0, 0)
 

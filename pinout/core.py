@@ -293,12 +293,14 @@ class SvgShape(TransformMixin):
         for (x, y) in corners:
             # rotate coords
             rx.append(
-                x * math.cos(math.radians(self.rotate))
-                - y * math.sin(math.radians(self.rotate))
+                self.x
+                + (x - self.x) * math.cos(math.radians(self.rotate))
+                - (y - self.y) * math.sin(math.radians(self.rotate))
             )
             ry.append(
-                x * math.sin(math.radians(self.rotate))
-                + y * math.cos(math.radians(self.rotate))
+                self.y
+                + (x - self.x) * math.sin(math.radians(self.rotate))
+                + (y - self.y) * math.cos(math.radians(self.rotate))
             )
 
         return BoundingCoords(min(rx), min(ry), max(rx), max(ry))

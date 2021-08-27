@@ -113,21 +113,13 @@ class Layout(TransformMixin):
         x1, y1, x2, y2 = self.bounding_coords()
         return BoundingRect(x1, y1, x2 - x1, y2 - y1)
 
-    def rotated_coords(self, x, y):
-        return Coords(
-            x * math.cos(math.radians(-self.rotate))
-            + y * math.sin(math.radians(-self.rotate)),
-            -x * math.sin(math.radians(-self.rotate))
-            + y * math.cos(math.radians(-self.rotate)),
-        )
-
     def bounding_coords(self):
         """Coordinates of the components's bounding rectangle.
 
         :return: (x1, y1, x2, y2)
         :rtype: BoundingCoords (namedtuple)
         """
-        # Collect untransformed bounding coords
+        # Collect bounding coords of children
         x = []
         y = []
         for child in [
@@ -140,23 +132,28 @@ class Layout(TransformMixin):
             y.append(self.y + coords.y1 * self.scale.y)
             x.append(self.x + coords.x2 * self.scale.x)
             y.append(self.y + coords.y2 * self.scale.y)
-        x.sort()
-        y.sort()
 
         try:
-            # Transform with rotate
-            x1, y1, x2, y2 = x[0], y[0], x[-1], y[-1]
-            top_left = self.rotated_coords(x1, y1)
-            top_right = self.rotated_coords(x2, y1)
-            bottom_left = self.rotated_coords(x1, y2)
-            bottom_right = self.rotated_coords(x2, y2)
-            zipped = [
-                sorted(list(coord))
-                for coord in zip(top_left, top_right, bottom_left, bottom_right)
-            ]
-            return BoundingCoords(
-                zipped[0][0], zipped[1][0], zipped[0][-1], zipped[1][-1]
-            )
+            x1, y1, x2, y2 = min(x), min(y), max(x), max(y)
+
+            # rotate corners of bounding box
+            corners = [(x1, y1), (x2, y1), (x1, y2), (x2, y2)]
+            rx = []
+            ry = []
+            for (x, y) in corners:
+                rx.append(
+                    self.x
+                    + (x - self.x) * math.cos(math.radians(self.rotate))
+                    - (y - self.y) * math.sin(math.radians(self.rotate))
+                )
+                ry.append(
+                    self.y
+                    + (x - self.x) * math.sin(math.radians(self.rotate))
+                    + (y - self.y) * math.cos(math.radians(self.rotate))
+                )
+
+            return BoundingCoords(min(rx), min(ry), max(rx), max(ry))
+
         except IndexError:
             # There are no children
             return BoundingCoords(0, 0, 0, 0)
@@ -291,7 +288,6 @@ class SvgShape(TransformMixin):
         rx = []
         ry = []
         for (x, y) in corners:
-            # rotate coords
             rx.append(
                 self.x
                 + (x - self.x) * math.cos(math.radians(self.rotate))

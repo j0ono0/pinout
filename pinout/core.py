@@ -284,7 +284,24 @@ class SvgShape(TransformMixin):
     def bounding_coords(self):
         x = [self.x, (self.x * self.scale.x + self.width) * self.scale.x]
         y = [self.y, (self.y * self.scale.y + self.height) * self.scale.y]
-        return BoundingCoords(min(x), min(y), max(x), max(y))
+        x1, y1, x2, y2 = min(x), min(y), max(x), max(y)
+
+        # rotate corners of bounding box
+        corners = [(x1, y1), (x2, y1), (x1, y2), (x2, y2)]
+        rx = []
+        ry = []
+        for (x, y) in corners:
+            # rotate coords
+            rx.append(
+                x * math.cos(math.radians(self.rotate))
+                - y * math.sin(math.radians(self.rotate))
+            )
+            ry.append(
+                x * math.sin(math.radians(self.rotate))
+                + y * math.cos(math.radians(self.rotate))
+            )
+
+        return BoundingCoords(min(rx), min(ry), max(rx), max(ry))
 
     def add_tag(self, tag):
         """Append a tag to the instance

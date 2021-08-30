@@ -2,9 +2,20 @@
 
 import argparse
 import importlib
-import cairosvg
 from pathlib import Path
 import pkg_resources
+
+try:
+    import cairosvg
+except ImportError as e:
+    pass
+    # export as other (non svg) formats is not available
+
+# user variables
+# C:\Program Files\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin
+
+# env variables
+# C:\Program Files\GTK3-Runtime Win64\bin
 
 
 def unique_filepath(filepath):

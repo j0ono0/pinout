@@ -53,12 +53,7 @@ class Layout(TransformMixin):
         return instance
 
     def add_def(self, instance):
-        """Add a component to the svg 'def' section
-
-        :param instance: pinout component
-        :return: instance added
-        :rtype: pinout components
-        """
+        """Add a component to the svg 'def' section"""
         self.defs.append(instance)
         return instance
 

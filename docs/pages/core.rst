@@ -15,25 +15,72 @@ Layout
     :type y: int, optional
     :param tag: css class tag, defaults to None
     :type tag: string (must be valid css class name), optional
-    
+
     Currently **scale** is the only vaid additional argument that may be included in key-word-arguments (kwargs).
 
     .. autoproperty:: add
 
-        This is a convenience function that appends an object to instance.children. It also returns the instance allowing instance creation and adding a single line of code. 
+    This is a convenience function that appends an object to instance.children. It also returns the instance allowing instance creation and adding a single line of code. 
 
     .. autoproperty:: add_def
+
+        :param instance: pinout component
+        :return: instance added
+        :rtype: pinout components
+
+        The 'defs' section of the SVG file provides a location for renderable elements to be included in the file but not directly rendered in output. this becomes a useful feature where a instances of a component appears in multiple locations or a component is applied to another rendered component.
+
+        **Example: ClipPath**
+
+        ClipPath instances include renderable shapes (eg. the Rect component) that are not to be directly rendered in output. As such they should be included in a diagram's defs section::
+
+            from pinout.components.layout import Diagram, ClipPath
+            from pinout.core import Rect
+            
+            # Setup a minimal example
+            diagram = Diagram(800, 400)
+            rect_01 = diagram.add(Rect(0, 0, 400, 200), 
+            rect_02 = diagram.add(Rect(400, 200, 400, 200), 
+            
+            # Create a clip-path storing it in the diagram's defs section.
+            # Add a shape for the clip-path to use.
+            clip = diagram.add_def(ClipPath())
+            clip.add(Rect(x=100, y=100, width=50, height=50))
+
+            # The clip-path can now be applied to other components.
+            rect_01.clip_id = clip.id
+            rect_02.clip_id = clip.id
+
+            # Changes to 'clip' will affect both 'rect_01' and 'rect_02'
+            # as they reference the same component instance.
+
+        **Example: Images**
+
+        To avoid including multiple instances of an image in the diagram, a single image can be included in the defs section and referenced multiple times from their::  
+
+            from pinout.components.layout import Diagram, Image
+
+            # Setup a minimal example
+            diagram = Diagram(800, 400)
+
+            # Add an image into the diagram's defs section
+            img_01 = diagram.add_def(Image("hardware.png"))
+
+            # New Image instances can now be created referencing
+            # 'img_01' and positioned independently.
+            img_02 = diagram.add(Image(img_01, x=400, y=200, rotate=90)) 
+
 
     .. autoproperty:: add_tag
 
     .. autoproperty:: update_config
-    
+
     .. autoproperty:: bounding_rect
         
     .. autoproperty:: bounding_coords
 
     .. autoproperty:: render_defs
-    
+
     .. automethod:: render_children
 
 

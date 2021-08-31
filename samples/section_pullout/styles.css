@@ -1,0 +1,135 @@
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.pinlabel__leader{
+    stroke-width: 2;
+    fill: none;
+}
+
+.pinlabel__text{
+    dominant-baseline: central;
+    fill: #fff;
+    font-weight: bold;
+    stroke-width: 0;
+    text-anchor: middle;
+}
+
+.pwr .pinlabel__body{
+    fill: rgb(173, 0, 0);
+}
+.pwr .pinlabel__leader{
+    stroke: rgb(173, 0, 0);
+}
+.pwr .swatch__body {
+    fill: rgb(173, 0, 0);
+}
+.i2c .pinlabel__body{
+    fill: rgb(182, 69, 176);
+}
+.i2c .pinlabel__leader{
+    stroke: rgb(182, 69, 176);
+}
+.i2c .swatch__body {
+    fill: rgb(182, 69, 176);
+}
+.gpio .pinlabel__body{
+    fill: rgb(160, 133, 26);
+}
+.gpio .pinlabel__leader{
+    stroke: rgb(160, 133, 26);
+}
+.gpio .swatch__body {
+    fill: rgb(160, 133, 26);
+}
+.analog .pinlabel__body{
+    fill: rgb(32, 150, 165);
+}
+.analog .pinlabel__leader{
+    stroke: rgb(32, 150, 165);
+}
+.analog .swatch__body {
+    fill: rgb(32, 150, 165);
+}
+.gnd .pinlabel__body{
+    fill: rgb(0, 0, 0);
+}
+.gnd .pinlabel__leader{
+    stroke: rgb(0, 0, 0);
+}
+.gnd .swatch__body {
+    fill: rgb(0, 0, 0);
+}
+.pwm .pinlabel__body{
+    fill: rgb(151, 76, 23);
+}
+.pwm .pinlabel__leader{
+    stroke: rgb(151, 76, 23);
+}
+.pwm .swatch__body {
+    fill: rgb(151, 76, 23);
+}
+.touch .pinlabel__body{
+    fill: rgb(230, 87, 10);
+}
+.touch .pinlabel__leader{
+    stroke: rgb(230, 87, 10);
+}
+.touch .swatch__body {
+    fill: rgb(230, 87, 10);
+}
+
+.panel__inner {
+    fill: #fff;
+}
+.panel__outer {
+    fill: #333;
+}
+
+.legendentry text {
+    dominant-baseline: central;
+}
+
+.h1 {
+    font-size: 26px;
+    font-weight: bold;
+    font-style: italic;
+}
+.italic{
+    font-style: italic;
+}
+.strong{
+    font-weight: bold;
+}
+
+.panel--info .panel__inner{
+    
+    fill: #f4f4f4;
+}
+
+
+.annotation__body {
+    fill: rgb(253, 203, 36);
+}
+.annotation__text text {
+    dominant-baseline: central;
+    font-size: 18px;
+    font-weight: bold;
+    text-anchor: middle;
+}
+.annotation__target {
+    fill: none;
+    stroke: rgb(253, 203, 36);
+    stroke-width: 4px;
+}
+.annotation__leaderline {
+    stroke: rgb(253, 203, 36);
+    stroke-width: 4px;
+    fill: none;
+}
+.section_title{
+    font-size: 20px;
+    font-weight: bold;
+}

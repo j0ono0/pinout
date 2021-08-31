@@ -1,10 +1,13 @@
 <g 
-   transform="
-        translate({{ x }} {{  y }}) 
-    "
     {% if tag %}
         class="{{ tag }}" 
     {% endif %}
+    {% if clip_id %}
+        clip-path="url(#{{ clip_id }})"
+    {% endif %}
+   transform="
+        translate({{ x }} {{  y }}) 
+    "
 >
     <rect 
     stroke="{{ rect.stroke|rgb }}" 

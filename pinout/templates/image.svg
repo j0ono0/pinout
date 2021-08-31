@@ -1,22 +1,36 @@
 {% if image.svg_data is not none %}
 <g 
+    id="{{ image.id }}"
     {% if image.tag %}
         class="{{ image.tag }}"
+    {% endif %}
+    {% if image.clip_id %}
+        clip-path="url(#{{ image.clip_id }})"
     {% endif %}
     transform="
         translate({{ image.x }} {{  image.y }}) 
         scale({{ image.scale.x }} {{ image.scale.y }})
+        rotate({{ image.rotate }})
     "
 >
     {{ image.svg_data }}
 </g>
 {% else %}
 <image 
-    {% if tags %}class="{{image.tag}}"{% endif %} 
-    x="{{ image.x }}" 
-    y="{{ image.y }}" 
-    href="{{ image.path }}" 
-    xlink:href="{{ image.path }}" 
+    id="{{ image.id }}"
+    {% if tags %}
+        class="{{image.tag}}"
+    {% endif %} 
+    {% if image.clip_id %}
+        clip-path="url(#{{ image.clip_id }})"
+    {% endif %}
+    transform="
+        translate({{ image.x }} {{  image.y }}) 
+        scale({{ image.scale.x }} {{ image.scale.y }})
+        rotate({{ image.rotate }})
+    "
+    href="{{ image.src }}" 
+    xlink:href="{{ image.src }}" 
     height="{{ image.height }}" 
     width="{{ image.width }}"
 />

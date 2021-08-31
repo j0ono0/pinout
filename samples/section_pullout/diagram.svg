@@ -1,0 +1,1343 @@
+
+<svg  
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0"
+    y="0"
+    width="1024" 
+    height="576" 
+    viewBox="0 0 1024 576"
+    class="diagram"
+>
+<defs>
+    <image 
+    id="99de286f-8ba7-44fa-b793-8f5058b45325"
+ 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+    href="hardware_18pin.png" 
+    xlink:href="hardware_18pin.png" 
+    height="300" 
+    width="220"
+/>
+<clipPath 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+    id="83607f32-fbe4-477b-9489-35177d7eae25"
+    clipPathUnits="userSpaceOnUse"
+>
+    <rect
+    id="9c3baba6-dc47-4026-9969-fe46f8462b2e"
+ 
+     transform="
+        translate(0 230) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="220" 
+    height="80" 
+    shape-rendering="geometricPrecision"
+/>
+</clipPath>
+</defs>
+
+    <style type="text/css" media="screen">  
+    <![CDATA[  
+    text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.pinlabel__leader{
+    stroke-width: 2;
+    fill: none;
+}
+
+.pinlabel__text{
+    dominant-baseline: central;
+    fill: #fff;
+    font-weight: bold;
+    stroke-width: 0;
+    text-anchor: middle;
+}
+
+.pwr .pinlabel__body{
+    fill: rgb(173, 0, 0);
+}
+.pwr .pinlabel__leader{
+    stroke: rgb(173, 0, 0);
+}
+.pwr .swatch__body {
+    fill: rgb(173, 0, 0);
+}
+.i2c .pinlabel__body{
+    fill: rgb(182, 69, 176);
+}
+.i2c .pinlabel__leader{
+    stroke: rgb(182, 69, 176);
+}
+.i2c .swatch__body {
+    fill: rgb(182, 69, 176);
+}
+.gpio .pinlabel__body{
+    fill: rgb(160, 133, 26);
+}
+.gpio .pinlabel__leader{
+    stroke: rgb(160, 133, 26);
+}
+.gpio .swatch__body {
+    fill: rgb(160, 133, 26);
+}
+.analog .pinlabel__body{
+    fill: rgb(32, 150, 165);
+}
+.analog .pinlabel__leader{
+    stroke: rgb(32, 150, 165);
+}
+.analog .swatch__body {
+    fill: rgb(32, 150, 165);
+}
+.gnd .pinlabel__body{
+    fill: rgb(0, 0, 0);
+}
+.gnd .pinlabel__leader{
+    stroke: rgb(0, 0, 0);
+}
+.gnd .swatch__body {
+    fill: rgb(0, 0, 0);
+}
+.pwm .pinlabel__body{
+    fill: rgb(151, 76, 23);
+}
+.pwm .pinlabel__leader{
+    stroke: rgb(151, 76, 23);
+}
+.pwm .swatch__body {
+    fill: rgb(151, 76, 23);
+}
+.touch .pinlabel__body{
+    fill: rgb(230, 87, 10);
+}
+.touch .pinlabel__leader{
+    stroke: rgb(230, 87, 10);
+}
+.touch .swatch__body {
+    fill: rgb(230, 87, 10);
+}
+
+.panel__inner {
+    fill: #fff;
+}
+.panel__outer {
+    fill: #333;
+}
+
+.legendentry text {
+    dominant-baseline: central;
+}
+
+.h1 {
+    font-size: 26px;
+    font-weight: bold;
+    font-style: italic;
+}
+.italic{
+    font-style: italic;
+}
+.strong{
+    font-weight: bold;
+}
+
+.panel--info .panel__inner{
+    
+    fill: #f4f4f4;
+}
+
+
+.annotation__body {
+    fill: rgb(253, 203, 36);
+}
+.annotation__text text {
+    dominant-baseline: central;
+    font-size: 18px;
+    font-weight: bold;
+    text-anchor: middle;
+}
+.annotation__target {
+    fill: none;
+    stroke: rgb(253, 203, 36);
+    stroke-width: 4px;
+}
+.annotation__leaderline {
+    stroke: rgb(253, 203, 36);
+    stroke-width: 4px;
+    fill: none;
+}
+.section_title{
+    font-size: 20px;
+    font-weight: bold;
+}
+    ]]>  
+</style>
+<g 
+        class=" panel"
+    transform="
+        translate(2 2) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="25aa4368-ab5a-4737-b6d3-5e7b9aef7ddb"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(-2 -2) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="1024.0" 
+    height="576.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="d3362c82-3441-4262-b2d0-4276c0ad4bb6"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="1020.0" 
+    height="572.0" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="panel--main panel"
+    transform="
+        translate(2 2) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="0bcf0667-e0ea-472f-af01-ac9609d96d08"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(-2 -2) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="340.0" 
+    height="440.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="5cd146b0-0acd-4b2d-9e70-927c369ca024"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="336.0" 
+    height="436.0" 
+    shape-rendering="geometricPrecision"
+/><g 
+    transform="
+        translate(170.0 20) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <use
+    id="797996e8-2484-40ea-8c7c-ca55f4b0ceb0"
+ 
+     transform="
+        translate(-110.0 0.0) 
+        scale(1.0 1.0)
+        rotate(0)
+    " 
+
+    href="#99de286f-8ba7-44fa-b793-8f5058b45325"
+    
+/>
+<g 
+        class=" annotation"
+    transform="
+        translate(0.0 268.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="annotation__leaderline" 
+    transform="
+        scale(1 1) 
+        translate(0 0) 
+        rotate(0)
+    " 
+    d="M 0.0 40.0 L 0.0 51.666666666666664 A 33.333333333333336 33.333333333333336 0 0 0 33.333333333333336 85.0 L 20.0 85.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="36c27a19-3681-47a1-829b-a326a2e9b2e5"
+ 
+        class="annotation__target"
+ 
+     transform="
+        translate(-120 -40) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="240" 
+    height="80" 
+    shape-rendering="geometricPrecision"
+    rx="10" 
+    ry="10" 
+/><rect
+    id="8f311faf-be5e-4fca-a916-57cf916edd4c"
+ 
+        class="annotation__body"
+ 
+     transform="
+        translate(20 60) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="120" 
+    height="50" 
+    shape-rendering="geometricPrecision"
+    rx="25" 
+    ry="25" 
+/><g 
+        class="annotation__text textblock"
+    transform="
+        translate(80.0 85.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <text
+    class="textblock"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    Section A
+</text>
+</g>
+</g>
+</g>
+</g><g 
+        class="panel--detail panel"
+    transform="
+        translate(342.0 2) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="247247cd-2e7c-4fd1-bef2-6222e75fcedd"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(-2 -2) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="680.0" 
+    height="440.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="b3efc378-0d2a-4783-997c-a1cd89845f8f"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="676.0" 
+    height="436.0" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class=" textblock"
+    transform="
+        translate(20 40) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <text
+    class="textblock"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    <tspan class='section_title'>Section A</tspan>
+</text><text
+    class="textblock"
+    transform="
+        translate(0 22) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    Detail of double row header.
+</text>
+</g><g 
+    transform="
+        translate(298.0 218.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <use
+    id="f3a2087b-be7d-4e2c-8a8f-80acceeec0eb"
+ 
+        clip-path="url(#83607f32-fbe4-477b-9489-35177d7eae25)"
+     transform="
+        translate(300.0 -80.0) 
+        scale(1.0 1.0)
+        rotate(90)
+    " 
+
+    href="#99de286f-8ba7-44fa-b793-8f5058b45325"
+    
+/>
+<g 
+    transform="
+        translate(47.0 -14.999999999999986) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel analog"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    transform="
+        scale(1 1) 
+        translate(0 0) 
+        rotate(0)
+    " 
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="3b07ed1b-3563-49f9-aa97-ce1bbd268995"
+ 
+        class=" pinlabel__body"
+ 
+     transform="
+        translate(66 -13.0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(106.0 0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    A2
+</text>
+</g><g 
+        class=" pinlabel touch"
+    transform="
+        translate(146 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    transform="
+        scale(1 1) 
+        translate(0 0) 
+        rotate(0)
+    " 
+    d="M 0.0 0.0 L 6 0.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="2cb4a8df-0f68-4cae-8cee-4fd8cc95f9bc"
+ 
+        class=" pinlabel__body"
+ 
+     transform="
+        translate(6 -13.0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    TOUCH
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pwm"
+    transform="
+        translate(0.0 30.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    transform="
+        scale(1 1) 
+        translate(0 0) 
+        rotate(0)
+    " 
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="d6117c12-44ed-4302-82a4-b404aadd633c"
+ 
+        class=" pinlabel__body"
+ 
+     transform="
+        translate(66.0 -13.0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(106.0 0.0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    PWM
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel gpio"
+    transform="
+        translate(0.0 60.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    transform="
+        scale(1 1) 
+        translate(0 0) 
+        rotate(0)
+    " 
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="7e832aa2-1cc5-4235-87ee-746c1a139f20"
+ 
+        class=" pinlabel__body"
+ 
+     transform="
+        translate(66.0 -13.0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(106.0 0.0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    6
+</text>
+</g><g 
+        class=" pinlabel i2c"
+    transform="
+        translate(146.0 60.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    transform="
+        scale(1 1) 
+        translate(0 0) 
+        rotate(0)
+    " 
+    d="M 0.0 0.0 L 6 0.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="a811489d-c700-47c7-b5a9-8699ac7bedc5"
+ 
+        class=" pinlabel__body"
+ 
+     transform="
+        translate(6 -13.0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    SDA1
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel analog"
+    transform="
+        translate(0.0 90.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class="pinlabel__leader" 
+    transform="
+        scale(1 1) 
+        translate(0 0) 
+        rotate(0)
+    " 
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="04f14a49-8c1a-43b5-ad10-3165ab490cd5"
+ 
+        class=" pinlabel__body"
+ 
+     transform="
+        translate(66.0 -13.0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(106.0 0.0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    A5
+</text>
+</g><g 
+        class=" pinlabel i2c"
+    transform="
+        translate(146.0 90.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    transform="
+        scale(1 1) 
+        translate(0 0) 
+        rotate(0)
+    " 
+    d="M 0.0 0.0 L 6 0.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="2bacfa73-257a-4726-9341-87d35a2859b5"
+ 
+        class=" pinlabel__body"
+ 
+     transform="
+        translate(6 -13.0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(46.0 0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    SCL1
+</text>
+</g>
+</g>
+</g><g 
+    transform="
+        translate(16.0 -14.999999999999986) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pwr"
+    transform="
+        translate(0 0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    transform="
+        scale(1 1) 
+        translate(0 0) 
+        rotate(0)
+    " 
+    d="M 0.0 0.0 L 0.0 0.0 A 0.0 0.0 0 0 0 0.0 0.0 L 66 0.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="3dccd0ff-fdf6-41fd-b71f-bc98c3c4e3e9"
+ 
+        class=" pinlabel__body"
+ 
+     transform="
+        translate(66 -13.0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(106.0 0) 
+        scale(-1 1)
+        rotate(0)
+    "  
+>
+    VBAT
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pwr"
+    transform="
+        translate(0.0 30.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    transform="
+        scale(1 1) 
+        translate(0 0) 
+        rotate(0)
+    " 
+    d="M 0.0 0.0 L 0.0 0.0 A 0.0 0.0 0 0 0 0.0 0.0 L 66.0 0.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="5d1036be-f811-4ca8-b7cc-24157f7dff4f"
+ 
+        class=" pinlabel__body"
+ 
+     transform="
+        translate(66.0 -13.0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(106.0 0.0) 
+        scale(-1 1)
+        rotate(0)
+    "  
+>
+    3.3V
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel gnd"
+    transform="
+        translate(0.0 60.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    transform="
+        scale(1 1) 
+        translate(0 0) 
+        rotate(0)
+    " 
+    d="M 0.0 0.0 L 0.0 0.0 A 0.0 0.0 0 0 0 0.0 0.0 L 66.0 0.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="0b773bc8-e4e1-4c07-9a40-61397c78e250"
+ 
+        class=" pinlabel__body"
+ 
+     transform="
+        translate(66.0 -13.0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(106.0 0.0) 
+        scale(-1 1)
+        rotate(0)
+    "  
+>
+    GND
+</text>
+</g>
+</g><g 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" pinlabel pwr"
+    transform="
+        translate(0.0 90.0) 
+        scale(-1 1)
+        rotate(0)
+    "
+>
+        <path 
+    class=" pinlabel__leader" 
+    transform="
+        scale(1 1) 
+        translate(0 0) 
+        rotate(0)
+    " 
+    d="M 0.0 0.0 L 0.0 0.0 A 0.0 0.0 0 0 0 0.0 0.0 L 66.0 0.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="badfb0cd-fd3a-4aaa-bcb1-1417db4797bf"
+ 
+        class=" pinlabel__body"
+ 
+     transform="
+        translate(66.0 -13.0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="80" 
+    height="26" 
+    shape-rendering="geometricPrecision"
+    rx="3" 
+    ry="3" 
+/><text
+    class="pinlabel__text"
+    transform="
+        translate(106.0 0.0) 
+        scale(-1 1)
+        rotate(0)
+    "  
+>
+    AREF
+</text>
+</g>
+</g>
+</g>
+</g>
+</g><g 
+        class="panel--info panel"
+    transform="
+        translate(2 442.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="633678b8-511e-40b7-b845-aeb29453894d"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(-2 -2) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="1020.0" 
+    height="132.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="7ae28cf8-8984-45f3-ac30-d38f7d847fd8"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="1016.0" 
+    height="128.0" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="panel title_block textblock"
+    transform="
+        translate(20 30) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <text
+    class="textblock"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    <tspan class='h1'>Pinout sample: Section pull-out</tspan>
+</text>
+</g><g 
+        class="panel text_block textblock"
+    transform="
+        translate(20 60) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <text
+    class="textblock"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    Pinout is a Python tool kit to assist with documentation of electronic hardware.
+</text><text
+    class="textblock"
+    transform="
+        translate(0 18) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    This sample demonstrates documenting a section of hardware.
+</text><text
+    class="textblock"
+    transform="
+        translate(0 36) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    More info at <tspan class='italic strong'>pinout.readthedocs.io</tspan>
+</text>
+</g><g 
+        class=" legend"
+    transform="
+        translate(640 8) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class="analog legendentry"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="815952ec-0f0d-4aae-9532-b5ec2c4d05b5"
+ 
+        class=" swatch__body"
+ 
+     transform="
+        translate(0 -10.0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    Analog
+</text>
+</g><g 
+        class="i2c legendentry"
+    transform="
+        translate(0 28.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="985baafb-49bf-4ba0-a38b-778632153f12"
+ 
+        class=" swatch__body"
+ 
+     transform="
+        translate(0 -10.0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    I2C
+</text>
+</g><g 
+        class="gpio legendentry"
+    transform="
+        translate(0 56.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="8ec4883e-8317-4009-9bdc-d48319979ccc"
+ 
+        class=" swatch__body"
+ 
+     transform="
+        translate(0 -10.0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    GPIO
+</text>
+</g><g 
+        class="touch legendentry"
+    transform="
+        translate(0 84.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="9fc595ce-fd4e-4d7a-a424-c1aa778a6b1b"
+ 
+        class=" swatch__body"
+ 
+     transform="
+        translate(0 -10.0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    Touch
+</text>
+</g><g 
+        class="pwm legendentry"
+    transform="
+        translate(159.0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="173132e6-884f-4c20-8b6c-52ab2e73b174"
+ 
+        class=" swatch__body"
+ 
+     transform="
+        translate(0 -10.0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    PWM
+</text>
+</g><g 
+        class="pwr legendentry"
+    transform="
+        translate(159.0 28.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="be393284-9a29-4502-9751-a47dc9a35ce1"
+ 
+        class=" swatch__body"
+ 
+     transform="
+        translate(0 -10.0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    Power
+</text>
+</g><g 
+        class="gnd legendentry"
+    transform="
+        translate(159.0 56.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <g 
+        class=" swatch"
+    transform="
+        translate(4.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="c97eb9d3-e35e-4d98-b5e9-124361e7c455"
+ 
+        class=" swatch__body"
+ 
+     transform="
+        translate(0 -10.0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="20" 
+    height="20" 
+    shape-rendering="geometricPrecision"
+/>
+</g><text
+    transform="
+        translate(28.0 14.0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    Ground
+</text>
+</g>
+</g>
+</g>
+</g>
+    
+</svg>

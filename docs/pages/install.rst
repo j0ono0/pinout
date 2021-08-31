@@ -14,6 +14,15 @@ Using a virtual environment is recommended; Start by installing the *pinout* pac
     # Or upgrade to the latest version
     pip install --upgrade pinout
 
+*pinout* exports diagrams in SVG format and can be used with with no further package installations. With the additional installation of CairoSVG, diagrams can also be exported in PNG, PDF, and PS formats::
+
+    pip install cairosvg
+
+.. warning::
+    CairoSVG has non-Python dependencies that will require installing if not present. Installation varies depending on platform and may feel like quite a journey for non-technical users. Information regarding installation requirements can be found in the `CairoSVG <https://cairosvg.org/documentation/>`_ and `Cairo Graphics Library <https://www.cairographics.org/download/>`_ websites. 
+    
+    For Windows users `installing GTK3 via MSYS2 <https://www.gtk.org/docs/installations/windows/>`_ may be the most reliable method to install all requirements (Don't forget to add the correct GTK bin folder to the system PATH environmental variable!)
+
 
 .. _quickstart:
 

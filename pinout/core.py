@@ -2,8 +2,9 @@ import base64
 import copy
 import math
 import pathlib
+from PIL import Image as PIL_Image
 import urllib.request
-import PIL
+import uuid
 from collections import namedtuple
 from pinout import manager, templates
 
@@ -38,11 +39,13 @@ class Layout(TransformMixin):
 
     def __init__(self, x=0, y=0, tag=None, **kwargs):
         super().__init__(**kwargs)
+        self.id = str(uuid.uuid4())
         self.tag = tag
         self.x = x
         self.y = y
         self.children = []
         self.defs = []
+        self.clip_id = kwargs.pop("clip_id", None)
         self.config = kwargs.pop("config", {})
 
     def add(self, instance):
@@ -110,21 +113,13 @@ class Layout(TransformMixin):
         x1, y1, x2, y2 = self.bounding_coords()
         return BoundingRect(x1, y1, x2 - x1, y2 - y1)
 
-    def rotated_coords(self, x, y):
-        return Coords(
-            x * math.cos(math.radians(-self.rotate))
-            + y * math.sin(math.radians(-self.rotate)),
-            -x * math.sin(math.radians(-self.rotate))
-            + y * math.cos(math.radians(-self.rotate)),
-        )
-
     def bounding_coords(self):
         """Coordinates of the components's bounding rectangle.
 
         :return: (x1, y1, x2, y2)
         :rtype: BoundingCoords (namedtuple)
         """
-        # Collect untransformed bounding coords
+        # Collect bounding coords of children
         x = []
         y = []
         for child in [
@@ -137,24 +132,29 @@ class Layout(TransformMixin):
             y.append(self.y + coords.y1 * self.scale.y)
             x.append(self.x + coords.x2 * self.scale.x)
             y.append(self.y + coords.y2 * self.scale.y)
-        x.sort()
-        y.sort()
 
         try:
-            # Transform with rotate
-            x1, y1, x2, y2 = x[0], y[0], x[-1], y[-1]
-            top_left = self.rotated_coords(x1, y1)
-            top_right = self.rotated_coords(x2, y1)
-            bottom_left = self.rotated_coords(x1, y2)
-            bottom_right = self.rotated_coords(x2, y2)
-            zipped = [
-                sorted(list(coord))
-                for coord in zip(top_left, top_right, bottom_left, bottom_right)
-            ]
-            return BoundingCoords(
-                zipped[0][0], zipped[1][0], zipped[0][-1], zipped[1][-1]
-            )
-        except IndexError:
+            x1, y1, x2, y2 = min(x), min(y), max(x), max(y)
+
+            # rotate corners of bounding box
+            corners = [(x1, y1), (x2, y1), (x1, y2), (x2, y2)]
+            rx = []
+            ry = []
+            for (x, y) in corners:
+                rx.append(
+                    self.x
+                    + (x - self.x) * math.cos(math.radians(self.rotate))
+                    - (y - self.y) * math.sin(math.radians(self.rotate))
+                )
+                ry.append(
+                    self.y
+                    + (x - self.x) * math.sin(math.radians(self.rotate))
+                    + (y - self.y) * math.cos(math.radians(self.rotate))
+                )
+
+            return BoundingCoords(min(rx), min(ry), max(rx), max(ry))
+
+        except ValueError:
             # There are no children
             return BoundingCoords(0, 0, 0, 0)
 
@@ -188,6 +188,19 @@ class Layout(TransformMixin):
                 print(child.render())
                 print(e)
         return content
+
+
+class Use(Layout):
+    """ Implement <use> svg tag"""
+
+    def __init__(self, instance, **kwargs):
+        self.target_id = instance.id
+        super().__init__(**kwargs)
+
+    def render(self):
+        # convert kwargs into parameters for <use>
+        tplt = templates.get("use.svg")
+        return tplt.render(use=self)
 
 
 class Group(Layout):
@@ -252,6 +265,7 @@ class SvgShape(TransformMixin):
         tag=None,
         **kwargs,
     ):
+        self.id = str(uuid.uuid4())
         self.tag = tag
         self.x = x
         self.y = y
@@ -267,7 +281,25 @@ class SvgShape(TransformMixin):
     def bounding_coords(self):
         x = [self.x, (self.x * self.scale.x + self.width) * self.scale.x]
         y = [self.y, (self.y * self.scale.y + self.height) * self.scale.y]
-        return BoundingCoords(min(x), min(y), max(x), max(y))
+        x1, y1, x2, y2 = min(x), min(y), max(x), max(y)
+
+        # rotate corners of bounding box
+        corners = [(x1, y1), (x2, y1), (x1, y2), (x2, y2)]
+        rx = []
+        ry = []
+        for (x, y) in corners:
+            rx.append(
+                self.x
+                + (x - self.x) * math.cos(math.radians(self.rotate))
+                - (y - self.y) * math.sin(math.radians(self.rotate))
+            )
+            ry.append(
+                self.y
+                + (x - self.x) * math.sin(math.radians(self.rotate))
+                + (y - self.y) * math.cos(math.radians(self.rotate))
+            )
+
+        return BoundingCoords(min(rx), min(ry), max(rx), max(ry))
 
     def add_tag(self, tag):
         """Append a tag to the instance
@@ -318,6 +350,22 @@ class Rect(SvgShape):
         return tplt.render(rect=self)
 
 
+class Circle(SvgShape):
+    """SVG <circle> object"""
+
+    def __init__(self, cx, cy, r, **kwargs):
+        self.r = r
+        kwargs["x"] = cx
+        kwargs["y"] = cy
+        super().__init__(**kwargs)
+
+    def render(self):
+        """Render a <circle> tag."""
+
+        tplt = templates.get("circle.svg")
+        return tplt.render(circle=self)
+
+
 class Text(SvgShape):
     """SVG <text> object"""
 
@@ -338,8 +386,8 @@ class Text(SvgShape):
 class Image(SvgShape):
     """Include a image in the diagram."""
 
-    def __init__(self, path, embed=False, **kwargs):
-        self.path = path
+    def __init__(self, src, embed=False, **kwargs):
+        self.src = src
         self.svg_data = None
         self.embed = embed
         self.coords = {}
@@ -347,16 +395,23 @@ class Image(SvgShape):
 
         try:
             # Load image dimensions to avoid multiple loads when calculating coords
-            im = PIL.Image.open(self.path)
+            im = PIL_Image.open(self.src)
             self.im_size = im.size
+
+        except AttributeError:
+            # src is assumed to be an Image instance
+            self.coords = self.src.coords
+            self.im_size = self.src.im_size
+
         except PIL.UnidentifiedImageError:
             # Image is assumed to be SVG
             # Match arbitary im_size to width and height so no scaling occurs
             pass
+
         except OSError:
             try:
                 # file not at local path, try path as URL
-                im = PIL.Image.open(urllib.request.urlopen(self.path))
+                im = PIL.Image.open(urllib.request.urlopen(self.src))
                 self.im_size = im.size
             except PIL.UnidentifiedImageError:
                 # Image is assumed to be SVG
@@ -382,15 +437,27 @@ class Image(SvgShape):
         # Transformed size
         tw, th = iw * scaler, ih * scaler
 
-        # Transformed x and y coords
+        # Transform x and y coords
         tx = x * scaler
         ty = y * scaler
 
+        # Calculate offset to centre fitted image
+        tx = tx + (self.width - tw) / 2
+        ty = ty + (self.height - th) / 2
+
         if not raw:
-            # NOTE: svg transforms images proportionally to 'fit' supplied dimensions
             # if 'raw' is False translate the coords
-            tx = tx + (self.width - tw) / 2 + self.x
-            ty = ty + (self.height - th) / 2 + self.y
+            # NOTE: SVG transforms images proportionally to 'fit' supplied dimensions
+
+            # rotate coords
+            rtx = tx * math.cos(math.radians(self.rotate)) - ty * math.sin(
+                math.radians(self.rotate)
+            )
+            rty = tx * math.sin(math.radians(self.rotate)) + ty * math.cos(
+                math.radians(self.rotate)
+            )
+            tx = rtx + self.x
+            ty = rty + self.y
 
         return Coords(tx, ty)
 
@@ -401,18 +468,54 @@ class Image(SvgShape):
     def loadData(self):
         """Load image data from URL or local file system."""
         try:
-            with open(self.path, "rb") as f:
+            with open(self.src, "rb") as f:
                 return f.read()
         except OSError:
             try:
-                with urllib.request.urlopen(self.path) as f:
+                with urllib.request.urlopen(self.src) as f:
                     return f.read()
             except urllib.error.HTTPError as e:
                 print(e.code)
 
     def render(self):
         """Render SVG markup either linking or embedding an image."""
-        media_type = pathlib.Path(self.path).suffix[1:]
+        if isinstance(self.src, Image):
+            # src image is wrapped in <use> tag which has to replicate 'fitting' behaviour of SVG images
+
+            scaler = min(self.width / self.src.width, self.height / self.src.height)
+            self.scale = Coords(
+                self.scale.x * scaler,
+                self.scale.y * scaler,
+            )
+            actual_width = self.src.width * scaler
+            actual_height = self.src.height * scaler
+
+            tx = (self.width - actual_width) / 2
+            ty = (self.height - actual_height) / 2
+
+            # Rotate coords
+            # rotate coords
+            rtx = tx * math.cos(math.radians(self.rotate)) - ty * math.sin(
+                math.radians(self.rotate)
+            )
+            rty = tx * math.sin(math.radians(self.rotate)) + ty * math.cos(
+                math.radians(self.rotate)
+            )
+
+            # use image from definitions with <use> tag
+            output = Use(
+                self.src,
+                x=self.x + rtx,
+                y=self.y + rty,
+                scale=self.scale,
+                rotate=self.rotate,
+                clip_id=self.clip_id,
+                tag=self.tag,
+            )
+            return output.render()
+
+        # Use externally referenced image
+        media_type = pathlib.Path(self.src).suffix[1:]
         tplt = templates.get("image.svg")
 
         if self.embed:
@@ -425,7 +528,7 @@ class Image(SvgShape):
                 self.svg_data = ET.tostring(tree)
             else:
                 encoded_img = base64.b64encode(self.loadData())
-                self.path = (
+                self.src = (
                     f"data:image/{media_type};base64,{encoded_img.decode('utf-8')}"
                 )
 

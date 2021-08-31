@@ -1,15 +1,21 @@
 <rect
-    {% if rect.tag %} class="{{ rect.tag }}"{% endif %} 
-    x="{{ rect.x }}" 
-    y="{{ rect.y }}" 
+    id="{{ rect.id }}"
+    {% if rect.tag %} 
+        class="{{ rect.tag }}"
+    {% endif %} 
+    {% if rect.clip_id %}
+        clip-path="url(#{{ rect.clip_id }})"
+    {% endif %}
+     transform="
+        translate({{ rect.x }} {{  rect.y }}) 
+        scale({{ rect.scale.x }} {{ rect.scale.y }})
+        rotate({{ rect.rotate }})
+    " 
     width="{{ rect.width }}" 
     height="{{ rect.height }}" 
     shape-rendering="geometricPrecision"
     {% if rect.corner_radius %}
     rx="{{ rect.corner_radius }}" 
     ry="{{ rect.corner_radius }}" 
-    {% endif %}
-    {% if rect.clip_id %}
-    clip-path="url(#{{ rect.clip_id }})"
     {% endif %}
 />

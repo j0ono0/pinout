@@ -26,7 +26,6 @@ class ClipPath(Group):
     """Define a clip-path component"""
 
     def __init__(self, x=0, y=0, tag=None, **kwargs):
-        self.uuid = str(uuid.uuid4())
         super().__init__(x=x, y=y, tag=tag, **kwargs)
 
     def render(self):

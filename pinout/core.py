@@ -2,7 +2,7 @@ import base64
 import copy
 import math
 import pathlib
-import PIL
+from PIL import Image as PIL_Image
 import urllib.request
 import uuid
 from collections import namedtuple
@@ -395,7 +395,7 @@ class Image(SvgShape):
 
         try:
             # Load image dimensions to avoid multiple loads when calculating coords
-            im = PIL.Image.open(self.src)
+            im = PIL_Image.open(self.src)
             self.im_size = im.size
 
         except AttributeError:

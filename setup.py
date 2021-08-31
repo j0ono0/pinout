@@ -25,6 +25,6 @@ setuptools.setup(
     ],
     packages=setuptools.find_packages(include=["pinout", "pinout.*"]),
     python_requires=">=3.6",
-    install_requires=["Jinja2", "Pillow", "cairosvg"],
+    install_requires=["Jinja2", "Pillow"],
     include_package_data=True,
 )

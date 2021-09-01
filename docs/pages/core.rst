@@ -9,6 +9,8 @@ Layout
 .. autoclass:: Layout
     :show-inheritance:
     
+    **This class is not designed to be used directly.** Methods listed here are inherted by child classes.
+
     :param x: x-axis location, defaults to 0
     :type x: int, optional
     :param y: y-axis location, defaults to 0
@@ -16,11 +18,9 @@ Layout
     :param tag: css class tag, defaults to None
     :type tag: string (must be valid css class name), optional
 
-    Currently **scale** is the only vaid additional argument that may be included in key-word-arguments (kwargs).
-
     .. autoproperty:: add
 
-    This is a convenience function that appends an object to instance.children. It also returns the instance allowing instance creation and adding a single line of code. 
+        This is a convenience function that appends an object to Layout.children. It also returns the instance allowing instance creation and adding a single line of code. 
 
     .. autoproperty:: add_def
 

@@ -249,7 +249,7 @@ class Raw:
 
 
 class SvgShape(TransformMixin):
-    """Base class for components that have a graphical representation"""
+    """Base class for components that have a graphical representation."""
 
     def __init__(
         self,
@@ -270,10 +270,12 @@ class SvgShape(TransformMixin):
         super().__init__(**kwargs)
 
     def bounding_rect(self):
+        """Component's origin coordinates and dimensions"""
         x1, y1, x2, y2 = self.bounding_coords()
         return BoundingRect(x1, y1, x2 - x1, y2 - y1)
 
     def bounding_coords(self):
+        """Coordinates representing a shape's bounding-box."""
         x = [self.x, (self.x * self.scale.x + self.width) * self.scale.x]
         y = [self.y, (self.y * self.scale.y + self.height) * self.scale.y]
         x1, y1, x2, y2 = min(x), min(y), max(x), max(y)

@@ -129,6 +129,22 @@ SvgShape
 .. autoclass:: SvgShape
     :show-inheritance:
 
+    Classes that inherit from SvgShape can be considered the smallest building blocks of *pinout*. Along with text components, SvgShape classes represent the actual graphical elements that make up a diagram.
+
+    This class has no renderable output itself. Classes that inherit from it must provide their own unique render method. Whist its purpose is primarily as a building block for other classes, SvgShape can be used to reserve an area in components that don't intrinsically have their own width and height (eg Group)::
+
+        from pinout.core import Group, SvgShape
+
+        # Create an empty group
+        grp = diagram.add(Group())
+        print(f"group dimensions - width:{grp.width}, height:{grp.height}")
+
+        # Add an SvgShape instance to the group
+        grp.add(SvgShape(x=0, y=0, width=50, height=50))
+        print(f"group dimensions - width:{grp.width}, height:{grp.height}")
+
+        # The group now reports a size but does not render anything
+
     :param x: Location coordinate in x-axis, defaults to 0
     :type x: int, optional
     :param y: Location coordinate in y-axis, defaults to 0
@@ -140,6 +156,20 @@ SvgShape
     :param tag: CSS class, defaults to None
     :type tag: string (must meet css class naming rules), optional
 
+
+    .. automethod:: bounding_coords
+        
+        Coordinates are relative to the parent component's origin adn cater for scale and rotation transformations.
+
+        :return: (x1, y1, x2, y2)
+        :rtype: namedtuple (BoundingCoords)
+        
+    .. automethod:: bounding_rect
+
+        Convenience method that expresses SvgShape.bounding_coords() as coordinates of the shape's origin, width, and height.
+
+        :return: (x, y, w, h)
+        :rtype: namedtuple (BoundingRect)
 
 Path
 ----

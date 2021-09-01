@@ -41,11 +41,15 @@ Details to note:
 Export in other formats
 -----------------------
 
+With the addition of CairoSVG *pinout* is able to export to PNG, PDF, and PS formats. Installation is done via pip::
+
+    pip install cairosvg
+
 .. note::
 
-    cairosvg has it's own (non-Python) dependencies. If exporting to other formats is not working the most likely reason is these dependencies require installing. Installation processes are platform specific and outlined on the `cairosvg website <https://cairosvg.org/>`_.
+    CairoSVG has it's own (non-Python) dependencies. See :ref:`Install` for more details.
 
-*pinout* includes `cairosvg <https://cairosvg.org/>`_ as a dependency to provide some other export options. PNG, PDF, and PS graphics can be exported via cairosvg. To access these formats replace the filename suffix to match when exporting::
+Once these dependencies have been installed replace the filename suffix to export in the desired format::
 
     # Export as png
     >>> py pinout.manager --export pinout_diagram my_diagram.png
@@ -55,10 +59,6 @@ Export in other formats
     
     # Export as ps
     >>> py pinout.manager --export pinout_diagram my_diagram.ps
-
-.. warning ::
-
-    SVG features may render differently between different browsers and cairosvg output - Test your specific *pinout* setup will export as expected before commiting to a particular solution.
 
 
 Generate a cascading stylesheet

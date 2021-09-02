@@ -35,7 +35,7 @@ class TransformMixin:
 
 
 class Layout(TransformMixin):
-    """Base class for components that fundamentally group other components together."""
+    """Base class fundamentally grouping other components together."""
 
     def __init__(self, x=0, y=0, tag=None, **kwargs):
         super().__init__(**kwargs)

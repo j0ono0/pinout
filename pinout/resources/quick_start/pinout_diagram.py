@@ -7,7 +7,7 @@
 ###########################################
 
 from pinout.core import Group, Image
-from pinout.components.layout import Diagram_2Row
+from pinout.components.layout import Diagram_2Rows
 from pinout.components.pinlabel import PinLabelGroup, PinLabel
 from pinout.components.text import TextBlock
 from pinout.components import leaderline as lline
@@ -18,9 +18,9 @@ from pinout.components.legend import Legend
 import data
 
 # Create a new diagram
-# The Diagram_2Row class provides 2 panels,
+# The Diagram_2Rows class provides 2 panels,
 # 'panel_01' and 'panel_02', to insert components into.
-diagram = Diagram_2Row(1024, 576, 440, "diagram")
+diagram = Diagram_2Rows(1024, 576, 440, "diagram")
 
 # Add a stylesheet
 diagram.add_stylesheet("styles.css", embed=True)

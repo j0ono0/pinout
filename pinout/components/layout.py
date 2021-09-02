@@ -91,7 +91,7 @@ class Panel(Group):
         return super().render()
 
 
-class Diagram_2Column(Diagram):
+class Diagram_2Columns(Diagram):
     def __init__(self, width, height, gutter, tag, **kwargs):
         self.gutter = gutter
         super().__init__(width, height, tag, **kwargs)
@@ -132,7 +132,7 @@ class Diagram_2Column(Diagram):
         )
 
 
-class Diagram_2Row(Diagram):
+class Diagram_2Rows(Diagram):
     def __init__(self, width, height, gutter, tag, **kwargs):
         self.gutter = gutter
         super().__init__(width, height, tag, **kwargs)

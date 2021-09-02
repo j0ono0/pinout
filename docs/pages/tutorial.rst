@@ -15,7 +15,7 @@ Import modules
 Start by importing pinout modules required to create the sample diagram. For this tutorial the diagram data has been stored in a separate file which is also imported here::
 
     from pinout.core import Group, Image
-    from pinout.components.layout import Diagram_2Row
+    from pinout.components.layout import Diagram_2Rows
     from pinout.components.pinlabel import PinLabelGroup, PinLabel
     from pinout.components.text import TextBlock
     from pinout.components import leaderline as lline
@@ -28,12 +28,12 @@ Start by importing pinout modules required to create the sample diagram. For thi
 Diagram setup
 -------------
 
-The *Diagram_2Row* class creates a blank diagram instance featuring two panels to hold further components and make up the pinout diagram. The instance is named 'diagram' here as this is the default instance name pinout.manager looks for when exporting the final graphic. Presentation styles are controlled via a cascading style-sheet, also added to the diagram here::
+The *Diagram_2Rows* class creates a blank diagram instance featuring two panels to hold further components and make up the pinout diagram. The instance is named 'diagram' here as this is the default instance name pinout.manager looks for when exporting the final graphic. Presentation styles are controlled via a cascading style-sheet, also added to the diagram here::
 
     # Create a new diagram
-    # The Diagram_2Row class provides 2 panels,
+    # The Diagram_2Rows class provides 2 panels,
     # 'panel_01' and 'panel_02', to insert components into.
-    diagram = Diagram_2Row(1024, 576, 440, "diagram")
+    diagram = Diagram_2Rows(1024, 576, 440, "diagram")
 
     # Add a stylesheet
     diagram.add_stylesheet("styles.css", embed=True)

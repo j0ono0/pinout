@@ -1,0 +1,326 @@
+
+<svg  
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0"
+    y="0"
+    width="1200" 
+    height="675" 
+    viewBox="0 0 1200 675"
+    class="panel_layout"
+>
+
+    <style type="text/css" media="screen">  
+    <![CDATA[  
+    .panel--banner .panel__inner,
+.panel--footer .panel__inner{
+    fill: #333;
+}
+
+.panel--detail .panel__inner{
+    fill: #ededed;
+}
+    ]]>  
+</style>
+<style type="text/css" media="screen">  
+    <![CDATA[  
+    
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.panel__inner {
+    fill: #fff;
+}
+.panel__outer {
+    fill: #333;
+}
+
+
+    ]]>  
+</style>
+<g 
+        class=" panel"
+    transform="
+        translate(2 2) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="2d5bb84a-75f0-4e22-9cd1-6c37b3c238bc"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(-2 -2) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="1200.0" 
+    height="657.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="74da412a-f5b6-4d6d-bd9c-26ff2a3513cc"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="1196.0" 
+    height="653.0" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="panel--banner panel"
+    transform="
+        translate(2 2) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="73e0bb86-20eb-426a-9920-a8d6c1fd5f81"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(-2 -2) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="1196.0" 
+    height="50.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="4a5dc514-efff-4e12-a79c-abc8802a18bd"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="1192.0" 
+    height="46.0" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="panel--main panel"
+    transform="
+        translate(2 52.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="e717a5ad-db35-41db-a4cb-05fcb15bf123"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(-2 -2) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="797.3333333333334" 
+    height="500.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="6214bcbe-cef0-466c-a46e-213762c7ce3f"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="793.3333333333334" 
+    height="496.0" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="panel--detail panel"
+    transform="
+        translate(797.3333333333334 50.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="88c77d74-c734-45b3-abff-a618b176b215"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="398.66666666666663" 
+    height="500.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="7f1c1e3f-67fd-48d8-b6db-5da1e0143ede"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="398.66666666666663" 
+    height="500.0" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="panel--detail panel"
+    transform="
+        translate(2 2) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="47d06de9-dd89-4876-a63c-827da755dfdd"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(-2 -2) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="398.66666666666663" 
+    height="166.66666666666666" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="308dc53e-9ccd-48de-bcfc-849ce1d1a10d"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="394.66666666666663" 
+    height="162.66666666666666" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="panel--detail panel"
+    transform="
+        translate(2 168.66666666666666) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="ee2cea72-efe6-4daf-84d9-0641c7335a6b"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(-2 -2) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="398.66666666666663" 
+    height="166.66666666666666" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="a2cbd9fe-80d1-4edf-9680-fc7fd4a9f2fa"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="394.66666666666663" 
+    height="162.66666666666666" 
+    shape-rendering="geometricPrecision"
+/>
+</g><g 
+        class="panel--detail panel"
+    transform="
+        translate(2 335.3333333333333) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="5735090e-4e63-4166-b38d-c8638b232467"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(-2 -2) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="398.66666666666663" 
+    height="166.66666666666669" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="c496bdeb-bbf5-48a8-a99a-06d43c6a2c9f"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="394.66666666666663" 
+    height="162.66666666666669" 
+    shape-rendering="geometricPrecision"
+/>
+</g>
+</g><g 
+        class="panel--footer panel"
+    transform="
+        translate(2 552.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="3f2fcc3a-f0d5-4bbd-9a66-0a3bd5df4d7c"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(-2 -2) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="1196.0" 
+    height="103.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="cadc5eda-d646-4a6e-96e3-5fcab783c1d5"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="1192.0" 
+    height="99.0" 
+    shape-rendering="geometricPrecision"
+/>
+</g>
+</g>
+    
+</svg>

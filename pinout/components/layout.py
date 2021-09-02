@@ -37,7 +37,7 @@ class ClipPath(Group):
 class Panel(Group):
     def __init__(self, width, height, inset=None, **kwargs):
         """Assist with content grouping and positioning"""
-        kwargs["config"] = kwargs.get("config", config.panel["inset"])
+        kwargs["config"] = kwargs.get("config", config.panel)
         super().__init__(**kwargs)
         inset = inset or self.config["inset"]
         self.inset = BoundingCoords(*inset)

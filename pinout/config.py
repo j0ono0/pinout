@@ -92,7 +92,7 @@ annotation = {
 
 # Panel
 panel = {
-    "inset": (5, 5, 5, 5),
+    "inset": (2, 2, 2, 2),
     "tag": "panel",
     "inner": {"tag": "panel__inner"},
     "outer": {"tag": "panel__outer"},

@@ -37,9 +37,10 @@ class ClipPath(Group):
 class Panel(Group):
     def __init__(self, width, height, inset=None, **kwargs):
         """Assist with content grouping and positioning"""
-        inset = inset or config.panel["inset"]
-        self.inset = BoundingCoords(*inset)
+        kwargs["config"] = kwargs.get("config", config.panel["inset"])
         super().__init__(**kwargs)
+        inset = inset or self.config["inset"]
+        self.inset = BoundingCoords(*inset)
         self.add_tag(config.panel["tag"])
 
         # add a non-rendering shape so component
@@ -88,3 +89,76 @@ class Panel(Group):
         )
 
         return super().render()
+
+
+class Diagram_2Column(Diagram):
+    def __init__(self, width, height, gutter, tag, **kwargs):
+        self.gutter = gutter
+        kwargs["config"] = kwargs.get("config", config.diagram_presets)
+        super().__init__(width, height, tag, **kwargs)
+
+        self.panel_00 = self.add(
+            Panel(
+                x=0,
+                y=0,
+                width=width,
+                height=height,
+                tag="panel panel_content",
+            )
+        )
+        self.panel_01 = self.panel_00.add(
+            Panel(
+                x=0,
+                y=0,
+                width=self.gutter,
+                height=self.panel_00.inset_height,
+                tag="panel panel_01",
+            )
+        )
+        self.panel_02 = self.panel_00.add(
+            Panel(
+                x=self.gutter,
+                y=0,
+                width=self.panel_00.inset_width - self.gutter,
+                height=self.panel_00.inset_height,
+                tag="panel panel_02",
+            )
+        )
+
+
+class Diagram_2Row(Diagram):
+    def __init__(self, width, height, gutter, tag, **kwargs):
+        self.gutter = gutter
+        kwargs["config"] = kwargs.get("config", config.diagram_presets)
+        super().__init__(width, height, tag, **kwargs)
+
+        self.panel_00 = self.add(
+            Panel(
+                x=0,
+                y=0,
+                width=width,
+                height=height,
+                tag="panel panel_content",
+                config=self.config["panel"],
+            )
+        )
+        self.panel_01 = self.panel_00.add(
+            Panel(
+                x=0,
+                y=0,
+                width=self.panel_00.inset_width,
+                height=self.gutter,
+                tag="panel_01",
+                config=self.config["panel"],
+            )
+        )
+        self.panel_02 = self.panel_00.add(
+            Panel(
+                x=0,
+                y=self.gutter,
+                width=self.panel_00.inset_width,
+                height=self.panel_00.inset_height - self.gutter,
+                tag="panel_02",
+                config=self.config["panel"],
+            )
+        )

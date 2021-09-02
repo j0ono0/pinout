@@ -81,7 +81,7 @@ def create_stylesheet(module_name, path, instance_name="diagram", overwrite=Fals
     """Create a stylesheet if none supplied."""
     from pinout import config, style_tools, templates
     from pinout.components.annotation import AnnotationLabel
-    from pinout.components.layout import Panel
+    from pinout.components.layout import Panel, Diagram_2Column, Diagram_2Row
     from pinout.components.legend import Legend
     from pinout.components.pinlabel import PinLabel
     from pinout.components.integrated_circuits import DIP, QFP
@@ -108,6 +108,8 @@ def create_stylesheet(module_name, path, instance_name="diagram", overwrite=Fals
         context["ic_dip"] = config.ic_dip
     if diagram.find_children_by_type(diagram, QFP):
         context["ic_qfp"] = config.ic_qfp
+    if isinstance(diagram, Diagram_2Column) or isinstance(diagram, Diagram_2Row):
+        context["diagram_presets"] = config.diagram_presets
 
     css_tplt = templates.get("stylesheet.j2")
     css = css_tplt.render(css=context)

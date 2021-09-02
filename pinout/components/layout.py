@@ -94,8 +94,11 @@ class Panel(Group):
 class Diagram_2Column(Diagram):
     def __init__(self, width, height, gutter, tag, **kwargs):
         self.gutter = gutter
-        kwargs["config"] = kwargs.get("config", config.diagram_presets)
         super().__init__(width, height, tag, **kwargs)
+
+        # Add/override config
+        self.config = config.diagram_presets
+        self.update_config(kwargs.get("config", {}))
 
         self.panel_00 = self.add(
             Panel(
@@ -103,7 +106,8 @@ class Diagram_2Column(Diagram):
                 y=0,
                 width=width,
                 height=height,
-                tag="panel panel_content",
+                tag=self.config["panel_00"]["tag"],
+                config=self.config["panel_00"],
             )
         )
         self.panel_01 = self.panel_00.add(
@@ -112,7 +116,8 @@ class Diagram_2Column(Diagram):
                 y=0,
                 width=self.gutter,
                 height=self.panel_00.inset_height,
-                tag="panel panel_01",
+                tag=self.config["panel_01"]["tag"],
+                config=self.config["panel_01"],
             )
         )
         self.panel_02 = self.panel_00.add(
@@ -121,7 +126,8 @@ class Diagram_2Column(Diagram):
                 y=0,
                 width=self.panel_00.inset_width - self.gutter,
                 height=self.panel_00.inset_height,
-                tag="panel panel_02",
+                tag=self.config["panel_02"]["tag"],
+                config=self.config["panel_02"],
             )
         )
 
@@ -143,8 +149,8 @@ class Diagram_2Row(Diagram):
                 y=0,
                 width=width,
                 height=height,
-                tag="panel panel_content",
-                config=self.config["panel"],
+                tag=self.config["panel_00"]["tag"],
+                config=self.config["panel_00"],
             )
         )
         self.panel_01 = self.panel_00.add(
@@ -153,8 +159,8 @@ class Diagram_2Row(Diagram):
                 y=0,
                 width=self.panel_00.inset_width,
                 height=self.gutter,
-                tag="panel_01",
-                config=self.config["panel"],
+                tag=self.config["panel_01"]["tag"],
+                config=self.config["panel_01"],
             )
         )
         self.panel_02 = self.panel_00.add(
@@ -163,7 +169,7 @@ class Diagram_2Row(Diagram):
                 y=self.gutter,
                 width=self.panel_00.inset_width,
                 height=self.panel_00.inset_height - self.gutter,
-                tag="panel_02",
-                config=self.config["panel"],
+                tag=self.config["panel_02"]["tag"],
+                config=self.config["panel_02"],
             )
         )

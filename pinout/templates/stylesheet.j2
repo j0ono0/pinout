@@ -87,6 +87,7 @@ text {
         fill: none;
     }
 {% endif %}
+
 {# Integrated circuits #}
 {% if css.ic_dip %}
 
@@ -126,5 +127,16 @@ text {
         fill: rgb(255, 255, 255);
         stroke-width: 1px;
         stroke: #000;
+    }
+{% endif %}
+
+{# Diagram preset templates #}
+{% if css.diagram_presets %}
+    .{{ css.diagram_presets.tag }} .h1{
+        font-size: 26px;
+        font-weight: bold;
+    }
+    .{{ css.diagram_presets.panel_02.tag }} .panel__inner{
+        fill: #ededed;
     }
 {% endif %}

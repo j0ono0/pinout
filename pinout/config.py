@@ -138,10 +138,11 @@ ic_qfp = {
 
 # Diagram layout template presets
 diagram_presets = {
+    "tag": "layout",
     "panel": {
         "inset": (2, 2, 2, 2),
         "tag": "panel",
         "inner": {"tag": "panel__inner"},
         "outer": {"tag": "panel__outer"},
-    }
+    },
 }

@@ -129,8 +129,13 @@ class Diagram_2Column(Diagram):
 class Diagram_2Row(Diagram):
     def __init__(self, width, height, gutter, tag, **kwargs):
         self.gutter = gutter
-        kwargs["config"] = kwargs.get("config", config.diagram_presets)
         super().__init__(width, height, tag, **kwargs)
+
+        # Add/override config
+        self.config = config.diagram_presets
+        self.update_config(kwargs.get("config", {}))
+
+        self.add_tag(self.config["tag"])
 
         self.panel_00 = self.add(
             Panel(

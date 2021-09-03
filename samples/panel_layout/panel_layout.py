@@ -1,7 +1,7 @@
 # Example diagram layout using Diagram and Panel classes
 #
 # export this sample via the command line:
-# >>> py -m pinout.manager --export panel_layout panel_layout.svg
+# >>> py -m pinout.manager --export panel_layout output/panel_layout.svg
 #
 
 from pinout.components.layout import Diagram, Panel

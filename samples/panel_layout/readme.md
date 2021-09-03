@@ -6,6 +6,6 @@ Dimensions and position of each panel can be manually calculated and entered. Al
 
 ## Output
 
-![diagram featuring customised panel layout](output/populated_layout.png)
+Now the layout has been completed further content can in added to the Panel instances creating a finished diagram featuring multiple sections (output from 'populated_layout.py').
 
-Now the layout has been completed further content can in added to the Panel instances to create a finished diagram featuring multiple sections.
+![diagram featuring customised panel layout](output/populated_layout.png)

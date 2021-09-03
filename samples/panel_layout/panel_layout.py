@@ -20,7 +20,7 @@ diagram.add_stylesheet("styles.css")
 
 # Panel fills entire diagram.
 # All other panels will be added to this one.
-panel_00 = diagram.add(Panel(1200, 657, (2, 2, 2, 2)))
+panel_00 = diagram.add(Panel(1200, 675, (2, 2, 2, 2)))
 
 # Banner panel
 panel_banner = panel_00.add(
@@ -55,7 +55,7 @@ panel_details = panel_00.add(
     )
 )
 
-# x3 detail 'sub' panels
+# x3 'sub' panels
 panel_detail_01 = panel_details.add(
     Panel(
         x=0,

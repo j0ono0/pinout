@@ -50,7 +50,7 @@ text {
     "
 >
         <rect
-    id="2d5bb84a-75f0-4e22-9cd1-6c37b3c238bc"
+    id="947c2925-a255-4d0c-b8ca-325818f8d88d"
  
         class="panel__outer"
  
@@ -60,10 +60,10 @@ text {
         rotate(0)
     " 
     width="1200.0" 
-    height="657.0" 
+    height="675.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="74da412a-f5b6-4d6d-bd9c-26ff2a3513cc"
+    id="bfcfd097-8c6d-4eff-aff1-b2e3a1c97623"
  
         class="panel__inner"
  
@@ -73,7 +73,7 @@ text {
         rotate(0)
     " 
     width="1196.0" 
-    height="653.0" 
+    height="671.0" 
     shape-rendering="geometricPrecision"
 /><g 
         class="panel--banner panel"
@@ -84,7 +84,7 @@ text {
     "
 >
         <rect
-    id="73e0bb86-20eb-426a-9920-a8d6c1fd5f81"
+    id="cc66c3e5-af58-47df-8633-3cfedcb12dc6"
  
         class="panel__outer"
  
@@ -97,7 +97,7 @@ text {
     height="50.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="4a5dc514-efff-4e12-a79c-abc8802a18bd"
+    id="f3feee33-bf91-4619-98e5-76650bbce666"
  
         class="panel__inner"
  
@@ -119,7 +119,7 @@ text {
     "
 >
         <rect
-    id="e717a5ad-db35-41db-a4cb-05fcb15bf123"
+    id="5e57c33a-273b-4f32-8a7e-b43b51cca50e"
  
         class="panel__outer"
  
@@ -132,7 +132,7 @@ text {
     height="500.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="6214bcbe-cef0-466c-a46e-213762c7ce3f"
+    id="a0c790f7-8353-47e1-aa9c-dda1bedce9fe"
  
         class="panel__inner"
  
@@ -154,7 +154,7 @@ text {
     "
 >
         <rect
-    id="88c77d74-c734-45b3-abff-a618b176b215"
+    id="dbb6c491-9f36-4752-a540-9aa5447e9d8b"
  
         class="panel__outer"
  
@@ -167,7 +167,7 @@ text {
     height="500.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="7f1c1e3f-67fd-48d8-b6db-5da1e0143ede"
+    id="f5993a3b-5855-4041-921c-4bd17ad33487"
  
         class="panel__inner"
  
@@ -188,7 +188,7 @@ text {
     "
 >
         <rect
-    id="47d06de9-dd89-4876-a63c-827da755dfdd"
+    id="b6ac2a0d-bf03-40fe-877d-487870719e15"
  
         class="panel__outer"
  
@@ -201,7 +201,7 @@ text {
     height="166.66666666666666" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="308dc53e-9ccd-48de-bcfc-849ce1d1a10d"
+    id="39b64146-ae57-4b22-8ee1-b7e3b695a0f9"
  
         class="panel__inner"
  
@@ -223,7 +223,7 @@ text {
     "
 >
         <rect
-    id="ee2cea72-efe6-4daf-84d9-0641c7335a6b"
+    id="eec7a8aa-c063-4194-b087-4155fc6d01bf"
  
         class="panel__outer"
  
@@ -236,7 +236,7 @@ text {
     height="166.66666666666666" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="a2cbd9fe-80d1-4edf-9680-fc7fd4a9f2fa"
+    id="0047a822-e42d-4709-bce8-97207cc05cbc"
  
         class="panel__inner"
  
@@ -258,7 +258,7 @@ text {
     "
 >
         <rect
-    id="5735090e-4e63-4166-b38d-c8638b232467"
+    id="2f2c465a-0c9b-4fc4-8a03-f7e3e6634187"
  
         class="panel__outer"
  
@@ -271,7 +271,7 @@ text {
     height="166.66666666666669" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="c496bdeb-bbf5-48a8-a99a-06d43c6a2c9f"
+    id="33a33344-82f9-4abe-9548-05f4775d5837"
  
         class="panel__inner"
  
@@ -294,7 +294,7 @@ text {
     "
 >
         <rect
-    id="3f2fcc3a-f0d5-4bbd-9a66-0a3bd5df4d7c"
+    id="bea96b7c-1282-48db-b507-6498644862be"
  
         class="panel__outer"
  
@@ -304,10 +304,10 @@ text {
         rotate(0)
     " 
     width="1196.0" 
-    height="103.0" 
+    height="121.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="cadc5eda-d646-4a6e-96e3-5fcab783c1d5"
+    id="42c8a937-a8aa-4d96-804b-17eb11b0cd4f"
  
         class="panel__inner"
  
@@ -317,7 +317,7 @@ text {
         rotate(0)
     " 
     width="1192.0" 
-    height="99.0" 
+    height="117.0" 
     shape-rendering="geometricPrecision"
 />
 </g>

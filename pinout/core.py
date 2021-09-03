@@ -35,7 +35,7 @@ class TransformMixin:
 
 
 class Layout(TransformMixin):
-    """Base class for components that fundamentally group other components together."""
+    """Base class fundamentally grouping other components together."""
 
     def __init__(self, x=0, y=0, tag=None, **kwargs):
         super().__init__(**kwargs)
@@ -53,12 +53,7 @@ class Layout(TransformMixin):
         return instance
 
     def add_def(self, instance):
-        """Add a component to the svg 'def' section
-
-        :param instance: pinout component
-        :return: instance added
-        :rtype: pinout components
-        """
+        """Add a component to the svg 'def' section"""
         self.defs.append(instance)
         return instance
 
@@ -254,7 +249,7 @@ class Raw:
 
 
 class SvgShape(TransformMixin):
-    """Base class for components that have a graphical representation"""
+    """Base class for components that have a graphical representation."""
 
     def __init__(
         self,
@@ -275,10 +270,12 @@ class SvgShape(TransformMixin):
         super().__init__(**kwargs)
 
     def bounding_rect(self):
+        """Component's origin coordinates and dimensions"""
         x1, y1, x2, y2 = self.bounding_coords()
         return BoundingRect(x1, y1, x2 - x1, y2 - y1)
 
     def bounding_coords(self):
+        """Coordinates representing a shape's bounding-box."""
         x = [self.x, (self.x * self.scale.x + self.width) * self.scale.x]
         y = [self.y, (self.y * self.scale.y + self.height) * self.scale.y]
         x1, y1, x2, y2 = min(x), min(y), max(x), max(y)

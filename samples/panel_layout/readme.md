@@ -6,8 +6,6 @@ Dimensions and position of each panel can be manually calculated and entered. Al
 
 ## Output
 
-<p align="center">
-    <img alt="Example layout featuring multiple panels." src="output/panel_layout.png" />
-</p>
+![diagram featuring customised panel layout](output/panel_layout.png)
 
 Now the layout has been completed further content can in added to the Panel instances to create a finished diagram featuring multiple sections.

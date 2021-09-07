@@ -2,6 +2,7 @@ import base64
 import copy
 import math
 import pathlib
+import PIL
 from PIL import Image as PIL_Image
 import urllib.request
 import uuid
@@ -186,7 +187,7 @@ class Layout(TransformMixin):
 
 
 class Use(Layout):
-    """ Implement <use> svg tag"""
+    """Implement <use> svg tag"""
 
     def __init__(self, instance, **kwargs):
         self.target_id = instance.id
@@ -408,7 +409,7 @@ class Image(SvgShape):
         except OSError:
             try:
                 # file not at local path, try path as URL
-                im = PIL.Image.open(urllib.request.urlopen(self.src))
+                im = PIL_Image.open(urllib.request.urlopen(self.src))
                 self.im_size = im.size
             except PIL.UnidentifiedImageError:
                 # Image is assumed to be SVG
@@ -438,13 +439,13 @@ class Image(SvgShape):
         tx = x * scaler
         ty = y * scaler
 
-        # Calculate offset to centre fitted image
-        tx = tx + (self.width - tw) / 2
-        ty = ty + (self.height - th) / 2
-
         if not raw:
             # if 'raw' is False translate the coords
             # NOTE: SVG transforms images proportionally to 'fit' supplied dimensions
+
+            # Calculate offset to centre fitted image
+            tx = tx + (self.width - tw) / 2
+            ty = ty + (self.height - th) / 2
 
             # rotate coords
             rtx = tx * math.cos(math.radians(self.rotate)) - ty * math.sin(

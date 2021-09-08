@@ -1,6 +1,14 @@
 import uuid
 from pinout import templates, config
-from pinout.core import Layout, StyleSheet, Group, SvgShape, Rect, BoundingCoords
+from pinout.core import (
+    Component,
+    Layout,
+    StyleSheet,
+    Group,
+    SvgShape,
+    Rect,
+    BoundingCoords,
+)
 
 
 class Diagram(Layout):

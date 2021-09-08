@@ -3,9 +3,10 @@
     {% if use.tag %} 
         class="{{ use.tag }}"
     {% endif %} 
-    {% if use.clip_id %}
-        clip-path="url(#{{ use.clip_id }})"
+    {% if use.clip %}
+        clip-path="url(#{{ use.clip.id }})"
     {% endif %}
+    
      transform="
         translate({{ use.x }} {{  use.y }}) 
         scale({{ use.scale.x }} {{ use.scale.y }})

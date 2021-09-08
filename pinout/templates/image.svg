@@ -4,8 +4,8 @@
     {% if image.tag %}
         class="{{ image.tag }}"
     {% endif %}
-    {% if image.clip_id %}
-        clip-path="url(#{{ image.clip_id }})"
+    {% if image.clip %}
+        clip-path="url(#{{ image.clip.id }})"
     {% endif %}
     transform="
         translate({{ image.x }} {{  image.y }}) 
@@ -21,8 +21,8 @@
     {% if tags %}
         class="{{image.tag}}"
     {% endif %} 
-    {% if image.clip_id %}
-        clip-path="url(#{{ image.clip_id }})"
+    {% if image.clip %}
+        clip-path="url(#{{ image.clip.id }})"
     {% endif %}
     transform="
         translate({{ image.x }} {{  image.y }}) 

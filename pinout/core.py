@@ -34,20 +34,78 @@ class TransformMixin:
         self.skewx = skewx
         self.skewy = skewy
 
+        super().__init__()
 
-class Layout(TransformMixin):
-    """Base class fundamentally grouping other components together."""
 
-    def __init__(self, x=0, y=0, tag=None, **kwargs):
-        super().__init__(**kwargs)
+class Component:
+    """common functions and attributes shared by all components"""
+
+    def __init__(self, clip=None, config=None, defs=None, tag=None, **kwargs):
+        self.clip = clip
+        self.config = config or {}
+        self.defs = defs or []
         self.id = str(uuid.uuid4())
         self.tag = tag
+        super().__init__(**kwargs)
+
+    def add_def(self, instance):
+        """Add a component to the svg 'def' section"""
+        if instance:
+            self.defs.append(instance)
+        return instance
+
+    def add_tag(self, tag):
+        """Append a tag to the instance
+
+        :param tag: CSS class name(s)
+        :type tag: string
+        """
+        tag_list = (self.tag or "").split(" ")
+        if tag not in tag_list:
+            tag_list.append(tag)
+        self.tag = " ".join(tag_list)
+
+    def update_config(self, vals):
+        """update config dict
+
+        :param vals: Values to update
+        :type vals: dict
+        """
+        self.config.update(copy.deepcopy(vals))
+
+    def render_defs(self):
+        """Render SVG markup from 'defs'
+
+        :return: SVG markup
+        :rtype: string
+        """
+        content = ""
+        for d in self.defs:
+            content += d.render()
+        try:
+            for child in [
+                child for child in self.children if hasattr(child, "render_defs")
+            ]:
+                content += child.render_defs()
+        except AttributeError:
+            pass
+            # Object has no children
+
+        return content
+
+
+class Layout(Component, TransformMixin):
+    """Base class fundamentally grouping other components together."""
+
+    def __init__(self, x=0, y=0, **kwargs):
         self.x = x
         self.y = y
         self.children = []
-        self.defs = []
-        self.clip_id = kwargs.pop("clip_id", None)
-        self.config = kwargs.pop("config", {})
+        # self.clip_id = kwargs.pop("clip_id", None)
+
+        super().__init__(**kwargs)
+
+        self.add_def(self.clip)
 
     def add(self, instance):
         self.children.append(instance)
@@ -55,7 +113,8 @@ class Layout(TransformMixin):
 
     def add_def(self, instance):
         """Add a component to the svg 'def' section"""
-        self.defs.append(instance)
+        if instance:
+            self.defs.append(instance)
         return instance
 
     def add_tag(self, tag):
@@ -180,7 +239,7 @@ class Layout(TransformMixin):
             try:
                 content += child.render()
             except TypeError as e:
-                print(child)
+                print(f"An error occurred rendering: {child}")
                 print(child.render())
                 print(e)
         return content
@@ -191,6 +250,7 @@ class Use(Layout):
 
     def __init__(self, instance, **kwargs):
         self.target_id = instance.id
+
         super().__init__(**kwargs)
 
     def render(self):
@@ -249,7 +309,7 @@ class Raw:
         return self.content
 
 
-class SvgShape(TransformMixin):
+class SvgShape(Component, TransformMixin):
     """Base class for components that have a graphical representation."""
 
     def __init__(
@@ -258,17 +318,33 @@ class SvgShape(TransformMixin):
         y=0,
         width=0,
         height=0,
-        tag=None,
         **kwargs,
     ):
-        self.id = str(uuid.uuid4())
-        self.tag = tag
         self.x = x
         self.y = y
         self.width = width
         self.height = height
         self.clip_id = kwargs.pop("clip_id", None)
-        super().__init__(**kwargs)
+
+        clip = kwargs.pop("clip", None)
+        tag = kwargs.pop("tag", None)
+        config = None
+        defs = None
+        super().__init__(clip, config, defs, tag, **kwargs)
+
+        if self.clip:
+            self.defs.append(self.clip)
+
+    def render_defs(self):
+        """Render SVG markup from 'defs'
+
+        :return: SVG markup
+        :rtype: string
+        """
+        content = ""
+        for d in self.defs:
+            content += d.render()
+        return content
 
     def bounding_rect(self):
         """Component's origin coordinates and dimensions"""
@@ -382,7 +458,7 @@ class Text(SvgShape):
 
 
 class Image(SvgShape):
-    """Include a image in the diagram."""
+    """Include an image in the diagram."""
 
     def __init__(self, src, embed=False, **kwargs):
         self.src = src
@@ -418,7 +494,6 @@ class Image(SvgShape):
 
         kwargs["width"] = kwargs.get("width", self.im_size[0])
         kwargs["height"] = kwargs.get("height", self.im_size[1])
-
         super().__init__(**kwargs)
 
     def coord(self, name, raw=False):
@@ -479,7 +554,6 @@ class Image(SvgShape):
         """Render SVG markup either linking or embedding an image."""
         if isinstance(self.src, Image):
             # src image is wrapped in <use> tag which has to replicate 'fitting' behaviour of SVG images
-
             scaler = min(self.width / self.src.width, self.height / self.src.height)
             self.scale = Coords(
                 self.scale.x * scaler,
@@ -508,6 +582,7 @@ class Image(SvgShape):
                 scale=self.scale,
                 rotate=self.rotate,
                 clip_id=self.clip_id,
+                clip=self.clip,
                 tag=self.tag,
             )
             return output.render()
@@ -529,7 +604,6 @@ class Image(SvgShape):
                 self.src = (
                     f"data:image/{media_type};base64,{encoded_img.decode('utf-8')}"
                 )
-
         return tplt.render(image=self)
 
 

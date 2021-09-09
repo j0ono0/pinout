@@ -108,7 +108,6 @@ class Layout(Component, TransformMixin):
         self.x = x
         self.y = y
         self.children = []
-        # self.clip_id = kwargs.pop("clip_id", None)
 
         super().__init__(**kwargs)
 
@@ -281,23 +280,13 @@ class Raw:
 class SvgShape(Component, TransformMixin):
     """Base class for components that have a graphical representation."""
 
-    def __init__(
-        self,
-        x=0,
-        y=0,
-        width=0,
-        height=0,
-        **kwargs,
-    ):
+    def __init__(self, x=0, y=0, width=0, height=0, **kwargs):
         self.x = x
         self.y = y
         self.width = width
         self.height = height
 
         super().__init__(**kwargs)
-
-        if self.clip:
-            self.defs.append(self.clip)
 
     def bounding_rect(self):
         """Component's origin coordinates and dimensions"""
@@ -417,11 +406,6 @@ class Image(SvgShape):
             im = PIL_Image.open(self.src)
             self.im_size = im.size
 
-        except AttributeError:
-            # src is assumed to be an Image instance
-            self.coords = self.src.coords
-            self.im_size = self.src.im_size
-
         except PIL.UnidentifiedImageError:
             # Image is assumed to be SVG
             # Match arbitary im_size to width and height so no scaling occurs
@@ -436,6 +420,9 @@ class Image(SvgShape):
                 # Image is assumed to be SVG
                 # Match arbitary im_size to width and height so no scaling occurs
                 pass
+        except AttributeError as e:
+            print(f"invalid src for Image: {self.src}")
+            print(e)
 
         kwargs["width"] = kwargs.get("width", self.im_size[0])
         kwargs["height"] = kwargs.get("height", self.im_size[1])

@@ -3,8 +3,8 @@
     {% if rect.tag %} 
         class="{{ rect.tag }}"
     {% endif %} 
-    {% if rect.clip_id %}
-        clip-path="url(#{{ rect.clip_id }})"
+    {% if rect.clip %}
+        clip-path="url(#{{ rect.clip.id }})"
     {% endif %}
      transform="
         translate({{ rect.x }} {{  rect.y }}) 

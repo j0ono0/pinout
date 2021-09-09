@@ -2,8 +2,8 @@
     {% if group.tag %}
         class="{{ group.tag }}"
     {% endif %}
-    {% if group.clip_id %}
-        clip-path="url(#{{ group.clip_id }})"
+    {% if group.clip %}
+        clip-path="url(#{{ group.clip.id }})"
     {% endif %}
     transform="
         translate({{ group.x }} {{  group.y }}) 

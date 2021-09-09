@@ -1,7 +1,6 @@
 import uuid
 from pinout import templates, config
 from pinout.core import (
-    Component,
     Layout,
     StyleSheet,
     Group,
@@ -33,8 +32,14 @@ class Diagram(Layout):
 class ClipPath(Group):
     """Define a clip-path component"""
 
-    def __init__(self, x=0, y=0, tag=None, **kwargs):
-        super().__init__(x=x, y=y, tag=tag, **kwargs)
+    def __init__(self, children=None, **kwargs):
+        super().__init__(**kwargs)
+        # Accept 'children' as list or single instance.
+        try:
+            for child in children:
+                self.add(child)
+        except TypeError:
+            self.add(children)
 
     def render(self):
         """Render children into a <clipPath> tag."""

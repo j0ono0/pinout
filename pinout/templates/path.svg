@@ -2,8 +2,8 @@
     {% if path.tag %}
     class="{{ path.tag }}" 
     {% endif %}
-    {% if path.clip_id %}
-    clip-path="url(#{{ path.clip_id }})"
+    {% if path.clip %}
+    clip-path="url(#{{ path.clip.id }})"
     {% endif %}
     transform="
         scale({{ path.scale.x }} {{ path.scale.y }}) 

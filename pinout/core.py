@@ -406,6 +406,10 @@ class Image(SvgShape):
             im = PIL_Image.open(self.src)
             self.im_size = im.size
 
+        except AttributeError as e:
+            # Image src is assumed to be another Image instance
+            self.im_size = self.src.im_size
+
         except PIL.UnidentifiedImageError:
             # Image is assumed to be SVG
             # Match arbitary im_size to width and height so no scaling occurs
@@ -420,9 +424,6 @@ class Image(SvgShape):
                 # Image is assumed to be SVG
                 # Match arbitary im_size to width and height so no scaling occurs
                 pass
-        except AttributeError as e:
-            print(f"invalid src for Image: {self.src}")
-            print(e)
 
         kwargs["width"] = kwargs.get("width", self.im_size[0])
         kwargs["height"] = kwargs.get("height", self.im_size[1])
@@ -504,20 +505,21 @@ class Image(SvgShape):
             rty = tx * math.sin(math.radians(self.rotate)) + ty * math.cos(
                 math.radians(self.rotate)
             )
+
             # clip-path must be a separate component when using <use> to
             # avoid applying scale to clip-path.
             output = Group(
                 clip=self.clip,
+                x=self.x + rtx,
+                y=self.y + rty,
+                rotate=self.rotate,
+                tag=self.tag,
             )
             # use image from definitions with <use> tag
             output.add(
                 Use(
                     self.src,
-                    x=self.x + rtx,
-                    y=self.y + rty,
-                    rotate=self.rotate,
                     scale=self.scale,
-                    tag=self.tag,
                 )
             )
 

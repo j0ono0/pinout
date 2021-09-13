@@ -409,6 +409,7 @@ class Image(SvgShape):
         except AttributeError as e:
             # Image src is assumed to be another Image instance
             self.im_size = self.src.im_size
+            self.coords = self.src.coords
 
         except PIL.UnidentifiedImageError:
             # Image is assumed to be SVG
@@ -508,18 +509,16 @@ class Image(SvgShape):
 
             # clip-path must be a separate component when using <use> to
             # avoid applying scale to clip-path.
-            output = Group(
-                clip=self.clip,
-                x=self.x + rtx,
-                y=self.y + rty,
-                rotate=self.rotate,
-                tag=self.tag,
-            )
-            # use image from definitions with <use> tag
+            output = Group(clip=self.clip)
+            # Reference image from defs with <use> tag
             output.add(
                 Use(
-                    self.src,
+                    x=self.x + rtx,
+                    y=self.y + rty,
                     scale=self.scale,
+                    tag=self.tag,
+                    instance=self.src,
+                    rotate=self.rotate,
                 )
             )
 

@@ -57,12 +57,15 @@ class Base(Group):
         super().__init__(x, y, tag=tag, **kwargs)
         self.update_config(config.pinlabel)
 
-        self.leaderline = leaderline
         self.body = body
+        self.leaderline = leaderline
 
         # Add leaderline and body reference into children
-        self.add(self.leaderline)
-        self.add(self.body)
+        self.add(self._body)
+
+        # Add leaderline at render as it is replaced by pinlabelGroup!!!
+        # Add SvgShape so pin label reports correct dimensions.
+        self.add(SvgShape(x=self.leaderline.x, y=self.leaderline.x))
 
         self.add_tag(config.pinlabel["tag"])
 
@@ -114,7 +117,8 @@ class Base(Group):
             )
         )
         # Route leaderline
-        self.leaderline.route(Rect(), self.body)
+        self.leaderline.route(Rect(), self._body)
+        self.add(self.leaderline)
         return super().render()
 
 
@@ -174,7 +178,6 @@ class PinLabelGroup(Group):
                     label.x = prev_label.x + prev_label.width * scale.x
                     label.y = prev_label.y + prev_label.body.y * scale.y
                     label.leaderline = lline.Straight(direction="hh")
-
                 # Start of a new row
                 except IndexError:
                     label.x, label.y = next(pin_coords)

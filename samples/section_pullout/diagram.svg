@@ -12,7 +12,7 @@
 
 <defs>
     <image 
-    id="5021f536-ffa0-4a78-bf0e-de774d790309"
+    id="f9eaed97-2205-46d2-9438-840fa6daa8fa"
  
     transform="
         translate(0 0) 
@@ -30,19 +30,19 @@
         scale(1 1)
         rotate(0)
     "
-    id="ede54ed6-c2d8-4b30-b0dc-6b32320f9e75"
+    id="c441d756-d5ff-450a-b144-517021657da2"
     clipPathUnits="userSpaceOnUse"
 >
     <rect
-    id="a3ce49f7-7f65-4798-9931-1ca80f6e4bc5"
+    id="b9f94bc2-fc99-487d-9f4e-2edf2e8f4bbf"
  
      transform="
         translate(0 0) 
         scale(1 1)
         rotate(0)
     " 
-    width="40" 
-    height="110" 
+    width="80" 
+    height="220" 
     shape-rendering="geometricPrecision"
 />
 </clipPath>
@@ -197,7 +197,7 @@
     "
 >
         <rect
-    id="def2ccae-0cee-42ac-a8b5-d519b69db2c9"
+    id="72de0115-b30c-467f-9903-1b9d7b6e562b"
  
         class="panel__outer"
  
@@ -210,7 +210,7 @@
     height="576" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="d7349301-6ec1-4be4-953f-09599488fbdb"
+    id="8327aaf4-7ba4-42e6-8aeb-083652135530"
  
         class="panel__inner"
  
@@ -231,7 +231,7 @@
     "
 >
         <rect
-    id="ae779f7a-d2a1-4185-81ad-f3f26b8b0371"
+    id="082dff49-66bc-411c-b4ef-e5f6855fc5b5"
  
         class="panel__outer"
  
@@ -244,7 +244,7 @@
     height="440" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="ec757741-1733-4004-b28d-b6927707c3a5"
+    id="3d2e1e7c-d62c-4da8-b0b2-c15d80289ba3"
  
         class="panel__inner"
  
@@ -271,7 +271,7 @@
     "
 >
         <use
-    id="bda28a4d-0fb8-4c48-a92c-0092c4674f43"
+    id="e7d2f3b6-4fda-4ca8-b00f-d8ff39f7c625"
  
     
      transform="
@@ -280,7 +280,7 @@
         rotate(0)
     " 
 
-    href="#5021f536-ffa0-4a78-bf0e-de774d790309"
+    href="#f9eaed97-2205-46d2-9438-840fa6daa8fa"
     
 />
 
@@ -302,7 +302,7 @@
     d="M 0.0 40.0 L 0.0 51.666666666666664 A 33.333333333333336 33.333333333333336 0 0 0 33.333333333333336 85.0 L 20.0 85.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="e4c410d8-42f0-4ae8-afc2-8c13080cfb51"
+    id="1ac5ee8c-5aee-4632-a19a-609cbfec5f9d"
  
         class="annotation__target"
  
@@ -317,7 +317,7 @@
     rx="10" 
     ry="10" 
 /><rect
-    id="77811f00-d61c-4849-b9f2-2703c0f17986"
+    id="b3026652-51e9-447b-9c73-2fb04e6eee87"
  
         class="annotation__body"
  
@@ -361,7 +361,7 @@
     "
 >
         <rect
-    id="ab50aa8c-2752-47f8-ac01-40f3a67e52d9"
+    id="0d5925f5-f0d4-41a9-878c-3e0a40a8bdcb"
  
         class="panel__outer"
  
@@ -374,7 +374,7 @@
     height="440" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="2e132594-4918-4689-900d-26dc489ac8b6"
+    id="527ab282-240a-49bc-ab21-e8c30c078295"
  
         class="panel__inner"
  
@@ -416,13 +416,13 @@
 </g><g 
         class="graphic-detail"
     transform="
-        translate(279.25 150.25) 
+        translate(263.5 108.0) 
         scale(1 1)
         rotate(0)
     "
 >
         <g 
-        clip-path="url(#ede54ed6-c2d8-4b30-b0dc-6b32320f9e75)"
+        clip-path="url(#c441d756-d5ff-450a-b144-517021657da2)"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -430,22 +430,22 @@
     "
 >
         <use
-    id="76b92d32-2221-42e7-80b6-c5a1cd73b4b1"
+    id="ac92b914-2ef9-4543-b876-e4a830666c01"
  
     
      transform="
-        translate(150.0 0.0) 
-        scale(0.5 0.5)
+        translate(300.0 0.0) 
+        scale(1.0 1.0)
         rotate(90)
     " 
 
-    href="#5021f536-ffa0-4a78-bf0e-de774d790309"
+    href="#f9eaed97-2205-46d2-9438-840fa6daa8fa"
     
 />
 
 </g><g 
     transform="
-        translate(23.5 32.50000000000001) 
+        translate(47.0 65.00000000000001) 
         scale(1 1)
         rotate(0)
     "
@@ -475,7 +475,7 @@
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="112ca832-daa7-47aa-9e4b-b123175378f6"
+    id="0dd6517d-881d-43d9-ad0c-cebbb5e5e0d5"
  
         class=" pinlabel__body"
  
@@ -517,7 +517,7 @@
     d="" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="f0ad82fb-4723-406e-8ccc-0d43cb24f8b1"
+    id="4c5ceee1-8f63-4710-8f25-ee33f5303610"
  
         class=" pinlabel__body"
  
@@ -552,7 +552,7 @@
         <g 
         class=" pinlabel pwm"
     transform="
-        translate(0.0 15.0) 
+        translate(0.0 30.0) 
         scale(1 1)
         rotate(0)
     "
@@ -564,15 +564,15 @@
         translate(0 0) 
         rotate(0)
     " 
-    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 15.0 57.75 15.0 L 66.0 15.0" 
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="2960d144-ab4b-44d8-b040-7be16062621c"
+    id="c0b9dbd0-3e8e-40a1-b052-e1e30fe86ee4"
  
         class=" pinlabel__body"
  
      transform="
-        translate(66.0 2.0) 
+        translate(66.0 -13.0) 
         scale(1 1)
         rotate(0)
     " 
@@ -584,7 +584,7 @@
 /><text
     class="pinlabel__text"
     transform="
-        translate(106.0 15.0) 
+        translate(106.0 0.0) 
         scale(1 1)
         rotate(0)
     "  
@@ -602,7 +602,7 @@
         <g 
         class=" pinlabel gpio"
     transform="
-        translate(0.0 30.0) 
+        translate(0.0 60.0) 
         scale(1 1)
         rotate(0)
     "
@@ -614,15 +614,15 @@
         translate(0 0) 
         rotate(0)
     " 
-    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 30.0 57.75 30.0 L 66.0 30.0" 
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="0f6fbfa6-1d5f-4af1-a340-7b76733c033e"
+    id="e12f9466-6c65-4aad-ac88-aa0603bb10e6"
  
         class=" pinlabel__body"
  
      transform="
-        translate(66.0 17.0) 
+        translate(66.0 -13.0) 
         scale(1 1)
         rotate(0)
     " 
@@ -634,7 +634,7 @@
 /><text
     class="pinlabel__text"
     transform="
-        translate(106.0 30.0) 
+        translate(106.0 0.0) 
         scale(1 1)
         rotate(0)
     "  
@@ -659,7 +659,7 @@
     d="" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="87ce3984-55ce-41e2-aceb-2c2a56cc971f"
+    id="73e32ac7-3be0-418b-8572-7856052767f8"
  
         class=" pinlabel__body"
  
@@ -694,7 +694,7 @@
         <g 
         class=" pinlabel analog"
     transform="
-        translate(0.0 45.0) 
+        translate(0.0 90.0) 
         scale(1 1)
         rotate(0)
     "
@@ -706,15 +706,15 @@
         translate(0 0) 
         rotate(0)
     " 
-    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 45.0 57.75 45.0 L 66.0 45.0" 
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="187f2a6d-b674-4a0e-95d1-87de8b3eaa56"
+    id="06ae09f3-fc1f-4b85-8e28-562d8323e96c"
  
         class=" pinlabel__body"
  
      transform="
-        translate(66.0 32.0) 
+        translate(66.0 -13.0) 
         scale(1 1)
         rotate(0)
     " 
@@ -726,7 +726,7 @@
 /><text
     class="pinlabel__text"
     transform="
-        translate(106.0 45.0) 
+        translate(106.0 0.0) 
         scale(1 1)
         rotate(0)
     "  
@@ -751,7 +751,7 @@
     d="" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="23d0b3f2-1e4f-4dfa-9ef5-480f1f4c9127"
+    id="381a70ca-f2e2-4ae7-bdb0-081a7b780637"
  
         class=" pinlabel__body"
  
@@ -779,7 +779,7 @@
 </g>
 </g><g 
     transform="
-        translate(8.0 32.50000000000001) 
+        translate(16.0 65.00000000000001) 
         scale(1 1)
         rotate(0)
     "
@@ -809,7 +809,7 @@
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="7c225437-4a01-423c-8576-a09b096da85a"
+    id="749936a2-7021-45f0-b9d8-d911bf6d46bf"
  
         class=" pinlabel__body"
  
@@ -844,7 +844,7 @@
         <g 
         class=" pinlabel pwr"
     transform="
-        translate(0.0 15.0) 
+        translate(0.0 30.0) 
         scale(-1 1)
         rotate(0)
     "
@@ -856,15 +856,15 @@
         translate(0 0) 
         rotate(0)
     " 
-    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 15.0 57.75 15.0 L 66.0 15.0" 
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="a4ae9357-5e51-45e5-978d-35d45c452ad5"
+    id="bf511d29-8572-4a2b-964b-ca94262732f3"
  
         class=" pinlabel__body"
  
      transform="
-        translate(66.0 2.0) 
+        translate(66.0 -13.0) 
         scale(1 1)
         rotate(0)
     " 
@@ -876,7 +876,7 @@
 /><text
     class="pinlabel__text"
     transform="
-        translate(106.0 15.0) 
+        translate(106.0 0.0) 
         scale(-1 1)
         rotate(0)
     "  
@@ -894,7 +894,7 @@
         <g 
         class=" pinlabel gnd"
     transform="
-        translate(0.0 30.0) 
+        translate(0.0 60.0) 
         scale(-1 1)
         rotate(0)
     "
@@ -906,15 +906,15 @@
         translate(0 0) 
         rotate(0)
     " 
-    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 30.0 57.75 30.0 L 66.0 30.0" 
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="aea40b48-a0c4-42e3-88ce-0fd60f29e049"
+    id="418d32e9-8ce7-4136-bffb-4c239ac5a85f"
  
         class=" pinlabel__body"
  
      transform="
-        translate(66.0 17.0) 
+        translate(66.0 -13.0) 
         scale(1 1)
         rotate(0)
     " 
@@ -926,7 +926,7 @@
 /><text
     class="pinlabel__text"
     transform="
-        translate(106.0 30.0) 
+        translate(106.0 0.0) 
         scale(-1 1)
         rotate(0)
     "  
@@ -944,7 +944,7 @@
         <g 
         class=" pinlabel pwr"
     transform="
-        translate(0.0 45.0) 
+        translate(0.0 90.0) 
         scale(-1 1)
         rotate(0)
     "
@@ -956,15 +956,15 @@
         translate(0 0) 
         rotate(0)
     " 
-    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 45.0 57.75 45.0 L 66.0 45.0" 
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="2ceb626b-4fe0-402d-91b0-adae7d5af1ce"
+    id="07d0f997-b115-4b37-8b02-4d58698d75f3"
  
         class=" pinlabel__body"
  
      transform="
-        translate(66.0 32.0) 
+        translate(66.0 -13.0) 
         scale(1 1)
         rotate(0)
     " 
@@ -976,7 +976,7 @@
 /><text
     class="pinlabel__text"
     transform="
-        translate(106.0 45.0) 
+        translate(106.0 0.0) 
         scale(-1 1)
         rotate(0)
     "  
@@ -996,7 +996,7 @@
     "
 >
         <rect
-    id="9c91b165-cded-42d5-b454-c5fc0910ce8e"
+    id="3c909b72-ee5a-47f6-a62f-e8b5d892c1da"
  
         class="panel__outer"
  
@@ -1009,7 +1009,7 @@
     height="132" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="6fd0980f-7355-4819-9069-210057df75a5"
+    id="555fd968-c305-4421-baef-ee082aa5744b"
  
         class="panel__inner"
  
@@ -1100,7 +1100,7 @@
     "
 >
         <rect
-    id="8a48ab8e-0eac-41eb-b4c6-633230c05ed3"
+    id="dab88711-c8d9-4e15-9378-ff34579c9140"
  
         class=" swatch__body"
  
@@ -1139,7 +1139,7 @@
     "
 >
         <rect
-    id="3a5b4210-fa16-46c5-ad56-e242398f40d3"
+    id="49b989a0-1e81-4e66-8f5b-42b653133d28"
  
         class=" swatch__body"
  
@@ -1178,7 +1178,7 @@
     "
 >
         <rect
-    id="3fb0b428-fa0b-46e3-a915-d40a8dafb395"
+    id="0c882461-ffa7-48b6-b51d-3cd158c6cb09"
  
         class=" swatch__body"
  
@@ -1217,7 +1217,7 @@
     "
 >
         <rect
-    id="409cee33-b967-459b-a0c0-be5fc6a61b61"
+    id="699c9a4d-1aba-44f3-91fb-07241d471c07"
  
         class=" swatch__body"
  
@@ -1256,7 +1256,7 @@
     "
 >
         <rect
-    id="2f9f692f-9e57-4794-9784-08c08fd34763"
+    id="4d22955e-f975-48cf-80f0-4da7f7f8bc03"
  
         class=" swatch__body"
  
@@ -1295,7 +1295,7 @@
     "
 >
         <rect
-    id="d4cb84ff-b33c-4974-949c-b0083e612850"
+    id="c219c794-dfa2-4226-ab48-ae551ca0409c"
  
         class=" swatch__body"
  
@@ -1334,7 +1334,7 @@
     "
 >
         <rect
-    id="eb469616-4adb-4475-ba24-b36ad911e272"
+    id="11f63901-0282-47d6-89fd-e9989b315bed"
  
         class=" swatch__body"
  

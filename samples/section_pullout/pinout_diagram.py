@@ -134,17 +134,19 @@ panel_detail.add(TextBlock(content=data.section_a_text, x=20, y=40))
 # Create a group to hold components for a second graphic
 group_detail = panel_detail.add(Group(tag="graphic-detail"))
 
+# Add a rotated instance of 'hardware_img'.
+# It has been offset (x=300) so its origin
+# is still at the components top-left.
 hardware_sm = group_detail.add(
     Image(
         hardware_img,
-        x=150,
-        width=110,
-        height=150,
+        x=300,
         rotate=90,
     )
 )
 
-hardware_sm.clip = ClipPath(Rect(x=0, y=0, width=40, height=110))
+# Create and apply a clipping path to 'hardware_sm'
+hardware_sm.clip = ClipPath(Rect(x=0, y=0, width=80, height=220))
 
 
 # Add pin-labels to the x2 rows of pin headers
@@ -173,8 +175,7 @@ group_detail.add(
 
 
 # With content added the width of 'group_detail' can be
-# calculated and the component aligned in it's panel.
-
+# calculated and the component aligned in its panel.
 group_detail.x = (
     panel_detail.inset_width - group_detail.width
 ) / 2 - group_detail.bounding_rect().x

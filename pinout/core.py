@@ -106,6 +106,28 @@ class Component:
 
         return content
 
+    @staticmethod
+    def rotate_box_coords(origin, coords, rotate):
+        ox, oy = origin
+        x1, y1, x2, y2 = coords
+        # rotate corners of bounding box
+        corners = [(x1, y1), (x2, y1), (x1, y2), (x2, y2)]
+        rx = []
+        ry = []
+        for (x, y) in corners:
+            rx.append(
+                ox
+                + (x - ox) * math.cos(math.radians(rotate))
+                - (y - oy) * math.sin(math.radians(rotate))
+            )
+            ry.append(
+                oy
+                + (x - ox) * math.sin(math.radians(rotate))
+                + (y - oy) * math.cos(math.radians(rotate))
+            )
+
+        return BoundingCoords(min(rx), min(ry), max(rx), max(ry))
+
 
 class Layout(Component, TransformMixin):
     """Base class fundamentally grouping other components together."""
@@ -177,9 +199,12 @@ class Layout(Component, TransformMixin):
             x.append(self.x + coords.x2 * self.scale.x)
             y.append(self.y + coords.y2 * self.scale.y)
 
-        # Clip object has its own rotation
         try:
             x1, y1, x2, y2 = min(x), min(y), max(x), max(y)
+
+            # Clip object has its own rotation
+            if self.clip:
+                return BoundingCoords(x1, y1, x2, y2)
 
             # rotate corners of bounding box
             corners = [(x1, y1), (x2, y1), (x1, y2), (x2, y2)]
@@ -327,25 +352,12 @@ class SvgShape(Component, TransformMixin):
         else:
             x = [self.x * self.scale.x, (self.x + self.width) * self.scale.x]
             y = [self.y * self.scale.y, (self.y + self.height) * self.scale.y]
-            x1, y1, x2, y2 = min(x), min(y), max(x), max(y)
 
-            # rotate corners of bounding box
-            corners = [(x1, y1), (x2, y1), (x1, y2), (x2, y2)]
-            rx = []
-            ry = []
-            for (x, y) in corners:
-                rx.append(
-                    self.x
-                    + (x - self.x) * math.cos(math.radians(self.rotate))
-                    - (y - self.y) * math.sin(math.radians(self.rotate))
-                )
-                ry.append(
-                    self.y
-                    + (x - self.x) * math.sin(math.radians(self.rotate))
-                    + (y - self.y) * math.cos(math.radians(self.rotate))
-                )
-
-            return BoundingCoords(min(rx), min(ry), max(rx), max(ry))
+            return Component.rotate_box_coords(
+                origin=(self.x, self.y),
+                coords=(min(x), min(y), max(x), max(y)),
+                rotate=self.rotate,
+            )
 
     def render(self):
         return ""

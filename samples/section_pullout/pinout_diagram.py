@@ -33,9 +33,11 @@ diagram = Diagram(1024, 576, "diagram")
 diagram.add_stylesheet("styles.css")
 
 # Add hardware image
+# This will be referenced multiple times so
+# storing a reference copy in diagram.defs
 hardware_img = diagram.add_def(Image("hardware_18pin.png"))
 
-# Create layout
+# Create the layout
 content = diagram.add(
     Panel(
         width=1024,
@@ -86,25 +88,28 @@ hardware_img.add_coord("pin9", 65, 284)
 hardware_img.add_coord("annotation", 110, 268)
 hardware_img.add_coord("pin_pitch_v", 0, 30)
 
-hardware_img.add_coord("origin", 0, 0)
-hardware_img.add_coord("size", hardware_img.width, hardware_img.height)
-
 ##############################################################
 #
 # Construct pinout graphic with annotation label
 #
 ##############################################################
 
-# Create a group to hold pinout components.
-graphic_main = panel_main.add(
+# Create a group to hold the annotated image.
+group_annotations = panel_main.add(
     Group(
         x=panel_main.width // 2,
         y=20,
     )
 )
-hardware = graphic_main.add(Image(hardware_img, x=-110))
 
-graphic_main.add(
+# Add an image to 'group_annotations'
+# It has been offset here for easy center alignment
+hardware = group_annotations.add(Image(hardware_img, x=-110))
+
+# Add an annotation to 'group_annotations'
+# Its positioning uses transformed coordinates from 'hardware'
+# A custom body and target have been supplied to suit requirements.
+group_annotations.add(
     AnnotationLabel(
         x=hardware.coord("annotation").x,
         y=hardware.coord("annotation").y,
@@ -127,17 +132,23 @@ panel_detail.add(TextBlock(content=data.section_a_text, x=20, y=40))
 
 
 # Create a group to hold components for a second graphic
-graphic_detail = Group(x=0, y=0, tag="graphic-detail")
+group_detail = panel_detail.add(Group(tag="graphic-detail"))
 
-hardware_sm = graphic_detail.add(Image(hardware_img, width=110, rotate=90))
-tx, ty = hardware_sm.coord("origin")
-tw, th = hardware_sm.coord("size", True)
+hardware_sm = group_detail.add(
+    Image(
+        hardware_img,
+        x=150,
+        width=110,
+        height=150,
+        rotate=90,
+    )
+)
 
-hardware_sm.clip = ClipPath(Rect(x=tx - th, y=0, width=50, height=110))
+hardware_sm.clip = ClipPath(Rect(x=0, y=0, width=40, height=110))
 
 
 # Add pin-labels to the x2 rows of pin headers
-graphic_detail.add(
+group_detail.add(
     PinLabelGroup(
         x=hardware_sm.coord("pin5").x,
         y=hardware_sm.coord("pin5").y,
@@ -148,7 +159,7 @@ graphic_detail.add(
         labels=data.lower_header_in,
     )
 )
-graphic_detail.add(
+group_detail.add(
     PinLabelGroup(
         x=hardware_sm.coord("pin9").x,
         y=hardware_sm.coord("pin9").y,
@@ -161,18 +172,15 @@ graphic_detail.add(
 )
 
 
-# With content added the width of 'graphic_detail' can be calculated
-# and the component aligned in it's panel
+# With content added the width of 'group_detail' can be
+# calculated and the component aligned in it's panel.
 
-graphic_detail.x = (
-    panel_detail.inset_width - graphic_detail.width
-) / 2 - graphic_detail.bounding_rect().x
+group_detail.x = (
+    panel_detail.inset_width - group_detail.width
+) / 2 - group_detail.bounding_rect().x
 
-graphic_detail.y = (panel_detail.inset_height - graphic_detail.height) / 2
+group_detail.y = (panel_detail.inset_height - group_detail.height) / 2
 
-
-# Add graphic_detail *after* calculating position
-panel_detail.add(graphic_detail)
 
 ##############################################################
 #

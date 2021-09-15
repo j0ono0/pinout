@@ -12,7 +12,7 @@
 
 <defs>
     <image 
-    id="59e36075-f549-4981-a7a8-ab6b3a99c4bb"
+    id="5021f536-ffa0-4a78-bf0e-de774d790309"
  
     transform="
         translate(0 0) 
@@ -30,18 +30,18 @@
         scale(1 1)
         rotate(0)
     "
-    id="9b6561d7-b918-4c7c-84d5-4000f4b73e79"
+    id="ede54ed6-c2d8-4b30-b0dc-6b32320f9e75"
     clipPathUnits="userSpaceOnUse"
 >
     <rect
-    id="ff78a51e-d7ba-46de-abef-918941212a0b"
+    id="a3ce49f7-7f65-4798-9931-1ca80f6e4bc5"
  
      transform="
-        translate(-225.0 0) 
+        translate(0 0) 
         scale(1 1)
         rotate(0)
     " 
-    width="50" 
+    width="40" 
     height="110" 
     shape-rendering="geometricPrecision"
 />
@@ -197,7 +197,7 @@
     "
 >
         <rect
-    id="e03d5274-40a3-4c49-9285-ae3950a812f2"
+    id="def2ccae-0cee-42ac-a8b5-d519b69db2c9"
  
         class="panel__outer"
  
@@ -206,11 +206,11 @@
         scale(1 1)
         rotate(0)
     " 
-    width="1024.0" 
-    height="576.0" 
+    width="1024" 
+    height="576" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="0b380d6c-1b3d-4dc1-accb-88d947e78b86"
+    id="d7349301-6ec1-4be4-953f-09599488fbdb"
  
         class="panel__inner"
  
@@ -219,8 +219,8 @@
         scale(1 1)
         rotate(0)
     " 
-    width="1020.0" 
-    height="572.0" 
+    width="1020" 
+    height="572" 
     shape-rendering="geometricPrecision"
 /><g 
         class="panel--main panel"
@@ -231,7 +231,7 @@
     "
 >
         <rect
-    id="bbe233b8-2840-41df-95c2-50c14ce74f76"
+    id="ae779f7a-d2a1-4185-81ad-f3f26b8b0371"
  
         class="panel__outer"
  
@@ -240,11 +240,11 @@
         scale(1 1)
         rotate(0)
     " 
-    width="340.0" 
-    height="440.0" 
+    width="340" 
+    height="440" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="65996a1d-37ca-4986-8333-c47040456850"
+    id="ec757741-1733-4004-b28d-b6927707c3a5"
  
         class="panel__inner"
  
@@ -253,12 +253,12 @@
         scale(1 1)
         rotate(0)
     " 
-    width="336.0" 
-    height="436.0" 
+    width="336" 
+    height="436" 
     shape-rendering="geometricPrecision"
 /><g 
     transform="
-        translate(170.0 20) 
+        translate(170 20) 
         scale(1 1)
         rotate(0)
     "
@@ -271,7 +271,7 @@
     "
 >
         <use
-    id="070aa229-cada-4c1b-bcb4-39887a4c3586"
+    id="bda28a4d-0fb8-4c48-a92c-0092c4674f43"
  
     
      transform="
@@ -280,7 +280,7 @@
         rotate(0)
     " 
 
-    href="#59e36075-f549-4981-a7a8-ab6b3a99c4bb"
+    href="#5021f536-ffa0-4a78-bf0e-de774d790309"
     
 />
 
@@ -302,7 +302,7 @@
     d="M 0.0 40.0 L 0.0 51.666666666666664 A 33.333333333333336 33.333333333333336 0 0 0 33.333333333333336 85.0 L 20.0 85.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="7cbdf21e-9810-43b8-9dbc-59bedcbdd36d"
+    id="e4c410d8-42f0-4ae8-afc2-8c13080cfb51"
  
         class="annotation__target"
  
@@ -317,7 +317,7 @@
     rx="10" 
     ry="10" 
 /><rect
-    id="0ec29d23-c1f6-44cc-9613-8b9d2363892b"
+    id="77811f00-d61c-4849-b9f2-2703c0f17986"
  
         class="annotation__body"
  
@@ -355,13 +355,13 @@
 </g><g 
         class="panel--detail panel"
     transform="
-        translate(342.0 2) 
+        translate(342 2) 
         scale(1 1)
         rotate(0)
     "
 >
         <rect
-    id="34a6ac74-eb78-4e48-9e02-2965abc48353"
+    id="ab50aa8c-2752-47f8-ac01-40f3a67e52d9"
  
         class="panel__outer"
  
@@ -370,11 +370,11 @@
         scale(1 1)
         rotate(0)
     " 
-    width="680.0" 
-    height="440.0" 
+    width="680" 
+    height="440" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="b1de0896-d607-4628-84c5-1ab578baa63b"
+    id="2e132594-4918-4689-900d-26dc489ac8b6"
  
         class="panel__inner"
  
@@ -383,8 +383,8 @@
         scale(1 1)
         rotate(0)
     " 
-    width="676.0" 
-    height="436.0" 
+    width="676" 
+    height="436" 
     shape-rendering="geometricPrecision"
 /><g 
         class=" textblock"
@@ -416,13 +416,13 @@
 </g><g 
         class="graphic-detail"
     transform="
-        translate(504.25 150.25) 
+        translate(279.25 150.25) 
         scale(1 1)
         rotate(0)
     "
 >
         <g 
-        clip-path="url(#9b6561d7-b918-4c7c-84d5-4000f4b73e79)"
+        clip-path="url(#ede54ed6-c2d8-4b30-b0dc-6b32320f9e75)"
     transform="
         translate(0 0) 
         scale(1 1)
@@ -430,22 +430,22 @@
     "
 >
         <use
-    id="977cdfeb-6b53-4ef7-994c-9d9ee964add2"
+    id="76b92d32-2221-42e7-80b6-c5a1cd73b4b1"
  
     
      transform="
-        translate(-75.0 4.592425496802574e-15) 
+        translate(150.0 0.0) 
         scale(0.5 0.5)
         rotate(90)
     " 
 
-    href="#59e36075-f549-4981-a7a8-ab6b3a99c4bb"
+    href="#5021f536-ffa0-4a78-bf0e-de774d790309"
     
 />
 
 </g><g 
     transform="
-        translate(-201.5 32.500000000000014) 
+        translate(23.5 32.50000000000001) 
         scale(1 1)
         rotate(0)
     "
@@ -475,7 +475,7 @@
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="3da4665b-fb21-44a3-8a54-8fd65d0521bd"
+    id="112ca832-daa7-47aa-9e4b-b123175378f6"
  
         class=" pinlabel__body"
  
@@ -517,7 +517,7 @@
     d="" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="e9cb3266-0562-4c39-a61c-2222b81f0033"
+    id="f0ad82fb-4723-406e-8ccc-0d43cb24f8b1"
  
         class=" pinlabel__body"
  
@@ -567,7 +567,7 @@
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 15.0 57.75 15.0 L 66.0 15.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="2d520395-ec22-4fb2-8159-e3d0396df6ff"
+    id="2960d144-ab4b-44d8-b040-7be16062621c"
  
         class=" pinlabel__body"
  
@@ -617,7 +617,7 @@
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 30.0 57.75 30.0 L 66.0 30.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="7165b00c-eecb-42c1-b240-7bc013e19294"
+    id="0f6fbfa6-1d5f-4af1-a340-7b76733c033e"
  
         class=" pinlabel__body"
  
@@ -659,7 +659,7 @@
     d="" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="2908a21f-6eb6-4fd8-979f-b1f0cecea708"
+    id="87ce3984-55ce-41e2-aceb-2c2a56cc971f"
  
         class=" pinlabel__body"
  
@@ -709,7 +709,7 @@
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 45.0 57.75 45.0 L 66.0 45.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="2356aee5-7eb6-4a6f-b844-c52fc3c95f5a"
+    id="187f2a6d-b674-4a0e-95d1-87de8b3eaa56"
  
         class=" pinlabel__body"
  
@@ -751,7 +751,7 @@
     d="" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="72c90107-4c37-4641-a90a-75073a609c8a"
+    id="23d0b3f2-1e4f-4dfa-9ef5-480f1f4c9127"
  
         class=" pinlabel__body"
  
@@ -779,7 +779,7 @@
 </g>
 </g><g 
     transform="
-        translate(-217.0 32.500000000000014) 
+        translate(8.0 32.50000000000001) 
         scale(1 1)
         rotate(0)
     "
@@ -809,7 +809,7 @@
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="1697a363-c84b-40d9-a452-9912226e0287"
+    id="7c225437-4a01-423c-8576-a09b096da85a"
  
         class=" pinlabel__body"
  
@@ -859,7 +859,7 @@
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 15.0 57.75 15.0 L 66.0 15.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="995dce6a-a2c3-4a97-8b0b-db68478f0ab4"
+    id="a4ae9357-5e51-45e5-978d-35d45c452ad5"
  
         class=" pinlabel__body"
  
@@ -909,7 +909,7 @@
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 30.0 57.75 30.0 L 66.0 30.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="81a9907e-1419-401f-a8e7-04e4ae01bd81"
+    id="aea40b48-a0c4-42e3-88ce-0fd60f29e049"
  
         class=" pinlabel__body"
  
@@ -959,7 +959,7 @@
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 45.0 57.75 45.0 L 66.0 45.0" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="3178b96b-fca1-4db6-aff1-4f611979f5e2"
+    id="2ceb626b-4fe0-402d-91b0-adae7d5af1ce"
  
         class=" pinlabel__body"
  
@@ -990,13 +990,13 @@
 </g><g 
         class="panel--info panel"
     transform="
-        translate(2 442.0) 
+        translate(2 442) 
         scale(1 1)
         rotate(0)
     "
 >
         <rect
-    id="732acdf9-44cf-46c5-a6a5-cd7e0a703094"
+    id="9c91b165-cded-42d5-b454-c5fc0910ce8e"
  
         class="panel__outer"
  
@@ -1005,11 +1005,11 @@
         scale(1 1)
         rotate(0)
     " 
-    width="1020.0" 
-    height="132.0" 
+    width="1020" 
+    height="132" 
     shape-rendering="geometricPrecision"
 /><rect
-    id="853175bb-4a09-4221-b3e2-b5e76bd207b5"
+    id="6fd0980f-7355-4819-9069-210057df75a5"
  
         class="panel__inner"
  
@@ -1018,8 +1018,8 @@
         scale(1 1)
         rotate(0)
     " 
-    width="1016.0" 
-    height="128.0" 
+    width="1016" 
+    height="128" 
     shape-rendering="geometricPrecision"
 /><g 
         class="panel title_block textblock"
@@ -1100,7 +1100,7 @@
     "
 >
         <rect
-    id="e4c01205-a808-4a1f-aae1-d85359ed0e01"
+    id="8a48ab8e-0eac-41eb-b4c6-633230c05ed3"
  
         class=" swatch__body"
  
@@ -1139,7 +1139,7 @@
     "
 >
         <rect
-    id="c66082fc-65a8-4b6c-a4c2-90c95a46544f"
+    id="3a5b4210-fa16-46c5-ad56-e242398f40d3"
  
         class=" swatch__body"
  
@@ -1178,7 +1178,7 @@
     "
 >
         <rect
-    id="b9e33c97-969d-4bc8-af2d-36d344fbcf9d"
+    id="3fb0b428-fa0b-46e3-a915-d40a8dafb395"
  
         class=" swatch__body"
  
@@ -1217,7 +1217,7 @@
     "
 >
         <rect
-    id="5995597b-2690-4a02-861b-efad15d90d38"
+    id="409cee33-b967-459b-a0c0-be5fc6a61b61"
  
         class=" swatch__body"
  
@@ -1256,7 +1256,7 @@
     "
 >
         <rect
-    id="586fc5d8-a8d7-40a0-965b-d748b999d1af"
+    id="2f9f692f-9e57-4794-9784-08c08fd34763"
  
         class=" swatch__body"
  
@@ -1295,7 +1295,7 @@
     "
 >
         <rect
-    id="a231b38a-cd5f-4233-8222-5878801c7791"
+    id="d4cb84ff-b33c-4974-949c-b0083e612850"
  
         class=" swatch__body"
  
@@ -1334,7 +1334,7 @@
     "
 >
         <rect
-    id="fa902660-ac00-42b2-9648-aab9fcabaeec"
+    id="eb469616-4adb-4475-ba24-b36ad911e272"
  
         class=" swatch__body"
  

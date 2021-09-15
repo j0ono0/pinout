@@ -48,11 +48,17 @@ class ClipPath(Group):
         return tplt.render(path=self)
 
 
-class Panel(Group):
+class Panel(Layout):
     def __init__(self, width, height, inset=None, **kwargs):
         """Assist with content grouping and positioning"""
+
+        self.width = width
+        self.height = height
+
         kwargs["config"] = kwargs.get("config", config.panel)
+
         super().__init__(**kwargs)
+
         inset = inset or self.config["inset"]
         self.inset = BoundingCoords(*inset)
         self.add_tag(config.panel["tag"])
@@ -81,6 +87,7 @@ class Panel(Group):
         return self.height - (self.inset.y1 + self.inset.y2)
 
     def render(self):
+        """Panel renders children into a <group> tag."""
 
         self.children.insert(
             0,
@@ -102,7 +109,8 @@ class Panel(Group):
             ),
         )
 
-        return super().render()
+        tplt = templates.get("group.svg")
+        return tplt.render(group=self)
 
 
 class Diagram_2Columns(Diagram):

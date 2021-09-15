@@ -33,6 +33,7 @@ class Leaderline(core.Path):
         self.end = end[self.direction[-1]]
         return (self.start, self.end)
 
+    """
     def bounding_coords(self):
         return core.BoundingCoords(
             min(self.start.x, self.end.x),
@@ -40,6 +41,7 @@ class Leaderline(core.Path):
             max(self.start.x, self.end.x),
             max(self.start.y, self.end.y),
         )
+    """
 
 
 class Curved(Leaderline):
@@ -155,7 +157,7 @@ class Angled(Leaderline):
 
 
 class Diagonal(Leaderline):
-    """ Leaderline comprised of a diagonal and horizontal line"""
+    """Leaderline comprised of a diagonal and horizontal line"""
 
     def route(self, origin, destination):
 
@@ -183,7 +185,7 @@ class Diagonal(Leaderline):
 
 
 class DiagonalAngled(Leaderline):
-    """ Leaderline comprised of a diagonal and horizontal line"""
+    """Leaderline comprised of a diagonal and horizontal line"""
 
     def route(self, origin, destination):
 

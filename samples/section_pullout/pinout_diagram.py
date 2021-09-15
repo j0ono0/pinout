@@ -55,9 +55,9 @@ panel_main = content.add(
 )
 panel_detail = content.add(
     Panel(
-        x = panel_main.width,
-        y = 0,
-        width = content.inset_width - panel_main.width,
+        x=panel_main.width,
+        y=0,
+        width=content.inset_width - panel_main.width,
         height=440,
         inset=(2, 2, 2, 2),
         tag="panel--detail",
@@ -86,6 +86,8 @@ hardware_img.add_coord("pin9", 65, 284)
 hardware_img.add_coord("annotation", 110, 268)
 hardware_img.add_coord("pin_pitch_v", 0, 30)
 
+hardware_img.add_coord("origin", 0, 0)
+hardware_img.add_coord("size", hardware_img.width, hardware_img.height)
 
 ##############################################################
 #
@@ -96,7 +98,7 @@ hardware_img.add_coord("pin_pitch_v", 0, 30)
 # Create a group to hold pinout components.
 graphic_main = panel_main.add(
     Group(
-        x= panel_main.width // 2, 
+        x=panel_main.width // 2,
         y=20,
     )
 )
@@ -107,7 +109,7 @@ graphic_main.add(
         x=hardware.coord("annotation").x,
         y=hardware.coord("annotation").y,
         content="Section A",
-        body={"x":20, "y":60, "width":120},
+        body={"x": 20, "y": 60, "width": 120},
         target={"x": -120, "y": -40, "width": 240, "height": 80},
         scale=(-1, 1),
     )
@@ -121,34 +123,25 @@ graphic_main.add(
 ##############################################################
 
 # Create a title and text for the diagram section
-panel_detail.add(TextBlock(
-    content=data.section_a_text,
-    x=20,
-    y=40
-))
+panel_detail.add(TextBlock(content=data.section_a_text, x=20, y=40))
 
-# Create a clip-path to mask the hardware image
-clip_01 = diagram.add_def(ClipPath())
-clip_01.add(Rect(x=0, y=230, width=220, height=80))
 
 # Create a group to hold components for a second graphic
-graphic_detail = panel_detail.add(
-    Group(
-        x=panel_detail.inset_width // 2 - clip_01.height // 2, 
-        y=panel_detail.inset_height // 2
-    )
-)
+graphic_detail = Group(x=0, y=0, tag="graphic-detail")
 
-# Create an Image, referencing the existing one, and mask it with the clip-path
-hardware_detail = graphic_detail.add(Image(hardware_img, x=300, y=-80, rotate=90))
-hardware_detail.clip_id = clip_01.id
+hardware_sm = graphic_detail.add(Image(hardware_img, width=110, rotate=90))
+tx, ty = hardware_sm.coord("origin")
+tw, th = hardware_sm.coord("size", True)
+
+hardware_sm.clip = ClipPath(Rect(x=tx - th, y=0, width=50, height=110))
+
 
 # Add pin-labels to the x2 rows of pin headers
 graphic_detail.add(
     PinLabelGroup(
-        x=hardware_detail.coord("pin5").x,
-        y=hardware_detail.coord("pin5").y,
-        pin_pitch=hardware_detail.coord("pin_pitch_v", True),
+        x=hardware_sm.coord("pin5").x,
+        y=hardware_sm.coord("pin5").y,
+        pin_pitch=hardware_sm.coord("pin_pitch_v", True),
         label_start=(60, 0),
         label_pitch=(0, 30),
         scale=(1, 1),
@@ -157,16 +150,29 @@ graphic_detail.add(
 )
 graphic_detail.add(
     PinLabelGroup(
-        x=hardware_detail.coord("pin9").x,
-        y=hardware_detail.coord("pin9").y,
+        x=hardware_sm.coord("pin9").x,
+        y=hardware_sm.coord("pin9").y,
         scale=(-1, 1),
-        pin_pitch=hardware_detail.coord("pin_pitch_v", True),
+        pin_pitch=hardware_sm.coord("pin_pitch_v", True),
         label_start=(60, 0),
         label_pitch=(0, 30),
         labels=data.lower_header_out,
-        leaderline=lline.Curved(direction="vh"),
     )
 )
+
+
+# With content added the width of 'graphic_detail' can be calculated
+# and the component aligned in it's panel
+
+graphic_detail.x = (
+    panel_detail.inset_width - graphic_detail.width
+) / 2 - graphic_detail.bounding_rect().x
+
+graphic_detail.y = (panel_detail.inset_height - graphic_detail.height) / 2
+
+
+# Add graphic_detail *after* calculating position
+panel_detail.add(graphic_detail)
 
 ##############################################################
 #

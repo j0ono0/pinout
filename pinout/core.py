@@ -86,7 +86,13 @@ class Component:
 
         # Render defs
         for d in self.defs:
-            content += d.render()
+            try:
+                content += d.render()
+            except AttributeError as e:
+                print("*", d)
+                print(d.render)
+                print(d.render())
+                print(e)
 
         # Recursively render children defs
         try:
@@ -104,10 +110,10 @@ class Component:
 class Layout(Component, TransformMixin):
     """Base class fundamentally grouping other components together."""
 
-    def __init__(self, x=0, y=0, **kwargs):
+    def __init__(self, x=0, y=0, children=None, **kwargs):
         self.x = x
         self.y = y
-        self.children = []
+        self.children = children or []
 
         super().__init__(**kwargs)
 
@@ -171,6 +177,7 @@ class Layout(Component, TransformMixin):
             x.append(self.x + coords.x2 * self.scale.x)
             y.append(self.y + coords.y2 * self.scale.y)
 
+        # Clip object has its own rotation
         try:
             x1, y1, x2, y2 = min(x), min(y), max(x), max(y)
 
@@ -283,10 +290,30 @@ class SvgShape(Component, TransformMixin):
     def __init__(self, x=0, y=0, width=0, height=0, **kwargs):
         self.x = x
         self.y = y
-        self.width = width
-        self.height = height
+        self._width = width
+        self._height = height
 
         super().__init__(**kwargs)
+
+    @property
+    def width(self):
+        if self.clip:
+            return self.clip.width
+        return self._width
+
+    @width.setter
+    def width(self, val):
+        self._width = val
+
+    @property
+    def height(self):
+        if self.clip:
+            return self.clip.height
+        return self._height
+
+    @height.setter
+    def height(self, val):
+        self._height = val
 
     def bounding_rect(self):
         """Component's origin coordinates and dimensions"""
@@ -296,29 +323,29 @@ class SvgShape(Component, TransformMixin):
     def bounding_coords(self):
         """Coordinates representing a shape's bounding-box."""
         if self.clip:
-            x1, y1, x2, y2 = self.clip.bounding_coords()
+            return self.clip.bounding_coords()
         else:
-            x = [self.x, (self.x * self.scale.x + self.width) * self.scale.x]
-            y = [self.y, (self.y * self.scale.y + self.height) * self.scale.y]
+            x = [self.x * self.scale.x, (self.x + self.width) * self.scale.x]
+            y = [self.y * self.scale.y, (self.y + self.height) * self.scale.y]
             x1, y1, x2, y2 = min(x), min(y), max(x), max(y)
 
-        # rotate corners of bounding box
-        corners = [(x1, y1), (x2, y1), (x1, y2), (x2, y2)]
-        rx = []
-        ry = []
-        for (x, y) in corners:
-            rx.append(
-                self.x
-                + (x - self.x) * math.cos(math.radians(self.rotate))
-                - (y - self.y) * math.sin(math.radians(self.rotate))
-            )
-            ry.append(
-                self.y
-                + (x - self.x) * math.sin(math.radians(self.rotate))
-                + (y - self.y) * math.cos(math.radians(self.rotate))
-            )
+            # rotate corners of bounding box
+            corners = [(x1, y1), (x2, y1), (x1, y2), (x2, y2)]
+            rx = []
+            ry = []
+            for (x, y) in corners:
+                rx.append(
+                    self.x
+                    + (x - self.x) * math.cos(math.radians(self.rotate))
+                    - (y - self.y) * math.sin(math.radians(self.rotate))
+                )
+                ry.append(
+                    self.y
+                    + (x - self.x) * math.sin(math.radians(self.rotate))
+                    + (y - self.y) * math.cos(math.radians(self.rotate))
+                )
 
-        return BoundingCoords(min(rx), min(ry), max(rx), max(ry))
+            return BoundingCoords(min(rx), min(ry), max(rx), max(ry))
 
     def render(self):
         return ""
@@ -421,7 +448,7 @@ class Image(SvgShape):
                 # file not at local path, try path as URL
                 im = PIL_Image.open(urllib.request.urlopen(self.src))
                 self.im_size = im.size
-            except PIL.UnidentifiedImageError:
+            except (PIL.UnidentifiedImageError):
                 # Image is assumed to be SVG
                 # Match arbitary im_size to width and height so no scaling occurs
                 pass
@@ -439,7 +466,8 @@ class Image(SvgShape):
         iw, ih = self.im_size
 
         # Scale x and y to match user supplied dimensions
-        scaler = min(self.width / iw, self.height / ih)
+        # NOTE: use *_width* and *_height* to ensure actual width and not clipped width
+        scaler = min(self._width / iw, self._height / ih)
 
         # Transformed size
         tw, th = iw * scaler, ih * scaler
@@ -453,8 +481,8 @@ class Image(SvgShape):
             # NOTE: SVG transforms images proportionally to 'fit' supplied dimensions
 
             # Calculate offset to centre fitted image
-            tx = tx + (self.width - tw) / 2
-            ty = ty + (self.height - th) / 2
+            tx = tx + (self._width - tw) / 2
+            ty = ty + (self._height - th) / 2
 
             # rotate coords
             rtx = tx * math.cos(math.radians(self.rotate)) - ty * math.sin(
@@ -488,16 +516,16 @@ class Image(SvgShape):
         """Render SVG markup either linking or embedding an image."""
         if isinstance(self.src, Image):
             # src image is wrapped in <use> tag which has to replicate 'fitting' behaviour of SVG images
-            scaler = min(self.width / self.src.width, self.height / self.src.height)
+            scaler = min(self._width / self.src._width, self._height / self.src._height)
             self.scale = Coords(
                 self.scale.x * scaler,
                 self.scale.y * scaler,
             )
-            actual_width = self.src.width * scaler
-            actual_height = self.src.height * scaler
+            actual_width = self.src._width * scaler
+            actual_height = self.src._height * scaler
 
-            tx = (self.width - actual_width) / 2
-            ty = (self.height - actual_height) / 2
+            tx = (self._width - actual_width) / 2
+            ty = (self._height - actual_height) / 2
 
             # Rotate coords
             rtx = tx * math.cos(math.radians(self.rotate)) - ty * math.sin(

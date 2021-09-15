@@ -60,6 +60,10 @@ class Base(Group):
         self.leaderline = leaderline
         self.body = body
 
+        # Add leaderline and body reference into children
+        self.add(self.leaderline)
+        self.add(self.body)
+
         self.add_tag(config.pinlabel["tag"])
 
     @property
@@ -96,19 +100,7 @@ class Base(Group):
         leaderline.add_tag(self.config["leaderline"]["tag"])
         self._leaderline = leaderline
 
-    def bounding_coords(self):
-        return BoundingCoords(
-            self.x,
-            self.y,
-            self.x + self.body.bounding_coords().x2,
-            self.y + self.body.bounding_coords().y2,
-        )
-
     def render(self):
-
-        self.add(self.leaderline)
-        self.add(self.body)
-
         # Add text content
         x = self.body.width / 2 + self.body.x
         y = self.body.y

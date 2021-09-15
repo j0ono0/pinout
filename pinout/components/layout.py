@@ -35,6 +35,7 @@ class ClipPath(Group):
     def __init__(self, children=None, **kwargs):
         super().__init__(**kwargs)
         # Accept 'children' as list or single instance.
+        children = children or []
         try:
             for child in children:
                 self.add(child)

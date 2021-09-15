@@ -1,15 +1,7 @@
 <g 
-    {% if tag %}
-        class="{{ tag }}"
-    {% endif %}
-    {% if text.clip_id %}
-        clip-path="url(#{{ text.clip_id }})"
-    {% endif %}
-    transform=" 
-        translate({{ translate }}) 
-        scale({{ scale.x }} {{ scale.y }})
-        rotate({{ text.rotate }})
-    "
+    {% with params=rect %}
+        {% include "component_common.svg" %}
+    {% endwith %}
 >
 
     {% for content in text_content %}

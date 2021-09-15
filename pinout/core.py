@@ -41,12 +41,26 @@ class Component:
     """common functions and attributes shared by all components"""
 
     def __init__(self, clip=None, config=None, defs=None, tag=None, **kwargs):
-        self.clip = clip
+        self._clip = None
         self.config = config or {}
         self.defs = defs or []
         self.id = str(uuid.uuid4())
         self.tag = tag
         super().__init__(**kwargs)
+
+        self.clip = clip
+
+    @property
+    def clip(self):
+        return self._clip
+
+    @clip.setter
+    def clip(self, obj):
+        if obj:
+            if isinstance(obj, ClipPath):
+                self._clip = obj
+            else:
+                self._clip = ClipPath(children=obj)
 
     def add_def(self, instance):
         """Add a component to the svg 'def' section"""
@@ -281,6 +295,26 @@ class Group(Layout):
         """
         tplt = templates.get("group.svg")
         return tplt.render(group=self)
+
+
+class ClipPath(Group):
+    """Define a clip-path component"""
+
+    def __init__(self, children=None, **kwargs):
+        super().__init__(**kwargs)
+        # Accept 'children' as list or single instance.
+        children = children or []
+        try:
+            for child in children:
+                self.add(child)
+        except TypeError:
+            # Children is a single component (not an iterible)
+            self.add(children)
+
+    def render(self):
+        """Render children into a <clipPath> tag."""
+        tplt = templates.get("clippath.svg")
+        return tplt.render(path=self)
 
 
 class StyleSheet:

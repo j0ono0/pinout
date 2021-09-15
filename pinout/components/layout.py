@@ -29,25 +29,6 @@ class Diagram(Layout):
         return tplt.render(svg=self)
 
 
-class ClipPath(Group):
-    """Define a clip-path component"""
-
-    def __init__(self, children=None, **kwargs):
-        super().__init__(**kwargs)
-        # Accept 'children' as list or single instance.
-        children = children or []
-        try:
-            for child in children:
-                self.add(child)
-        except TypeError:
-            self.add(children)
-
-    def render(self):
-        """Render children into a <clipPath> tag."""
-        tplt = templates.get("clippath.svg")
-        return tplt.render(path=self)
-
-
 class Panel(Layout):
     def __init__(self, width, height, inset=None, **kwargs):
         """Assist with content grouping and positioning"""

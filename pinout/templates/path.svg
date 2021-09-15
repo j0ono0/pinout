@@ -1,15 +1,8 @@
 <path 
-    {% if path.tag %}
-    class="{{ path.tag }}" 
-    {% endif %}
-    {% if path.clip %}
-    clip-path="url(#{{ path.clip.id }})"
-    {% endif %}
-    transform="
-        scale({{ path.scale.x }} {{ path.scale.y }}) 
-        translate({{ path.x }} {{  path.y }}) 
-        rotate({{ path.rotate }})
-    " 
+
+    {% with params=path %}
+        {% include "component_common.svg" %}
+    {% endwith %}
+    
     d="{{ path.d }}" 
-    shape-rendering="geometricPrecision"
 />

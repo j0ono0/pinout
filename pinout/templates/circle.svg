@@ -1,15 +1,7 @@
 <circle
-    {% if circle.tag %} 
-        class="{{ circle.tag }}"
-    {% endif %} 
-    {% if circle.clip_id %}
-    clip-path="url(#{{ circle.clip_id }})"
-    {% endif %}
-     transform="
-        translate({{ circle.x }} {{  circle.y }}) 
-        scale({{ circle.scale.x }} {{ circle.scale.y }})
-        rotate({{ circle.rotate }})
-    " 
+    {% with params=circle %}
+        {% include "component_common.svg" %}
+    {% endwith %}
     cx="0" 
     cy="0" 
     r="{{ circle.r }}"

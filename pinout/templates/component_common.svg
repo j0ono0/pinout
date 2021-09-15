@@ -1,0 +1,14 @@
+{% if params.tag %}
+        class="{{ params.tag }}"
+{% endif %}
+{% if params.clip %}
+    clip-path="url(#{{ params.clip.id }})"
+{% endif %}
+transform="
+    translate({{ params.x }} {{  params.y }}) 
+    scale({{ params.scale.x }} {{ params.scale.y }})
+    rotate({{ params.rotate }})
+"
+id="{{ params.id }}"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"

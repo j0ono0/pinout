@@ -1,19 +1,11 @@
 <rect
-    id="{{ rect.id }}"
-    {% if rect.tag %} 
-        class="{{ rect.tag }}"
-    {% endif %} 
-    {% if rect.clip %}
-        clip-path="url(#{{ rect.clip.id }})"
-    {% endif %}
-     transform="
-        translate({{ rect.x }} {{  rect.y }}) 
-        scale({{ rect.scale.x }} {{ rect.scale.y }})
-        rotate({{ rect.rotate }})
-    " 
+
+    {% with params=rect %}
+        {% include "component_common.svg" %}
+    {% endwith %}
+    
     width="{{ rect.width }}" 
     height="{{ rect.height }}" 
-    shape-rendering="geometricPrecision"
     {% if rect.corner_radius %}
     rx="{{ rect.corner_radius }}" 
     ry="{{ rect.corner_radius }}" 

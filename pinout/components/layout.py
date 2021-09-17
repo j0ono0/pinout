@@ -27,7 +27,7 @@ class Diagram(Layout):
         """Render children into an <svg> tag."""
 
         # Warn user if no styles have been added
-        stylesheets = self.find_children_by_type(self.children, StyleSheet)
+        stylesheets = self.find_children_by_type(self, StyleSheet)
         if not stylesheets:
             print(
                 """

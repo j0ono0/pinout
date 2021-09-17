@@ -25,6 +25,23 @@ class Diagram(Layout):
 
     def render(self):
         """Render children into an <svg> tag."""
+
+        # Warn user if no styles have been added
+        stylesheets = self.find_children_by_type(self.children, StyleSheet)
+        if not stylesheets:
+            print(
+                """
+        *********************
+        No stylesheet is attached, the diagram may not appear as expected! 
+        Generate one automatically with:
+        >>> py -m pinout.manager --css <your_script_name> styles.css
+
+        More info at:
+        https://pinout.readthedocs.io/en/latest/pages/manager.html#generate-a-cascading-stylesheet
+        *********************
+                """
+            )
+
         tplt = templates.get("svg.svg")
         return tplt.render(svg=self)
 

@@ -123,6 +123,25 @@ Group
     :param tag: CSS class, defaults to None
     :type tag: string (must meet css class naming rules), optional
 
+
+ClipPath
+--------
+.. autoclass:: ClipPath
+    :show-inheritance:
+
+    Once defined the clip-path can be appled to other components by referencing its uuid.
+
+    :param x: Coordinate of top-left point in x-axis, defaults to 0
+    :type x: int, optional
+    :param y: Coordinate of top-left point in y-axis, defaults to 0
+    :type y: int, optional
+    :param tag: CSS class, defaults to None
+    :type tag: string (must meet css class naming rules), optional
+
+    ..automethod:: ClipPath.render
+
+        :return: SVG markup
+        :rtype: string
     
 SvgShape
 --------
@@ -234,7 +253,7 @@ Image
         img_01 = diagram.add(Image(img_src, x=20, y=20)) 
         img_02 = diagram.add(Image(img_src, x=400, y=20)) 
 
-    :param path: Path to either an image file on the local file system or a URL. Path is relative to image file if *not* embedding, otherwise it is relative to the script exporting the file. 
+    :param path: Path to either an image file on the local file system or a URL. If using a relative path it is relative to the pinout script location.
     :type path: string
     :param embed: Embed image in exported file, defaults to False
     :type embed: bool, optional

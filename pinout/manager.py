@@ -169,20 +169,29 @@ def duplicate(resource_name):
 
 def export_diagram(src, dest, instance_name="diagram", overwrite=False):
 
-    diagram = get_instance(src, instance_name)
+    # Change CWD to folder 'src' module is located.
+    # This allows pinout.manager to be invoked from any location
+    # but keeps paths relative to src script.
+    path_to_src = Path.cwd().joinpath("/".join(src.split(".")[:-1]))
+    os.chdir(path_to_src)
 
+    diagram = get_instance(src, instance_name)
     path = Path(dest)
     path.parent.mkdir(parents=True, exist_ok=True)
     if not overwrite:
         path = unique_filepath(path)
     path.touch(exist_ok=True)
 
+    # If CWD different from src change CWD to same folder as script
+
     # If Image.src is relative, and not to be embedded, convert it to be relative to 'dest'
     cwd = path.cwd()
     images = diagram.find_children_by_type(diagram, core.Image)
     for img in images:
         if not img.src.is_absolute() and not img.embed:
-            img.src = os.path.relpath(cwd.joinpath(img.src), cwd.joinpath(path.parent))
+            img.src = os.path.relpath(
+                Path.cwd().joinpath(img.src), Path.cwd().joinpath(path.parent)
+            )
 
     # Render final SVG file
     try:

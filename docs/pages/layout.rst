@@ -50,23 +50,3 @@ Panel
     :type height: int
     :param inset: Inset of inner dimensions, defaults to None
     :type inset: Tuple (x1, y1, x2, y2), optional
-
-
-ClipPath
---------
-.. autoclass:: ClipPath
-    :show-inheritance:
-
-    Once defined the clip-path can be appled to other components by referencing its uuid.
-
-    :param x: Coordinate of top-left point in x-axis, defaults to 0
-    :type x: int, optional
-    :param y: Coordinate of top-left point in y-axis, defaults to 0
-    :type y: int, optional
-    :param tag: CSS class, defaults to None
-    :type tag: string (must meet css class naming rules), optional
-
-    ..automethod:: ClipPath.render
-
-        :return: SVG markup
-        :rtype: string

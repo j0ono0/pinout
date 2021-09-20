@@ -1,6 +1,7 @@
 import base64
 import copy
 import math
+import os
 import pathlib
 import PIL
 from PIL import Image as PIL_Image
@@ -468,15 +469,17 @@ class Image(SvgShape):
     """Include an image in the diagram."""
 
     def __init__(self, src, embed=False, **kwargs):
-        self.src = src
         self.svg_data = None
         self.embed = embed
         self.coords = {}
         self.im_size = (1, 1)
+        self.src = pathlib.Path(src)
 
         try:
             # Load image dimensions to avoid multiple loads when calculating coords
-            im = PIL_Image.open(self.src)
+            # Allow relative paths outside CWD
+            cwd = pathlib.Path.cwd()
+            im = PIL_Image.open(cwd.joinpath(self.src))
             self.im_size = im.size
 
         except AttributeError as e:

@@ -2,8 +2,11 @@
 
 import argparse
 import importlib
+import os
 from pathlib import Path
 import pkg_resources
+
+from pinout import core
 
 try:
     import cairosvg
@@ -50,8 +53,9 @@ def export_file(content, path, overwrite=False):
     :return: Actual path the file was written to. Note: this may differ from supplied 'path' if 'overwrite' is False)
     :rtype: str
     """
-    if isinstance(path, str):
-        path = Path(path)
+    # convert path to Path object
+    path = Path(path)
+
     if not overwrite:
         path = unique_filepath(path)
     path.touch(exist_ok=True)
@@ -173,8 +177,15 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
         path = unique_filepath(path)
     path.touch(exist_ok=True)
 
+    # If Image.src is relative, and not to be embedded, convert it to be relative to 'dest'
+    cwd = path.cwd()
+    images = diagram.find_children_by_type(diagram, core.Image)
+    for img in images:
+        if not img.src.is_absolute() and not img.embed:
+            img.src = os.path.relpath(cwd.joinpath(img.src), cwd.joinpath(path.parent))
+
+    # Render final SVG file
     try:
-        # Render final SVG file
         if path.suffix == ".svg":
             path.write_text(diagram.render())
 

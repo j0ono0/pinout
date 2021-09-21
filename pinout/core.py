@@ -636,7 +636,8 @@ class Image(SvgShape):
                 self.svg_data = ET.tostring(tree)
             else:
                 encoded_img = base64.b64encode(self.loadData())
-                self.src = (
+                # IMPORTANT: bypass Image.src setter function
+                self._src = (
                     f"data:image/{media_type};base64,{encoded_img.decode('utf-8')}"
                 )
         return tplt.render(image=self)

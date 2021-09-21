@@ -184,7 +184,7 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
 
     # Prepare linked media depending on output
     if dest.suffix == ".svg":
-        # update relative image.src to be relative to destination
+        # Update relative image.src to be relative to destination
         images = diagram.find_children_by_type(diagram, core.Image)
         for img in images:
             if not img.src.is_absolute() and not img.embed:
@@ -208,7 +208,6 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
     # Render final SVG file
     try:
         if dest.suffix == ".svg":
-
             dest.write_text(diagram.render())
 
         elif dest.suffix == ".png":

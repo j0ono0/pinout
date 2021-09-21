@@ -1,5 +1,5 @@
 {% if stylesheet %}
-<link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="{{ stylesheet.path }}" type="text/css"/>
+<link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="{{ stylesheet.src }}" xlink:href="{{ stylesheet.src }}"  type="text/css"/>
 {% else %}
 <style type="text/css" media="screen">  
     <![CDATA[  

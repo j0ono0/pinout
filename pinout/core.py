@@ -321,16 +321,25 @@ class ClipPath(Group):
 class StyleSheet:
     """Include a cascading stylesheet."""
 
-    def __init__(self, path, embed=False):
-        self.path = path
+    def __init__(self, src, embed=False):
+        self._src = None
+        self.src = src
         self.embed = embed
+
+    @property
+    def src(self):
+        return self._src
+
+    @src.setter
+    def src(self, val):
+        self._src = pathlib.Path(val)
 
     def render(self):
         tplt = templates.get("style.svg")
         if not self.embed:
             return tplt.render(stylesheet=self)
         else:
-            data = manager.load_data(self.path)
+            data = manager.load_data(self.src)
             return tplt.render(data=data)
 
 
@@ -469,11 +478,11 @@ class Image(SvgShape):
     """Include an image in the diagram."""
 
     def __init__(self, src, embed=False, **kwargs):
-        self.svg_data = None
+        self.coords = kwargs.pop("coords", {})
         self.embed = embed
-        self.coords = {}
+        self.src = src
         self.im_size = (1, 1)
-        self.src = pathlib.Path(src)
+        self.svg_data = None
 
         try:
             # Load image dimensions to avoid multiple loads when calculating coords
@@ -505,6 +514,18 @@ class Image(SvgShape):
         kwargs["width"] = kwargs.get("width", self.im_size[0])
         kwargs["height"] = kwargs.get("height", self.im_size[1])
         super().__init__(**kwargs)
+
+    @property
+    def src(self):
+        return self._src
+
+    @src.setter
+    def src(self, val):
+        # Ensure src is either a pathlib.Path or Image instance
+        if isinstance(val, Image):
+            self._src = val
+        else:
+            self._src = pathlib.Path(val)
 
     def coord(self, name, raw=False):
         """Return scaled coordinatates."""

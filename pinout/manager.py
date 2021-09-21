@@ -182,20 +182,33 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
         path = unique_filepath(path)
     path.touch(exist_ok=True)
 
-    # If CWD different from src change CWD to same folder as script
+    # Prepare linked media depending on output
+    if path.suffix == ".svg":
+        # update relative image.src to be relative to destination
+        images = diagram.find_children_by_type(diagram, core.Image)
+        for img in images:
+            if not img.src.is_absolute() and not img.embed:
+                img.src = os.path.relpath(
+                    Path.cwd().joinpath(img.src), Path.cwd().joinpath(path.parent)
+                )
 
-    # If Image.src is relative, and not to be embedded, convert it to be relative to 'dest'
-    cwd = path.cwd()
-    images = diagram.find_children_by_type(diagram, core.Image)
-    for img in images:
-        if not img.src.is_absolute() and not img.embed:
-            img.src = os.path.relpath(
-                Path.cwd().joinpath(img.src), Path.cwd().joinpath(path.parent)
-            )
+        # Update relative stylesheet.src to be relative to destination.
+        stylesheets = diagram.find_children_by_type(diagram, core.StyleSheet)
+        for css in stylesheets:
+            if not css.src.is_absolute() and not css.embed:
+                css.src = os.path.relpath(
+                    Path.cwd().joinpath(css.src), Path.cwd().joinpath(path.parent)
+                )
+    else:
+        # Embed styles - required for cairosvg to render correctly
+        stylesheets = diagram.find_children_by_type(diagram, core.StyleSheet)
+        for css in stylesheets:
+            css.embed = True
 
     # Render final SVG file
     try:
         if path.suffix == ".svg":
+
             path.write_text(diagram.render())
 
         elif path.suffix == ".png":

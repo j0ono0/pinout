@@ -176,20 +176,20 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
     os.chdir(path_to_src)
 
     diagram = get_instance(src, instance_name)
-    path = Path(dest)
-    path.parent.mkdir(parents=True, exist_ok=True)
+    dest = Path(dest)
+    dest.parent.mkdir(parents=True, exist_ok=True)
     if not overwrite:
-        path = unique_filepath(path)
-    path.touch(exist_ok=True)
+        dest = unique_filepath(dest)
+    dest.touch(exist_ok=True)
 
     # Prepare linked media depending on output
-    if path.suffix == ".svg":
+    if dest.suffix == ".svg":
         # update relative image.src to be relative to destination
         images = diagram.find_children_by_type(diagram, core.Image)
         for img in images:
             if not img.src.is_absolute() and not img.embed:
                 img.src = os.path.relpath(
-                    Path.cwd().joinpath(img.src), Path.cwd().joinpath(path.parent)
+                    Path.cwd().joinpath(img.src), Path.cwd().joinpath(dest.parent)
                 )
 
         # Update relative stylesheet.src to be relative to destination.
@@ -197,7 +197,7 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
         for css in stylesheets:
             if not css.src.is_absolute() and not css.embed:
                 css.src = os.path.relpath(
-                    Path.cwd().joinpath(css.src), Path.cwd().joinpath(path.parent)
+                    Path.cwd().joinpath(css.src), Path.cwd().joinpath(dest.parent)
                 )
     else:
         # Embed styles - required for cairosvg to render correctly
@@ -207,20 +207,20 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
 
     # Render final SVG file
     try:
-        if path.suffix == ".svg":
+        if dest.suffix == ".svg":
 
-            path.write_text(diagram.render())
+            dest.write_text(diagram.render())
 
-        elif path.suffix == ".png":
-            cairosvg.svg2png(bytestring=diagram.render(), write_to=dest)
+        elif dest.suffix == ".png":
+            cairosvg.svg2png(bytestring=diagram.render(), write_to=dest.as_posix())
 
-        elif path.suffix == ".pdf":
-            cairosvg.svg2pdf(bytestring=diagram.render(), write_to=dest)
+        elif dest.suffix == ".pdf":
+            cairosvg.svg2pdf(bytestring=diagram.render(), write_to=dest.as_posix())
 
-        elif path.suffix == ".ps":
-            cairosvg.svg2ps(bytestring=diagram.render(), write_to=dest)
+        elif dest.suffix == ".ps":
+            cairosvg.svg2ps(bytestring=diagram.render(), write_to=dest.as_posix())
 
-        print(f"'{path}' exported successfully.")
+        print(f"'{dest}' exported successfully.")
 
     except Exception as e:
         print(e)

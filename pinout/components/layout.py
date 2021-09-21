@@ -19,7 +19,7 @@ class Diagram(Layout):
         super().__init__(tag=tag, **kwargs)
         self.add(SvgShape(width=width, height=height))
 
-    def add_stylesheet(self, path, embed=True):
+    def add_stylesheet(self, path, embed=False):
         """Add a stylesheet to the diagram"""
         self.children.insert(0, StyleSheet(path, embed))
 

@@ -90,7 +90,7 @@ StyleSheet
 .. autoclass:: StyleSheet
     :show-inheritance:
 
-    This class should be added to a diagram via Diagram.add_stylesheet()
+    This class should be added to a diagram via Diagram.add_stylesheet(). Relative paths are relative to the Python script, not the export destination. On export, if the path is relative, it is updated automatically to reflect the destination directory. On export, embedded stylesheets are copied into a <style> tag in the SVG output file. 
 
     :param path: Path to stylesheet file
     :type path: string

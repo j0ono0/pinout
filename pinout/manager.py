@@ -187,7 +187,11 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
         # Update relative image.src to be relative to destination
         images = diagram.find_children_by_type(diagram, core.Image)
         for img in images:
-            if not img.src.is_absolute() and not img.embed:
+            # Follow image references
+            while isinstance(img.src, core.Image):
+                img = img.src
+
+            if not img.embed and not img.src.is_absolute():
                 img.src = os.path.relpath(
                     Path.cwd().joinpath(img.src), Path.cwd().joinpath(dest.parent)
                 )
@@ -195,7 +199,7 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
         # Update relative stylesheet.src to be relative to destination.
         stylesheets = diagram.find_children_by_type(diagram, core.StyleSheet)
         for css in stylesheets:
-            if not css.src.is_absolute() and not css.embed:
+            if not css.embed and not css.src.is_absolute():
                 css.src = os.path.relpath(
                     Path.cwd().joinpath(css.src), Path.cwd().joinpath(dest.parent)
                 )

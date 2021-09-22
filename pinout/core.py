@@ -491,7 +491,7 @@ class Image(SvgShape):
             im = PIL_Image.open(cwd.joinpath(self.src))
             self.im_size = im.size
 
-        except AttributeError as e:
+        except TypeError as e:
             # Image src is assumed to be another Image instance
             self.im_size = self.src.im_size
             self.coords = self.src.coords

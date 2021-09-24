@@ -1,0 +1,44 @@
+
+<svg  
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0"
+    y="0"
+    width="800" 
+    height="400" 
+    viewBox="0 0 800 400"
+    class="pinout"
+>
+
+<defs>
+    
+</defs>
+
+
+    <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="styles.css" xlink:href="styles.css"  type="text/css"/>
+<g 
+        class=" textblock"
+transform="
+    translate(100 100) 
+    scale(1 1)
+    rotate(0)
+"
+id="48468257-362d-4587-b051-8d4164b1e76d"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <text
+
+        class="textblock"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="af396ae3-2455-4f32-bbd4-625308ec9aad"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Pinout export test.
+</text>
+</g>
+    
+</svg>

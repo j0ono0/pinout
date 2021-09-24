@@ -168,19 +168,29 @@ def duplicate(resource_name):
 
 
 def export_diagram(src, dest, instance_name="diagram", overwrite=False):
+    # Save CWD and return to it and end of function
+    # incase multiple diagrams are being built from a script
+    init_dir = Path.cwd()
 
-    # Change CWD to folder 'src' module is located.
-    # This allows pinout.manager to be invoked from any location
-    # but keeps paths relative to src script.
-    path_to_src = Path.cwd().joinpath("/".join(src.split(".")[:-1]))
-    os.chdir(path_to_src)
+    # Save dest for consistent printing at end
+    raw_dest = dest
 
-    diagram = get_instance(src, instance_name)
+    # Create 'dest' folder(s) and file - file must exist for Path.resolve() to function as expected.
     dest = Path(dest)
     dest.parent.mkdir(parents=True, exist_ok=True)
     if not overwrite:
         dest = unique_filepath(dest)
     dest.touch(exist_ok=True)
+    # Convert 'dest' to absolute so CWD can be changed without affecting 'dest'.
+    dest = dest.resolve()
+
+    # Change CWD to folder 'src' module is located.
+    # This allows pinout.manager to be invoked from any location
+    # but keeps paths in the src script relative to that script.
+    path_to_src = Path.cwd().joinpath("/".join(src.split(".")[:-1]))
+    os.chdir(path_to_src)
+
+    diagram = get_instance(src, instance_name)
 
     # Prepare linked media depending on output
     if dest.suffix == ".svg":
@@ -223,10 +233,13 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
         elif dest.suffix == ".ps":
             cairosvg.svg2ps(bytestring=diagram.render(), write_to=dest.as_posix())
 
-        print(f"'{dest}' exported successfully.")
+        print(f"'{raw_dest}' exported successfully.")
 
     except Exception as e:
         print(e)
+
+    # Return the CWD to the initial directory
+    os.chdir(init_dir)
 
 
 def __main__():

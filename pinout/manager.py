@@ -168,6 +168,10 @@ def duplicate(resource_name):
 
 
 def export_diagram(src, dest, instance_name="diagram", overwrite=False):
+    # reset core.diagram_id.counter. Pytest can create multiple diagrams
+    # and requires each new diagram's id counter to commence at 0.
+    core.diagram_id.counter = 0
+
     # Save CWD and return to it and end of function
     # incase multiple diagrams are being built from a script
     init_dir = Path.cwd()

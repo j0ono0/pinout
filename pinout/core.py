@@ -1,7 +1,6 @@
 import base64
 import copy
 import math
-import os
 import pathlib
 import PIL
 from PIL import Image as PIL_Image
@@ -14,6 +13,19 @@ from pinout import manager, templates
 Coords = namedtuple("Coords", ("x y"))
 BoundingCoords = namedtuple("BoundingCoords", ("x1 y1 x2 y2"))
 BoundingRect = namedtuple("BoundingCoords", ("x y w h"))
+
+
+class IdGenerator:
+    def __init__(self):
+        self.base = str(uuid.uuid4())
+        self.counter = 0
+
+    def __call__(self):
+        self.counter += 1
+        return f"{self.base}_{self.counter}"
+
+
+diagram_id = IdGenerator()
 
 
 class TransformMixin:
@@ -45,7 +57,7 @@ class Component:
         self._clip = None
         self.config = config or {}
         self.defs = defs or []
-        self.id = str(uuid.uuid4())
+        self.id = diagram_id()
         self.tag = tag
         super().__init__(**kwargs)
 

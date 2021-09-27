@@ -13,12 +13,12 @@ from ..common.preprocessor import pinlabel_preprocessor as prep
 diagram = Diagram(1200, 675, tag="arduino-rp2040-connect")
 
 # Add a stylesheet and some custom patterns
-diagram.add_stylesheet("arduino/common/styles.css", True)
+diagram.add_stylesheet("../common/styles.css", True)
 
 # Load some svg markup to be used as patterns
 # The Raw class allows arbitary code to be inserted
 # into the diagram.
-with open("arduino/common/patterns.xml") as f:
+with open("../common/patterns.xml") as f:
     patterns = f.read()
 diagram.add_def(Raw(patterns))
 
@@ -44,7 +44,7 @@ group_notes.add(TextBlock(data.para_2, 17, x=900, y=74))
 # Note its coordinates are relative to the group it is within
 pinout_graphic.add(
     Image(
-        "arduino/rp2040/hardware.png",
+        "hardware.png",
         x=-176 / 2,
         y=0,
         width=176,

@@ -8,12 +8,11 @@
 #
 ###########################################
 
-from pinout.core import Group, Image, Rect
+from pinout.core import Group, Image, Rect, ClipPath
 from pinout.components.annotation import AnnotationLabel
-from pinout.components.layout import Diagram, Panel, ClipPath
+from pinout.components.layout import Diagram, Panel
 from pinout.components.pinlabel import PinLabelGroup
 from pinout.components.text import TextBlock
-from pinout.components import leaderline as lline
 from pinout.components.legend import Legend
 
 

@@ -1,7 +1,27 @@
+#####################################################
+#
+#
+# This sample is a WORK IN PROGRESS!
+#
+# ...It should work but might be a bit
+# rough around the edges.
+#
+#####################################################
+
 from pinout.components.layout import Diagram, Panel
 from pinout.core import Group, Image
 from pinout.components.pinlabel import PinLabelGroup
 from pinout import config
+
+# Python has multiple options for reading popular spreadsheet formats.
+# This example uses Pandas in conjunction with openpyxl.
+# Installation of these packages can be done via the command line.
+# (**If you are using a virtual environment, ensure it is activated):
+# >>> pip install pandas
+# >>> pip install openpyxl
+
+# Export:
+# >>> py -m pinout.manager -e pinout_x1 pinout_x1.svg
 
 import data
 

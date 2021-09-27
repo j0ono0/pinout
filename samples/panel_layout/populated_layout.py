@@ -6,7 +6,6 @@
 #
 
 from pinout.components.text import TextBlock
-from pinout.core import Rect
 import panel_layout as layout
 
 # pinout expects to see 'diagram' here when exporting

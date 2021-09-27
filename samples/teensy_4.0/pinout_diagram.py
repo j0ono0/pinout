@@ -1,7 +1,11 @@
 # Teensy 4.0 Pinout
 # https://www.pjrc.com/store/teensy40.html
 
-from pinout.core import Rect, Group, Image
+# NOTE: this sample requires the python package libsass.
+# install via pip:
+# >>> pip install libsass
+
+from pinout.core import Group, Image
 from pinout import config
 from pinout.components.layout import Diagram, Panel
 from pinout.components.pinlabel import PinLabelGroup

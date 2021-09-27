@@ -1,13 +1,9 @@
 <g 
-    {% if tag %}
-        class="{{ tag }}" 
-    {% endif %}
-    {% if clip_id %}
-        clip-path="url(#{{ clip_id }})"
-    {% endif %}
-   transform="
-        translate({{ x }} {{  y }}) 
-    "
+
+    {% with params=tag %}
+        {% include "component_common.svg" %}
+    {% endwith %}
+    
 >
     <rect 
     stroke="{{ rect.stroke|rgb }}" 

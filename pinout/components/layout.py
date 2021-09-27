@@ -1,6 +1,13 @@
 import uuid
 from pinout import templates, config
-from pinout.core import Layout, StyleSheet, Group, SvgShape, Rect, BoundingCoords
+from pinout.core import (
+    Layout,
+    StyleSheet,
+    Group,
+    SvgShape,
+    Rect,
+    BoundingCoords,
+)
 
 
 class Diagram(Layout):
@@ -22,24 +29,19 @@ class Diagram(Layout):
         return tplt.render(svg=self)
 
 
-class ClipPath(Group):
-    """Define a clip-path component"""
-
-    def __init__(self, x=0, y=0, tag=None, **kwargs):
-        super().__init__(x=x, y=y, tag=tag, **kwargs)
-
-    def render(self):
-        """Render children into a <clipPath> tag."""
-        tplt = templates.get("clippath.svg")
-        return tplt.render(path=self)
-
-
-class Panel(Group):
+class Panel(Layout):
     def __init__(self, width, height, inset=None, **kwargs):
         """Assist with content grouping and positioning"""
-        inset = inset or config.panel["inset"]
-        self.inset = BoundingCoords(*inset)
+
+        self.width = width
+        self.height = height
+
+        kwargs["config"] = kwargs.get("config", config.panel)
+
         super().__init__(**kwargs)
+
+        inset = inset or self.config["inset"]
+        self.inset = BoundingCoords(*inset)
         self.add_tag(config.panel["tag"])
 
         # add a non-rendering shape so component
@@ -66,6 +68,7 @@ class Panel(Group):
         return self.height - (self.inset.y1 + self.inset.y2)
 
     def render(self):
+        """Panel renders children into a <group> tag."""
 
         self.children.insert(
             0,
@@ -87,4 +90,89 @@ class Panel(Group):
             ),
         )
 
-        return super().render()
+        tplt = templates.get("group.svg")
+        return tplt.render(group=self)
+
+
+class Diagram_2Columns(Diagram):
+    def __init__(self, width, height, gutter, tag, **kwargs):
+        self.gutter = gutter
+        super().__init__(width, height, tag, **kwargs)
+
+        # Add/override config
+        self.config = config.diagram_presets
+        self.update_config(kwargs.get("config", {}))
+
+        self.panel_00 = self.add(
+            Panel(
+                x=0,
+                y=0,
+                width=width,
+                height=height,
+                tag=self.config["panel_00"]["tag"],
+                config=self.config["panel_00"],
+            )
+        )
+        self.panel_01 = self.panel_00.add(
+            Panel(
+                x=0,
+                y=0,
+                width=self.gutter,
+                height=self.panel_00.inset_height,
+                tag=self.config["panel_01"]["tag"],
+                config=self.config["panel_01"],
+            )
+        )
+        self.panel_02 = self.panel_00.add(
+            Panel(
+                x=self.gutter,
+                y=0,
+                width=self.panel_00.inset_width - self.gutter,
+                height=self.panel_00.inset_height,
+                tag=self.config["panel_02"]["tag"],
+                config=self.config["panel_02"],
+            )
+        )
+
+
+class Diagram_2Rows(Diagram):
+    def __init__(self, width, height, gutter, tag, **kwargs):
+        self.gutter = gutter
+        super().__init__(width, height, tag, **kwargs)
+
+        # Add/override config
+        self.config = config.diagram_presets
+        self.update_config(kwargs.get("config", {}))
+
+        self.add_tag(self.config["tag"])
+
+        self.panel_00 = self.add(
+            Panel(
+                x=0,
+                y=0,
+                width=width,
+                height=height,
+                tag=self.config["panel_00"]["tag"],
+                config=self.config["panel_00"],
+            )
+        )
+        self.panel_01 = self.panel_00.add(
+            Panel(
+                x=0,
+                y=0,
+                width=self.panel_00.inset_width,
+                height=self.gutter,
+                tag=self.config["panel_01"]["tag"],
+                config=self.config["panel_01"],
+            )
+        )
+        self.panel_02 = self.panel_00.add(
+            Panel(
+                x=0,
+                y=self.gutter,
+                width=self.panel_00.inset_width,
+                height=self.panel_00.inset_height - self.gutter,
+                tag=self.config["panel_02"]["tag"],
+                config=self.config["panel_02"],
+            )
+        )

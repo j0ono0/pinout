@@ -1,0 +1,475 @@
+
+<svg  
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0"
+    y="0"
+    width="1200" 
+    height="675" 
+    viewBox="0 0 1200 675"
+    class="clip-demo layout"
+>
+
+<defs>
+    <image 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="6479c583-c0ba-452c-834d-4f69b445f336"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    href="hardware_18pin.png" 
+    xlink:href="hardware_18pin.png" 
+    height="300" 
+    width="220"
+/>
+<clipPath 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+    id="26598227-1465-4189-9a45-96420938ddaf"
+    clipPathUnits="userSpaceOnUse"
+>
+    <rect
+
+transform="
+    translate(10 10) 
+    scale(1 1)
+    rotate(0)
+"
+id="640bf4f1-67fd-49a5-a1ba-de067bf005f6"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="589" 
+    height="489" 
+/>
+</clipPath><clipPath 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+    id="532d854c-68dc-4b59-9761-d62838d78a81"
+    clipPathUnits="userSpaceOnUse"
+>
+    <rect
+
+transform="
+    translate(0 230) 
+    scale(1 1)
+    rotate(0)
+"
+id="6d2cbe0f-f1ed-4567-b953-ee3feb7c231e"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="220" 
+    height="70" 
+/>
+</clipPath><clipPath 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+    id="3b6ddb54-f61d-4db5-9c55-fa73bc74b89c"
+    clipPathUnits="userSpaceOnUse"
+>
+    <rect
+
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="51c10e21-038d-4ac5-a7b5-17edec69af15"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="74.0" 
+    height="45.0" 
+/>
+</clipPath><clipPath 
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "
+    id="7244bc6b-ebf8-4f6f-946c-f369552eb2b7"
+    clipPathUnits="userSpaceOnUse"
+>
+    <circle
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="b26774a4-f798-48cd-b3ad-e67ec144c578"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    cx="0" 
+    cy="0" 
+    r="68"
+/>
+</clipPath>
+</defs>
+
+
+    <style type="text/css" media="screen">  
+    <![CDATA[  
+    
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.panel__inner {
+    fill: #fff;
+}
+.panel__outer {
+    fill: #333;
+}
+
+.layout .h1{
+    font-size: 26px;
+    font-weight: bold;
+}
+.layout .strong{
+    font-weight: bold;
+}
+.panel--info .panel__inner{
+    fill: #ededed;
+}
+
+.box01{
+    fill:rgb(198, 220, 233);
+}
+
+.opacity_40 {
+    opacity: 0.40;
+}
+    ]]>  
+</style>
+<g 
+        class="panel"
+transform="
+    translate(2 2) 
+    scale(1 1)
+    rotate(0)
+"
+id="64eb9a77-040d-4626-93be-121e8c22f15f"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="panel__outer"
+transform="
+    translate(-2 -2) 
+    scale(1 1)
+    rotate(0)
+"
+id="fe727f04-e746-4ece-acbc-049e93d74b66"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1200" 
+    height="675" 
+/><rect
+
+        class="panel__inner"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="adf7c66c-8106-4abe-8c08-3374ba3b5416"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1196" 
+    height="671" 
+/><g 
+        class="panel--main panel"
+transform="
+    translate(0.5 0.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="68b9b393-dcf6-47e3-ac3f-b2f7714e72e5"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="panel__outer"
+transform="
+    translate(-0.5 -0.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="5ee9132c-fc03-4ed8-9fe0-bd4f1a350abb"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1196" 
+    height="500" 
+/><rect
+
+        class="panel__inner"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="279ed250-28a4-4a81-8b3f-7235001f1dc6"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1195.0" 
+    height="499.0" 
+/><rect
+
+        class="box01"
+    clip-path="url(#26598227-1465-4189-9a45-96420938ddaf)"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="ea730f6d-1fd0-4521-bc57-322d9c0e67aa"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="589.0" 
+    height="489.0" 
+/><g 
+transform="
+    translate(184.5 94.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="a133618d-ed0a-4550-8a67-03e36ff97040"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="a6517466-2bdd-4151-885e-4aaca81a8e80"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <use
+        class="opacity_40"
+transform="
+    translate(0.0 0.0) 
+    scale(1.0 1.0)
+    rotate(0)
+"
+id="cc91d11c-c3d6-42d7-81c7-427604f759a5"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"
+    href="#6479c583-c0ba-452c-834d-4f69b445f336"
+    
+/>
+
+</g><g 
+    clip-path="url(#532d854c-68dc-4b59-9761-d62838d78a81)"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="582c39fb-917c-4a1f-83dc-c133cfe486b6"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <use
+transform="
+    translate(0.0 0.0) 
+    scale(1.0 1.0)
+    rotate(0)
+"
+id="9ca15126-fad6-43b1-91e5-76e8637978e0"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"
+    href="#6479c583-c0ba-452c-834d-4f69b445f336"
+    
+/>
+
+</g>
+</g><g 
+    clip-path="url(#3b6ddb54-f61d-4db5-9c55-fa73bc74b89c)"
+transform="
+    translate(837 150) 
+    scale(1 1)
+    rotate(0)
+"
+id="ce96e177-b08b-463f-95eb-aad0e33d26ed"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="fc930e6d-12ee-4178-816b-10c0de9c9da3"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <use
+transform="
+    translate(-32.0 -63.0) 
+    scale(1.0 1.0)
+    rotate(0)
+"
+id="be4f2656-36c1-47a1-b363-0acdf56fdb6f"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"
+    href="#6479c583-c0ba-452c-834d-4f69b445f336"
+    
+/>
+
+</g>
+</g><g 
+    clip-path="url(#7244bc6b-ebf8-4f6f-946c-f369552eb2b7)"
+transform="
+    translate(874 300) 
+    scale(1 1)
+    rotate(0)
+"
+id="68d4fe2f-b55e-445d-a538-976bc9b52408"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="90f02bda-459b-4259-946c-f7be6345c955"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <use
+transform="
+    translate(-110.0 -176.0) 
+    scale(1.0 1.0)
+    rotate(0)
+"
+id="63a08e22-6782-4c40-b7c4-c7a6d3d67ba1"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"
+    href="#6479c583-c0ba-452c-834d-4f69b445f336"
+    
+/>
+
+</g>
+</g>
+</g><g 
+        class="panel--info panel"
+transform="
+    translate(0.5 500.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="d2b8fb7b-1c9c-47d4-b47e-722ab1a0ffa2"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="panel__outer"
+transform="
+    translate(-0.5 -0.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="3e4661c3-288e-41d3-8b01-6689fc6588aa"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1196" 
+    height="171" 
+/><rect
+
+        class="panel__inner"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="4ce9fde3-49ae-46fa-b020-9b27c282ad68"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1195.0" 
+    height="170.0" 
+/><g 
+        class=" textblock"
+transform="
+    translate(20 30) 
+    scale(1 1)
+    rotate(0)
+"
+id="895b84fd-4bf9-4a98-bcae-7b1c59196b97"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <text
+
+        class="textblock"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dc726e46-43b7-4a3b-9e9b-3e5663a0cf28"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    <tspan class="h1">Pinout: ClipPath examples</tspan>
+</text><text
+
+        class="textblock"
+transform="
+    translate(0 22) 
+    scale(1 1)
+    rotate(0)
+"
+id="2967996f-04c9-4a58-aacc-c8bd4976dd2e"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    pinout provides an easy method to create pinout diagrams
+</text><text
+
+        class="textblock"
+transform="
+    translate(0 44) 
+    scale(1 1)
+    rotate(0)
+"
+id="723ea10a-447c-499a-8579-e43f5f2bff03"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    for electronic hardware.
+</text><text
+
+        class="textblock"
+transform="
+    translate(0 66) 
+    scale(1 1)
+    rotate(0)
+"
+id="924a2356-14de-4bb6-bf3f-8451080331e8"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    
+</text><text
+
+        class="textblock"
+transform="
+    translate(0 88) 
+    scale(1 1)
+    rotate(0)
+"
+id="3671961d-3a39-4c38-8bd0-5c08fa1fac6a"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    <tspan class="strong">pinout.readthedocs.io</tspan>
+</text>
+</g>
+</g>
+</g>
+    
+</svg>

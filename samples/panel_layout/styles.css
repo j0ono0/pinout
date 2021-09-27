@@ -1,0 +1,8 @@
+.panel--banner .panel__inner,
+.panel--footer .panel__inner{
+    fill: #333;
+}
+
+.panel--detail .panel__inner{
+    fill: #ededed;
+}

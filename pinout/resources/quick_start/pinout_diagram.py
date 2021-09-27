@@ -7,7 +7,7 @@
 ###########################################
 
 from pinout.core import Group, Image
-from pinout.components.layout import Diagram, Panel
+from pinout.components.layout import Diagram_2Rows
 from pinout.components.pinlabel import PinLabelGroup, PinLabel
 from pinout.components.text import TextBlock
 from pinout.components import leaderline as lline
@@ -18,46 +18,20 @@ from pinout.components.legend import Legend
 import data
 
 # Create a new diagram
-diagram = Diagram(1024, 576, "diagram")
+# The Diagram_2Rows class provides 2 panels,
+# 'panel_01' and 'panel_02', to insert components into.
+diagram = Diagram_2Rows(1024, 576, 440, "diagram")
 
 # Add a stylesheet
 diagram.add_stylesheet("styles.css", embed=True)
 
-# Create a layout
-content = diagram.add(
-    Panel(
-        width=1024,
-        height=576,
-        inset=(2, 2, 2, 2),
-    )
-)
-panel_main = content.add(
-    Panel(
-        width=content.inset_width,
-        height=440,
-        inset=(2, 2, 2, 2),
-        tag="panel--main",
-    )
-)
-panel_info = content.add(
-    Panel(
-        x=0,
-        y=panel_main.height,
-        width=panel_main.width,
-        height=content.inset_height - panel_main.height,
-        inset=(2, 2, 2, 2),
-        tag="panel--info",
-    )
-)
-
 # Create a group to hold the pinout-diagram components.
-graphic = panel_main.add(Group(400, 42))
-
+graphic = diagram.panel_01.add(Group(400, 42))
 
 # Add and embed an image
 hardware = graphic.add(Image("hardware.png", embed=True))
 
-# Measure and record key location with the hardware Image instance
+# Measure and record key locations with the hardware Image instance
 hardware.add_coord("gpio0", 16, 100)
 hardware.add_coord("gpio3", 65, 244)
 hardware.add_coord("reset", 155, 244)
@@ -117,8 +91,8 @@ graphic.add(
     )
 )
 
-# Create a title and a text-block
-title_block = panel_info.add(
+# Create a title and description text-blocks
+title_block = diagram.panel_02.add(
     TextBlock(
         data.title,
         x=20,
@@ -127,20 +101,20 @@ title_block = panel_info.add(
         tag="panel title_block",
     )
 )
-panel_info.add(
+diagram.panel_02.add(
     TextBlock(
         data.description,
         x=20,
         y=60,
         width=title_block.width,
-        height=panel_info.height - title_block.height,
+        height=diagram.panel_02.height - title_block.height,
         line_height=18,
         tag="panel text_block",
     )
 )
 
 # Create a legend
-legend = panel_info.add(
+legend = diagram.panel_02.add(
     Legend(
         data.legend,
         x=340,

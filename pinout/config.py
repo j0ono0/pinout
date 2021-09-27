@@ -92,7 +92,7 @@ annotation = {
 
 # Panel
 panel = {
-    "inset": (5, 5, 5, 5),
+    "inset": (2, 2, 2, 2),
     "tag": "panel",
     "inner": {"tag": "panel__inner"},
     "outer": {"tag": "panel__outer"},
@@ -133,5 +133,28 @@ ic_qfp = {
     "polarity_mark": {
         "radius": 5,
         "tag": "polarity",
+    },
+}
+
+# Diagram layout template presets
+diagram_presets = {
+    "tag": "layout",
+    "panel_00": {
+        "inset": (2, 2, 2, 2),
+        "tag": "panel",
+        "inner": {"tag": "panel__inner"},
+        "outer": {"tag": "panel__outer"},
+    },
+    "panel_01": {
+        "inset": (0.5, 0.5, 0.5, 0.5),
+        "tag": "panel--main",
+        "inner": {"tag": "panel__inner"},
+        "outer": {"tag": "panel__outer"},
+    },
+    "panel_02": {
+        "inset": (0.5, 0.5, 0.5, 0.5),
+        "tag": "panel--info",
+        "inner": {"tag": "panel__inner"},
+        "outer": {"tag": "panel__outer"},
     },
 }

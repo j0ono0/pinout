@@ -1,15 +1,7 @@
 <g 
-    {% if group.tag %}
-        class="{{ group.tag }}"
-    {% endif %}
-    {% if group.clip_id %}
-        clip-path="url(#{{ group.clip_id }})"
-    {% endif %}
-    transform="
-        translate({{ group.x }} {{  group.y }}) 
-        scale({{ group.scale.x }} {{ group.scale.y }})
-        rotate({{ group.rotate }})
-    "
+    {% with params=group %}
+        {% include "component_common.svg" %}
+    {% endwith %}
 >
     {% block content %}
         {{ group.render_children()|safe }}

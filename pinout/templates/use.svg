@@ -1,16 +1,7 @@
 <use
-    id="{{ use.id }}"
-    {% if use.tag %} 
-        class="{{ use.tag }}"
-    {% endif %} 
-    {% if use.clip_id %}
-        clip-path="url(#{{ use.clip_id }})"
-    {% endif %}
-     transform="
-        translate({{ use.x }} {{  use.y }}) 
-        scale({{ use.scale.x }} {{ use.scale.y }})
-        rotate({{ use.rotate }})
-    " 
+    {% with params=use %}
+        {% include "component_common.svg" %}
+    {% endwith %}
 
     href="#{{ use.target_id }}"
     

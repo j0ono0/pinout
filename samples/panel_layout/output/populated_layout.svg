@@ -1,0 +1,434 @@
+
+<svg  
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0"
+    y="0"
+    width="1200" 
+    height="675" 
+    viewBox="0 0 1200 675"
+    class="panel_layout"
+>
+
+    <style type="text/css" media="screen">  
+    <![CDATA[  
+    .panel--banner .panel__inner,
+.panel--footer .panel__inner{
+    fill: #333;
+}
+
+.panel--detail .panel__inner{
+    fill: #ededed;
+}
+    ]]>  
+</style>
+<style type="text/css" media="screen">  
+    <![CDATA[  
+    
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.panel__inner {
+    fill: #fff;
+}
+.panel__outer {
+    fill: #333;
+}
+
+
+    ]]>  
+</style>
+<g 
+        class=" panel"
+    transform="
+        translate(2 2) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="95f412db-178f-40e6-91ae-b41b145fca54"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(-2 -2) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="1200.0" 
+    height="675.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="d172b0f6-b6e6-4dde-b2c1-ad080d00f41e"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="1196.0" 
+    height="671.0" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="panel--banner panel"
+    transform="
+        translate(2 2) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="05f84447-1957-4b9d-b3d1-ea6c655acd33"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(-2 -2) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="1196.0" 
+    height="50.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="bc47df3a-e102-4c5f-97b8-a44d7832b4a8"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="1192.0" 
+    height="46.0" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class=" textblock"
+    transform="
+        translate(20 40) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <text
+    class="textblock"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    Banner
+</text>
+</g>
+</g><g 
+        class="panel--main panel"
+    transform="
+        translate(2 52.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="6d4a770b-fcd1-47d9-8477-2aeb0223ee27"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(-2 -2) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="797.3333333333334" 
+    height="500.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="9b2d85ec-1b20-4c56-be78-809b7076b792"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="793.3333333333334" 
+    height="496.0" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class=" textblock"
+    transform="
+        translate(20 40) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <text
+    class="textblock"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    Main
+</text>
+</g>
+</g><g 
+        class="panel--detail panel"
+    transform="
+        translate(797.3333333333334 50.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="0a7de2c5-5670-40af-85dc-5daeb560de0d"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="398.66666666666663" 
+    height="500.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="c69124a9-9ef2-4efd-ab16-9d6eabf5dbec"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="398.66666666666663" 
+    height="500.0" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class="panel--detail panel"
+    transform="
+        translate(2 2) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="ea4b1cb0-c7c2-41b9-99e6-6e4c6d9194e9"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(-2 -2) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="398.66666666666663" 
+    height="166.66666666666666" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="2580b69a-2ebc-46a2-b949-b058382ef602"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="394.66666666666663" 
+    height="162.66666666666666" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class=" textblock"
+    transform="
+        translate(20 40) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <text
+    class="textblock"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    Detail 01
+</text>
+</g>
+</g><g 
+        class="panel--detail panel"
+    transform="
+        translate(2 168.66666666666666) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="d480c0a7-34eb-4f29-ba33-6d1be35b74fb"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(-2 -2) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="398.66666666666663" 
+    height="166.66666666666666" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="6406f18b-eeca-4995-ade8-7b01a85fbed7"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="394.66666666666663" 
+    height="162.66666666666666" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class=" textblock"
+    transform="
+        translate(20 40) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <text
+    class="textblock"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    Detail 02
+</text>
+</g>
+</g><g 
+        class="panel--detail panel"
+    transform="
+        translate(2 335.3333333333333) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="f4a9bc89-d944-4405-a8c2-f3a6d08ba10c"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(-2 -2) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="398.66666666666663" 
+    height="166.66666666666669" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="bd70c301-1679-4401-8315-477904d215c5"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="394.66666666666663" 
+    height="162.66666666666669" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class=" textblock"
+    transform="
+        translate(20 40) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <text
+    class="textblock"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    Detail 03
+</text>
+</g>
+</g>
+</g><g 
+        class="panel--footer panel"
+    transform="
+        translate(2 552.0) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <rect
+    id="df6ef134-84c4-4634-b259-4d446200f611"
+ 
+        class="panel__outer"
+ 
+     transform="
+        translate(-2 -2) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="1196.0" 
+    height="121.0" 
+    shape-rendering="geometricPrecision"
+/><rect
+    id="cf455db9-9c33-4618-9da9-0a80688d9b08"
+ 
+        class="panel__inner"
+ 
+     transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    " 
+    width="1192.0" 
+    height="117.0" 
+    shape-rendering="geometricPrecision"
+/><g 
+        class=" textblock"
+    transform="
+        translate(20 40) 
+        scale(1 1)
+        rotate(0)
+    "
+>
+        <text
+    class="textblock"
+    transform="
+        translate(0 0) 
+        scale(1 1)
+        rotate(0)
+    "  
+>
+    Footer
+</text>
+</g>
+</g>
+</g>
+    
+</svg>

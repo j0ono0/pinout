@@ -1,15 +1,8 @@
 <text
-    {% if text.tag %}
-    class="{{ text.tag }}"
-    {% endif %}
-    {% if text.clip_id %}
-        clip-path="url(#{{ text.clip_id }})"
-    {% endif %}
-    transform="
-        translate({{ text.x }} {{  text.y }}) 
-        scale({{ text.scale.x }} {{ text.scale.y }})
-        rotate({{ text.rotate }})
-    "  
+
+    {% with params=text %}
+        {% include "component_common.svg" %}
+    {% endwith %}
 >
     {{ text.content }}
 </text>

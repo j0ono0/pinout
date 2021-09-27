@@ -15,7 +15,7 @@ Import modules
 Start by importing pinout modules required to create the sample diagram. For this tutorial the diagram data has been stored in a separate file which is also imported here::
 
     from pinout.core import Group, Image
-    from pinout.components.layout import Diagram, Panel
+    from pinout.components.layout import Diagram_2Rows
     from pinout.components.pinlabel import PinLabelGroup, PinLabel
     from pinout.components.text import TextBlock
     from pinout.components import leaderline as lline
@@ -28,63 +28,32 @@ Start by importing pinout modules required to create the sample diagram. For thi
 Diagram setup
 -------------
 
-The Diagram class creates the main component to hold all the parts together that make up a diagram. The instance is named 'diagram' here as this is the default instance name used when exporting the final graphic. Presentation styles are controlled via a cascading style-sheet (CSS), added to the diagram here::
+The *Diagram_2Rows* class creates a blank diagram instance featuring two panels to hold further components and make up the pinout diagram. The instance is named 'diagram' here as this is the default instance name pinout.manager looks for when exporting the final graphic. Presentation styles are controlled via a cascading style-sheet, also added to the diagram here::
 
     # Create a new diagram
-    diagram = Diagram(1024, 576, "diagram")
+    # The Diagram_2Rows class provides 2 panels,
+    # 'panel_01' and 'panel_02', to insert components into.
+    diagram = Diagram_2Rows(1024, 576, 440, "diagram")
 
     # Add a stylesheet
     diagram.add_stylesheet("styles.css", embed=True)
 
-
-Design and layout
------------------
-
-Structured layout assists with clear and inviting documentation. *pinout* provides a Panel component to assist with graphical/document layout::
-
-    # Create a layout
-    content = diagram.add(
-        Panel(
-            width=1024,
-            height=576,
-            inset=(2, 2, 2, 2),
-        )
-    )
-    panel_main = content.add(
-        Panel(
-            width=content.inset_width,
-            height=440,
-            inset=(2, 2, 2, 2),
-            tag="panel--main",
-        )
-    )
-    panel_info = content.add(
-        Panel(
-            x=0,
-            y=panel_main.height,
-            width=panel_main.width,
-            height=content.inset_height - panel_main.height,
-            inset=(2, 2, 2, 2),
-            tag="panel--info",
-        )
-    )
-
-Components can also be grouped independently of a panel. This can aid with fine-tuning of the layout::
+Components can be grouped independently from a panel. This aids with fine-tuning of a layout as a group of components can be moved as a single unit::
 
     # Create a group to hold the actual diagram components.
-    graphic = panel_main.add(Group(400, 42))
+    graphic = diagram.panel_01.add(Group(400, 42))
 
 
 Hardware image
 --------------
-An image that requires pinout information to is obviously required and included with the Image class. Width and height arguments are optional. If omitted, as they are here, the pixel dimensions are automatically detected and used. 'x' and 'y' attributes can also be supplied to position the top-left of the image to more suitable coordinates::
+An image that requires pinout information is obviously required and added with the Image class. Width and height arguments are optional. If omitted the pixel dimensions are automatically detected and used. 'x' and 'y' attributes can also be supplied to position the top-left of the image to more suitable coordinates::
 
     # Add and embed an image
     hardware = graphic.add(Image("hardware.png", embed=True))
 
 Measuring up
 ------------
-Key coordinates on the image need to be documented for components to align correctly. It is a good idea to undertake measuring as a distinct step and usually quicker than estimating with trial-and-error later on. Measurements are pixel dimensions from the top, left corner *(with an exception - see following note on 'pin pitch')* :
+Key coordinates on the image need to be documented for related components to align correctly. It is a good idea to undertake measuring as a distinct step and usually quicker than estimating with trial-and-error later on. Measurements are pixel dimensions from the top, left corner *(with an exception - see following note on 'pin pitch')* :
 
 .. figure:: /_static/quick_start_measurements_pins.*
 
@@ -191,7 +160,7 @@ Title block
 Adding a title and supporting notes can help readers quickly place a diagram in context and summarise important points:: 
 
     # Create a title and a text-block
-    title_block = panel_info.add(
+    title_block = diagram.panel_02.add(
         TextBlock(
             data.title,
             x=20,
@@ -200,13 +169,13 @@ Adding a title and supporting notes can help readers quickly place a diagram in 
             tag="panel title_block",
         )
     )
-    panel_info.add(
+    diagram.panel_02.add(
         TextBlock(
             data.description.split("\n"),
             x=20,
             y=60,
             width=title_block.width,
-            height=panel_info.height - title_block.height,
+            height=diagram.panel_02.height - title_block.height,
             line_height=18,
             tag="panel text_block",
         )
@@ -217,7 +186,7 @@ Legend
 Adding a legend is easy as a dedicated component exists in _pinout_. The component flows into multiple columns if a 'max_height' is supplied::
 
     # Create a legend
-    legend = panel_info.add(
+    legend = diagram.panel_02.add(
         Legend(
             data.legend,
             x=340,

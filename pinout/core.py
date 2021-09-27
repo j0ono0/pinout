@@ -2,6 +2,7 @@ import base64
 import copy
 import math
 import pathlib
+import PIL
 from PIL import Image as PIL_Image
 import urllib.request
 import uuid
@@ -33,28 +34,38 @@ class TransformMixin:
         self.skewx = skewx
         self.skewy = skewy
 
+        super().__init__()
 
-class Layout(TransformMixin):
-    """Base class for components that fundamentally group other components together."""
 
-    def __init__(self, x=0, y=0, tag=None, **kwargs):
-        super().__init__(**kwargs)
+class Component:
+    """common functions and attributes shared by all components"""
+
+    def __init__(self, clip=None, config=None, defs=None, tag=None, **kwargs):
+        self._clip = None
+        self.config = config or {}
+        self.defs = defs or []
         self.id = str(uuid.uuid4())
         self.tag = tag
-        self.x = x
-        self.y = y
-        self.children = []
-        self.defs = []
-        self.clip_id = kwargs.pop("clip_id", None)
-        self.config = kwargs.pop("config", {})
+        super().__init__(**kwargs)
 
-    def add(self, instance):
-        self.children.append(instance)
-        return instance
+        self.clip = clip
+
+    @property
+    def clip(self):
+        return self._clip
+
+    @clip.setter
+    def clip(self, obj):
+        if obj:
+            if isinstance(obj, ClipPath):
+                self._clip = obj
+            else:
+                self._clip = ClipPath(children=obj)
 
     def add_def(self, instance):
         """Add a component to the svg 'def' section"""
-        self.defs.append(instance)
+        if instance:
+            self.defs.append(instance)
         return instance
 
     def add_tag(self, tag):
@@ -75,6 +86,76 @@ class Layout(TransformMixin):
         :type vals: dict
         """
         self.config.update(copy.deepcopy(vals))
+
+    def render_defs(self):
+        """Render SVG markup from 'defs'
+
+        :return: SVG markup
+        :rtype: string
+        """
+        content = ""
+
+        # Transfer clippath to defs
+        self.add_def(self.clip)
+
+        # Render defs
+        for d in self.defs:
+            try:
+                content += d.render()
+            except AttributeError as e:
+                print("*", d)
+                print(d.render)
+                print(d.render())
+                print(e)
+
+        # Recursively render children defs
+        try:
+            for child in [
+                child for child in self.children if hasattr(child, "render_defs")
+            ]:
+                content += child.render_defs()
+        except AttributeError:
+            pass
+            # Object has no children
+
+        return content
+
+    @staticmethod
+    def rotate_box_coords(origin, coords, rotate):
+        ox, oy = origin
+        x1, y1, x2, y2 = coords
+        # rotate corners of bounding box
+        corners = [(x1, y1), (x2, y1), (x1, y2), (x2, y2)]
+        rx = []
+        ry = []
+        for (x, y) in corners:
+            rx.append(
+                ox
+                + (x - ox) * math.cos(math.radians(rotate))
+                - (y - oy) * math.sin(math.radians(rotate))
+            )
+            ry.append(
+                oy
+                + (x - ox) * math.sin(math.radians(rotate))
+                + (y - oy) * math.cos(math.radians(rotate))
+            )
+
+        return BoundingCoords(min(rx), min(ry), max(rx), max(ry))
+
+
+class Layout(Component, TransformMixin):
+    """Base class fundamentally grouping other components together."""
+
+    def __init__(self, x=0, y=0, children=None, **kwargs):
+        self.x = x
+        self.y = y
+        self.children = children or []
+
+        super().__init__(**kwargs)
+
+    def add(self, instance):
+        self.children.append(instance)
+        return instance
 
     @staticmethod
     def find_children_by_type(component, target_type):
@@ -117,9 +198,13 @@ class Layout(TransformMixin):
         # Collect bounding coords of children
         x = []
         y = []
+        if self.clip:
+            targets = self.clip.children
+        else:
+            targets = self.children
         for child in [
             instance
-            for instance in self.children
+            for instance in targets
             if hasattr(type(instance), "bounding_coords")
         ]:
             coords = child.bounding_coords()
@@ -130,6 +215,10 @@ class Layout(TransformMixin):
 
         try:
             x1, y1, x2, y2 = min(x), min(y), max(x), max(y)
+
+            # Clip object has its own rotation
+            if self.clip:
+                return BoundingCoords(x1, y1, x2, y2)
 
             # rotate corners of bounding box
             corners = [(x1, y1), (x2, y1), (x1, y2), (x2, y2)]
@@ -153,21 +242,6 @@ class Layout(TransformMixin):
             # There are no children
             return BoundingCoords(0, 0, 0, 0)
 
-    def render_defs(self):
-        """Render SVG markup from 'defs'
-
-        :return: SVG markup
-        :rtype: string
-        """
-        content = ""
-        for d in self.defs:
-            content += d.render()
-        for child in [
-            child for child in self.children if hasattr(child, "render_defs")
-        ]:
-            content += child.render_defs()
-        return content
-
     def render_children(self):
         """Render SVG markup from 'children'
 
@@ -179,17 +253,18 @@ class Layout(TransformMixin):
             try:
                 content += child.render()
             except TypeError as e:
-                print(child)
+                print(f"An error occurred rendering: {child}")
                 print(child.render())
                 print(e)
         return content
 
 
 class Use(Layout):
-    """ Implement <use> svg tag"""
+    """Implement <use> svg tag"""
 
     def __init__(self, instance, **kwargs):
         self.target_id = instance.id
+
         super().__init__(**kwargs)
 
     def render(self):
@@ -222,6 +297,26 @@ class Group(Layout):
         return tplt.render(group=self)
 
 
+class ClipPath(Group):
+    """Define a clip-path component"""
+
+    def __init__(self, children=None, **kwargs):
+        super().__init__(**kwargs)
+        # Accept 'children' as list or single instance.
+        children = children or []
+        try:
+            for child in children:
+                self.add(child)
+        except TypeError:
+            # Children is a single component (not an iterible)
+            self.add(children)
+
+    def render(self):
+        """Render children into a <clipPath> tag."""
+        tplt = templates.get("clippath.svg")
+        return tplt.render(path=self)
+
+
 class StyleSheet:
     """Include a cascading stylesheet."""
 
@@ -248,26 +343,36 @@ class Raw:
         return self.content
 
 
-class SvgShape(TransformMixin):
+class SvgShape(Component, TransformMixin):
     """Base class for components that have a graphical representation."""
 
-    def __init__(
-        self,
-        x=0,
-        y=0,
-        width=0,
-        height=0,
-        tag=None,
-        **kwargs,
-    ):
-        self.id = str(uuid.uuid4())
-        self.tag = tag
+    def __init__(self, x=0, y=0, width=0, height=0, **kwargs):
         self.x = x
         self.y = y
-        self.width = width
-        self.height = height
-        self.clip_id = kwargs.pop("clip_id", None)
+        self._width = width
+        self._height = height
+
         super().__init__(**kwargs)
+
+    @property
+    def width(self):
+        if self.clip:
+            return self.clip.width
+        return self._width
+
+    @width.setter
+    def width(self, val):
+        self._width = val
+
+    @property
+    def height(self):
+        if self.clip:
+            return self.clip.height
+        return self._height
+
+    @height.setter
+    def height(self, val):
+        self._height = val
 
     def bounding_rect(self):
         """Component's origin coordinates and dimensions"""
@@ -276,38 +381,17 @@ class SvgShape(TransformMixin):
 
     def bounding_coords(self):
         """Coordinates representing a shape's bounding-box."""
-        x = [self.x, (self.x * self.scale.x + self.width) * self.scale.x]
-        y = [self.y, (self.y * self.scale.y + self.height) * self.scale.y]
-        x1, y1, x2, y2 = min(x), min(y), max(x), max(y)
+        if self.clip:
+            return self.clip.bounding_coords()
+        else:
+            x = [self.x * self.scale.x, (self.x + self.width) * self.scale.x]
+            y = [self.y * self.scale.y, (self.y + self.height) * self.scale.y]
 
-        # rotate corners of bounding box
-        corners = [(x1, y1), (x2, y1), (x1, y2), (x2, y2)]
-        rx = []
-        ry = []
-        for (x, y) in corners:
-            rx.append(
-                self.x
-                + (x - self.x) * math.cos(math.radians(self.rotate))
-                - (y - self.y) * math.sin(math.radians(self.rotate))
+            return Component.rotate_box_coords(
+                origin=(self.x, self.y),
+                coords=(min(x), min(y), max(x), max(y)),
+                rotate=self.rotate,
             )
-            ry.append(
-                self.y
-                + (x - self.x) * math.sin(math.radians(self.rotate))
-                + (y - self.y) * math.cos(math.radians(self.rotate))
-            )
-
-        return BoundingCoords(min(rx), min(ry), max(rx), max(ry))
-
-    def add_tag(self, tag):
-        """Append a tag to the instance
-
-        :param tag: CSS class name(s)
-        :type tag: string
-        """
-        tag_list = (self.tag or "").split(" ")
-        if tag not in tag_list:
-            tag_list.append(tag)
-        self.tag = " ".join(tag_list)
 
     def render(self):
         return ""
@@ -381,7 +465,7 @@ class Text(SvgShape):
 
 
 class Image(SvgShape):
-    """Include a image in the diagram."""
+    """Include an image in the diagram."""
 
     def __init__(self, src, embed=False, **kwargs):
         self.src = src
@@ -395,10 +479,10 @@ class Image(SvgShape):
             im = PIL_Image.open(self.src)
             self.im_size = im.size
 
-        except AttributeError:
-            # src is assumed to be an Image instance
-            self.coords = self.src.coords
+        except AttributeError as e:
+            # Image src is assumed to be another Image instance
             self.im_size = self.src.im_size
+            self.coords = self.src.coords
 
         except PIL.UnidentifiedImageError:
             # Image is assumed to be SVG
@@ -408,16 +492,15 @@ class Image(SvgShape):
         except OSError:
             try:
                 # file not at local path, try path as URL
-                im = PIL.Image.open(urllib.request.urlopen(self.src))
+                im = PIL_Image.open(urllib.request.urlopen(self.src))
                 self.im_size = im.size
-            except PIL.UnidentifiedImageError:
+            except (PIL.UnidentifiedImageError):
                 # Image is assumed to be SVG
                 # Match arbitary im_size to width and height so no scaling occurs
                 pass
 
         kwargs["width"] = kwargs.get("width", self.im_size[0])
         kwargs["height"] = kwargs.get("height", self.im_size[1])
-
         super().__init__(**kwargs)
 
     def coord(self, name, raw=False):
@@ -429,7 +512,8 @@ class Image(SvgShape):
         iw, ih = self.im_size
 
         # Scale x and y to match user supplied dimensions
-        scaler = min(self.width / iw, self.height / ih)
+        # NOTE: use *_width* and *_height* to ensure actual width and not clipped width
+        scaler = min(self._width / iw, self._height / ih)
 
         # Transformed size
         tw, th = iw * scaler, ih * scaler
@@ -438,13 +522,13 @@ class Image(SvgShape):
         tx = x * scaler
         ty = y * scaler
 
-        # Calculate offset to centre fitted image
-        tx = tx + (self.width - tw) / 2
-        ty = ty + (self.height - th) / 2
-
         if not raw:
             # if 'raw' is False translate the coords
             # NOTE: SVG transforms images proportionally to 'fit' supplied dimensions
+
+            # Calculate offset to centre fitted image
+            tx = tx + (self._width - tw) / 2
+            ty = ty + (self._height - th) / 2
 
             # rotate coords
             rtx = tx * math.cos(math.radians(self.rotate)) - ty * math.sin(
@@ -478,20 +562,18 @@ class Image(SvgShape):
         """Render SVG markup either linking or embedding an image."""
         if isinstance(self.src, Image):
             # src image is wrapped in <use> tag which has to replicate 'fitting' behaviour of SVG images
-
-            scaler = min(self.width / self.src.width, self.height / self.src.height)
+            scaler = min(self._width / self.src._width, self._height / self.src._height)
             self.scale = Coords(
                 self.scale.x * scaler,
                 self.scale.y * scaler,
             )
-            actual_width = self.src.width * scaler
-            actual_height = self.src.height * scaler
+            actual_width = self.src._width * scaler
+            actual_height = self.src._height * scaler
 
-            tx = (self.width - actual_width) / 2
-            ty = (self.height - actual_height) / 2
+            tx = (self._width - actual_width) / 2
+            ty = (self._height - actual_height) / 2
 
             # Rotate coords
-            # rotate coords
             rtx = tx * math.cos(math.radians(self.rotate)) - ty * math.sin(
                 math.radians(self.rotate)
             )
@@ -499,16 +581,21 @@ class Image(SvgShape):
                 math.radians(self.rotate)
             )
 
-            # use image from definitions with <use> tag
-            output = Use(
-                self.src,
-                x=self.x + rtx,
-                y=self.y + rty,
-                scale=self.scale,
-                rotate=self.rotate,
-                clip_id=self.clip_id,
-                tag=self.tag,
+            # clip-path must be a separate component when using <use> to
+            # avoid applying scale to clip-path.
+            output = Group(clip=self.clip)
+            # Reference image from defs with <use> tag
+            output.add(
+                Use(
+                    x=self.x + rtx,
+                    y=self.y + rty,
+                    scale=self.scale,
+                    tag=self.tag,
+                    instance=self.src,
+                    rotate=self.rotate,
+                )
             )
+
             return output.render()
 
         # Use externally referenced image
@@ -528,8 +615,4 @@ class Image(SvgShape):
                 self.src = (
                     f"data:image/{media_type};base64,{encoded_img.decode('utf-8')}"
                 )
-
         return tplt.render(image=self)
-
-
-# py -m pinout.manager -e pinout_diagram diagram.svg -o

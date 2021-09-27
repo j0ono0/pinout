@@ -1,130 +1,138 @@
 
 {# Diagram settings #}
-
 text {
     font-family: Verdana, Georgia, sans-serif;
     font-size: 14px;
     font-weight: normal;
 }
 
-
 {# Pinlabel component #}
-
 {% if css.pinlabel %}
-    .{{ css.pinlabel.leaderline.tag }}{
-        stroke-width: 2;
-        fill: none;
-    }
+.{{ css.pinlabel.leaderline.tag }}{
+    stroke-width: 2;
+    fill: none;
+}
 
-    .{{ css.pinlabel.text.tag }}{
-        dominant-baseline: central;
-        fill: #fff;
-        
-        font-weight: bold;
-        stroke-width: 0;
-        text-anchor: middle;
-    }
-{% endif %}
+.{{ css.pinlabel.text.tag }}{
+    dominant-baseline: central;
+    fill: #fff;
+    
+    font-weight: bold;
+    stroke-width: 0;
+    text-anchor: middle;
+}
 
+{% endif -%}
 
 {# Color styling derived from pinlabel classes  #}
-
 {% if css.tags %}
-    {% for (name, color) in css.tags %}
-        .{{name}} .{{ css.pinlabel.body.tag }}{
-            fill: rgb{{color}};
-        }
-        .{{name}} .{{ css.pinlabel.leaderline.tag }}{
-            stroke: rgb{{color}};
-        }
-        .{{name}} .swatch__body {
-            fill: rgb{{color}};
-        }
-    {% endfor %}
-{% endif %}
+{% for (name, color) in css.tags %}
+.{{name}} .{{ css.pinlabel.body.tag }}{
+    fill: rgb{{color}};
+}
+.{{name}} .{{ css.pinlabel.leaderline.tag }}{
+    stroke: rgb{{color}};
+}
+.{{name}} .swatch__body {
+    fill: rgb{{color}};
+}
+{% endfor %}
+
+{% endif -%}
 
 {# Panel component #}
-
 {% if css.panel %}
-    .{{ css.panel.inner.tag }} {
-        fill: #fff;
-    }
-    .{{ css.panel.outer.tag }} {
-        fill: #333;
-    }
-{% endif %}
+.{{ css.panel.inner.tag }} {
+    fill: #fff;
+}
+.{{ css.panel.outer.tag }} {
+    fill: #333;
+}
+
+{% endif -%}
 
 {# Legend component #}
-
 {% if css.legend %}
-    .{{ css.legend.entry.tag }} text {
-        dominant-baseline: central;
-    }
-{% endif %}
+.{{ css.legend.entry.tag }} text {
+    dominant-baseline: central;
+}
+{% endif -%}
 
 {# Annotation component #}
-
 {% if css.annotation %}
-    .{{ css.annotation.body.tag }} {
-        fill: rgb(253, 203, 36);
-        stroke-width: 0;
-    }
-    .{{ css.annotation.content.tag }} {
-        dominant-baseline: central;
-        font-size: 14px;
-        font-weight: bold;
-        fill: rgb(63, 40, 6);
-        text-anchor: middle;
-    }
-    .{{ css.annotation.target.tag }} {
-        fill: none;
-        stroke: rgb(253, 203, 36);
-        stroke-width: 4px;
-    }
-    .{{ css.annotation.leaderline.tag }} {
-        stroke: rgb(253, 203, 36);
-        stroke-width: 4px;
-        fill: none;
-    }
-{% endif %}
+.{{ css.annotation.body.tag }} {
+    fill: rgb(253, 203, 36);
+    stroke-width: 0;
+}
+.{{ css.annotation.content.tag }} {
+    dominant-baseline: central;
+    font-size: 14px;
+    font-weight: bold;
+    fill: rgb(63, 40, 6);
+    text-anchor: middle;
+}
+.{{ css.annotation.target.tag }} {
+    fill: none;
+    stroke: rgb(253, 203, 36);
+    stroke-width: 4px;
+}
+.{{ css.annotation.leaderline.tag }} {
+    stroke: rgb(253, 203, 36);
+    stroke-width: 4px;
+    fill: none;
+}
+
+{% endif -%}
+
 {# Integrated circuits #}
 {% if css.ic_dip %}
+.{{ css.ic_dip.body.tag }}{
+    fill: rgb(85, 85, 85);
+    stroke-width: 1px;
+    stroke: #000;
+}
+.{{ css.ic_dip.leg.tag }} .{{ css.ic_dip.polarity_mark.tag }}{
+    fill: rgb(85, 85, 85);
+    stroke-width: 2px;
+    stroke: rgb(138, 138, 138);
+    
+}
+.{{ css.ic_dip.leg.tag }}{
+    fill: rgb(255, 255, 255);
+    stroke-width: 1px;
+    stroke: #000;
+}
 
-    .{{ css.ic_dip.body.tag }}{
-        fill: rgb(85, 85, 85);
-        stroke-width: 1px;
-        stroke: #000;
-    }
-    .{{ css.ic_dip.leg.tag }} .{{ css.ic_dip.polarity_mark.tag }}{
-        fill: rgb(85, 85, 85);
-        stroke-width: 2px;
-        stroke: rgb(138, 138, 138);
-        
-    }
+{% endif -%}
 
-    .{{ css.ic_dip.leg.tag }}{
-        fill: rgb(255, 255, 255);
-        stroke-width: 1px;
-        stroke: #000;
-    }
-
-{% endif %}
 {% if css.ic_qfp %}
-    .{{ css.ic_qfp.body.tag }}{
-        fill: rgb(85, 85, 85);
-        stroke-width: 1px;
-        stroke: #000;
-    }
-    .{{ css.ic_qfp.leg.tag }} .{{ css.ic_qfp.polarity_mark.tag }}{
-        fill: rgb(85, 85, 85);
-        stroke-width: 2px;
-        stroke: rgb(138, 138, 138);
-        
-    }
+.{{ css.ic_qfp.body.tag }}{
+    fill: rgb(85, 85, 85);
+    stroke-width: 1px;
+    stroke: #000;
+}
+.{{ css.ic_qfp.leg.tag }} .{{ css.ic_qfp.polarity_mark.tag }}{
+    fill: rgb(85, 85, 85);
+    stroke-width: 2px;
+    stroke: rgb(138, 138, 138);
+    
+}
+.{{ css.ic_qfp.leg.tag }}{
+    fill: rgb(255, 255, 255);
+    stroke-width: 1px;
+    stroke: #000;
+}
 
-    .{{ css.ic_qfp.leg.tag }}{
-        fill: rgb(255, 255, 255);
-        stroke-width: 1px;
-        stroke: #000;
-    }
-{% endif %}
+{% endif -%}
+
+{# Diagram preset templates #}
+{% if css.diagram_presets %}
+.{{ css.diagram_presets.tag }} .h1{
+    font-size: 26px;
+    font-weight: bold;
+}
+.{{ css.diagram_presets.panel_02.tag }} .panel__inner{
+    fill: #ededed;
+}
+
+{% endif -%}

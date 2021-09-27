@@ -1,0 +1,32 @@
+
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.panel__inner {
+    fill: #fff;
+}
+.panel__outer {
+    fill: #333;
+}
+
+.layout .h1{
+    font-size: 26px;
+    font-weight: bold;
+}
+.layout .strong{
+    font-weight: bold;
+}
+.panel--info .panel__inner{
+    fill: #ededed;
+}
+
+.box01{
+    fill:rgb(198, 220, 233);
+}
+
+.opacity_40 {
+    opacity: 0.40;
+}

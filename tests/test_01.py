@@ -15,6 +15,7 @@ import shutil
 import uuid
 from pathlib import Path
 from pinout import manager
+import os
 
 
 def re_sub_ids(re_m):
@@ -40,27 +41,28 @@ def mk_test_file(src, dest):
 
 
 @pytest.mark.parametrize(
-    "ref_filename",
+    "module_path, ref_path",
     [
-        "diagram_image",
-        "diagram_export",
+        ("resources.diagram_image", "./resources/diagram_image.svg"),
+        ("resources.diagram_export", "resources/diagram_export.svg"),
+        ("..samples.clip_path.diagram", "../samples/clip_path/diagram.svg"),
     ],
 )
-def test_output_against_reference(tmp_path, ref_filename):
+def test_output_against_reference(tmp_path, module_path, ref_path):
     # Export a temp file in same location as reference:
     # Required for relative links to be identical.
-    ref_file = Path(f"./resources/{ref_filename}.svg")
+    ref_path = Path(ref_path)
 
-    tempsvg = ref_file.parent / (str(uuid.uuid4()) + ".svg")
+    tempsvg = ref_path.parent / "temp_" + (str(uuid.uuid4()) + ".svg")
     manager.export_diagram(
-        f"resources.{ref_filename}",
+        module_path,
         tempsvg,
         overwrite=True,
     )
 
     # Create files for comparison. Unique ids are converted to match
-    file1 = mk_test_file(tempsvg, tmp_path / f"test_{ref_filename}.svg")
-    file2 = mk_test_file(ref_file, tmp_path / f"ref_{ref_filename}.svg")
+    file1 = mk_test_file(tempsvg, tmp_path / f"test_file.svg")
+    file2 = mk_test_file(ref_path, tmp_path / f"ref_file.svg")
 
     # Remove temp file
     tempsvg.unlink()

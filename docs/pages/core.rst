@@ -9,7 +9,7 @@ Layout
 .. autoclass:: Layout
     :show-inheritance:
     
-    **This class is not designed to be used directly.** Methods listed here are inherted by child classes.
+    **This class is not designed to be used directly.** Methods listed here are inherted by child classes and accessible via them.
 
     :param x: x-axis location, defaults to 0
     :type x: int, optional
@@ -48,15 +48,15 @@ Layout
             clip.add(Rect(x=100, y=100, width=50, height=50))
 
             # The clip-path can now be applied to other components.
-            rect_01.clip_id = clip.id
-            rect_02.clip_id = clip.id
+            rect_01.clip = clip
+            rect_02.clip = clip
 
             # Changes to 'clip' will affect both 'rect_01' and 'rect_02'
             # as they reference the same component instance.
 
         **Example: Images**
 
-        To avoid including multiple instances of an image in the diagram, a single image can be included in the defs section and referenced multiple times from their::  
+        To avoid including multiple instances of an image in the diagram, a single image can be included in the defs section and referenced multiple times from there::  
 
             from pinout.components.layout import Diagram, Image
 

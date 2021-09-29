@@ -17,7 +17,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="4c848f65-afd4-4ca0-983b-cd964682b5f8"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_9"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     href="hardware_18pin.png" 
@@ -31,7 +31,7 @@ shape-rendering="geometricPrecision"
         scale(1 1)
         rotate(0)
     "
-    id="bd3e13c8-0c5f-43b0-abf5-904f27b3ef42"
+    id="d8267794-597d-41c7-81e7-edff6fbc63b9_12"
     clipPathUnits="userSpaceOnUse"
 >
     <rect
@@ -41,7 +41,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="398bf60e-cd36-4fe5-aad7-d707448d549f"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_10"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="589" 
@@ -53,7 +53,7 @@ shape-rendering="geometricPrecision"
         scale(1 1)
         rotate(0)
     "
-    id="45b8312c-4001-4344-adde-7937ccf1e7c8"
+    id="d8267794-597d-41c7-81e7-edff6fbc63b9_16"
     clipPathUnits="userSpaceOnUse"
 >
     <rect
@@ -63,7 +63,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="156e6f86-387c-4eaf-87a3-593bddb4f567"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_15"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="220" 
@@ -75,7 +75,7 @@ shape-rendering="geometricPrecision"
         scale(1 1)
         rotate(0)
     "
-    id="dba5ae35-ed9b-4231-95bb-67051a35ce0e"
+    id="d8267794-597d-41c7-81e7-edff6fbc63b9_21"
     clipPathUnits="userSpaceOnUse"
 >
     <rect
@@ -85,7 +85,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="cd12f2d5-5bb5-44c7-a307-c5003e8333da"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_20"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="74.0" 
@@ -97,7 +97,7 @@ shape-rendering="geometricPrecision"
         scale(1 1)
         rotate(0)
     "
-    id="3b6f2560-772a-4f2f-8cb8-f58084869fa0"
+    id="d8267794-597d-41c7-81e7-edff6fbc63b9_25"
     clipPathUnits="userSpaceOnUse"
 >
     <circle
@@ -106,7 +106,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="29b96b16-4a6e-4a15-8d15-dc39c340367d"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_22"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    cx="0" 
     cy="0" 
@@ -124,7 +124,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="8008ded3-87b1-486c-9c53-6f2051ea9125"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_3"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -135,7 +135,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="6502fab9-c8a4-46f9-82d4-a7b174c8f9d0"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_28"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1200" 
@@ -148,7 +148,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f0c9b60c-62ba-410c-93ad-e8c932c10ace"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_27"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1196" 
@@ -160,7 +160,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="935c8845-bdd1-4e52-9103-c5460433af8c"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_5"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -171,7 +171,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="cd54f55b-7787-4374-ac74-4159855f0730"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_30"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1196" 
@@ -184,7 +184,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="7143c383-925f-4a06-bdd1-0ba9288ac3a9"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_29"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1195.0" 
@@ -192,13 +192,13 @@ shape-rendering="geometricPrecision"
 /><rect
 
         class="box01"
-    clip-path="url(#bd3e13c8-0c5f-43b0-abf5-904f27b3ef42)"
+    clip-path="url(#d8267794-597d-41c7-81e7-edff6fbc63b9_12)"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="6567a3af-b342-449d-be4b-7b0c364edaba"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_11"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="589.0" 
@@ -209,7 +209,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="8636279f-34d4-42f7-92d3-7a498b688da9"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_13"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -218,7 +218,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="ef61af9b-86bc-4547-ad30-8b8798ee0250"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_31"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <use
@@ -228,22 +228,22 @@ transform="
     scale(1.0 1.0)
     rotate(0)
 "
-id="e5c036c0-4b0e-47f7-8a4f-cbb5b2a9a018"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_32"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"
-    xlink:href="#4c848f65-afd4-4ca0-983b-cd964682b5f8"
-    href="#4c848f65-afd4-4ca0-983b-cd964682b5f8"
+    xlink:href="#d8267794-597d-41c7-81e7-edff6fbc63b9_9"
+    href="#d8267794-597d-41c7-81e7-edff6fbc63b9_9"
     
 />
 
 </g><g 
-    clip-path="url(#45b8312c-4001-4344-adde-7937ccf1e7c8)"
+    clip-path="url(#d8267794-597d-41c7-81e7-edff6fbc63b9_16)"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="05fa6e9f-66fe-4bfe-ae99-d164cf5169a9"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_33"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <use
@@ -252,23 +252,23 @@ transform="
     scale(1.0 1.0)
     rotate(0)
 "
-id="205ab176-5d50-4abc-8a0c-33d1adfd5208"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_34"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"
-    xlink:href="#4c848f65-afd4-4ca0-983b-cd964682b5f8"
-    href="#4c848f65-afd4-4ca0-983b-cd964682b5f8"
+    xlink:href="#d8267794-597d-41c7-81e7-edff6fbc63b9_9"
+    href="#d8267794-597d-41c7-81e7-edff6fbc63b9_9"
     
 />
 
 </g>
 </g><g 
-    clip-path="url(#dba5ae35-ed9b-4231-95bb-67051a35ce0e)"
+    clip-path="url(#d8267794-597d-41c7-81e7-edff6fbc63b9_21)"
 transform="
     translate(837 150) 
     scale(1 1)
     rotate(0)
 "
-id="924c2c97-1366-4a30-8591-253b1ed788e4"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_18"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -277,7 +277,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="001594dc-e4b6-49be-88d5-aefbc3fcf22c"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_35"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <use
@@ -286,23 +286,23 @@ transform="
     scale(1.0 1.0)
     rotate(0)
 "
-id="b9ed3f70-0a0b-41ad-9880-2fe3edcb2d6d"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_36"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"
-    xlink:href="#4c848f65-afd4-4ca0-983b-cd964682b5f8"
-    href="#4c848f65-afd4-4ca0-983b-cd964682b5f8"
+    xlink:href="#d8267794-597d-41c7-81e7-edff6fbc63b9_9"
+    href="#d8267794-597d-41c7-81e7-edff6fbc63b9_9"
     
 />
 
 </g>
 </g><g 
-    clip-path="url(#3b6f2560-772a-4f2f-8cb8-f58084869fa0)"
+    clip-path="url(#d8267794-597d-41c7-81e7-edff6fbc63b9_25)"
 transform="
     translate(874 300) 
     scale(1 1)
     rotate(0)
 "
-id="e181662a-4218-4e14-83fb-25dab34a4f24"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_24"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -311,7 +311,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="bbf3cda5-5f5f-44e0-83ce-9c09e6e77d26"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_37"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <use
@@ -320,11 +320,11 @@ transform="
     scale(1.0 1.0)
     rotate(0)
 "
-id="6bd6adb5-b104-47f1-8194-397dd4b2ef22"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_38"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"
-    xlink:href="#4c848f65-afd4-4ca0-983b-cd964682b5f8"
-    href="#4c848f65-afd4-4ca0-983b-cd964682b5f8"
+    xlink:href="#d8267794-597d-41c7-81e7-edff6fbc63b9_9"
+    href="#d8267794-597d-41c7-81e7-edff6fbc63b9_9"
     
 />
 
@@ -337,7 +337,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="a08aeba0-4203-4bd8-98da-7039f62203d8"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_7"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -348,7 +348,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="aab8e0dc-14ea-4b05-950c-219659340de6"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_40"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1196" 
@@ -361,7 +361,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="99994de1-1cf0-47e8-8353-a7372a2b0c54"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_39"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1195.0" 
@@ -373,7 +373,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="70d46996-e216-42ea-a6be-02a51a3b2c94"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_26"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
@@ -384,7 +384,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="c538a651-ef21-4215-8ffd-31c422ff8ed9"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_41"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     <tspan class="h1">Pinout: ClipPath examples</tspan>
@@ -396,7 +396,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="6f405bec-5c46-49a7-b778-f64ec8c7acf4"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_42"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     pinout provides an easy method to create pinout diagrams
@@ -408,7 +408,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="c88d1b2f-831f-48e9-9c51-d6844b72ce8e"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_43"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     for electronic hardware.
@@ -420,7 +420,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="1431971a-c4c4-4463-b8f2-4441d085e08f"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_44"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     
@@ -432,7 +432,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="d9e54f67-4198-4932-9492-e8981d051b61"
+id="d8267794-597d-41c7-81e7-edff6fbc63b9_45"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     <tspan class="strong">pinout.readthedocs.io</tspan>

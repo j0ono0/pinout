@@ -12,13 +12,14 @@
 
 <defs>
     <image 
-    id="0a7ffc68-e3b2-43bd-b81b-5a184753f08f"
- 
-    transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    "
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_3"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     href="hardware_18pin.png" 
     xlink:href="hardware_18pin.png" 
     height="300" 
@@ -30,323 +31,204 @@
         scale(1 1)
         rotate(0)
     "
-    id="616010dc-efe0-44b2-b1d1-9a640346ee34"
+    id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_23"
     clipPathUnits="userSpaceOnUse"
 >
     <rect
-    id="4bc06b56-c49d-4b7c-b318-f1f74bc6e56e"
- 
-     transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    " 
+
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_22"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="80" 
     height="220" 
-    shape-rendering="geometricPrecision"
 />
 </clipPath>
 </defs>
 
 
-    <style type="text/css" media="screen">  
-    <![CDATA[  
-    text {
-    font-family: Verdana, Georgia, sans-serif;
-    font-size: 14px;
-    font-weight: normal;
-}
-
-.pinlabel__leader{
-    stroke-width: 2;
-    fill: none;
-}
-
-.pinlabel__text{
-    dominant-baseline: central;
-    fill: #fff;
-    font-weight: bold;
-    stroke-width: 0;
-    text-anchor: middle;
-}
-
-.pwr .pinlabel__body{
-    fill: rgb(173, 0, 0);
-}
-.pwr .pinlabel__leader{
-    stroke: rgb(173, 0, 0);
-}
-.pwr .swatch__body {
-    fill: rgb(173, 0, 0);
-}
-.i2c .pinlabel__body{
-    fill: rgb(182, 69, 176);
-}
-.i2c .pinlabel__leader{
-    stroke: rgb(182, 69, 176);
-}
-.i2c .swatch__body {
-    fill: rgb(182, 69, 176);
-}
-.gpio .pinlabel__body{
-    fill: rgb(160, 133, 26);
-}
-.gpio .pinlabel__leader{
-    stroke: rgb(160, 133, 26);
-}
-.gpio .swatch__body {
-    fill: rgb(160, 133, 26);
-}
-.analog .pinlabel__body{
-    fill: rgb(32, 150, 165);
-}
-.analog .pinlabel__leader{
-    stroke: rgb(32, 150, 165);
-}
-.analog .swatch__body {
-    fill: rgb(32, 150, 165);
-}
-.gnd .pinlabel__body{
-    fill: rgb(0, 0, 0);
-}
-.gnd .pinlabel__leader{
-    stroke: rgb(0, 0, 0);
-}
-.gnd .swatch__body {
-    fill: rgb(0, 0, 0);
-}
-.pwm .pinlabel__body{
-    fill: rgb(151, 76, 23);
-}
-.pwm .pinlabel__leader{
-    stroke: rgb(151, 76, 23);
-}
-.pwm .swatch__body {
-    fill: rgb(151, 76, 23);
-}
-.touch .pinlabel__body{
-    fill: rgb(230, 87, 10);
-}
-.touch .pinlabel__leader{
-    stroke: rgb(230, 87, 10);
-}
-.touch .swatch__body {
-    fill: rgb(230, 87, 10);
-}
-
-.panel__inner {
-    fill: #fff;
-}
-.panel__outer {
-    fill: #333;
-}
-
-.legendentry text {
-    dominant-baseline: central;
-}
-
-.h1 {
-    font-size: 26px;
-    font-weight: bold;
-    font-style: italic;
-}
-.italic{
-    font-style: italic;
-}
-.strong{
-    font-weight: bold;
-}
-
-.panel--info .panel__inner{
-    
-    fill: #f4f4f4;
-}
-
-
-.annotation__body {
-    fill: rgb(253, 203, 36);
-}
-.annotation__text text {
-    dominant-baseline: central;
-    font-size: 18px;
-    font-weight: bold;
-    text-anchor: middle;
-}
-.annotation__target {
-    fill: none;
-    stroke: rgb(253, 203, 36);
-    stroke-width: 4px;
-}
-.annotation__leaderline {
-    stroke: rgb(253, 203, 36);
-    stroke-width: 4px;
-    fill: none;
-}
-.section_title{
-    font-size: 20px;
-    font-weight: bold;
-}
-    ]]>  
-</style>
+    <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="styles.css" xlink:href="styles.css"  type="text/css"/>
 <g 
         class=" panel"
-    transform="
-        translate(2 2) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(2 2) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_4"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="5483e5c3-0cb2-4432-accf-e70bf82523ac"
- 
+
         class="panel__outer"
- 
-     transform="
-        translate(-2 -2) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(-2 -2) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_120"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="1024" 
     height="576" 
-    shape-rendering="geometricPrecision"
 /><rect
-    id="97673498-5f6b-4f56-b593-982cf6e208d3"
- 
+
         class="panel__inner"
- 
-     transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_119"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="1020" 
     height="572" 
-    shape-rendering="geometricPrecision"
 /><g 
         class="panel--main panel"
-    transform="
-        translate(2 2) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(2 2) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_6"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="8b1aefd0-9a82-405c-bffa-a24af30d744f"
- 
+
         class="panel__outer"
- 
-     transform="
-        translate(-2 -2) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(-2 -2) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_122"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="340" 
     height="440" 
-    shape-rendering="geometricPrecision"
 /><rect
-    id="bcfa7080-577a-4459-8117-ff6fa7aca060"
- 
+
         class="panel__inner"
- 
-     transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_121"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="336" 
     height="436" 
-    shape-rendering="geometricPrecision"
 /><g 
-    transform="
-        translate(170 20) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(170 20) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_12"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
-    transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_123"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <use
-    id="4c59d2f4-cdde-49d6-bc39-fdf81c1dd30c"
- 
-    
-     transform="
-        translate(-110.0 0.0) 
-        scale(1.0 1.0)
-        rotate(0)
-    " 
-
-    href="#0a7ffc68-e3b2-43bd-b81b-5a184753f08f"
+transform="
+    translate(-110.0 0.0) 
+    scale(1.0 1.0)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_124"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"
+    xlink:href="#dcc4b39d-5c65-4e6d-a648-33e14ed2e113_3"
+    href="#dcc4b39d-5c65-4e6d-a648-33e14ed2e113_3"
     
 />
 
 </g><g 
         class=" annotation"
-    transform="
-        translate(0.0 268.0) 
-        scale(-1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0.0 268.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_14"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <path 
-    class="annotation__leaderline" 
-    transform="
-        scale(1 1) 
-        translate(0 0) 
-        rotate(0)
-    " 
+
+        class="annotation__leaderline"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_15"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     d="M 0.0 40.0 L 0.0 51.666666666666664 A 33.333333333333336 33.333333333333336 0 0 0 33.333333333333336 85.0 L 20.0 85.0" 
-    shape-rendering="geometricPrecision"
 /><rect
-    id="b693d271-9d6d-447c-8366-593eecac3cc0"
- 
+
         class="annotation__target"
- 
-     transform="
-        translate(-120 -40) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(-120 -40) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_17"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="240" 
     height="80" 
-    shape-rendering="geometricPrecision"
     rx="10" 
     ry="10" 
 /><rect
-    id="74039849-004d-420b-87b9-9cffe0dcaff7"
- 
+
         class="annotation__body"
- 
-     transform="
-        translate(20 60) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(20 60) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_16"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="120" 
     height="50" 
-    shape-rendering="geometricPrecision"
     rx="25" 
     ry="25" 
 /><g 
         class="annotation__text textblock"
-    transform="
-        translate(80.0 85.0) 
-        scale(-1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(80.0 85.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_18"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <text
-    class="textblock"
-    transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+        class="textblock"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_125"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     Section A
 </text>
 </g>
@@ -354,634 +236,756 @@
 </g>
 </g><g 
         class="panel--detail panel"
-    transform="
-        translate(342 2) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(342 2) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_8"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="8c184562-337e-48eb-921b-c93df1db4900"
- 
+
         class="panel__outer"
- 
-     transform="
-        translate(-2 -2) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(-2 -2) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_127"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="680" 
     height="440" 
-    shape-rendering="geometricPrecision"
 /><rect
-    id="8efd871e-452a-4483-9f8c-fb7e4c66126c"
- 
+
         class="panel__inner"
- 
-     transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_126"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="676" 
     height="436" 
-    shape-rendering="geometricPrecision"
 /><g 
         class=" textblock"
-    transform="
-        translate(20 40) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(20 40) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_19"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <text
-    class="textblock"
-    transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+        class="textblock"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_128"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     <tspan class='section_title'>Section A</tspan>
 </text><text
-    class="textblock"
-    transform="
-        translate(0 22) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+        class="textblock"
+transform="
+    translate(0 22) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_129"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     Detail of double row header.
 </text>
 </g><g 
         class="graphic-detail"
-    transform="
-        translate(263.5 108.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(263.5 108.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_20"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
-        clip-path="url(#616010dc-efe0-44b2-b1d1-9a640346ee34)"
-    transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+    clip-path="url(#dcc4b39d-5c65-4e6d-a648-33e14ed2e113_23)"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_130"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <use
-    id="5884101a-13ff-4aa9-95c4-bbdf5326ab19"
- 
-    
-     transform="
-        translate(300.0 0.0) 
-        scale(1.0 1.0)
-        rotate(90)
-    " 
-
-    href="#0a7ffc68-e3b2-43bd-b81b-5a184753f08f"
+transform="
+    translate(300.0 0.0) 
+    scale(1.0 1.0)
+    rotate(90)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_131"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"
+    xlink:href="#dcc4b39d-5c65-4e6d-a648-33e14ed2e113_3"
+    href="#dcc4b39d-5c65-4e6d-a648-33e14ed2e113_3"
     
 />
 
 </g><g 
-    transform="
-        translate(47.0 65.00000000000001) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(47.0 65.00000000000001) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_24"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
-    transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_25"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
         class=" pinlabel analog"
-    transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_26"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="23374f16-d1d4-4026-b6f7-b2de5e3a19bb"
- 
+
         class=" pinlabel__body"
- 
-     transform="
-        translate(66 -13.0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(66 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_134"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="80" 
     height="26" 
-    shape-rendering="geometricPrecision"
     rx="3" 
     ry="3" 
 /><text
-    class="pinlabel__text"
-    transform="
-        translate(106.0 0) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+        class="pinlabel__text"
+transform="
+    translate(106.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_132"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     A2
 </text><path 
-    class="pinlabel__leader" 
-    transform="
-        scale(1 1) 
-        translate(0 0) 
-        rotate(0)
-    " 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_28"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
-    shape-rendering="geometricPrecision"
 />
 </g><g 
         class=" pinlabel touch"
-    transform="
-        translate(146.0 0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(146.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_30"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="46116be6-d596-4a9d-b354-b6353603a282"
- 
+
         class=" pinlabel__body"
- 
-     transform="
-        translate(6 -13.0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_137"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="80" 
     height="26" 
-    shape-rendering="geometricPrecision"
     rx="3" 
     ry="3" 
 /><text
-    class="pinlabel__text"
-    transform="
-        translate(46.0 0) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+        class="pinlabel__text"
+transform="
+    translate(46.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_135"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     TOUCH
 </text><path 
-    class=" pinlabel__leader" 
-    transform="
-        scale(1 1) 
-        translate(0 0) 
-        rotate(0)
-    " 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_34"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
-    shape-rendering="geometricPrecision"
 />
 </g>
 </g><g 
-    transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_35"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
         class=" pinlabel pwm"
-    transform="
-        translate(0.0 30.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0.0 30.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_36"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="8d84c7b8-7d6e-484e-9c0e-7805483bcb58"
- 
+
         class=" pinlabel__body"
- 
-     transform="
-        translate(66.0 -13.0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(66.0 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_140"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="80" 
     height="26" 
-    shape-rendering="geometricPrecision"
     rx="3" 
     ry="3" 
 /><text
-    class="pinlabel__text"
-    transform="
-        translate(106.0 0.0) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+        class="pinlabel__text"
+transform="
+    translate(106.0 0.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_138"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     PWM
 </text><path 
-    class="pinlabel__leader" 
-    transform="
-        scale(1 1) 
-        translate(0 0) 
-        rotate(0)
-    " 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_38"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
-    shape-rendering="geometricPrecision"
 />
 </g>
 </g><g 
-    transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_40"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
         class=" pinlabel gpio"
-    transform="
-        translate(0.0 60.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0.0 60.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_41"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="8e647a66-7e0e-437e-b604-ca7f166d7281"
- 
+
         class=" pinlabel__body"
- 
-     transform="
-        translate(66.0 -13.0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(66.0 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_143"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="80" 
     height="26" 
-    shape-rendering="geometricPrecision"
     rx="3" 
     ry="3" 
 /><text
-    class="pinlabel__text"
-    transform="
-        translate(106.0 0.0) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+        class="pinlabel__text"
+transform="
+    translate(106.0 0.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_141"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     6
 </text><path 
-    class="pinlabel__leader" 
-    transform="
-        scale(1 1) 
-        translate(0 0) 
-        rotate(0)
-    " 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_43"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
-    shape-rendering="geometricPrecision"
 />
 </g><g 
         class=" pinlabel i2c"
-    transform="
-        translate(146.0 60.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(146.0 60.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_45"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="712926d7-b857-4ede-9ea3-3877f98f4d1b"
- 
+
         class=" pinlabel__body"
- 
-     transform="
-        translate(6 -13.0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_146"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="80" 
     height="26" 
-    shape-rendering="geometricPrecision"
     rx="3" 
     ry="3" 
 /><text
-    class="pinlabel__text"
-    transform="
-        translate(46.0 0) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+        class="pinlabel__text"
+transform="
+    translate(46.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_144"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     SDA1
 </text><path 
-    class=" pinlabel__leader" 
-    transform="
-        scale(1 1) 
-        translate(0 0) 
-        rotate(0)
-    " 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_49"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
-    shape-rendering="geometricPrecision"
 />
 </g>
 </g><g 
-    transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_50"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
         class=" pinlabel analog"
-    transform="
-        translate(0.0 90.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0.0 90.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_51"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="6b7a8a71-83ec-410f-9c30-6da18a46aaef"
- 
+
         class=" pinlabel__body"
- 
-     transform="
-        translate(66.0 -13.0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(66.0 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_149"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="80" 
     height="26" 
-    shape-rendering="geometricPrecision"
     rx="3" 
     ry="3" 
 /><text
-    class="pinlabel__text"
-    transform="
-        translate(106.0 0.0) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+        class="pinlabel__text"
+transform="
+    translate(106.0 0.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_147"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     A5
 </text><path 
-    class="pinlabel__leader" 
-    transform="
-        scale(1 1) 
-        translate(0 0) 
-        rotate(0)
-    " 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_53"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
-    shape-rendering="geometricPrecision"
 />
 </g><g 
         class=" pinlabel i2c"
-    transform="
-        translate(146.0 90.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(146.0 90.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_55"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="8226764b-f33f-48c7-aadc-a5ef3e4e45ee"
- 
+
         class=" pinlabel__body"
- 
-     transform="
-        translate(6 -13.0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_152"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="80" 
     height="26" 
-    shape-rendering="geometricPrecision"
     rx="3" 
     ry="3" 
 /><text
-    class="pinlabel__text"
-    transform="
-        translate(46.0 0) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+        class="pinlabel__text"
+transform="
+    translate(46.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_150"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     SCL1
 </text><path 
-    class=" pinlabel__leader" 
-    transform="
-        scale(1 1) 
-        translate(0 0) 
-        rotate(0)
-    " 
+
+        class=" pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_59"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
-    shape-rendering="geometricPrecision"
 />
 </g>
 </g>
 </g><g 
-    transform="
-        translate(16.0 65.00000000000001) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(16.0 65.00000000000001) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_60"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
-    transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_61"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
         class=" pinlabel pwr"
-    transform="
-        translate(0 0) 
-        scale(-1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_62"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="b4616e26-c617-4fbd-a5a7-fbadb26ac682"
- 
+
         class=" pinlabel__body"
- 
-     transform="
-        translate(66 -13.0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(66 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_155"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="80" 
     height="26" 
-    shape-rendering="geometricPrecision"
     rx="3" 
     ry="3" 
 /><text
-    class="pinlabel__text"
-    transform="
-        translate(106.0 0) 
-        scale(-1 1)
-        rotate(0)
-    "  
->
+
+        class="pinlabel__text"
+transform="
+    translate(106.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_153"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     VBAT
 </text><path 
-    class="pinlabel__leader" 
-    transform="
-        scale(1 1) 
-        translate(0 0) 
-        rotate(0)
-    " 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_64"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
-    shape-rendering="geometricPrecision"
 />
 </g>
 </g><g 
-    transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_66"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
         class=" pinlabel pwr"
-    transform="
-        translate(0.0 30.0) 
-        scale(-1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0.0 30.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_67"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="5d873a0e-3f69-4ed8-b36a-d226e613945e"
- 
+
         class=" pinlabel__body"
- 
-     transform="
-        translate(66.0 -13.0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(66.0 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_158"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="80" 
     height="26" 
-    shape-rendering="geometricPrecision"
     rx="3" 
     ry="3" 
 /><text
-    class="pinlabel__text"
-    transform="
-        translate(106.0 0.0) 
-        scale(-1 1)
-        rotate(0)
-    "  
->
+
+        class="pinlabel__text"
+transform="
+    translate(106.0 0.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_156"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     3.3V
 </text><path 
-    class="pinlabel__leader" 
-    transform="
-        scale(1 1) 
-        translate(0 0) 
-        rotate(0)
-    " 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_69"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
-    shape-rendering="geometricPrecision"
 />
 </g>
 </g><g 
-    transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_71"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
         class=" pinlabel gnd"
-    transform="
-        translate(0.0 60.0) 
-        scale(-1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0.0 60.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_72"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="1812e17c-1e90-4fea-a037-b7be8087cb8d"
- 
+
         class=" pinlabel__body"
- 
-     transform="
-        translate(66.0 -13.0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(66.0 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_161"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="80" 
     height="26" 
-    shape-rendering="geometricPrecision"
     rx="3" 
     ry="3" 
 /><text
-    class="pinlabel__text"
-    transform="
-        translate(106.0 0.0) 
-        scale(-1 1)
-        rotate(0)
-    "  
->
+
+        class="pinlabel__text"
+transform="
+    translate(106.0 0.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_159"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     GND
 </text><path 
-    class="pinlabel__leader" 
-    transform="
-        scale(1 1) 
-        translate(0 0) 
-        rotate(0)
-    " 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_74"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
-    shape-rendering="geometricPrecision"
 />
 </g>
 </g><g 
-    transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_76"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
         class=" pinlabel pwr"
-    transform="
-        translate(0.0 90.0) 
-        scale(-1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0.0 90.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_77"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="1d38cd11-b7db-4b59-ba65-6f8baa837b8e"
- 
+
         class=" pinlabel__body"
- 
-     transform="
-        translate(66.0 -13.0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(66.0 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_164"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="80" 
     height="26" 
-    shape-rendering="geometricPrecision"
     rx="3" 
     ry="3" 
 /><text
-    class="pinlabel__text"
-    transform="
-        translate(106.0 0.0) 
-        scale(-1 1)
-        rotate(0)
-    "  
->
+
+        class="pinlabel__text"
+transform="
+    translate(106.0 0.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_162"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     AREF
 </text><path 
-    class="pinlabel__leader" 
-    transform="
-        scale(1 1) 
-        translate(0 0) 
-        rotate(0)
-    " 
+
+        class="pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_79"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
-    shape-rendering="geometricPrecision"
 />
 </g>
 </g>
@@ -989,371 +993,440 @@
 </g>
 </g><g 
         class="panel--info panel"
-    transform="
-        translate(2 442) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(2 442) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_10"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="95150be5-091c-454c-903a-65b0c9903a3e"
- 
+
         class="panel__outer"
- 
-     transform="
-        translate(-2 -2) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(-2 -2) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_166"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="1020" 
     height="132" 
-    shape-rendering="geometricPrecision"
 /><rect
-    id="939db360-d2a5-4750-a301-c66854ecbd19"
- 
+
         class="panel__inner"
- 
-     transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_165"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="1016" 
     height="128" 
-    shape-rendering="geometricPrecision"
 /><g 
         class="panel title_block textblock"
-    transform="
-        translate(20 30) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(20 30) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_81"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <text
-    class="textblock"
-    transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+        class="textblock"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_167"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     <tspan class='h1'>Pinout sample: Section pull-out</tspan>
 </text>
 </g><g 
         class="panel text_block textblock"
-    transform="
-        translate(20 60) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(20 60) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_82"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <text
-    class="textblock"
-    transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+        class="textblock"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_168"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     Pinout is a Python tool kit to assist with documentation of electronic hardware.
 </text><text
-    class="textblock"
-    transform="
-        translate(0 18) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+        class="textblock"
+transform="
+    translate(0 18) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_169"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     This sample demonstrates documenting a section of hardware.
 </text><text
-    class="textblock"
-    transform="
-        translate(0 36) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+        class="textblock"
+transform="
+    translate(0 36) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_170"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     More info at <tspan class='italic strong'>pinout.readthedocs.io</tspan>
 </text>
 </g><g 
         class=" legend"
-    transform="
-        translate(640 8) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(640 8) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_83"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
         class="analog legendentry"
-    transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_84"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
         class=" swatch"
-    transform="
-        translate(4.0 14.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_85"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="bd0bdb92-6b1b-4416-831d-b9d48a191d3d"
- 
+
         class=" swatch__body"
- 
-     transform="
-        translate(0 -10.0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_86"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="20" 
     height="20" 
-    shape-rendering="geometricPrecision"
 />
 </g><text
-    transform="
-        translate(28.0 14.0) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_88"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     Analog
 </text>
 </g><g 
         class="i2c legendentry"
-    transform="
-        translate(0 28.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0 28.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_89"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
         class=" swatch"
-    transform="
-        translate(4.0 14.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_90"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="b0b81fb1-d700-4d6b-9872-f45bbb210660"
- 
+
         class=" swatch__body"
- 
-     transform="
-        translate(0 -10.0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_91"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="20" 
     height="20" 
-    shape-rendering="geometricPrecision"
 />
 </g><text
-    transform="
-        translate(28.0 14.0) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_93"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     I2C
 </text>
 </g><g 
         class="gpio legendentry"
-    transform="
-        translate(0 56.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0 56.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_94"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
         class=" swatch"
-    transform="
-        translate(4.0 14.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_95"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="77b55634-4a11-41a2-8ff8-85b9a5c090cb"
- 
+
         class=" swatch__body"
- 
-     transform="
-        translate(0 -10.0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_96"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="20" 
     height="20" 
-    shape-rendering="geometricPrecision"
 />
 </g><text
-    transform="
-        translate(28.0 14.0) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_98"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     GPIO
 </text>
 </g><g 
         class="touch legendentry"
-    transform="
-        translate(0 84.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(0 84.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_99"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
         class=" swatch"
-    transform="
-        translate(4.0 14.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_100"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="29e22db5-78e8-4ed7-8bd8-69c97df1eb16"
- 
+
         class=" swatch__body"
- 
-     transform="
-        translate(0 -10.0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_101"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="20" 
     height="20" 
-    shape-rendering="geometricPrecision"
 />
 </g><text
-    transform="
-        translate(28.0 14.0) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_103"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     Touch
 </text>
 </g><g 
         class="pwm legendentry"
-    transform="
-        translate(159.0 0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(159.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_104"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
         class=" swatch"
-    transform="
-        translate(4.0 14.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_105"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="fff23c61-35bd-48a9-8e04-525aa9912e0b"
- 
+
         class=" swatch__body"
- 
-     transform="
-        translate(0 -10.0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_106"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="20" 
     height="20" 
-    shape-rendering="geometricPrecision"
 />
 </g><text
-    transform="
-        translate(28.0 14.0) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_108"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     PWM
 </text>
 </g><g 
         class="pwr legendentry"
-    transform="
-        translate(159.0 28.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(159.0 28.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_109"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
         class=" swatch"
-    transform="
-        translate(4.0 14.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_110"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="053a7213-1447-4b1c-afac-d2bf1aa0a9dc"
- 
+
         class=" swatch__body"
- 
-     transform="
-        translate(0 -10.0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_111"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="20" 
     height="20" 
-    shape-rendering="geometricPrecision"
 />
 </g><text
-    transform="
-        translate(28.0 14.0) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_113"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     Power
 </text>
 </g><g 
         class="gnd legendentry"
-    transform="
-        translate(159.0 56.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(159.0 56.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_114"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <g 
         class=" swatch"
-    transform="
-        translate(4.0 14.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_115"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="656112a6-ae9c-426b-8a38-b8386e300385"
- 
+
         class=" swatch__body"
- 
-     transform="
-        translate(0 -10.0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_116"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="20" 
     height="20" 
-    shape-rendering="geometricPrecision"
 />
 </g><text
-    transform="
-        translate(28.0 14.0) 
-        scale(1 1)
-        rotate(0)
-    "  
->
+
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="dcc4b39d-5c65-4e6d-a648-33e14ed2e113_118"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
     Ground
 </text>
 </g>

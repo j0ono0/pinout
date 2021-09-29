@@ -1,6 +1,10 @@
 # Teensy 4.0 Pinout
 # https://www.pjrc.com/store/teensy40.html
 
+
+# Export final SVG diagram from command-line
+# py -m pinout.manager -e pinout_diagram.py teensy_4.0_front_pinout_diagram.svg
+
 # NOTE: this sample requires the python package libsass.
 # install via pip:
 # >>> pip install libsass
@@ -257,7 +261,3 @@ titlebar.add(
         tag="p",
     )
 )
-
-
-# Export final SVG diagram from command-line
-# py -m pinout.manager -e pinout_diagram.py teensy_4.0_front_pinout_diagram.svg

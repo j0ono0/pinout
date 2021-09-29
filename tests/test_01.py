@@ -35,6 +35,9 @@ def mk_test_file(src, dest):
         # sub hrefs
         id = re.compile(r"(?<=href=\"#).+(?=\")")
         data = re.sub(id, re_sub_ids, data)
+        # sub clip-path urls
+        id = re.compile(r"(?<=clip-path=\"url\(#).+(?=\")")
+        data = re.sub(id, re_sub_ids, data)
         # write modified file data to testfile
         dest.write_text(data)
     return dest
@@ -43,17 +46,18 @@ def mk_test_file(src, dest):
 @pytest.mark.parametrize(
     "module_path, ref_path",
     [
-        ("resources.diagram_image", "./resources/diagram_image.svg"),
-        ("resources.diagram_export", "resources/diagram_export.svg"),
-        ("..samples.clip_path.diagram", "../samples/clip_path/diagram.svg"),
+        ("resources/diagram_image.py", "./resources/diagram_image.svg"),
+        ("resources/diagram_export.py", "resources/diagram_export.svg"),
+        ("../samples/clip_path/pinout_diagram.py", "../samples/clip_path/diagram.svg"),
     ],
 )
 def test_output_against_reference(tmp_path, module_path, ref_path):
+    module_path = Path(module_path)
     # Export a temp file in same location as reference:
     # Required for relative links to be identical.
     ref_path = Path(ref_path)
 
-    tempsvg = ref_path.parent / "temp_" + (str(uuid.uuid4()) + ".svg")
+    tempsvg = ref_path.parent / f"temp_{str(uuid.uuid4())}.svg"
     manager.export_diagram(
         module_path,
         tempsvg,

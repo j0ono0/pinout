@@ -10,315 +10,307 @@
     class="panel_layout"
 >
 
-    <style type="text/css" media="screen">  
-    <![CDATA[  
-    .panel--banner .panel__inner,
-.panel--footer .panel__inner{
-    fill: #333;
-}
-
-.panel--detail .panel__inner{
-    fill: #ededed;
-}
-    ]]>  
-</style>
-<style type="text/css" media="screen">  
-    <![CDATA[  
+<defs>
     
-text {
-    font-family: Verdana, Georgia, sans-serif;
-    font-size: 14px;
-    font-weight: normal;
-}
-
-.panel__inner {
-    fill: #fff;
-}
-.panel__outer {
-    fill: #333;
-}
+</defs>
 
 
-    ]]>  
-</style>
+    <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="..\styles.css" xlink:href="..\styles.css"  type="text/css"/>
+<link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="..\auto_styles.css" xlink:href="..\auto_styles.css"  type="text/css"/>
 <g 
         class=" panel"
-    transform="
-        translate(2 2) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(2 2) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_3"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="947c2925-a255-4d0c-b8ca-325818f8d88d"
- 
+
         class="panel__outer"
- 
-     transform="
-        translate(-2 -2) 
-        scale(1 1)
-        rotate(0)
-    " 
-    width="1200.0" 
-    height="675.0" 
-    shape-rendering="geometricPrecision"
+transform="
+    translate(-2 -2) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_20"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1200" 
+    height="675" 
 /><rect
-    id="bfcfd097-8c6d-4eff-aff1-b2e3a1c97623"
- 
+
         class="panel__inner"
- 
-     transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    " 
-    width="1196.0" 
-    height="671.0" 
-    shape-rendering="geometricPrecision"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_19"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1196" 
+    height="671" 
 /><g 
         class="panel--banner panel"
-    transform="
-        translate(2 2) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(2 2) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_5"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="cc66c3e5-af58-47df-8633-3cfedcb12dc6"
- 
+
         class="panel__outer"
- 
-     transform="
-        translate(-2 -2) 
-        scale(1 1)
-        rotate(0)
-    " 
-    width="1196.0" 
-    height="50.0" 
-    shape-rendering="geometricPrecision"
+transform="
+    translate(-2 -2) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_22"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1196" 
+    height="50" 
 /><rect
-    id="f3feee33-bf91-4619-98e5-76650bbce666"
- 
+
         class="panel__inner"
- 
-     transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    " 
-    width="1192.0" 
-    height="46.0" 
-    shape-rendering="geometricPrecision"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_21"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1192" 
+    height="46" 
 />
 </g><g 
         class="panel--main panel"
-    transform="
-        translate(2 52.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(2 52) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_7"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="5e57c33a-273b-4f32-8a7e-b43b51cca50e"
- 
+
         class="panel__outer"
- 
-     transform="
-        translate(-2 -2) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(-2 -2) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_24"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="797.3333333333334" 
-    height="500.0" 
-    shape-rendering="geometricPrecision"
+    height="500" 
 /><rect
-    id="a0c790f7-8353-47e1-aa9c-dda1bedce9fe"
- 
+
         class="panel__inner"
- 
-     transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_23"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="793.3333333333334" 
-    height="496.0" 
-    shape-rendering="geometricPrecision"
+    height="496" 
 />
 </g><g 
         class="panel--detail panel"
-    transform="
-        translate(797.3333333333334 50.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(797.3333333333334 50) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_9"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="dbb6c491-9f36-4752-a540-9aa5447e9d8b"
- 
+
         class="panel__outer"
- 
-     transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_26"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
-    height="500.0" 
-    shape-rendering="geometricPrecision"
+    height="500" 
 /><rect
-    id="f5993a3b-5855-4041-921c-4bd17ad33487"
- 
+
         class="panel__inner"
- 
-     transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_25"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
-    height="500.0" 
-    shape-rendering="geometricPrecision"
+    height="500" 
 /><g 
         class="panel--detail panel"
-    transform="
-        translate(2 2) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(2 2) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_11"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="b6ac2a0d-bf03-40fe-877d-487870719e15"
- 
+
         class="panel__outer"
- 
-     transform="
-        translate(-2 -2) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(-2 -2) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_28"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
     height="166.66666666666666" 
-    shape-rendering="geometricPrecision"
 /><rect
-    id="39b64146-ae57-4b22-8ee1-b7e3b695a0f9"
- 
+
         class="panel__inner"
- 
-     transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_27"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="394.66666666666663" 
     height="162.66666666666666" 
-    shape-rendering="geometricPrecision"
 />
 </g><g 
         class="panel--detail panel"
-    transform="
-        translate(2 168.66666666666666) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(2 168.66666666666666) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_13"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="eec7a8aa-c063-4194-b087-4155fc6d01bf"
- 
+
         class="panel__outer"
- 
-     transform="
-        translate(-2 -2) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(-2 -2) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_30"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
     height="166.66666666666666" 
-    shape-rendering="geometricPrecision"
 /><rect
-    id="0047a822-e42d-4709-bce8-97207cc05cbc"
- 
+
         class="panel__inner"
- 
-     transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_29"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="394.66666666666663" 
     height="162.66666666666666" 
-    shape-rendering="geometricPrecision"
 />
 </g><g 
         class="panel--detail panel"
-    transform="
-        translate(2 335.3333333333333) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(2 335.3333333333333) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_15"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="2f2c465a-0c9b-4fc4-8a03-f7e3e6634187"
- 
+
         class="panel__outer"
- 
-     transform="
-        translate(-2 -2) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(-2 -2) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_32"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
-    height="166.66666666666669" 
-    shape-rendering="geometricPrecision"
+    height="166.66666666666666" 
 /><rect
-    id="33a33344-82f9-4abe-9548-05f4775d5837"
- 
+
         class="panel__inner"
- 
-     transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    " 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_31"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
     width="394.66666666666663" 
-    height="162.66666666666669" 
-    shape-rendering="geometricPrecision"
+    height="162.66666666666666" 
 />
 </g>
 </g><g 
         class="panel--footer panel"
-    transform="
-        translate(2 552.0) 
-        scale(1 1)
-        rotate(0)
-    "
->
+transform="
+    translate(2 552.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_17"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
         <rect
-    id="bea96b7c-1282-48db-b507-6498644862be"
- 
+
         class="panel__outer"
- 
-     transform="
-        translate(-2 -2) 
-        scale(1 1)
-        rotate(0)
-    " 
-    width="1196.0" 
+transform="
+    translate(-2 -2) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_34"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1196" 
     height="121.0" 
-    shape-rendering="geometricPrecision"
 /><rect
-    id="42c8a937-a8aa-4d96-804b-17eb11b0cd4f"
- 
+
         class="panel__inner"
- 
-     transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    " 
-    width="1192.0" 
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="3a357822-c1b4-4fc1-8582-0b31e372a80d_33"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="1192" 
     height="117.0" 
-    shape-rendering="geometricPrecision"
 />
 </g>
 </g>

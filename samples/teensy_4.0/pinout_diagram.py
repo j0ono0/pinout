@@ -260,4 +260,4 @@ titlebar.add(
 
 
 # Export final SVG diagram from command-line
-# py -m pinout.manager -e pinout_diagram teensy_4.0_front_pinout_diagram.svg
+# py -m pinout.manager -e pinout_diagram.py teensy_4.0_front_pinout_diagram.svg

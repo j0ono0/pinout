@@ -5,8 +5,8 @@ from pinout.components.text import TextBlock
 
 
 # Import data and custom config generator
-from . import data
-from ..common.preprocessor import pinlabel_preprocessor as prep
+from arduino.rp2040 import data
+from arduino.common.preprocessor import pinlabel_preprocessor as prep
 
 
 # Create a new diagram

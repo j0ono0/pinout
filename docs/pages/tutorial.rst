@@ -199,7 +199,7 @@ Export the diagram
 ------------------
 With all the required files present, the diagram can be exported via command-line::
 
-    py -m pinout.manager --export pinout_diagram diagram.svg
+    py -m pinout.manager --export pinout_diagram.py diagram.svg
 
     # expected output:
     # > 'diagram.svg' exported successfully.

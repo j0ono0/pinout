@@ -10,9 +10,9 @@ Consequently some aspects of the code deviate from the official docs:
 There are likely to be alternative ways to organise pinout to cater for mulitple related diagrams - use this example as a launching point for ideas rather than a best-practice example.
 
 Build Uno diagram, open command-line at the location of this file and enter:
-```py -m pinout.manager --export arduino.uno.arduino_uno pinout_arduino_uno_rev3.svg -o```
+```py -m pinout.manager --export arduino/uno/arduino_uno.py pinout_arduino_uno_rev3.svg -o```
 
 
 Build RP2024 diagram, open command-line at the location of this file and enter:
-```py -m pinout.manager --export arduino.rp2040.arduino_nano_rp2040_connect pinout_arduino_nano_rp2040_connect.svg -o```
+```py -m pinout.manager --export arduino/rp2040/arduino_nano_rp2040_connect.py pinout_arduino_nano_rp2040_connect.svg -o```
 

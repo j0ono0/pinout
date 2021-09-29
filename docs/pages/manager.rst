@@ -21,19 +21,18 @@ A fast way to get started exploring *pinout* is by trying out the quick_start di
 Export an SVG diagram
 ---------------------
 
-Once a diagram has been documented it can be exported to SVG format via the command-line. The following example assumes the diagram file is named *'pinout_diagram.py'*, the pinout.Diagram instance is called *'diagram'* and the destination file is named *'my_diagram.svg'*::
+Once a diagram has been documented it can be exported to SVG format via the command-line. Two arguments must be supplied. A path to the diagram python script and destination path including filename::
 
-    >>> py pinout.manager --export pinout_diagram my_diagram.svg
+    >>> py pinout.manager --export pinout_diagram.py my_diagram.svg
 
     # expected response:
     # 'my_diagram.svg' exported successfully.
 
     # Example where pinout.Diagram instance is named 'board_x_diagram'
-    >>> py pinout.manager --export pinout_diagram my_diagram.svg board_x_diagram
+    >>> py pinout.manager --export pinout_diagram.py my_diagram.svg board_x_diagram
 
 Details to note:
 
-- *pinout_diagram* does not have a *.py* suffix as it is referred to as a module name.
 - *--export* can be expressed as a single letter *-e*
 - An *--overwrite* (*-o*) can also be included to overwrite an existing file
 - if the instance name is not 'diagram' the alternative name can be added as as third argument
@@ -52,13 +51,13 @@ With the addition of CairoSVG *pinout* is able to export to PNG, PDF, and PS for
 Once these dependencies have been installed replace the filename suffix to export in the desired format::
 
     # Export as png
-    >>> py pinout.manager --export pinout_diagram my_diagram.png
+    >>> py pinout.manager --export pinout_diagram.py my_diagram.png
 
     # Export as pdf
-    >>> py pinout.manager --export pinout_diagram my_diagram.pdf
+    >>> py pinout.manager --export pinout_diagram.py my_diagram.pdf
     
     # Export as ps
-    >>> py pinout.manager --export pinout_diagram my_diagram.ps
+    >>> py pinout.manager --export pinout_diagram.py my_diagram.ps
 
 
 Generate a cascading stylesheet
@@ -66,7 +65,7 @@ Generate a cascading stylesheet
 
 Provided with a diagram file, the manager can extract components and tags, then export a stylesheet based on this data to assist with styling. The resulting stylesheet can then be further edited or a second stylesheet created to supplement the default styles::
 
-    >>> py pinout.manager --css pinout_diagram diagram_styles.css
+    >>> py pinout.manager --css pinout_diagram.py diagram_styles.css
 
     # expected response:
     # Stylesheet created: 'diagram_styles.css'

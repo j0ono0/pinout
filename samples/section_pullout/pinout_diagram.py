@@ -4,7 +4,7 @@
 # featuring a detail 'pull-out'.
 #
 # Export the diagram via commandline:
-# >>> py -m pinout.manager --export pinout_diagram diagram.svg
+# >>> py -m pinout.manager --export pinout_diagram.py diagram.svg
 #
 ###########################################
 

@@ -124,4 +124,4 @@ legend = diagram.panel_02.add(
 )
 
 # Export the diagram via commandline:
-# >>> py -m pinout.manager --export pinout_diagram diagram.svg
+# >>> py -m pinout.manager --export pinout_diagram.py diagram.svg

@@ -3,7 +3,7 @@
 # Example script demonstrating clipping paths
 #
 # Export the diagram via commandline:
-# >>> py -m pinout.manager -e pinout_diagram diagram.svg
+# >>> py -m pinout.manager -e pinout_diagram.py diagram.svg
 #
 ##############################################################
 

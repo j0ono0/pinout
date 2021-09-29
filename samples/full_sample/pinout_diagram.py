@@ -4,7 +4,7 @@
 # Includes examples of all basic features
 #
 # Export SVG diagram via command-line:
-# >>> py -m pinout.manager --export pinout_diagram pinout_diagram.svg -o
+# >>> py -m pinout.manager --export pinout_diagram.py pinout_diagram.svg -o
 #
 ###########################################
 from pinout import config

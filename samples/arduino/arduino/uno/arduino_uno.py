@@ -5,8 +5,8 @@ from pinout.components.text import TextBlock
 
 
 # Import data from another script
-from . import data
-from ..common.preprocessor import pinlabel_preprocessor as prep
+from arduino.uno import data
+from arduino.common.preprocessor import pinlabel_preprocessor as prep
 
 # Create a new digram
 diagram = Diagram(1200, 675, tag="arduino-rp2040-connect")

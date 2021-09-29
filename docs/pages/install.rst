@@ -49,7 +49,7 @@ This guide makes use of a hardware image, stylesheet, data file, and a Python sc
 
 Generating the final SVG graphic is done from the command line::
 
-    py -m pinout.manager --export pinout_diagram diagram.svg
+    py -m pinout.manager --export pinout_diagram.py diagram.svg
 
 If everything is correctly configured the newly created file 'diagram.svg' can be viewed in a browser and should look identical to the diagram pictured here.
 

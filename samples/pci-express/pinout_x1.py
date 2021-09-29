@@ -21,7 +21,7 @@ from pinout import config
 # >>> pip install openpyxl
 
 # Export:
-# >>> py -m pinout.manager -e pinout_x1 pinout_x1.svg
+# >>> py -m pinout.manager -e pinout_x1.py pinout_x1.svg
 
 import data
 

@@ -5,6 +5,7 @@ import importlib
 import os
 from pathlib import Path
 import pkg_resources
+import sys
 
 from pinout import core
 
@@ -76,12 +77,15 @@ def load_data(path):
 ################################################################
 
 
-def get_instance(module_name, instance_name="diagram"):
-    module = importlib.import_module(module_name)
-    return getattr(module, instance_name)
+def get_diagram_instance(src, instance_name="diagram"):
+    src = Path(src)
+    spec = importlib.util.spec_from_file_location(f"{src.stem}", src.name)
+    user_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(user_module)
+    return getattr(user_module, instance_name)
 
 
-def create_stylesheet(module_name, path, instance_name="diagram", overwrite=False):
+def create_stylesheet(src, path, instance_name="diagram", overwrite=False):
     """Create a stylesheet if none supplied."""
     from pinout import config, style_tools, templates
     from pinout.components.annotation import AnnotationLabel
@@ -90,7 +94,15 @@ def create_stylesheet(module_name, path, instance_name="diagram", overwrite=Fals
     from pinout.components.pinlabel import PinLabel
     from pinout.components.integrated_circuits import DIP, QFP
 
-    diagram = get_instance(module_name, instance_name)
+    # Save CWD and return to it and end of function
+    # incase multiple diagrams are being built from a script
+    init_dir = Path.cwd()
+
+    src = Path(src)
+    os.chdir(src.parent)
+    sys.path.append("")
+
+    diagram = get_diagram_instance(src, instance_name)
 
     # Extract css class tags from PinLabels
     lbls = diagram.find_children_by_type(diagram, PinLabel)
@@ -118,6 +130,9 @@ def create_stylesheet(module_name, path, instance_name="diagram", overwrite=Fals
     css_tplt = templates.get("stylesheet.j2")
     css = css_tplt.render(css=context)
 
+    # Return to folder script was launched from
+    os.chdir(init_dir)
+
     # Export stylesheet file
     if not overwrite:
         path = unique_filepath(path)
@@ -126,7 +141,7 @@ def create_stylesheet(module_name, path, instance_name="diagram", overwrite=Fals
 
     print(f"Stylesheet created: '{path}'")
     print(
-        f"To use insert the following line into '{module_name}.py' after '{instance_name}' is declared:"
+        f"To use insert the following line into '{src.name}' after '{instance_name}' is declared:"
     )
     print(f"{instance_name}.add_stylesheet('{path}')")
 
@@ -191,10 +206,11 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
     # Change CWD to folder 'src' module is located.
     # This allows pinout.manager to be invoked from any location
     # but keeps paths in the src script relative to that script.
-    path_to_src = Path.cwd().joinpath("/".join(src.split(".")[:-1]))
-    os.chdir(path_to_src)
+    src = Path(src)
+    os.chdir(src.parent)
+    sys.path.append("")
 
-    diagram = get_instance(src, instance_name)
+    diagram = diagram = get_diagram_instance(src, instance_name)
 
     # Prepare linked media depending on output
     if dest.suffix == ".svg":

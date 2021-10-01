@@ -157,10 +157,16 @@ SvgShape
         # Create an empty group
         grp = diagram.add(Group())
         print(f"group dimensions - width:{grp.width}, height:{grp.height}")
+        
+        # output:
+        # >>> group dimensions - width:0, height:0
 
         # Add an SvgShape instance to the group
         grp.add(SvgShape(x=0, y=0, width=50, height=50))
         print(f"group dimensions - width:{grp.width}, height:{grp.height}")
+        
+        # output:
+        # >>> group dimensions - width:50.0, height:50.0
 
         # The group now reports a size but does not render anything
 

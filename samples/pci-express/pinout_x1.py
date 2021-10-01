@@ -23,7 +23,7 @@ from pinout import config
 # Export:
 # >>> py -m pinout.manager -e pinout_x1.py pinout_x1.svg
 
-import data
+import pci_data as data
 
 # configuration customsations
 config.pinlabel["body"]["corner_radius"] = 0

@@ -17,7 +17,7 @@ from pinout.components.text import TextBlock
 from pinout.components import leaderline as lline
 
 
-import data
+import teensy_4_data as data
 
 # Override default config settings
 config.pinlabel["body"]["x"] = 0

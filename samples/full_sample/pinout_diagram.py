@@ -16,8 +16,7 @@ from pinout.components.text import TextBlock
 from pinout.components import leaderline as lline
 from pinout.components.legend import Legend
 
-
-import data
+import full_sample_data as data
 
 # Edit some component default config
 config.panel["inset"] = (2, 2, 2, 2)

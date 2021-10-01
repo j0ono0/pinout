@@ -2,11 +2,13 @@ from pinout.core import Group, Image, Raw, Rect
 from pinout.components.layout import Diagram, Panel
 from pinout.components import pinlabel, legend, leaderline
 from pinout.components.text import TextBlock
+import sys
 
-
-# Import data from another script
-from arduino.uno import data
-from arduino.common.preprocessor import pinlabel_preprocessor as prep
+# Import data and custom function
+# Slightly inelegant method to amend module search path
+sys.path.append("..")
+import uno_data as data
+from common.preprocessor import pinlabel_preprocessor as prep
 
 # Create a new digram
 diagram = Diagram(1200, 675, tag="arduino-rp2040-connect")

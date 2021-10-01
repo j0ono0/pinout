@@ -17,7 +17,7 @@ from pinout.components.legend import Legend
 
 
 # Import data for the diagram
-import data
+import section_pullout_data as data
 
 
 ##############################################################

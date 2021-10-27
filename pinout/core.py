@@ -512,8 +512,8 @@ class Image(SvgShape):
             # Extract dimensions from SVG attributes
             tree = ET.parse(self.src)
             root = tree.getroot()
-            width = root.attrib["width"]
-            height = root.attrib["height"]
+            width = int(root.attrib["width"])
+            height = int(root.attrib["height"])
             self.im_size = (width, height)
 
         except OSError:

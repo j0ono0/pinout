@@ -3,9 +3,9 @@ import copy
 import math
 import pathlib
 import PIL
-from PIL import Image as PIL_Image
 import urllib.request
 import uuid
+import xml.etree.ElementTree as ET
 from collections import namedtuple
 from pinout import manager, templates
 
@@ -500,9 +500,8 @@ class Image(SvgShape):
             # Load image dimensions to avoid multiple loads when calculating coords
             # Allow relative paths outside CWD
             cwd = pathlib.Path.cwd()
-            im = PIL_Image.open(cwd.joinpath(self.src))
+            im = PIL.Image.open(cwd.joinpath(self.src))
             self.im_size = im.size
-
         except TypeError as e:
             # Image src is assumed to be another Image instance
             self.im_size = self.src.im_size
@@ -510,13 +509,17 @@ class Image(SvgShape):
 
         except PIL.UnidentifiedImageError:
             # Image is assumed to be SVG
-            # Match arbitary im_size to width and height so no scaling occurs
-            pass
+            # Extract dimensions from SVG attributes
+            tree = ET.parse(self.src)
+            root = tree.getroot()
+            width = root.attrib["width"]
+            height = root.attrib["height"]
+            self.im_size = (width, height)
 
         except OSError:
             try:
                 # file not at local path, try path as URL
-                im = PIL_Image.open(urllib.request.urlopen(self.src))
+                im = PIL.Image.open(urllib.request.urlopen(self.src))
                 self.im_size = im.size
             except (PIL.UnidentifiedImageError):
                 # Image is assumed to be SVG
@@ -642,8 +645,6 @@ class Image(SvgShape):
             if media_type == "svg":
                 data = self.loadData()
                 # Extract JUST the <svg> markup with no <XML> tag
-                import xml.etree.ElementTree as ET
-
                 tree = ET.fromstring(data)
                 self.svg_data = ET.tostring(tree)
             else:

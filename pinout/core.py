@@ -3,6 +3,7 @@ import copy
 import math
 import pathlib
 import PIL
+import re
 import urllib.request
 import uuid
 import xml.etree.ElementTree as ET
@@ -512,8 +513,13 @@ class Image(SvgShape):
             # Extract dimensions from SVG attributes
             tree = ET.parse(self.src)
             root = tree.getroot()
-            width = int(root.attrib["width"])
-            height = int(root.attrib["height"])
+            width = root.attrib["width"]
+            height = root.attrib["height"]
+            # Dimensions may (or may not) include units
+            # Remove non-digits
+            r = re.compile(r"\D")
+            width = float(r.sub("", width))
+            height = float(r.sub("", height))
             self.im_size = (width, height)
 
         except OSError:

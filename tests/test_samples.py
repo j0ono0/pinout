@@ -1,11 +1,15 @@
 ##########################################################
 #
-# pinout tests
+# pinout tests (with coverage reporting)
 #
 # Use a user-defined temporary directory if
 # you have problems with multiple harddrives (like I do):
 #
-# >>> pytest --basetemp=temp
+# >>> coverage run -m pytest --basetemp=temp
+#
+# Build coverage html report
+#
+# >>> coverage html
 #
 ##########################################################
 import filecmp
@@ -47,6 +51,16 @@ def mk_test_file(src, dest):
 @pytest.mark.parametrize(
     "module_path, ref_path",
     [
+        # Components
+        (
+            "./resources/diagram_export.py",
+            "./resources/diagram_export.svg",
+        ),
+        (
+            "./resources/diagram_image.py",
+            "./resources/diagram_image.svg",
+        ),
+        # Samples
         (
             "../samples/arduino/arduino/uno/arduino_uno.py",
             "../samples/arduino/pinout_arduino_uno_rev3.svg",

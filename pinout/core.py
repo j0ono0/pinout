@@ -6,6 +6,7 @@ import PIL
 import re
 import urllib.request
 import uuid
+import warnings
 import xml.etree.ElementTree as ET
 from collections import namedtuple
 from pinout import manager, templates
@@ -490,11 +491,12 @@ class Text(SvgShape):
 class Image(SvgShape):
     """Include an image in the diagram."""
 
-    def __init__(self, src, embed=False, **kwargs):
+    def __init__(self, src, dpi=72, embed=False, **kwargs):
         self.coords = kwargs.pop("coords", {})
+        self._dpi = dpi
         self.embed = embed
-        self.src = src
         self.im_size = (1, 1)
+        self.src = src
         self.svg_data = None
 
         try:
@@ -510,17 +512,7 @@ class Image(SvgShape):
 
         except PIL.UnidentifiedImageError:
             # Image is assumed to be SVG
-            # Extract dimensions from SVG attributes
-            tree = ET.parse(self.src)
-            root = tree.getroot()
-            width = root.attrib["width"]
-            height = root.attrib["height"]
-            # Dimensions may (or may not) include units
-            # Remove non-digits
-            r = re.compile(r"\D")
-            width = float(r.sub("", width))
-            height = float(r.sub("", height))
-            self.im_size = (width, height)
+            self.set_svg_im_size()
 
         except OSError:
             try:
@@ -537,6 +529,15 @@ class Image(SvgShape):
         super().__init__(**kwargs)
 
     @property
+    def dpi(self):
+        return self._dpi
+
+    @dpi.setter
+    def dpi(self, val):
+        self._dpi = val
+        self.set_svg_im_size()
+
+    @property
     def src(self):
         return self._src
 
@@ -547,6 +548,48 @@ class Image(SvgShape):
             self._src = val
         else:
             self._src = pathlib.Path(val)
+
+    def set_svg_im_size(self):
+        # Extract dimensions from SVG attributes
+        tree = ET.parse(self.src)
+        root = tree.getroot()
+        width = root.attrib["width"]
+        height = root.attrib["height"]
+        # Dimensions may (or may not) include units
+        # re splits at start and end of matched group hence x3 vars
+        r = re.compile(r"(^[\d\.]+)")
+        _, width, width_units = re.split(r, width)
+        _, height, height_units = re.split(r, height)
+        # Convert to pixel dimensions
+        width = self.to_pixels(width, width_units)
+        height = self.to_pixels(height, height_units)
+        # Set im_size
+        self.im_size = (width, height)
+
+    def to_pixels(self, value, units):
+
+        value = float(value)
+
+        if not units or units.strip().lower() == "px":
+            return value
+
+        elif units.strip().lower() == "mm":
+            return value / 25.4 * self.dpi
+
+        elif units.strip().lower() == "cm":
+            return value / 2.54 * self.dpi
+
+        elif units.strip().lower() == "in":
+            return value * self.dpi
+
+        elif units.strip().lower() == "pt":
+            return value * 72 * self.dpi
+
+        else:
+            warnings.warn(
+                f'Image dimension "{units}" is not recognised. Leaving unchanged.'
+            )
+            return value
 
     def coord(self, name, raw=False):
         """Return scaled coordinatates."""

@@ -5,7 +5,7 @@ from pinout.core import Image
 from pinout.components.layout import Diagram
 
 
-diagram = Diagram(800, 400, tag="pinout")
+diagram = Diagram(800, 800, tag="pinout")
 
 # PNG image
 # ---------
@@ -28,6 +28,8 @@ diagram.add(Image(png_def_linked, x=400, y=0))
 # Referenced embedded
 diagram.add(Image(png_def_embedded, x=600, y=0))
 
+# PNG linked, resized
+diagram.add(Image("200x200.png", x=400, y=400, width=400, height=400))
 
 # SVG image
 # ---------
@@ -46,3 +48,6 @@ diagram.add(Image(svg_def_linked, x=400, y=200))
 # Referenced embedded
 svg_def_embedded = diagram.add_def(Image("200x200.svg", embed=True))
 diagram.add(Image(svg_def_embedded, x=600, y=200))
+
+# SVG linked rezised
+diagram.add(Image("200x200.svg", x=0, y=400, width=400, height=400))

@@ -146,7 +146,7 @@ def create_stylesheet(src, path, instance_name="diagram", overwrite=False):
     print(f"{instance_name}.add_stylesheet('{path}')")
 
 
-def duplicate(resource_name):
+def duplicate(resource_name, *args):
     """Duplicate resources from *pinout* package.
 
     A variety of resources can be copied via this function, access is available via the command line::
@@ -161,6 +161,8 @@ def duplicate(resource_name):
     :param resource_name: Name of resource to duplicate.
     :type resource_name: string
     """
+
+    print(resource_name)
 
     resources = {
         "quick_start": [
@@ -269,8 +271,17 @@ def __main__():
         "-d",
         "--duplicate",
         action="store",
-        choices=["quick_start", "config"],
+        choices=["quick_start", "config", "fp_lib"],
         help="duplicate pinout resources",
+    )
+
+    # Use in conjunction when duplicating footprint
+    # lib to assign elements to the desired layer
+    parser.add_argument(
+        "-l",
+        "--layer",
+        action="store",
+        help="KiCad layer name.",
     )
 
     parser.add_argument(
@@ -297,7 +308,7 @@ def __main__():
 
     args = parser.parse_args()
     if args.duplicate:
-        duplicate(args.duplicate)
+        duplicate(args.duplicate, args.layer)
 
     if args.export:
         export_diagram(*args.export, overwrite=args.overwrite)

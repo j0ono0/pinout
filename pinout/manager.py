@@ -162,26 +162,28 @@ def duplicate(resource_name, *args):
     :type resource_name: string
     """
 
-    print(resource_name)
+    if resource_name == "fp_lib":
+        print(resource_name, *args)
 
-    resources = {
-        "quick_start": [
-            ("quick_start", "data.py"),
-            ("quick_start", "hardware.png"),
-            ("quick_start", "pinout_diagram.py"),
-            ("quick_start", "styles.css"),
-        ],
-        "config": [("config.py",)],
-    }
+    else:
+        resources = {
+            "quick_start": [
+                ("quick_start", "data.py"),
+                ("quick_start", "hardware.png"),
+                ("quick_start", "pinout_diagram.py"),
+                ("quick_start", "styles.css"),
+            ],
+            "config": [("config.py",)],
+        }
 
-    resource_package = "pinout"
-    for path in resources[resource_name]:
-        resource_path = "/".join(("resources", *path))
-        data = pkg_resources.resource_string(resource_package, resource_path)
-        filename = path[-1]
-        with open(filename, "wb") as f:
-            f.write(data)
-        print(f"{filename} duplicated.")
+        resource_package = "pinout"
+        for path in resources[resource_name]:
+            resource_path = "/".join(("resources", *path))
+            data = pkg_resources.resource_string(resource_package, resource_path)
+            filename = path[-1]
+            with open(filename, "wb") as f:
+                f.write(data)
+            print(f"{filename} duplicated.")
 
 
 def export_diagram(src, dest, instance_name="diagram", overwrite=False):
@@ -264,24 +266,55 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
     os.chdir(init_dir)
 
 
+def create_kicad_lib(layer, version):
+    from datetime import datetime
+    from pinout import templates
+
+    try:
+        version = float(version)
+    except TypeError:
+        version = 6
+    folder = Path("./pinout.pretty")
+    folder.mkdir(parents=True, exist_ok=True)
+    footprints = ["Origin", "Annotation", "Label"]
+    if version > 5.9:
+        component_type = "footprint"
+    else:
+        component_type = "module"
+
+    for fp in footprints:
+        tplt = templates.get(f"kicad_footprint_lib/{fp}.j2")
+        filepath = folder / (fp + ".kicad_mod")
+        with filepath.open(mode="w") as f:
+            f.write(
+                tplt.render(
+                    {
+                        "component_type": component_type,
+                        "layer": layer,
+                        "version": datetime.today().strftime("%Y%m%d"),
+                    }
+                )
+            )
+    print("pinout footprint library for KiCad created successfully.")
+
+
 def __main__():
 
     parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--kicad_lib",
+        action="store",
+        help="Create KiCad footprint library. Example usage: python -m pinout.manager --kicad_lib <layer name> -v <KiCad version>",
+    )
+
     parser.add_argument(
         "-d",
         "--duplicate",
         action="store",
-        choices=["quick_start", "config", "fp_lib"],
+        nargs="+",
+        choices=["quick_start", "config"],
         help="duplicate pinout resources",
-    )
-
-    # Use in conjunction when duplicating footprint
-    # lib to assign elements to the desired layer
-    parser.add_argument(
-        "-l",
-        "--layer",
-        action="store",
-        help="KiCad layer name.",
     )
 
     parser.add_argument(
@@ -306,6 +339,13 @@ def __main__():
         help="Enable file overwriting.",
     )
 
+    parser.add_argument(
+        "-v",
+        "--version",
+        action="store",
+        help="Version number (use in conjunction with --kicad_lib).",
+    )
+
     args = parser.parse_args()
     if args.duplicate:
         duplicate(args.duplicate, args.layer)
@@ -314,8 +354,10 @@ def __main__():
         export_diagram(*args.export, overwrite=args.overwrite)
 
     if args.css:
-        print(args)
         create_stylesheet(*args.css, overwrite=args.overwrite)
+
+    if args.kicad_lib:
+        create_kicad_lib(args.kicad_lib, args.version)
 
 
 if __name__ == "__main__":

@@ -162,28 +162,24 @@ def duplicate(resource_name, *args):
     :type resource_name: string
     """
 
-    if resource_name == "fp_lib":
-        print(resource_name, *args)
+    resources = {
+        "quick_start": [
+            ("quick_start", "data.py"),
+            ("quick_start", "hardware.png"),
+            ("quick_start", "pinout_diagram.py"),
+            ("quick_start", "styles.css"),
+        ],
+        "config": [("config.py",)],
+    }
 
-    else:
-        resources = {
-            "quick_start": [
-                ("quick_start", "data.py"),
-                ("quick_start", "hardware.png"),
-                ("quick_start", "pinout_diagram.py"),
-                ("quick_start", "styles.css"),
-            ],
-            "config": [("config.py",)],
-        }
-
-        resource_package = "pinout"
-        for path in resources[resource_name]:
-            resource_path = "/".join(("resources", *path))
-            data = pkg_resources.resource_string(resource_package, resource_path)
-            filename = path[-1]
-            with open(filename, "wb") as f:
-                f.write(data)
-            print(f"{filename} duplicated.")
+    resource_package = "pinout"
+    for path in resources[resource_name]:
+        resource_path = "/".join(("resources", *path))
+        data = pkg_resources.resource_string(resource_package, resource_path)
+        filename = path[-1]
+        with open(filename, "wb") as f:
+            f.write(data)
+        print(f"{filename} duplicated.")
 
 
 def export_diagram(src, dest, instance_name="diagram", overwrite=False):
@@ -312,7 +308,6 @@ def __main__():
         "-d",
         "--duplicate",
         action="store",
-        nargs="+",
         choices=["quick_start", "config"],
         help="duplicate pinout resources",
     )
@@ -348,7 +343,7 @@ def __main__():
 
     args = parser.parse_args()
     if args.duplicate:
-        duplicate(args.duplicate, args.layer)
+        duplicate(args.duplicate, args.overwrite)
 
     if args.export:
         export_diagram(*args.export, overwrite=args.overwrite)

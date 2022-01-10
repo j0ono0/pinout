@@ -160,7 +160,6 @@ def translate_module_origins(modules, origin_ref):
 def get_pinout_modules(pcb_file, dpi=None):
     # scale: dpi resolution of pcb image
     modules = [mod for mod in parse_modules(pcb_file) if mod["library"] == "pinout"]
-
     # Provide each module with a unique id
     counter = Counter(0)
     for mod in modules:

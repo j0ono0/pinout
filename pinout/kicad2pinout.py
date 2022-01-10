@@ -2,6 +2,13 @@ import copy
 import math
 import tokenize
 from tokenize import ENDMARKER, LPAR, RPAR, NAME, NUMBER, OP
+import re
+from collections import namedtuple
+
+from pinout.components.pinlabel import PinLabelGroup
+from pinout.components.annotation import AnnotationLabel
+
+Pinout_item = namedtuple("Pinout_item", ["content", "attrs", "x", "y", "scale"])
 
 
 def rotate_point_coord(coord, rotate):
@@ -181,6 +188,7 @@ class PinoutParser(KiCadParser):
 
     def __init__(self, filepath, dpi=72):
         super().__init__(filepath, dpi)
+        self.pinout_img = None
 
     def layers(self):
         layers = super().layers()
@@ -190,6 +198,9 @@ class PinoutParser(KiCadParser):
             if layer["user_name"] and layer["user_name"].lower().startswith("pinout")
         ]
         return pinout_layers
+
+    def link_image(self, image_instance):
+        self.pinout_img = image_instance
 
     def footprints(self):
         pinout_fps = []
@@ -215,7 +226,6 @@ class PinoutParser(KiCadParser):
 
         # Offset coordinates by pinout_origin
         for fp in pinout_fps:
-            oldat = fp["at"][:2]
             fp["at"][:2] = [a - b for a, b in zip(fp["at"][:2], pinout_origin)]
 
         # Rotate fp_text coords
@@ -232,3 +242,129 @@ class PinoutParser(KiCadParser):
                 fp_text["at"][:2] = [rx, ry]
 
         return pinout_fps
+
+    def transfer_footprint_coords(self, footprint):
+
+        """Transfer footprint and child fp_text coords to pinout Image instance"""
+
+        self.pinout_img.add_coord(f"footprint_{footprint['id']}", *footprint["at"][:2])
+
+        for fp_text in footprint["fp_text"]:
+            if fp_text["type"] == "user":
+                self.pinout_img.add_coord(
+                    f"{fp_text['text']}_{footprint['id']}", *fp_text["at"][:2]
+                )
+
+    def get_scale(self, x, y):
+        # Deduce scale from label location (it is relative to pin)
+        try:
+            sx = x / abs(x)
+        except ZeroDivisionError:
+            sx = 1
+        try:
+            sy = y / abs(y)
+        except ZeroDivisionError:
+            sy = 1
+        return (sx, sy)
+
+    def get_footprint_specs(self, footprint):
+        for fp_text in footprint["fp_text"]:
+            if fp_text["type"] == "value":
+                # Excepted format: <leaderline direction>
+                attrs = fp_text["text"].split(" ")
+            elif fp_text["type"] == "user":
+                x, y = self.pinout_img.coord(
+                    f"{fp_text['text']}_{footprint['id']}", raw=True
+                )
+                scale = self.get_scale(x, y)
+                content = fp_text["text"]
+
+        return Pinout_item(content, attrs, x, y, scale)
+
+    def add_pinlabels(self, container):
+        for fp in self.footprints():
+
+            self.transfer_footprint_coords(fp)
+
+            # Get transformed footprint coords
+            pin_x, pin_y = self.pinout_img.coord(f"footprint_{fp['id']}")
+
+            # Add pinlabels
+            if fp["name"] == "pinout:pinout_label" or [
+                txt
+                for txt in fp["fp_text"]
+                if txt["type"] == "reference" and txt["text"] == "pinout_label"
+            ]:
+                self.transfer_footprint_coords(fp)
+
+                # Get transformed footprint coords
+                pin_x, pin_y = self.pinout_img.coord(f"footprint_{fp['id']}")
+
+                fp_specs = self.get_footprint_specs(fp)
+
+                # Parse label content
+                tags = [
+                    t[2:-2]
+                    for t in re.findall(
+                        "{{-?[_a-zA-Z]+[_a-zA-Z0-9-]*}}", fp_specs.content
+                    )
+                ]
+                txts = [
+                    t.strip()
+                    for t in re.split(
+                        "{{-?[_a-zA-Z]+[_a-zA-Z0-9-]*}}", fp_specs.content
+                    )
+                ]
+                labels = list(zip(txts, tags))
+
+                # Create pinlabel group
+                container.add(
+                    PinLabelGroup(
+                        x=pin_x,
+                        y=pin_y,
+                        pin_pitch=(0, 0),
+                        label_start=(abs(fp_specs.x), abs(fp_specs.y)),
+                        label_pitch=(0, 0),
+                        labels=[labels],
+                        scale=fp_specs.scale,
+                        leaderline={"direction": fp_specs.attrs[0]},
+                    )
+                )
+
+    def add_annotations(self, container):
+        for fp in self.footprints():
+
+            if fp["name"] == "pinout:Annotation" or [
+                txt
+                for txt in fp["fp_text"]
+                if txt["type"] == "reference" and txt["text"] == "pinout_annotation"
+            ]:
+                scale = (1, 1)
+                self.transfer_footprint_coords(fp)
+
+                # Get transformed footprint coords
+                pin_x, pin_y = self.pinout_img.coord(f"footprint_{fp['id']}")
+
+                for fp_text in fp["fp_text"]:
+                    # Get annotation attrs
+                    if fp_text["type"] == "value":
+                        # Excepted format: <leaderline direction>
+                        direction, *_ = fp_text["text"].split(" ")
+
+                    elif fp_text["type"] == "user":
+                        x, y = self.pinout_img.coord(
+                            f"{fp_text['text']}_{fp['id']}", raw=True
+                        )
+                        content = fp_text["text"]
+
+                        scale = self.get_scale(x, y)
+
+                container.add(
+                    AnnotationLabel(
+                        content=content,
+                        x=pin_x,
+                        y=pin_y,
+                        body={"x": abs(x), "y": abs(y)},
+                        scale=scale,
+                    )
+                )

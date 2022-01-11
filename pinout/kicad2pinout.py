@@ -221,7 +221,7 @@ class PinoutParser(KiCadParser):
         # Needs to be a copy as original pinout_origin
         # is later changed to (0,0)
         for fp in pinout_fps:
-            if fp["name"] == "pinout:pinout_origin":
+            if fp["name"] == "pinout:Origin":
                 pinout_origin = copy.copy(fp["at"])
 
         # Offset coordinates by pinout_origin

@@ -182,6 +182,27 @@ class KiCadParser:
             tokens.next()
         return footprints
 
+    def gr_text(self):
+        text = {}
+        tokens = Tokens(self.filepath)
+        while tokens.current.type != ENDMARKER:
+            if tokens.current.type == NAME and tokens.current.string == "gr_text":
+                content = tokens.next().string.strip('"')
+                match = re.search("{{[\.\- _a-zA-Z0-9]+}}", content)
+                if match and match.group(0).lower().startswith("{{pinout"):
+                    key = match.group(0)[2:-2].split(" ", 1)[1]
+                    content = (
+                        re.sub("{{[\.\- _a-zA-Z0-9]+}}", "", content).strip('"').strip()
+                    )
+                    # sub double quotes back in
+                    content = re.sub("{dblquote}", '"', content)
+                    # unescape chars
+                    content = bytes(content, "utf-8").decode("unicode_escape")
+                    text[key] = content
+
+            tokens.next()
+        return text
+
 
 class PinoutParser(KiCadParser):
     """Filter and format data exclusively for pinout requirements"""
@@ -204,18 +225,13 @@ class PinoutParser(KiCadParser):
 
     def footprints(self):
         pinout_fps = []
-        pinout_layers = self.layers()
         pinout_origin = [0, 0]
         fps = super().footprints()
 
         # Collect all pinout footprints
         for fp in fps:
-            for fp_text in fp["fp_text"]:
-                if fp_text["layer"] in pinout_layers or fp_text[
-                    "text"
-                ].lower().startswith("pinout"):
-                    if fp not in pinout_fps:
-                        pinout_fps.append(fp)
+            if fp["name"].startswith("pinout"):
+                pinout_fps.append(fp)
 
         # Find pinout origin
         # Needs to be a copy as original pinout_origin
@@ -255,6 +271,20 @@ class PinoutParser(KiCadParser):
                     f"{fp_text['text']}_{footprint['id']}", *fp_text["at"][:2]
                 )
 
+    def get_text(self):
+        text = {}
+        for fp in self.footprints():
+            if fp["name"] == "pinout:Text":
+                for fp_text in fp["fp_text"]:
+                    if fp_text["type"] == "reference":
+                        key = fp_text["text"].split(" ", 1)[1]
+                    elif fp_text["type"] == "value":
+                        tag = fp_text["text"]
+                    elif fp_text["type"] == "user":
+                        content = fp_text["text"]
+                text[key] = {"content": content, "tag": tag}
+        return text
+
     def get_scale(self, x, y):
         # Deduce scale from label location (it is relative to pin)
         try:
@@ -290,11 +320,7 @@ class PinoutParser(KiCadParser):
             pin_x, pin_y = self.pinout_img.coord(f"footprint_{fp['id']}")
 
             # Add pinlabels
-            if fp["name"] == "pinout:pinout_label" or [
-                txt
-                for txt in fp["fp_text"]
-                if txt["type"] == "reference" and txt["text"] == "pinout_label"
-            ]:
+            if fp["name"] == "pinout:PinLabel":
                 self.transfer_footprint_coords(fp)
 
                 # Get transformed footprint coords
@@ -334,11 +360,7 @@ class PinoutParser(KiCadParser):
     def add_annotations(self, container):
         for fp in self.footprints():
 
-            if fp["name"] == "pinout:Annotation" or [
-                txt
-                for txt in fp["fp_text"]
-                if txt["type"] == "reference" and txt["text"] == "pinout_annotation"
-            ]:
+            if fp["name"] == "pinout:Annotation":
                 scale = (1, 1)
                 self.transfer_footprint_coords(fp)
 

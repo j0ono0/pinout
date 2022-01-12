@@ -272,7 +272,7 @@ def create_kicad_lib(layer, version):
         version = 6
     folder = Path("./pinout.pretty")
     folder.mkdir(parents=True, exist_ok=True)
-    footprints = ["Origin", "Annotation", "Label"]
+    footprints = ["Annotation", "Origin", "PinLabel", "Text"]
     if version > 5.9:
         component_type = "footprint"
     else:

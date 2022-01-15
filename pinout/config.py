@@ -158,3 +158,28 @@ diagram_presets = {
         "outer": {"tag": "panel__outer"},
     },
 }
+
+
+################################
+#
+# KiCad footprint settings
+#
+################################
+kicad_6_footprints = {
+    "version": 6,
+    "layer": "User.4",
+    "pinlabel": {
+        "hide_fp_text_reference": True,
+        "hide_fp_text_user": True,
+        "value_offset": (0, 25),  # (mm dimensions)
+    },
+    "annotation": {
+        "hide_fp_text_reference": True,
+        "hide_fp_text_user": True,
+        "value_offset": (25, 25),  # (mm dimensions)
+    },
+    "textblock": {
+        "hide_fp_text_reference": True,
+        "hide_fp_text_user": True,
+    },
+}

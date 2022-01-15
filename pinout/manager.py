@@ -1,6 +1,7 @@
 # Pinout Manager: management and utility functions
 
 import argparse
+import collections.abc
 import importlib
 import os
 from pathlib import Path
@@ -70,13 +71,23 @@ def load_data(path):
         return f.read()
 
 
+# TODO: I think this function is duplicated in core.py - merge?
+def update_dict(d, u):
+    for k, v in u.items():
+        if isinstance(v, collections.abc.Mapping):
+            d[k] = update_dict(d.get(k, {}), v)
+        else:
+            d[k] = v
+    return d
+
+
 ################################################################
 #
 # Argparse functions
 #
 ################################################################
 
-
+# TODO: rename to more generic title - used to load user supplied config too.
 def get_diagram_instance(src, instance_name="diagram"):
     src = Path(src)
     spec = importlib.util.spec_from_file_location(f"{src.stem}", src.name)
@@ -262,35 +273,30 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
     os.chdir(init_dir)
 
 
-def create_kicad_lib(layer, version):
+def create_kicad_lib(dest=".", config_path=None):
     from datetime import datetime
-    from pinout import templates
+    from pinout import templates, config
 
-    try:
-        version = float(version)
-    except TypeError:
-        version = 6
-    folder = Path("./pinout.pretty")
+    context = config.kicad_6_footprints
+    if config_path:
+        context = update_dict(
+            context, get_diagram_instance(config_path, "kicad_6_footprints")
+        )
+
+    folder = Path(dest, "pinout.pretty")
     folder.mkdir(parents=True, exist_ok=True)
     footprints = ["Annotation", "Origin", "PinLabel", "Text"]
-    if version > 5.9:
-        component_type = "footprint"
+    if context["version"] > 5.9:
+        context["component_type"] = "footprint"
     else:
-        component_type = "module"
+        context["component_type"] = "module"
 
     for fp in footprints:
         tplt = templates.get(f"kicad_footprint_lib/{fp}.j2")
         filepath = folder / (fp + ".kicad_mod")
+        context["timestamp"] = datetime.today().strftime("%Y%m%d")
         with filepath.open(mode="w") as f:
-            f.write(
-                tplt.render(
-                    {
-                        "component_type": component_type,
-                        "layer": layer,
-                        "version": datetime.today().strftime("%Y%m%d"),
-                    }
-                )
-            )
+            f.write(tplt.render(context))
     print("pinout footprint library for KiCad created successfully.")
 
 
@@ -301,7 +307,8 @@ def __main__():
     parser.add_argument(
         "--kicad_lib",
         action="store",
-        help="Create KiCad footprint library. Example usage: python -m pinout.manager --kicad_lib <layer name> -v <KiCad version>",
+        nargs="+",
+        help="Create KiCad footprint library. Example usage: python -m pinout.manager --kicad_lib <destination folder> <optional:config_file_path>",
     )
 
     parser.add_argument(
@@ -334,13 +341,6 @@ def __main__():
         help="Enable file overwriting.",
     )
 
-    parser.add_argument(
-        "-v",
-        "--version",
-        action="store",
-        help="Version number (use in conjunction with --kicad_lib).",
-    )
-
     args = parser.parse_args()
     if args.duplicate:
         duplicate(args.duplicate, args.overwrite)
@@ -352,7 +352,7 @@ def __main__():
         create_stylesheet(*args.css, overwrite=args.overwrite)
 
     if args.kicad_lib:
-        create_kicad_lib(args.kicad_lib, args.version)
+        create_kicad_lib(*args.kicad_lib)
 
 
 if __name__ == "__main__":

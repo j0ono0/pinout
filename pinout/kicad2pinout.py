@@ -266,7 +266,7 @@ class PinoutParser(KiCadParser):
         self.pinout_img.add_coord(f"footprint_{footprint['id']}", *footprint["at"][:2])
 
         for fp_text in footprint["fp_text"]:
-            if fp_text["type"] == "user":
+            if fp_text["type"] == "value":
                 self.pinout_img.add_coord(
                     f"{fp_text['text']}_{footprint['id']}", *fp_text["at"][:2]
                 )
@@ -278,9 +278,9 @@ class PinoutParser(KiCadParser):
                 for fp_text in fp["fp_text"]:
                     if fp_text["type"] == "reference":
                         key = fp_text["text"].split(" ", 1)[1]
-                    elif fp_text["type"] == "value":
-                        tag = fp_text["text"]
                     elif fp_text["type"] == "user":
+                        tag = fp_text["text"]
+                    elif fp_text["type"] == "value":
                         content = fp_text["text"]
                 text[key] = {"content": content, "tag": tag}
         return text
@@ -299,16 +299,16 @@ class PinoutParser(KiCadParser):
 
     def get_footprint_specs(self, footprint):
         for fp_text in footprint["fp_text"]:
-            if fp_text["type"] == "value":
+            attrs = ["hh"]
+            if fp_text["type"] == "user":
                 # Excepted format: <leaderline direction>
                 attrs = fp_text["text"].split(" ")
-            elif fp_text["type"] == "user":
+            elif fp_text["type"] == "value":
                 x, y = self.pinout_img.coord(
                     f"{fp_text['text']}_{footprint['id']}", raw=True
                 )
                 scale = self.get_scale(x, y)
                 content = fp_text["text"]
-
         return Pinout_item(content, attrs, x, y, scale)
 
     def add_pinlabels(self, container):
@@ -342,7 +342,6 @@ class PinoutParser(KiCadParser):
                     )
                 ]
                 labels = list(zip(txts, tags))
-
                 # Create pinlabel group
                 container.add(
                     PinLabelGroup(
@@ -369,11 +368,11 @@ class PinoutParser(KiCadParser):
 
                 for fp_text in fp["fp_text"]:
                     # Get annotation attrs
-                    if fp_text["type"] == "value":
+                    if fp_text["type"] == "user":
                         # Excepted format: <leaderline direction>
                         direction, *_ = fp_text["text"].split(" ")
 
-                    elif fp_text["type"] == "user":
+                    elif fp_text["type"] == "value":
                         x, y = self.pinout_img.coord(
                             f"{fp_text['text']}_{fp['id']}", raw=True
                         )

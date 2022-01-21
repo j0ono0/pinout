@@ -188,9 +188,9 @@ class KiCadParser:
         while tokens.current.type != ENDMARKER:
             if tokens.current.type == NAME and tokens.current.string == "gr_text":
                 content = tokens.next().string.strip('"')
-                match = re.search("{{[\.\- _a-zA-Z0-9]+}}", content)
-                if match and match.group(0).lower().startswith("{{pinout"):
-                    key = match.group(0)[2:-2].split(" ", 1)[1]
+                match = re.search("{{[\.\-_ a-zA-Z0-9]+}}", content)
+                if match:
+                    key = match.group(0)[2:-2]
                     content = (
                         re.sub("{{[\.\- _a-zA-Z0-9]+}}", "", content).strip('"').strip()
                     )

@@ -273,14 +273,14 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
     os.chdir(init_dir)
 
 
-def create_kicad_lib(dest=".", config_path=None):
+def create_kicad_lib(dest=".", config_file=None):
     from datetime import datetime
     from pinout import templates, config
 
     context = config.kicad_6_footprints
-    if config_path:
+    if config_file:
         context = update_dict(
-            context, get_diagram_instance(config_path, "kicad_6_footprints")
+            context, get_diagram_instance(config_file, "kicad_6_footprints")
         )
 
     folder = Path(dest, "pinout.pretty")
@@ -308,7 +308,7 @@ def __main__():
         "--kicad_lib",
         action="store",
         nargs="+",
-        help="Create KiCad footprint library. Example usage: python -m pinout.manager --kicad_lib <destination folder> <optional:config_file_path>",
+        help="Create KiCad footprint library. Example usage: python -m pinout.manager --kicad_lib <destination folder> <optional:config_file>",
     )
 
     parser.add_argument(

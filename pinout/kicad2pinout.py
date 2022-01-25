@@ -1,14 +1,19 @@
+from collections import namedtuple
 import copy
 import math
 import tokenize
 from tokenize import ENDMARKER, LPAR, RPAR, NAME, NUMBER, OP
 import re
-from collections import namedtuple
+import warnings
 
 from pinout.components.pinlabel import PinLabelGroup
 from pinout.components.annotation import AnnotationLabel
 
 Pinout_item = namedtuple("Pinout_item", ["content", "attrs", "x", "y", "scale"])
+
+
+def format_tag_warning(message, category, filename, lineno, file=None, line=None):
+    return f"{category.__name__}: {message}"
 
 
 def rotate_point_coord(coord, rotate):
@@ -400,7 +405,20 @@ class PinoutParser(KiCadParser):
                     for t in re.split(
                         "{{-?[_a-zA-Z]+[_a-zA-Z0-9-]*}}", fp_specs.content
                     )
+                    if t
                 ]
+                if len(txts) > len(tags):
+                    # User has fogotten to include tags on pinlabels
+                    # Warn them and add place-holder tags
+                    len_diff = len(txts) - len(tags)
+                    txts += ["no_tag_assigned"] * len_diff
+
+                    warnings.formatwarning = format_tag_warning
+                    warnings.warn(
+                        "pin-label(s) have not been assigned a tag in KiCad.",
+                        SyntaxWarning,
+                    )
+
                 labels = list(zip(txts, tags))
                 # Create pinlabel group
                 container.add(

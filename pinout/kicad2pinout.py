@@ -55,17 +55,17 @@ class Tokens:
                 yield tok
 
     def update_depth(self, token):
-        if token.type == OP:
-            if token.exact_type == LPAR:
-                self.depth += 1
-            elif token.exact_type == RPAR:
-                self.depth -= 1
+        if token.exact_type == LPAR:
+            self.depth += 1
+        elif token.exact_type == RPAR:
+            self.depth -= 1
 
 
 class KiCadParser:
-    def __init__(self, pcb_file, dpi=72):
+    def __init__(self, pcb_file, dpi=72, version=6):
         self.dpi = dpi
         self.filepath = pcb_file
+        self.version = version
 
     def fp_text(self, tokens):
         exit_depth = tokens.depth
@@ -82,17 +82,42 @@ class KiCadParser:
             tokens.next()
         return fp_text
 
+    def fp_text_kicad_5(self, tokens):
+        exit_depth = tokens.depth
+        fp_text = {
+            "type": tokens.next().string,
+            "text": "",
+            "layer": "",
+        }
+        # collate text until attribute starts
+        while tokens.next().exact_type != LPAR:
+            fp_text["text"] += tokens.current.string.strip('"')
+
+        # Find and collate attributes
+        tokens.next()
+        while tokens.depth >= exit_depth:
+            if tokens.current.type == NAME:
+                if tokens.current.string == "at":
+                    fp_text["at"] = self.at(tokens)
+                if tokens.current.string == "layer":
+                    while tokens.current.exact_type != RPAR:
+                        fp_text["layer"] += tokens.next().string
+            tokens.next()
+        return fp_text
+
     def at(self, tokens):
+
         # 'at' can be 2 to 3 numbers. x, y, (and optional) rotation
         at = []
         prefix = ""
         exit_depth = tokens.depth
         while tokens.depth >= exit_depth:
-            if tokens.next().type == NUMBER:
+            if tokens.current.type == NUMBER:
                 at.append(prefix + tokens.current.string.strip('"'))
                 prefix = ""
-            else:
-                prefix = tokens.current.string.strip('"')
+            elif tokens.current.type == OP:
+                prefix = tokens.current.string
+            tokens.next()
 
         # Convert strings into numbers
         at = [float(num) for num in at]
@@ -160,25 +185,61 @@ class KiCadParser:
         counter = Counter(0)
         footprints = []
         tokens = Tokens(self.filepath)
+
+        # Set footprint name depending on KiCad version
+        if self.version < 6:
+            fooprint_name = "module"
+        else:
+            fooprint_name = "footprint"
+
         while tokens.current.type != ENDMARKER:
-            if tokens.current.type == NAME and tokens.current.string == "footprint":
+            if tokens.current.type == NAME and tokens.current.string == fooprint_name:
                 fp = {
                     "id": counter(),
                     "at": None,
                     "fp_text": [],
-                    "layer": None,
+                    "layer": "",
                     "name": tokens.next().string.strip('"'),
                 }
                 exit_depth = tokens.depth
-                while tokens.depth >= exit_depth:
-                    if tokens.next().type == NAME:
-                        if tokens.current.string == "layer":
-                            fp["layer"] = tokens.next().string.strip('"')
-                        if tokens.current.string == "at":
-                            fp["at"] = self.at(tokens)
-                        if tokens.current.string == "fp_text":
-                            fp["fp_text"].append(self.fp_text(tokens))
-                footprints.append(fp)
+
+                if self.version >= 6:
+
+                    while tokens.depth >= exit_depth:
+                        tokens.next()
+                        if tokens.current.type == NAME:
+                            if tokens.current.string == "layer":
+                                fp["layer"] = tokens.next().string.strip('"')
+                            if tokens.current.string == "at":
+                                fp["at"] = self.at(tokens)
+                            if tokens.current.string == "fp_text":
+                                fp["fp_text"].append(self.fp_text(tokens))
+                    footprints.append(fp)
+
+                else:
+                    #####################################################
+                    # KiCad 5 does NOT wrap attribute strings in quotes #
+                    # tokens need to be collated until end of attribute.#
+                    #####################################################
+                    while tokens.next().exact_type != LPAR:
+                        fp["name"] += tokens.current.string
+
+                    while tokens.depth >= exit_depth:
+                        if (
+                            tokens.next().type == NAME
+                            and tokens.depth == exit_depth + 1
+                        ):
+                            if tokens.current.string == "layer":
+                                while tokens.next().exact_type != RPAR:
+                                    fp["layer"] += tokens.current.string
+                            elif tokens.current.string == "at":
+                                fp["at"] = self.at(tokens)
+                            elif tokens.current.string == "fp_text":
+                                fp["fp_text"].append(self.fp_text_kicad_5(tokens))
+
+                            tokens.next()
+                    footprints.append(fp)
+
             tokens.next()
         return footprints
 
@@ -207,8 +268,8 @@ class KiCadParser:
 class PinoutParser(KiCadParser):
     """Filter and format data exclusively for pinout requirements"""
 
-    def __init__(self, filepath, dpi=72):
-        super().__init__(filepath, dpi)
+    def __init__(self, filepath, dpi=72, version=6):
+        super().__init__(filepath, dpi, version)
         self.pinout_img = None
 
     def layers(self):
@@ -227,7 +288,6 @@ class PinoutParser(KiCadParser):
         pinout_fps = []
         pinout_origin = [0, 0]
         fps = super().footprints()
-
         # Collect all pinout footprints
         for fp in fps:
             if fp["name"].startswith("pinout"):

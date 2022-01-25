@@ -1,21 +1,27 @@
-({{ component_type }} "PinLabel" (version {{ timestamp }}) (generator pinout)
+({{ component_type }} "PinLabel" 
+{% if version >= 6 %}
+(version {{ timestamp }}) (generator pinout)
+{% endif %}
   (layer "{{ layer }}")
-  (tedit 61DE55CD)
+{% if version >= 6 %}
+  (tedit 0)
+{% endif %}
   (descr "Add one or more labels in a row to a single location.")
-  (attr exclude_from_pos_files exclude_from_bom)
+  (attr {% if version >= 6 %}exclude_from_pos_files exclude_from_bom{%else%}virtual{%endif%})
   (fp_text reference "pinout_pinlabel" (at 9.525 7.62) (layer "{{ layer }}") {% if pinlabel.hide_fp_text_reference %}hide{% endif %} 
     (effects (font (size 1 1) (thickness 0.15)) (justify left))
-    (tstamp 9c607e49-ee5c-4e85-a7da-6fede9912412)
+    
   )
   (fp_text value "LBL {{tag}}" (at 21.59 7.62) (layer "{{ layer }}")
     (effects (font (size 1 1) (thickness 0.15)) (justify left))
-    (tstamp e5e5220d-5b7e-47da-a902-b997ec8d4d58)
+    
   )
   (fp_text user "hh" (at 9.525 9.525) (layer "{{ layer }}") {% if pinlabel.hide_fp_text_user %}hide{% endif %} 
     (effects (font (size 1 1) (thickness 0.15)) (justify left))
-    (tstamp 74855e0d-40e4-4940-a544-edae9207b2ea)
+    
   )
-  (fp_line (start 1 0) (end -1 0) (layer "{{ layer }}") (width 0.12) (tstamp 2165c9a4-eb84-4cb6-a870-2fdc39d2511b))
-  (fp_line (start 0 -1) (end 0 1) (layer "{{ layer }}") (width 0.12) (tstamp fa00d3f4-bb71-4b1d-aa40-ae9267e2c41f))
-  (fp_circle (center 0 0) (end 0 -0.635) (layer "{{ layer }}") (width 0.12) (fill none) (tstamp dda1e6ca-91ec-4136-b90b-3c54d79454b9))
+  (fp_line (start 1 0) (end -1 0) (layer "{{ layer }}") (width 0.12))
+  (fp_line (start 0 -1) (end 0 1) (layer "{{ layer }}") (width 0.12))
+  (fp_circle (center 0 0) (end 0 -0.5) (layer "{{ layer }}") (width 0.12) {% if version >= 6 %} (fill none){%endif%})
 )
+

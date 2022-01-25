@@ -267,34 +267,43 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
         print(f"'{raw_dest}' exported successfully.")
 
     except Exception as e:
-        print(e)
+        print(f"The export falied! Error: {e}")
 
     # Return the CWD to the initial directory
     os.chdir(init_dir)
 
 
-def create_kicad_lib(dest=".", config_file=None):
+def create_kicad_lib(dest=".", config_file=None, version=None):
     from datetime import datetime
     from pinout import templates, config
 
-    context = config.kicad_6_footprints
+    version = int(version or 6)
+
+    # Load config and create library context
+    if version >= 6:
+        context = config.kicad_6_footprints
+        context["component_type"] = "footprint"
+    else:
+        context = config.kicad_5_footprints
+        context["component_type"] = "module"
+
     if config_file:
         context = update_dict(
             context, get_diagram_instance(config_file, "kicad_6_footprints")
         )
 
+    context["timestamp"] = datetime.today().strftime("%Y%m%d")
+
+    # Override config version if none supplied
+    context["version"] = float(version) or float(context["version"])
+
     folder = Path(dest, "pinout.pretty")
     folder.mkdir(parents=True, exist_ok=True)
-    footprints = ["Annotation", "Origin", "PinLabel", "Text"]
-    if context["version"] > 5.9:
-        context["component_type"] = "footprint"
-    else:
-        context["component_type"] = "module"
+    footprints = ["Annotation", "Origin", "PinLabel"]
 
     for fp in footprints:
         tplt = templates.get(f"kicad_footprint_lib/{fp}.j2")
         filepath = folder / (fp + ".kicad_mod")
-        context["timestamp"] = datetime.today().strftime("%Y%m%d")
         with filepath.open(mode="w") as f:
             f.write(tplt.render(context))
     print("pinout footprint library for KiCad created successfully.")
@@ -340,6 +349,12 @@ def __main__():
         action="store_true",
         help="Enable file overwriting.",
     )
+    parser.add_argument(
+        "-v",
+        "--version",
+        action="store",
+        help="Accepts integer only. Example usage (with --kicad_lib): python -m pinout.manager --kicad_lib <destination folder> <optional:config_file> -v 6",
+    )
 
     args = parser.parse_args()
     if args.duplicate:
@@ -352,7 +367,7 @@ def __main__():
         create_stylesheet(*args.css, overwrite=args.overwrite)
 
     if args.kicad_lib:
-        create_kicad_lib(*args.kicad_lib)
+        create_kicad_lib(*args.kicad_lib, version=args.version)
 
 
 if __name__ == "__main__":

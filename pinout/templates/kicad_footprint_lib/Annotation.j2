@@ -1,21 +1,23 @@
-({{ component_type }} "Annotation" (version {{ timestamp }}) (generator pinout)
+({{ component_type }} "Annotation" 
+{% if version >= 6 %}
+(version {{ timestamp }}) (generator pinout)
+{% endif %}
   (layer "{{ layer }}")
-  (tedit 61DE5583)
+{% if version >= 6 %}
+  (tedit 0)
+{% endif %}
   (descr "Add an annotation")
-  (attr exclude_from_pos_files exclude_from_bom)
+(attr {% if version >= 6 %}exclude_from_pos_files exclude_from_bom{%else%}virtual{%endif%})
   (fp_text reference "pinout_annotation" (at 9.525 6.985) (layer "{{ layer }}") {% if annotation.hide_fp_text_reference %}hide{% endif %} 
     (effects (font (size 1 1) (thickness 0.15)) (justify left))
-    (tstamp 9c607e49-ee5c-4e85-a7da-6fede9912412)
   )
   (fp_text value "Annotation_content_here" (at 23.495 6.985 unlocked) (layer "{{ layer }}")
     (effects (font (size 1 1) (thickness 0.15)) (justify left))
-    (tstamp e5e5220d-5b7e-47da-a902-b997ec8d4d58)
   )
   (fp_text user "vh" (at 9.525 8.89) (layer "{{ layer }}")  {% if annotation.hide_fp_text_user %}hide{% endif %} 
     (effects (font (size 1 1) (thickness 0.15)) (justify left))
-    (tstamp 29126f72-63f7-4275-8b12-6b96a71c6f17)
   )
-  (fp_line (start 1 0) (end -1 0) (layer "{{ layer }}") (width 0.12) (tstamp 2165c9a4-eb84-4cb6-a870-2fdc39d2511b))
-  (fp_line (start 0 -1) (end 0 1) (layer "{{ layer }}") (width 0.12) (tstamp fa00d3f4-bb71-4b1d-aa40-ae9267e2c41f))
-  (fp_circle (center 0 0) (end 0 -0.635) (layer "{{ layer }}") (width 0.12) (fill none) (tstamp dda1e6ca-91ec-4136-b90b-3c54d79454b9))
+  (fp_line (start 1 0) (end -1 0) (layer "{{ layer }}") (width 0.12))
+  (fp_line (start 0 -1) (end 0 1) (layer "{{ layer }}") (width 0.12))
+  (fp_circle (center 0 0) (end 0 -0.635) (layer "{{ layer }}") (width 0.12){% if version >= 6 %} (fill none){% endif %} )
 )

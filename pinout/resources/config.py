@@ -1,3 +1,12 @@
+def pitch_generator(start, pitch):
+    x = start[0]
+    y = start[1]
+    while True:
+        yield (x, y)
+        x += pitch[0]
+        y += pitch[1]
+
+
 ################################
 #
 # Default component settings
@@ -83,7 +92,7 @@ annotation = {
 
 # Panel
 panel = {
-    "inset": (5, 5, 5, 5),
+    "inset": (2, 2, 2, 2),
     "tag": "panel",
     "inner": {"tag": "panel__inner"},
     "outer": {"tag": "panel__outer"},
@@ -124,5 +133,71 @@ ic_qfp = {
     "polarity_mark": {
         "radius": 5,
         "tag": "polarity",
+    },
+}
+
+# Diagram layout template presets
+diagram_presets = {
+    "tag": "layout",
+    "panel_00": {
+        "inset": (2, 2, 2, 2),
+        "tag": "panel",
+        "inner": {"tag": "panel__inner"},
+        "outer": {"tag": "panel__outer"},
+    },
+    "panel_01": {
+        "inset": (0.5, 0.5, 0.5, 0.5),
+        "tag": "panel--main",
+        "inner": {"tag": "panel__inner"},
+        "outer": {"tag": "panel__outer"},
+    },
+    "panel_02": {
+        "inset": (0.5, 0.5, 0.5, 0.5),
+        "tag": "panel--info",
+        "inner": {"tag": "panel__inner"},
+        "outer": {"tag": "panel__outer"},
+    },
+}
+
+
+################################
+#
+# KiCad footprint settings
+#
+################################
+kicad_6_footprints = {
+    "version": 6,
+    "layer": "User.1",
+    "pinlabel": {
+        "hide_fp_text_reference": True,
+        "hide_fp_text_user": True,
+        "value_offset": (0, 25),  # (mm dimensions)
+    },
+    "annotation": {
+        "hide_fp_text_reference": True,
+        "hide_fp_text_user": True,
+        "value_offset": (25, 25),  # (mm dimensions)
+    },
+    "textblock": {
+        "hide_fp_text_reference": True,
+        "hide_fp_text_user": True,
+    },
+}
+kicad_5_footprints = {
+    "version": 5,
+    "layer": "Eco1.User",
+    "pinlabel": {
+        "hide_fp_text_reference": True,
+        "hide_fp_text_user": True,
+        "value_offset": (0, 25),  # (mm dimensions)
+    },
+    "annotation": {
+        "hide_fp_text_reference": True,
+        "hide_fp_text_user": True,
+        "value_offset": (25, 25),  # (mm dimensions)
+    },
+    "textblock": {
+        "hide_fp_text_reference": True,
+        "hide_fp_text_user": True,
     },
 }

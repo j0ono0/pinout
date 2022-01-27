@@ -249,25 +249,13 @@ class KiCadParser:
         return footprints
 
     def gr_text(self):
-        text = {}
+        text_list = []
         tokens = Tokens(self.filepath)
-        while tokens.current.type != ENDMARKER:
+        while tokens.next().type != ENDMARKER:
             if tokens.current.type == NAME and tokens.current.string == "gr_text":
                 content = tokens.next().string.strip('"')
-                match = re.search("{{[\.\-_ a-zA-Z0-9]+}}", content)
-                if match:
-                    key = match.group(0)[2:-2]
-                    content = (
-                        re.sub("{{[\.\- _a-zA-Z0-9]+}}", "", content).strip('"').strip()
-                    )
-                    # sub double quotes back in
-                    content = re.sub("{dblquote}", '"', content)
-                    # unescape chars
-                    content = bytes(content, "utf-8").decode("unicode_escape")
-                    text[key] = content
-
-            tokens.next()
-        return text
+                text_list.append(content)
+        return text_list
 
 
 class PinoutParser(KiCadParser):
@@ -336,19 +324,13 @@ class PinoutParser(KiCadParser):
                     f"{fp_text['text']}_{footprint['id']}", *fp_text["at"][:2]
                 )
 
-    def get_text(self):
-        text = {}
-        for fp in self.footprints():
-            if fp["name"] == "pinout:Text":
-                for fp_text in fp["fp_text"]:
-                    if fp_text["type"] == "reference":
-                        key = fp_text["text"].split(" ", 1)[1]
-                    elif fp_text["type"] == "user":
-                        tag = fp_text["text"]
-                    elif fp_text["type"] == "value":
-                        content = fp_text["text"]
-                text[key] = {"content": content, "tag": tag}
-        return text
+    def extract_tags(self, content):
+        tag = None
+        match = re.search("{{[\.\-_ a-zA-Z0-9]+}}", content)
+        if match:
+            tag = match.group(0)[2:-2]
+            content = re.sub("{{[\.\- _a-zA-Z0-9]+}}", "", content).strip('"').strip()
+        return tag, content
 
     def get_scale(self, x, y):
         # Deduce scale from label location (it is relative to pin)
@@ -375,6 +357,18 @@ class PinoutParser(KiCadParser):
                 scale = self.get_scale(x, y)
                 content = fp_text["text"]
         return Pinout_item(content, attrs, x, y, scale)
+
+    def gr_text(self):
+        text = {}
+        for content in super().gr_text():
+            key, content = self.extract_tags(content)
+            if key:
+                # sub double quotes back in
+                content = re.sub("{dblquote}", '"', content)
+                # unescape chars
+                content = bytes(content, "utf-8").decode("unicode_escape")
+                text[key] = content
+        return text
 
     def add_pinlabels(self, container):
         for fp in self.footprints():
@@ -454,16 +448,18 @@ class PinoutParser(KiCadParser):
                         x, y = self.pinout_img.coord(
                             f"{fp_text['text']}_{fp['id']}", raw=True
                         )
-                        content = fp_text["text"]
+                        tag, content = self.extract_tags(fp_text["text"])
 
                         scale = self.get_scale(x, y)
 
                 container.add(
                     AnnotationLabel(
+                        tag=tag,
                         content=content,
                         x=pin_x,
                         y=pin_y,
                         body={"x": abs(x), "y": abs(y)},
                         scale=scale,
+                        leaderline={"direction": direction},
                     )
                 )

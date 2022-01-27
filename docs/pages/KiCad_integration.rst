@@ -46,7 +46,14 @@ A folder named *pinout.pretty* will now be present at the location referenced in
 
 The pinout footprints are now accessible in KiCad and can be placed like any other component.
 
-Add pin labels
+
+Add an origin
+-------------
+
+The hardware image used in a diagram must be aligned to KiCad's coordinate system for pinout to successfully align components. This can be done by placing an Origin footprint at a corrosponding location in KiCad.
+
+
+Add pin-labels
 --------------
 1. Select the PinLabel footprint from the *Choose Footprint* dialogue.
 2. Place the footprint at the pin location
@@ -71,3 +78,23 @@ Annotations can be added by the same method as pin-labels.
 2. Place the footprint at the location to be annotated
 3. Move the *Value* text to the desired label location
 4. Edit the text value to reflect label content and styling.
+
+Tagging the annotation is done with the same 'moustache' style tag `{{tag}}`. The tag text is applied to the final annotation as a css class. Further styling can then be applied via the CSS stylesheet.
+
+By editing the annotation footprint other fields can be accessed and altered - with the same features and limitations - as the PinLabel footprint.
+
+Add a textblock
+---------------
+
+A diagram is likely to require text content that is independent from the pinout diagram itself - for instance titles and explainatory notes. To assist with this *pinout* provides the facility to import 'Text items' from KiCad. This allows a better separation of layout and content and KiCad can be used as a single content source for a diagram.
+
+KiCad's *Text item* tool is the ideal interface to authoring blocks of text. This tool cannot be used within a footprint but *pinout* collates all Text items that include a moustache-style tag in them. A dictionary is then returned for use within a pinout script. For example::
+
+    # import kicad pcb data into pinout
+    kdata = k2p.PinoutParser("kicad6_test.kicad_pcb", dpi=72)
+
+    # Retrieve 'Text item' content from KiCad as a dictionary
+    text = kdata.gr_text()
+
+    # Use Text item content to populate a TextBlock 
+    diagram.add(TextBlock(text["txt_tag_01"], tag="txt_tag_01", x=20, y=30))

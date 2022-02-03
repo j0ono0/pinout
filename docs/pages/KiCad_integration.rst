@@ -2,7 +2,7 @@
 KiCad integration
 =================
 
-*pinout* provides integration with KiCad (version 5 and 6) allowing users to author pinout content directly onto a PCB design.
+*pinout* provides integration with KiCad (version 5 and 6) allowing users to author pinout content directly onto a PCB design. This allows a better separation of layout and content where KiCad can become a single content source for a diagram template.
 
 .. image:: /_static/kicad_screenshot.*
 
@@ -12,7 +12,7 @@ Create or obtain (see following note) a KiCad project! This project must include
 
 Ensure *pinout* is installed. For more information regarding this step please refer to :ref:`Install and quickstart<install>` 
 
-Optionally, duplicate the pinout config file. Some KiCad library settings can be customised from this file - Most usefully, the layer library footprints appear on can be changed::
+Optionally, duplicate the pinout config file. Some KiCad library settings can be customised from this file - Most usefully, the layer that library footprints appear on can be changed::
 
     py -m pinout.manager -d config
 
@@ -101,7 +101,7 @@ By editing the annotation footprint other fields can be accessed and altered - w
 Add a textblock
 ---------------
 
-A diagram is likely to require text content that is independent from the pinout diagram itself - for instance titles and explainatory notes. To assist with this *pinout* provides the facility to import 'Text items' from KiCad. This allows a better separation of layout and content and KiCad can be used as a single content source for a diagram.
+A diagram is likely to require text content that is independent from the pinout diagram itself - for instance titles and explainatory notes. To assist with this *pinout* provides the facility to import 'Text items' from KiCad.
 
 KiCad's *Text item* tool is the ideal interface to authoring blocks of text. This tool cannot be used within a footprint but *pinout* collates all Text items that include a moustache-style tag in them. A dictionary is then returned for use within a pinout script. For example::
 

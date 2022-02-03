@@ -1,12 +1,3 @@
-def pitch_generator(start, pitch):
-    x = start[0]
-    y = start[1]
-    while True:
-        yield (x, y)
-        x += pitch[0]
-        y += pitch[1]
-
-
 ################################
 #
 # Default component settings

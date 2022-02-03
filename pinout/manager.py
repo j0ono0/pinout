@@ -181,6 +181,7 @@ def duplicate(resource_name, *args):
             ("quick_start", "styles.css"),
         ],
         "config": [("config.py",)],
+        "kicad": [("pinout_kicad_example.zip",)],
     }
 
     resource_package = "pinout"
@@ -324,7 +325,7 @@ def __main__():
         "-d",
         "--duplicate",
         action="store",
-        choices=["quick_start", "config"],
+        choices=["quick_start", "config", "kicad"],
         help="duplicate pinout resources",
     )
 

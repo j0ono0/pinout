@@ -4,6 +4,15 @@ from pinout.components import leaderline as lline
 from pinout import config
 
 
+def pitch_generator(start, pitch):
+    x = start[0]
+    y = start[1]
+    while True:
+        yield (x, y)
+        x += pitch[0]
+        y += pitch[1]
+
+
 class Body(SvgShape):
     """Graphical shape that makes up the body of a pinlabel."""
 
@@ -145,8 +154,8 @@ class PinLabelGroup(Group):
         super().__init__(x=x, y=y, **kwargs)
 
         # Setup generators for row locations
-        pin_coords = config.pitch_generator((0, 0), pin_pitch)
-        label_coords = config.pitch_generator(label_start, label_pitch)
+        pin_coords = pitch_generator((0, 0), pin_pitch)
+        label_coords = pitch_generator(label_start, label_pitch)
 
         for row in labels:
             row_group = self.add(Group())

@@ -3,6 +3,7 @@ import copy
 import math
 import pathlib
 import PIL
+from PIL import Image as PILImage
 import re
 import urllib.request
 import uuid
@@ -503,7 +504,7 @@ class Image(SvgShape):
             # Load image dimensions to avoid multiple loads when calculating coords
             # Allow relative paths outside CWD
             cwd = pathlib.Path.cwd()
-            im = PIL.Image.open(cwd.joinpath(self.src))
+            im = PILImage.open(cwd.joinpath(self.src))
             self.im_size = im.size
         except TypeError as e:
             # Image src is assumed to be another Image instance
@@ -517,7 +518,7 @@ class Image(SvgShape):
         except OSError:
             try:
                 # file not at local path, try path as URL
-                im = PIL.Image.open(urllib.request.urlopen(self.src))
+                im = PILImage.open(urllib.request.urlopen(self.src))
                 self.im_size = im.size
             except (PIL.UnidentifiedImageError):
                 # Image is assumed to be SVG

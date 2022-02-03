@@ -553,8 +553,13 @@ class Image(SvgShape):
         # Extract dimensions from SVG attributes
         tree = ET.parse(self.src)
         root = tree.getroot()
-        width = root.attrib["width"]
-        height = root.attrib["height"]
+        try:
+            width = root.attrib["width"]
+            height = root.attrib["height"]
+        except KeyError:
+            # SVG can omit width and height.
+            # Use viewBox dimensions instead.
+            width, height = root.attrib["viewBox"].split(" ")[-2:]
         # Dimensions may (or may not) include units
         # re splits at start and end of matched group hence x3 vars
         r = re.compile(r"(^[\d\.]+)")

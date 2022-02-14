@@ -13,15 +13,25 @@ from pinout.core import (
 class Diagram(Layout):
     """Basis of a pinout diagram"""
 
-    def __init__(self, width, height, tag=None, **kwargs):
+    def __init__(self, width, height, tag=None, units="px", dpi=72, **kwargs):
         self.width = width
         self.height = height
+        self.units = units
+        self.dpi = dpi
         super().__init__(tag=tag, **kwargs)
         self.add(SvgShape(width=width, height=height))
 
     def add_stylesheet(self, path, embed=False):
         """Add a stylesheet to the diagram"""
         self.children.insert(0, StyleSheet(path, embed))
+
+    def length_to_px(self, length):
+        length_conversion = {
+            "in": length * self.dpi,
+            "cm": length / 2.54 * self.dpi,
+            "mm": length / 25.4 * self.dpi,
+        }
+        return length_conversion[self.units]
 
     def render(self):
         """Render children into an <svg> tag."""

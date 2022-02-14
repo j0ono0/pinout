@@ -5,6 +5,7 @@ import tokenize
 from tokenize import ENDMARKER, LPAR, RPAR, NAME, NUMBER, OP
 import re
 import warnings
+import html
 
 from pinout.components.pinlabel import PinLabelGroup
 from pinout.components.annotation import AnnotationLabel
@@ -149,6 +150,28 @@ class KiCadParser:
 
     def paper(self):
         return self.get_single_attr("paper")
+
+    def title_block(self):
+        title_block = {"comment": []}
+        tokens = Tokens(self.filepath)
+        tokens.goto("title_block")
+        exit_depth = tokens.depth
+        while tokens.depth >= exit_depth:
+            if tokens.current.type == NAME and tokens.depth == exit_depth + 1:
+                key = tokens.current.string.strip('"')
+                if key == "comment":
+                    index = int(tokens.next().string)
+                # All values are wrapped in quotes - can safely remove them!
+                val = tokens.next().string[1:-1].encode("utf-8")
+                val = val.decode("unicode_escape")
+                val = html.escape(val)
+                try:
+                    title_block["comment"].insert(index, val)
+                except UnboundLocalError:
+                    # index does not exist, entry is not a comment
+                    title_block[key] = val
+            tokens.next()
+        return title_block
 
     def general(self):
         general = {}

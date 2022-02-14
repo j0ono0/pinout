@@ -103,7 +103,7 @@ Add a textblock
 
 A diagram is likely to require text content that is independent from the pinout diagram itself - for instance titles and explainatory notes. To assist with this *pinout* provides the facility to import 'Text items' from KiCad.
 
-KiCad's *Text item* tool is the ideal interface to authoring blocks of text. This tool cannot be used within a footprint but *pinout* collates all Text items that include a moustache-style tag in them. A dictionary is then returned for use within a pinout script. For example::
+KiCad's *Text item* tool is the ideal interface to authoring blocks of text. This tool cannot be used within a footprint but *pinout* collates all Text items that include a moustache-style tag :code:`{{ tag-content }}` in them. A dictionary is then returned for use within a pinout script. For example::
 
     # import kicad pcb data into pinout
     kdata = k2p.PinoutParser("kicad6_test.kicad_pcb", dpi=72)
@@ -113,6 +113,15 @@ KiCad's *Text item* tool is the ideal interface to authoring blocks of text. Thi
 
     # Use Text item content to populate a TextBlock 
     diagram.add(TextBlock(text["txt_tag_01"], tag="txt_tag_01", x=20, y=30))
+
+.. note::
+
+    Text content must be valid SVG markup. For example the ampersand character "&" must be encoded correctly "&amp;". Valid tags can also be included and will be rendered as part of the SVG. For example using a <tspan> tag provides scope for multiple styles within a single block of text::
+
+        {{pinout_title}}<tspan class="h1">pinout example: KiCad as content source</tspan>
+        <a href="https://pinout.readthedocs.io">Pinout</a> content &amp; positioning sourced direct from KiCad file.
+
+        # .h1 styles in the css file are applied to the text.
 
 
 Import KiCad data

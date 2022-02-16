@@ -231,18 +231,6 @@ def export_diagram(src, dest, instance_name="diagram", config=None, overwrite=Fa
     os.chdir(src.parent)
     sys.path.append("")
 
-    #######################################################################
-
-    config_path_manager = importlib.resources.path(
-        "pinout.resources.config", "default_config.py"
-    )
-    with config_path_manager as file_path:
-        m = import_source_file("config", file_path)
-
-    print(m.test)
-
-    #######################################################################
-
     diagram = get_diagram_instance(src, instance_name)
 
     # Prepare linked media depending on output

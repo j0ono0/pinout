@@ -1,8 +1,7 @@
 from pinout import core, config
-from pinout.components.layout import Group
 
 
-class TextBlock(Group):
+class TextBlock(core.Group):
     """Multiline text component."""
 
     def __init__(self, content, line_height=None, **kwargs):

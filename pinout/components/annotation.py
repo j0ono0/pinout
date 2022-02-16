@@ -2,7 +2,6 @@ import copy
 from pinout import core
 from pinout.components.text import TextBlock
 from pinout.components import leaderline as lline
-from pinout.components.layout import Group
 
 from pinout import config
 
@@ -23,7 +22,7 @@ class Content(TextBlock):
     pass
 
 
-class AnnotationLabel(Group):
+class AnnotationLabel(core.Group):
     """Annotation style label."""
 
     def __init__(

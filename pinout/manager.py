@@ -3,6 +3,8 @@
 import argparse
 import collections.abc
 import importlib
+import importlib.util
+import importlib.resources
 import os
 from pathlib import Path
 import pkg_resources
@@ -87,12 +89,18 @@ def update_dict(d, u):
 #
 ################################################################
 
-# TODO: rename to more generic title - used to load user supplied config too.
+
+def import_source_file(module_name, file_path):
+    spec = importlib.util.spec_from_file_location(module_name, file_path)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[module_name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def get_diagram_instance(src, instance_name="diagram"):
     src = Path(src)
-    spec = importlib.util.spec_from_file_location(f"{src.stem}", src.name)
-    user_module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(user_module)
+    user_module = import_source_file(src.stem, src.name)
     return getattr(user_module, instance_name)
 
 
@@ -194,7 +202,8 @@ def duplicate(resource_name, *args):
         print(f"{filename} duplicated.")
 
 
-def export_diagram(src, dest, instance_name="diagram", overwrite=False):
+def export_diagram(src, dest, instance_name="diagram", config=None, overwrite=False):
+
     # reset core.diagram_id.counter. Pytest can create multiple diagrams
     # and requires each new diagram's id counter to commence at 0.
     core.diagram_id.counter = 0
@@ -222,7 +231,19 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
     os.chdir(src.parent)
     sys.path.append("")
 
-    diagram = diagram = get_diagram_instance(src, instance_name)
+    #######################################################################
+
+    config_path_manager = importlib.resources.path(
+        "pinout.resources.config", "default_config.py"
+    )
+    with config_path_manager as file_path:
+        m = import_source_file("config", file_path)
+
+    print(m.test)
+
+    #######################################################################
+
+    diagram = get_diagram_instance(src, instance_name)
 
     # Prepare linked media depending on output
     if dest.suffix == ".svg":
@@ -356,13 +377,18 @@ def __main__():
         action="store",
         help="Accepts integer only. Example usage (with --kicad_lib): python -m pinout.manager --kicad_lib <destination folder> <optional:config_file> -v 6",
     )
+    parser.add_argument(
+        "--config",
+        action="store",
+        help="Provide a configuration file to override defaults when exporting. Example usage: python -m pinout.manager -e <module name> <export filename> --config <config filename>",
+    )
 
     args = parser.parse_args()
     if args.duplicate:
         duplicate(args.duplicate, args.overwrite)
 
     if args.export:
-        export_diagram(*args.export, overwrite=args.overwrite)
+        export_diagram(*args.export, config=args.config, overwrite=args.overwrite)
 
     if args.css:
         create_stylesheet(*args.css, overwrite=args.overwrite)

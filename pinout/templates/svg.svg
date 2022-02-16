@@ -4,8 +4,8 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     x="{{ svg.x }}"
     y="{{ svg.y }}"
-    width="{{ svg.width }}" 
-    height="{{ svg.height }}" 
+    width="{{ svg.width_in_units }}{{ svg.units }}" 
+    height="{{ svg.height_in_units }}{{ svg.units }}" 
     {#
     viewBox="{{ svg.bounding_rect().x }} {{ svg.bounding_rect().y }} {{ svg.bounding_rect().w }} {{ svg.bounding_rect().h }}"
     #}

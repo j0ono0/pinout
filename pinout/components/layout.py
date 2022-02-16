@@ -1,9 +1,8 @@
-import uuid
+import re
 from pinout import templates, config
 from pinout.core import (
     Layout,
     StyleSheet,
-    Group,
     SvgShape,
     Rect,
     BoundingCoords,
@@ -13,25 +12,74 @@ from pinout.core import (
 class Diagram(Layout):
     """Basis of a pinout diagram"""
 
-    def __init__(self, width, height, tag=None, units="px", dpi=72, **kwargs):
+    def __init__(self, width, height, tag=None, units="px", dpi=96, **kwargs):
+        self.dpi = dpi
+        self.units = units
+        self._width = None
+        self._height = None
         self.width = width
         self.height = height
-        self.units = units
-        self.dpi = dpi
         super().__init__(tag=tag, **kwargs)
         self.add(SvgShape(width=width, height=height))
 
-    def add_stylesheet(self, path, embed=False):
-        """Add a stylesheet to the diagram"""
-        self.children.insert(0, StyleSheet(path, embed))
+    @property
+    def width(self):
+        return self._width
 
-    def length_to_px(self, length):
-        length_conversion = {
+    @width.setter
+    def width(self, val):
+        self._width = self.units_to_px(val)
+
+    @property
+    def height(self):
+        return self._height
+
+    @property
+    def width_in_units(self):
+        conversion = {
+            "px": self.width,
+            "in": self.width / self.dpi,
+            "cm": self.width * 2.54 / self.dpi,
+            "mm": self.width * 25.4 / self.dpi,
+        }
+        return conversion[self.units]
+
+    @property
+    def height_in_units(self):
+        conversion = {
+            "px": self.height,
+            "in": self.height / self.dpi,
+            "cm": self.height * 2.54 / self.dpi,
+            "mm": self.height * 25.4 / self.dpi,
+        }
+        return conversion[self.units]
+
+    @height.setter
+    def height(self, val):
+        self._height = self.units_to_px(val)
+
+    def units_to_px(self, measurement):
+        length = measurement
+        units = self.units
+        if isinstance(measurement, str):
+            tokens = [token for token in re.split(r"(\d+)", measurement, 1) if token]
+            length = float(tokens[0])
+            units = tokens[1]
+            if units not in ["px", "in", "mm", "cm"]:
+                raise ValueError(
+                    f"units \"{units}\" is not supported. Valid units of measure are 'px', 'in', 'mm' and 'cm'."
+                )
+        conversion = {
+            "px": length,
             "in": length * self.dpi,
             "cm": length / 2.54 * self.dpi,
             "mm": length / 25.4 * self.dpi,
         }
-        return length_conversion[self.units]
+        return conversion[units]
+
+    def add_stylesheet(self, path, embed=False):
+        """Add a stylesheet to the diagram"""
+        self.children.insert(0, StyleSheet(path, embed))
 
     def render(self):
         """Render children into an <svg> tag."""
@@ -123,8 +171,8 @@ class Panel(Layout):
 
 class Diagram_2Columns(Diagram):
     def __init__(self, width, height, gutter, tag, **kwargs):
-        self.gutter = gutter
         super().__init__(width, height, tag, **kwargs)
+        self.gutter = gutter
 
         # Add/override config
         self.config = config.diagram_presets
@@ -164,8 +212,8 @@ class Diagram_2Columns(Diagram):
 
 class Diagram_2Rows(Diagram):
     def __init__(self, width, height, gutter, tag, **kwargs):
-        self.gutter = gutter
         super().__init__(width, height, tag, **kwargs)
+        self.gutter = self.units_to_px(gutter)
 
         # Add/override config
         self.config = config.diagram_presets
@@ -177,8 +225,8 @@ class Diagram_2Rows(Diagram):
             Panel(
                 x=0,
                 y=0,
-                width=width,
-                height=height,
+                width=self.width,
+                height=self.height,
                 tag=self.config["panel_00"]["tag"],
                 config=self.config["panel_00"],
             )

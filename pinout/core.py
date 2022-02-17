@@ -11,7 +11,7 @@ import uuid
 import warnings
 import xml.etree.ElementTree as ET
 from collections import namedtuple
-from pinout import manager, templates
+from pinout import manager, templates, config_manager
 
 
 Coords = namedtuple("Coords", ("x y"))
@@ -111,6 +111,11 @@ class Component:
                 d[k] = copy.deepcopy(v)
         return d
 
+    def merge_config_into_kwargs(self, kwargs, config_attr):
+        kwarg_cfg = kwargs.pop("config", {})
+        app_cfg = config_manager.get(config_attr)
+        kwargs["config"] = self.update_data_dict(app_cfg, kwarg_cfg)
+
     def update_config(self, vals, cfg=None):
         cfg = cfg or self.config
         """update config dict
@@ -118,6 +123,7 @@ class Component:
         :param vals: Values to update
         :type vals: dict
         """
+        warnings.warn(f"Update_config is to be decomissioned!. cfg ref: {cfg}")
         self.config.update(copy.deepcopy(vals))
 
     def render_defs(self):

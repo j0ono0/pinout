@@ -6,10 +6,13 @@ class Swatch(Group):
     """Graphical icon for display in LegendEntry"""
 
     def __init__(self, width=None, height=None, **kwargs):
+
+        self.merge_config_into_kwargs(kwargs, "legend")
+
         super().__init__(**kwargs)
-        self.update_config(config.legend["entry"]["swatch"])
-        width = width or self.config["width"]
-        height = height or self.config["height"]
+
+        width = width or self.config["swatch"]["width"]
+        height = height or self.config["swatch"]["height"]
 
         # Rect aligned left hand edge, vertically centered around origin.
         shape = self.add(core.Rect(y=-height / 2, width=width, height=height))
@@ -28,12 +31,14 @@ class LegendEntry(Group):
         swatch=None,
         **kwargs,
     ):
+        self.merge_config_into_kwargs(kwargs, "legend")
+
         super().__init__(**kwargs)
-        self.update_config(config.legend["entry"])
+
         self.add_tag(self.config["tag"])
 
-        width = width or self.config["width"]
-        height = height or self.config["height"]
+        width = width or self.config["entry"]["width"]
+        height = height or self.config["entry"]["height"]
         swatch = swatch or {}
 
         if isinstance(swatch, dict):
@@ -68,8 +73,8 @@ class Legend(Group):
         max_height=None,
         **kwargs,
     ):
+        self.merge_config_into_kwargs(kwargs, "legend")
         super().__init__(**kwargs)
-        self.update_config(config.legend)
         self.add_tag(self.config["tag"])
 
         max_height = max_height or self.config["max_height"]

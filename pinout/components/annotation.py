@@ -3,8 +3,6 @@ from pinout import core
 from pinout.components.text import TextBlock
 from pinout.components import leaderline as lline
 
-from pinout import config
-
 
 class Leaderline(lline.Curved):
     pass
@@ -38,8 +36,10 @@ class AnnotationLabel(core.Group):
         self._leaderline = None
         self._target = None
 
+        self.merge_config_into_kwargs(kwargs, "annotation")
+
         super().__init__(**kwargs)
-        self.update_config(config.annotation)
+
         self.add_tag(self.config["tag"])
 
         self.leaderline = leaderline

@@ -8,8 +8,11 @@ class TextBlock(core.Group):
         # initialise module attrs
         self._scale = core.Coords(*kwargs.pop("scale", (1, 1)))
         self._content = None
+
+        self.merge_config_into_kwargs(kwargs, "textblock")
+
         super().__init__(**kwargs)
-        self.update_config(config.textblock)
+
         self.line_height = line_height or self.config["line_height"]
         self.add_tag(self.config["tag"])
         self.content = content

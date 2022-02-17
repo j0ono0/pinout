@@ -2,15 +2,15 @@
 
 import argparse
 import collections.abc
-import importlib
-import importlib.util
-import importlib.resources
+from multiprocessing.sharedctypes import Value
 import os
 from pathlib import Path
 import pkg_resources
 import sys
 
 from pinout import core
+from pinout import manager_files as io
+from pinout import config_manager
 
 try:
     import cairosvg
@@ -90,23 +90,15 @@ def update_dict(d, u):
 ################################################################
 
 
-def import_source_file(module_name, file_path):
-    spec = importlib.util.spec_from_file_location(module_name, file_path)
-    module = importlib.util.module_from_spec(spec)
-    sys.modules[module_name] = module
-    spec.loader.exec_module(module)
-    return module
-
-
 def get_diagram_instance(src, instance_name="diagram"):
     src = Path(src)
-    user_module = import_source_file(src.stem, src.name)
+    user_module = io.import_source_file(src.stem, src.name)
     return getattr(user_module, instance_name)
 
 
 def create_stylesheet(src, path, instance_name="diagram", overwrite=False):
     """Create a stylesheet if none supplied."""
-    from pinout import config, style_tools, templates
+    from pinout import style_tools, templates
     from pinout.components.annotation import AnnotationLabel
     from pinout.components.layout import Panel, Diagram_2Columns, Diagram_2Rows
     from pinout.components.legend import Legend
@@ -126,25 +118,28 @@ def create_stylesheet(src, path, instance_name="diagram", overwrite=False):
     # Extract css class tags from PinLabels
     lbls = diagram.find_children_by_type(diagram, PinLabel)
     tags = list(set([tag for label in lbls for tag in label.tag.strip().split(" ")]))
-    if config.pinlabel["tag"] in tags:
-        tags.remove(config.pinlabel["tag"])
+    try:
+        tags.remove(config_manager.get("pinlabel")["tag"])
+    except ValueError:
+        # tag not present
+        pass
 
     context = {}
     if tags:
         context["tags"] = style_tools.assign_color(tags)
-        context["pinlabel"] = config.pinlabel
+        context["pinlabel"] = config_manager.get("pinlabel")
     if diagram.find_children_by_type(diagram, Legend):
-        context["legend"] = config.legend
+        context["legend"] = config_manager.get("legend")
     if diagram.find_children_by_type(diagram, Panel):
-        context["panel"] = config.panel
+        context["panel"] = config_manager.get("panel")
     if diagram.find_children_by_type(diagram, AnnotationLabel):
-        context["annotation"] = config.annotation
+        context["annotation"] = config_manager.get("annotation")
     if diagram.find_children_by_type(diagram, DIP):
-        context["ic_dip"] = config.ic_dip
+        context["ic_dip"] = config_manager.get("ic_dip")
     if diagram.find_children_by_type(diagram, QFP):
-        context["ic_qfp"] = config.ic_qfp
+        context["ic_qfp"] = config_manager.get("ic_qfp")
     if isinstance(diagram, Diagram_2Columns) or isinstance(diagram, Diagram_2Rows):
-        context["diagram_presets"] = config.diagram_presets
+        context["diagram_presets"] = config_manager.get("diagram_presets")
 
     css_tplt = templates.get("stylesheet.j2")
     css = css_tplt.render(css=context)
@@ -188,7 +183,9 @@ def duplicate(resource_name, *args):
             ("quick_start", "pinout_diagram.py"),
             ("quick_start", "styles.css"),
         ],
-        "config": [("config.py",)],
+        "config": [
+            ("config", "default_config.py"),
+        ],
         "kicad": [("pinout_kicad_example.zip",)],
     }
 
@@ -202,7 +199,7 @@ def duplicate(resource_name, *args):
         print(f"{filename} duplicated.")
 
 
-def export_diagram(src, dest, instance_name="diagram", config=None, overwrite=False):
+def export_diagram(src, dest, instance_name="diagram", overwrite=False):
 
     # reset core.diagram_id.counter. Pytest can create multiple diagrams
     # and requires each new diagram's id counter to commence at 0.
@@ -278,6 +275,7 @@ def export_diagram(src, dest, instance_name="diagram", config=None, overwrite=Fa
 
     except Exception as e:
         print(f"The export falied! Error: {e}")
+        raise
 
     # Return the CWD to the initial directory
     os.chdir(init_dir)
@@ -285,16 +283,16 @@ def export_diagram(src, dest, instance_name="diagram", config=None, overwrite=Fa
 
 def create_kicad_lib(dest=".", config_file=None, version=None):
     from datetime import datetime
-    from pinout import templates, config
+    from pinout import templates
 
     version = int(version or 6)
 
     # Load config and create library context
     if version >= 6:
-        context = config.kicad_6_footprints
+        context = config_manager.get("kicad_6_footprints")
         context["component_type"] = "footprint"
     else:
-        context = config.kicad_5_footprints
+        context = config_manager.get("kicad_5_footprints")
         context["component_type"] = "module"
 
     if config_file:
@@ -365,18 +363,13 @@ def __main__():
         action="store",
         help="Accepts integer only. Example usage (with --kicad_lib): python -m pinout.manager --kicad_lib <destination folder> <optional:config_file> -v 6",
     )
-    parser.add_argument(
-        "--config",
-        action="store",
-        help="Provide a configuration file to override defaults when exporting. Example usage: python -m pinout.manager -e <module name> <export filename> --config <config filename>",
-    )
 
     args = parser.parse_args()
     if args.duplicate:
         duplicate(args.duplicate, args.overwrite)
 
     if args.export:
-        export_diagram(*args.export, config=args.config, overwrite=args.overwrite)
+        export_diagram(*args.export, overwrite=args.overwrite)
 
     if args.css:
         create_stylesheet(*args.css, overwrite=args.overwrite)

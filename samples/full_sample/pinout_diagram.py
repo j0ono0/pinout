@@ -7,7 +7,6 @@
 # >>> py -m pinout.manager --export pinout_diagram.py pinout_diagram.svg -o
 #
 ###########################################
-from pinout import config
 from pinout.core import Group, Image
 from pinout.components.layout import Diagram, Panel
 from pinout.components.pinlabel import PinLabelGroup
@@ -19,7 +18,8 @@ from pinout.components.legend import Legend
 import full_sample_data as data
 
 # Edit some component default config
-config.panel["inset"] = (2, 2, 2, 2)
+# TODO: demonstrate adding a config file
+# from pinout import config_manager
 
 # Create a new diagram, add styles and a base panel
 diagram = Diagram(1200, 675, "diagram")

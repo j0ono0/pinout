@@ -1,8 +1,7 @@
 import copy
+from pinout import config_manager
 from pinout.core import SvgShape, Group, Rect, Text, BoundingCoords, Coords
 from pinout.components import leaderline as lline
-from pinout import config
-from pinout import config_manager
 
 
 def pitch_generator(start, pitch):
@@ -19,6 +18,8 @@ class Body(SvgShape):
 
     def __init__(self, x, y, width, height, corner_radius=0, **kwargs):
         self.corner_radius = corner_radius
+
+        self.merge_config_into_kwargs(kwargs, "pinlabel")
         super().__init__(x=x, y=y, width=width, height=height, **kwargs)
 
     def bounding_coords(self):
@@ -38,7 +39,7 @@ class Body(SvgShape):
             height=self.height,
             corner_radius=self.corner_radius,
         )
-        body.add_tag(config.pinlabel["body"]["tag"])
+        body.add_tag(self.config["body"]["tag"])
         return body.render()
 
 
@@ -64,8 +65,10 @@ class Base(Group):
         self.content = content
         self._leaderline = None
         self._body = None
+
+        self.merge_config_into_kwargs(kwargs, "pinlabel")
+
         super().__init__(x, y, tag=tag, **kwargs)
-        self.update_config(config.pinlabel)
 
         self.body = body
         self.leaderline = leaderline
@@ -77,7 +80,7 @@ class Base(Group):
         # Add SvgShape so pin label reports correct dimensions.
         self.add(SvgShape(x=self.leaderline.x, y=self.leaderline.x))
 
-        self.add_tag(config.pinlabel["tag"])
+        self.add_tag(self.config["tag"])
 
     @property
     def body(self):
@@ -110,7 +113,7 @@ class Base(Group):
             leaderline_config.update(leaderline)
             leaderline = Leaderline(**leaderline_config)
         # Add leaderline config tag if not there
-        leaderline.add_tag(self.config["leaderline"]["tag"])
+        leaderline.add_tag(self.config["tag"])
         self._leaderline = leaderline
 
     def render(self):
@@ -122,7 +125,7 @@ class Base(Group):
                 self.content,
                 x=x,
                 y=y,
-                tag=config.pinlabel["text"]["tag"],
+                tag=self.config["text"]["tag"],
                 scale=self.scale,
             )
         )

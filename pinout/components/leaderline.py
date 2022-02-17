@@ -9,6 +9,9 @@ class Leaderline(core.Path):
         self.direction = direction
         self.start = core.Coords(0, 0)
         self.end = core.Coords(0, 0)
+
+        self.merge_config_into_kwargs(kwargs, "leaderline")
+
         super().__init__(**kwargs)
 
     def end_points(self, origin, destination):
@@ -32,16 +35,6 @@ class Leaderline(core.Path):
         self.start = start[self.direction[0]]
         self.end = end[self.direction[-1]]
         return (self.start, self.end)
-
-    """
-    def bounding_coords(self):
-        return core.BoundingCoords(
-            min(self.start.x, self.end.x),
-            min(self.start.y, self.end.y),
-            max(self.start.x, self.end.x),
-            max(self.start.y, self.end.y),
-        )
-    """
 
 
 class Curved(Leaderline):

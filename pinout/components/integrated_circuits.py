@@ -1,6 +1,5 @@
 import math
 from pinout.core import Group, SvgShape, Rect, BoundingCoords, Coords
-from pinout import config
 from pinout.components.pinlabel import PinLabelGroup
 from pinout.components.leaderline import Curved
 
@@ -54,11 +53,13 @@ class DIP(Group):
     def __init__(self, pin_count, width, height, **kwargs):
         if pin_count % 2 != 0:
             raise ValueError("pin_count not divisible by 2.")
+
+        self.merge_config_into_kwargs(kwargs, "ic_dip")
         super().__init__(**kwargs)
+
         self.pin_count = pin_count
         self._width = width
         self._height = height
-        self.update_config(config.ic_dip)
         self.inset = BoundingCoords(*self.config["inset"])
         self.add_tag(self.config["tag"])
         self.add(SvgShape(width=width, height=height))
@@ -138,11 +139,12 @@ class QFP(Group):
     def __init__(self, pin_count, length, **kwargs):
         if pin_count % 4 != 0:
             raise ValueError("pin_count not divisible by 4.")
+
+        self.merge_config_into_kwargs(kwargs, "ic_qfp")
+
         super().__init__(**kwargs)
         self.pin_count = pin_count
         self.length = length
-
-        self.update_config(config.ic_qfp)
         self.inset = BoundingCoords(*self.config["inset"])
         self.add_tag(self.config["tag"])
 

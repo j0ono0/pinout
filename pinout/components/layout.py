@@ -1,5 +1,4 @@
 import re
-from pinout import config as conf_mod
 from pinout import templates, config_manager
 from pinout.core import (
     Layout,
@@ -20,16 +19,13 @@ class Diagram(Layout):
         self._height = None
         self.width = width
         self.height = height
+
+        self.merge_config_into_kwargs(kwargs, "diagram")
+
         super().__init__(tag=tag, **kwargs)
 
+        # Setup component
         self.add(SvgShape(width=width, height=height))
-
-        # merge kwarg and default configs
-        kwarg_cfg = kwargs.get("config", {})
-        default_cfg = config_manager.get("diagram")
-        self.config = self.update_data_dict(default_cfg, kwarg_cfg)
-
-        # Add tag to component
         self.add_tag(self.config["tag"])
 
     @property
@@ -121,13 +117,13 @@ class Panel(Layout):
         self.width = width
         self.height = height
 
-        kwargs["config"] = kwargs.get("config", conf_mod.panel)
+        self.merge_config_into_kwargs(kwargs, "panel")
 
         super().__init__(**kwargs)
 
         inset = inset or self.config["inset"]
         self.inset = BoundingCoords(*inset)
-        self.add_tag(conf_mod.panel["tag"])
+        self.add_tag(self.config["tag"])
 
         # add a non-rendering shape so component
         # reports user set coordinates and dimensions
@@ -160,7 +156,7 @@ class Panel(Layout):
             Rect(
                 width=self.width - (self.inset.x1 + self.inset.x2),
                 height=self.height - (self.inset.y1 + self.inset.y2),
-                tag=conf_mod.panel["inner"]["tag"],
+                tag=self.config["inner"]["tag"],
             ),
         )
         # Insert a rect filling the outer component dimensions
@@ -171,7 +167,7 @@ class Panel(Layout):
                 y=-self.inset.y1,
                 width=self.width,
                 height=self.height,
-                tag=conf_mod.panel["outer"]["tag"],
+                tag=self.config["outer"]["tag"],
             ),
         )
 

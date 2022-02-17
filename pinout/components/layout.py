@@ -182,20 +182,19 @@ class Panel(Layout):
 class Diagram_2Columns(Diagram):
     def __init__(self, width, height, gutter, tag, **kwargs):
         super().__init__(width, height, tag, **kwargs)
-        self.gutter = gutter
+        self.gutter = self.units_to_px(gutter)
 
-        # Add/override config
-        self.config = conf_mod.diagram_presets
-        self.update_config(kwargs.get("config", {}))
+        # Get preset panel config
+        panel_cfg = config_manager.get("diagram_presets")
 
         self.panel_00 = self.add(
             Panel(
                 x=0,
                 y=0,
-                width=width,
-                height=height,
-                tag=self.config["panel_00"]["tag"],
-                config=self.config["panel_00"],
+                width=self.width,
+                height=self.height,
+                tag=panel_cfg["panel_00"]["tag"],
+                config=panel_cfg["panel_00"],
             )
         )
         self.panel_01 = self.panel_00.add(
@@ -204,8 +203,8 @@ class Diagram_2Columns(Diagram):
                 y=0,
                 width=self.gutter,
                 height=self.panel_00.inset_height,
-                tag=self.config["panel_01"]["tag"],
-                config=self.config["panel_01"],
+                tag=panel_cfg["panel_01"]["tag"],
+                config=panel_cfg["panel_01"],
             )
         )
         self.panel_02 = self.panel_00.add(
@@ -214,8 +213,8 @@ class Diagram_2Columns(Diagram):
                 y=0,
                 width=self.panel_00.inset_width - self.gutter,
                 height=self.panel_00.inset_height,
-                tag=self.config["panel_02"]["tag"],
-                config=self.config["panel_02"],
+                tag=panel_cfg["panel_02"]["tag"],
+                config=panel_cfg["panel_02"],
             )
         )
 

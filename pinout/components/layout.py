@@ -1,5 +1,6 @@
 import re
-from pinout import templates, config
+from pinout import config as conf_mod
+from pinout import templates, config_manager
 from pinout.core import (
     Layout,
     StyleSheet,
@@ -20,7 +21,16 @@ class Diagram(Layout):
         self.width = width
         self.height = height
         super().__init__(tag=tag, **kwargs)
+
         self.add(SvgShape(width=width, height=height))
+
+        # merge kwarg and default configs
+        kwarg_cfg = kwargs.get("config", {})
+        default_cfg = config_manager.get("diagram")
+        self.config = self.update_data_dict(default_cfg, kwarg_cfg)
+
+        # Add tag to component
+        self.add_tag(self.config["tag"])
 
     @property
     def width(self):
@@ -111,13 +121,13 @@ class Panel(Layout):
         self.width = width
         self.height = height
 
-        kwargs["config"] = kwargs.get("config", config.panel)
+        kwargs["config"] = kwargs.get("config", conf_mod.panel)
 
         super().__init__(**kwargs)
 
         inset = inset or self.config["inset"]
         self.inset = BoundingCoords(*inset)
-        self.add_tag(config.panel["tag"])
+        self.add_tag(conf_mod.panel["tag"])
 
         # add a non-rendering shape so component
         # reports user set coordinates and dimensions
@@ -150,7 +160,7 @@ class Panel(Layout):
             Rect(
                 width=self.width - (self.inset.x1 + self.inset.x2),
                 height=self.height - (self.inset.y1 + self.inset.y2),
-                tag=config.panel["inner"]["tag"],
+                tag=conf_mod.panel["inner"]["tag"],
             ),
         )
         # Insert a rect filling the outer component dimensions
@@ -161,7 +171,7 @@ class Panel(Layout):
                 y=-self.inset.y1,
                 width=self.width,
                 height=self.height,
-                tag=config.panel["outer"]["tag"],
+                tag=conf_mod.panel["outer"]["tag"],
             ),
         )
 
@@ -175,7 +185,7 @@ class Diagram_2Columns(Diagram):
         self.gutter = gutter
 
         # Add/override config
-        self.config = config.diagram_presets
+        self.config = conf_mod.diagram_presets
         self.update_config(kwargs.get("config", {}))
 
         self.panel_00 = self.add(
@@ -215,11 +225,8 @@ class Diagram_2Rows(Diagram):
         super().__init__(width, height, tag, **kwargs)
         self.gutter = self.units_to_px(gutter)
 
-        # Add/override config
-        self.config = config.diagram_presets
-        self.update_config(kwargs.get("config", {}))
-
-        self.add_tag(self.config["tag"])
+        # Get preset panel config
+        panel_cfg = config_manager.get("diagram_presets")
 
         self.panel_00 = self.add(
             Panel(
@@ -227,8 +234,8 @@ class Diagram_2Rows(Diagram):
                 y=0,
                 width=self.width,
                 height=self.height,
-                tag=self.config["panel_00"]["tag"],
-                config=self.config["panel_00"],
+                tag=panel_cfg["panel_00"]["tag"],
+                config=panel_cfg["panel_00"],
             )
         )
         self.panel_01 = self.panel_00.add(
@@ -237,8 +244,8 @@ class Diagram_2Rows(Diagram):
                 y=0,
                 width=self.panel_00.inset_width,
                 height=self.gutter,
-                tag=self.config["panel_01"]["tag"],
-                config=self.config["panel_01"],
+                tag=panel_cfg["panel_01"]["tag"],
+                config=panel_cfg["panel_01"],
             )
         )
         self.panel_02 = self.panel_00.add(
@@ -247,7 +254,7 @@ class Diagram_2Rows(Diagram):
                 y=self.gutter,
                 width=self.panel_00.inset_width,
                 height=self.panel_00.inset_height - self.gutter,
-                tag=self.config["panel_02"]["tag"],
-                config=self.config["panel_02"],
+                tag=panel_cfg["panel_02"]["tag"],
+                config=panel_cfg["panel_02"],
             )
         )

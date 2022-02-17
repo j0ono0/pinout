@@ -2,6 +2,7 @@ import copy
 from pinout.core import SvgShape, Group, Rect, Text, BoundingCoords, Coords
 from pinout.components import leaderline as lline
 from pinout import config
+from pinout import config_manager
 
 
 def pitch_generator(start, pitch):

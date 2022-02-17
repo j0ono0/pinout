@@ -4,6 +4,13 @@
 #
 ################################
 
+# Diagram
+diagram = {
+    "tag": "diagram",
+    "units": "px",
+    "dpi": 96,
+}
+
 # Pinlabel
 pinlabel = {
     "tag": "pinlabel",

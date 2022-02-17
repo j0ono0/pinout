@@ -1,4 +1,5 @@
 import base64
+import collections.abc
 import copy
 import math
 import pathlib
@@ -95,7 +96,23 @@ class Component:
             tag_list.append(tag)
         self.tag = " ".join(tag_list)
 
-    def update_config(self, vals):
+    def update_data_dict(self, d, u):
+        """Update dict including recursively update dicts that are values. Values are copied.
+
+        :param d: Dict to update, can include dict values
+        :type d: dict
+        :param u: Values to update
+        :type u: dict
+        """
+        for k, v in u.items():
+            if isinstance(v, collections.abc.Mapping):
+                d[k] = self.update_data_dict(d.get(k, {}), v)
+            else:
+                d[k] = copy.deepcopy(v)
+        return d
+
+    def update_config(self, vals, cfg=None):
+        cfg = cfg or self.config
         """update config dict
 
         :param vals: Values to update

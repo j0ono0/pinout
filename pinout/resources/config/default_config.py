@@ -31,6 +31,12 @@ pinlabel = {
     },
 }
 
+# note: this config is overridden by pinlabel["leaderline'] in pinlabels
+leaderline = {
+    "direction": "hh",
+    "tag": "pinlabel__leader",
+}
+
 # Legend
 legend = {
     "max_height": None,

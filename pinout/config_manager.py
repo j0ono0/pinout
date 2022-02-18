@@ -9,15 +9,15 @@ from pinout import manager_files as io
 def load_module(package, resource):
     config_path_manager = importlib.resources.path(package, resource)
     with config_path_manager as file_path:
-        config_modules.insert(1, io.import_source_file("config", file_path))
+        config_modules.insert(0, io.import_source_file("config", file_path))
 
 
-def add(src):
+def add_file(src):
     src = Path(src)
-    config_modules.insert(1, io.import_source_file(src.stem, src.name))
+    config_modules.insert(0, io.import_source_file(src.stem, src.name))
 
 
-def add_rule(name, value):
+def add_dict(name, value):
     setattr(adhoc_config, name, value)
 
 
@@ -35,7 +35,7 @@ def get(attr):
     instances = []
     for cfg in config_modules:
         if hasattr(cfg, attr):
-            instances.append(getattr(cfg, attr))
+            instances.insert(0, getattr(cfg, attr))
             # return getattr(cfg, attr)
 
     while instances:

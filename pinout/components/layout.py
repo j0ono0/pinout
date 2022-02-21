@@ -22,11 +22,13 @@ class Diagram(Layout):
 
         self.merge_config_into_kwargs(kwargs, "diagram")
 
-        super().__init__(tag=tag, **kwargs)
+        super().__init__(**kwargs)
 
         # Setup component
         self.add(SvgShape(width=width, height=height))
-        self.add_tag(self.config["tag"])
+
+        # Add user supplied tag
+        self.add_tag(tag)
 
     @property
     def width(self):
@@ -123,7 +125,6 @@ class Panel(Layout):
 
         inset = inset or self.config["inset"]
         self.inset = BoundingCoords(*inset)
-        self.add_tag(self.config["tag"])
 
         # add a non-rendering shape so component
         # reports user set coordinates and dimensions

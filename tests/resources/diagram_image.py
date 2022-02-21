@@ -5,7 +5,7 @@ from pinout.core import Image
 from pinout.components.layout import Diagram
 
 
-diagram = Diagram(800, 800, tag="pinout")
+diagram = Diagram(800, 800, tag="diagram")
 
 # PNG image
 # ---------

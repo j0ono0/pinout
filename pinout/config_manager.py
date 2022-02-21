@@ -44,13 +44,17 @@ def get(attr):
     return merged_config
 
 
-##################################################
-#
-# Init config
-#
-##################################################
-# Config module that accepts attrs set from within a pinout script
-adhoc_config = types.ModuleType("adhoc_config")
+def init():
+    global adhoc_config, config_modules
+    # adhoc_config used for variable added directly via script
+    adhoc_config = types.ModuleType("adhoc_config")
+    config_modules = [adhoc_config]
+    load_module("pinout.resources.config", "default_config.py")
 
-config_modules = [adhoc_config]
-load_module("pinout.resources.config", "default_config.py")
+
+##################################################
+#
+# initialize config on module load
+#
+##################################################
+init()

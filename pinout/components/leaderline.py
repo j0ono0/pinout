@@ -11,7 +11,6 @@ class Leaderline(core.Path):
         self.end = core.Coords(0, 0)
 
         self.merge_config_into_kwargs(kwargs, "leaderline")
-
         super().__init__(**kwargs)
 
     def end_points(self, origin, destination):
@@ -62,6 +61,7 @@ class Curved(Leaderline):
                     f"L {end.x} {end.y}",
                 ]
             )
+
         elif self.direction == "hv":
             # start horizontal, end vertical
             path_def = " ".join(

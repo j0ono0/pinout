@@ -6,10 +6,12 @@
 
 # Diagram
 diagram = {
-    "tag": "diagram",
+    "tag": "pinout TESTING_CONFIG",
     "units": "px",
     "dpi": 96,
 }
+
+group = {"tag": "group"}
 
 # Pinlabel
 pinlabel = {
@@ -45,12 +47,12 @@ legend = {
     "entry": {
         "width": 159,
         "height": 28,
-        "swatch": {
-            "width": 20,
-            "height": 20,
-            "tag": "swatch",
-        },
         "tag": "legendentry",
+    },
+    "swatch": {
+        "width": 20,
+        "height": 20,
+        "tag": "swatch",
     },
 }
 
@@ -163,6 +165,17 @@ diagram_presets = {
     },
 }
 
+################################
+#
+# SvgShapes
+#
+################################
+svgshape = {"tag": "svgshape"}
+image = {"tag": "image"}
+text = {"tag": "text"}
+circle = {"tag": "circle"}
+rect = {"tag": "rect"}
+path = {"tag": "path"}
 
 ################################
 #

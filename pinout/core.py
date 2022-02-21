@@ -67,6 +67,16 @@ class Component:
 
         self.clip = clip
 
+        try:
+            # Add config tag(s). These include the default tag
+            self.add_tag(self.config["tag"])
+        except:
+            # No config tag provided
+            warnings.warn(
+                f"no config tag provided for component: \n{self}\n{self.__dict__}\n"
+            )
+            pass
+
     @property
     def clip(self):
         return self._clip
@@ -316,6 +326,8 @@ class Group(Layout):
     """Group components together"""
 
     def __init__(self, x=0, y=0, tag=None, **kwargs):
+
+        self.merge_config_into_kwargs(kwargs, "group")
         super().__init__(x=x, y=y, tag=tag, **kwargs)
 
     @property
@@ -400,6 +412,8 @@ class SvgShape(Component, TransformMixin):
         self._width = width
         self._height = height
 
+        self.merge_config_into_kwargs(kwargs, "svgshape")
+
         super().__init__(**kwargs)
 
     @property
@@ -449,6 +463,7 @@ class Path(SvgShape):
     """SVG Path object"""
 
     def __init__(self, path_definition="", **kwargs):
+        self.merge_config_into_kwargs(kwargs, "path")
         super().__init__(**kwargs)
         self.d = path_definition
 
@@ -467,6 +482,7 @@ class Rect(SvgShape):
 
     def __init__(self, *args, corner_radius=0, **kwargs):
         self.corner_radius = corner_radius
+        self.merge_config_into_kwargs(kwargs, "rect")
         super().__init__(*args, **kwargs)
 
     def render(self):
@@ -486,6 +502,7 @@ class Circle(SvgShape):
         self.r = r
         kwargs["x"] = cx
         kwargs["y"] = cy
+        self.merge_config_into_kwargs(kwargs, "circle")
         super().__init__(**kwargs)
 
     def render(self):
@@ -499,6 +516,8 @@ class Text(SvgShape):
     """SVG <text> object"""
 
     def __init__(self, content, **kwargs):
+
+        self.merge_config_into_kwargs(kwargs, "text")
         super().__init__(**kwargs)
         self.content = content
 
@@ -550,6 +569,8 @@ class Image(SvgShape):
 
         kwargs["width"] = kwargs.get("width", self.im_size[0])
         kwargs["height"] = kwargs.get("height", self.im_size[1])
+
+        self.merge_config_into_kwargs(kwargs, "image")
         super().__init__(**kwargs)
 
     @property

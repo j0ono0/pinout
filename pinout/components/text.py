@@ -1,4 +1,4 @@
-from pinout import core, config
+from pinout import core
 
 
 class TextBlock(core.Group):

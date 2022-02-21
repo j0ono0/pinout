@@ -1,5 +1,5 @@
-from pinout import core, config
-from pinout.components.layout import Group
+from pinout import core
+from pinout.core import Group
 
 
 class Swatch(Group):

@@ -18,9 +18,8 @@ import re
 import shutil
 import uuid
 from pathlib import Path
-from importlib import reload
 from pinout import manager
-from pinout import config
+from pinout import config_manager
 
 
 def re_sub_ids(re_m):
@@ -106,7 +105,7 @@ def mk_test_file(src, dest):
 def test_output_against_reference(tmp_path, module_path, ref_path):
     # Config requires reloading between tests to  to ensure
     # is in default state.
-    reload(config)
+    config_manager.init()
 
     module_path = Path(module_path)
     ref_path = Path(ref_path)

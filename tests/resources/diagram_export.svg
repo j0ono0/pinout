@@ -7,7 +7,7 @@
     width="800" 
     height="400" 
     viewBox="0 0 800 400"
-    class="pinout"
+    class="diagram pinout"
 >
 
 <defs>
@@ -23,7 +23,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="117e4091-bfe8-484e-95fb-212d564ee687_3"
+id="c8f2c6b8-b384-4ccc-8d3d-76955cae27ed_3"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
@@ -34,7 +34,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="117e4091-bfe8-484e-95fb-212d564ee687_4"
+id="c8f2c6b8-b384-4ccc-8d3d-76955cae27ed_4"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Pinout export test.

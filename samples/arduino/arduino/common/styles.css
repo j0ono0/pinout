@@ -44,7 +44,7 @@ text {
 .legend .swatch__body{
     fill: rgba(0,0,0,0);
 }
-.legendentry text{
+.legend__entry text{
     dominant-baseline: central;
     fill: #000;
 }

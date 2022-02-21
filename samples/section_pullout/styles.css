@@ -88,7 +88,7 @@ text {
     fill: #333;
 }
 
-.legendentry text {
+.legend__entry text {
     dominant-baseline: central;
 }
 

@@ -12,11 +12,11 @@ text {
     fill: #333;
 }
 
-.layout .h1{
+.diagram .h1{
     font-size: 26px;
     font-weight: bold;
 }
-.layout .strong{
+.diagram .strong{
     font-weight: bold;
 }
 .panel--info .panel__inner{

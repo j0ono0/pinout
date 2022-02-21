@@ -10,7 +10,7 @@
 # >>> pip install libsass
 
 from pinout.core import Group, Image
-from pinout import config
+from pinout import config_manager
 from pinout.components.layout import Diagram, Panel
 from pinout.components.pinlabel import PinLabelGroup
 from pinout.components.text import TextBlock
@@ -20,9 +20,12 @@ from pinout.components import leaderline as lline
 import teensy_4_data as data
 
 # Override default config settings
-config.pinlabel["body"]["x"] = 0
-config.pinlabel["body"]["height"] = 28
-config.pinlabel["body"]["corner_radius"] = 0
+config_manager.add_dict(
+    "pinlabel",
+    {
+        "body": {"x": 0, "height": 28, "corner_radius": 0},
+    },
+)
 
 ################################################
 # EXPERIMENTAL: DATA PREPROCESSOR

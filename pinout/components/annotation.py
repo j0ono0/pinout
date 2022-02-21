@@ -40,8 +40,6 @@ class AnnotationLabel(core.Group):
 
         super().__init__(**kwargs)
 
-        self.add_tag(self.config["tag"])
-
         self.leaderline = leaderline
         self.body = body
         self.target = target

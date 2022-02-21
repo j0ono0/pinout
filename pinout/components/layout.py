@@ -28,7 +28,8 @@ class Diagram(Layout):
         self.add(SvgShape(width=width, height=height))
 
         # Add user supplied tag
-        self.add_tag(tag)
+        if tag:
+            self.add_tag(tag)
 
     @property
     def width(self):

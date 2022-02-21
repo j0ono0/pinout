@@ -35,8 +35,6 @@ class LegendEntry(Group):
 
         super().__init__(**kwargs)
 
-        self.add_tag(self.config["tag"])
-
         width = width or self.config["entry"]["width"]
         height = height or self.config["entry"]["height"]
         swatch = swatch or {}
@@ -75,7 +73,6 @@ class Legend(Group):
     ):
         self.merge_config_into_kwargs(kwargs, "legend")
         super().__init__(**kwargs)
-        self.add_tag(self.config["tag"])
 
         max_height = max_height or self.config["max_height"]
 
@@ -87,6 +84,7 @@ class Legend(Group):
                 content, tag, *args = entry
                 attrs = args[0] if len(args) > 0 else {}
                 entry = LegendEntry(content, tag=tag, **attrs, scale=self.scale)
+                entry.add_tag(self.config["entry"]["tag"])
 
             self.add(entry)
 

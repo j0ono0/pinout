@@ -61,7 +61,7 @@ class DIP(Group):
         self._width = width
         self._height = height
         self.inset = BoundingCoords(*self.config["inset"])
-        self.add_tag(self.config["tag"])
+
         self.add(SvgShape(width=width, height=height))
 
     @property
@@ -146,7 +146,6 @@ class QFP(Group):
         self.pin_count = pin_count
         self.length = length
         self.inset = BoundingCoords(*self.config["inset"])
-        self.add_tag(self.config["tag"])
 
     @property
     def pin_pitch(self):

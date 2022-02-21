@@ -1,4 +1,4 @@
-#####################################################
+##########################################################
 #
 #
 # This sample is a WORK IN PROGRESS!
@@ -6,12 +6,15 @@
 # ...It should work but might be a bit
 # rough around the edges.
 #
-#####################################################
+# Export:
+# >>> py -m pinout.manager -e pinout_x1.py pinout_x1.svg
+#
+##########################################################
 
 from pinout.components.layout import Diagram, Panel
 from pinout.core import Group, Image
 from pinout.components.pinlabel import PinLabelGroup
-from pinout import config
+from pinout import config_manager
 
 # Python has multiple options for reading popular spreadsheet formats.
 # This example uses Pandas in conjunction with openpyxl.
@@ -20,14 +23,11 @@ from pinout import config
 # >>> pip install pandas
 # >>> pip install openpyxl
 
-# Export:
-# >>> py -m pinout.manager -e pinout_x1.py pinout_x1.svg
 
 import pci_data as data
 
 # configuration customsations
-config.pinlabel["body"]["corner_radius"] = 0
-config.pinlabel["body"]["height"] = 28
+config_manager.add_dict("pinlabel", {"body": {"corner_radius": 0, "height": 28}})
 
 diagram = Diagram(1200, 675, "diagram")
 diagram.add_stylesheet("autostyles.css")

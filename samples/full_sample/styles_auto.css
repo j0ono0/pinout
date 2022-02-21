@@ -97,7 +97,7 @@ text {
     }
 
 
-    .legendentry text {
+    .legend__entry text {
         dominant-baseline: central;
     }
 

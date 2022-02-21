@@ -1,8 +1,15 @@
+# export from command line:
+# # >>> py -m pinout.manager -e attiny85.py  pinout_attiny85.svg -o
+
 from pinout.components import integrated_circuits as ic
 from pinout.components.legend import Legend
 from pinout.components.layout import Diagram, Panel
 from pinout.core import Group
 from pinout.components.text import TextBlock
+
+from pinout import config_manager
+
+config_manager.add_dict("pinlabel", {"body": {"width": 55}})
 
 legend_data = [
     ("Port", "port"),
@@ -91,17 +98,6 @@ attiny85_QFN = (
     + [[("DNC", "dnc")]] * 5
 )
 
-###########################
-#
-# TODO: update to use config_manager
-"""
-# Modify default config
-config.pinlabel["body"]["width"] = 50
-config.ic_qfp["inset"] = (3, 3, 3, 3)
-config.panel["inset"] = (1.5, 1.5, 1.5, 1.5)
-config.legend["entry"]["width"] = 200
-config.legend["entry"]["inset"] = 0
-"""
 
 # Add pin numbers in a list comprehension
 attiny85_numbered = [

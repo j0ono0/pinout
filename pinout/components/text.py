@@ -14,7 +14,6 @@ class TextBlock(core.Group):
         super().__init__(**kwargs)
 
         self.line_height = line_height or self.config["line_height"]
-        self.add_tag(self.config["tag"])
         self.content = content
 
     @property
@@ -29,7 +28,6 @@ class TextBlock(core.Group):
         self._content = content
 
     def render(self):
-        self.add_tag(self.config["tag"])
         y = 0
         for text in self.content:
             self.add(

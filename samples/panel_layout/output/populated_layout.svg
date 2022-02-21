@@ -7,7 +7,7 @@
     width="1200" 
     height="675" 
     viewBox="0 0 1200 675"
-    class="panel_layout"
+    class=" diagram panel_layout"
 >
 
 <defs>
@@ -24,31 +24,31 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_3"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_3"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class="panel__outer"
+        class="panel__outer rect"
 transform="
     translate(-2 -2) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_26"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_26"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1200" 
     height="675" 
 /><rect
 
-        class="panel__inner"
+        class="panel__inner rect"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_25"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_25"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1196" 
@@ -60,31 +60,31 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_5"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_5"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class="panel__outer"
+        class="panel__outer rect"
 transform="
     translate(-2 -2) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_28"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_28"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1196" 
     height="50" 
 /><rect
 
-        class="panel__inner"
+        class="panel__inner rect"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_27"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_27"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1192" 
@@ -96,18 +96,18 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_19"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_19"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
 
-        class="textblock"
+        class="textblock text"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_29"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_29"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Banner
@@ -120,31 +120,31 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_7"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_7"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class="panel__outer"
+        class="panel__outer rect"
 transform="
     translate(-2 -2) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_31"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_31"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="797.3333333333334" 
     height="500" 
 /><rect
 
-        class="panel__inner"
+        class="panel__inner rect"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_30"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_30"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="793.3333333333334" 
@@ -156,18 +156,18 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_20"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_20"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
 
-        class="textblock"
+        class="textblock text"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_32"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_32"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Main
@@ -180,31 +180,31 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_9"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_9"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class="panel__outer"
+        class="panel__outer rect"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_34"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_34"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
     height="500" 
 /><rect
 
-        class="panel__inner"
+        class="panel__inner rect"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_33"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_33"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
@@ -216,31 +216,31 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_11"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_11"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class="panel__outer"
+        class="panel__outer rect"
 transform="
     translate(-2 -2) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_36"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_36"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
     height="166.66666666666666" 
 /><rect
 
-        class="panel__inner"
+        class="panel__inner rect"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_35"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_35"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="394.66666666666663" 
@@ -252,18 +252,18 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_21"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_21"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
 
-        class="textblock"
+        class="textblock text"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_37"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_37"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Detail 01
@@ -276,31 +276,31 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_13"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_13"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class="panel__outer"
+        class="panel__outer rect"
 transform="
     translate(-2 -2) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_39"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_39"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
     height="166.66666666666666" 
 /><rect
 
-        class="panel__inner"
+        class="panel__inner rect"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_38"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_38"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="394.66666666666663" 
@@ -312,18 +312,18 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_22"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_22"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
 
-        class="textblock"
+        class="textblock text"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_40"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_40"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Detail 02
@@ -336,31 +336,31 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_15"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_15"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class="panel__outer"
+        class="panel__outer rect"
 transform="
     translate(-2 -2) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_42"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_42"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
     height="166.66666666666666" 
 /><rect
 
-        class="panel__inner"
+        class="panel__inner rect"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_41"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_41"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="394.66666666666663" 
@@ -372,18 +372,18 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_23"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_23"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
 
-        class="textblock"
+        class="textblock text"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_43"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_43"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Detail 03
@@ -397,31 +397,31 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_17"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_17"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class="panel__outer"
+        class="panel__outer rect"
 transform="
     translate(-2 -2) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_45"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_45"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1196" 
     height="121.0" 
 /><rect
 
-        class="panel__inner"
+        class="panel__inner rect"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_44"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_44"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1192" 
@@ -433,18 +433,18 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_24"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_24"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
 
-        class="textblock"
+        class="textblock text"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="fd8166b3-e06a-49a4-9c84-351d203b176c_46"
+id="440a43c1-62d4-4fd4-a673-f05253219e9f_46"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Footer

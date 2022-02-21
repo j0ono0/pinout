@@ -6,7 +6,7 @@
 
 # Diagram
 diagram = {
-    "tag": "pinout TESTING_CONFIG",
+    "tag": "diagram",
     "units": "px",
     "dpi": 96,
 }
@@ -47,7 +47,7 @@ legend = {
     "entry": {
         "width": 159,
         "height": 28,
-        "tag": "legendentry",
+        "tag": "legend__entry",
     },
     "swatch": {
         "width": 20,

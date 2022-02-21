@@ -7,7 +7,7 @@
     width="1200" 
     height="675" 
     viewBox="0 0 1200 675"
-    class="diagram"
+    class=" diagram"
 >
 
 <defs>
@@ -23,71 +23,75 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_3"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_3"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class="panel__outer"
+        class="panel__outer rect"
 transform="
     translate(-2 -2) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_280"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_280"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1200" 
     height="675" 
 /><rect
 
-        class="panel__inner"
+        class="panel__inner rect"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_279"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_279"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1196" 
     height="671" 
 /><g 
+        class=" group"
 transform="
     translate(30 10) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_5"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_5"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
+        class=" image"
 transform="
     translate(0 0) 
     scale(2 2)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_6"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_6"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     b'<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" version="1.1" id="Layer_1" x="0px" y="0px" width="94.436px" height="264.109px" viewBox="0 0 94.436 264.109" enable-background="new 0 0 94.436 264.109" xml:space="preserve">\n<ns0:rect x="36.278" y="70.221" fill="none" stroke="#29ABE2" width="48.879" height="6" />\n<ns0:rect x="36.278" y="61.221" fill="none" stroke="#29ABE2" width="36.673" height="6" />\n<ns0:rect x="36.278" y="88.221" fill="none" stroke="#29ABE2" width="48.879" height="6" />\n<ns0:rect x="36.278" y="79.221" fill="none" stroke="#29ABE2" width="48.879" height="6" />\n<ns0:rect x="36.278" y="106.221" fill="none" stroke="#29ABE2" width="48.879" height="6" />\n<ns0:rect x="36.278" y="97.221" fill="none" stroke="#29ABE2" width="48.879" height="6" />\n<ns0:rect x="36.278" y="124.221" fill="none" stroke="#29ABE2" width="48.879" height="6" />\n<ns0:rect x="36.278" y="115.221" fill="none" stroke="#29ABE2" width="48.879" height="6" />\n<ns0:rect x="36.278" y="133.221" fill="none" stroke="#29ABE2" width="48.879" height="6" />\n<ns0:rect x="36.278" y="151.221" fill="none" stroke="#29ABE2" width="48.879" height="6" />\n<ns0:rect x="36.278" y="142.221" fill="none" stroke="#29ABE2" width="48.879" height="6" />\n<ns0:rect x="36.278" y="187.221" fill="none" stroke="#29ABE2" width="48.879" height="6" />\n<ns0:rect x="36.278" y="178.221" fill="none" stroke="#29ABE2" width="48.879" height="6" />\n<ns0:rect x="36.278" y="205.221" fill="none" stroke="#29ABE2" width="48.879" height="6" />\n<ns0:rect x="36.278" y="196.221" fill="none" stroke="#29ABE2" width="48.879" height="6" />\n<ns0:rect x="36.278" y="214.221" fill="none" stroke="#29ABE2" width="48.879" height="6" />\n<ns0:rect x="36.278" y="232.221" fill="none" stroke="#29ABE2" width="48.879" height="6" />\n<ns0:rect x="36.278" y="223.221" fill="none" stroke="#29ABE2" width="48.879" height="6" />\n<ns0:path fill="none" stroke="#29ABE2" d="M3.278,261.388v-20.167h81.879c3.314,0,6-2.687,6-6v-54c0-3.313-2.686-6-6-6H25.778  c-4.142,0-7.5-3.358-7.5-7.5s3.358-7.5,7.5-7.5h59.379c3.314,0,6-2.687,6-6v-90c0-3.313-2.686-6-6-6H10.778  c-4.142,0-7.5-3.358-7.5-7.5s3.358-7.5,7.5-7.5h42.514V18.675H3.278V2.721" />\n</ns0:svg>'
 </g>
 <g 
+        class=" group"
 transform="
     translate(160 129.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_7"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_7"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
+        class=" group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_8"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_8"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -97,43 +101,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_9"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_9"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(106 -54.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_283"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_283"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="30" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(121.0 -40) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_281"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_281"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     1.0
 </text><path 
 
-        class="pinlabel__leader"
+        class="pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_11"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_11"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 -40.0 92.75 -40.0 L 106 -40.0" 
@@ -145,43 +149,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_13"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_13"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_286"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_286"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_284"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_284"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     +12 V
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_17"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_17"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -193,55 +197,56 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_18"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_18"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_289"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_289"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_287"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_287"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     PRSNT1#
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_22"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_22"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
 />
 </g>
 </g><g 
+        class=" group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_23"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_23"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -251,43 +256,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_24"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_24"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(106 -42.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_292"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_292"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="30" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(121.0 -28) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_290"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_290"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     2.0
 </text><path 
 
-        class="pinlabel__leader"
+        class="pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_26"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_26"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 -28.0 92.75 -28.0 L 106 -28.0" 
@@ -299,43 +304,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_28"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_28"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_295"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_295"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_293"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_293"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     +12 V
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_32"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_32"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -347,55 +352,56 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_33"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_33"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_298"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_298"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_296"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_296"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     +12 V
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_37"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_37"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
 />
 </g>
 </g><g 
+        class=" group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_38"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_38"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -405,43 +411,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_39"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_39"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(106 -30.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_301"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_301"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="30" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(121.0 -16) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_299"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_299"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     3.0
 </text><path 
 
-        class="pinlabel__leader"
+        class="pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_41"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_41"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 -16.0 92.75 -16.0 L 106 -16.0" 
@@ -453,43 +459,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_43"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_43"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_304"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_304"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_302"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_302"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     +12 V
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_47"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_47"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -501,55 +507,56 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_48"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_48"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_307"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_307"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_305"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_305"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     +12 V
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_52"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_52"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
 />
 </g>
 </g><g 
+        class=" group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_53"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_53"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -559,43 +566,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_54"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_54"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(106 -18.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_310"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_310"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="30" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(121.0 -4) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_308"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_308"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     4.0
 </text><path 
 
-        class="pinlabel__leader"
+        class="pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_56"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_56"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 -4.0 92.75 -4.0 L 106 -4.0" 
@@ -607,43 +614,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_58"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_58"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_313"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_313"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_311"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_311"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Ground
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_62"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_62"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -655,55 +662,56 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_63"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_63"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_316"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_316"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_314"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_314"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Ground
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_67"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_67"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
 />
 </g>
 </g><g 
+        class=" group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_68"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_68"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -713,43 +721,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_69"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_69"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(106 -6.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_319"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_319"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="30" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(121.0 8) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_317"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_317"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     5.0
 </text><path 
 
-        class="pinlabel__leader"
+        class="pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_71"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_71"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 8.0 92.75 8.0 L 106 8.0" 
@@ -761,43 +769,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_73"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_73"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_322"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_322"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_320"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_320"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     SMCLK
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_77"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_77"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -809,55 +817,56 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_78"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_78"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_325"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_325"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_323"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_323"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     TCK
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_82"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_82"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
 />
 </g>
 </g><g 
+        class=" group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_83"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_83"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -867,43 +876,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_84"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_84"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(106 6.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_328"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_328"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="30" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(121.0 20) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_326"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_326"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     6.0
 </text><path 
 
-        class="pinlabel__leader"
+        class="pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_86"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_86"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 20.0 92.75 20.0 L 106 20.0" 
@@ -915,43 +924,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_88"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_88"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_331"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_331"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_329"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_329"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     SMDAT
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_92"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_92"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -963,55 +972,56 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_93"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_93"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_334"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_334"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_332"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_332"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     TDI
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_97"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_97"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
 />
 </g>
 </g><g 
+        class=" group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_98"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_98"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -1021,43 +1031,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_99"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_99"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(106 18.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_337"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_337"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="30" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(121.0 32) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_335"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_335"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     7.0
 </text><path 
 
-        class="pinlabel__leader"
+        class="pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_101"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_101"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 32.0 92.75 32.0 L 106 32.0" 
@@ -1069,43 +1079,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_103"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_103"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_340"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_340"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_338"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_338"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Ground
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_107"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_107"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -1117,55 +1127,56 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_108"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_108"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_343"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_343"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_341"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_341"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     TDO
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_112"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_112"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
 />
 </g>
 </g><g 
+        class=" group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_113"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_113"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -1175,43 +1186,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_114"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_114"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(106 30.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_346"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_346"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="30" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(121.0 44) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_344"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_344"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     8.0
 </text><path 
 
-        class="pinlabel__leader"
+        class="pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_116"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_116"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 44.0 92.75 44.0 L 106 44.0" 
@@ -1223,43 +1234,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_118"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_118"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_349"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_349"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_347"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_347"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     +3.3 V
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_122"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_122"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -1271,55 +1282,56 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_123"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_123"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_352"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_352"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_350"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_350"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     TMS
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_127"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_127"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
 />
 </g>
 </g><g 
+        class=" group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_128"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_128"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -1329,43 +1341,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_129"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_129"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(106 42.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_355"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_355"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="30" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(121.0 56) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_353"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_353"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     9.0
 </text><path 
 
-        class="pinlabel__leader"
+        class="pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_131"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_131"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 56.0 92.75 56.0 L 106 56.0" 
@@ -1377,43 +1389,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_133"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_133"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_358"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_358"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_356"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_356"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     TRST#
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_137"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_137"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -1425,55 +1437,56 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_138"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_138"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_361"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_361"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_359"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_359"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     +3.3 V
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_142"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_142"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
 />
 </g>
 </g><g 
+        class=" group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_143"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_143"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -1483,43 +1496,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_144"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_144"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(106 54.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_364"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_364"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="30" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(121.0 68) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_362"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_362"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     10.0
 </text><path 
 
-        class="pinlabel__leader"
+        class="pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_146"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_146"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 68.0 92.75 68.0 L 106 68.0" 
@@ -1531,43 +1544,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_148"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_148"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_367"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_367"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_365"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_365"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     +3.3 V aux
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_152"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_152"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -1579,55 +1592,56 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_153"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_153"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_370"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_370"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_368"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_368"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     +3.3 V
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_157"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_157"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
 />
 </g>
 </g><g 
+        class=" group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_158"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_158"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -1637,43 +1651,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_159"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_159"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(106 66.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_373"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_373"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="30" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(121.0 80) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_371"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_371"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     11.0
 </text><path 
 
-        class="pinlabel__leader"
+        class="pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_161"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_161"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 80.0 92.75 80.0 L 106 80.0" 
@@ -1685,43 +1699,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_163"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_163"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_376"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_376"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_374"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_374"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     WAKE#
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_167"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_167"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -1733,43 +1747,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_168"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_168"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_379"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_379"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_377"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_377"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     PERST#
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_172"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_172"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -1777,21 +1791,23 @@ shape-rendering="geometricPrecision"
 </g>
 </g>
 </g><g 
+        class=" group"
 transform="
     translate(160 362) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_173"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_173"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
+        class=" group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_174"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_174"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -1801,43 +1817,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_175"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_175"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(106 53.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_382"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_382"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="30" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(121.0 67.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_380"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_380"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     12.0
 </text><path 
 
-        class="pinlabel__leader"
+        class="pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_177"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_177"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 67.0 92.75 67.0 L 106 67.0" 
@@ -1849,43 +1865,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_179"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_179"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_385"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_385"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_383"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_383"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     CLKREQ#
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_183"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_183"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -1897,55 +1913,56 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_184"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_184"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_388"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_388"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_386"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_386"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Ground
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_188"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_188"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
 />
 </g>
 </g><g 
+        class=" group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_189"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_189"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -1955,43 +1972,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_190"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_190"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(106 65.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_391"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_391"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="30" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(121.0 79.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_389"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_389"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     13.0
 </text><path 
 
-        class="pinlabel__leader"
+        class="pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_192"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_192"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 79.0 92.75 79.0 L 106 79.0" 
@@ -2003,43 +2020,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_194"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_194"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_394"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_394"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_392"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_392"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Ground
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_198"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_198"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -2051,55 +2068,56 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_199"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_199"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_397"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_397"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_395"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_395"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     REFCLK+
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_203"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_203"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
 />
 </g>
 </g><g 
+        class=" group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_204"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_204"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -2109,43 +2127,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_205"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_205"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(106 77.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_400"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_400"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="30" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(121.0 91.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_398"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_398"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     14.0
 </text><path 
 
-        class="pinlabel__leader"
+        class="pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_207"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_207"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 91.0 92.75 91.0 L 106 91.0" 
@@ -2157,43 +2175,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_209"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_209"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_403"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_403"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_401"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_401"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     HSOp(0)
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_213"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_213"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -2205,55 +2223,56 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_214"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_214"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_406"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_406"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_404"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_404"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     REFCLK&#x2212;
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_218"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_218"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
 />
 </g>
 </g><g 
+        class=" group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_219"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_219"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -2263,43 +2282,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_220"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_220"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(106 89.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_409"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_409"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="30" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(121.0 103.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_407"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_407"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     15.0
 </text><path 
 
-        class="pinlabel__leader"
+        class="pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_222"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_222"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 103.0 92.75 103.0 L 106 103.0" 
@@ -2311,43 +2330,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_224"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_224"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_412"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_412"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_410"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_410"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     HSOn(0)
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_228"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_228"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -2359,55 +2378,56 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_229"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_229"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_415"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_415"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_413"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_413"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Ground
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_233"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_233"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
 />
 </g>
 </g><g 
+        class=" group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_234"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_234"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -2417,43 +2437,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_235"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_235"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(106 101.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_418"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_418"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="30" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(121.0 115.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_416"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_416"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     16.0
 </text><path 
 
-        class="pinlabel__leader"
+        class="pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_237"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_237"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 115.0 92.75 115.0 L 106 115.0" 
@@ -2465,43 +2485,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_239"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_239"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_421"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_421"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_419"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_419"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Ground
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_243"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_243"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -2513,55 +2533,56 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_244"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_244"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_424"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_424"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_422"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_422"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     HSIp(0)
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_248"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_248"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
 />
 </g>
 </g><g 
+        class=" group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_249"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_249"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -2571,43 +2592,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_250"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_250"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(106 113.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_427"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_427"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="30" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(121.0 127.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_425"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_425"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     17.0
 </text><path 
 
-        class="pinlabel__leader"
+        class="pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_252"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_252"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 127.0 92.75 127.0 L 106 127.0" 
@@ -2619,43 +2640,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_254"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_254"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_430"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_430"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_428"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_428"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     PRSNT2#
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_258"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_258"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -2667,55 +2688,56 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_259"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_259"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_433"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_433"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_431"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_431"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     HSIn(0)
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_263"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_263"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
 />
 </g>
 </g><g 
+        class=" group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_264"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_264"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -2725,43 +2747,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_265"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_265"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(106 125.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_436"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_436"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="30" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(121.0 139.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_434"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_434"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     18.0
 </text><path 
 
-        class="pinlabel__leader"
+        class="pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_267"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_267"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 13.25 0.0 C 53.0 0.0 53.0 139.0 92.75 139.0 L 106 139.0" 
@@ -2773,43 +2795,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_269"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_269"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_439"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_439"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_437"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_437"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Ground
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_273"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_273"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -2821,43 +2843,43 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_274"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_274"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" pinlabel__body"
+        class=" rect pinlabel__body"
 transform="
     translate(6 -14.0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_442"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_442"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="80" 
     height="28" 
 /><text
 
-        class="pinlabel__text"
+        class="pinlabel__text text"
 transform="
     translate(46.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_440"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_440"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Ground
 </text><path 
 
-        class=" pinlabel__leader"
+        class=" pinlabel__leader pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="92e623a5-542f-42e8-a121-da29156c4a5d_278"
+id="e0198d4a-c225-44ea-8bee-8ec8991504cf_278"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 

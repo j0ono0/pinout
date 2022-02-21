@@ -1,7 +1,7 @@
 
 text {
     font-family: Verdana, Georgia, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: normal;
 }
 
@@ -27,7 +27,7 @@ text {
     fill: #ededed;
 }
 
-.legendentry text {
+.legend__entry text {
     dominant-baseline: central;
 }
 

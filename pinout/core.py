@@ -72,9 +72,6 @@ class Component:
             self.add_tag(self.config["tag"])
         except:
             # No config tag provided
-            warnings.warn(
-                f"no config tag provided for component: \n{self}\n{self.__dict__}\n"
-            )
             pass
 
     @property

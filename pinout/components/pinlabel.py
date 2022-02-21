@@ -80,8 +80,6 @@ class Base(Group):
         # Add SvgShape so pin label reports correct dimensions.
         self.add(SvgShape(x=self.leaderline.x, y=self.leaderline.x))
 
-        self.add_tag(self.config["tag"])
-
     @property
     def body(self):
         return self._body

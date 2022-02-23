@@ -62,17 +62,28 @@ class Component:
         self.config = config or {}
         self.defs = defs or []
         self.id = diagram_id()
-        self.tag = tag
+        self._tag = set()
         super().__init__(**kwargs)
 
         self.clip = clip
-
+        self.add_tag(tag)
         try:
             # Add config tag(s). These include the default tag
             self.add_tag(self.config["tag"])
         except:
             # No config tag provided
             pass
+
+    @property
+    def tag(self):
+        return " ".join(self._tag)
+
+    @tag.setter
+    def tag(self, tag=None):
+        try:
+            self._tags = set(tag.split(" "))
+        except AttributeError:
+            self._tags = set()
 
     @property
     def clip(self):
@@ -98,10 +109,12 @@ class Component:
         :param tag: CSS class name(s)
         :type tag: string
         """
-        tag_list = (self.tag or "").split(" ")
-        if tag not in tag_list:
-            tag_list.append(tag)
-        self.tag = " ".join(tag_list)
+        try:
+            self._tags.update(tag.split(" "))
+
+        except AttributeError:
+            # No tag supplied
+            pass
 
     def update_data_dict(self, d, u):
         """Update dict including recursively update dicts that are values. Values are copied.
@@ -189,18 +202,53 @@ class Component:
         return BoundingCoords(min(rx), min(ry), max(rx), max(ry))
 
 
-class Layout(Component, TransformMixin):
-    """Base class fundamentally grouping other components together."""
-
-    def __init__(self, x=0, y=0, children=None, **kwargs):
+class Dimensions:
+    def __init__(self, x=0, y=0, units=None, dpi=None, **kwargs):
+        self.units = units
+        self.dpi = dpi
         self.x = x
         self.y = y
-        self.children = children or []
 
         super().__init__(**kwargs)
 
+    def units_to_px(self, measurement):
+        length = measurement
+        units = self.units
+        if isinstance(measurement, str):
+            tokens = [token for token in re.split(r"(\d+)", measurement, 1) if token]
+            length = float(tokens[0])
+            units = tokens[1]
+            if units not in ["px", "in", "mm", "cm"]:
+                raise ValueError(
+                    f"units \"{units}\" is not supported. Valid units of measure are 'px', 'in', 'mm' and 'cm'."
+                )
+        conversion = {
+            "px": length,
+            "in": length * self.dpi,
+            "cm": length / 2.54 * self.dpi,
+            "mm": length / 25.4 * self.dpi,
+        }
+        return conversion[units]
+
+
+class Layout(Dimensions, Component, TransformMixin):
+    """Base class fundamentally grouping other components together."""
+
+    def __init__(self, x=0, y=0, units=None, dpi=None, children=None, **kwargs):
+        # self.x = x
+        # self.y = y
+        # self.dpi = dpi
+        # self.units = units
+        self.children = children or []
+
+        super().__init__(x, y, units, dpi, **kwargs)
+
     def add(self, instance):
+        if not instance.units:
+            instance.units = self.units
+            instance.dpi = self.dpi
         self.children.append(instance)
+        print(f"{instance} has new units: {instance.units} / dpi: {instance.dpi}")
         return instance
 
     @staticmethod
@@ -400,18 +448,18 @@ class Raw:
         return self.content
 
 
-class SvgShape(Component, TransformMixin):
+class SvgShape(Dimensions, Component, TransformMixin):
     """Base class for components that have a graphical representation."""
 
     def __init__(self, x=0, y=0, width=0, height=0, **kwargs):
-        self.x = x
-        self.y = y
+        # self.x = x
+        # self.y = y
         self._width = width
         self._height = height
 
         self.merge_config_into_kwargs(kwargs, "svgshape")
 
-        super().__init__(**kwargs)
+        super().__init__(x=x, y=y, **kwargs)
 
     @property
     def width(self):

@@ -5,7 +5,7 @@
     clip-path="url(#{{ params.clip.id }})"
 {% endif %}
 transform="
-    translate({{ params.x }} {{  params.y }}) 
+    translate({{ params.units_to_px(params.x) }} {{  params.units_to_px(params.y) }}) 
     scale({{ params.scale.x }} {{ params.scale.y }})
     rotate({{ params.rotate }})
 "

@@ -2,7 +2,7 @@
 # Example: Inserting content into 'panel_layout'
 #
 # export this sample via the command line:
-# >>> py -m pinout.manager --export populated_layout.py output/populated_layout.svg
+# >>> py -m pinout.manager --export populated_layout.py populated_layout.svg
 #
 
 from pinout.components.text import TextBlock

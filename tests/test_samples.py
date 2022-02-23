@@ -36,7 +36,7 @@ def mk_test_file(src, dest):
         # sub ids
         id = re.compile(r"(?<=id=\").+(?=\")")
         data = re.sub(id, re_sub_ids, data)
-        # sub hrefs
+        # sub href anchor links
         id = re.compile(r"(?<=href=\"#).+(?=\")")
         data = re.sub(id, re_sub_ids, data)
         # sub clip-path urls
@@ -82,11 +82,11 @@ def mk_test_file(src, dest):
         ),
         (
             "../samples/panel_layout/panel_layout.py",
-            "../samples/panel_layout/output/panel_layout.svg",
+            "../samples/panel_layout/panel_layout.svg",
         ),
         (
             "../samples/panel_layout/populated_layout.py",
-            "../samples/panel_layout/output/populated_layout.svg",
+            "../samples/panel_layout/populated_layout.svg",
         ),
         (
             "../samples/pci-express/pinout_x1.py",

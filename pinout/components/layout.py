@@ -13,23 +13,16 @@ class Diagram(Layout):
     """Basis of a pinout diagram"""
 
     def __init__(self, width, height, tag=None, units="px", dpi=96, **kwargs):
-        self.dpi = dpi
-        self.units = units
         self._width = None
         self._height = None
         self.width = width
         self.height = height
-
         self.merge_config_into_kwargs(kwargs, "diagram")
 
-        super().__init__(**kwargs)
+        super().__init__(tag=tag, dpi=dpi, units=units, **kwargs)
 
         # Setup component
         self.add(SvgShape(width=width, height=height))
-
-        # Add user supplied tag
-        if tag:
-            self.add_tag(tag)
 
     @property
     def width(self):
@@ -37,7 +30,7 @@ class Diagram(Layout):
 
     @width.setter
     def width(self, val):
-        self._width = self.units_to_px(val)
+        self._width = val
 
     @property
     def height(self):
@@ -65,26 +58,7 @@ class Diagram(Layout):
 
     @height.setter
     def height(self, val):
-        self._height = self.units_to_px(val)
-
-    def units_to_px(self, measurement):
-        length = measurement
-        units = self.units
-        if isinstance(measurement, str):
-            tokens = [token for token in re.split(r"(\d+)", measurement, 1) if token]
-            length = float(tokens[0])
-            units = tokens[1]
-            if units not in ["px", "in", "mm", "cm"]:
-                raise ValueError(
-                    f"units \"{units}\" is not supported. Valid units of measure are 'px', 'in', 'mm' and 'cm'."
-                )
-        conversion = {
-            "px": length,
-            "in": length * self.dpi,
-            "cm": length / 2.54 * self.dpi,
-            "mm": length / 25.4 * self.dpi,
-        }
-        return conversion[units]
+        self._height = val
 
     def add_stylesheet(self, path, embed=False):
         """Add a stylesheet to the diagram"""
@@ -180,7 +154,7 @@ class Panel(Layout):
 class Diagram_2Columns(Diagram):
     def __init__(self, width, height, gutter, tag, **kwargs):
         super().__init__(width, height, tag, **kwargs)
-        self.gutter = self.units_to_px(gutter)
+        self.gutter = gutter
 
         # Get preset panel config
         panel_cfg = config_manager.get("diagram_presets")
@@ -220,7 +194,7 @@ class Diagram_2Columns(Diagram):
 class Diagram_2Rows(Diagram):
     def __init__(self, width, height, gutter, tag, **kwargs):
         super().__init__(width, height, tag, **kwargs)
-        self.gutter = self.units_to_px(gutter)
+        self.gutter = gutter
 
         # Get preset panel config
         panel_cfg = config_manager.get("diagram_presets")

@@ -2,14 +2,11 @@
 <svg  
     xmlns="http://www.w3.org/2000/svg" 
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    x="{{ svg.x }}"
-    y="{{ svg.y }}"
-    width="{{ svg.width }}" 
-    height="{{ svg.height }}" 
-    {#
-    viewBox="{{ svg.bounding_rect().x }} {{ svg.bounding_rect().y }} {{ svg.bounding_rect().w }} {{ svg.bounding_rect().h }}"
-    #}
-    viewBox="0 0 {{ svg.width }} {{ svg.height }}"
+    x="{{ svg.units_to_px(svg.x) }}"
+    y="{{ svg.units_to_px(svg.y) }}"
+    width="{{ svg.units_to_px(svg.width) }}" 
+    height="{{ svg.units_to_px(svg.height) }}" 
+    viewBox="{{ svg.units_to_px(svg.bounding_rect().x) }} {{ svg.units_to_px(svg.bounding_rect().y) }} {{ svg.units_to_px(svg.bounding_rect().w) }} {{ svg.units_to_px(svg.bounding_rect().h) }}"
     {% if svg.tag %}
     class="{{ svg.tag }}"
     {% endif %}

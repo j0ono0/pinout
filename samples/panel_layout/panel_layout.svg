@@ -15,8 +15,8 @@
 </defs>
 
 
-    <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="..\styles.css" xlink:href="..\styles.css"  type="text/css"/>
-<link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="..\auto_styles.css" xlink:href="..\auto_styles.css"  type="text/css"/>
+    <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="styles.css" xlink:href="styles.css"  type="text/css"/>
+<link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="auto_styles.css" xlink:href="auto_styles.css"  type="text/css"/>
 <g 
         class=" panel"
 transform="
@@ -24,7 +24,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_3"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_3"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -35,7 +35,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_20"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_20"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1200" 
@@ -48,7 +48,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_19"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_19"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1196" 
@@ -60,7 +60,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_5"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_5"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -71,7 +71,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_22"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_22"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1196" 
@@ -84,7 +84,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_21"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_21"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1192" 
@@ -97,7 +97,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_7"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_7"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -108,7 +108,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_24"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_24"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="797.3333333333334" 
@@ -121,7 +121,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_23"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_23"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="793.3333333333334" 
@@ -134,7 +134,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_9"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_9"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -145,7 +145,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_26"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_26"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
@@ -158,7 +158,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_25"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_25"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
@@ -170,7 +170,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_11"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_11"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -181,7 +181,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_28"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_28"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
@@ -194,7 +194,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_27"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_27"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="394.66666666666663" 
@@ -207,7 +207,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_13"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_13"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -218,7 +218,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_30"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_30"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
@@ -231,7 +231,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_29"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_29"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="394.66666666666663" 
@@ -244,7 +244,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_15"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_15"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -255,7 +255,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_32"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_32"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
@@ -268,7 +268,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_31"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_31"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="394.66666666666663" 
@@ -282,7 +282,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_17"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_17"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -293,7 +293,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_34"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_34"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1196" 
@@ -306,7 +306,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="3e5eb4e0-bf76-4bb3-b07b-7639cd6dc8e1_33"
+id="f376bc74-a64b-4c75-b74b-47b614cf2934_33"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1192" 

@@ -15,8 +15,8 @@
 </defs>
 
 
-    <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="..\styles.css" xlink:href="..\styles.css"  type="text/css"/>
-<link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="..\auto_styles.css" xlink:href="..\auto_styles.css"  type="text/css"/>
+    <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="styles.css" xlink:href="styles.css"  type="text/css"/>
+<link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="auto_styles.css" xlink:href="auto_styles.css"  type="text/css"/>
 <g 
         class=" panel"
 transform="
@@ -24,7 +24,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_3"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_3"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -35,7 +35,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_26"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_26"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1200" 
@@ -48,7 +48,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_25"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_25"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1196" 
@@ -60,7 +60,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_5"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_5"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -71,7 +71,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_28"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_28"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1196" 
@@ -84,7 +84,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_27"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_27"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1192" 
@@ -96,7 +96,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_19"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_19"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
@@ -107,7 +107,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_29"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_29"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Banner
@@ -120,7 +120,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_7"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_7"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -131,7 +131,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_31"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_31"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="797.3333333333334" 
@@ -144,7 +144,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_30"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_30"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="793.3333333333334" 
@@ -156,7 +156,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_20"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_20"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
@@ -167,7 +167,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_32"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_32"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Main
@@ -180,7 +180,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_9"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_9"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -191,7 +191,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_34"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_34"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
@@ -204,7 +204,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_33"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_33"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
@@ -216,7 +216,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_11"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_11"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -227,7 +227,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_36"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_36"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
@@ -240,7 +240,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_35"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_35"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="394.66666666666663" 
@@ -252,7 +252,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_21"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_21"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
@@ -263,7 +263,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_37"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_37"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Detail 01
@@ -276,7 +276,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_13"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_13"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -287,7 +287,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_39"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_39"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
@@ -300,7 +300,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_38"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_38"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="394.66666666666663" 
@@ -312,7 +312,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_22"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_22"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
@@ -323,7 +323,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_40"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_40"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Detail 02
@@ -336,7 +336,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_15"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_15"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -347,7 +347,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_42"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_42"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="398.66666666666663" 
@@ -360,7 +360,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_41"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_41"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="394.66666666666663" 
@@ -372,7 +372,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_23"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_23"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
@@ -383,7 +383,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_43"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_43"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Detail 03
@@ -397,7 +397,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_17"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_17"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -408,7 +408,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_45"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_45"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1196" 
@@ -421,7 +421,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_44"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_44"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     width="1192" 
@@ -433,7 +433,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_24"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_24"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
@@ -444,7 +444,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="440a43c1-62d4-4fd4-a673-f05253219e9f_46"
+id="d6bcd2c2-2129-453b-8681-1a44ad4ed8b7_46"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Footer

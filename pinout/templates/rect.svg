@@ -4,10 +4,10 @@
         {% include "component_common.svg" %}
     {% endwith %}
     
-    width="{{ rect.width }}" 
-    height="{{ rect.height }}" 
+    width="{{ rect.units_to_px(rect.width) }}" 
+    height="{{ rect.units_to_px(rect.height) }}" 
     {% if rect.corner_radius %}
-    rx="{{ rect.corner_radius }}" 
-    ry="{{ rect.corner_radius }}" 
+    rx="{{ rect.units_to_px(rect.corner_radius) }}" 
+    ry="{{ rect.units_to_px(rect.corner_radius) }}" 
     {% endif %}
 />

@@ -4,5 +4,5 @@
         {% include "component_common.svg" %}
     {% endwith %}
     
-    d="{{ path.d }}" 
+    d="{{ path.definition_to_px() }}" 
 />

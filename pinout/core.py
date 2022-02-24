@@ -110,7 +110,7 @@ class Component:
         :type tag: string
         """
         try:
-            self._tags.update(tag.split(" "))
+            self._tag.update(tag.split(" "))
 
         except AttributeError:
             # No tag supplied
@@ -248,7 +248,6 @@ class Layout(Dimensions, Component, TransformMixin):
             instance.units = self.units
             instance.dpi = self.dpi
         self.children.append(instance)
-        print(f"{instance} has new units: {instance.units} / dpi: {instance.dpi}")
         return instance
 
     @staticmethod
@@ -511,6 +510,17 @@ class Path(SvgShape):
         self.merge_config_into_kwargs(kwargs, "path")
         super().__init__(**kwargs)
         self.d = path_definition
+
+    def pathrepl(self, matchobj):
+        return str(self.units_to_px(float(matchobj.group(0))))
+
+    def definition_to_px(self):
+        path_def = self.d
+        print(path_def)
+
+        path_def = re.sub(r"([-+]?(?:\d*\.\d+|\d+))", self.pathrepl, path_def)
+        print(path_def)
+        return path_def
 
     def render(self):
         """Render a <path> tag.

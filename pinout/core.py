@@ -12,6 +12,7 @@ import warnings
 import xml.etree.ElementTree as ET
 from collections import namedtuple
 from pinout import manager, templates, config_manager
+from pinout import manager_files
 
 
 Coords = namedtuple("Coords", ("x y"))
@@ -211,9 +212,9 @@ class Dimensions:
 
         super().__init__(**kwargs)
 
-    def units_to_px(self, measurement):
+    def units_to_px(self, measurement, units=None):
         length = measurement
-        units = self.units
+        units = units or self.units
         if isinstance(measurement, str):
             tokens = [token for token in re.split(r"(\d+)", measurement, 1) if token]
             length = float(tokens[0])
@@ -225,8 +226,18 @@ class Dimensions:
         conversion = {
             "px": length,
             "in": length * self.dpi,
+            "pt": length / 72 * self.dpi,
             "cm": length / 2.54 * self.dpi,
             "mm": length / 25.4 * self.dpi,
+        }
+        return conversion[units]
+
+    def px_to_units(self, length, units):
+        conversion = {
+            "px": length,
+            "in": length / self.dpi,
+            "cm": length / self.dpi * 2.54,
+            "mm": length / self.dpi * 25.4,
         }
         return conversion[units]
 
@@ -244,9 +255,8 @@ class Layout(Dimensions, Component, TransformMixin):
         super().__init__(x, y, units, dpi, **kwargs)
 
     def add(self, instance):
-        if not instance.units:
-            instance.units = self.units
-            instance.dpi = self.dpi
+        instance.units = instance.units or self.units
+        instance.dpi = instance.dpi or self.dpi
         self.children.append(instance)
         return instance
 
@@ -450,7 +460,7 @@ class Raw:
 class SvgShape(Dimensions, Component, TransformMixin):
     """Base class for components that have a graphical representation."""
 
-    def __init__(self, x=0, y=0, width=0, height=0, **kwargs):
+    def __init__(self, x=0, y=0, width=None, height=None, **kwargs):
         # self.x = x
         # self.y = y
         self._width = width
@@ -507,6 +517,9 @@ class Path(SvgShape):
     """SVG Path object"""
 
     def __init__(self, path_definition="", **kwargs):
+        # Default text dimensions to zero if none supplied
+        kwargs["width"] = kwargs.get("width", 0)
+        kwargs["height"] = kwargs.get("height", 0)
         self.merge_config_into_kwargs(kwargs, "path")
         super().__init__(**kwargs)
         self.d = path_definition
@@ -515,12 +528,7 @@ class Path(SvgShape):
         return str(self.units_to_px(float(matchobj.group(0))))
 
     def definition_to_px(self):
-        path_def = self.d
-        print(path_def)
-
-        path_def = re.sub(r"([-+]?(?:\d*\.\d+|\d+))", self.pathrepl, path_def)
-        print(path_def)
-        return path_def
+        return re.sub(r"([-+]?(?:\d*\.\d+|\d+))", self.pathrepl, self.d)
 
     def render(self):
         """Render a <path> tag.
@@ -538,6 +546,7 @@ class Rect(SvgShape):
     def __init__(self, *args, corner_radius=0, **kwargs):
         self.corner_radius = corner_radius
         self.merge_config_into_kwargs(kwargs, "rect")
+        # Default text dimensions to zero if none supplied
         super().__init__(*args, **kwargs)
 
     def render(self):
@@ -558,6 +567,9 @@ class Circle(SvgShape):
         kwargs["x"] = cx
         kwargs["y"] = cy
         self.merge_config_into_kwargs(kwargs, "circle")
+        # Default text dimensions to zero if none supplied
+        kwargs["width"] = kwargs.get("width", 0)
+        kwargs["height"] = kwargs.get("height", 0)
         super().__init__(**kwargs)
 
     def render(self):
@@ -573,6 +585,9 @@ class Text(SvgShape):
     def __init__(self, content, **kwargs):
 
         self.merge_config_into_kwargs(kwargs, "text")
+        # Default text dimensions to zero if none supplied
+        kwargs["width"] = kwargs.get("width", 0)
+        kwargs["height"] = kwargs.get("height", 0)
         super().__init__(**kwargs)
         self.content = content
 
@@ -586,16 +601,62 @@ class Text(SvgShape):
         return tplt.render(text=self)
 
 
+class Img:
+    """Common image methods"""
+
+
+class Image_PNG(Img, SvgShape):
+    """Include a PNG formatted image in the diagram"""
+
+    def __init__(self, src, embed=False, **kwargs):
+        super().__init__(**kwargs)
+        self.src = src
+        self.embed = embed
+        # Load image dimensions to avoid multiple loads when calculating coords
+        # Allow relative paths outside CWD
+        cwd = pathlib.Path.cwd()
+        im = PILImage.open(cwd.joinpath(self.src))
+        self.im_size = im.size
+
+    @property
+    def width(self):
+        if self.clip:
+            return self.clip.width
+        return self._width or self.px_to_units(self.im_size[0], self.units)
+
+    @property
+    def height(self):
+        return self._height or self.px_to_units(self.im_size[1], self.units)
+
+    def render(self):
+        # Use externally referenced image
+        media_type = "png"
+        tplt = templates.get("image_bitmap.svg")
+
+        if self.embed:
+            encoded_img = base64.b64encode(manager_files.load_data(self.src))
+            # IMPORTANT: bypass Image.src setter function
+            self._src = f"data:image/{media_type};base64,{encoded_img.decode('utf-8')}"
+        return tplt.render(image=self)
+
+
 class Image(SvgShape):
     """Include an image in the diagram."""
 
-    def __init__(self, src, dpi=72, embed=False, **kwargs):
+    def __init__(self, src, embed=False, **kwargs):
         self.coords = kwargs.pop("coords", {})
-        self._dpi = dpi
         self.embed = embed
         self.im_size = (1, 1)
         self.src = src
         self.svg_data = None
+
+        # Explicitly set dimension to 'None' if not present
+        # they are the updated later.
+        kwargs["width"] = kwargs.get("width", None)
+        kwargs["height"] = kwargs.get("height", None)
+
+        self.merge_config_into_kwargs(kwargs, "image")
+        super().__init__(**kwargs)
 
         try:
             # Load image dimensions to avoid multiple loads when calculating coords
@@ -622,20 +683,9 @@ class Image(SvgShape):
                 # Match arbitary im_size to width and height so no scaling occurs
                 pass
 
-        kwargs["width"] = kwargs.get("width", self.im_size[0])
-        kwargs["height"] = kwargs.get("height", self.im_size[1])
-
-        self.merge_config_into_kwargs(kwargs, "image")
-        super().__init__(**kwargs)
-
-    @property
-    def dpi(self):
-        return self._dpi
-
-    @dpi.setter
-    def dpi(self, val):
-        self._dpi = val
-        self.set_svg_im_size()
+        # Set width and height if not supplied
+        self.width = self.width or self.im_size[0]
+        self.height = self.height or self.im_size[1]
 
     @property
     def src(self):

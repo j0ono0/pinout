@@ -1,0 +1,184 @@
+
+<svg  
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0.0"
+    y="0.0"
+    width="127mm" 
+    height="127mm" 
+    viewBox="0.0 0.0 480.0 480.0"
+    class="diagram millimetre-dimensions"
+>
+
+<defs>
+    
+</defs>
+
+
+    <style type="text/css" media="screen">  
+    <![CDATA[  
+    
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 12pt;
+    font-weight: normal;
+}
+
+.bg_rect{
+    fill: #f4f4f4;
+}
+.top_left_cnr{
+    fill: #ff0000;
+}
+    ]]>  
+</style>
+<rect
+
+        class="bg_rect rect"
+transform="
+    translate(0.0 0.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="cd076fe3-c712-42d8-9c39-58e3708db25f_3"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="480.0" 
+    height="480.0" 
+/><rect
+
+        class="rect top_left_cnr"
+transform="
+    translate(0.0 0.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="cd076fe3-c712-42d8-9c39-58e3708db25f_4"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="240.0" 
+    height="240.0" 
+/><text
+
+        class="text"
+transform="
+    translate(37.795275590551185 37.795275590551185) 
+    scale(1 1)
+    rotate(0)
+"
+id="cd076fe3-c712-42d8-9c39-58e3708db25f_5"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Testing millimetre units 10
+</text><image 
+        class="svgshape"
+transform="
+    translate(240.0 0.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="cd076fe3-c712-42d8-9c39-58e3708db25f_6"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    href="50mmx50mm.png" 
+    xlink:href="50mmx50mm.png" 
+    height="240.0" 
+    width="240.0"
+/><g 
+        class="group"
+transform="
+    translate(0.0 240.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="cd076fe3-c712-42d8-9c39-58e3708db25f_7"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="rect rect_1"
+transform="
+    translate(37.795275590551185 37.795275590551185) 
+    scale(1 1)
+    rotate(0)
+"
+id="cd076fe3-c712-42d8-9c39-58e3708db25f_8"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    width="75.59055118110237" 
+    height="75.59055118110237" 
+/><circle
+        class="circle circle_1"
+transform="
+    translate(151.18110236220474 75.59055118110237) 
+    scale(1 1)
+    rotate(0)
+"
+id="cd076fe3-c712-42d8-9c39-58e3708db25f_9"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    cx="0" 
+    cy="0" 
+    r="37.795275590551185"
+/><path 
+
+        class="path path_1"
+transform="
+    translate(0.0 0.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="cd076fe3-c712-42d8-9c39-58e3708db25f_10"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 188.9763779527559 37.795275590551185 L 264.56692913385825 113.38582677165356 L 188.9763779527559 113.38582677165356" 
+/>
+</g><g 
+        class="textblock"
+transform="
+    translate(240.0 240.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="cd076fe3-c712-42d8-9c39-58e3708db25f_11"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <text
+
+        class="text textblock"
+transform="
+    translate(0.0 0.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="cd076fe3-c712-42d8-9c39-58e3708db25f_12"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    THIS IS A TEXTBLOCK 0.0
+</text><text
+
+        class="text textblock"
+transform="
+    translate(0.0 15.999999999999996) 
+    scale(1 1)
+    rotate(0)
+"
+id="cd076fe3-c712-42d8-9c39-58e3708db25f_13"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    LINE 0002. 4.2333333333333325
+</text><text
+
+        class="text textblock"
+transform="
+    translate(0.0 31.999999999999993) 
+    scale(1 1)
+    rotate(0)
+"
+id="cd076fe3-c712-42d8-9c39-58e3708db25f_14"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Line 0003. 8.466666666666665
+</text>
+</g>
+    
+</svg>

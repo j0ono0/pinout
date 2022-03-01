@@ -1,0 +1,13 @@
+
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 12pt;
+    font-weight: normal;
+}
+
+.bg_rect{
+    fill: #f4f4f4;
+}
+.top_left_cnr{
+    fill: #ff0000;
+}

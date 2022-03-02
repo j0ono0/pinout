@@ -1,17 +1,7 @@
 <clipPath 
-    {% if path.tag %}
-        class="{{ path.tag }}"
-    {% endif %}
-    {% if path.clip %}
-        clip-path="url(#{{ path.clip.id }})"
-    {% endif %}
-    transform="
-        translate({{ path.x }} {{  path.y }}) 
-        scale({{ path.scale.x }} {{ path.scale.y }})
-        rotate({{ path.rotate }})
-    "
-    id="{{ path.id }}"
-    clipPathUnits="userSpaceOnUse"
+    {% with params=path %}
+        {% include "component_common.svg" %}
+    {% endwith %}
 >
     {{ path.render_children() }}
 </clipPath>

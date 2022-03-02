@@ -4,5 +4,5 @@
         {% include "component_common.svg" %}
     {% endwith %}
 >
-    {{ text.content }} {{ text.y }}
+    {{ text.content }}
 </text>

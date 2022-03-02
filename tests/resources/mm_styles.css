@@ -1,7 +1,7 @@
 
 text {
-    font-family: Verdana, Georgia, sans-serif;
-    font-size: 12pt;
+    font-family: Helvetica, Verdana, Georgia, sans-serif;
+    font-size: 10pt;
     font-weight: normal;
 }
 
@@ -10,4 +10,17 @@ text {
 }
 .top_left_cnr{
     fill: #ff0000;
+}
+
+.alphanum text{
+    font-size: 35pt;
+    letter-spacing: 2.45pt;
+}
+.white text{
+    fill: #fff;
+}
+
+.pttn__dot{
+    opacity: 0.8;
+    fill: rgb(96, 196, 221);
 }

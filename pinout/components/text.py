@@ -47,7 +47,6 @@ class TextBlock(core.Group):
     def render(self):
         for i, text in enumerate(self.content):
             y = self.line_height * i * self._scale.y
-            print(f"y:{y}, line_height: {self.line_height}, i:{i}")
             self.add(
                 core.Text(content=text, x=0, y=y, scale=self._scale, **self.config)
             )

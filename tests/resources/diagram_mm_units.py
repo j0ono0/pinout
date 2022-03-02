@@ -17,25 +17,43 @@ diagram = Diagram(
 diagram.add_stylesheet("mm_styles.css", embed=True)
 diagram.add(core.Rect(0, 0, 127, 127, tag="bg_rect"))
 diagram.add(core.Rect(0, 0, 63.5, 63.5, tag="top_left_cnr"))
-diagram.add(core.Text("Testing millimetre units", x=10, y=10))
 
 png = diagram.add(core.Image_PNG("50mmx50mm.png", x=63.5, y=0, width=63.5, height=63.5))
 
 
-grp_1 = diagram.add(Group(0, 63.5))
+grp_1 = diagram.add(Group(1.75, 43.5 - 1.75))
 
-grp_1.add(core.Rect(10, 10, 20, 20, tag="rect_1"))
-grp_1.add(core.Circle(40, 20, 10, tag="circle_1"))
-grp_1.add(core.Path(path_definition="M 50 10 L 70 30 L 50 30", tag="path_1"))
+grp_1.add(core.Rect(0, 0, 20, 20, tag="rect_1"))
+grp_1.add(core.Circle(30, 10, 10, tag="circle_1"))
+grp_1.add(core.Path(path_definition="M 40 0 L 60 20 L 40 20", tag="path_1"))
 
+lowercase_text = """
+    The quick brown 
+    fox jumps over 
+    the lazy dog.
+"""
+uppercase_text = """
+    THE QUICK BROWN FOX 
+    JUMPS OVER THE LAZY DOG.
+"""
+uppercase_alphanum = """
+    ABCDEFGHIJKLMN
+    OPQRSTUVWXYZ
+    1234567890
+"""
+
+diagram.add(TextBlock(lowercase_text, line_height="11pt", x=1.75, y=1.75, tag="white"))
 tb = diagram.add(
-    TextBlock(
-        "THIS IS A TEXTBLOCK\nLINE 0002.\nLine 0003.",
-        line_height="12pt",
-        x=63.5,
-        y=63.5,
-    )
+    TextBlock(uppercase_alphanum, line_height="35pt", x=1.75, y=63.5, tag="alphanum")
 )
+"""
+"""
+grp_pttn = diagram.add(Group(0, 63.5, tag="pttn", clip=core.Rect(0, 0, 127, 63.5)))
+for i in range(11):
+    for j in range(6):
+        x = i * 63.5 / 5
+        y = j * 63.5 / 5
+        grp_pttn.add(core.Circle(x, y, 5, tag="pttn__dot"))
 
 # From the command line:
 # ----------------------

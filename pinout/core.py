@@ -67,6 +67,7 @@ class Component:
         super().__init__(**kwargs)
 
         self.clip = clip
+
         self.add_tag(tag)
         try:
             # Add config tag(s). These include the default tag
@@ -241,22 +242,30 @@ class Dimensions:
         }
         return conversion[units]
 
+    def inherit_dimensions(self, child, parent=None):
+        if child:
+            parent = parent or self
+            child.dpi = child.dpi or parent.dpi
+            child.units = child.units or parent.units
+            try:
+                for grandchild in child.children:
+                    self.inherit_dimensions(grandchild, child)
+            except AttributeError:
+                # child has no children
+                pass
+
 
 class Layout(Dimensions, Component, TransformMixin):
     """Base class fundamentally grouping other components together."""
 
     def __init__(self, x=0, y=0, units=None, dpi=None, children=None, **kwargs):
-        # self.x = x
-        # self.y = y
-        # self.dpi = dpi
-        # self.units = units
         self.children = children or []
 
         super().__init__(x, y, units, dpi, **kwargs)
 
     def add(self, instance):
-        instance.units = instance.units or self.units
-        instance.dpi = instance.dpi or self.dpi
+        self.inherit_dimensions(instance, self)
+        self.inherit_dimensions(instance.clip, self)
         self.children.append(instance)
         return instance
 
@@ -461,8 +470,6 @@ class SvgShape(Dimensions, Component, TransformMixin):
     """Base class for components that have a graphical representation."""
 
     def __init__(self, x=0, y=0, width=None, height=None, **kwargs):
-        # self.x = x
-        # self.y = y
         self._width = width
         self._height = height
 

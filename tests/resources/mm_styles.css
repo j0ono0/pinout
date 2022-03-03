@@ -13,6 +13,7 @@ text {
 }
 
 .alphanum text{
+    fill: rgb(56, 113, 160);
     font-size: 35pt;
     letter-spacing: 2.45pt;
 }
@@ -21,6 +22,6 @@ text {
 }
 
 .pttn__dot{
-    opacity: 0.8;
+    opacity: 0.65;
     fill: rgb(96, 196, 221);
 }

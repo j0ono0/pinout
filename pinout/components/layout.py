@@ -36,26 +36,6 @@ class Diagram(Layout):
     def height(self):
         return self._height
 
-    @property
-    def width_in_units(self):
-        conversion = {
-            "px": self.width,
-            "in": self.width / self.dpi,
-            "cm": self.width * 2.54 / self.dpi,
-            "mm": self.width * 25.4 / self.dpi,
-        }
-        return conversion[self.units]
-
-    @property
-    def height_in_units(self):
-        conversion = {
-            "px": self.height,
-            "in": self.height / self.dpi,
-            "cm": self.height * 2.54 / self.dpi,
-            "mm": self.height * 25.4 / self.dpi,
-        }
-        return conversion[self.units]
-
     @height.setter
     def height(self, val):
         self._height = val

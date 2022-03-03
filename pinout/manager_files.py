@@ -11,14 +11,14 @@ def import_source_file(module_name, file_path):
     return module
 
 
-def load_data(self):
+def load_data(src):
     """Load data from local file system or URL."""
     try:
-        with open(self.src, "rb") as f:
+        with open(src, "rb") as f:
             return f.read()
     except OSError:
         try:
-            with urllib.request.urlopen(self.src) as f:
+            with urllib.request.urlopen(src) as f:
                 return f.read()
         except urllib.error.HTTPError as e:
             print(e.code)

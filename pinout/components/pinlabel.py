@@ -1,5 +1,4 @@
 import copy
-from pinout import config_manager
 from pinout.core import SvgShape, Group, Rect, Text, BoundingCoords, Coords
 from pinout.components import leaderline as lline
 
@@ -49,7 +48,7 @@ class Leaderline(lline.Curved):
     pass
 
 
-class Base(Group):
+class PinLabel(Group):
     """Label component designed specifically for labelling pins."""
 
     def __init__(
@@ -78,7 +77,7 @@ class Base(Group):
 
         # Add leaderline at render as it is replaced by pinlabelGroup!!!
         # Add SvgShape so pin label reports correct dimensions.
-        self.add(SvgShape(x=self.leaderline.x, y=self.leaderline.x))
+        self.add(SvgShape(x=self.leaderline.x, y=self.leaderline.x, width=0, height=0))
 
     @property
     def body(self):
@@ -93,8 +92,13 @@ class Base(Group):
             body_config = self.config["body"]
             body_config.update(body)
             body = Body(**body_config)
-            # Add body config tag if not there
+
+        # Add body config tag if not there
         body.add_tag(self.config["body"]["tag"])
+
+        # inherit dimensions if none provided
+        body.inherit_dimensions(self)
+
         self._body = body
 
     @property
@@ -112,6 +116,10 @@ class Base(Group):
             leaderline = Leaderline(**leaderline_config)
         # Add leaderline config tag if not there
         leaderline.add_tag(self.config["tag"])
+
+        # inherit dimensions if none provided
+        leaderline.inherit_dimensions(self)
+
         self._leaderline = leaderline
 
     def render(self):
@@ -128,13 +136,11 @@ class Base(Group):
             )
         )
         # Route leaderline
-        self.leaderline.route(Rect(), self._body)
+        self.leaderline.route(
+            Rect(0, 0, 0, 0, dpi=self.dpi, units=self.units), self._body
+        )
         self.add(self.leaderline)
         return super().render()
-
-
-class PinLabel(Base):
-    pass
 
 
 class PinLabelGroup(Group):

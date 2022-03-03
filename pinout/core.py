@@ -2,7 +2,6 @@ import base64
 import collections.abc
 import copy
 import math
-import pathlib
 import PIL
 from PIL import Image as PILImage
 import re
@@ -10,6 +9,7 @@ import urllib.request
 import uuid
 import warnings
 import xml.etree.ElementTree as ET
+import pathlib
 from collections import namedtuple
 from pinout import manager, templates, config_manager
 from pinout import manager_files
@@ -242,17 +242,15 @@ class Dimensions:
         }
         return conversion[units]
 
-    def inherit_dimensions(self, child, parent=None):
-        if child:
-            parent = parent or self
-            child.dpi = child.dpi or parent.dpi
-            child.units = child.units or parent.units
-            try:
-                for grandchild in child.children:
-                    self.inherit_dimensions(grandchild, child)
-            except AttributeError:
-                # child has no children
-                pass
+    def inherit_dimensions(self, src):
+        self.dpi = self.dpi or src.dpi
+        self.units = self.units or src.units
+        try:
+            for child in self.children:
+                child.inherit_dimensions(self)
+        except AttributeError:
+            # child has no children
+            pass
 
 
 class Layout(Dimensions, Component, TransformMixin):
@@ -264,8 +262,12 @@ class Layout(Dimensions, Component, TransformMixin):
         super().__init__(x, y, units, dpi, **kwargs)
 
     def add(self, instance):
-        self.inherit_dimensions(instance, self)
-        self.inherit_dimensions(instance.clip, self)
+
+        instance.inherit_dimensions(self)
+
+        if instance.clip:
+            instance.clip.inherit_dimensions(self)
+
         self.children.append(instance)
         return instance
 
@@ -608,42 +610,90 @@ class Text(SvgShape):
         return tplt.render(text=self)
 
 
-class Img:
-    """Common image methods"""
-
-
-class Image_PNG(Img, SvgShape):
-    """Include a PNG formatted image in the diagram"""
-
+class ImgBase(SvgShape):
     def __init__(self, src, embed=False, **kwargs):
+        self.merge_config_into_kwargs(kwargs, "image")
         super().__init__(**kwargs)
-        self.src = src
+        self.src = pathlib.Path(src)
         self.embed = embed
-        # Load image dimensions to avoid multiple loads when calculating coords
-        # Allow relative paths outside CWD
-        cwd = pathlib.Path.cwd()
-        im = PILImage.open(cwd.joinpath(self.src))
-        self.im_size = im.size
+        self.im_size = None
 
     @property
     def width(self):
+        if self.im_size is None:
+            self.set_im_size()
+
         if self.clip:
             return self.clip.width
+
         return self._width or self.px_to_units(self.im_size[0], self.units)
 
     @property
     def height(self):
+        if self.im_size is None:
+            self.set_im_size()
+
+        if self.clip:
+            return self.clip.height
+
         return self._height or self.px_to_units(self.im_size[1], self.units)
+
+
+class ImageBitmap(ImgBase):
+    """Include a bitmap (eg PNG formatted) image in the diagram"""
+
+    def __init__(self, src, embed=False, **kwargs):
+        super().__init__(src, embed, **kwargs)
+
+    def set_im_size(self):
+        cwd = pathlib.Path.cwd()
+        im = PILImage.open(cwd.joinpath(self.src))
+        self.im_size = im.size
 
     def render(self):
         # Use externally referenced image
-        media_type = "png"
         tplt = templates.get("image_bitmap.svg")
 
         if self.embed:
             encoded_img = base64.b64encode(manager_files.load_data(self.src))
             # IMPORTANT: bypass Image.src setter function
-            self._src = f"data:image/{media_type};base64,{encoded_img.decode('utf-8')}"
+            self._src = (
+                f"data:image/{self.src.suffix};base64,{encoded_img.decode('utf-8')}"
+            )
+        return tplt.render(image=self)
+
+
+class ImageSVG(ImgBase):
+    def __init__(self, src, embed=False, **kwargs):
+        super().__init__(src, embed, **kwargs)
+
+    def set_im_size(self):
+        # Extract dimensions from SVG attributes
+        tree = ET.parse(self.src)
+        root = tree.getroot()
+        try:
+            width = root.attrib["width"]
+            height = root.attrib["height"]
+        except KeyError:
+            # SVG can omit width and height.
+            # Use viewBox dimensions instead.
+            width, height = root.attrib["viewBox"].split(" ")[-2:]
+        # Dimensions may (or may not) include units
+        # re splits at start and end of matched group hence x3 vars
+        r = re.compile(r"(^[\d\.]+)")
+        _, width, width_units = re.split(r, width)
+        _, height, height_units = re.split(r, height)
+        # Convert to pixel dimensions
+        width = self.units_to_px(float(width), width_units)
+        height = self.units_to_px(float(height), height_units)
+        # Set im_size
+        self.im_size = (width, height)
+
+    def render(self):
+        if self.embed:
+            # Load image data
+            self.svg_data = manager_files.load_data()
+        tplt = templates.get("image_svg.svg")
         return tplt.render(image=self)
 
 

@@ -25,3 +25,9 @@ text {
     opacity: 0.65;
     fill: rgb(96, 196, 221);
 }
+
+.stroke{
+    stroke-width: .5mm;
+    stroke: rgb(255, 0, 255);
+    fill: none;
+}

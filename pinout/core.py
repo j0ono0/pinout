@@ -213,9 +213,10 @@ class Dimensions:
 
         super().__init__(**kwargs)
 
-    def units_to_px(self, measurement, units=None):
+    def units_to_px(self, measurement, units=None, dpi=None):
         length = measurement
         units = units or self.units
+        dpi = dpi or self.dpi
         if isinstance(measurement, str):
             tokens = [token for token in re.split(r"(\d+)", measurement, 1) if token]
             length = float(tokens[0])
@@ -226,19 +227,21 @@ class Dimensions:
                 )
         conversion = {
             "px": length,
-            "in": length * self.dpi,
-            "pt": length / 72 * self.dpi,
-            "cm": length / 2.54 * self.dpi,
-            "mm": length / 25.4 * self.dpi,
+            "in": length * dpi,
+            "pt": length / 72 * dpi,
+            "cm": length / 2.54 * dpi,
+            "mm": length / 25.4 * dpi,
         }
         return conversion[units]
 
-    def px_to_units(self, length, units):
+    def px_to_units(self, length, units=None, dpi=None):
+        units = units or self.units
+        dpi = dpi or self.dpi
         conversion = {
             "px": length,
-            "in": length / self.dpi,
-            "cm": length / self.dpi * 2.54,
-            "mm": length / self.dpi * 25.4,
+            "in": length / dpi,
+            "cm": length / dpi * 2.54,
+            "mm": length / dpi * 25.4,
         }
         return conversion[units]
 
@@ -613,42 +616,111 @@ class Text(SvgShape):
 class ImgBase(SvgShape):
     def __init__(self, src, embed=False, **kwargs):
         self.merge_config_into_kwargs(kwargs, "image")
-        super().__init__(**kwargs)
+        self.coords = kwargs.pop("coords", {})
         self.src = pathlib.Path(src)
         self.embed = embed
-        self.im_size = None
+        self._im_size = None
+        super().__init__(**kwargs)
+        self.dpi_src = kwargs.get("dpi_src", self.dpi)
+
+    @property
+    def im_size(self):
+        if self._im_size is None:
+            self.get_im_size()
+        return self._im_size
+
+    @im_size.setter
+    def im_size(self, value):
+        self._im_size = value
+
+    def get_im_size(self):
+        # This method differs between SVG and bitmap image types
+        # It should set a (width, hight) tuple in the unit system of the Image instance
+        raise NotImplementedError(
+            "An Image subclass does not have the required 'get_im_size' method."
+        )
 
     @property
     def width(self):
-        if self.im_size is None:
-            self.set_im_size()
-
         if self.clip:
             return self.clip.width
 
-        return self._width or self.px_to_units(self.im_size[0], self.units)
+        if self.im_size is None:
+            self.get_im_size()
+
+        return self._width or self.im_size[0]
 
     @property
     def height(self):
-        if self.im_size is None:
-            self.set_im_size()
-
         if self.clip:
             return self.clip.height
 
-        return self._height or self.px_to_units(self.im_size[1], self.units)
+        if self.im_size is None:
+            self.get_im_size()
+
+        return self._height or self.im_size[1]
+
+    def coord(self, name, raw=False):
+        """Return scaled coordinatates."""
+
+        # Convert coordinates from dpi of source (dpi_src) to diagram dpi (self.dpi)
+        x, y = [i / self.dpi * self.dpi_src for i in self.coords[name]]
+
+        # Actual image size:
+        iw, ih = self.im_size
+
+        # Scale x and y to match user supplied dimensions
+        # NOTE: use *_width* and *_height* to ensure actual width and not clipped width
+        scaler = min(self._width / iw, self._height / ih)
+
+        # Transformed size
+        tw, th = iw * scaler, ih * scaler
+
+        # Transform x and y coords
+        tx = x * scaler
+        ty = y * scaler
+
+        if not raw:
+            # if 'raw' is False translate the coords
+            # NOTE: SVG transforms images proportionally to 'fit' supplied dimensions
+
+            # Calculate offset to centre fitted image
+            tx = tx + (self._width - tw) / 2
+            ty = ty + (self._height - th) / 2
+
+            # rotate coords
+            rtx = tx * math.cos(math.radians(self.rotate)) - ty * math.sin(
+                math.radians(self.rotate)
+            )
+            rty = tx * math.sin(math.radians(self.rotate)) + ty * math.cos(
+                math.radians(self.rotate)
+            )
+            tx = rtx + self.x
+            ty = rty + self.y
+
+        # convert to correct units
+        # tx = self.px_to_units(tx, self.units)
+        # ty = self.px_to_units(ty, self.units)
+
+        return Coords(tx, ty)
+
+    def add_coord(self, name, x, y):
+        """Record coordinates of the **unscaled** image."""
+        self.coords[name] = Coords(x, y)
 
 
 class ImageBitmap(ImgBase):
     """Include a bitmap (eg PNG formatted) image in the diagram"""
 
     def __init__(self, src, embed=False, **kwargs):
+        print(kwargs)
         super().__init__(src, embed, **kwargs)
 
-    def set_im_size(self):
+    def get_im_size(self):
         cwd = pathlib.Path.cwd()
         im = PILImage.open(cwd.joinpath(self.src))
-        self.im_size = im.size
+        width, height = im.size
+        self.im_size = (self.px_to_units(width), self.px_to_units(height))
 
     def render(self):
         # Use externally referenced image
@@ -657,7 +729,7 @@ class ImageBitmap(ImgBase):
         if self.embed:
             encoded_img = base64.b64encode(manager_files.load_data(self.src))
             # IMPORTANT: bypass Image.src setter function
-            self._src = (
+            self.src = (
                 f"data:image/{self.src.suffix};base64,{encoded_img.decode('utf-8')}"
             )
         return tplt.render(image=self)
@@ -667,7 +739,7 @@ class ImageSVG(ImgBase):
     def __init__(self, src, embed=False, **kwargs):
         super().__init__(src, embed, **kwargs)
 
-    def set_im_size(self):
+    def get_im_size(self):
         # Extract dimensions from SVG attributes
         tree = ET.parse(self.src)
         root = tree.getroot()
@@ -683,16 +755,21 @@ class ImageSVG(ImgBase):
         r = re.compile(r"(^[\d\.]+)")
         _, width, width_units = re.split(r, width)
         _, height, height_units = re.split(r, height)
-        # Convert to pixel dimensions
+        # Convert to pixel unit system
         width = self.units_to_px(float(width), width_units)
         height = self.units_to_px(float(height), height_units)
+        # Convert to user defined unit system
+        width = self.px_to_units(width)
+        height = self.px_to_units(height)
         # Set im_size
         self.im_size = (width, height)
 
     def render(self):
         if self.embed:
             # Load image data
-            self.svg_data = manager_files.load_data()
+            data = manager_files.load_data(self.src)
+            tree = ET.fromstring(data)
+            self.svg_data = ET.tostring(tree)
         tplt = templates.get("image_svg.svg")
         return tplt.render(image=self)
 

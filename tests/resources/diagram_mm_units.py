@@ -29,16 +29,41 @@ diagram = Diagram(
     tag="millimetre-dimensions",
 )
 
-diagram.add_stylesheet("mm_styles.css", embed=True)
+diagram.add_stylesheet("mm_styles.css", embed=False)
 diagram.add(core.Rect(0, 0, 127, 254, tag="bg_rect"))
 diagram.add(core.Rect(0, 0, 63.5, 63.5, tag="top_left_cnr"))
 
-diagram.add(core.ImageBitmap("50mmx50mm.png", x=63.5, y=0, width=63.5, height=63.5))
+diagram.add(
+    core.ImageSVG("50mmx50mm.svg", x=63.5, y=0, width=63.5, height=63.5, embed=False)
+)
 
-diagram.add(core.ImageSVG("50mmx50mm.svg", x=0, y=127))
+#################################################
+grp_grid = diagram.add(Group(x=0, y=127))
+
+# IMPORTANT: dpi of an image must be included to calculate its physical size
+img_grid = grp_grid.add(
+    core.ImageBitmap(
+        "grid_200x80_mm.png",
+        dpi_src=300,
+        x=0,
+        y=0,
+        width=127,
+        height=80 / 200 * 127,
+        embed=False,
+    )
+)
+
+img_grid.add_coord("ref1", 60, 20)
+grp_grid.add(core.Circle(*img_grid.coord("ref1"), 3, tag="stroke"))
+print(img_grid.coord("ref1"))
+print(img_grid.dpi_src)
+"""
+"""
+
+#################################################
+
 
 grp_1 = diagram.add(Group(1.75, 43.5 - 1.75))
-
 grp_1.add(core.Rect(0, 0, 20, 20, tag="rect_1"))
 grp_1.add(core.Circle(30, 10, 10, tag="circle_1"))
 grp_1.add(core.Path(path_definition="M 40 0 L 60 20 L 40 20", tag="path_1"))

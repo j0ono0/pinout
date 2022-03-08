@@ -4,5 +4,5 @@
     {% endwith %}
     cx="0" 
     cy="0" 
-    r="{{ circle.units_to_px(circle.r) }}"
+    r="{{ circle.r }}"
 />

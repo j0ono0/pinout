@@ -1,12 +1,3 @@
-{% if image.svg_data is not none %}
-<g 
-    {% with params=image %}
-        {% include "component_common.svg" %}
-    {% endwith %}
->
-    {{ image.svg_data }}
-</g>
-{% else %}
 <image 
     {% with params=image %}
         {% include "component_common.svg" %}
@@ -14,7 +5,6 @@
     
     href="{{ image.src }}" 
     xlink:href="{{ image.src }}" 
-    height="{{ image.units_to_px(image.height) }}" 
-    width="{{ image.units_to_px(image.width) }}"
+    height="{{ image.height }}" 
+    width="{{ image.width }}"
 />
-{% endif %}

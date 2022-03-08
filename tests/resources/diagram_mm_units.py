@@ -29,7 +29,7 @@ diagram = Diagram(
     tag="millimetre-dimensions",
 )
 
-diagram.add_stylesheet("mm_styles.css", embed=False)
+diagram.add_stylesheet("mm_styles.css", embed=True)
 diagram.add(core.Rect(0, 0, 127, 254, tag="bg_rect"))
 diagram.add(core.Rect(0, 0, 63.5, 63.5, tag="top_left_cnr"))
 
@@ -38,39 +38,16 @@ diagram.add(
 )
 
 #################################################
-grp_grid = diagram.add(Group(x=0, y=127))
-
-# IMPORTANT: dpi of an image must be included to calculate its physical size
-img_grid = grp_grid.add(
-    core.ImageBitmap(
-        "grid_200x80_mm.png",
-        dpi_src=300,
-        x=0,
-        y=0,
-        width=127,
-        height=80 / 200 * 127,
-        embed=False,
-    )
-)
-
-img_grid.add_coord("ref1", 60, 20)
-grp_grid.add(core.Circle(*img_grid.coord("ref1"), 3, tag="stroke"))
-print(img_grid.coord("ref1"))
-print(img_grid.dpi_src)
-"""
-"""
-
-#################################################
-
 
 grp_1 = diagram.add(Group(1.75, 43.5 - 1.75))
 grp_1.add(core.Rect(0, 0, 20, 20, tag="rect_1"))
 grp_1.add(core.Circle(30, 10, 10, tag="circle_1"))
 grp_1.add(core.Path(path_definition="M 40 0 L 60 20 L 40 20", tag="path_1"))
-
-
 diagram.add(TextBlock(lowercase_text, line_height="11pt", x=1.75, y=1.75, tag="white"))
-tb = diagram.add(
+
+#################################################
+
+diagram.add(
     TextBlock(uppercase_alphanum, line_height="35pt", x=1.75, y=63.5, tag="alphanum")
 )
 grp_pttn = diagram.add(Group(0, 63.5, tag="pttn", clip=core.Rect(0, 0, 127, 63.5)))
@@ -79,6 +56,30 @@ for i in range(11):
         x = i * 63.5 / 5
         y = j * 63.5 / 5
         grp_pttn.add(core.Circle(x, y, 5, tag="pttn__dot"))
+
+#################################################
+
+grp_grid = diagram.add(Group(x=0, y=127))
+
+# IMPORTANT: dpi of a source image must be included to calculate coords correctly
+img_grid = grp_grid.add(
+    core.ImageBitmap(
+        "grid_200x80_mm.png",
+        dpi=300,
+        x=0,
+        y=0,
+        width=127,
+        height=80 / 200 * 127,
+        embed=True,
+    )
+)
+
+
+img_grid.add_coord("ref1", 60, 20)
+grp_grid.add(core.Circle(*img_grid.coord("ref1"), 3, tag="stroke"))
+
+
+#################################################
 
 
 # diagram.add(pinlabel.PinLabel("PIN01", 1.75, 127, tag="pin01"))

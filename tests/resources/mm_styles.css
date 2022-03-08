@@ -1,7 +1,36 @@
 
+    /*
+        
+    IMPORTANT 
+    =========
+
+    user-space
+    ----------
+
+    The user-space refers to the cartesian plane that the elements of 
+    an SVG are drawn onto. An arbitrary unit system can be appled to this plane and done when defining a Diagram instance. Once defined, all CSS values that refer to the user-space are then treated as values in the assigned unit system. 
+
+    font-size is documented here in pt. However the pinout diagram this 
+    stylesheet is written for is using mm as its 'user space' units.
+    Consequently all CSS dimenisons/lengths must also be in mm.
+
+    CSS includes a calc() function that allows some clarity and insight into 
+    the intented units of measure. This allows a user to 'think' in their 
+    preferred units but also provide correctly scaled units to the SVG graphic.
+
+    1pt = 0.33 units
+    1pc = 16 units
+    1em = depending on 'font-size'. May vary depending on output method if unset
+    mm = 3.78 units
+    in = 96 units
+
+    Unit conversion ref: https://oreillymedia.github.io/Using_SVG/guide/units.html
+    
+    */
+
 text {
     font-family: Helvetica, Verdana, Georgia, sans-serif;
-    font-size: 10pt;
+    font-size: calc(8pt * 0.33);
     font-weight: normal;
 }
 
@@ -14,8 +43,8 @@ text {
 
 .alphanum text{
     fill: rgb(56, 113, 160);
-    font-size: 35pt;
-    letter-spacing: 2.45pt;
+    font-size: calc(25pt * 0.33);
+    letter-spacing: calc(2.8pt * 0.33);
 }
 .white text{
     fill: #fff;
@@ -27,7 +56,7 @@ text {
 }
 
 .stroke{
-    stroke-width: .5mm;
+    stroke-width: calc(0.5mm / 3.78);
     stroke: rgb(255, 0, 255);
     fill: none;
 }

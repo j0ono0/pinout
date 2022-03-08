@@ -21,13 +21,7 @@ class TextBlock(core.Group):
     @property
     def line_height(self):
         """Convert line_height unit system to textblock unit system"""
-        if isinstance(self._line_height, str):
-            # Convert line_height to TextBlock unit system
-            # It is eventually converted to px in the template using the textblock unit system
-            # re splits at start and end of matched group hence x3 vars
-            _, val, units = re.split(r"(^[\d\.]+)", self._line_height)
-            px_val = self.units_to_px(float(val), units)
-        return self.px_to_units(px_val, self.units)
+        return self.units_to_userspace(self._line_height)
 
     @line_height.setter
     def line_height(self, value):

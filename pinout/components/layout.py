@@ -1,6 +1,7 @@
 import re
 from pinout import templates, config_manager
 from pinout.core import (
+    Dimensions,
     Layout,
     StyleSheet,
     SvgShape,
@@ -12,14 +13,14 @@ from pinout.core import (
 class Diagram(Layout):
     """Basis of a pinout diagram"""
 
-    def __init__(self, width, height, tag=None, units="px", dpi=96, **kwargs):
+    def __init__(self, width, height, **kwargs):
         self._width = None
         self._height = None
         self.width = width
         self.height = height
         self.merge_config_into_kwargs(kwargs, "diagram")
 
-        super().__init__(tag=tag, dpi=dpi, units=units, **kwargs)
+        super().__init__(**kwargs)
 
         # Setup component
         self.add(SvgShape(width=width, height=height))

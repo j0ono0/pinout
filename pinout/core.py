@@ -610,7 +610,7 @@ class Text(SvgShape):
         return tplt.render(text=self)
 
 
-class ImgBase(SvgShape):
+class Image(SvgShape):
     def __init__(self, src, embed=False, **kwargs):
         self.merge_config_into_kwargs(kwargs, "image")
         self.coords = kwargs.pop("coords", {})
@@ -630,11 +630,37 @@ class ImgBase(SvgShape):
         self._im_size = value
 
     def get_im_size(self):
-        # This method differs between SVG and bitmap image types
-        # It should set a (width, hight) tuple in the unit system of the Image instance
-        raise NotImplementedError(
-            "An Image subclass does not have the required 'get_im_size' method."
-        )
+        # TODO: find bug -- self.src should already be a Path but is *not* sometimes!
+        if pathlib.Path(self.src).suffix == ".svg":
+            self.get_svg_im_size()
+        else:
+            self.get_bitmap_im_size()
+
+    def get_bitmap_im_size(self):
+        cwd = pathlib.Path.cwd()
+        im = PILImage.open(cwd.joinpath(self.src))
+        width, height = im.size
+        self.im_size = (self.px_to_units(width), self.px_to_units(height))
+
+    def get_svg_im_size(self):
+        # Extract dimensions from SVG attributes
+        tree = ET.parse(self.src)
+        root = tree.getroot()
+        try:
+            width = root.attrib["width"]
+            height = root.attrib["height"]
+        except KeyError:
+            # SVG can omit width and height.
+            # Use viewBox dimensions instead.
+            width, height = root.attrib["viewBox"].split(" ")[-2:]
+        # Dimensions may (or may not) include units
+        # re splits at start and end of matched group hence x3 vars
+        r = re.compile(r"(^[\d\.]+)")
+        _, width, width_units = re.split(r, width)
+        _, height, height_units = re.split(r, height)
+
+        # Set im_size
+        self.im_size = (width, height)
 
     @property
     def width(self):
@@ -667,7 +693,7 @@ class ImgBase(SvgShape):
 
         # Scale x and y to match user supplied dimensions
         # NOTE: use *_width* and *_height* to ensure actual width and not clipped width
-        scaler = min(self._width / iw, self._height / ih)
+        scaler = min(self.width / iw, self.height / ih)
 
         # Transformed size
         tw, th = iw * scaler, ih * scaler
@@ -681,8 +707,8 @@ class ImgBase(SvgShape):
             # NOTE: SVG transforms images proportionally to 'fit' supplied dimensions
 
             # Calculate offset to centre fitted image
-            tx = tx + (self._width - tw) / 2
-            ty = ty + (self._height - th) / 2
+            tx = tx + (self.width - tw) / 2
+            ty = ty + (self.height - th) / 2
 
             # rotate coords
             rtx = tx * math.cos(math.radians(self.rotate)) - ty * math.sin(
@@ -713,45 +739,7 @@ class ImgBase(SvgShape):
         return tplt.render(image=self)
 
 
-class ImageBitmap(ImgBase):
-    """Include a bitmap (eg PNG formatted) image in the diagram"""
-
-    def __init__(self, src, embed=False, **kwargs):
-        super().__init__(src, embed, **kwargs)
-
-    def get_im_size(self):
-        cwd = pathlib.Path.cwd()
-        im = PILImage.open(cwd.joinpath(self.src))
-        width, height = im.size
-        self.im_size = (self.px_to_units(width), self.px_to_units(height))
-
-
-class ImageSVG(ImgBase):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-    def get_im_size(self):
-        # Extract dimensions from SVG attributes
-        tree = ET.parse(self.src)
-        root = tree.getroot()
-        try:
-            width = root.attrib["width"]
-            height = root.attrib["height"]
-        except KeyError:
-            # SVG can omit width and height.
-            # Use viewBox dimensions instead.
-            width, height = root.attrib["viewBox"].split(" ")[-2:]
-        # Dimensions may (or may not) include units
-        # re splits at start and end of matched group hence x3 vars
-        r = re.compile(r"(^[\d\.]+)")
-        _, width, width_units = re.split(r, width)
-        _, height, height_units = re.split(r, height)
-
-        # Set im_size
-        self.im_size = (width, height)
-
-
-class Image(SvgShape):
+class ImageLegacy(SvgShape):
     """Include an image in the diagram."""
 
     def __init__(self, src, embed=False, **kwargs):

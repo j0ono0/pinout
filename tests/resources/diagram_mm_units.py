@@ -1,5 +1,5 @@
 from pinout import core
-from pinout.core import Group, Image
+from pinout.core import Group
 from pinout.components.layout import Diagram
 from pinout.components.text import TextBlock
 from pinout.components import pinlabel
@@ -33,8 +33,9 @@ diagram.add_stylesheet("mm_styles.css", embed=True)
 diagram.add(core.Rect(0, 0, 127, 254, tag="bg_rect"))
 diagram.add(core.Rect(0, 0, 63.5, 63.5, tag="top_left_cnr"))
 
+
 diagram.add(
-    core.ImageSVG("50mmx50mm.svg", x=63.5, y=0, width=63.5, height=63.5, embed=False)
+    core.Image("50mmx50mm.svg", x=63.5, y=0, width=63.5, height=63.5, embed=False)
 )
 
 #################################################
@@ -63,14 +64,14 @@ grp_grid = diagram.add(Group(x=0, y=127))
 
 # IMPORTANT: dpi of a source image must be included to calculate coords correctly
 img_grid = grp_grid.add(
-    core.ImageBitmap(
+    core.Image(
         "grid_200x80_mm.png",
+        embed=True,
         dpi=300,
         x=0,
         y=0,
         width=127,
         height=80 / 200 * 127,
-        embed=True,
     )
 )
 

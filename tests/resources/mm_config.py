@@ -1,85 +1,72 @@
-################################
+############################################################
 #
-# Default component settings
+# Component settings for mm (millimetre) diagram units
+# This file supplies override values to default_config.py
 #
-################################
+############################################################
 
-# Diagram
+
 diagram = {
     "units": "mm",
     "dpi": 300,
 }
 
-
-# Pinlabel
 pinlabel = {
     "body": {
-        "x": 6,
+        "x": 3,
         "y": 0,
-        "width": 28,
-        "height": 10,
+        "width": 26,
+        "height": 9,
         "corner_radius": 1,
     },
 }
 
-"""
-
-# Legend
 legend = {
-    "max_height": None,
-    "inset": (10, 10, 10, 10),
+    "inset": (2, 2, 2, 2),
     "tag": "legend",
     "entry": {
-        "width": 159,
-        "height": 28,
+        "width": 50,
+        "height": 9,
         "tag": "legend__entry",
     },
     "swatch": {
-        "width": 20,
-        "height": 20,
+        "width": 5,
+        "height": 5,
         "tag": "swatch",
     },
 }
 
 # TextBlock
 textblock = {
-    "line_height": 22,
-    "width": None,
-    "height": None,
-    "offset": (0, 0),
-    "tag": "textblock",
+    "line_height": "12.5pt",
 }
+
 
 # Annotation
 annotation = {
     "tag": "annotation",
     "content": {
-        "tag": "annotation__text",
-        "x": 28,
-        "y": 17,
-        "line_height": 16,
+        "x": 3,
+        "y": 19,
+        "line_height": 11,
     },
     "body": {
-        "x": 40,
-        "y": 29,
-        "width": 250,
-        "height": 50,
-        "corner_radius": 25,
-        "tag": "annotation__body",
+        "x": 30,
+        "y": 15,
+        "width": 60,
+        "height": 16,
+        "corner_radius": 3,
     },
     "target": {
-        "x": -10,
-        "y": -10,
-        "width": 20,
-        "height": 20,
-        "corner_radius": 10,
-        "tag": "annotation__target",
-    },
-    "leaderline": {
-        "direction": "vh",
-        "tag": "annotation__leaderline",
+        "x": -3,
+        "y": -3,
+        "width": 6,
+        "height": 6,
+        "corner_radius": 3,
     },
 }
+
+"""
 
 # Panel
 panel = {
@@ -150,17 +137,6 @@ diagram_presets = {
     },
 }
 
-################################
-#
-# SvgShapes
-#
-################################
-svgshape = {"tag": "svgshape"}
-image = {"tag": "image"}
-text = {"tag": "text"}
-circle = {"tag": "circle"}
-rect = {"tag": "rect"}
-path = {"tag": "path"}
 
 ################################
 #

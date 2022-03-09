@@ -10,13 +10,12 @@ class TextBlock(core.Group):
         self.merge_config_into_kwargs(kwargs, "textblock")
         self._scale = core.Coords(*kwargs.pop("scale", (1, 1)))
         self._content = None
-
-        # NOTE: line_height may be a string with typographic specific units (ie pt)
-        self.line_height = line_height or self.config["line_height"]
+        self.content = content
 
         super().__init__(**kwargs)
 
-        self.content = content
+        # NOTE: line_height may be a string with typographic specific units (ie pt)
+        self.line_height = line_height or self.config["line_height"]
 
     @property
     def line_height(self):

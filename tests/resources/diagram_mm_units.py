@@ -1,19 +1,14 @@
 from pinout import core
 from pinout.core import Group
 from pinout.components.layout import Diagram
+from pinout.components.annotation import AnnotationLabel
 from pinout.components.text import TextBlock
-from pinout.components import pinlabel
+from pinout.components import pinlabel, legend
 from pinout import config_manager
 
 # Testing millimetre as units
 
 config_manager.add_file("mm_config.py")
-
-for cfg in config_manager.config_modules:
-    try:
-        print(cfg.pinlabel)
-    except AttributeError:
-        pass
 
 lowercase_text = """
     The quick brown 
@@ -31,8 +26,8 @@ uppercase_alphanum = """
 """
 
 diagram = Diagram(
+    285.75,
     127,
-    254,
     units="mm",
     dpi=96,
     tag="millimetre-dimensions",
@@ -40,7 +35,7 @@ diagram = Diagram(
 
 
 diagram.add_stylesheet("mm_styles.css", embed=False)
-diagram.add(core.Rect(0, 0, 127, 254, tag="bg_rect"))
+diagram.add(core.Rect(0, 0, 285.75, 127, tag="bg_rect"))
 diagram.add(core.Rect(0, 0, 63.5, 63.5, tag="top_left_cnr"))
 
 
@@ -54,7 +49,7 @@ grp_1 = diagram.add(Group(1.75, 43.5 - 1.75))
 grp_1.add(core.Rect(0, 0, 20, 20, tag="rect_1"))
 grp_1.add(core.Circle(30, 10, 10, tag="circle_1"))
 grp_1.add(core.Path(path_definition="M 40 0 L 60 20 L 40 20", tag="path_1"))
-diagram.add(TextBlock(lowercase_text, line_height="11pt", x=1.75, y=1.75, tag="white"))
+diagram.add(TextBlock(lowercase_text, x=1.75, y=1.75, tag="white"))
 
 #################################################
 
@@ -70,7 +65,7 @@ for i in range(11):
 
 #################################################
 
-grid_grp = diagram.add(Group(x=0, y=127))
+grid_grp = diagram.add(Group(x=127, y=0))
 
 # IMPORTANT: dpi of a source image must be included to calculate coords correctly
 grid_img = grid_grp.add(
@@ -80,8 +75,8 @@ grid_img = grid_grp.add(
         dpi=300,
         x=0,
         y=0,
-        width=127,
-        height=80 / 200 * 127,
+        width=158.75,
+        height=63.5,
     )
 )
 
@@ -101,6 +96,24 @@ grid_grp.add(
         leaderline={"direction": "vh"},
         tag="pin01",
     )
+)
+
+
+#################################################
+
+diagram.add(
+    legend.Legend(
+        [("One", "one"), ("Two", "two"), ("Pin 1", "pin01")],
+        x=127,
+        y=63.5,
+        max_height=30,
+    )
+)
+
+#################################################
+
+diagram.add(
+    AnnotationLabel("Test pattern annotation. \nSecond line...?", x=63.5, y=63.5)
 )
 
 # From the command line:

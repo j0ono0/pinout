@@ -30,7 +30,7 @@
 
 text {
     font-family: Helvetica, Verdana, Georgia, sans-serif;
-    font-size: calc(8pt * 0.33);
+    font-size: calc(9pt * 0.33);
     font-weight: normal;
 }
 
@@ -63,7 +63,7 @@ text {
 
 
 .pinlabel__leader{
-    stroke-width: calc(1mm / 3.78);
+    stroke-width: calc(0.5mm / 3.78);
     fill: none;
 }
 
@@ -89,3 +89,28 @@ text {
     fill: #fff;
 }
 
+.legend__entry text {
+    dominant-baseline: central;
+}
+
+.annotation__body {
+    fill: rgb(253, 203, 36);
+    stroke-width: 0;
+}
+.annotation__text {
+    dominant-baseline: central;
+    font-size: 14px;
+    font-weight: bold;
+    fill: rgb(63, 40, 6);
+    text-anchor: middle;
+}
+.annotation__target {
+    fill: none;
+    stroke: rgb(253, 203, 36);
+    stroke-width: calc(1.5mm / 3.87);
+}
+.annotation__leaderline {
+    stroke: rgb(253, 203, 36);
+    stroke-width: calc(1.5mm / 3.87);
+    fill: none;
+}

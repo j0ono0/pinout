@@ -60,3 +60,32 @@ text {
     stroke: rgb(255, 0, 255);
     fill: none;
 }
+
+
+.pinlabel__leader{
+    stroke-width: 2;
+    fill: none;
+}
+
+.pinlabel__text{
+    dominant-baseline: central;
+    fill: #fff;
+    
+    font-weight: bold;
+    stroke-width: 0;
+    text-anchor: middle;
+}
+
+.pin01 .pinlabel__body{
+    fill: rgb(7, 153, 146);
+}
+.pin01 .pinlabel__leader{
+    stroke: rgb(7, 153, 146);
+}
+.pin01 .swatch__body {
+    fill: rgb(7, 153, 146);
+}
+.pinlabel text{
+    fill: #fff;
+}
+

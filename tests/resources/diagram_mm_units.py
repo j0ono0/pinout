@@ -3,8 +3,12 @@ from pinout.core import Group
 from pinout.components.layout import Diagram
 from pinout.components.text import TextBlock
 from pinout.components import pinlabel
+from pinout import config_manager
 
 # Testing millimetre as units
+config_manager.add_file("mm_config.py")
+
+print(config_manager.config_modules)
 
 lowercase_text = """
     The quick brown 
@@ -29,7 +33,8 @@ diagram = Diagram(
     tag="millimetre-dimensions",
 )
 
-diagram.add_stylesheet("mm_styles.css", embed=True)
+
+diagram.add_stylesheet("mm_styles.css", embed=False)
 diagram.add(core.Rect(0, 0, 127, 254, tag="bg_rect"))
 diagram.add(core.Rect(0, 0, 63.5, 63.5, tag="top_left_cnr"))
 
@@ -83,7 +88,7 @@ grp_grid.add(core.Circle(*img_grid.coord("ref1"), 3, tag="stroke"))
 #################################################
 
 
-# diagram.add(pinlabel.PinLabel("PIN01", 1.75, 127, tag="pin01"))
+diagram.add(pinlabel.PinLabel("PIN01", 1.75, 127, tag="pin01"))
 
 # From the command line:
 # ----------------------

@@ -6,9 +6,14 @@ from pinout.components import pinlabel
 from pinout import config_manager
 
 # Testing millimetre as units
+
 config_manager.add_file("mm_config.py")
 
-print(config_manager.config_modules)
+for cfg in config_manager.config_modules:
+    try:
+        print(cfg.pinlabel)
+    except AttributeError:
+        pass
 
 lowercase_text = """
     The quick brown 
@@ -65,10 +70,10 @@ for i in range(11):
 
 #################################################
 
-grp_grid = diagram.add(Group(x=0, y=127))
+grid_grp = diagram.add(Group(x=0, y=127))
 
 # IMPORTANT: dpi of a source image must be included to calculate coords correctly
-img_grid = grp_grid.add(
+grid_img = grid_grp.add(
     core.Image(
         "grid_200x80_mm.png",
         embed=True,
@@ -81,14 +86,22 @@ img_grid = grp_grid.add(
 )
 
 
-img_grid.add_coord("ref1", 60, 20)
-grp_grid.add(core.Circle(*img_grid.coord("ref1"), 3, tag="stroke"))
+grid_img.add_coord("ref1", 60, 20)
+grid_grp.add(core.Circle(*grid_img.coord("ref1"), 3, tag="stroke"))
 
 
 #################################################
 
 
-diagram.add(pinlabel.PinLabel("PIN01", 1.75, 127, tag="pin01"))
+grid_grp.add(
+    pinlabel.PinLabel(
+        "PIN01",
+        *grid_img.coord("ref1"),
+        body={"x": 20, "y": 50},
+        leaderline={"direction": "vh"},
+        tag="pin01",
+    )
+)
 
 # From the command line:
 # ----------------------

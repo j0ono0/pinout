@@ -36,7 +36,6 @@ def get(attr):
     for cfg in config_modules:
         if hasattr(cfg, attr):
             instances.insert(0, getattr(cfg, attr))
-            # return getattr(cfg, attr)
 
     while instances:
         update(merged_config, instances.pop())
@@ -57,4 +56,5 @@ def init():
 # initialize config on module load
 #
 ##################################################
+
 init()

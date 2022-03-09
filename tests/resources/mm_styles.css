@@ -63,7 +63,7 @@ text {
 
 
 .pinlabel__leader{
-    stroke-width: 2;
+    stroke-width: calc(1mm / 3.78);
     fill: none;
 }
 

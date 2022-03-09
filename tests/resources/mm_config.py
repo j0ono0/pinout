@@ -16,9 +16,9 @@ pinlabel = {
     "body": {
         "x": 6,
         "y": 0,
-        "width": 80,
-        "height": 26,
-        "corner_radius": 3,
+        "width": 28,
+        "height": 10,
+        "corner_radius": 1,
     },
 }
 

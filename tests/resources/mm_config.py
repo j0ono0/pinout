@@ -46,14 +46,14 @@ textblock = {
 annotation = {
     "tag": "annotation",
     "content": {
-        "x": 3,
+        "x": 13,
         "y": 19,
         "line_height": 11,
     },
     "body": {
         "x": 30,
-        "y": 15,
-        "width": 60,
+        "y": 30,
+        "width": 50,
         "height": 16,
         "corner_radius": 3,
     },
@@ -66,16 +66,13 @@ annotation = {
     },
 }
 
-"""
 
 # Panel
 panel = {
-    "inset": (2, 2, 2, 2),
-    "tag": "panel",
-    "inner": {"tag": "panel__inner"},
-    "outer": {"tag": "panel__outer"},
+    "inset": (1, 1, 1, 1),
 }
 
+"""
 
 # Integrated circuit
 ic_dip = {

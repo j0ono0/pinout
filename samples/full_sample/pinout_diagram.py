@@ -22,7 +22,7 @@ import full_sample_data as data
 # from pinout import config_manager
 
 # Create a new diagram, add styles and a base panel
-diagram = Diagram(1200, 675, "diagram")
+diagram = Diagram(1200, 675, tag="diagram")
 diagram.add_stylesheet("styles_auto.css", True)
 diagram.add_stylesheet("styles.css", True)
 content = diagram.add(Panel(width=1200, height=675, tag="panel__content"))

@@ -133,8 +133,8 @@ class Panel(Layout):
 
 
 class Diagram_2Columns(Diagram):
-    def __init__(self, width, height, gutter, tag, **kwargs):
-        super().__init__(width, height, tag, **kwargs)
+    def __init__(self, width, height, gutter, **kwargs):
+        super().__init__(width, height, **kwargs)
         self.gutter = gutter
 
         # Get preset panel config
@@ -173,8 +173,8 @@ class Diagram_2Columns(Diagram):
 
 
 class Diagram_2Rows(Diagram):
-    def __init__(self, width, height, gutter, tag, **kwargs):
-        super().__init__(width, height, tag, **kwargs)
+    def __init__(self, width, height, gutter, **kwargs):
+        super().__init__(width, height, **kwargs)
         self.gutter = gutter
 
         # Get preset panel config

@@ -2,53 +2,52 @@
 <svg  
     xmlns="http://www.w3.org/2000/svg" 
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    x="0"
-    y="0"
-    width="1024" 
-    height="576" 
-    viewBox="0 0 1024 576"
-    class=" diagram"
+    x="0px"
+    y="0px"
+    width="1024px" 
+    height="576px" 
+    viewBox="0.0 0.0 1024.0 576.0"
+    class="diagram"
 >
 
 <defs>
     <image 
-        class=" image"
+        class="image"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_3"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_3"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     href="hardware_18pin.png" 
     xlink:href="hardware_18pin.png" 
     height="300" 
     width="220"
-/>
-<clipPath 
-        class=" group"
-    transform="
-        translate(0 0) 
-        scale(1 1)
-        rotate(0)
-    "
-    id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_23"
-    clipPathUnits="userSpaceOnUse"
->
-    <rect
-
-        class=" rect"
+/><clipPath 
+        class="group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_22"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_23"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    <rect
+
+        class="rect"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_22"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="80" 
     height="220" 
+    width="80"
 />
 </clipPath>
 </defs>
@@ -56,13 +55,13 @@ shape-rendering="geometricPrecision"
 
     <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="styles.css" xlink:href="styles.css"  type="text/css"/>
 <g 
-        class=" panel"
+        class="panel"
 transform="
     translate(2 2) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_4"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_4"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -73,11 +72,11 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_120"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_120"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="1024" 
     height="576" 
+    width="1024"
 /><rect
 
         class="panel__inner rect"
@@ -86,19 +85,19 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_119"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_119"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="1020" 
     height="572" 
+    width="1020"
 /><g 
-        class="panel--main panel"
+        class="panel panel--main"
 transform="
     translate(2 2) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_6"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_6"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -109,11 +108,11 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_122"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_122"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="340" 
     height="440" 
+    width="340"
 /><rect
 
         class="panel__inner rect"
@@ -122,54 +121,54 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_121"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_121"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="336" 
     height="436" 
+    width="336"
 /><g 
-        class=" group"
+        class="group"
 transform="
     translate(170 20) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_12"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_12"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
-        class=" group"
+        class="group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_123"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_123"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <use
-        class=" image"
+        class="image"
 transform="
     translate(-110.0 0.0) 
     scale(1.0 1.0)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_124"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_124"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"
-    xlink:href="#f5daf02a-a3a3-4a8c-869b-5d47182e2676_3"
-    href="#f5daf02a-a3a3-4a8c-869b-5d47182e2676_3"
+    xlink:href="#6b3203f2-e7a1-450e-91b0-1e7105625b84_3"
+    href="#6b3203f2-e7a1-450e-91b0-1e7105625b84_3"
     
 />
 
 </g><g 
-        class=" annotation"
+        class="annotation"
 transform="
     translate(0.0 268.0) 
     scale(-1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_14"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_14"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <path 
@@ -180,7 +179,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_15"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_15"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 40.0 L 0.0 51.666666666666664 A 33.333333333333336 33.333333333333336 0 0 0 33.333333333333336 85.0 L 20.0 85.0" 
@@ -192,11 +191,11 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_17"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_17"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="240" 
     height="80" 
+    width="240"
     rx="10" 
     ry="10" 
 /><rect
@@ -207,11 +206,11 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_16"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_16"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="120" 
     height="50" 
+    width="120"
     rx="25" 
     ry="25" 
 /><g 
@@ -221,18 +220,18 @@ transform="
     scale(-1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_18"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_18"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
 
-        class="textblock text"
+        class="text textblock"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_125"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_125"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Section A
@@ -241,13 +240,13 @@ shape-rendering="geometricPrecision">
 </g>
 </g>
 </g><g 
-        class="panel--detail panel"
+        class="panel panel--detail"
 transform="
     translate(342 2) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_8"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_8"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -258,11 +257,11 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_127"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_127"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="680" 
     height="440" 
+    width="680"
 /><rect
 
         class="panel__inner rect"
@@ -271,42 +270,42 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_126"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_126"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="676" 
     height="436" 
+    width="676"
 /><g 
-        class=" textblock"
+        class="textblock"
 transform="
     translate(20 40) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_19"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_19"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
 
-        class="textblock text"
+        class="text textblock"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_128"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_128"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     <tspan class='section_title'>Section A</tspan>
 </text><text
 
-        class="textblock text"
+        class="text textblock"
 transform="
     translate(0 22) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_129"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_129"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Detail of double row header.
@@ -314,82 +313,82 @@ shape-rendering="geometricPrecision">
 </g><g 
         class="graphic-detail group"
 transform="
-    translate(263.5 108.0) 
+    translate(148.0909090909091 108.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_20"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_20"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
-        class=" group"
-    clip-path="url(#f5daf02a-a3a3-4a8c-869b-5d47182e2676_23)"
+        class="group"
+    clip-path="url(#6b3203f2-e7a1-450e-91b0-1e7105625b84_23)"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_130"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_130"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <use
-        class=" image"
+        class="image"
 transform="
-    translate(300.0 0.0) 
-    scale(1.0 1.0)
+    translate(244.54545454545456 3.3956115794540247e-15) 
+    scale(0.36363636363636365 0.36363636363636365)
     rotate(90)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_131"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_131"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"
-    xlink:href="#f5daf02a-a3a3-4a8c-869b-5d47182e2676_3"
-    href="#f5daf02a-a3a3-4a8c-869b-5d47182e2676_3"
+    xlink:href="#6b3203f2-e7a1-450e-91b0-1e7105625b84_3"
+    href="#6b3203f2-e7a1-450e-91b0-1e7105625b84_3"
     
 />
 
 </g><g 
-        class=" group"
+        class="group"
 transform="
-    translate(47.0 65.00000000000001) 
+    translate(152.54545454545456 23.636363636363647) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_24"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_24"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
-        class=" group"
+        class="group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_25"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_25"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
-        class=" pinlabel analog"
+        class="analog pinlabel"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_26"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_26"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" rect pinlabel__body"
+        class="pinlabel__body rect"
 transform="
     translate(66 -13.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_134"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_134"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="80" 
     height="26" 
+    width="80"
     rx="3" 
     ry="3" 
 /><text
@@ -400,46 +399,46 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_132"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_132"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     A2
 </text><path 
 
-        class="pinlabel__leader pinlabel"
+        class="pinlabel pinlabel__leader"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_28"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_28"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
 />
 </g><g 
-        class=" pinlabel touch"
+        class="pinlabel touch"
 transform="
     translate(146.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_30"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_30"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" rect pinlabel__body"
+        class="pinlabel__body rect"
 transform="
     translate(6 -13.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_137"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_137"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="80" 
     height="26" 
+    width="80"
     rx="3" 
     ry="3" 
 /><text
@@ -450,168 +449,168 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_135"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_135"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     TOUCH
 </text><path 
 
-        class=" pinlabel__leader pinlabel"
+        class="pinlabel pinlabel__leader"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_34"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_34"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
 />
 </g>
 </g><g 
-        class=" group"
+        class="group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_35"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_35"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
-        class=" pinlabel pwm"
+        class="pinlabel pwm"
 transform="
-    translate(0.0 30.0) 
+    translate(0.0 10.90909090909091) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_36"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_36"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" rect pinlabel__body"
+        class="pinlabel__body rect"
 transform="
-    translate(66.0 -13.0) 
+    translate(66.0 6.09090909090909) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_140"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_140"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="80" 
     height="26" 
+    width="80"
     rx="3" 
     ry="3" 
 /><text
 
         class="pinlabel__text text"
 transform="
-    translate(106.0 0.0) 
+    translate(106.0 19.09090909090909) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_138"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_138"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     PWM
 </text><path 
 
-        class="pinlabel__leader pinlabel"
+        class="pinlabel pinlabel__leader"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_38"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_38"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 19.09090909090909 57.75 19.09090909090909 L 66.0 19.09090909090909" 
 />
 </g>
 </g><g 
-        class=" group"
+        class="group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_40"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_40"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
-        class=" pinlabel gpio"
+        class="gpio pinlabel"
 transform="
-    translate(0.0 60.0) 
+    translate(0.0 21.81818181818182) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_41"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_41"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" rect pinlabel__body"
+        class="pinlabel__body rect"
 transform="
-    translate(66.0 -13.0) 
+    translate(66.0 25.18181818181818) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_143"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_143"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="80" 
     height="26" 
+    width="80"
     rx="3" 
     ry="3" 
 /><text
 
         class="pinlabel__text text"
 transform="
-    translate(106.0 0.0) 
+    translate(106.0 38.18181818181818) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_141"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_141"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     6
 </text><path 
 
-        class="pinlabel__leader pinlabel"
+        class="pinlabel pinlabel__leader"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_43"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_43"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 38.18181818181818 57.75 38.18181818181818 L 66.0 38.18181818181818" 
 />
 </g><g 
-        class=" pinlabel i2c"
+        class="i2c pinlabel"
 transform="
     translate(146.0 60.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_45"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_45"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" rect pinlabel__body"
+        class="pinlabel__body rect"
 transform="
     translate(6 -13.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_146"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_146"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="80" 
     height="26" 
+    width="80"
     rx="3" 
     ry="3" 
 /><text
@@ -622,107 +621,107 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_144"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_144"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     SDA1
 </text><path 
 
-        class=" pinlabel__leader pinlabel"
+        class="pinlabel pinlabel__leader"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_49"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_49"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
 />
 </g>
 </g><g 
-        class=" group"
+        class="group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_50"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_50"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
-        class=" pinlabel analog"
+        class="analog pinlabel"
 transform="
-    translate(0.0 90.0) 
+    translate(0.0 32.727272727272734) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_51"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_51"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" rect pinlabel__body"
+        class="pinlabel__body rect"
 transform="
-    translate(66.0 -13.0) 
+    translate(66.0 44.272727272727266) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_149"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_149"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="80" 
     height="26" 
+    width="80"
     rx="3" 
     ry="3" 
 /><text
 
         class="pinlabel__text text"
 transform="
-    translate(106.0 0.0) 
+    translate(106.0 57.272727272727266) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_147"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_147"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     A5
 </text><path 
 
-        class="pinlabel__leader pinlabel"
+        class="pinlabel pinlabel__leader"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_53"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_53"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 57.272727272727266 57.75 57.272727272727266 L 66.0 57.272727272727266" 
 />
 </g><g 
-        class=" pinlabel i2c"
+        class="i2c pinlabel"
 transform="
     translate(146.0 90.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_55"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_55"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" rect pinlabel__body"
+        class="pinlabel__body rect"
 transform="
     translate(6 -13.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_152"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_152"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="80" 
     height="26" 
+    width="80"
     rx="3" 
     ry="3" 
 /><text
@@ -733,19 +732,19 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_150"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_150"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     SCL1
 </text><path 
 
-        class=" pinlabel__leader pinlabel"
+        class="pinlabel pinlabel__leader"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_59"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_59"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 6 0.0" 
@@ -753,48 +752,48 @@ shape-rendering="geometricPrecision"
 </g>
 </g>
 </g><g 
-        class=" group"
+        class="group"
 transform="
-    translate(16.0 65.00000000000001) 
+    translate(141.27272727272725 23.636363636363647) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_60"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_60"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
-        class=" group"
+        class="group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_61"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_61"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
-        class=" pinlabel pwr"
+        class="pinlabel pwr"
 transform="
     translate(0 0) 
     scale(-1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_62"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_62"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" rect pinlabel__body"
+        class="pinlabel__body rect"
 transform="
     translate(66 -13.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_155"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_155"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="80" 
     height="26" 
+    width="80"
     rx="3" 
     ry="3" 
 /><text
@@ -805,218 +804,218 @@ transform="
     scale(-1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_153"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_153"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     VBAT
 </text><path 
 
-        class="pinlabel__leader pinlabel"
+        class="pinlabel pinlabel__leader"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_64"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_64"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
 />
 </g>
 </g><g 
-        class=" group"
+        class="group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_66"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_66"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
-        class=" pinlabel pwr"
+        class="pinlabel pwr"
 transform="
-    translate(0.0 30.0) 
+    translate(0.0 10.90909090909091) 
     scale(-1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_67"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_67"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" rect pinlabel__body"
+        class="pinlabel__body rect"
 transform="
-    translate(66.0 -13.0) 
+    translate(66.0 6.09090909090909) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_158"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_158"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="80" 
     height="26" 
+    width="80"
     rx="3" 
     ry="3" 
 /><text
 
         class="pinlabel__text text"
 transform="
-    translate(106.0 0.0) 
+    translate(106.0 19.09090909090909) 
     scale(-1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_156"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_156"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     3.3V
 </text><path 
 
-        class="pinlabel__leader pinlabel"
+        class="pinlabel pinlabel__leader"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_69"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_69"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 19.09090909090909 57.75 19.09090909090909 L 66.0 19.09090909090909" 
 />
 </g>
 </g><g 
-        class=" group"
+        class="group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_71"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_71"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
-        class=" pinlabel gnd"
+        class="gnd pinlabel"
 transform="
-    translate(0.0 60.0) 
+    translate(0.0 21.81818181818182) 
     scale(-1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_72"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_72"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" rect pinlabel__body"
+        class="pinlabel__body rect"
 transform="
-    translate(66.0 -13.0) 
+    translate(66.0 25.18181818181818) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_161"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_161"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="80" 
     height="26" 
+    width="80"
     rx="3" 
     ry="3" 
 /><text
 
         class="pinlabel__text text"
 transform="
-    translate(106.0 0.0) 
+    translate(106.0 38.18181818181818) 
     scale(-1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_159"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_159"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     GND
 </text><path 
 
-        class="pinlabel__leader pinlabel"
+        class="pinlabel pinlabel__leader"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_74"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_74"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 38.18181818181818 57.75 38.18181818181818 L 66.0 38.18181818181818" 
 />
 </g>
 </g><g 
-        class=" group"
+        class="group"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_76"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_76"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
-        class=" pinlabel pwr"
+        class="pinlabel pwr"
 transform="
-    translate(0.0 90.0) 
+    translate(0.0 32.727272727272734) 
     scale(-1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_77"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_77"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" rect pinlabel__body"
+        class="pinlabel__body rect"
 transform="
-    translate(66.0 -13.0) 
+    translate(66.0 44.272727272727266) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_164"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_164"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="80" 
     height="26" 
+    width="80"
     rx="3" 
     ry="3" 
 /><text
 
         class="pinlabel__text text"
 transform="
-    translate(106.0 0.0) 
+    translate(106.0 57.272727272727266) 
     scale(-1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_162"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_162"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     AREF
 </text><path 
 
-        class="pinlabel__leader pinlabel"
+        class="pinlabel pinlabel__leader"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_79"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_79"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 57.272727272727266 57.75 57.272727272727266 L 66.0 57.272727272727266" 
 />
 </g>
 </g>
 </g>
 </g>
 </g><g 
-        class="panel--info panel"
+        class="panel panel--info"
 transform="
     translate(2 442) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_10"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_10"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -1027,11 +1026,11 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_166"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_166"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="1020" 
     height="132" 
+    width="1020"
 /><rect
 
         class="panel__inner rect"
@@ -1040,30 +1039,30 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_165"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_165"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="1016" 
     height="128" 
+    width="1016"
 /><g 
-        class="panel title_block textblock"
+        class="panel textblock title_block"
 transform="
     translate(20 30) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_81"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_81"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
 
-        class="textblock text"
+        class="text textblock"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_167"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_167"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     <tspan class='h1'>Pinout sample: Section pull-out</tspan>
@@ -1075,54 +1074,54 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_82"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_82"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
 
-        class="textblock text"
+        class="text textblock"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_168"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_168"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Pinout is a Python tool kit to assist with documentation of electronic hardware.
 </text><text
 
-        class="textblock text"
+        class="text textblock"
 transform="
     translate(0 18) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_169"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_169"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     This sample demonstrates documenting a section of hardware.
 </text><text
 
-        class="textblock text"
+        class="text textblock"
 transform="
     translate(0 36) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_170"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_170"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     More info at <tspan class='italic strong'>pinout.readthedocs.io</tspan>
 </text>
 </g><g 
-        class=" legend"
+        class="legend"
 transform="
     translate(640 8) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_83"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_83"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
@@ -1132,42 +1131,42 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_84"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_84"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
-        class=" legend swatch"
+        class="legend swatch"
 transform="
     translate(4.0 14.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_85"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_85"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" rect swatch__body"
+        class="rect swatch__body"
 transform="
     translate(0 -10.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_86"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_86"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="20" 
     height="20" 
+    width="20"
 />
 </g><text
 
-        class=" text"
+        class="text"
 transform="
     translate(28.0 14.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_88"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_88"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Analog
@@ -1179,42 +1178,42 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_89"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_89"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
-        class=" legend swatch"
+        class="legend swatch"
 transform="
     translate(4.0 14.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_90"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_90"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" rect swatch__body"
+        class="rect swatch__body"
 transform="
     translate(0 -10.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_91"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_91"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="20" 
     height="20" 
+    width="20"
 />
 </g><text
 
-        class=" text"
+        class="text"
 transform="
     translate(28.0 14.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_93"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_93"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     I2C
@@ -1226,183 +1225,183 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_94"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_94"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
-        class=" legend swatch"
+        class="legend swatch"
 transform="
     translate(4.0 14.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_95"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_95"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" rect swatch__body"
+        class="rect swatch__body"
 transform="
     translate(0 -10.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_96"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_96"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="20" 
     height="20" 
+    width="20"
 />
 </g><text
 
-        class=" text"
+        class="text"
 transform="
     translate(28.0 14.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_98"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_98"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     GPIO
 </text>
 </g><g 
-        class="touch legend legend__entry"
+        class="legend legend__entry touch"
 transform="
     translate(0 84.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_99"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_99"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
-        class=" legend swatch"
+        class="legend swatch"
 transform="
     translate(4.0 14.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_100"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_100"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" rect swatch__body"
+        class="rect swatch__body"
 transform="
     translate(0 -10.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_101"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_101"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="20" 
     height="20" 
+    width="20"
 />
 </g><text
 
-        class=" text"
+        class="text"
 transform="
     translate(28.0 14.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_103"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_103"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Touch
 </text>
 </g><g 
-        class="pwm legend legend__entry"
+        class="legend legend__entry pwm"
 transform="
     translate(159.0 0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_104"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_104"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
-        class=" legend swatch"
+        class="legend swatch"
 transform="
     translate(4.0 14.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_105"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_105"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" rect swatch__body"
+        class="rect swatch__body"
 transform="
     translate(0 -10.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_106"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_106"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="20" 
     height="20" 
+    width="20"
 />
 </g><text
 
-        class=" text"
+        class="text"
 transform="
     translate(28.0 14.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_108"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_108"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     PWM
 </text>
 </g><g 
-        class="pwr legend legend__entry"
+        class="legend legend__entry pwr"
 transform="
     translate(159.0 28.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_109"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_109"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
-        class=" legend swatch"
+        class="legend swatch"
 transform="
     translate(4.0 14.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_110"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_110"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" rect swatch__body"
+        class="rect swatch__body"
 transform="
     translate(0 -10.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_111"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_111"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="20" 
     height="20" 
+    width="20"
 />
 </g><text
 
-        class=" text"
+        class="text"
 transform="
     translate(28.0 14.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_113"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_113"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Power
@@ -1414,42 +1413,42 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_114"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_114"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <g 
-        class=" legend swatch"
+        class="legend swatch"
 transform="
     translate(4.0 14.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_115"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_115"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
 
-        class=" rect swatch__body"
+        class="rect swatch__body"
 transform="
     translate(0 -10.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_116"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_116"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
-    width="20" 
     height="20" 
+    width="20"
 />
 </g><text
 
-        class=" text"
+        class="text"
 transform="
     translate(28.0 14.0) 
     scale(1 1)
     rotate(0)
 "
-id="f5daf02a-a3a3-4a8c-869b-5d47182e2676_118"
+id="6b3203f2-e7a1-450e-91b0-1e7105625b84_118"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Ground

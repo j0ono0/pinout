@@ -1,6 +1,6 @@
 from pinout import core
+from pinout.components import layout
 from pinout.core import Group
-from pinout.components.layout import Diagram
 from pinout.components.annotation import AnnotationLabel
 from pinout.components.text import TextBlock
 from pinout.components import pinlabel, legend
@@ -25,8 +25,8 @@ uppercase_alphanum = """
     1234567890
 """
 
-diagram = Diagram(
-    285.75,
+diagram = layout.Diagram(
+    254,
     127,
     units="mm",
     dpi=96,
@@ -35,7 +35,7 @@ diagram = Diagram(
 
 
 diagram.add_stylesheet("mm_styles.css", embed=False)
-diagram.add(core.Rect(0, 0, 285.75, 127, tag="bg_rect"))
+diagram.add(core.Rect(0, 0, 254, 127, tag="bg_rect"))
 diagram.add(core.Rect(0, 0, 63.5, 63.5, tag="top_left_cnr"))
 
 
@@ -70,18 +70,18 @@ grid_grp = diagram.add(Group(x=127, y=0))
 # IMPORTANT: dpi of a source image must be included to calculate coords correctly
 grid_img = grid_grp.add(
     core.Image(
-        "grid_200x80_mm.png",
+        "grid_160x80_mm.png",
         embed=True,
         dpi=300,
         x=0,
         y=0,
-        width=158.75,
+        width=127,
         height=63.5,
     )
 )
 
 
-grid_img.add_coord("ref1", 60, 20)
+grid_img.add_coord("ref1", 64, 16)
 grid_grp.add(core.Circle(*grid_img.coord("ref1"), 3, tag="stroke"))
 
 
@@ -101,11 +101,11 @@ grid_grp.add(
 
 #################################################
 
-diagram.add(
+panel1 = diagram.add(layout.Panel(63.5, 63.5, x=127, y=63.5, inset=(16, 16, 16, 16)))
+
+panel1.add(
     legend.Legend(
         [("One", "one"), ("Two", "two"), ("Pin 1", "pin01")],
-        x=127,
-        y=63.5,
         max_height=30,
     )
 )
@@ -113,7 +113,7 @@ diagram.add(
 #################################################
 
 diagram.add(
-    AnnotationLabel("Test pattern annotation. \nSecond line...?", x=63.5, y=63.5)
+    AnnotationLabel(TextBlock(lowercase_text), x=63.5, y=63.5, body={"x": 15, "y": 45})
 )
 
 # From the command line:

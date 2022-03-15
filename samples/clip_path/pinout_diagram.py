@@ -3,12 +3,19 @@
 # Example script demonstrating clipping paths
 #
 # Export the diagram via commandline:
-# >>> py -m pinout.manager -e pinout_diagram.py diagram.svg
+# >>> py -m pinout.manager -e pinout_diagram.py diagram.svg -o
 #
 ##############################################################
 
 
-from pinout.core import Circle, Group, Image, Rect, ClipPath
+from pinout.core import (
+    Circle,
+    ClipPath,
+    Group,
+    Image,
+    Rect,
+    Use,
+)
 from pinout.components.layout import Diagram_2Rows
 from pinout.components.text import TextBlock
 
@@ -58,7 +65,6 @@ box01 = diagram.panel_01.add(
     )
 )
 
-
 ##############################################################
 #
 # Apply clipping to an Image
@@ -69,13 +75,13 @@ box01 = diagram.panel_01.add(
 group_overlay = diagram.panel_01.add(Group())
 
 # Add a semi-transparent image as a base
-group_overlay.add(Image(hardware_def, tag="opacity_40"))
+group_overlay.add(Use(hardware_def, tag="opacity_40"))
 
 # Create a clip-path
 image_clip_path = ClipPath(Rect(x=0, y=230, width=220, height=70))
 
 # Create an image, applying the clip-path to it
-overlay_image = group_overlay.add(Image(hardware_def, clip=image_clip_path))
+overlay_image = group_overlay.add(Use(hardware_def, clip=image_clip_path))
 
 # Now 'group_overlay' is populated its dimensions can be calculated and
 # centered over 'box01'.
@@ -97,11 +103,11 @@ group_overlay.y = (box01.height - group_overlay.height) / 2
 led_detail = diagram.panel_01.add(Group())
 
 # Create an image, adding it to 'led_detail'
-led_image = led_detail.add(Image(hardware_def))
+led_image = led_detail.add(Use(hardware_def))
 
-# Access relevant coordinates form 'led_image'.
-led_x, led_y = led_image.coord("led_loc")
-led_w, led_h = led_image.coord("led_size", True)
+# Access relevant coordinates form 'hardware_def'.
+led_x, led_y = hardware_def.coord("led_loc")
+led_w, led_h = hardware_def.coord("led_size", True)
 
 # Realign 'led_image' so the clipped section's top-left
 # aligns with its parent's origin.
@@ -133,7 +139,7 @@ circle_group = diagram.panel_01.add(
         y=300,
         clip=Circle(cx=0, cy=0, r=68),
         children=[
-            Image(
+            Use(
                 hardware_def,
                 x=-hardware_def.coord("ic_center").x,
                 y=-hardware_def.coord("ic_center").y,

@@ -61,6 +61,12 @@ text {
     fill: none;
 }
 
+.panel__inner {
+    fill: #fff;
+}
+.panel__outer {
+    fill: #333;
+}
 
 .pinlabel__leader{
     stroke-width: calc(0.5mm / 3.78);

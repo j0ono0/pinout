@@ -4,7 +4,7 @@
 # featuring a detail 'pull-out'.
 #
 # Export the diagram via commandline:
-# >>> py -m pinout.manager --export pinout_diagram.py diagram.svg
+# >>> py -m pinout.manager --export pinout_diagram.py diagram.svg -o
 #
 ###########################################
 
@@ -26,7 +26,7 @@ import section_pullout_data as data
 #
 ##############################################################
 
-diagram = Diagram(1024, 576, "diagram")
+diagram = Diagram(1024, 576, tag="diagram")
 
 # Add stylesheet
 diagram.add_stylesheet("styles.css")

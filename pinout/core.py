@@ -78,7 +78,9 @@ class Component:
 
     @property
     def tag(self):
-        return " ".join(self._tag)
+        # Tags are sorted for consistent ordering on output
+        # (required to pass testing)
+        return " ".join(sorted([t for t in self._tag]))
 
     @tag.setter
     def tag(self, tag=None):
@@ -206,12 +208,28 @@ class Component:
 
 class Dimensions:
     def __init__(self, x=0, y=0, units=None, dpi=None, **kwargs):
-        self.units = units
-        self.dpi = dpi
+        self._units = units
+        self._dpi = dpi
         self.x = x
         self.y = y
 
         super().__init__(**kwargs)
+
+    @property
+    def dpi(self):
+        return self._dpi or config_manager.get("diagram")["dpi"]
+
+    @dpi.setter
+    def dpi(self, val):
+        self._dpi = val
+
+    @property
+    def units(self):
+        return self._units or config_manager.get("diagram")["units"]
+
+    @units.setter
+    def units(self, val):
+        self._units = val
 
     def units_to_userspace(self, value, units=None):
         try:
@@ -224,6 +242,7 @@ class Dimensions:
             units = units or self.units
 
         conversion = {
+            "px": value,
             "pt": value * 0.33,
             "pc": value * 16,
             "mm": value * 3.78,
@@ -233,7 +252,7 @@ class Dimensions:
 
     def px_to_units(self, length, units=None, dpi=None):
         units = units or self.units
-        dpi = dpi or self.dpi
+        dpi = dpi or self.dpi or config_manager.get("diagram")["dpi"]
         conversion = {
             "px": length,
             "in": length / dpi,
@@ -377,9 +396,13 @@ class Use(Layout):
     """Implement <use> svg tag"""
 
     def __init__(self, instance, **kwargs):
+        self.instance = instance
         self.target_id = instance.id
-
         super().__init__(**kwargs)
+
+    def __getattr__(self, attr):
+        # Pass attribute requests onto the instance associated with this 'Use' object
+        return getattr(self.instance, attr)
 
     def render(self):
         # convert kwargs into parameters for <use>
@@ -615,22 +638,13 @@ class Image(SvgShape):
         self.merge_config_into_kwargs(kwargs, "image")
         self.coords = kwargs.pop("coords", {})
         self.embed = embed
-        self.src = pathlib.Path(src)
-        self._im_size = None
+        self.src = src
+        self.im_size = None
         super().__init__(**kwargs)
 
-    @property
-    def im_size(self):
-        if self._im_size is None:
-            self.get_im_size()
-        return self._im_size
-
-    @im_size.setter
-    def im_size(self, value):
-        self._im_size = value
+        self.get_im_size()
 
     def get_im_size(self):
-        # TODO: find bug -- self.src should already be a Path but is *not* sometimes!
         if pathlib.Path(self.src).suffix == ".svg":
             self.get_svg_im_size()
         else:
@@ -638,7 +652,7 @@ class Image(SvgShape):
 
     def get_bitmap_im_size(self):
         cwd = pathlib.Path.cwd()
-        im = PILImage.open(cwd.joinpath(self.src))
+        im = PILImage.open(cwd / self.src)
         width, height = im.size
         self.im_size = (self.px_to_units(width), self.px_to_units(height))
 
@@ -660,15 +674,12 @@ class Image(SvgShape):
         _, height, height_units = re.split(r, height)
 
         # Set im_size
-        self.im_size = (width, height)
+        self.im_size = (float(width), float(height))
 
     @property
     def width(self):
         if self.clip:
             return self.clip.width
-
-        if self.im_size is None:
-            self.get_im_size()
 
         return self._width or self.im_size[0]
 
@@ -677,23 +688,21 @@ class Image(SvgShape):
         if self.clip:
             return self.clip.height
 
-        if self.im_size is None:
-            self.get_im_size()
-
         return self._height or self.im_size[1]
 
     def coord(self, name, raw=False):
         """Return scaled coordinatates."""
 
-        # Convert coordinates from dpi of source (dpi_src) to diagram dpi (self.dpi)
-        x, y = [i / self.dpi * self.dpi for i in self.coords[name]]
+        x, y = self.coords[name]
 
         # Actual image size:
         iw, ih = self.im_size
 
         # Scale x and y to match user supplied dimensions
         # NOTE: use *_width* and *_height* to ensure actual width and not clipped width
-        scaler = min(self.width / iw, self.height / ih)
+        width = self._width or self.im_size[0]
+        height = self._height or self.im_size[1]
+        scaler = min(width / iw, height / ih)
 
         # Transformed size
         tw, th = iw * scaler, ih * scaler
@@ -724,15 +733,61 @@ class Image(SvgShape):
 
     def add_coord(self, name, x, y):
         """Record coordinates of the **unscaled** image."""
-        self.coords[name] = Coords(x, y)
+        if isinstance(self.src, Image):
+            warnings.warn(
+                f"Coord '{name}' has *NOT* been added! Add it to the reference image. It can then be accessed via this instance with translations & transformations of both instances applied."
+            )
+        else:
+            self.coords[name] = Coords(x, y)
+
+    def render_image_def(self):
+        # src image is wrapped in <use> tag which has to replicate 'fitting' behaviour of SVG images
+        scaler = min(self.width / self.src.width, self.height / self.src.height)
+        self.scale = Coords(
+            self.scale.x * scaler,
+            self.scale.y * scaler,
+        )
+        actual_width = self.src.width * scaler
+        actual_height = self.src.height * scaler
+
+        tx = (self.width - actual_width) / 2
+        ty = (self.height - actual_height) / 2
+
+        # Rotate coords
+        rtx = tx * math.cos(math.radians(self.rotate)) - ty * math.sin(
+            math.radians(self.rotate)
+        )
+        rty = tx * math.sin(math.radians(self.rotate)) + ty * math.cos(
+            math.radians(self.rotate)
+        )
+
+        # clip-path must be a separate component when using <use> to
+        # avoid applying scale to clip-path.
+        output = Group(clip=self.clip)
+        # Reference image from defs with <use> tag
+        output.add(
+            Use(
+                x=self.x + rtx,
+                y=self.y + rty,
+                scale=self.scale,
+                tag=self.tag,
+                instance=self.src,
+                rotate=self.rotate,
+            )
+        )
+
+        return output.render()
 
     def render(self):
+        if isinstance(self.src, Image):
+            return self.render_image_def()
+
         # Use externally referenced image
         tplt = templates.get("image.svg")
 
         if self.embed:
             encoded_img = base64.b64encode(manager_files.load_data(self.src))
-            mediatype = "image/" + self.src.suffix.strip(".")
+            mediatype = "image/" + pathlib.Path(self.src).suffix.strip(".")
             if mediatype.endswith("svg"):
                 mediatype += "+xml"
             self.src = f"data:{mediatype};base64,{encoded_img.decode('utf-8')}"

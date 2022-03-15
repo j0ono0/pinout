@@ -2,12 +2,12 @@
 <svg  
     xmlns="http://www.w3.org/2000/svg" 
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    x="0"
-    y="0"
-    width="800" 
-    height="400" 
-    viewBox="0 0 800 400"
-    class=" diagram"
+    x="0px"
+    y="0px"
+    width="800px" 
+    height="400px" 
+    viewBox="0.0 0.0 800.0 400.0"
+    class="diagram"
 >
 
 <defs>
@@ -17,24 +17,24 @@
 
     <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="styles.css" xlink:href="styles.css"  type="text/css"/>
 <g 
-        class=" textblock"
+        class="textblock"
 transform="
     translate(100 100) 
     scale(1 1)
     rotate(0)
 "
-id="b4418f7f-a846-4a07-82fc-c30129534f53_3"
+id="d5bd52da-42b6-42af-9fdd-d1c710289263_3"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
 
-        class="textblock text"
+        class="text textblock"
 transform="
     translate(0 0) 
     scale(1 1)
     rotate(0)
 "
-id="b4418f7f-a846-4a07-82fc-c30129534f53_4"
+id="d5bd52da-42b6-42af-9fdd-d1c710289263_4"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     Pinout export test.

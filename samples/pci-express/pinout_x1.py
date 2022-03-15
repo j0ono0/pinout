@@ -7,7 +7,7 @@
 # rough around the edges.
 #
 # Export:
-# >>> py -m pinout.manager -e pinout_x1.py pinout_x1.svg
+# >>> py -m pinout.manager -e pinout_x1.py pinout_x1.svg -o
 #
 ##########################################################
 
@@ -29,7 +29,7 @@ import pci_data as data
 # configuration customsations
 config_manager.add_dict("pinlabel", {"body": {"corner_radius": 0, "height": 28}})
 
-diagram = Diagram(1200, 675, "diagram")
+diagram = Diagram(1200, 675, tag="diagram")
 diagram.add_stylesheet("autostyles.css")
 content = diagram.add(Panel(width=1200, height=675, tag="panel__content"))
 

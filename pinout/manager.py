@@ -239,7 +239,7 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
             while isinstance(img.src, core.Image):
                 img = img.src
 
-            if not img.embed and not img.src.is_absolute():
+            if not img.embed and not Path(img.src).is_absolute():
                 img.src = os.path.relpath(
                     Path.cwd().joinpath(img.src), Path.cwd().joinpath(dest.parent)
                 )

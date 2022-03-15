@@ -3,7 +3,7 @@
 
 
 # Export final SVG diagram from command-line
-# py -m pinout.manager -e pinout_diagram.py teensy_4.0_front_pinout_diagram.svg
+# py -m pinout.manager -e pinout_diagram.py teensy_4.0_front_pinout_diagram.svg -o
 
 # NOTE: this sample requires the python package libsass.
 # install via pip:
@@ -83,7 +83,7 @@ with open("styles.css", "w") as f:
 # Create a new diagram and add a background
 # Official Teensy pinout cards are 1.41 ratio (or very close)
 
-diagram = Diagram(1128, 800, "diagram")
+diagram = Diagram(1128, 800, tag="diagram")
 
 # Add a stylesheet
 diagram.add_stylesheet("styles.css", True)

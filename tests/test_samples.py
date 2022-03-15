@@ -47,48 +47,6 @@ def mk_test_file(src, dest):
     return dest
 
 
-"""
-
-    # Samples
-    (
-        "../samples/arduino/arduino/uno/arduino_uno.py",
-        "../samples/arduino/pinout_arduino_uno_rev3.svg",
-    ),
-    (
-        "../samples/arduino/arduino/rp2040/arduino_nano_rp2040_connect.py",
-        "../samples/arduino/pinout_arduino_nano_rp2040_connect.svg",
-    ),
-    (
-        "../samples/attiny85/attiny85.py",
-        "../samples/attiny85/pinout_attiny85.svg",
-    ),
-    (
-        "../samples/clip_path/pinout_diagram.py",
-        "../samples/clip_path/diagram.svg",
-    ),
-    (
-        "../samples/full_sample/pinout_diagram.py",
-        "../samples/full_sample/pinout_diagram.svg",
-    ),
-    (
-        "../samples/panel_layout/panel_layout.py",
-        "../samples/panel_layout/panel_layout.svg",
-    ),
-    (
-        "../samples/panel_layout/populated_layout.py",
-        "../samples/panel_layout/populated_layout.svg",
-    ),
-    (
-        "../samples/pci-express/pinout_x1.py",
-        "../samples/pci-express/pinout_x1.svg",
-    ),
-    (
-        "../samples/section_pullout/pinout_diagram.py",
-        "../samples/section_pullout/diagram.svg",
-    ),
-"""
-
-
 @pytest.mark.parametrize(
     "module_path, ref_path",
     [
@@ -105,9 +63,46 @@ def mk_test_file(src, dest):
             "./resources/diagram_image.py",
             "./resources/diagram_image.svg",
         ),
+        # Samples
         (
             "../samples/teensy_4.0/pinout_diagram.py",
             "../samples/teensy_4.0/teensy_4.0_front_pinout_diagram.svg",
+        ),
+        (
+            "../samples/arduino/arduino/uno/arduino_uno.py",
+            "../samples/arduino/pinout_arduino_uno_rev3.svg",
+        ),
+        (
+            "../samples/arduino/arduino/rp2040/arduino_nano_rp2040_connect.py",
+            "../samples/arduino/pinout_arduino_nano_rp2040_connect.svg",
+        ),
+        (
+            "../samples/attiny85/attiny85.py",
+            "../samples/attiny85/pinout_attiny85.svg",
+        ),
+        (
+            "../samples/clip_path/pinout_diagram.py",
+            "../samples/clip_path/diagram.svg",
+        ),
+        (
+            "../samples/full_sample/pinout_diagram.py",
+            "../samples/full_sample/pinout_diagram.svg",
+        ),
+        (
+            "../samples/panel_layout/panel_layout.py",
+            "../samples/panel_layout/panel_layout.svg",
+        ),
+        (
+            "../samples/panel_layout/populated_layout.py",
+            "../samples/panel_layout/populated_layout.svg",
+        ),
+        (
+            "../samples/pci-express/pinout_x1.py",
+            "../samples/pci-express/pinout_x1.svg",
+        ),
+        (
+            "../samples/section_pullout/pinout_diagram.py",
+            "../samples/section_pullout/diagram.svg",
         ),
     ],
 )

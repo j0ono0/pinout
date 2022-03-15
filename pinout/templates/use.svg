@@ -3,8 +3,8 @@
         {% include "component_common.svg" %}
     {% endwith %}
 
-    xlink:href="#{{ use.target_id }}"
-    href="#{{ use.target_id }}"
+    xlink:href="#{{ use.instance.id }}"
+    href="#{{ use.instance.id }}"
     
 />
 

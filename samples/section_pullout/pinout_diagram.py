@@ -8,7 +8,7 @@
 #
 ###########################################
 
-from pinout.core import Group, Image, Rect, ClipPath
+from pinout.core import Group, Image, Rect, ClipPath, Use
 from pinout.components.annotation import AnnotationLabel
 from pinout.components.layout import Diagram, Panel
 from pinout.components.pinlabel import PinLabelGroup
@@ -96,14 +96,14 @@ hardware_img.add_coord("pin_pitch_v", 0, 30)
 # Create a group to hold the annotated image.
 group_annotations = panel_main.add(
     Group(
-        x=panel_main.width // 2,
+        x=panel_main.width // 2 - 110,
         y=20,
     )
 )
 
 # Add an image to 'group_annotations'
 # It has been offset here for easy center alignment
-hardware = group_annotations.add(Image(hardware_img, x=-110))
+hardware = group_annotations.add(Use(hardware_img))
 
 # Add an annotation to 'group_annotations'
 # Its positioning uses transformed coordinates from 'hardware'

@@ -95,11 +95,15 @@ class Component:
 
     @clip.setter
     def clip(self, obj):
-        if obj:
+        if not obj:
+            self._clip = None
+        elif obj:
             if isinstance(obj, ClipPath):
                 self._clip = obj
             else:
                 self._clip = ClipPath(children=obj)
+        else:
+            warnings.warn(f"{obj} is invalid as a clipping path.")
 
     def add_def(self, instance):
         """Add a component to the svg 'def' section"""
@@ -397,11 +401,11 @@ class Use(Layout):
 
     def __init__(self, instance, **kwargs):
         self.instance = instance
-        self.target_id = instance.id
         super().__init__(**kwargs)
 
     def __getattr__(self, attr):
         # Pass attribute requests onto the instance associated with this 'Use' object
+        # This provides some amount of merging with the instance.
         return getattr(self.instance, attr)
 
     def render(self):
@@ -645,10 +649,13 @@ class Image(SvgShape):
         self.get_im_size()
 
     def get_im_size(self):
-        if pathlib.Path(self.src).suffix == ".svg":
-            self.get_svg_im_size()
+        if isinstance(self.src, Image):
+            self.im_size = self.src.im_size
         else:
-            self.get_bitmap_im_size()
+            if pathlib.Path(self.src).suffix == ".svg":
+                self.get_svg_im_size()
+            else:
+                self.get_bitmap_im_size()
 
     def get_bitmap_im_size(self):
         cwd = pathlib.Path.cwd()
@@ -693,7 +700,10 @@ class Image(SvgShape):
     def coord(self, name, raw=False):
         """Return scaled coordinatates."""
 
-        x, y = self.coords[name]
+        try:
+            x, y = self.coords[name]
+        except KeyError:
+            x, y = self.src.coord(name)
 
         # Actual image size:
         iw, ih = self.im_size
@@ -716,8 +726,8 @@ class Image(SvgShape):
             # NOTE: SVG transforms images proportionally to 'fit' supplied dimensions
 
             # Calculate offset to centre fitted image
-            tx = tx + (self.width - tw) / 2
-            ty = ty + (self.height - th) / 2
+            tx = tx + (width - tw) / 2
+            ty = ty + (height - th) / 2
 
             # rotate coords
             rtx = tx * math.cos(math.radians(self.rotate)) - ty * math.sin(
@@ -733,15 +743,20 @@ class Image(SvgShape):
 
     def add_coord(self, name, x, y):
         """Record coordinates of the **unscaled** image."""
-        if isinstance(self.src, Image):
-            warnings.warn(
-                f"Coord '{name}' has *NOT* been added! Add it to the reference image. It can then be accessed via this instance with translations & transformations of both instances applied."
-            )
-        else:
-            self.coords[name] = Coords(x, y)
+        self.coords[name] = Coords(x, y)
 
     def render_image_def(self):
-        # src image is wrapped in <use> tag which has to replicate 'fitting' behaviour of SVG images
+        # src image is wrapped in <use> tag which has
+        # to replicate 'fitting' behaviour of SVG images
+        #
+        # clip-path must be a separate component when using <use> to
+        # avoid applying scale to clip-path.
+        output = Group(clip=self.clip)
+
+        # Remove clip from Image instance now it is applied to output
+        # This makes calculations easier too :)
+        self.clip = []
+
         scaler = min(self.width / self.src.width, self.height / self.src.height)
         self.scale = Coords(
             self.scale.x * scaler,
@@ -761,9 +776,7 @@ class Image(SvgShape):
             math.radians(self.rotate)
         )
 
-        # clip-path must be a separate component when using <use> to
-        # avoid applying scale to clip-path.
-        output = Group(clip=self.clip)
+        # output = Group()
         # Reference image from defs with <use> tag
         output.add(
             Use(
@@ -775,7 +788,6 @@ class Image(SvgShape):
                 rotate=self.rotate,
             )
         )
-
         return output.render()
 
     def render(self):

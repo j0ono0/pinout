@@ -1,0 +1,125 @@
+
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.pinlabel__leader{
+    stroke-width: 2;
+    fill: none;
+}
+
+.pinlabel__text{
+    dominant-baseline: central;
+    fill: #fff;
+    
+    font-weight: bold;
+    stroke-width: 0;
+    text-anchor: middle;
+}
+
+.pwr .pinlabel__body{
+    fill: rgb(76, 11, 95);
+}
+.pwr .pinlabel__leader{
+    stroke: rgb(76, 11, 95);
+}
+.pwr .swatch__body {
+    fill: rgb(76, 11, 95);
+}
+.adc .pinlabel__body{
+    fill: rgb(143, 55, 244);
+}
+.adc .pinlabel__leader{
+    stroke: rgb(143, 55, 244);
+}
+.adc .swatch__body {
+    fill: rgb(143, 55, 244);
+}
+.pwm .pinlabel__body{
+    fill: rgb(185, 82, 185);
+}
+.pwm .pinlabel__leader{
+    stroke: rgb(185, 82, 185);
+}
+.pwm .swatch__body {
+    fill: rgb(185, 82, 185);
+}
+.txrx .pinlabel__body{
+    fill: rgb(194, 51, 220);
+}
+.txrx .pinlabel__leader{
+    stroke: rgb(194, 51, 220);
+}
+.txrx .swatch__body {
+    fill: rgb(194, 51, 220);
+}
+.gnd .pinlabel__body{
+    fill: rgb(215, 108, 207);
+}
+.gnd .pinlabel__leader{
+    stroke: rgb(215, 108, 207);
+}
+.gnd .swatch__body {
+    fill: rgb(215, 108, 207);
+}
+.gpio .pinlabel__body{
+    fill: rgb(16, 142, 59);
+}
+.gpio .pinlabel__leader{
+    stroke: rgb(16, 142, 59);
+}
+.gpio .swatch__body {
+    fill: rgb(16, 142, 59);
+}
+
+.panel__inner {
+    fill: #fff;
+}
+.panel__outer {
+    fill: #333;
+}
+
+.legend__entry text {
+    dominant-baseline: central;
+}
+.annotation__body {
+    fill: rgb(253, 203, 36);
+    stroke-width: 0;
+}
+.annotation__text text {
+    dominant-baseline: auto;
+    font-size: 14px;
+    font-weight: bold;
+    fill: rgb(63, 40, 6);
+    text-anchor: start;
+}
+.annotation__target {
+    fill: none;
+    stroke: rgb(253, 203, 36);
+    stroke-width: 4px;
+}
+.annotation__leaderline {
+    stroke: rgb(253, 203, 36);
+    stroke-width: 4px;
+    fill: none;
+}
+
+.ic__body{
+    fill: rgb(85, 85, 85);
+    stroke-width: 1px;
+    stroke: #000;
+}
+.ic__leg .polarity{
+    fill: rgb(85, 85, 85);
+    stroke-width: 2px;
+    stroke: rgb(138, 138, 138);
+    
+}
+.ic__leg{
+    fill: rgb(255, 255, 255);
+    stroke-width: 1px;
+    stroke: #000;
+}
+

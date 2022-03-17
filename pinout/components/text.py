@@ -27,6 +27,10 @@ class TextBlock(core.Group):
         self._line_height = value
 
     @property
+    def height(self):
+        return self.line_height * len(self._content)
+
+    @property
     def content(self):
         return self._content
 
@@ -34,7 +38,7 @@ class TextBlock(core.Group):
     def content(self, content):
         # Convert string to list
         if isinstance(content, str):
-            content = [line.strip() for line in content.split("\n")]
+            content = [line.strip() for line in content.split("\n") if line]
         self._content = content
 
     def render(self):

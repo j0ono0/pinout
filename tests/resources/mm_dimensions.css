@@ -1,0 +1,93 @@
+
+    /*
+        
+    IMPORTANT 
+    =========
+
+    user-space
+    ----------
+
+    The user-space refers to the cartesian plane that the elements of 
+    an SVG are drawn onto. An arbitrary unit system can be appled to this plane and done when defining a Diagram instance. Once defined, all CSS values that refer to the user-space are then treated as values in the assigned unit system. 
+
+    font-size is documented here in pt. However the pinout diagram this 
+    stylesheet is written for is using mm as its 'user space' units.
+    Consequently all CSS dimenisons/lengths must also be in mm.
+
+    CSS includes a calc() function that allows some clarity and insight into 
+    the intented units of measure. This allows a user to 'think' in their 
+    preferred units but also provide correctly scaled units to the SVG graphic.
+
+    1pt = 0.33 units
+    1pc = 16 units
+    1em = depending on 'font-size'. May vary depending on output method if unset
+    mm = 3.78 units
+    in = 96 units
+
+    Unit conversion ref: https://oreillymedia.github.io/Using_SVG/guide/units.html
+    
+    */
+
+text {
+    font-size: calc(9pt * 0.33);
+}
+
+.alphanum text{
+    font-size: calc(25pt * 0.33);
+    letter-spacing: calc(2.8pt * 0.33);
+}
+
+.stroke{
+    stroke-width: calc(0.5mm / 3.78);
+}
+
+
+.pinlabel__leader{
+    stroke-width: calc(0.5mm / 3.78);
+}
+
+.pinlabel__text{
+    stroke-width: 0;
+}
+
+.pin01 .pinlabel__body{
+    fill: rgb(7, 153, 146);
+}
+.pin01 .pinlabel__leader{
+    stroke: rgb(7, 153, 146);
+}
+.pin01 .swatch__body {
+    fill: rgb(7, 153, 146);
+}
+.pinlabel text{
+    fill: #fff;
+}
+
+.annotation__body {
+    stroke-width: 0;
+}
+.annotation__text text {
+    font-size: calc(11px * 0.33);
+}
+.annotation__target {
+    fill: none;
+    stroke: rgb(253, 203, 36);
+    stroke-width: calc(1.5mm / 3.87);
+}
+.annotation__leaderline {
+    stroke: rgb(253, 203, 36);
+    stroke-width: calc(1.5mm / 3.87);
+    fill: none;
+}
+
+
+.ic__body{
+    stroke-width: calc(0.5mm / 3.78);
+}
+.ic__leg .polarity{
+    stroke-width: calc(1mm / 3.78);
+    
+}
+.ic__leg{
+    stroke-width: calc(0.5mm / 3.78);
+}

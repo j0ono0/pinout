@@ -46,9 +46,6 @@ class AnnotationLabel(core.Group):
         # content relied on body - must come after
         self.content = content
 
-        # Route leaderline once other elements exist
-        self._leaderline.route(self.target, self.body)
-
         self.add(self.leaderline)
         self.add(self.target)
         self.add(self.body)
@@ -63,20 +60,16 @@ class AnnotationLabel(core.Group):
         content = copy.deepcopy(content or {})
         config = self.config["content"]
         # Parse content: str > list > dict > TextBlock
-        if type(content) is str:
-            content = [content]
-        if type(content) is list:
-            content = {
-                "content": content,
-                "x": self.body.x + self.body.width / 2,
-                "y": (self.body.y + self.body.height / 2)
-                - (config["line_height"] * (len(content) - 1) / 2 * self.scale.y),
-            }
+
+        if type(content) == str:
+            content = {"content": content}
+
         if isinstance(content, dict):
             config.update(content)
             content = Content(**config)
-        content.add_tag(self.config["content"]["tag"])
+            content.y -= content.height / 2 * self.scale.y
         content.scale = self.scale
+
         self._content = content
 
     @property
@@ -90,7 +83,6 @@ class AnnotationLabel(core.Group):
             leaderline_config = self.config["leaderline"]
             leaderline_config.update(leaderline)
             leaderline = Leaderline(**leaderline_config)
-        leaderline.add_tag(self.config["leaderline"]["tag"])
         self._leaderline = leaderline
 
     @property
@@ -104,7 +96,6 @@ class AnnotationLabel(core.Group):
             target_config = self.config["target"]
             target_config.update(target)
             target = Target(**target_config)
-        target.add_tag(self.config["target"]["tag"])
         self._target = target
 
     @property
@@ -118,5 +109,16 @@ class AnnotationLabel(core.Group):
             body_config = self.config["body"]
             body_config.update(body)
             body = Body(**body_config)
-        body.add_tag(self.config["body"]["tag"])
         self._body = body
+
+    def render(self):
+        # Align body and content
+        self.body.height = self.content.height + self.content.line_height
+        self.body.y -= self.body.height / 2
+        self.content.x = self.body.x + self.content.line_height * 0.5
+        self.content.y = self.body.y + self.content.line_height * 1.25
+
+        # Route leaderline once other elements have be moved into place
+        self._leaderline.route(self.target, self.body)
+
+        return super().render()

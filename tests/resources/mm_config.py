@@ -48,7 +48,7 @@ annotation = {
     "content": {
         "x": 13,
         "y": 19,
-        "line_height": 11,
+        "line_height": "14pt",
     },
     "body": {
         "x": 30,
@@ -72,33 +72,33 @@ panel = {
     "inset": (1, 1, 1, 1),
 }
 
-"""
 
 # Integrated circuit
 ic_dip = {
-    "inset": (15, 0, 15, 0),
+    "inset": (4, 0, 4, 0),
     "tag": "ic ic--dip",
     "body": {
-        "x": 15,
+        "x": 4,
         "y": 0,
-        "corner_radius": 3,
+        "corner_radius": 2,
         "tag": "ic__body",
     },
     "leg": {
         "tag": "ic__leg",
     },
     "polarity_mark": {
-        "radius": 5,
+        "radius": 2,
         "tag": "polarity",
     },
 }
+
 ic_qfp = {
-    "inset": (15, 15, 15, 15),
+    "inset": (4, 4, 4, 4),
     "pin_pitch": 30,
     "tag": "ic ic--qfp",
     "body": {
-        "x": 15,
-        "y": 15,
+        "x": 4,
+        "y": 4,
         "corner_radius": 3,
         "tag": "ic__body",
     },
@@ -106,10 +106,12 @@ ic_qfp = {
         "tag": "ic__leg",
     },
     "polarity_mark": {
-        "radius": 5,
+        "radius": 2,
         "tag": "polarity",
     },
 }
+
+"""
 
 # Diagram layout template presets
 diagram_presets = {

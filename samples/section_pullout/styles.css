@@ -114,10 +114,10 @@ text {
     fill: rgb(253, 203, 36);
 }
 .annotation__text text {
-    dominant-baseline: central;
+    dominant-baseline: hanging;
     font-size: 18px;
     font-weight: bold;
-    text-anchor: middle;
+    text-anchor: start;
 }
 .annotation__target {
     fill: none;

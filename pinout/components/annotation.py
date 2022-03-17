@@ -112,12 +112,22 @@ class AnnotationLabel(core.Group):
         self._body = body
 
     def render(self):
-        # Align body and content
-        self.body.height = self.content.height + self.content.line_height
+        # Align body
+        self.body.height = (
+            self.body.height or self.content.height + self.content.line_height
+        )
         self.body.y -= self.body.height / 2
-        self.content.x = self.body.x + self.content.line_height * 0.5
-        self.content.y = self.body.y + self.content.line_height * 1.25
 
+        # Align content within body
+        self.content.x = self.body.x + (self.content.line_height * 0.5 * self.scale.x)
+        self.content.y = (
+            self.body.y
+            + (abs(self.body.height - self.content.height) / 2) * self.scale.y
+        )
+        if self.scale.x == -1:
+            self.content.x += self.body.width
+        if self.scale.y == -1:
+            self.content.y += self.body.height
         # Route leaderline once other elements have be moved into place
         self._leaderline.route(self.target, self.body)
 

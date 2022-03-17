@@ -27,8 +27,12 @@ class TextBlock(core.Group):
         self._line_height = value
 
     @property
+    def lines(self):
+        return len(self._content)
+
+    @property
     def height(self):
-        return self.line_height * len(self._content)
+        return self.line_height * self.lines
 
     @property
     def content(self):

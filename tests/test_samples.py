@@ -63,6 +63,14 @@ def mk_test_file(src, dest):
             "./resources/diagram_image.py",
             "./resources/diagram_image.svg",
         ),
+        (
+            "./resources/diagram_mm_2Columns.py",
+            "./resources/diagram_mm_2Columns.svg",
+        ),
+        (
+            "./resources/diagram_mm_2Rows.py",
+            "./resources/diagram_mm_2Rows.svg",
+        ),
         # Samples
         (
             "../samples/teensy_4.0/pinout_diagram.py",
@@ -102,7 +110,7 @@ def mk_test_file(src, dest):
         ),
         (
             "../samples/section_pullout/pinout_diagram.py",
-            "../samples/section_pullout/diagram.svg",
+            "../samples/section_pullout/diagram_section_pullout.svg",
         ),
     ],
 )

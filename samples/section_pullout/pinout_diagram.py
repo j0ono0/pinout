@@ -4,7 +4,7 @@
 # featuring a detail 'pull-out'.
 #
 # Export the diagram via commandline:
-# >>> py -m pinout.manager --export pinout_diagram.py diagram.svg -o
+# >>> py -m pinout.manager --export pinout_diagram.py diagram_section_pullout.svg -o
 #
 ###########################################
 
@@ -110,11 +110,11 @@ hardware = group_annotations.add(Use(hardware_img))
 # A custom body and target have been supplied to suit requirements.
 group_annotations.add(
     AnnotationLabel(
+        content="Section A",
+        body={"x": 20, "y": 90, "width": 120, "height": 50},
+        target={"x": -120, "y": -40, "width": 240, "height": 80},
         x=hardware.coord("annotation").x,
         y=hardware.coord("annotation").y,
-        content="Section A",
-        body={"x": 20, "y": 60, "width": 120},
-        target={"x": -120, "y": -40, "width": 240, "height": 80},
         scale=(-1, 1),
     )
 )

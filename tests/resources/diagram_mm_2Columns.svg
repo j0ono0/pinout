@@ -1,0 +1,133 @@
+
+<svg  
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0mm"
+    y="0mm"
+    width="210mm" 
+    height="148mm" 
+    viewBox="0.0 0.0 210.0 148.0"
+    class="diagram"
+>
+
+<defs>
+    
+</defs>
+
+
+    <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="mm_dimensions.css" xlink:href="mm_dimensions.css"  type="text/css"/>
+<link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="mm_styles.css" xlink:href="mm_styles.css"  type="text/css"/>
+<g 
+        class="panel"
+transform="
+    translate(2 2) 
+    scale(1 1)
+    rotate(0)
+"
+id="76e2b9b3-83a0-4c37-bdd5-cb1526f3bbdd_3"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="panel__outer rect"
+transform="
+    translate(-2 -2) 
+    scale(1 1)
+    rotate(0)
+"
+id="76e2b9b3-83a0-4c37-bdd5-cb1526f3bbdd_10"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="148" 
+    width="210"
+/><rect
+
+        class="panel__inner rect"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="76e2b9b3-83a0-4c37-bdd5-cb1526f3bbdd_9"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="144" 
+    width="206"
+/><g 
+        class="panel--main"
+transform="
+    translate(0.5 0.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="76e2b9b3-83a0-4c37-bdd5-cb1526f3bbdd_5"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="panel__outer rect"
+transform="
+    translate(-0.5 -0.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="76e2b9b3-83a0-4c37-bdd5-cb1526f3bbdd_12"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="144" 
+    width="105"
+/><rect
+
+        class="panel__inner rect"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="76e2b9b3-83a0-4c37-bdd5-cb1526f3bbdd_11"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="143.0" 
+    width="104.0"
+/>
+</g><g 
+        class="panel--info"
+transform="
+    translate(105.5 0.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="76e2b9b3-83a0-4c37-bdd5-cb1526f3bbdd_7"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="panel__outer rect"
+transform="
+    translate(-0.5 -0.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="76e2b9b3-83a0-4c37-bdd5-cb1526f3bbdd_14"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="144" 
+    width="101"
+/><rect
+
+        class="panel__inner rect"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="76e2b9b3-83a0-4c37-bdd5-cb1526f3bbdd_13"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="143.0" 
+    width="100.0"
+/>
+</g>
+</g>
+    
+</svg>

@@ -111,7 +111,7 @@ hardware = group_annotations.add(Use(hardware_img))
 group_annotations.add(
     AnnotationLabel(
         content="Section A",
-        body={"x": 20, "y": 90, "width": 120, "height": 50},
+        body={"x": 20, "y": 90, "width": 130},
         target={"x": -120, "y": -40, "width": 240, "height": 80},
         x=hardware.coord("annotation").x,
         y=hardware.coord("annotation").y,

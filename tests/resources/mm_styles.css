@@ -125,7 +125,7 @@ text {
     fill: rgb(253, 203, 36);
 }
 .annotation__text text{
-    dominant-baseline: auto; 
+    dominant-baseline: hanging; 
     font-weight: bold;
     fill: rgb(63, 40, 6);
     text-anchor: start;

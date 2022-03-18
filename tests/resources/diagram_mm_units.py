@@ -1,12 +1,3 @@
-from pinout import core
-from pinout.components import layout
-from pinout.core import Group
-from pinout.components import integrated_circuits as ic
-from pinout.components.annotation import AnnotationLabel
-from pinout.components.text import TextBlock
-from pinout.components import pinlabel, legend
-from pinout import config_manager
-
 # Testing millimetre as units
 
 #################################################
@@ -17,6 +8,14 @@ from pinout import config_manager
 # Export diagram as SVG:
 # >>> py -m pinout.manager -e diagram_mm_units.py diagram_mm_units.svg -o
 
+from pinout import core
+from pinout.components import layout
+from pinout.core import Group
+from pinout.components import integrated_circuits as ic
+from pinout.components.annotation import AnnotationLabel
+from pinout.components.text import TextBlock
+from pinout.components import pinlabel, legend
+from pinout import config_manager
 
 config_manager.add_file("mm_config.py")
 
@@ -85,7 +84,7 @@ grid_img = grid_grp.add(
 grid_img.add_coord("pinlabel_origin", 32, 16)
 grid_img.add_coord("pinlabel_body", 48, 16)
 grid_img.add_coord("annotation_origin", 16, 16)
-grid_img.add_coord("annotation_body", 16 * 4, 16 * 2)
+grid_img.add_coord("annotation_body", 16 * 3, 16 * 2)
 
 grid_grp.add(core.Circle(*grid_img.coord("pinlabel_origin"), 3, tag="stroke"))
 
@@ -123,7 +122,7 @@ x, y = grid_img.coord("annotation_origin")
 lbl_x, lbl_y = grid_img.coord("annotation_body", raw=True)
 grid_grp.add(
     AnnotationLabel(
-        uppercase_text, x=x, y=y, body={"x": lbl_x, "y": lbl_y, "width": 60}
+        uppercase_text, x=x, y=y, body={"x": lbl_x, "y": lbl_y, "width": 65}
     )
 )
 

@@ -67,7 +67,7 @@ text {
     stroke-width: 0;
 }
 .annotation__text text {
-    font-size: calc(11px * 0.33);
+    font-size: calc(12px * 0.33);
 }
 .annotation__target {
     fill: none;

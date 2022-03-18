@@ -20,7 +20,7 @@ import data
 # Create a new diagram
 # The Diagram_2Rows class provides 2 panels,
 # 'panel_01' and 'panel_02', to insert components into.
-diagram = Diagram_2Rows(1024, 576, 440, "diagram")
+diagram = Diagram_2Rows(1024, 576, 440, tag="diagram")
 
 # Add a stylesheet
 diagram.add_stylesheet("styles.css", embed=True)

@@ -119,7 +119,7 @@ class AnnotationLabel(core.Group):
         self.body.y -= self.body.height / 2
 
         # Align content within body
-        self.content.x = self.body.x + (self.content.line_height * 0.5 * self.scale.x)
+        self.content.x = self.body.x + (self.content.line_height * self.scale.x)
         self.content.y = (
             self.body.y
             + (abs(self.body.height - self.content.height) / 2) * self.scale.y

@@ -47,6 +47,10 @@ def mk_test_file(src, dest):
     return dest
 
 
+def file_exists(file_path):
+    return file_path.is_file()
+
+
 @pytest.mark.parametrize(
     "module_path, ref_path",
     [
@@ -112,6 +116,11 @@ def mk_test_file(src, dest):
             "../samples/section_pullout/pinout_diagram.py",
             "../samples/section_pullout/diagram_section_pullout.svg",
         ),
+        # quickstart
+        (
+            "../pinout/resources/quick_start/pinout_diagram.py",
+            "../pinout/resources/quick_start/diagram.svg",
+        ),
     ],
 )
 def test_output_against_reference(tmp_path, module_path, ref_path):
@@ -121,6 +130,13 @@ def test_output_against_reference(tmp_path, module_path, ref_path):
 
     module_path = Path(module_path)
     ref_path = Path(ref_path)
+
+    # Test if the supplied file paths (above) are correct
+    if not file_exists(module_path):
+        assert file_exists(module_path)
+
+    if not file_exists(ref_path):
+        assert file_exists(ref_path)
 
     # Export a temp file in same location as reference:
     # Required for relative links to be identical.

@@ -1,0 +1,1861 @@
+
+<svg  
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    width="1024px" 
+    height="576px" 
+    viewBox="0.0 0.0 1024.0 576.0"
+    class="diagram"
+>
+
+<defs>
+    
+</defs>
+
+
+    <style type="text/css" media="screen">  
+    <![CDATA[  
+    text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.pinlabel__leader{
+    stroke-width: 2;
+    fill: none;
+}
+
+.pinlabel__text{
+    dominant-baseline: central;
+    fill: #fff;
+    font-weight: bold;
+    stroke-width: 0;
+    text-anchor: middle;
+}
+
+.pwr .pinlabel__body{
+    fill: rgb(173, 0, 0);
+}
+.pwr .pinlabel__leader{
+    stroke: rgb(173, 0, 0);
+}
+.pwr .swatch__body {
+    fill: rgb(173, 0, 0);
+}
+.comms .pinlabel__body{
+    fill: rgb(182, 69, 176);
+}
+.comms .pinlabel__leader{
+    stroke: rgb(182, 69, 176);
+}
+.comms .swatch__body {
+    fill: rgb(182, 69, 176);
+}
+.gpio .pinlabel__body{
+    fill: rgb(160, 133, 26);
+}
+.gpio .pinlabel__leader{
+    stroke: rgb(160, 133, 26);
+}
+.gpio .swatch__body {
+    fill: rgb(160, 133, 26);
+}
+.analog .pinlabel__body{
+    fill: rgb(32, 150, 165);
+}
+.analog .pinlabel__leader{
+    stroke: rgb(32, 150, 165);
+}
+.analog .swatch__body {
+    fill: rgb(32, 150, 165);
+}
+.gnd .pinlabel__body{
+    fill: rgb(0, 0, 0);
+}
+.gnd .pinlabel__leader{
+    stroke: rgb(0, 0, 0);
+}
+.gnd .swatch__body {
+    fill: rgb(0, 0, 0);
+}
+.pwm .pinlabel__body{
+    fill: rgb(151, 76, 23);
+}
+.pwm .pinlabel__leader{
+    stroke: rgb(151, 76, 23);
+}
+.pwm .swatch__body {
+    fill: rgb(151, 76, 23);
+}
+.touch .pinlabel__body{
+    fill: rgb(230, 87, 10);
+}
+.touch .pinlabel__leader{
+    stroke: rgb(230, 87, 10);
+}
+.touch .swatch__body {
+    fill: rgb(230, 87, 10);
+}
+
+.panel__inner {
+    fill: #fff;
+}
+.panel__outer {
+    fill: #333;
+}
+
+.legend__entry text {
+    dominant-baseline: central;
+}
+
+.h1 {
+    font-size: 26px;
+    font-weight: bold;
+    font-style: italic;
+}
+.italic{
+    font-style: italic;
+}
+.strong{
+    font-weight: bold;
+}
+
+.panel--info .panel__inner{
+    fill: #f4f4f4;
+}
+    ]]>  
+</style>
+<g 
+        class="panel"
+transform="
+    translate(2 2) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_3"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="panel__outer rect"
+transform="
+    translate(-2 -2) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_151"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="576" 
+    width="1024"
+/><rect
+
+        class="panel__inner rect"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_150"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="572" 
+    width="1020"
+/><g 
+        class="panel--main"
+transform="
+    translate(0.5 0.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_5"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="panel__outer rect"
+transform="
+    translate(-0.5 -0.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_153"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="440" 
+    width="1020"
+/><rect
+
+        class="panel__inner rect"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_152"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="439.0" 
+    width="1019.0"
+/><g 
+        class="group"
+transform="
+    translate(400 42) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_9"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <image 
+        class="image"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_10"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    href="data:image/png;base64,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" 
+    xlink:href="data:image/png;base64,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" 
+    height="260" 
+    width="220"
+/><g 
+        class="pinlabel pwr"
+transform="
+    translate(155.0 244.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_11"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(117 17.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_156"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(157.0 30) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_154"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    RESET
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_13"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 0.0 20.0 A 10.0 10.0 0 0 0 10.0 30.0 L 117 30.0" 
+/>
+</g><g 
+        class="group"
+transform="
+    translate(206.0 100.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_15"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="group"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_16"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="pinlabel pwr"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_17"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(66 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_159"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(106.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_157"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Vcc
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_19"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+/>
+</g>
+</g><g 
+        class="group"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_21"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="gnd pinlabel"
+transform="
+    translate(0.0 30.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_22"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(66.0 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_162"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(106.0 0.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_160"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    GND
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_24"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
+/>
+</g>
+</g><g 
+        class="group"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_26"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="gpio pinlabel"
+transform="
+    translate(0.0 60.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_27"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(66.0 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_165"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(106.0 0.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_163"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    6
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_29"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
+/>
+</g><g 
+        class="analog pinlabel"
+transform="
+    translate(146.0 60.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_31"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_168"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(46.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_166"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    A4
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_35"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class="pinlabel touch"
+transform="
+    translate(232.0 60.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_36"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_171"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(46.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_169"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    TOUCH
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_40"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+        class="group"
+transform="
+    translate(16.0 100.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_41"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="group"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_42"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="gpio pinlabel"
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_43"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(66 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_174"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(106.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_172"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    0
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_45"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66 0.0" 
+/>
+</g><g 
+        class="analog pinlabel"
+transform="
+    translate(-146.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_47"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_177"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(46.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_175"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    A0
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_51"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class="comms pinlabel"
+transform="
+    translate(-232.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_52"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_180"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(46.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_178"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    MISO
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_56"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g><g 
+        class="group"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_57"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="gpio pinlabel"
+transform="
+    translate(0.0 30.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_58"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(66.0 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_183"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(106.0 0.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_181"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    1
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_60"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
+/>
+</g><g 
+        class="comms pinlabel"
+transform="
+    translate(-146.0 30.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_62"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(92 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_186"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(132.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_184"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    MOSI
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_66"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 92 0.0" 
+/>
+</g>
+</g><g 
+        class="group"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_67"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="gpio pinlabel"
+transform="
+    translate(0.0 60.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_68"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(66.0 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_189"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(106.0 0.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_187"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    2
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_70"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 8.25 0.0 C 33.0 0.0 33.0 0.0 57.75 0.0 L 66.0 0.0" 
+/>
+</g><g 
+        class="analog pinlabel"
+transform="
+    translate(-146.0 60.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_72"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_192"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(46.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_190"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    A1
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_76"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class="comms pinlabel"
+transform="
+    translate(-232.0 60.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_77"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_195"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(46.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_193"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    SCLK
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_81"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g><g 
+        class="group"
+transform="
+    translate(65.0 244.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_83"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="group"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_84"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="gpio pinlabel"
+transform="
+    translate(0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_85"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(116 17.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_198"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(156.0 30) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_196"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    3
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_82"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 0.0 20.0 A 10.0 10.0 0 0 0 10.0 30.0 L 116 30.0" 
+/>
+</g><g 
+        class="pinlabel pwm"
+transform="
+    translate(-196.0 30) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_88"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_201"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(46.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_199"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PWM
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_91"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g><g 
+        class="group"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_92"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="gpio pinlabel"
+transform="
+    translate(30.0 0.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_93"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(146.0 47.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_204"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(186.0 60.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_202"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    4
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_82"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 0.0 40.0 A 20.0 20.0 0 0 0 20.0 60.0 L 146.0 60.0" 
+/>
+</g><g 
+        class="analog pinlabel"
+transform="
+    translate(-196.0 60.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_96"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_207"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(46.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_205"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    A2
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_99"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g><g 
+        class="pinlabel touch"
+transform="
+    translate(-282.0 60.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_100"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_210"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(46.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_208"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    TOUCH
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_103"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g><g 
+        class="group"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_104"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="gpio pinlabel"
+transform="
+    translate(60.0 0.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_105"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(176.0 77.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_213"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(216.0 90.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_211"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    5
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_82"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 0.0 60.0 A 30.0 30.0 0 0 0 30.0 90.0 L 176.0 90.0" 
+/>
+</g><g 
+        class="analog pinlabel"
+transform="
+    translate(-196.0 90.0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_108"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(6 -13.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_216"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="26" 
+    width="80"
+    rx="3" 
+    ry="3" 
+/><text
+
+        class="pinlabel__text text"
+transform="
+    translate(46.0 0) 
+    scale(-1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_214"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    A3
+</text><path 
+
+        class="pinlabel pinlabel__leader"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_111"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 6 0.0" 
+/>
+</g>
+</g>
+</g>
+</g>
+</g><g 
+        class="panel--info"
+transform="
+    translate(0.5 440.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_7"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="panel__outer rect"
+transform="
+    translate(-0.5 -0.5) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_218"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="132" 
+    width="1020"
+/><rect
+
+        class="panel__inner rect"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_217"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="131.0" 
+    width="1019.0"
+/><g 
+        class="panel textblock title_block"
+transform="
+    translate(20 30) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_112"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <text
+
+        class="text textblock"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_219"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    <tspan class='h1'>Pinout Quick start</tspan>
+</text>
+</g><g 
+        class="panel text_block textblock"
+transform="
+    translate(20 60) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_113"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <text
+
+        class="text textblock"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_220"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Python tool kit to assist with
+</text><text
+
+        class="text textblock"
+transform="
+    translate(0 18) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_221"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    documentation of electronic hardware.
+</text><text
+
+        class="text textblock"
+transform="
+    translate(0 36) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_222"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    More info at <tspan class='italic strong'>pinout.readthedocs.io</tspan>
+</text>
+</g><g 
+        class="legend"
+transform="
+    translate(340 8) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_114"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="analog legend legend__entry"
+transform="
+    translate(0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_115"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="legend swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_116"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="rect swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_117"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="20" 
+    width="20"
+/>
+</g><text
+
+        class="text"
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_119"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Analog
+</text>
+</g><g 
+        class="comms legend legend__entry"
+transform="
+    translate(0 28.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_120"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="legend swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_121"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="rect swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_122"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="20" 
+    width="20"
+/>
+</g><text
+
+        class="text"
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_124"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Communication
+</text>
+</g><g 
+        class="gnd legend legend__entry"
+transform="
+    translate(0 56.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_125"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="legend swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_126"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="rect swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_127"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="20" 
+    width="20"
+/>
+</g><text
+
+        class="text"
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_129"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Ground
+</text>
+</g><g 
+        class="gpio legend legend__entry"
+transform="
+    translate(0 84.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_130"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="legend swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_131"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="rect swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_132"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="20" 
+    width="20"
+/>
+</g><text
+
+        class="text"
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_134"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    GPIO
+</text>
+</g><g 
+        class="legend legend__entry touch"
+transform="
+    translate(159.0 0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_135"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="legend swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_136"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="rect swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_137"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="20" 
+    width="20"
+/>
+</g><text
+
+        class="text"
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_139"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Touch
+</text>
+</g><g 
+        class="legend legend__entry pwr"
+transform="
+    translate(159.0 28.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_140"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="legend swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_141"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="rect swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_142"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="20" 
+    width="20"
+/>
+</g><text
+
+        class="text"
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_144"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    Power
+</text>
+</g><g 
+        class="legend legend__entry pwm"
+transform="
+    translate(159.0 56.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_145"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="legend swatch"
+transform="
+    translate(4.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_146"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="rect swatch__body"
+transform="
+    translate(0 -10.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_147"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="20" 
+    width="20"
+/>
+</g><text
+
+        class="text"
+transform="
+    translate(28.0 14.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="8ca182d4-0cd4-46d7-82d5-6c1f30cd178d_149"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    PWM
+</text>
+</g>
+</g>
+</g>
+</g>
+    
+</svg>

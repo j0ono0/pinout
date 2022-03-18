@@ -54,8 +54,8 @@ annotation = {
         "x": 30,
         "y": 30,
         "width": 50,
-        "height": 16,
-        "corner_radius": 3,
+        "height": 14,
+        "corner_radius": 7,
     },
     "target": {
         "x": -3,

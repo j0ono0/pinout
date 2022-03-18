@@ -1,0 +1,142 @@
+
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.pinlabel__leader{
+    stroke-width: 2;
+    fill: none;
+}
+
+.pinlabel__text{
+    dominant-baseline: central;
+    fill: #fff;
+    
+    font-weight: bold;
+    stroke-width: 0;
+    text-anchor: middle;
+}
+
+.txrx .pinlabel__body{
+    fill: rgb(38, 96, 81);
+}
+.txrx .pinlabel__leader{
+    stroke: rgb(38, 96, 81);
+}
+.txrx .swatch__body {
+    fill: rgb(38, 96, 81);
+}
+.pwr .pinlabel__body{
+    fill: rgb(45, 38, 142);
+}
+.pwr .pinlabel__leader{
+    stroke: rgb(45, 38, 142);
+}
+.pwr .swatch__body {
+    fill: rgb(45, 38, 142);
+}
+.pwm .pinlabel__body{
+    fill: rgb(25, 38, 200);
+}
+.pwm .pinlabel__leader{
+    stroke: rgb(25, 38, 200);
+}
+.pwm .swatch__body {
+    fill: rgb(25, 38, 200);
+}
+.adc .pinlabel__body{
+    fill: rgb(162, 19, 184);
+}
+.adc .pinlabel__leader{
+    stroke: rgb(162, 19, 184);
+}
+.adc .swatch__body {
+    fill: rgb(162, 19, 184);
+}
+.gnd .pinlabel__body{
+    fill: rgb(99, 53, 99);
+}
+.gnd .pinlabel__leader{
+    stroke: rgb(99, 53, 99);
+}
+.gnd .swatch__body {
+    fill: rgb(99, 53, 99);
+}
+.gpio .pinlabel__body{
+    fill: rgb(196, 99, 174);
+}
+.gpio .pinlabel__leader{
+    stroke: rgb(196, 99, 174);
+}
+.gpio .swatch__body {
+    fill: rgb(196, 99, 174);
+}
+
+.panel__inner {
+    fill: #fff;
+}
+.panel__outer {
+    fill: #333;
+}
+
+.legend__entry text {
+    dominant-baseline: central;
+}
+.annotation__body {
+    fill: rgb(253, 203, 36);
+    stroke-width: 0;
+}
+.annotation__text text {
+    dominant-baseline: hanging;
+    font-size: 14px;
+    font-weight: bold;
+    fill: rgb(63, 40, 6);
+    text-anchor: start;
+}
+.annotation__target {
+    fill: none;
+    stroke: rgb(253, 203, 36);
+    stroke-width: 4px;
+}
+.annotation__leaderline {
+    stroke: rgb(253, 203, 36);
+    stroke-width: 4px;
+    fill: none;
+}
+
+.ic__body{
+    fill: rgb(85, 85, 85);
+    stroke-width: 1px;
+    stroke: #000;
+}
+.ic__leg .polarity{
+    fill: rgb(85, 85, 85);
+    stroke-width: 2px;
+    stroke: rgb(138, 138, 138);
+    
+}
+.ic__leg{
+    fill: rgb(255, 255, 255);
+    stroke-width: 1px;
+    stroke: #000;
+}
+
+.ic__body{
+    fill: rgb(85, 85, 85);
+    stroke-width: 1px;
+    stroke: #000;
+}
+.ic__leg .polarity{
+    fill: rgb(85, 85, 85);
+    stroke-width: 2px;
+    stroke: rgb(138, 138, 138);
+    
+}
+.ic__leg{
+    fill: rgb(255, 255, 255);
+    stroke-width: 1px;
+    stroke: #000;
+}
+

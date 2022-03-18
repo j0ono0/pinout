@@ -171,6 +171,8 @@ def duplicate(resource_name, *args):
 
         + config
         + quick_start
+        + kicad
+        + new_project
 
     :param resource_name: Name of resource to duplicate.
     :type resource_name: string
@@ -186,7 +188,15 @@ def duplicate(resource_name, *args):
         "config": [
             ("config", "default_config.py"),
         ],
-        "kicad": [("pinout_kicad_example.zip",)],
+        "kicad": [
+            ("pinout_kicad_example.zip",),
+        ],
+        "new_project": [
+            ("new_project", "config.py"),
+            ("new_project", "default_styles.css"),
+            ("new_project", "pinout_diagram.py"),
+            ("new_project", "styles.css"),
+        ],
     }
 
     resource_package = "pinout"
@@ -332,7 +342,7 @@ def __main__():
         "-d",
         "--duplicate",
         action="store",
-        choices=["quick_start", "config", "kicad"],
+        choices=["quick_start", "config", "kicad", "new_project"],
         help="duplicate pinout resources",
     )
 

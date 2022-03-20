@@ -29,7 +29,7 @@
     */
 
 text {
-    font-size: calc(9pt * 0.33);
+    font-size: calc(9pt * .33);
 }
 
 .alphanum text{
@@ -38,12 +38,12 @@ text {
 }
 
 .stroke{
-    stroke-width: calc(0.5mm / 3.78);
+    stroke-width: 0.5;
 }
 
 
 .pinlabel__leader{
-    stroke-width: calc(0.5mm / 3.78);
+    stroke-width: 0.5;
 }
 
 .pinlabel__text{
@@ -72,22 +72,22 @@ text {
 .annotation__target {
     fill: none;
     stroke: rgb(253, 203, 36);
-    stroke-width: calc(1.5mm / 3.87);
+    stroke-width: 1.5;
 }
 .annotation__leaderline {
     stroke: rgb(253, 203, 36);
-    stroke-width: calc(1.5mm / 3.87);
+    stroke-width: 1.5;
     fill: none;
 }
 
 
 .ic__body{
-    stroke-width: calc(0.5mm / 3.78);
+    stroke-width: 0.5;
 }
 .ic__leg .polarity{
-    stroke-width: calc(1mm / 3.78);
+    stroke-width: 1;
     
 }
 .ic__leg{
-    stroke-width: calc(0.5mm / 3.78);
+    stroke-width: 0.5;
 }

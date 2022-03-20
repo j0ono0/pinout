@@ -96,6 +96,31 @@ def get_diagram_instance(src, instance_name="diagram"):
     return getattr(user_module, instance_name)
 
 
+def create_config_styles(src, path, instance_name="diagram", overwrite=False):
+    from pinout import style_tools, templates
+    from pinout.components.pinlabel import PinLabel
+
+    # Save CWD and return to it and end of function
+    # incase multiple diagrams are being built from a script
+    init_dir = Path.cwd()
+
+    src = Path(src)
+    os.chdir(src.parent)
+    sys.path.append("")
+
+    diagram = get_diagram_instance(src, instance_name)
+
+    styles = templates.get("stylesheet_config.j2")
+    cfg = config_manager.get("config")
+
+    # extract user defined tags from all pinlabels
+    lbls = diagram.find_children_by_type(diagram, PinLabel)
+    cfg["pinlabels"] = set().union(*[lbl._tag for lbl in lbls])
+    cfg["pinlabels"].discard(cfg["pinlabel"]["tag"])
+
+    print(styles.render(cfg))
+
+
 def create_stylesheet(src, path, instance_name="diagram", overwrite=False):
     """Create a stylesheet if none supplied."""
     from pinout import style_tools, templates
@@ -360,6 +385,14 @@ def __main__():
         action="store",
         help="example usage: python -m pinout.manager --css <module name> <export filename> [<instance name>]\n <instance name> defaults to 'diagram'",
     )
+    ##############################
+    parser.add_argument(
+        "--cfgcss",
+        nargs="+",
+        action="store",
+        help="example usage: python -m pinout.manager --css <module name> <export filename> [<instance name>]\n <instance name> defaults to 'diagram'",
+    )
+    ##############################
 
     parser.add_argument(
         "-o",
@@ -386,6 +419,9 @@ def __main__():
 
     if args.kicad_lib:
         create_kicad_lib(*args.kicad_lib, version=args.version)
+
+    if args.cfgcss:
+        create_config_styles(*args.cfgcss, overwrite=args.overwrite)
 
 
 if __name__ == "__main__":

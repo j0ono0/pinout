@@ -1,0 +1,40 @@
+{# stylesheet generated from pinout config #}
+
+{% set units = diagram.units %}
+{% set dpi = diagram.dpi %}
+
+{# diagram #}
+.{{ diagram. tag }}{}
+
+{# text #}
+text {
+    font-family: {{ text.font_family }};
+    font-size: {{ calc_units(text.font_size, units) }};
+    font-weight": {{ text.font_weight }};
+}
+
+.{{ textblock.tag }} {}
+
+{# panel #}
+.{{ panel.inner.tag }}{
+    fill:{{ panel.inner.fill }}
+}
+
+.{{ panel.outer.tag }}{
+    fill: {{ panel.outer.fill }}
+}
+
+{# pinlabels #}
+{% for tag in pinlabels %}
+
+.{{ tag }} .{{ pinlabel.body.tag }}{
+    fill: #0f0;
+}
+.{{ tag }} .{{ pinlabel.leaderline.tag }}{
+    stroke: #0f0;
+}
+.{{ tag }} .{{ legend.swatch.tag }} {
+    fill: #0f0;
+
+
+{% endfor %}

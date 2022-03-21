@@ -33,13 +33,24 @@ def update(d, u):
 def get(attr):
     merged_config = {}
     instances = []
-    for cfg in config_modules:
-        if hasattr(cfg, attr):
-            instances.insert(0, getattr(cfg, attr))
+    for module in config_modules:
+        try:
+            cfg = getattr(module, "config")
+            if attr == "config":
+                instances.insert(0, cfg)
+            else:
+                instances.insert(0, cfg[attr])
+        except KeyError:
+            pass  # No attr present in config dict
+        except AttributeError:
+            # No config dict.
+            # Module likely to be legacy format:
+            # Each config dict is its own attribute
+            if hasattr(module, attr):
+                instances.insert(0, getattr(module, attr))
 
     while instances:
         update(merged_config, instances.pop())
-    # warnings.warn(f"'{attr}' not found in config.")
     return merged_config
 
 

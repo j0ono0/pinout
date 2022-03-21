@@ -110,15 +110,27 @@ def create_config_styles(src, path, instance_name="diagram", overwrite=False):
 
     diagram = get_diagram_instance(src, instance_name)
 
-    styles = templates.get("stylesheet_config.j2")
+    tplt = templates.get("stylesheet_config.j2")
     cfg = config_manager.get("config")
 
     # extract user defined tags from all pinlabels
     lbls = diagram.find_children_by_type(diagram, PinLabel)
-    cfg["pinlabels"] = set().union(*[lbl._tag for lbl in lbls])
-    cfg["pinlabels"].discard(cfg["pinlabel"]["tag"])
+    lbl_tags = set().union(*[lbl._tag for lbl in lbls])
+    lbl_tags.discard(cfg["pinlabel"]["tag"])
+    cfg["pinlabels"] = style_tools.assign_color(lbl_tags)
 
-    print(styles.render(cfg))
+    css = tplt.render(**cfg)
+
+    # Return to folder script was launched from
+    os.chdir(init_dir)
+
+    # Export stylesheet file
+    if not overwrite:
+        path = unique_filepath(path)
+    with open(path, "w") as f:
+        f.write(css)
+
+    print(f"CSS file '{path}' created.")
 
 
 def create_stylesheet(src, path, instance_name="diagram", overwrite=False):

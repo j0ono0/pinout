@@ -3,38 +3,135 @@
 {% set units = diagram.units %}
 {% set dpi = diagram.dpi %}
 
+
 {# diagram #}
-.{{ diagram. tag }}{}
+.{{ diagram. tag }} {}
+
 
 {# text #}
 text {
     font-family: {{ text.font_family }};
-    font-size: {{ calc_units(text.font_size, units) }};
-    font-weight": {{ text.font_weight }};
+    font-size: {{calc_units( text.font_size, diagram.units) }};
+    font-weight: {{ text.font_weight }};
 }
 
+
+{# textblock #}
 .{{ textblock.tag }} {}
+
 
 {# panel #}
 .{{ panel.inner.tag }}{
-    fill:{{ panel.inner.fill }}
+    fill:{{ panel.inner.fill }};
 }
 
 .{{ panel.outer.tag }}{
-    fill: {{ panel.outer.fill }}
+    fill: {{ panel.outer.fill }};
 }
+
 
 {# pinlabels #}
-{% for tag in pinlabels %}
+{% if pinlabel %}
+.{{ pinlabel.leaderline.tag }}{
+    stroke-width: {{calc_units( pinlabel.leaderline.stroke_width, diagram.units) }};
+    fill: none;
+}
+
+.{{ pinlabel.text.tag }}{
+    dominant-baseline: central;
+    fill: #fff;
+    font-weight: bold;
+    stroke-width: 0;
+    text-anchor: middle;
+}
+{% endif -%}
+
+{% for tag, color in pinlabels %}
 
 .{{ tag }} .{{ pinlabel.body.tag }}{
-    fill: #0f0;
+    fill: rgb{{color}};
 }
 .{{ tag }} .{{ pinlabel.leaderline.tag }}{
-    stroke: #0f0;
+    stroke: rgb{{color}};
 }
-.{{ tag }} .{{ legend.swatch.tag }} {
-    fill: #0f0;
+{% endfor %}
 
+
+{# legend #}
+.{{ legend.entry.tag }} text {
+    dominant-baseline: {{ legend.entry.dominant_baseline }};
+}
+{% for tag, color in pinlabels %}
+    .{{ tag }} .{{ legend.swatch.tag }} {
+        fill: rgb{{color}};
+}
 
 {% endfor %}
+
+{# annotation #}
+.{{ annotation.body.tag }} {
+    fill: {{ annotation.body.fill }};
+    stroke-width: {{ annotation.body.stroke_width }};
+}
+.{{ annotation.content.tag }} text {
+    dominant-baseline: {{ annotation.content.dominant_baseline }};
+    font-size:  {{ annotation.content.font_size }};
+    font-weight:  {{ annotation.content.weight }};
+    fill:  {{ annotation.content.fill }};
+    text-anchor:  {{ annotation.content.text_anchor }};
+}
+.{{ annotation.target.tag }} {
+    fill: {{ annotation.target.fill }};
+    stroke:  {{ annotation.target.stroke }};
+    stroke-width: {{ annotation.target.stroke_width }};
+}
+.{{ annotation.leaderline.tag }} {
+    fill: {{ annotation.leaderline.fill }};
+    stroke:  {{ annotation.leaderline.stroke }};
+    stroke-width: {{ annotation.leaderline.stroke_width }};
+}
+
+{# Integrated circuits #}
+
+.{{ ic_dip.body.tag }}{
+    fill: {{ ic_dip.body.fill }};
+    stroke: {{ ic_dip.body.stroke }};
+    stroke-width: {{ ic_dip.body.stroke_width }};
+}
+.{{ ic_dip.leg.tag }} .{{ ic_dip.polarity_mark.tag }}{
+    fill: {{ ic_dip.polarity_mark.fill }};
+    stroke: {{ ic_dip.polarity_mark.stroke }};
+    stroke-width: {{ ic_dip.polarity_mark.stroke_width }};
+    
+}
+.{{ ic_dip.leg.tag }}{
+    fill: {{ ic_dip.leg.fill }};
+    stroke: {{ ic_dip.leg.stroke }};
+    stroke-width: {{ ic_dip.leg.stroke_width }};
+}
+
+.{{ ic_qfp.body.tag }}{
+    fill: {{ ic_qfp.body.fill }};
+    stroke: {{ ic_qfp.body.stroke }};
+    stroke-width: {{ ic_qfp.body.stroke_width }};
+}
+.{{ ic_qfp.leg.tag }}{
+    fill: {{ ic_qfp.leg.fill }};
+    stroke: {{ ic_qfp.leg.stroke }};
+    stroke-width: {{ ic_qfp.leg.stroke_width }};
+}
+.{{ ic_qfp.leg.tag }} .{{ ic_qfp.polarity_mark.tag }}{
+    fill: {{ ic_qfp.polarity_mark.fill }};
+    stroke: {{ ic_qfp.polarity_mark.stroke }};
+    stroke-width: {{ ic_qfp.polarity_mark.stroke_width }};
+    
+}
+
+{# Diagram presets #}
+.{{ diagram_presets.tag }} .{{ diagram_presets.h1 }}{
+    font-size: {{ diagram_presets.h1.font_size }};
+    font-weight: {{ diagram_presets.h1.font_weight }};
+}
+.{{ diagram_presets.tag }} .{{ diagram_presets.panel_02.tag }} .{{ diagram_presets.panel_02.inner }}{
+    fill: {{ diagram_presets.panel_02.inner.fill }};
+}

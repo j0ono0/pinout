@@ -23,7 +23,6 @@ def to_num(val):
 
 def calc_units(val, dst_units):
     """Convert value from src_units to dst_units"""
-
     if type(val) in [int, float]:
         return val
 

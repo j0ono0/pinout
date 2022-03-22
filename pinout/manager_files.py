@@ -1,6 +1,8 @@
 import importlib
 import sys
 import urllib.request
+import pkg_resources
+import pathlib
 
 
 def import_source_file(module_name, file_path):

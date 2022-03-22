@@ -1,5 +1,6 @@
 import re
-from pinout import templates, config_manager
+from pinout import templates, config_manager, manager_files
+from pinout.resources.config import mm_config
 from pinout.core import (
     Dimensions,
     Layout,
@@ -21,6 +22,10 @@ class Diagram(Layout):
         self.merge_config_into_kwargs(kwargs, "diagram")
 
         super().__init__(**kwargs)
+
+        # Add default config to match units
+        if self.units == "mm":
+            config_manager.add_dict("config", mm_config.config)
 
         # Setup component
         self.add(SvgShape(width=width, height=height))

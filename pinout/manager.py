@@ -125,30 +125,35 @@ def calc_units(val, dst_units, raw=False):
             "cm": 0.026,
             "in": 0.010,
             "pt": 1,
+            "px": 1,
         },
         "pt": {
             "mm": 0.330,
             "cm": 0.033,
             "in": 0.014,
             "pt": 1,
+            "px": 1,
         },
         "mm": {
             "mm": 1,
             "cm": 0.1,
             "in": 0.394,
             "pt": 2.835,
+            "px": 2.835,
         },
         "cm": {
             "mm": 10,
             "cm": 1,
             "in": 0.039,
             "pt": 28.35,
+            "px": 28.35,
         },
         "in": {
             "mm": 25.40,
             "cm": 2.540,
             "in": 1,
             "pt": 96,  # SVG renders at 96dpi in firefox - using that as reference
+            "px": 96,  # SVG renders at 96dpi in firefox - using that as reference
         },
     }
     if raw:

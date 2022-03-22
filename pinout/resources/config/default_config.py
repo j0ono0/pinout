@@ -1,3 +1,9 @@
+################################
+#
+# Default config
+# dimensions in px units
+#
+################################
 config = {
     ################################
     #
@@ -6,7 +12,7 @@ config = {
     ################################
     "diagram": {
         "tag": "diagram",
-        "units": "mm",
+        "units": "px",
         "dpi": 96,
     },
     "group": {
@@ -27,17 +33,17 @@ config = {
     "pinlabel": {
         "tag": "pinlabel",
         "body": {
-            "x": 1.5,
+            "x": 6,
             "y": 0,
-            "width": 16,
-            "height": 8,
-            "corner_radius": 1,
+            "width": 75,
+            "height": 25,
+            "corner_radius": 2,
             "tag": "pinlabel__body",
         },
         "leaderline": {
             "direction": "hh",
             "tag": "pinlabel__leader",
-            "stroke_width": 0.5,
+            "stroke_width": 1,
         },
         "text": {
             "tag": "pinlabel__text",
@@ -48,8 +54,8 @@ config = {
         "inset": (10, 10, 10, 10),
         "tag": "legend",
         "entry": {
-            "width": 159,
-            "height": 28,
+            "width": 200,
+            "height": 60,
             "tag": "legend__entry",
             "dominant_baseline": "central",
         },

@@ -11,7 +11,7 @@
 {# text #}
 text {
     font-family: {{ text.font_family }};
-    font-size: {{calc_units( text.font_size, diagram.units) }};
+    font-size: {{text.font_size }};
     font-weight: {{ text.font_weight }};
 }
 
@@ -33,7 +33,7 @@ text {
 {# pinlabels #}
 {% if pinlabel %}
 .{{ pinlabel.leaderline.tag }}{
-    stroke-width: {{calc_units( pinlabel.leaderline.stroke_width, diagram.units) }};
+    stroke-width: {{ pinlabel.leaderline.stroke_width }};
     fill: none;
 }
 
@@ -75,8 +75,8 @@ text {
 }
 .{{ annotation.content.tag }} text {
     dominant-baseline: {{ annotation.content.dominant_baseline }};
-    font-size:  {{ annotation.content.font_size }};
-    font-weight:  {{ annotation.content.weight }};
+    font-size: {{annotation.content.font_size}};
+    font-weight:  {{ annotation.content.font_weight }};
     fill:  {{ annotation.content.fill }};
     text-anchor:  {{ annotation.content.text_anchor }};
 }
@@ -96,42 +96,41 @@ text {
 .{{ ic_dip.body.tag }}{
     fill: {{ ic_dip.body.fill }};
     stroke: {{ ic_dip.body.stroke }};
-    stroke-width: {{ ic_dip.body.stroke_width }};
+    stroke-width: {{ic_dip.body.stroke_width }};
 }
 .{{ ic_dip.leg.tag }} .{{ ic_dip.polarity_mark.tag }}{
     fill: {{ ic_dip.polarity_mark.fill }};
     stroke: {{ ic_dip.polarity_mark.stroke }};
-    stroke-width: {{ ic_dip.polarity_mark.stroke_width }};
+    stroke-width: {{ic_dip.polarity_mark.stroke_width }};
     
 }
 .{{ ic_dip.leg.tag }}{
     fill: {{ ic_dip.leg.fill }};
     stroke: {{ ic_dip.leg.stroke }};
-    stroke-width: {{ ic_dip.leg.stroke_width }};
+    stroke-width: {{ic_dip.leg.stroke_width }};
 }
 
 .{{ ic_qfp.body.tag }}{
     fill: {{ ic_qfp.body.fill }};
     stroke: {{ ic_qfp.body.stroke }};
-    stroke-width: {{ ic_qfp.body.stroke_width }};
+    stroke-width: {{ic_qfp.body.stroke_width }};
 }
 .{{ ic_qfp.leg.tag }}{
     fill: {{ ic_qfp.leg.fill }};
     stroke: {{ ic_qfp.leg.stroke }};
-    stroke-width: {{ ic_qfp.leg.stroke_width }};
+    stroke-width: {{ic_qfp.leg.stroke_width }};
 }
 .{{ ic_qfp.leg.tag }} .{{ ic_qfp.polarity_mark.tag }}{
     fill: {{ ic_qfp.polarity_mark.fill }};
     stroke: {{ ic_qfp.polarity_mark.stroke }};
-    stroke-width: {{ ic_qfp.polarity_mark.stroke_width }};
-    
+    stroke-width: {{ic_qfp.polarity_mark.stroke_width }};
 }
 
 {# Diagram presets #}
-.{{ diagram_presets.tag }} .{{ diagram_presets.h1 }}{
-    font-size: {{ diagram_presets.h1.font_size }};
+.{{ diagram_presets.tag }} .{{ diagram_presets.h1.tag }}{
+    font-size: {{diagram_presets.h1.font_size }};
     font-weight: {{ diagram_presets.h1.font_weight }};
 }
-.{{ diagram_presets.tag }} .{{ diagram_presets.panel_02.tag }} .{{ diagram_presets.panel_02.inner }}{
+.{{ diagram_presets.tag }} .{{ diagram_presets.panel_02.tag }} .{{ diagram_presets.panel_02.inner.tag }}{
     fill: {{ diagram_presets.panel_02.inner.fill }};
 }

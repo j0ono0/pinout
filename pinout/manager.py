@@ -7,6 +7,7 @@ import os
 from pathlib import Path
 import pkg_resources
 import sys
+import re
 
 from pinout import core
 from pinout import manager_files as io
@@ -96,7 +97,96 @@ def get_diagram_instance(src, instance_name="diagram"):
     return getattr(user_module, instance_name)
 
 
-def create_config_styles(src, path, instance_name="diagram", overwrite=False):
+def to_num(val):
+    if "." in val:
+        return float(val)
+    return int(val)
+
+
+def calc_units(val, dst_units, raw=False):
+    """Convert value from src_units to dst_units"""
+    if not val or type(val) in [int, float]:
+        return val
+
+    dst_units = dst_units.strip().lower()
+    val = val.strip().lower()
+
+    src_units = re.search(r"([a-zA-Z]+$)", val.strip()).groups()[0]
+    val = to_num(re.search(r"(^[0-9]+)", val).groups()[0])
+
+    # units already match return val as a number
+    if src_units == dst_units:
+        return val
+
+    conversion = {
+        # SVG renders at 96dpi in firefox - using that as reference
+        "px": {
+            "mm": 0.265,
+            "cm": 0.026,
+            "in": 0.010,
+            "pt": 1,
+        },
+        "pt": {
+            "mm": 0.330,
+            "cm": 0.033,
+            "in": 0.014,
+            "pt": 1,
+        },
+        "mm": {
+            "mm": 1,
+            "cm": 0.1,
+            "in": 0.394,
+            "pt": 2.835,
+        },
+        "cm": {
+            "mm": 10,
+            "cm": 1,
+            "in": 0.039,
+            "pt": 28.35,
+        },
+        "in": {
+            "mm": 25.40,
+            "cm": 2.540,
+            "in": 1,
+            "pt": 96,  # SVG renders at 96dpi in firefox - using that as reference
+        },
+    }
+    if raw:
+        return val * conversion[src_units][dst_units]
+
+    return f"calc({val}{src_units} * {conversion[src_units][dst_units]})"
+
+
+def convert_config_dimensions(config, units):
+    """Convert dimensions to specified units"""
+    # List of all CSS rules that document a measurement that could require converting
+    measurements = [
+        "x",
+        "y",
+        "width",
+        "height",
+        "stroke_width",
+        "font_size",
+        "line_height",
+        "letter_spacing",
+        "corner_radius",
+        "max_height",
+        "inset",
+        "offset",
+    ]
+    for k, v in config.items():
+        if isinstance(v, dict):
+            convert_config_dimensions(v, units)
+        else:
+            if k in measurements:
+                if isinstance(v, (list, tuple)):
+                    config[k] = tuple([calc_units(i, units, True) for i in v])
+                else:
+                    config[k] = calc_units(v, units)
+    return config
+
+
+def create_styles_from_config(src, path, instance_name="diagram", overwrite=False):
     from pinout import style_tools, templates
     from pinout.components.pinlabel import PinLabel
 
@@ -112,6 +202,8 @@ def create_config_styles(src, path, instance_name="diagram", overwrite=False):
 
     tplt = templates.get("stylesheet_config.j2")
     cfg = config_manager.get("config")
+
+    convert_config_dimensions(cfg, diagram.units)
 
     # extract user defined tags from all pinlabels
     lbls = diagram.find_children_by_type(diagram, PinLabel)
@@ -276,6 +368,18 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
     sys.path.append("")
 
     diagram = get_diagram_instance(src, instance_name)
+    stylesheets = diagram.find_children_by_type(diagram, core.StyleSheet)
+
+    # If no stylesheet exists create default styles
+    if not stylesheets:
+        print("No stylesheets found...")
+        css_path = unique_filepath("default_styles.css")
+        create_styles_from_config(src, css_path)
+        diagram.add_stylesheet(css_path, embed=False)
+        print(
+            f"To use permanently insert the following line into '{src.name}' after '{instance_name}' is declared:"
+        )
+        print(f"{instance_name}.add_stylesheet('{css_path}')")
 
     # Prepare linked media depending on output
     if dest.suffix == ".svg":
@@ -300,7 +404,6 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
                 )
     else:
         # Embed styles - required for cairosvg to render correctly
-        stylesheets = diagram.find_children_by_type(diagram, core.StyleSheet)
         for css in stylesheets:
             css.embed = True
 
@@ -399,7 +502,7 @@ def __main__():
     )
     ##############################
     parser.add_argument(
-        "--cfgcss",
+        "--default_css",
         nargs="+",
         action="store",
         help="example usage: python -m pinout.manager --css <module name> <export filename> [<instance name>]\n <instance name> defaults to 'diagram'",
@@ -432,8 +535,8 @@ def __main__():
     if args.kicad_lib:
         create_kicad_lib(*args.kicad_lib, version=args.version)
 
-    if args.cfgcss:
-        create_config_styles(*args.cfgcss, overwrite=args.overwrite)
+    if args.default_css:
+        create_styles_from_config(*args.default_css, overwrite=args.overwrite)
 
 
 if __name__ == "__main__":

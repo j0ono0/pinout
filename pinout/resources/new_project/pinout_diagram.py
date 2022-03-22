@@ -11,7 +11,7 @@
 # *IMPORTANT*
 # -----------
 # 'py' is the Windows operation system command to invoke Python.
-# Command examples may need to be changed for you operating system.
+# Examples may need to be changed for you operating system.
 # Eg. Use 'python' in place of 'py'.
 
 # Export a diagram from a terminal:
@@ -38,7 +38,7 @@ diagram.add_stylesheet("default_styles.css")
 # Tags on components become CSS classes. Add CSS styles that target them here.
 # Colours change with each regeneration of default_styles. To retain rules
 # copy them into this file to avoid the risk of being overwritten.
-diagram.add_stylesheet("styles.css")
+# diagram.add_stylesheet("styles.css")
 
 
 panel = diagram.add(Panel(1024, 567, tag="diagram__bg"))

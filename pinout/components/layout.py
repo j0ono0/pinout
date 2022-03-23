@@ -1,8 +1,6 @@
 import re
-from pinout import templates, config_manager, manager_files
-from pinout.resources.config import mm_config
+from pinout import templates, config_manager
 from pinout.core import (
-    Dimensions,
     Layout,
     StyleSheet,
     SvgShape,
@@ -25,7 +23,7 @@ class Diagram(Layout):
 
         # Add default config to match units
         if self.units == "mm":
-            config_manager.add_dict("config", mm_config.config)
+            config_manager.add_config_from_package("resources/config/mm_config.json")
 
         # Setup component
         self.add(SvgShape(width=width, height=height))
@@ -45,6 +43,12 @@ class Diagram(Layout):
     @height.setter
     def height(self, val):
         self._height = val
+
+    def add_config(self, src):
+        if isinstance(src, dict):
+            config_manager.set(src)
+        else:
+            config_manager.add_json(src)
 
     def add_stylesheet(self, path, embed=False):
         """Add a stylesheet to the diagram"""

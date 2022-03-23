@@ -1,7 +1,6 @@
 import importlib
 import sys
 import urllib.request
-import pkg_resources
 import pathlib
 
 
@@ -24,3 +23,10 @@ def load_data(src):
                 return f.read()
         except urllib.error.HTTPError as e:
             print(e.code)
+
+
+def import_file_from_package(src):
+    src = pathlib.Path(src)
+    module_path = "pinout." + src.parent.as_posix().replace("/", ".")
+    module = importlib.import_module(module_path)
+    return importlib.resources.read_text(module, src.name)

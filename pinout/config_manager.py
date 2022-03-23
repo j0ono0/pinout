@@ -2,8 +2,18 @@ import collections.abc
 import importlib.resources
 from pathlib import Path
 import types
+import json
 
 from pinout import manager_files as io
+
+
+def update(d, u):
+    for k, v in u.items():
+        if isinstance(v, collections.abc.Mapping):
+            d[k] = update(d.get(k, {}), v)
+        else:
+            d[k] = v
+    return d
 
 
 def load_module(package, resource):
@@ -21,45 +31,44 @@ def add_dict(name, value):
     setattr(adhoc_config, name, value)
 
 
-def update(d, u):
-    for k, v in u.items():
-        if isinstance(v, collections.abc.Mapping):
-            d[k] = update(d.get(k, {}), v)
-        else:
-            d[k] = v
-    return d
+##########################################################
 
 
-def get(attr):
-    merged_config = {}
-    instances = []
-    for module in config_modules:
-        try:
-            cfg = getattr(module, "config")
-            if attr == "config":
-                instances.insert(0, cfg)
-            else:
-                instances.insert(0, cfg[attr])
-        except KeyError:
-            pass  # No attr present in config dict
-        except AttributeError:
-            # No config dict.
-            # Module likely to be legacy format:
-            # Each config dict is its own attribute
-            if hasattr(module, attr):
-                instances.insert(0, getattr(module, attr))
+def add_json(src):
+    data = json.loads(io.load_data(src))
+    update(config_dict, data)
 
-    while instances:
-        update(merged_config, instances.pop())
-    return merged_config
+
+def set(data_dict):
+    update(config_dict, data_dict)
+
+
+def add_config_from_package(src):
+    set(json.loads(io.import_file_from_package(src)))
+
+
+def get(attr=None):
+    if not attr:
+        return config_dict
+    data = config_dict
+    for key in attr.split("."):
+        data = data[key]
+    return data
+
+
+##########################################################
 
 
 def init():
-    global adhoc_config, config_modules
+    global adhoc_config, config_modules, config_dict
     # adhoc_config used for variable added directly via script
     adhoc_config = types.ModuleType("adhoc_config")
     config_modules = [adhoc_config]
     load_module("pinout.resources.config", "default_config.py")
+
+    config_dict = json.loads(
+        io.import_file_from_package("resources/config/default_config.json")
+    )
 
 
 ##################################################

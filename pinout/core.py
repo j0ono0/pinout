@@ -144,6 +144,7 @@ class Component:
         app_cfg = config_manager.get(config_attr)
         kwargs["config"] = self.update_data_dict(app_cfg, kwarg_cfg)
 
+    # WARNING: legacy function
     def update_config(self, vals, cfg=None):
         cfg = cfg or self.config
         """update config dict
@@ -221,7 +222,7 @@ class Dimensions:
 
     @property
     def dpi(self):
-        return self._dpi or config_manager.get("diagram")["dpi"]
+        return self._dpi or config_manager.get("diagram.dpi")
 
     @dpi.setter
     def dpi(self, val):
@@ -229,7 +230,7 @@ class Dimensions:
 
     @property
     def units(self):
-        return self._units or config_manager.get("diagram")["units"]
+        return self._units or config_manager.get("diagram.units")
 
     @units.setter
     def units(self, val):

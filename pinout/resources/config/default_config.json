@@ -1,0 +1,308 @@
+{
+    "annotation": {
+        "body": {
+            "corner_radius": 25,
+            "fill": "rgb(253, 203, 36)",
+            "height": 50,
+            "stroke_width": 0.5,
+            "tag": "annotation__body",
+            "width": 250,
+            "x": 40,
+            "y": 29
+        },
+        "content": {
+            "dominant_baseline": "hanging",
+            "fill": "rgb(63, 40, 6)",
+            "font_size": "14px",
+            "font_weight": "bold",
+            "line_height": 16,
+            "tag": "annotation__text",
+            "text_anchor": "start",
+            "x": 28,
+            "y": 17
+        },
+        "leaderline": {
+            "direction": "vh",
+            "fill": "none",
+            "stroke": "rgb(253, 203, 36)",
+            "stroke_width": 0,
+            "tag": "annotation__leaderline"
+        },
+        "tag": "annotation",
+        "target": {
+            "corner_radius": 2.5,
+            "fill": "none",
+            "height": 5,
+            "stroke": "rgb(253, 203, 36)",
+            "stroke_width": 0,
+            "tag": "annotation__target",
+            "width": 5,
+            "x": -5,
+            "y": -5
+        }
+    },
+    "circle": {
+        "tag": "circle"
+    },
+    "diagram": {
+        "dpi": 96,
+        "tag": "diagram",
+        "units": "px"
+    },
+    "diagram_presets": {
+        "h1": {
+            "font_size": "20pt",
+            "font_weight": "bold",
+            "tag": "h1"
+        },
+        "panel_00": {
+            "inner": {
+                "tag": "panel__inner"
+            },
+            "inset": [
+                2,
+                2,
+                2,
+                2
+            ],
+            "outer": {
+                "tag": "panel__outer"
+            },
+            "tag": "panel"
+        },
+        "panel_01": {
+            "inner": {
+                "tag": "panel__inner"
+            },
+            "inset": [
+                0.5,
+                0.5,
+                0.5,
+                0.5
+            ],
+            "outer": {
+                "tag": "panel__outer"
+            },
+            "tag": "panel--main"
+        },
+        "panel_02": {
+            "inner": {
+                "fill": "#ededed",
+                "tag": "panel__inner"
+            },
+            "inset": [
+                0.5,
+                0.5,
+                0.5,
+                0.5
+            ],
+            "outer": {
+                "tag": "panel__outer"
+            },
+            "tag": "panel--info"
+        },
+        "tag": "layout"
+    },
+    "group": {
+        "tag": "group"
+    },
+    "ic_dip": {
+        "body": {
+            "corner_radius": 3,
+            "fill": "none",
+            "stroke": "rgb(0, 0, 0)",
+            "stroke_width": 0,
+            "tag": "ic__body",
+            "x": 15,
+            "y": 0
+        },
+        "inset": [
+            15,
+            0,
+            15,
+            0
+        ],
+        "leg": {
+            "fill": "rgb(255, 255, 255)",
+            "stroke": "rgb(0, 0, 0)",
+            "stroke_width": 0.5,
+            "tag": "ic__leg"
+        },
+        "polarity_mark": {
+            "fill": "rgb(85, 85, 85)",
+            "radius": 5,
+            "stroke": "rgb(0, 0, 0)",
+            "stroke_width": 0.5,
+            "tag": "polarity"
+        },
+        "tag": "ic ic--dip"
+    },
+    "ic_qfp": {
+        "body": {
+            "corner_radius": 3,
+            "fill": "rgb(85, 85, 85)",
+            "stroke": "rgb(0, 0, 0)",
+            "stroke_width": 0.5,
+            "tag": "ic__body",
+            "x": 15,
+            "y": 15
+        },
+        "inset": [
+            15,
+            15,
+            15,
+            15
+        ],
+        "leg": {
+            "fill": "rgb(255, 255, 255)",
+            "stroke": "rgb(0, 0, 0)",
+            "stroke_width": 0.5,
+            "tag": "ic__leg"
+        },
+        "pin_pitch": 30,
+        "polarity_mark": {
+            "fill": "rgb(85, 85, 85)",
+            "radius": 5,
+            "stroke": "rgb(138, 138, 138)",
+            "stroke_width": 1,
+            "tag": "polarity"
+        },
+        "tag": "ic ic--qfp"
+    },
+    "image": {
+        "tag": "image"
+    },
+    "kicad_5_footprints": {
+        "annotation": {
+            "hide_fp_text_reference": true,
+            "hide_fp_text_user": true,
+            "value_offset": [
+                25,
+                25
+            ]
+        },
+        "layer": "Eco1.User",
+        "pinlabel": {
+            "hide_fp_text_reference": true,
+            "hide_fp_text_user": true,
+            "value_offset": [
+                0,
+                25
+            ]
+        },
+        "textblock": {
+            "hide_fp_text_reference": true,
+            "hide_fp_text_user": true
+        },
+        "version": 5
+    },
+    "kicad_6_footprints": {
+        "annotation": {
+            "hide_fp_text_reference": true,
+            "hide_fp_text_user": true,
+            "value_offset": [
+                25,
+                25
+            ]
+        },
+        "layer": "User.1",
+        "pinlabel": {
+            "hide_fp_text_reference": true,
+            "hide_fp_text_user": true,
+            "value_offset": [
+                0,
+                25
+            ]
+        },
+        "textblock": {
+            "hide_fp_text_reference": true,
+            "hide_fp_text_user": true
+        },
+        "version": 6
+    },
+    "leaderline": {
+        "direction": "hh",
+        "tag": "pinlabel__leader"
+    },
+    "legend": {
+        "entry": {
+            "dominant_baseline": "central",
+            "height": 60,
+            "tag": "legend__entry",
+            "width": 200
+        },
+        "inset": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "max_height": null,
+        "swatch": {
+            "height": 20,
+            "tag": "legend__swatch",
+            "width": 20
+        },
+        "tag": "legend"
+    },
+    "panel": {
+        "inner": {
+            "fill": "#fff",
+            "tag": "panel__inner"
+        },
+        "inset": [
+            2,
+            2,
+            2,
+            2
+        ],
+        "outer": {
+            "fill": "#333",
+            "tag": "panel__outer"
+        },
+        "tag": "panel"
+    },
+    "path": {
+        "tag": "path"
+    },
+    "pinlabel": {
+        "body": {
+            "corner_radius": 2,
+            "height": 25,
+            "tag": "pinlabel__body",
+            "width": 75,
+            "x": 6,
+            "y": 0
+        },
+        "leaderline": {
+            "direction": "hh",
+            "stroke_width": 1,
+            "tag": "pinlabel__leader"
+        },
+        "tag": "pinlabel",
+        "text": {
+            "tag": "pinlabel__text"
+        }
+    },
+    "rect": {
+        "tag": "rect"
+    },
+    "svgshape": {
+        "tag": "svgshape"
+    },
+    "text": {
+        "font_family": "Verdana, Georgia, sans-serif",
+        "font_size": "9pt",
+        "font_weight": "normal"
+    },
+    "textblock": {
+        "height": null,
+        "line_height": 22,
+        "offset": [
+            0,
+            0
+        ],
+        "tag": "textblock",
+        "width": null
+    }
+}

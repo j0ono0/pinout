@@ -2,10 +2,11 @@
 
 import argparse
 import collections.abc
-from multiprocessing.sharedctypes import Value
 import os
 from pathlib import Path
 import pkg_resources
+import pprint
+import json
 import sys
 import re
 
@@ -84,26 +85,13 @@ def update_dict(d, u):
     return d
 
 
-################################################################
-#
-# Argparse functions
-#
-################################################################
-
-
-def get_diagram_instance(src, instance_name="diagram"):
-    src = Path(src)
-    user_module = io.import_source_file(src.stem, src.name)
-    return getattr(user_module, instance_name)
-
-
 def to_num(val):
     if "." in val:
         return float(val)
     return int(val)
 
 
-def calc_units(val, dst_units, raw=False):
+def calc_units(val, dst_units, raw=True):
     """Convert value from src_units to dst_units"""
     if not val or type(val) in [int, float]:
         return val
@@ -157,8 +145,11 @@ def calc_units(val, dst_units, raw=False):
         },
     }
     if raw:
-        return val * conversion[src_units][dst_units]
+        return str(val * conversion[src_units][dst_units]) + src_units
 
+    # NOTE: CSS rules with calc function does NOT export to PNG
+    # ** It is not supported by Cairo**
+    # Consequently 'raw' attr defaults to True
     return f"calc({val}{src_units} * {conversion[src_units][dst_units]})"
 
 
@@ -188,7 +179,21 @@ def convert_config_dimensions(config, units):
                     config[k] = tuple([calc_units(i, units, True) for i in v])
                 else:
                     config[k] = calc_units(v, units)
+
     return config
+
+
+################################################################
+#
+# Argparse functions
+#
+################################################################
+
+
+def get_diagram_instance(src, instance_name="diagram"):
+    src = Path(src)
+    user_module = io.import_source_file(src.stem, src.name)
+    return getattr(user_module, instance_name)
 
 
 def create_styles_from_config(src, path, instance_name="diagram", overwrite=False):
@@ -206,7 +211,7 @@ def create_styles_from_config(src, path, instance_name="diagram", overwrite=Fals
     diagram = get_diagram_instance(src, instance_name)
 
     tplt = templates.get("stylesheet_config.j2")
-    cfg = config_manager.get("config")
+    cfg = config_manager.get()
 
     convert_config_dimensions(cfg, diagram.units)
 
@@ -230,68 +235,26 @@ def create_styles_from_config(src, path, instance_name="diagram", overwrite=Fals
     print(f"CSS file '{path}' created.")
 
 
-def create_stylesheet(src, path, instance_name="diagram", overwrite=False):
-    """Create a stylesheet if none supplied."""
-    from pinout import style_tools, templates
-    from pinout.components.annotation import AnnotationLabel
-    from pinout.components.layout import Panel, Diagram_2Columns, Diagram_2Rows
-    from pinout.components.legend import Legend
-    from pinout.components.pinlabel import PinLabel
-    from pinout.components.integrated_circuits import DIP, QFP
-
-    # Save CWD and return to it and end of function
-    # incase multiple diagrams are being built from a script
+def create_config(src, path, instance_name="diagram", overwrite=False):
     init_dir = Path.cwd()
-
     src = Path(src)
     os.chdir(src.parent)
     sys.path.append("")
 
-    diagram = get_diagram_instance(src, instance_name)
+    # load diagram instance as it may cause updates to config
+    get_diagram_instance(src, instance_name)
 
-    # Extract css class tags from PinLabels
-    lbls = diagram.find_children_by_type(diagram, PinLabel)
-    tags = list(set([tag for label in lbls for tag in label.tag.strip().split(" ")]))
-    try:
-        tags.remove(config_manager.get("pinlabel")["tag"])
-    except ValueError:
-        # tag not present
-        pass
-
-    context = {}
-    if tags:
-        context["tags"] = style_tools.assign_color(tags)
-        context["pinlabel"] = config_manager.get("pinlabel")
-    if diagram.find_children_by_type(diagram, Legend):
-        context["legend"] = config_manager.get("legend")
-    if diagram.find_children_by_type(diagram, Panel):
-        context["panel"] = config_manager.get("panel")
-    if diagram.find_children_by_type(diagram, AnnotationLabel):
-        context["annotation"] = config_manager.get("annotation")
-    if diagram.find_children_by_type(diagram, DIP):
-        context["ic_dip"] = config_manager.get("ic_dip")
-    if diagram.find_children_by_type(diagram, QFP):
-        context["ic_qfp"] = config_manager.get("ic_qfp")
-    if isinstance(diagram, Diagram_2Columns) or isinstance(diagram, Diagram_2Rows):
-        context["diagram_presets"] = config_manager.get("diagram_presets")
-
-    css_tplt = templates.get("stylesheet.j2")
-    css = css_tplt.render(css=context)
+    config = config_manager.get()
+    ################
 
     # Return to folder script was launched from
     os.chdir(init_dir)
 
-    # Export stylesheet file
+    # Export config file
     if not overwrite:
         path = unique_filepath(path)
     with open(path, "w") as f:
-        f.write(css)
-
-    print(f"Stylesheet created: '{path}'")
-    print(
-        f"To use insert the following line into '{src.name}' after '{instance_name}' is declared:"
-    )
-    print(f"{instance_name}.add_stylesheet('{path}')")
+        f.write(json.dumps(config, indent=4, sort_keys=True))
 
 
 def duplicate(resource_name, *args):
@@ -324,12 +287,6 @@ def duplicate(resource_name, *args):
         ],
         "kicad": [
             ("pinout_kicad_example.zip",),
-        ],
-        "new_project": [
-            ("new_project", "config.py"),
-            ("new_project", "default_styles.css"),
-            ("new_project", "pinout_diagram.py"),
-            ("new_project", "styles.css"),
         ],
     }
 
@@ -381,6 +338,8 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
         css_path = unique_filepath("default_styles.css")
         create_styles_from_config(src, css_path)
         diagram.add_stylesheet(css_path, embed=False)
+        # Re-find stylesheets so list is complete for later use.
+        stylesheets = diagram.find_children_by_type(diagram, core.StyleSheet)
         print(
             f"To use permanently insert the following line into '{src.name}' after '{instance_name}' is declared:"
         )
@@ -401,7 +360,6 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
                 )
 
         # Update relative stylesheet.src to be relative to destination.
-        stylesheets = diagram.find_children_by_type(diagram, core.StyleSheet)
         for css in stylesheets:
             if not css.embed and not css.src.is_absolute():
                 css.src = os.path.relpath(
@@ -482,15 +440,13 @@ def __main__():
         nargs="+",
         help="Create KiCad footprint library. Example usage: python -m pinout.manager --kicad_lib <destination folder> <optional:config_file>",
     )
-
     parser.add_argument(
         "-d",
         "--duplicate",
         action="store",
-        choices=["quick_start", "config", "kicad", "new_project"],
+        choices=["quick_start", "config", "kicad"],
         help="duplicate pinout resources",
     )
-
     parser.add_argument(
         "-e",
         "--export",
@@ -498,22 +454,18 @@ def __main__():
         action="store",
         help="example usage: python -m pinout.manager -e <module name> <export filename> [<instance name>]\n <instance name> defaults to 'diagram'",
     )
-
-    parser.add_argument(
-        "--css",
-        nargs="+",
-        action="store",
-        help="example usage: python -m pinout.manager --css <module name> <export filename> [<instance name>]\n <instance name> defaults to 'diagram'",
-    )
-    ##############################
     parser.add_argument(
         "--default_css",
         nargs="+",
         action="store",
-        help="example usage: python -m pinout.manager --css <module name> <export filename> [<instance name>]\n <instance name> defaults to 'diagram'",
+        help="example usage: python -m pinout.manager --default_css <module name> <export filename> [<instance name>]\n <instance name> defaults to 'diagram'",
     )
-    ##############################
-
+    parser.add_argument(
+        "--config",
+        nargs="+",
+        action="store",
+        help="example usage: python -m pinout.manager --config <module name> <export filename> [<instance name>]\n <instance name> defaults to 'diagram'",
+    )
     parser.add_argument(
         "-o",
         "--overwrite",
@@ -534,14 +486,14 @@ def __main__():
     if args.export:
         export_diagram(*args.export, overwrite=args.overwrite)
 
-    if args.css:
-        create_stylesheet(*args.css, overwrite=args.overwrite)
-
     if args.kicad_lib:
         create_kicad_lib(*args.kicad_lib, version=args.version)
 
     if args.default_css:
         create_styles_from_config(*args.default_css, overwrite=args.overwrite)
+
+    if args.config:
+        create_config(*args.config, overwrite=args.overwrite)
 
 
 if __name__ == "__main__":

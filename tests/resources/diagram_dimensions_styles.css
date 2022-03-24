@@ -1,0 +1,106 @@
+
+
+
+.diagram {}
+
+
+text {
+    font-family: Verdana, Georgia, sans-serif;
+    font-size: 2.97pt;
+    font-weight: normal;
+}
+
+
+.textblock {}
+
+
+.panel__inner{
+    fill:#fff;
+}
+
+.panel__outer{
+    fill: #333;
+}
+
+
+.pinlabel__leader{
+    stroke-width: 0.5;
+    fill: none;
+}
+
+.pinlabel__text{
+    dominant-baseline: central;
+    fill: #fff;
+    font-weight: bold;
+    stroke-width: 0;
+    text-anchor: middle;
+}
+
+
+.legend__entry text {
+    dominant-baseline: central;
+}
+
+.annotation__body {
+    fill: rgb(253, 203, 36);
+    stroke-width: 0.5;
+}
+.annotation__text text {
+    dominant-baseline: hanging;
+    font-size: 3.71px;
+    font-weight:  bold;
+    fill:  rgb(63, 40, 6);
+    text-anchor:  start;
+}
+.annotation__target {
+    fill: none;
+    stroke:  rgb(253, 203, 36);
+    stroke-width: 0.5;
+}
+.annotation__leaderline {
+    fill: none;
+    stroke:  rgb(253, 203, 36);
+    stroke-width: 0.5;
+}
+
+
+.ic__body{
+    fill: none;
+    stroke: rgb(0, 0, 0);
+    stroke-width: 0;
+}
+.ic__leg .polarity{
+    fill: rgb(85, 85, 85);
+    stroke: rgb(0, 0, 0);
+    stroke-width: 0.5;
+    
+}
+.ic__leg{
+    fill: rgb(255, 255, 255);
+    stroke: rgb(0, 0, 0);
+    stroke-width: 0.5;
+}
+
+.ic__body{
+    fill: rgb(85, 85, 85);
+    stroke: rgb(0, 0, 0);
+    stroke-width: 0.5;
+}
+.ic__leg{
+    fill: rgb(255, 255, 255);
+    stroke: rgb(0, 0, 0);
+    stroke-width: 0.5;
+}
+.ic__leg .polarity{
+    fill: rgb(85, 85, 85);
+    stroke: rgb(138, 138, 138);
+    stroke-width: 1;
+}
+
+.layout .h1{
+    font-size: 6.6000000000000005pt;
+    font-weight: bold;
+}
+.layout .panel--info .panel__inner{
+    fill: #ededed;
+}

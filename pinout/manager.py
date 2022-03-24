@@ -335,7 +335,7 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
     # If no stylesheet exists create default styles
     if not stylesheets:
         print("No stylesheets found...")
-        css_path = unique_filepath("default_styles.css")
+        css_path = unique_filepath(Path(src.parent, src.stem + "_styles.css"))
         create_styles_from_config(src, css_path)
         diagram.add_stylesheet(css_path, embed=False)
         # Re-find stylesheets so list is complete for later use.

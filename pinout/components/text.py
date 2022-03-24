@@ -20,7 +20,7 @@ class TextBlock(core.Group):
     @property
     def line_height(self):
         """Convert line_height unit system to textblock unit system"""
-        return self.units_to_userspace(self._line_height)
+        return self.units_to_px(self._line_height)
 
     @line_height.setter
     def line_height(self, value):

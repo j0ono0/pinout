@@ -1,0 +1,96 @@
+
+<svg  
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0mm"
+    y="0mm"
+    width="100.0mm" 
+    height="100.0mm" 
+    viewBox="0.0 0.0 377.9527559055118 377.9527559055118"
+    class="diagram"
+>
+
+<defs>
+    
+</defs>
+
+
+    <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="diagram_dimensions_custom_styles.css" xlink:href="diagram_dimensions_custom_styles.css"  type="text/css"/>
+<link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="diagram_dimensions_styles.css" xlink:href="diagram_dimensions_styles.css"  type="text/css"/>
+<g 
+        class="panel"
+transform="
+    translate(18.897637795275593 18.897637795275593) 
+    scale(1 1)
+    rotate(0)
+"
+id="5b2bd0e6-3b95-40ae-b532-36bd72ec9202_3"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="panel__outer rect"
+transform="
+    translate(-18.897637795275593 -18.897637795275593) 
+    scale(1 1)
+    rotate(0)
+"
+id="5b2bd0e6-3b95-40ae-b532-36bd72ec9202_8"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="75.59055118110237" 
+    width="75.59055118110237"
+/><rect
+
+        class="panel__inner rect"
+transform="
+    translate(0.0 0.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="5b2bd0e6-3b95-40ae-b532-36bd72ec9202_7"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="37.795275590551185" 
+    width="37.795275590551185"
+/>
+</g><rect
+
+        class="blue rect"
+transform="
+    translate(75.59055118110237 75.59055118110237) 
+    scale(1 1)
+    rotate(0)
+"
+id="5b2bd0e6-3b95-40ae-b532-36bd72ec9202_4"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="75.59055118110237" 
+    width="75.59055118110237"
+/><circle
+        class="circle red"
+transform="
+    translate(113.38582677165356 37.795275590551185) 
+    scale(1 1)
+    rotate(0)
+"
+id="5b2bd0e6-3b95-40ae-b532-36bd72ec9202_5"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    cx="0" 
+    cy="0" 
+    r="37.795275590551185"
+/><path 
+
+        class="path"
+transform="
+    translate(151.18110236220474 0.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="5b2bd0e6-3b95-40ae-b532-36bd72ec9202_6"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 l 75.59055118110237 0.0 l 0.0 75.59055118110237" 
+/>
+    
+</svg>

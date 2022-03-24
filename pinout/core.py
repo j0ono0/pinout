@@ -2,6 +2,7 @@ import base64
 import collections.abc
 import copy
 import math
+from multiprocessing.sharedctypes import Value
 import PIL
 from PIL import Image as PILImage
 import re
@@ -212,31 +213,14 @@ class Component:
 
 
 class Dimensions:
-    def __init__(self, x=0, y=0, units=None, dpi=None, **kwargs):
-        self._units = units
-        self._dpi = dpi
-        self.x = x
-        self.y = y
+    def __init__(self, x=0, y=0, units=None, **kwargs):
+        self.x = self.units_to_px(x, units)
+        self.y = self.units_to_px(y, units)
 
         super().__init__(**kwargs)
 
-    @property
-    def dpi(self):
-        return self._dpi or config_manager.get("diagram.dpi")
-
-    @dpi.setter
-    def dpi(self, val):
-        self._dpi = val
-
-    @property
-    def units(self):
-        return self._units or config_manager.get("diagram.units")
-
-    @units.setter
-    def units(self, val):
-        self._units = val
-
-    def units_to_userspace(self, value, units=None):
+    def units_to_px(self, value, units=None, dpi=None):
+        dpi = dpi or config_manager.get("diagram.dpi")
         try:
             value, units = [
                 token for token in re.split(r"([\d\.-]+)", value, 1) if token
@@ -244,37 +228,29 @@ class Dimensions:
             value = float(value)
         except TypeError:
             # Value is not at string
-            units = units or self.units
+            units = units or config_manager.get("diagram.units")
 
         conversion = {
             "px": value,
-            "pt": value * 0.33,
-            "pc": value * 16,
-            "mm": value * 3.78,
-            "in": value * 96,
+            "in": value * dpi,
+            "pt": value * dpi / 72,
+            "mm": value * dpi / 25.4,
+            "cm": value * dpi / 2.54,
         }
+
         return conversion[units]
 
     def px_to_units(self, length, units=None, dpi=None):
-        units = units or self.units
-        dpi = dpi or self.dpi or config_manager.get("diagram")["dpi"]
+        units = units or config_manager.get("diagram.units")
+        dpi = config_manager.get("diagram.dpi")
         conversion = {
             "px": length,
             "in": length / dpi,
-            "cm": length / dpi * 2.54,
+            "pt": length / dpi * 72,
             "mm": length / dpi * 25.4,
+            "cm": length / dpi * 2.54,
         }
         return conversion[units]
-
-    def inherit_dimensions(self, src):
-        self.dpi = self.dpi or src.dpi
-        self.units = self.units or src.units
-        try:
-            for child in self.children:
-                child.inherit_dimensions(self)
-        except AttributeError:
-            # child has no children
-            pass
 
 
 class Layout(Dimensions, Component, TransformMixin):
@@ -287,10 +263,9 @@ class Layout(Dimensions, Component, TransformMixin):
 
     def add(self, instance):
 
-        instance.inherit_dimensions(self)
-
-        if instance.clip:
-            instance.clip.inherit_dimensions(self)
+        # TODO: does clip need adjusting?????
+        # if instance.clip:
+        #    instance.clip.inherit_dimensions(self)
 
         self.children.append(instance)
         return instance
@@ -499,13 +474,15 @@ class Raw:
 class SvgShape(Dimensions, Component, TransformMixin):
     """Base class for components that have a graphical representation."""
 
-    def __init__(self, x=0, y=0, width=None, height=None, **kwargs):
-        self._width = width
-        self._height = height
-
+    def __init__(self, x=0, y=0, width=None, height=None, units=None, **kwargs):
         self.merge_config_into_kwargs(kwargs, "svgshape")
+        super().__init__(x=x, y=y, units=units, **kwargs)
 
-        super().__init__(x=x, y=y, **kwargs)
+        # Width and Height are in user supplied units to this
+        # point then converted to px for internal use.
+        # Unitless values are processed as same units as diagram
+        self._width = self.units_to_px(width, units)
+        self._height = self.units_to_px(height, units)
 
     @property
     def width(self):
@@ -558,14 +535,25 @@ class Path(SvgShape):
         kwargs["width"] = kwargs.get("width", 0)
         kwargs["height"] = kwargs.get("height", 0)
         self.merge_config_into_kwargs(kwargs, "path")
+        self._d = None
         super().__init__(**kwargs)
+
         self.d = path_definition
 
-    def pathrepl(self, matchobj):
-        return str(float(matchobj.group(0)))
+    @property
+    def d(self):
+        return self._d
 
-    def definition_to_px(self):
-        return re.sub(r"([-+]?(?:\d*\.\d+|\d+))", self.pathrepl, self.d)
+    @d.setter
+    def d(self, path_definition):
+        d_lst = path_definition.split(" ")
+        for i, val in enumerate(d_lst):
+            try:
+                d_lst[i] = str(self.units_to_px(float(val)))
+
+            except ValueError:
+                pass  # val is not a number
+        self._d = " ".join(d_lst)
 
     def render(self):
         """Render a <path> tag.
@@ -581,7 +569,7 @@ class Rect(SvgShape):
     """SVG <rect> object"""
 
     def __init__(self, *args, corner_radius=0, **kwargs):
-        self.corner_radius = corner_radius
+        self.corner_radius = self.units_to_px(corner_radius)
         self.merge_config_into_kwargs(kwargs, "rect")
         # Default text dimensions to zero if none supplied
         super().__init__(*args, **kwargs)
@@ -600,7 +588,7 @@ class Circle(SvgShape):
     """SVG <circle> object"""
 
     def __init__(self, cx, cy, r, **kwargs):
-        self.r = r
+        self.r = self.units_to_px(r)
         kwargs["x"] = cx
         kwargs["y"] = cy
         self.merge_config_into_kwargs(kwargs, "circle")

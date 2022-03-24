@@ -12,22 +12,36 @@ from pinout.core import (
 class Diagram(Layout):
     """Basis of a pinout diagram"""
 
-    def __init__(self, width, height, **kwargs):
+    def __init__(self, width, height, units=None, **kwargs):
         self._width = None
         self._height = None
-        self.width = width
-        self.height = height
         self.merge_config_into_kwargs(kwargs, "diagram")
-
         super().__init__(**kwargs)
+
+        # assign units after kwargs config set
+        self.units = units
+
+        # Units need to be set before px dimensions calculated
+        self.width = self.units_to_px(width)
+        self.height = self.units_to_px(height)
 
         # Add default config to match units
         if self.units == "mm":
             config_manager.add_config_from_package("resources/config/mm_config.json")
 
         # Setup component
-        self.add(SvgShape(width=width, height=height))
+        # Add a non-rendering shape to ensure diagram content is not scaled up on export
+        self.add(SvgShape(width=self.width, height=self.height, units="px"))
 
+    @property
+    def units(self):
+        return config_manager.get("diagram.units")
+
+    @units.setter
+    def units(self, val):
+        config_manager.set({"diagram": {"units": val}})
+
+    """
     @property
     def width(self):
         return self._width
@@ -43,6 +57,7 @@ class Diagram(Layout):
     @height.setter
     def height(self, val):
         self._height = val
+    """
 
     def add_config(self, src):
         if isinstance(src, dict):
@@ -81,30 +96,18 @@ class Panel(Layout):
     def __init__(self, width, height, inset=None, **kwargs):
         """Assist with content grouping and positioning"""
 
+        self.merge_config_into_kwargs(kwargs, "panel")
+        super().__init__(**kwargs)
+
         self.width = width
         self.height = height
-
-        self.merge_config_into_kwargs(kwargs, "panel")
-
-        super().__init__(**kwargs)
 
         inset = inset or self.config["inset"]
         self.inset = BoundingCoords(*inset)
 
-        # add a non-rendering shape so component
-        # reports user set coordinates and dimensions
-        self.add(
-            SvgShape(
-                x=-self.inset.x1,
-                y=-self.inset.y1,
-                width=width,
-                height=height,
-            )
-        )
-
         # Offset component to align children with inner dimensions
-        self.x += self.inset.x1
-        self.y += self.inset.y1
+        self.x += self.units_to_px(self.inset.x1)
+        self.y += self.units_to_px(self.inset.y1)
 
     @property
     def inset_width(self):

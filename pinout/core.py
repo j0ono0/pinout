@@ -219,6 +219,17 @@ class Dimensions:
 
         super().__init__(**kwargs)
 
+    def to_diagram_units(self, value, units=None):
+        try:
+            value, units = [
+                token for token in re.split(r"([\d\.-]+)", value, 1) if token
+            ]
+            value = manager.to_num(value)
+        except TypeError:
+            # Value is not at string
+            units = units or config_manager.get("diagram.units")
+            return manager.calc_units(value, units)
+
     def units_to_px(self, value, units=None, dpi=None):
         dpi = dpi or config_manager.get("diagram.dpi")
         try:
@@ -535,17 +546,10 @@ class Path(SvgShape):
         kwargs["width"] = kwargs.get("width", 0)
         kwargs["height"] = kwargs.get("height", 0)
         self.merge_config_into_kwargs(kwargs, "path")
-        self._d = None
+        self.d = None
         super().__init__(**kwargs)
 
-        self.d = path_definition
-
-    @property
-    def d(self):
-        return self._d
-
-    @d.setter
-    def d(self, path_definition):
+        # Convert path_definition attr to px units
         d_lst = path_definition.split(" ")
         for i, val in enumerate(d_lst):
             try:
@@ -553,7 +557,7 @@ class Path(SvgShape):
 
             except ValueError:
                 pass  # val is not a number
-        self._d = " ".join(d_lst)
+        self.d = " ".join(d_lst)
 
     def render(self):
         """Render a <path> tag.

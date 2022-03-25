@@ -86,21 +86,23 @@ def update_dict(d, u):
 
 
 def to_num(val):
-    if "." in val:
-        return float(val)
-    return int(val)
+    try:
+        val = int(val)
+    except ValueError:
+        val = float(val)
+    return val
 
 
-def calc_units(val, dst_units, raw=True):
+def calc_units(val, dst_units, as_string=False):
     """Convert value from src_units to dst_units"""
-    if not val or type(val) in [int, float]:
-        return val
+    if type(val) in [int, float]:
+        src_units = config_manager.get("diagram.units")
+    else:
+        val = val.strip().lower()
+        src_units = re.search(r"([a-zA-Z]+$)", val.strip()).groups()[0]
+        val = to_num(re.search(r"(^[0-9]+)", val).groups()[0])
 
     dst_units = dst_units.strip().lower()
-    val = val.strip().lower()
-
-    src_units = re.search(r"([a-zA-Z]+$)", val.strip()).groups()[0]
-    val = to_num(re.search(r"(^[0-9]+)", val).groups()[0])
 
     # units already match return val as a number
     if src_units == dst_units:
@@ -144,13 +146,9 @@ def calc_units(val, dst_units, raw=True):
             "px": 96,  # SVG renders at 96dpi in firefox - using that as reference
         },
     }
-    if raw:
-        return str(val * conversion[src_units][dst_units]) + src_units
-
-    # NOTE: CSS rules with calc function does NOT export to PNG
-    # ** It is not supported by Cairo**
-    # Consequently 'raw' attr defaults to True
-    return f"calc({val}{src_units} * {conversion[src_units][dst_units]})"
+    if as_string:
+        return f"{val * conversion[src_units][dst_units]}{dst_units}"
+    return val * conversion[src_units][dst_units]
 
 
 def convert_config_dimensions(config, units):
@@ -213,7 +211,8 @@ def create_styles_from_config(src, path, instance_name="diagram", overwrite=Fals
     tplt = templates.get("stylesheet_config.j2")
     cfg = config_manager.get()
 
-    convert_config_dimensions(cfg, diagram.units)
+    # ** UNNEEDED? internal dimensions are converted to px (@96dpi) browser will convert other units to same px ratio
+    # convert_config_dimensions(cfg, diagram.units)
 
     # extract user defined tags from all pinlabels
     lbls = diagram.find_children_by_type(diagram, PinLabel)

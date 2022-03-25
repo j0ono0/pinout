@@ -31,12 +31,15 @@ class Body(SvgShape):
         )
 
     def render(self):
+        # dimensions are stored as px already
+        # Instantiate Rect with px dimensions
         body = Rect(
             x=self.x,
             y=self.y - (self.height / 2),
             width=self.width,
             height=self.height,
             corner_radius=self.corner_radius,
+            units="px",
         )
         body.add_tag(self.config["body"]["tag"])
         return body.render()
@@ -66,7 +69,6 @@ class PinLabel(Group):
         self._body = None
 
         self.merge_config_into_kwargs(kwargs, "pinlabel")
-
         super().__init__(x, y, tag=tag, **kwargs)
 
         self.body = body
@@ -96,9 +98,6 @@ class PinLabel(Group):
         # Add body config tag if not there
         body.add_tag(self.config["body"]["tag"])
 
-        # inherit dimensions if none provided
-        body.inherit_dimensions(self)
-
         self._body = body
 
     @property
@@ -114,12 +113,6 @@ class PinLabel(Group):
             leaderline_config = self.config["leaderline"]
             leaderline_config.update(leaderline)
             leaderline = Leaderline(**leaderline_config)
-        # Add leaderline config tag if not there
-        leaderline.add_tag(self.config["tag"])
-
-        # inherit dimensions if none provided
-        leaderline.inherit_dimensions(self)
-
         self._leaderline = leaderline
 
     def render(self):
@@ -133,12 +126,11 @@ class PinLabel(Group):
                 y=y,
                 tag=self.config["text"]["tag"],
                 scale=self.scale,
+                units="px",
             )
         )
         # Route leaderline
-        self.leaderline.route(
-            Rect(0, 0, 0, 0, dpi=self.dpi, units=self.units), self._body
-        )
+        self.leaderline.route(Rect(0, 0, 0, 0), self.body)
         self.add(self.leaderline)
         return super().render()
 

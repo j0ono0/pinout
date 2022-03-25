@@ -1,5 +1,5 @@
 import re
-from pinout import core
+from pinout import config_manager, core
 
 
 class TextBlock(core.Group):
@@ -14,17 +14,12 @@ class TextBlock(core.Group):
 
         super().__init__(**kwargs)
 
-        # NOTE: line_height may be a string with typographic specific units (ie pt)
-        self.line_height = line_height or self.config["line_height"]
-
-    @property
-    def line_height(self):
-        """Convert line_height unit system to textblock unit system"""
-        return self.units_to_px(self._line_height)
-
-    @line_height.setter
-    def line_height(self, value):
-        self._line_height = value
+        # Convert line_height to same units as diagram
+        # It is converted to px when Text instances are created.
+        px_line_height = self.units_to_px(line_height or self.config["line_height"])
+        self.line_height = self.px_to_units(
+            px_line_height, config_manager.get("diagram.units")
+        )
 
     @property
     def lines(self):

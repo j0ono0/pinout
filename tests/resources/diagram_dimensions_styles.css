@@ -6,7 +6,7 @@
 
 text {
     font-family: Verdana, Georgia, sans-serif;
-    font-size: 2.97pt;
+    font-size: 9pt;
     font-weight: normal;
 }
 
@@ -36,10 +36,21 @@ text {
     text-anchor: middle;
 }
 
+.gpio .pinlabel__body{
+    fill: rgb(252, 78, 98);
+}
+.gpio .pinlabel__leader{
+    stroke: rgb(252, 78, 98);
+}
+
 
 .legend__entry text {
     dominant-baseline: central;
 }
+    .gpio .legend__swatch {
+        fill: rgb(252, 78, 98);
+}
+
 
 .annotation__body {
     fill: rgb(253, 203, 36);
@@ -47,7 +58,7 @@ text {
 }
 .annotation__text text {
     dominant-baseline: hanging;
-    font-size: 3.71px;
+    font-size: 14px;
     font-weight:  bold;
     fill:  rgb(63, 40, 6);
     text-anchor:  start;
@@ -98,7 +109,7 @@ text {
 }
 
 .layout .h1{
-    font-size: 6.6000000000000005pt;
+    font-size: 20pt;
     font-weight: bold;
 }
 .layout .panel--info .panel__inner{

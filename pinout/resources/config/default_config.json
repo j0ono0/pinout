@@ -10,8 +10,8 @@
             "x": 40,
             "y": 29
         },
-        "content": {
-            "dominant_baseline": "hanging",
+        "textblock": {
+            "dominant_baseline": "auto",
             "fill": "rgb(63, 40, 6)",
             "font_size": "14px",
             "font_weight": "bold",
@@ -37,8 +37,8 @@
             "stroke_width": 0,
             "tag": "annotation__target",
             "width": 5,
-            "x": -5,
-            "y": -5
+            "x": -2.5,
+            "y": -2.5
         }
     },
     "circle": {

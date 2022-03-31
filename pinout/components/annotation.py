@@ -37,13 +37,12 @@ class AnnotationLabel(core.Group):
         self._target = None
 
         self.merge_config_into_kwargs(kwargs, "annotation")
-
         super().__init__(**kwargs)
 
         self.leaderline = leaderline
         self.body = body
         self.target = target
-        # content relied on body - must come after
+        # content relies on body - must come after
         self.content = content
 
         self.add(self.leaderline)
@@ -58,18 +57,18 @@ class AnnotationLabel(core.Group):
     @content.setter
     def content(self, content):
         content = copy.deepcopy(content or {})
-        config = self.config["content"]
-        # Parse content: str > list > dict > TextBlock
+        config = self.config["textblock"]
+        # Parse content: str > dict > TextBlock
 
         if type(content) == str:
-            content = {"content": content}
-
-        if isinstance(content, dict):
-            config.update(content)
-            content = Content(**config)
-            content.y -= content.height / 2 * self.scale.y
+            content = content
+        elif isinstance(content, dict):
+            content_config = content
+            content = content.pop("textblock")
+            config.update(content_config)
+        content = Content(content, **config)
+        content.y -= content.height / 2 * self.scale.y
         content.scale = self.scale
-
         self._content = content
 
     @property
@@ -119,7 +118,10 @@ class AnnotationLabel(core.Group):
         self.body.y -= self.body.height / 2
 
         # Align content within body
-        self.content.x = self.body.x + (self.content.line_height * self.scale.x)
+        # content.line_height is saved in same units as diagram, change to px
+        self.content.x = self.body.x + (
+            self.units_to_px(self.content.line_height) * self.scale.x
+        )
         self.content.y = (
             self.body.y
             + (abs(self.body.height - self.content.height) / 2) * self.scale.y

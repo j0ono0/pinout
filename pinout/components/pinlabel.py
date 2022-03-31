@@ -71,8 +71,8 @@ class PinLabel(Group):
         self.merge_config_into_kwargs(kwargs, "pinlabel")
         super().__init__(x, y, tag=tag, **kwargs)
 
-        self.body = body
-        self.leaderline = leaderline
+        self.body = body or {}
+        self.leaderline = leaderline or {}
 
         # Add leaderline and body reference into children
         self.add(self._body)
@@ -106,13 +106,16 @@ class PinLabel(Group):
 
     @leaderline.setter
     def leaderline(self, leaderline):
-        # ensure instance data is unique
-        leaderline = copy.deepcopy(leaderline or self.config["leaderline"])
-        # Convert dict into leaderline object
+        # Ensure unique instance/data
+        leaderline = copy.deepcopy(leaderline)
         if isinstance(leaderline, dict):
             leaderline_config = self.config["leaderline"]
             leaderline_config.update(leaderline)
             leaderline = Leaderline(**leaderline_config)
+
+        if not isinstance(leaderline, lline.Leaderline):
+            raise ValueError(f"{leaderline} must be instance of Leaderline or dict.")
+
         self._leaderline = leaderline
 
     def render(self):

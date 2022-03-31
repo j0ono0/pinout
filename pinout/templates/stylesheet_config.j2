@@ -73,12 +73,12 @@ text {
     fill: {{ annotation.body.fill }};
     stroke-width: {{ annotation.body.stroke_width }};
 }
-.{{ annotation.content.tag }} text {
-    dominant-baseline: {{ annotation.content.dominant_baseline }};
-    font-size: {{annotation.content.font_size}};
-    font-weight:  {{ annotation.content.font_weight }};
-    fill:  {{ annotation.content.fill }};
-    text-anchor:  {{ annotation.content.text_anchor }};
+.{{ annotation.textblock.tag }} text {
+    dominant-baseline: {{ annotation.textblock.dominant_baseline }};
+    font-size: {{annotation.textblock.font_size}};
+    font-weight:  {{ annotation.textblock.font_weight }};
+    fill:  {{ annotation.textblock.fill }};
+    text-anchor:  {{ annotation.textblock.text_anchor }};
 }
 .{{ annotation.target.tag }} {
     fill: {{ annotation.target.fill }};

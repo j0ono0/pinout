@@ -1,12 +1,9 @@
 import base64
-import collections.abc
+
 import copy
 import math
-from multiprocessing.sharedctypes import Value
-import PIL
 from PIL import Image as PILImage
 import re
-import urllib.request
 import uuid
 import warnings
 import xml.etree.ElementTree as ET
@@ -134,7 +131,7 @@ class Component:
         :type u: dict
         """
         for k, v in u.items():
-            if isinstance(v, collections.abc.Mapping):
+            if v and isinstance(v, dict):
                 d[k] = self.update_data_dict(d.get(k, {}), v)
             else:
                 d[k] = copy.deepcopy(v)
@@ -142,8 +139,8 @@ class Component:
 
     def merge_config_into_kwargs(self, kwargs, config_attr):
         kwarg_cfg = kwargs.pop("config", {})
-        app_cfg = config_manager.get(config_attr)
-        kwargs["config"] = self.update_data_dict(app_cfg, kwarg_cfg)
+        default_cfg = copy.deepcopy(config_manager.get(config_attr))
+        kwargs["config"] = self.update_data_dict(default_cfg, kwarg_cfg)
 
     # WARNING: legacy function
     def update_config(self, vals, cfg=None):

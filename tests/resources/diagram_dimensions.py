@@ -9,15 +9,17 @@ from pinout.components import (
 )
 from pinout.core import (
     Circle,
+    Group,
+    Image,
     Path,
     Rect,
     Text,
-    Image,
 )
 
-diagram = layout.Diagram(100, 100, units="mm")
+diagram = layout.Diagram(200, 100, units="mm")
 diagram.add_stylesheet("diagram_dimensions_styles.css", embed=False)
 diagram.add_stylesheet("diagram_dimensions_custom_styles.css", embed=False)
+
 diagram.add(Rect(x=60, y=0, width=40, height=20, tag="blue"))
 
 diagram.add(layout.Panel(20, 20, inset=(5, 5, 5, 5)))
@@ -33,56 +35,57 @@ diagram.add(
         tag="white",
     )
 )
-diagram.add(Image("200x200.png", x=60, y=20, width=40, height=40))
-diagram.add(
+
+img = diagram.add(Image("200x200.png", x=60, y=20, width=40, height=40))
+img.add_coord("centre", 100, 100)
+
+
+pinlabel_group = diagram.add(Group(x=100, tag="grp_pinlabels"))
+pinlabel_group.add(
     pinlabel.PinLabel(
         "gpio01",
         x=10,
-        y=30,
+        y=10,
         tag="gpio",
-        config={
-            "body": {"x": 10, "y": 5},
-        },
+        body={"x": 10, "y": 5},
     )
 )
-diagram.add(
+pinlabel_group.add(
     pinlabel.PinLabel(
         "gpio02",
         x=10,
-        y=40,
+        y=20,
         tag="gpio",
-        config={
-            "body": {"x": 10, "y": 5},
-            "leaderline": {"direction": "vh"},
-        },
+        leaderline={"direction": "vh"},
+        body={"x": 10, "y": 5},
     )
 )
-diagram.add(
-    pinlabel.PinLabel(
-        "gpio03",
-        x=10,
-        y=50,
-        tag="gpio",
-        config={
-            "body": {"x": 10, "y": 5},
-            "leaderline": leaderline.Angled(),
-        },
-    )
-)
-diagram.add(
+pinlabel_group.add(
     pinlabel.PinLabel(
         "gpio04",
         x=10,
-        y=60,
+        y=30,
         tag="gpio",
-        config={
-            "body": {"x": 10, "y": 5},
-            "leaderline": leaderline.Straight(),
-        },
+        leaderline=leaderline.Straight(),
+        body={"x": 10, "y": 5},
     )
 )
+
+pinlabel_group.add(
+    pinlabel.PinLabel(
+        "gpio03",
+        x=10,
+        y=40,
+        tag="gpio",
+        leaderline=leaderline.Angled(),
+        body={"x": 10, "y": 5},
+    )
+)
+
+ax, ay = img.coord("centre")
+print(ax, ay)
 diagram.add(
     annotation.AnnotationLabel(
-        "Pinout, a library to help document hardware.", x=10, y=10
+        content="This is an \nannotation", x=10, y=10, body={"x": 10, "y": 30}
     )
 )

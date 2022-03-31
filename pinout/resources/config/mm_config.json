@@ -54,7 +54,7 @@
     },
     "annotation": {
         "tag": "annotation",
-        "content": {
+        "textblock": {
             "x": 20,
             "y": 30,
             "line_height": "16pt",
@@ -70,8 +70,8 @@
             "stroke_width": 0.5
         },
         "target": {
-            "x": -5,
-            "y": -5,
+            "x": -2.5,
+            "y": -2.5,
             "width": 5,
             "height": 5,
             "corner_radius": 2.5,
@@ -81,11 +81,6 @@
             "stroke_width": 0.5
         }
     },
-    "svgshape": {},
-    "image": {},
-    "circle": {},
-    "rect": {},
-    "path": {},
     "diagram_presets": {
         "h1": {
             "font_size": "20pt"

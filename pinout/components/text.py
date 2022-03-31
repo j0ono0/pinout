@@ -5,7 +5,7 @@ from pinout import config_manager, core
 class TextBlock(core.Group):
     """Multiline text component."""
 
-    def __init__(self, content, line_height=None, **kwargs):
+    def __init__(self, content="", line_height=None, **kwargs):
         # initialise module attrs
         self.merge_config_into_kwargs(kwargs, "textblock")
         self._scale = core.Coords(*kwargs.pop("scale", (1, 1)))

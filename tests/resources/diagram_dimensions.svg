@@ -4,9 +4,9 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     x="0mm"
     y="0mm"
-    width="100.0mm" 
+    width="200.0mm" 
     height="100.0mm" 
-    viewBox="0.0 0.0 377.9527559055118 377.9527559055118"
+    viewBox="0.0 0.0 755.9055118110236 377.9527559055118"
     class="diagram"
 >
 
@@ -25,7 +25,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_3"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_3"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     height="75.59055118110237" 
@@ -37,7 +37,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_4"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_4"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -48,7 +48,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_27"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_33"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     height="75.59055118110237" 
@@ -61,7 +61,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_26"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_32"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     height="37.795275590551185" 
@@ -74,7 +74,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_5"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_5"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    cx="0" 
     cy="0" 
@@ -87,19 +87,19 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_6"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_6"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 l 75.59055118110237 0.0 l 0.0 75.59055118110237" 
 /><text
 
-        class="path white"
+        class="svgshape white"
 transform="
     translate(226.7716535433071 16.0) 
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_7"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_7"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     0987654321
@@ -110,42 +110,42 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_8"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_8"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <text
 
-        class="pinlabel rect"
+        class="svgshape textblock"
 transform="
     translate(0.0 0.0) 
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_28"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_34"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     The quick brown
 </text><text
 
-        class="pinlabel rect"
+        class="svgshape textblock"
 transform="
     translate(0.0 15.999999999999998) 
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_29"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_35"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     fox jumps over
 </text><text
 
-        class="pinlabel rect"
+        class="svgshape textblock"
 transform="
     translate(0.0 31.999999999999996) 
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_30"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_36"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     the lazy dog.
@@ -157,7 +157,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_9"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_9"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     href="200x200.png" 
@@ -165,13 +165,23 @@ shape-rendering="geometricPrecision"
     height="151.18110236220474" 
     width="151.18110236220474"
 /><g 
-        class="gpio pinlabel"
+        class="group grp_pinlabels"
 transform="
-    translate(37.795275590551185 113.38582677165356) 
+    translate(377.9527559055118 0.0) 
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_10"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_10"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <g 
+        class="gpio pinlabel"
+transform="
+    translate(37.795275590551185 37.795275590551185) 
+    scale(1 1)
+    rotate(0)
+"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_11"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -182,7 +192,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_33"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_39"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     height="30.236220472440948" 
@@ -191,13 +201,13 @@ shape-rendering="geometricPrecision"
     ry="3.7795275590551185" 
 /><text
 
-        class="pinlabel__text rect"
+        class="pinlabel__text svgshape"
 transform="
     translate(68.03149606299213 18.897637795275593) 
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_31"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_37"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     gpio01
@@ -209,7 +219,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_12"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_13"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 4.724409448818898 0.0 C 18.897637795275593 0.0 18.897637795275593 18.897637795275593 33.07086614173229 18.897637795275593 L 37.795275590551185 18.897637795275593" 
@@ -217,11 +227,11 @@ shape-rendering="geometricPrecision"
 </g><g 
         class="gpio pinlabel"
 transform="
-    translate(37.795275590551185 151.18110236220474) 
+    translate(37.795275590551185 75.59055118110237) 
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_14"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_15"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -232,7 +242,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_36"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_42"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     height="30.236220472440948" 
@@ -241,13 +251,13 @@ shape-rendering="geometricPrecision"
     ry="3.7795275590551185" 
 /><text
 
-        class="pinlabel__text rect"
+        class="pinlabel__text svgshape"
 transform="
     translate(68.03149606299213 18.897637795275593) 
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_34"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_40"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     gpio02
@@ -259,7 +269,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_16"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_17"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 0.0 12.598425196850396 A 6.299212598425197 6.299212598425197 0 0 0 6.299212598425197 18.897637795275593 L 37.795275590551185 18.897637795275593" 
@@ -267,11 +277,11 @@ shape-rendering="geometricPrecision"
 </g><g 
         class="gpio pinlabel"
 transform="
-    translate(37.795275590551185 188.9763779527559) 
+    translate(37.795275590551185 113.38582677165356) 
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_19"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_20"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
         <rect
@@ -282,7 +292,7 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_39"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_45"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     height="30.236220472440948" 
@@ -291,63 +301,13 @@ shape-rendering="geometricPrecision"
     ry="3.7795275590551185" 
 /><text
 
-        class="pinlabel__text rect"
+        class="pinlabel__text svgshape"
 transform="
     translate(68.03149606299213 18.897637795275593) 
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_37"
-clipPathUnits="userSpaceOnUse"
-shape-rendering="geometricPrecision">
-    gpio03
-</text><path 
-
-        class="pinlabel__leader"
-transform="
-    translate(0.0 0.0) 
-    scale(1 1)
-    rotate(0)
-"
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_18"
-clipPathUnits="userSpaceOnUse"
-shape-rendering="geometricPrecision"    
-    d="M 0.0 0.0 L 9.448818897637796 0.0 L 9.448818897637796 18.897637795275593 L 37.795275590551185 18.897637795275593" 
-/>
-</g><g 
-        class="gpio pinlabel"
-transform="
-    translate(37.795275590551185 226.7716535433071) 
-    scale(1 1)
-    rotate(0)
-"
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_23"
-clipPathUnits="userSpaceOnUse"
-shape-rendering="geometricPrecision">
-        <rect
-
-        class="pinlabel__body rect"
-transform="
-    translate(37.795275590551185 3.7795275590551185) 
-    scale(1 1)
-    rotate(0)
-"
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_42"
-clipPathUnits="userSpaceOnUse"
-shape-rendering="geometricPrecision"    
-    height="30.236220472440948" 
-    width="60.472440944881896"
-    rx="3.7795275590551185" 
-    ry="3.7795275590551185" 
-/><text
-
-        class="pinlabel__text rect"
-transform="
-    translate(68.03149606299213 18.897637795275593) 
-    scale(1 1)
-    rotate(0)
-"
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_40"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_43"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision">
     gpio04
@@ -359,11 +319,150 @@ transform="
     scale(1 1)
     rotate(0)
 "
-id="e8feed32-bf1a-489a-9a0a-7c9b55d7954c_22"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_19"
 clipPathUnits="userSpaceOnUse"
 shape-rendering="geometricPrecision"    
     d="M 0.0 0.0 L 37.795275590551185 18.897637795275593" 
 />
+</g><g 
+        class="gpio pinlabel"
+transform="
+    translate(37.795275590551185 151.18110236220474) 
+    scale(1 1)
+    rotate(0)
+"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_24"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <rect
+
+        class="pinlabel__body rect"
+transform="
+    translate(37.795275590551185 3.7795275590551185) 
+    scale(1 1)
+    rotate(0)
+"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_48"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="30.236220472440948" 
+    width="60.472440944881896"
+    rx="3.7795275590551185" 
+    ry="3.7795275590551185" 
+/><text
+
+        class="pinlabel__text svgshape"
+transform="
+    translate(68.03149606299213 18.897637795275593) 
+    scale(1 1)
+    rotate(0)
+"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_46"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    gpio03
+</text><path 
+
+        class="pinlabel__leader"
+transform="
+    translate(0.0 0.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_23"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 0.0 L 9.448818897637796 0.0 L 9.448818897637796 18.897637795275593 L 37.795275590551185 18.897637795275593" 
+/>
+</g>
+</g><g 
+        class="annotation"
+transform="
+    translate(37.795275590551185 37.795275590551185) 
+    scale(1 1)
+    rotate(0)
+"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_27"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <path 
+
+        class="annotation__leaderline pinlabel__leader"
+transform="
+    translate(0.0 0.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_28"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    d="M 0.0 9.448818897637796 L 0.0 97.63779527559056 A 15.748031496062993 15.748031496062993 0 0 0 15.748031496062993 113.38582677165356 L 37.795275590551185 113.38582677165356" 
+/><rect
+
+        class="annotation__target rect"
+transform="
+    translate(-9.448818897637796 -9.448818897637796) 
+    scale(1 1)
+    rotate(0)
+"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_30"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="18.897637795275593" 
+    width="18.897637795275593"
+    rx="9.448818897637796" 
+    ry="9.448818897637796" 
+/><rect
+
+        class="annotation__body rect"
+transform="
+    translate(37.795275590551185 83.1496062992126) 
+    scale(1 1)
+    rotate(0)
+"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_29"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision"    
+    height="60.472440944881896" 
+    width="151.18110236220474"
+    rx="30.236220472440948" 
+    ry="30.236220472440948" 
+/><g 
+        class="annotation__text textblock"
+transform="
+    translate(59.128608923884514 107.74138232720911) 
+    scale(1 1)
+    rotate(0)
+"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_31"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+        <text
+
+        class="svgshape textblock"
+transform="
+    translate(0.0 0.0) 
+    scale(1 1)
+    rotate(0)
+"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_49"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    This is an
+</text><text
+
+        class="svgshape textblock"
+transform="
+    translate(0.0 21.33333333333333) 
+    scale(1 1)
+    rotate(0)
+"
+id="0036788b-2d34-4ab0-b54c-3dc2026c8417_50"
+clipPathUnits="userSpaceOnUse"
+shape-rendering="geometricPrecision">
+    annotation
+</text>
+</g>
 </g>
     
 </svg>

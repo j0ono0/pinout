@@ -182,8 +182,8 @@ def duplicate(resource_name, *args):
             Path("quick_start", "pinout_diagram.py"),
             Path("quick_start", "styles.css"),
         ],
-        "config": [("config.py",)],
-        "kicad": [("pinout_kicad_example.zip",)],
+        "config": [Path("config.py",)],
+        "kicad": [Path("pinout_kicad_example.zip",)],
     }
 
     for filepath in resources[resource_name]:

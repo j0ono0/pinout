@@ -24,7 +24,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     packages=setuptools.find_packages(include=["pinout", "pinout.*"]),
-    python_requires=">=3.6",
+    python_requires=">=3.7",
     install_requires=["Jinja2", "Pillow"],
     include_package_data=True,
 )

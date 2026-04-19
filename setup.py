@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pinout",
-    version="0.0.20",
+    version="0.0.21",
     author="John Newall",
     author_email="john@johnnewall.com",
     description="Generate graphical pinout references for electronic hardware.",
@@ -18,7 +18,7 @@ setuptools.setup(
         "Bug Tracker": "https://github.com/j0ono0/pinout/issues",
     },
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 5 - Production/Stable",
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",

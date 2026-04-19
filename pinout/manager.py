@@ -4,11 +4,12 @@ import argparse
 import collections.abc
 import importlib
 import os
-from pathlib import Path
-import pkg_resources
 import sys
 
+from importlib import resources as imresources
+from pathlib import Path
 from pinout import core
+from pinout import __name__ as pkg_name
 
 try:
     import cairosvg
@@ -91,6 +92,7 @@ def update_dict(d, u):
 def get_diagram_instance(src, instance_name="diagram"):
     src = Path(src)
     spec = importlib.util.spec_from_file_location(f"{src.stem}", src.name)
+    print(src, src.stem, src.name, spec)
     user_module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(user_module)
     return getattr(user_module, instance_name)
@@ -175,23 +177,23 @@ def duplicate(resource_name, *args):
 
     resources = {
         "quick_start": [
-            ("quick_start", "data.py"),
-            ("quick_start", "hardware.png"),
-            ("quick_start", "pinout_diagram.py"),
-            ("quick_start", "styles.css"),
+            Path("quick_start", "data.py"),
+            Path("quick_start", "hardware.png"),
+            Path("quick_start", "pinout_diagram.py"),
+            Path("quick_start", "styles.css"),
         ],
         "config": [("config.py",)],
         "kicad": [("pinout_kicad_example.zip",)],
     }
 
-    resource_package = "pinout"
-    for path in resources[resource_name]:
-        resource_path = "/".join(("resources", *path))
-        data = pkg_resources.resource_string(resource_package, resource_path)
-        filename = path[-1]
-        with open(filename, "wb") as f:
-            f.write(data)
-        print(f"{filename} duplicated.")
+    for filepath in resources[resource_name]:
+        filepath = imresources.files(pkg_name) / "resources" / filepath
+        with filepath.open("rb") as f:
+            filedata = f.read()
+            filename = filepath.name
+            with open(filename, "wb") as f:
+                f.write(filedata)
+            print(f"{filename} duplicated.")
 
 
 def export_diagram(src, dest, instance_name="diagram", overwrite=False):
@@ -222,7 +224,7 @@ def export_diagram(src, dest, instance_name="diagram", overwrite=False):
     os.chdir(src.parent)
     sys.path.append("")
 
-    diagram = diagram = get_diagram_instance(src, instance_name)
+    diagram = get_diagram_instance(src, instance_name)
 
     # Prepare linked media depending on output
     if dest.suffix == ".svg":

@@ -37,7 +37,7 @@ py -m pinout.manager --duplicate quick_start
 # >>> styles.css duplicated.
 ```
 
-Once you have these file a finished diagram can be generated from a command line `py -m pinout.manager --export pinout_diagram diagram.svg`. An SVG file is created and can be conveniently view in a browser.
+Once you have these file a finished diagram can be generated from a command line `py -m pinout.manager --export pinout_diagram.py diagram.svg`. An SVG file is created and can be conveniently view in a browser.
 
 ![SVG diagram ](docs/_static/quick_start_pinout_diagram.png)
 

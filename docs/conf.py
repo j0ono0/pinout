@@ -23,7 +23,7 @@ copyright = "2021, John Newall"
 author = "John Newall"
 
 # The full version, including alpha/beta/rc tags
-release = "0.0.21"
+release = "0.1.1"
 
 
 # -- General configuration ---------------------------------------------------
